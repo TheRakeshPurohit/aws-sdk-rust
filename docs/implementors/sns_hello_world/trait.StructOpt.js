@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["sns_hello_world"] = [{"text":"impl <a class=\"trait\" href=\"sns_hello_world/trait.StructOpt.html\" title=\"trait sns_hello_world::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"sns_hello_world/struct.Opt.html\" title=\"struct sns_hello_world::Opt\">Opt</a>","synthetic":false,"types":["sns_hello_world::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

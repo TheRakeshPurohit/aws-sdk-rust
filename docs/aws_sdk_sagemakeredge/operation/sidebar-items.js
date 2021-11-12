@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetDeviceRegistration","Operation shape for `GetDeviceRegistration`."],["SendHeartbeat","Operation shape for `SendHeartbeat`."]]});

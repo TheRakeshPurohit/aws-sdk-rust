@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DeleteObject","Operation shape for `DeleteObject`."],["DescribeObject","Operation shape for `DescribeObject`."],["GetObject","Operation shape for `GetObject`."],["ListItems","Operation shape for `ListItems`."],["PutObject","Operation shape for `PutObject`."]]});

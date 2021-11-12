@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetRoutingControlState","Operation shape for `GetRoutingControlState`."],["UpdateRoutingControlState","Operation shape for `UpdateRoutingControlState`."],["UpdateRoutingControlStates","Operation shape for `UpdateRoutingControlStates`."]]});

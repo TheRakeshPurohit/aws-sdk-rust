@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["polly_helloworld"] = [{"text":"impl <a class=\"trait\" href=\"polly_helloworld/trait.StructOpt.html\" title=\"trait polly_helloworld::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"polly_helloworld/struct.Opt.html\" title=\"struct polly_helloworld::Opt\">Opt</a>","synthetic":false,"types":["polly_helloworld::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

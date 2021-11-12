@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["StartMedicalStreamTranscription","Operation shape for `StartMedicalStreamTranscription`."],["StartStreamTranscription","Operation shape for `StartStreamTranscription`."]]});

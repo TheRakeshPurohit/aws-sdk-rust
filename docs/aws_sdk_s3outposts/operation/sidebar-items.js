@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateEndpoint","Operation shape for `CreateEndpoint`."],["DeleteEndpoint","Operation shape for `DeleteEndpoint`."],["ListEndpoints","Operation shape for `ListEndpoints`."]]});

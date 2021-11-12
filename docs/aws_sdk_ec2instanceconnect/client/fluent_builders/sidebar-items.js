@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["SendSSHPublicKey","Fluent builder constructing a request to `SendSSHPublicKey`."],["SendSerialConsoleSSHPublicKey","Fluent builder constructing a request to `SendSerialConsoleSSHPublicKey`."]]});

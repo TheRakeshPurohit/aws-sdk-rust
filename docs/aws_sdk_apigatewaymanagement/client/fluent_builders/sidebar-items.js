@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DeleteConnection","Fluent builder constructing a request to `DeleteConnection`."],["GetConnection","Fluent builder constructing a request to `GetConnection`."],["PostToConnection","Fluent builder constructing a request to `PostToConnection`."]]});

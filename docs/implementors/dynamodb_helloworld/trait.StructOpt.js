@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["dynamodb_helloworld"] = [{"text":"impl <a class=\"trait\" href=\"dynamodb_helloworld/trait.StructOpt.html\" title=\"trait dynamodb_helloworld::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"dynamodb_helloworld/struct.Opt.html\" title=\"struct dynamodb_helloworld::Opt\">Opt</a>","synthetic":false,"types":["dynamodb_helloworld::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

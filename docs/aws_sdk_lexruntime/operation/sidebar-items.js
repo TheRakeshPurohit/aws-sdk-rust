@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DeleteSession","Operation shape for `DeleteSession`."],["GetSession","Operation shape for `GetSession`."],["PostContent","Operation shape for `PostContent`."],["PostText","Operation shape for `PostText`."],["PutSession","Operation shape for `PutSession`."]]});

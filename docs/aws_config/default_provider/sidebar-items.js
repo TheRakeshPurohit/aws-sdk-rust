@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["credentials","Default credentials provider chain"],["region","Default region provider chain"],["retry_config","Default retry behavior configuration provider chain"]]});

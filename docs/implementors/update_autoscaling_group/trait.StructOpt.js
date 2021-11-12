@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["update_autoscaling_group"] = [{"text":"impl <a class=\"trait\" href=\"update_autoscaling_group/trait.StructOpt.html\" title=\"trait update_autoscaling_group::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"update_autoscaling_group/struct.Opt.html\" title=\"struct update_autoscaling_group::Opt\">Opt</a>","synthetic":false,"types":["update_autoscaling_group::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

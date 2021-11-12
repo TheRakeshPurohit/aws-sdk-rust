@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetRoleCredentials","Operation shape for `GetRoleCredentials`."],["ListAccountRoles","Operation shape for `ListAccountRoles`."],["ListAccounts","Operation shape for `ListAccounts`."],["Logout","Operation shape for `Logout`."]]});

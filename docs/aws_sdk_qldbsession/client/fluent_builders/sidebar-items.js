@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["SendCommand","Fluent builder constructing a request to `SendCommand`."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DeleteHumanLoop","Operation shape for `DeleteHumanLoop`."],["DescribeHumanLoop","Operation shape for `DescribeHumanLoop`."],["ListHumanLoops","Operation shape for `ListHumanLoops`."],["StartHumanLoop","Operation shape for `StartHumanLoop`."],["StopHumanLoop","Operation shape for `StopHumanLoop`."]]});

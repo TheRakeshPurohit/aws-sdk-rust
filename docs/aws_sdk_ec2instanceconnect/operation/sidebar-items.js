@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["SendSSHPublicKey","Operation shape for `SendSSHPublicKey`."],["SendSerialConsoleSSHPublicKey","Operation shape for `SendSerialConsoleSSHPublicKey`."]]});

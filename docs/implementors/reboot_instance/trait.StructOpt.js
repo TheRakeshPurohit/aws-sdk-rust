@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["reboot_instance"] = [{"text":"impl <a class=\"trait\" href=\"reboot_instance/trait.StructOpt.html\" title=\"trait reboot_instance::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"reboot_instance/struct.Opt.html\" title=\"struct reboot_instance::Opt\">Opt</a>","synthetic":false,"types":["reboot_instance::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

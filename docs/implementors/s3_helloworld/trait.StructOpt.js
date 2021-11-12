@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["s3_helloworld"] = [{"text":"impl <a class=\"trait\" href=\"s3_helloworld/trait.StructOpt.html\" title=\"trait s3_helloworld::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"s3_helloworld/struct.Opt.html\" title=\"struct s3_helloworld::Opt\">Opt</a>","synthetic":false,"types":["s3_helloworld::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

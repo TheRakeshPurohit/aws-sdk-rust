@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["QueryForecast","Fluent builder constructing a request to `QueryForecast`."]]});

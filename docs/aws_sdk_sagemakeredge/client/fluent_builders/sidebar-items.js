@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetDeviceRegistration","Fluent builder constructing a request to `GetDeviceRegistration`."],["SendHeartbeat","Fluent builder constructing a request to `SendHeartbeat`."]]});

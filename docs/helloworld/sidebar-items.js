@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["main",""]],"struct":[["Client","An ergonomic service client for `AWSBatchV20160810`."],["Region","The region to send requests to."],["RegionProviderChain","Load a region by selecting the first from a series of region providers."]]});

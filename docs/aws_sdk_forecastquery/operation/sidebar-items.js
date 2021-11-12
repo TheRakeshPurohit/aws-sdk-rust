@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["QueryForecast","Operation shape for `QueryForecast`."]]});

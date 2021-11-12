@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["describe_stack"] = [{"text":"impl <a class=\"trait\" href=\"describe_stack/trait.StructOpt.html\" title=\"trait describe_stack::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"describe_stack/struct.Opt.html\" title=\"struct describe_stack::Opt\">Opt</a>","synthetic":false,"types":["describe_stack::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

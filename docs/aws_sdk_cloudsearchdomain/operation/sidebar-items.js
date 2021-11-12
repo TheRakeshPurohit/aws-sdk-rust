@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Search","Operation shape for `Search`."],["Suggest","Operation shape for `Suggest`."],["UploadDocuments","Operation shape for `UploadDocuments`."]]});

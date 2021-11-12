@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetRawMessageContent","Operation shape for `GetRawMessageContent`."],["PutRawMessageContent","Operation shape for `PutRawMessageContent`."]]});

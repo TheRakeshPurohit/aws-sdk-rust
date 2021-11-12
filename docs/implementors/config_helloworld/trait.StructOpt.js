@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["config_helloworld"] = [{"text":"impl <a class=\"trait\" href=\"config_helloworld/trait.StructOpt.html\" title=\"trait config_helloworld::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"config_helloworld/struct.Opt.html\" title=\"struct config_helloworld::Opt\">Opt</a>","synthetic":false,"types":["config_helloworld::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

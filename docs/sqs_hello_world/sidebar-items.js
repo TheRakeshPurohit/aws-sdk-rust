@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["exit","Terminates the current process with the specified exit code."],["main","Sends a message to and receives the message from a FIFO queue."]]});

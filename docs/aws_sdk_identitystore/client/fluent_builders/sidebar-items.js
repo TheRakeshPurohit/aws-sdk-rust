@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DescribeGroup","Fluent builder constructing a request to `DescribeGroup`."],["DescribeUser","Fluent builder constructing a request to `DescribeUser`."],["ListGroups","Fluent builder constructing a request to `ListGroups`."],["ListUsers","Fluent builder constructing a request to `ListUsers`."]]});

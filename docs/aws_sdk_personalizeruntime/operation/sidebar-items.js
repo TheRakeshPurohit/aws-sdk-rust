@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetPersonalizedRanking","Operation shape for `GetPersonalizedRanking`."],["GetRecommendations","Operation shape for `GetRecommendations`."]]});

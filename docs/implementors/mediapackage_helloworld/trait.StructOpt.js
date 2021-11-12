@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["mediapackage_helloworld"] = [{"text":"impl <a class=\"trait\" href=\"mediapackage_helloworld/trait.StructOpt.html\" title=\"trait mediapackage_helloworld::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"mediapackage_helloworld/struct.Opt.html\" title=\"struct mediapackage_helloworld::Opt\">Opt</a>","synthetic":false,"types":["mediapackage_helloworld::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

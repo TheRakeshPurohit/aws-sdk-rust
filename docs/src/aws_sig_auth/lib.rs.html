@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `sdk&#x2F;aws-sig-auth&#x2F;src&#x2F;lib.rs`."><meta name="keywords" content="rust, rustlang, rust-lang"><title>lib.rs - source</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../light.css"  id="themeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css" disabled ><link rel="stylesheet" type="text/css" href="../../ayu.css" disabled ><script id="default-settings" ></script><script src="../../storage.js"></script><script src="../../crates.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="alternate icon" type="image/png" href="../../favicon-16x16.png"><link rel="alternate icon" type="image/png" href="../../favicon-32x32.png"><link rel="icon" type="image/svg+xml" href="../../favicon.svg"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc source"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu" role="button">&#9776;</div><a href='../../aws_sig_auth/index.html'><div class='logo-container rust-logo'><img src='../../rust-logo.png' alt='logo'></div></a></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!" aria-haspopup="menu" title="themes"><img width="18" height="18" alt="Pick another theme!" src="../../brush.svg"></button><div id="theme-choices" role="menu"></div></div><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><button type="button" id="help-button" title="help">?</button><a id="settings-menu" href="../../settings.html" title="settings"><img width="18" height="18" alt="Change settings" src="../../wheel.svg"></a></div></form></nav><section id="main" class="content"><div class="example-wrap"><pre class="line-numbers"><span id="1"> 1</span>
+<span id="2"> 2</span>
+<span id="3"> 3</span>
+<span id="4"> 4</span>
+<span id="5"> 5</span>
+<span id="6"> 6</span>
+<span id="7"> 7</span>
+<span id="8"> 8</span>
+<span id="9"> 9</span>
+<span id="10">10</span>
+<span id="11">11</span>
+<span id="12">12</span>
+<span id="13">13</span>
+<span id="14">14</span>
+<span id="15">15</span>
+<span id="16">16</span>
+<span id="17">17</span>
+<span id="18">18</span>
+<span id="19">19</span>
+<span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
+<span id="37">37</span>
+<span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
+<span id="59">59</span>
+<span id="60">60</span>
+<span id="61">61</span>
+<span id="62">62</span>
+<span id="63">63</span>
+<span id="64">64</span>
+<span id="65">65</span>
+<span id="66">66</span>
+<span id="67">67</span>
+<span id="68">68</span>
+<span id="69">69</span>
+<span id="70">70</span>
+<span id="71">71</span>
+<span id="72">72</span>
+<span id="73">73</span>
+<span id="74">74</span>
+<span id="75">75</span>
+<span id="76">76</span>
+</pre><pre class="rust"><code><span class="comment">/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */</span>
+
+<span class="doccomment">//! AWS Signature Authentication Package</span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! This crate may be used to generate presigned URLs for unmodeled behavior such as `rds-iam-token`.</span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! # Examples</span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! Generate RDS IAM Token:</span>
+<span class="doccomment">//! ```rust</span>
+<span class="doccomment">//! use aws_smithy_http::body::SdkBody;</span>
+<span class="doccomment">//! use aws_types::region::{Region, SigningRegion};</span>
+<span class="doccomment">//! use aws_types::{Credentials, SigningService};</span>
+<span class="doccomment">//! use std::time::{Duration, SystemTime, UNIX_EPOCH};</span>
+<span class="doccomment">//! use aws_sig_auth::signer::{self, SigningError, OperationSigningConfig, HttpSignatureType, RequestConfig};</span>
+<span class="doccomment">//! fn generate_rds_iam_token(</span>
+<span class="doccomment">//!     db_hostname: &amp;str,</span>
+<span class="doccomment">//!     region: Region,</span>
+<span class="doccomment">//!     port: u16,</span>
+<span class="doccomment">//!     db_username: &amp;str,</span>
+<span class="doccomment">//!     credentials: &amp;Credentials,</span>
+<span class="doccomment">//!     timestamp: SystemTime,</span>
+<span class="doccomment">//! ) -&gt; Result&lt;String, SigningError&gt; {</span>
+<span class="doccomment">//!     let signer = signer::SigV4Signer::new();</span>
+<span class="doccomment">//!     let mut operation_config = OperationSigningConfig::default_config();</span>
+<span class="doccomment">//!     operation_config.signature_type = HttpSignatureType::HttpRequestQueryParams;</span>
+<span class="doccomment">//!     operation_config.expires_in = Some(Duration::from_secs(15 * 60));</span>
+<span class="doccomment">//!     let request_config = RequestConfig {</span>
+<span class="doccomment">//!         request_ts: timestamp,</span>
+<span class="doccomment">//!         region: &amp;SigningRegion::from(region),</span>
+<span class="doccomment">//!         service: &amp;SigningService::from_static(&quot;rds-db&quot;),</span>
+<span class="doccomment">//!         payload_override: None,</span>
+<span class="doccomment">//!     };</span>
+<span class="doccomment">//!     let mut request = http::Request::builder()</span>
+<span class="doccomment">//!         .uri(format!(</span>
+<span class="doccomment">//!             &quot;http://{db_hostname}:{port}/?Action=connect&amp;DBUser={db_user}&quot;,</span>
+<span class="doccomment">//!             db_hostname = db_hostname,</span>
+<span class="doccomment">//!             port = port,</span>
+<span class="doccomment">//!             db_user = db_username</span>
+<span class="doccomment">//!         ))</span>
+<span class="doccomment">//!         .body(SdkBody::empty())</span>
+<span class="doccomment">//!         .expect(&quot;valid request&quot;);</span>
+<span class="doccomment">//!     let _signature = signer.sign(</span>
+<span class="doccomment">//!         &amp;operation_config,</span>
+<span class="doccomment">//!         &amp;request_config,</span>
+<span class="doccomment">//!         &amp;credentials,</span>
+<span class="doccomment">//!         &amp;mut request,</span>
+<span class="doccomment">//!     )?;</span>
+<span class="doccomment">//!     let mut uri = request.uri().to_string();</span>
+<span class="doccomment">//!     assert!(uri.starts_with(&quot;http://&quot;));</span>
+<span class="doccomment">//!     let uri = uri.split_off(&quot;http://&quot;.len());</span>
+<span class="doccomment">//!     Ok(uri)</span>
+<span class="doccomment">//! }</span>
+<span class="doccomment">//!</span>
+<span class="doccomment">//! let token = generate_rds_iam_token(</span>
+<span class="doccomment">//!     &quot;prod-instance.us-east-1.rds.amazonaws.com&quot;,</span>
+<span class="doccomment">//!     Region::from_static(&quot;us-east-1&quot;),</span>
+<span class="doccomment">//!     3306,</span>
+<span class="doccomment">//!     &quot;dbuser&quot;,</span>
+<span class="doccomment">//!     &amp;Credentials::from_keys(&quot;AKIDEXAMPLE&quot;, &quot;secret&quot;, None),</span>
+<span class="doccomment">//!     // this value is hard coded to create deterministic signature for tests. Generally,</span>
+<span class="doccomment">//!     // `SystemTime::now()` should be used</span>
+<span class="doccomment">//!     UNIX_EPOCH + Duration::from_secs(1635257380)</span>
+<span class="doccomment">//! ).expect(&quot;failed to generate token&quot;);</span>
+<span class="doccomment">//! # // validate against token generated by the aws CLI</span>
+<span class="doccomment">//! # assert_eq!(token, &quot;prod-instance.us-east-1.rds.amazonaws.com:3306/?Action=connect&amp;DBUser=dbuser&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIDEXAMPLE%2F20211026%2Fus-east-1%2Frds-db%2Faws4_request&amp;X-Amz-Date=20211026T140940Z&amp;X-Amz-Expires=900&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=9632f5f4fcd2087a3c523f55f72d2fe97fad03b71a0a23b8c1edfb104e8072d1&quot;);</span>
+<span class="doccomment">//! ```</span>
+
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;sign-eventstream&quot;</span>)]</span>
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">event_stream</span>;
+
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">middleware</span>;
+<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">signer</span>;
+</code></pre></div>
+</section><section id="search" class="content hidden"></section><div id="rustdoc-vars" data-root-path="../../" data-current-crate="aws_sig_auth" data-search-index-js="../../search-index.js" data-search-js="../../search.js"></div>
+    <script src="../../main.js"></script><script src="../../source-script.js"></script><script src="../../source-files.js"></script>
+</body></html>

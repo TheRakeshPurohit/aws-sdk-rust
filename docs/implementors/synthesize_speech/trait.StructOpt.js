@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["synthesize_speech"] = [{"text":"impl <a class=\"trait\" href=\"synthesize_speech/trait.StructOpt.html\" title=\"trait synthesize_speech::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"synthesize_speech/struct.Opt.html\" title=\"struct synthesize_speech::Opt\">Opt</a>","synthetic":false,"types":["synthesize_speech::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

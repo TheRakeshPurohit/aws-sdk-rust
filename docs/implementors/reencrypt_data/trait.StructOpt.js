@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["reencrypt_data"] = [{"text":"impl <a class=\"trait\" href=\"reencrypt_data/trait.StructOpt.html\" title=\"trait reencrypt_data::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"reencrypt_data/struct.Opt.html\" title=\"struct reencrypt_data::Opt\">Opt</a>","synthetic":false,"types":["reencrypt_data::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

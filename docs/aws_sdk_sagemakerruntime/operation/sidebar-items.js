@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["InvokeEndpoint","Operation shape for `InvokeEndpoint`."],["InvokeEndpointAsync","Operation shape for `InvokeEndpointAsync`."]]});

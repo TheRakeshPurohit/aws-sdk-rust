@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DeleteReportDefinition","Operation shape for `DeleteReportDefinition`."],["DescribeReportDefinitions","Operation shape for `DescribeReportDefinitions`."],["ModifyReportDefinition","Operation shape for `ModifyReportDefinition`."],["PutReportDefinition","Operation shape for `PutReportDefinition`."]]});

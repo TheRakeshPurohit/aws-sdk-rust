@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["generate_random"] = [{"text":"impl <a class=\"trait\" href=\"generate_random/trait.StructOpt.html\" title=\"trait generate_random::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"generate_random/struct.Opt.html\" title=\"struct generate_random::Opt\">Opt</a>","synthetic":false,"types":["generate_random::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

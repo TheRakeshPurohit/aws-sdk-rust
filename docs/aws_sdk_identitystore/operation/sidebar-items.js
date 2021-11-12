@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DescribeGroup","Operation shape for `DescribeGroup`."],["DescribeUser","Operation shape for `DescribeUser`."],["ListGroups","Operation shape for `ListGroups`."],["ListUsers","Operation shape for `ListUsers`."]]});

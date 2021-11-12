@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateToken","Fluent builder constructing a request to `CreateToken`."],["RegisterClient","Fluent builder constructing a request to `RegisterClient`."],["StartDeviceAuthorization","Fluent builder constructing a request to `StartDeviceAuthorization`."]]});

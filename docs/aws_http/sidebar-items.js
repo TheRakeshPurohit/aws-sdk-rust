@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["auth",""],["user_agent",""]],"struct":[["AwsErrorRetryPolicy","A retry policy that models AWS error codes as outlined in the SEP"]]});

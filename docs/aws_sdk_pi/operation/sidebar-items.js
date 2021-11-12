@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DescribeDimensionKeys","Operation shape for `DescribeDimensionKeys`."],["GetDimensionKeyDetails","Operation shape for `GetDimensionKeyDetails`."],["GetResourceMetrics","Operation shape for `GetResourceMetrics`."]]});

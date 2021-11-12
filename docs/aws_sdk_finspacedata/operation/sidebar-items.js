@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateChangeset","Operation shape for `CreateChangeset`."],["GetProgrammaticAccessCredentials","Operation shape for `GetProgrammaticAccessCredentials`."],["GetWorkingLocation","Operation shape for `GetWorkingLocation`."]]});

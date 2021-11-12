@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DeleteAlternateContact","Operation shape for `DeleteAlternateContact`."],["GetAlternateContact","Operation shape for `GetAlternateContact`."],["PutAlternateContact","Operation shape for `PutAlternateContact`."]]});

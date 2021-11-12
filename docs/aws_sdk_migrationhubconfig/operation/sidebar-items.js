@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateHomeRegionControl","Operation shape for `CreateHomeRegionControl`."],["DescribeHomeRegionControls","Operation shape for `DescribeHomeRegionControls`."],["GetHomeRegion","Operation shape for `GetHomeRegion`."]]});

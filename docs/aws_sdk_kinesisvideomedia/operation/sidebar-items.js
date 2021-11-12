@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetMedia","Operation shape for `GetMedia`."]]});

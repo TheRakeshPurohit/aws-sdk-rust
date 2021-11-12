@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetRoleCredentials","Fluent builder constructing a request to `GetRoleCredentials`."],["ListAccountRoles","Fluent builder constructing a request to `ListAccountRoles`."],["ListAccounts","Fluent builder constructing a request to `ListAccounts`."],["Logout","Fluent builder constructing a request to `Logout`."]]});

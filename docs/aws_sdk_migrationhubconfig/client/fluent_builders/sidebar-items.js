@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateHomeRegionControl","Fluent builder constructing a request to `CreateHomeRegionControl`."],["DescribeHomeRegionControls","Fluent builder constructing a request to `DescribeHomeRegionControls`."],["GetHomeRegion","Fluent builder constructing a request to `GetHomeRegion`."]]});

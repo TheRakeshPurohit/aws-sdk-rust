@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["get_snapshot_state"] = [{"text":"impl <a class=\"trait\" href=\"get_snapshot_state/trait.StructOpt.html\" title=\"trait get_snapshot_state::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"get_snapshot_state/struct.Opt.html\" title=\"struct get_snapshot_state::Opt\">Opt</a>","synthetic":false,"types":["get_snapshot_state::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateToken","Operation shape for `CreateToken`."],["RegisterClient","Operation shape for `RegisterClient`."],["StartDeviceAuthorization","Operation shape for `StartDeviceAuthorization`."]]});

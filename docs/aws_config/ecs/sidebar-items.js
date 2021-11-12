@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["InvalidFullUriError","Invalid Full URI"]],"struct":[["Builder","Builder for [`EcsCredentialsProvider`]"],["EcsCredentialsProvider","Credential provider for ECS and generalized HTTP credentials"]],"type":[["DnsService","Dns resolver interface"]]});

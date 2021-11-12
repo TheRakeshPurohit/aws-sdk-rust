@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["generate_data_key_without_plaintext"] = [{"text":"impl <a class=\"trait\" href=\"generate_data_key_without_plaintext/trait.StructOpt.html\" title=\"trait generate_data_key_without_plaintext::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"generate_data_key_without_plaintext/struct.Opt.html\" title=\"struct generate_data_key_without_plaintext::Opt\">Opt</a>","synthetic":false,"types":["generate_data_key_without_plaintext::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["rds_helloworld"] = [{"text":"impl <a class=\"trait\" href=\"rds_helloworld/trait.StructOpt.html\" title=\"trait rds_helloworld::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"rds_helloworld/struct.Opt.html\" title=\"struct rds_helloworld::Opt\">Opt</a>","synthetic":false,"types":["rds_helloworld::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

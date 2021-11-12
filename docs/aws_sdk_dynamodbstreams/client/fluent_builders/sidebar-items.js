@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DescribeStream","Fluent builder constructing a request to `DescribeStream`."],["GetRecords","Fluent builder constructing a request to `GetRecords`."],["GetShardIterator","Fluent builder constructing a request to `GetShardIterator`."],["ListStreams","Fluent builder constructing a request to `ListStreams`."]]});

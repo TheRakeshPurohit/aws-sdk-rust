@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetPersonalizedRanking","Fluent builder constructing a request to `GetPersonalizedRanking`."],["GetRecommendations","Fluent builder constructing a request to `GetRecommendations`."]]});

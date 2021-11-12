@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DescribeStream","Operation shape for `DescribeStream`."],["GetRecords","Operation shape for `GetRecords`."],["GetShardIterator","Operation shape for `GetShardIterator`."],["ListStreams","Operation shape for `ListStreams`."]]});

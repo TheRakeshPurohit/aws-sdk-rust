@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["get_rest_apis"] = [{"text":"impl <a class=\"trait\" href=\"get_rest_apis/trait.StructOpt.html\" title=\"trait get_rest_apis::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"get_rest_apis/struct.Opt.html\" title=\"struct get_rest_apis::Opt\">Opt</a>","synthetic":false,"types":["get_rest_apis::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

@@ -1,0 +1,1 @@
+initSidebarItems({"derive":[["StructOpt","Generates the `StructOpt` impl."]],"fn":[["main",""]],"struct":[["Opt",""],["Region","The region to send requests to."],["RegionProviderChain","Load a region by selecting the first from a series of region providers."],["VpcConfigRequest",""]],"trait":[["StructOpt","A struct that is converted from command line arguments."]]});

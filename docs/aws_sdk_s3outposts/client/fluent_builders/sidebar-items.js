@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["CreateEndpoint","Fluent builder constructing a request to `CreateEndpoint`."],["DeleteEndpoint","Fluent builder constructing a request to `DeleteEndpoint`."],["ListEndpoints","Fluent builder constructing a request to `ListEndpoints`."]]});

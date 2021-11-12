@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["transcribestreaming_code_example"] = [{"text":"impl <a class=\"trait\" href=\"transcribestreaming_code_example/trait.StructOpt.html\" title=\"trait transcribestreaming_code_example::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"transcribestreaming_code_example/struct.Opt.html\" title=\"struct transcribestreaming_code_example::Opt\">Opt</a>","synthetic":false,"types":["transcribestreaming_code_example::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

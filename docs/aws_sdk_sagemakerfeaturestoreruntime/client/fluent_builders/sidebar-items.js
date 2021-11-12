@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BatchGetRecord","Fluent builder constructing a request to `BatchGetRecord`."],["DeleteRecord","Fluent builder constructing a request to `DeleteRecord`."],["GetRecord","Fluent builder constructing a request to `GetRecord`."],["PutRecord","Fluent builder constructing a request to `PutRecord`."]]});

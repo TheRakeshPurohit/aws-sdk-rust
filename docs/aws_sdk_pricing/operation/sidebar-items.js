@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DescribeServices","Operation shape for `DescribeServices`."],["GetAttributeValues","Operation shape for `GetAttributeValues`."],["GetProducts","Operation shape for `GetProducts`."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetEntitlements","Fluent builder constructing a request to `GetEntitlements`."]]});

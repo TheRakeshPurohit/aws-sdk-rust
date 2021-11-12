@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ListRealtimeContactAnalysisSegments","Operation shape for `ListRealtimeContactAnalysisSegments`."]]});

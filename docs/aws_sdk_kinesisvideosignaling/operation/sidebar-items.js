@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetIceServerConfig","Operation shape for `GetIceServerConfig`."],["SendAlexaOfferToMaster","Operation shape for `SendAlexaOfferToMaster`."]]});

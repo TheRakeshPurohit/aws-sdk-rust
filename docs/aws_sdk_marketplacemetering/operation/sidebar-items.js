@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BatchMeterUsage","Operation shape for `BatchMeterUsage`."],["MeterUsage","Operation shape for `MeterUsage`."],["RegisterUsage","Operation shape for `RegisterUsage`."],["ResolveCustomer","Operation shape for `ResolveCustomer`."]]});

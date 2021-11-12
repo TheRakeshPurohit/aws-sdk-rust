@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["get_secret_value"] = [{"text":"impl <a class=\"trait\" href=\"get_secret_value/trait.StructOpt.html\" title=\"trait get_secret_value::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"get_secret_value/struct.Opt.html\" title=\"struct get_secret_value::Opt\">Opt</a>","synthetic":false,"types":["get_secret_value::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

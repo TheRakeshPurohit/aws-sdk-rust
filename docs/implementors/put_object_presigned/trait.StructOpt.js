@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["put_object_presigned"] = [{"text":"impl <a class=\"trait\" href=\"put_object_presigned/trait.StructOpt.html\" title=\"trait put_object_presigned::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"put_object_presigned/struct.Opt.html\" title=\"struct put_object_presigned::Opt\">Opt</a>","synthetic":false,"types":["put_object_presigned::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

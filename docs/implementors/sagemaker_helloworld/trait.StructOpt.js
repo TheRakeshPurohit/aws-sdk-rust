@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["sagemaker_helloworld"] = [{"text":"impl <a class=\"trait\" href=\"sagemaker_helloworld/trait.StructOpt.html\" title=\"trait sagemaker_helloworld::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"sagemaker_helloworld/struct.Opt.html\" title=\"struct sagemaker_helloworld::Opt\">Opt</a>","synthetic":false,"types":["sagemaker_helloworld::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

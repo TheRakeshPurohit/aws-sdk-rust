@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Search","Fluent builder constructing a request to `Search`."],["Suggest","Fluent builder constructing a request to `Suggest`."],["UploadDocuments","Fluent builder constructing a request to `UploadDocuments`."]]});

@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["list_configuration_recorders"] = [{"text":"impl <a class=\"trait\" href=\"list_configuration_recorders/trait.StructOpt.html\" title=\"trait list_configuration_recorders::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"list_configuration_recorders/struct.Opt.html\" title=\"struct list_configuration_recorders::Opt\">Opt</a>","synthetic":false,"types":["list_configuration_recorders::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

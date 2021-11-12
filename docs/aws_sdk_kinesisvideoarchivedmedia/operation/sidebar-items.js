@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetClip","Operation shape for `GetClip`."],["GetDASHStreamingSessionURL","Operation shape for `GetDASHStreamingSessionURL`."],["GetHLSStreamingSessionURL","Operation shape for `GetHLSStreamingSessionURL`."],["GetMediaForFragmentList","Operation shape for `GetMediaForFragmentList`."],["ListFragments","Operation shape for `ListFragments`."]]});

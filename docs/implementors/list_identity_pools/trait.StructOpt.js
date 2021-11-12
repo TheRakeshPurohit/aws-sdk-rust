@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["list_identity_pools"] = [{"text":"impl <a class=\"trait\" href=\"list_identity_pools/trait.StructOpt.html\" title=\"trait list_identity_pools::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"list_identity_pools/struct.Opt.html\" title=\"struct list_identity_pools::Opt\">Opt</a>","synthetic":false,"types":["list_identity_pools::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

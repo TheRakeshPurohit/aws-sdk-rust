@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DeleteSession","Operation shape for `DeleteSession`."],["GetSession","Operation shape for `GetSession`."],["PutSession","Operation shape for `PutSession`."],["RecognizeText","Operation shape for `RecognizeText`."],["RecognizeUtterance","Operation shape for `RecognizeUtterance`."]]});

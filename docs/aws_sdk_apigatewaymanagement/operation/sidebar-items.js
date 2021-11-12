@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DeleteConnection","Operation shape for `DeleteConnection`."],["GetConnection","Operation shape for `GetConnection`."],["PostToConnection","Operation shape for `PostToConnection`."]]});

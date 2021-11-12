@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["InvokeEndpoint","Fluent builder constructing a request to `InvokeEndpoint`."],["InvokeEndpointAsync","Fluent builder constructing a request to `InvokeEndpointAsync`."]]});

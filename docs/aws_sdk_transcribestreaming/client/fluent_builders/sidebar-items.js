@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["StartMedicalStreamTranscription","Fluent builder constructing a request to `StartMedicalStreamTranscription`."],["StartStreamTranscription","Fluent builder constructing a request to `StartStreamTranscription`."]]});

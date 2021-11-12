@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Format","Formats for representing an `Instant` in the Smithy protocols."]],"struct":[["ConversionError","Failure to convert an `Instant` to or from another type."],["Instant","Instant in time."]]});

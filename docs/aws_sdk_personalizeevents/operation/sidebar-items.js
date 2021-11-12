@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["PutEvents","Operation shape for `PutEvents`."],["PutItems","Operation shape for `PutItems`."],["PutUsers","Operation shape for `PutUsers`."]]});

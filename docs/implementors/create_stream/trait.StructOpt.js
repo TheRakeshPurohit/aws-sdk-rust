@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["create_stream"] = [{"text":"impl <a class=\"trait\" href=\"create_stream/trait.StructOpt.html\" title=\"trait create_stream::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"create_stream/struct.Opt.html\" title=\"struct create_stream::Opt\">Opt</a>","synthetic":false,"types":["create_stream::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

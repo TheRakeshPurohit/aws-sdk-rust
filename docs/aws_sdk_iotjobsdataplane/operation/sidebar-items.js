@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DescribeJobExecution","Operation shape for `DescribeJobExecution`."],["GetPendingJobExecutions","Operation shape for `GetPendingJobExecutions`."],["StartNextPendingJobExecution","Operation shape for `StartNextPendingJobExecution`."],["UpdateJobExecution","Operation shape for `UpdateJobExecution`."]]});

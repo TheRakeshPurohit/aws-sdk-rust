@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["qldb_helloworld"] = [{"text":"impl <a class=\"trait\" href=\"qldb_helloworld/trait.StructOpt.html\" title=\"trait qldb_helloworld::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"qldb_helloworld/struct.Opt.html\" title=\"struct qldb_helloworld::Opt\">Opt</a>","synthetic":false,"types":["qldb_helloworld::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

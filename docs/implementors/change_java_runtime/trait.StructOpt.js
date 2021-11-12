@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["change_java_runtime"] = [{"text":"impl <a class=\"trait\" href=\"change_java_runtime/trait.StructOpt.html\" title=\"trait change_java_runtime::StructOpt\">StructOpt</a> for <a class=\"struct\" href=\"change_java_runtime/struct.Opt.html\" title=\"struct change_java_runtime::Opt\">Opt</a>","synthetic":false,"types":["change_java_runtime::Opt"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BatchGetRecord","Operation shape for `BatchGetRecord`."],["DeleteRecord","Operation shape for `DeleteRecord`."],["GetRecord","Operation shape for `GetRecord`."],["PutRecord","Operation shape for `PutRecord`."]]});

@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["main",""]],"struct":[["Client","An ergonomic service client for `GraniteServiceVersion20100801`."]]});

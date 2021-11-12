@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GetEntitlements","Operation shape for `GetEntitlements`."]]});
