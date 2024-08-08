@@ -13,6 +13,8 @@ pub use crate::types::_recovery_option_type::RecoveryOptionTypeBuilder;
 
 pub use crate::types::_user_pool_add_ons_type::UserPoolAddOnsTypeBuilder;
 
+pub use crate::types::_advanced_security_additional_flows_type::AdvancedSecurityAdditionalFlowsTypeBuilder;
+
 pub use crate::types::_admin_create_user_config_type::AdminCreateUserConfigTypeBuilder;
 
 pub use crate::types::_message_template_type::MessageTemplateTypeBuilder;
@@ -90,6 +92,10 @@ pub use crate::types::_compromised_credentials_actions_type::CompromisedCredenti
 pub use crate::types::_log_delivery_configuration_type::LogDeliveryConfigurationTypeBuilder;
 
 pub use crate::types::_log_configuration_type::LogConfigurationTypeBuilder;
+
+pub use crate::types::_firehose_configuration_type::FirehoseConfigurationTypeBuilder;
+
+pub use crate::types::_s3_configuration_type::S3ConfigurationTypeBuilder;
 
 pub use crate::types::_cloud_watch_logs_configuration_type::CloudWatchLogsConfigurationTypeBuilder;
 
