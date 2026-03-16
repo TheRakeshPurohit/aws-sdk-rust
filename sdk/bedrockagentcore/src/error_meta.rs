@@ -766,6 +766,51 @@ impl From<crate::operation::invoke_agent_runtime::InvokeAgentRuntimeError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError> for Error {
+    fn from(err: crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError) -> Self {
+        match err {
+            crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::RuntimeClientError(inner) => {
+                Error::RuntimeClientError(inner)
+            }
+            crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1378,6 +1423,38 @@ impl From<crate::operation::update_browser_stream::UpdateBrowserStreamError> for
             crate::operation::update_browser_stream::UpdateBrowserStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_browser_stream::UpdateBrowserStreamError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_browser_stream::UpdateBrowserStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::InvokeAgentRuntimeCommandStreamOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::InvokeAgentRuntimeCommandStreamOutputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::InvokeAgentRuntimeCommandStreamOutputError> for Error {
+    fn from(err: crate::types::error::InvokeAgentRuntimeCommandStreamOutputError) -> Self {
+        match err {
+            crate::types::error::InvokeAgentRuntimeCommandStreamOutputError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::types::error::InvokeAgentRuntimeCommandStreamOutputError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::types::error::InvokeAgentRuntimeCommandStreamOutputError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::types::error::InvokeAgentRuntimeCommandStreamOutputError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::types::error::InvokeAgentRuntimeCommandStreamOutputError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::types::error::InvokeAgentRuntimeCommandStreamOutputError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::types::error::InvokeAgentRuntimeCommandStreamOutputError::RuntimeClientError(inner) => Error::RuntimeClientError(inner),
+            crate::types::error::InvokeAgentRuntimeCommandStreamOutputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

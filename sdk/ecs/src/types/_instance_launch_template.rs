@@ -26,6 +26,11 @@ pub struct InstanceLaunchTemplate {
     /// <p>The default is On-Demand</p>
     /// <p>For more information about Amazon EC2 capacity options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub capacity_option_type: ::std::option::Option<crate::types::CapacityOptionType>,
+    /// <p>Determines whether tags are propagated to the instance metadata service (IMDS) for Amazon EC2 instances launched by the Managed Instances capacity provider. When enabled, all tags associated with the instance are available through the instance metadata service. When disabled, tags are not propagated to IMDS.</p>
+    /// <p>Disable this setting if your tags contain characters that are not compatible with IMDS, such as <code>/</code>. IMDS requires tag keys to match the pattern <code>\[0-9a-zA-Z\-_+=,.@:\]{1,255}</code>.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub instance_metadata_tags_propagation: ::std::option::Option<bool>,
     /// <p>The instance requirements. You can specify:</p>
     /// <ul>
     /// <li>
@@ -82,6 +87,13 @@ impl InstanceLaunchTemplate {
     pub fn capacity_option_type(&self) -> ::std::option::Option<&crate::types::CapacityOptionType> {
         self.capacity_option_type.as_ref()
     }
+    /// <p>Determines whether tags are propagated to the instance metadata service (IMDS) for Amazon EC2 instances launched by the Managed Instances capacity provider. When enabled, all tags associated with the instance are available through the instance metadata service. When disabled, tags are not propagated to IMDS.</p>
+    /// <p>Disable this setting if your tags contain characters that are not compatible with IMDS, such as <code>/</code>. IMDS requires tag keys to match the pattern <code>\[0-9a-zA-Z\-_+=,.@:\]{1,255}</code>.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn instance_metadata_tags_propagation(&self) -> ::std::option::Option<bool> {
+        self.instance_metadata_tags_propagation
+    }
     /// <p>The instance requirements. You can specify:</p>
     /// <ul>
     /// <li>
@@ -126,6 +138,7 @@ pub struct InstanceLaunchTemplateBuilder {
     pub(crate) storage_configuration: ::std::option::Option<crate::types::ManagedInstancesStorageConfiguration>,
     pub(crate) monitoring: ::std::option::Option<crate::types::ManagedInstancesMonitoringOptions>,
     pub(crate) capacity_option_type: ::std::option::Option<crate::types::CapacityOptionType>,
+    pub(crate) instance_metadata_tags_propagation: ::std::option::Option<bool>,
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
     pub(crate) fips_enabled: ::std::option::Option<bool>,
     pub(crate) capacity_reservations: ::std::option::Option<crate::types::CapacityReservationRequest>,
@@ -239,6 +252,29 @@ impl InstanceLaunchTemplateBuilder {
     pub fn get_capacity_option_type(&self) -> &::std::option::Option<crate::types::CapacityOptionType> {
         &self.capacity_option_type
     }
+    /// <p>Determines whether tags are propagated to the instance metadata service (IMDS) for Amazon EC2 instances launched by the Managed Instances capacity provider. When enabled, all tags associated with the instance are available through the instance metadata service. When disabled, tags are not propagated to IMDS.</p>
+    /// <p>Disable this setting if your tags contain characters that are not compatible with IMDS, such as <code>/</code>. IMDS requires tag keys to match the pattern <code>\[0-9a-zA-Z\-_+=,.@:\]{1,255}</code>.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn instance_metadata_tags_propagation(mut self, input: bool) -> Self {
+        self.instance_metadata_tags_propagation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines whether tags are propagated to the instance metadata service (IMDS) for Amazon EC2 instances launched by the Managed Instances capacity provider. When enabled, all tags associated with the instance are available through the instance metadata service. When disabled, tags are not propagated to IMDS.</p>
+    /// <p>Disable this setting if your tags contain characters that are not compatible with IMDS, such as <code>/</code>. IMDS requires tag keys to match the pattern <code>\[0-9a-zA-Z\-_+=,.@:\]{1,255}</code>.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_instance_metadata_tags_propagation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.instance_metadata_tags_propagation = input;
+        self
+    }
+    /// <p>Determines whether tags are propagated to the instance metadata service (IMDS) for Amazon EC2 instances launched by the Managed Instances capacity provider. When enabled, all tags associated with the instance are available through the instance metadata service. When disabled, tags are not propagated to IMDS.</p>
+    /// <p>Disable this setting if your tags contain characters that are not compatible with IMDS, such as <code>/</code>. IMDS requires tag keys to match the pattern <code>\[0-9a-zA-Z\-_+=,.@:\]{1,255}</code>.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_instance_metadata_tags_propagation(&self) -> &::std::option::Option<bool> {
+        &self.instance_metadata_tags_propagation
+    }
     /// <p>The instance requirements. You can specify:</p>
     /// <ul>
     /// <li>
@@ -341,6 +377,7 @@ impl InstanceLaunchTemplateBuilder {
             storage_configuration: self.storage_configuration,
             monitoring: self.monitoring,
             capacity_option_type: self.capacity_option_type,
+            instance_metadata_tags_propagation: self.instance_metadata_tags_propagation,
             instance_requirements: self.instance_requirements,
             fips_enabled: self.fips_enabled,
             capacity_reservations: self.capacity_reservations,

@@ -6,7 +6,7 @@
 pub enum UserIdentifier {
     /// <p>The ID of the user for whom you have retrieved a workload access token for</p>
     UserId(::std::string::String),
-    /// <p>The OAuth2.0 token issued by the user’s identity provider</p>
+    /// <p>The OAuth2.0 token issued by the user’s identity provider that was used to generate the workload access token</p>
     UserToken(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

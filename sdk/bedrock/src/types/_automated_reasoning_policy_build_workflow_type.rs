@@ -13,6 +13,7 @@
 /// # let automatedreasoningpolicybuildworkflowtype = unimplemented!();
 /// match automatedreasoningpolicybuildworkflowtype {
 ///     AutomatedReasoningPolicyBuildWorkflowType::GenerateFidelityReport => { /* ... */ },
+///     AutomatedReasoningPolicyBuildWorkflowType::GeneratePolicyScenarios => { /* ... */ },
 ///     AutomatedReasoningPolicyBuildWorkflowType::ImportPolicy => { /* ... */ },
 ///     AutomatedReasoningPolicyBuildWorkflowType::IngestContent => { /* ... */ },
 ///     AutomatedReasoningPolicyBuildWorkflowType::RefinePolicy => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum AutomatedReasoningPolicyBuildWorkflowType {
     #[allow(missing_docs)] // documentation missing in model
     GenerateFidelityReport,
     #[allow(missing_docs)] // documentation missing in model
+    GeneratePolicyScenarios,
+    #[allow(missing_docs)] // documentation missing in model
     ImportPolicy,
     #[allow(missing_docs)] // documentation missing in model
     IngestContent,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for AutomatedReasoningPolicyBuildWorkflowType {
     fn from(s: &str) -> Self {
         match s {
             "GENERATE_FIDELITY_REPORT" => AutomatedReasoningPolicyBuildWorkflowType::GenerateFidelityReport,
+            "GENERATE_POLICY_SCENARIOS" => AutomatedReasoningPolicyBuildWorkflowType::GeneratePolicyScenarios,
             "IMPORT_POLICY" => AutomatedReasoningPolicyBuildWorkflowType::ImportPolicy,
             "INGEST_CONTENT" => AutomatedReasoningPolicyBuildWorkflowType::IngestContent,
             "REFINE_POLICY" => AutomatedReasoningPolicyBuildWorkflowType::RefinePolicy,
@@ -81,6 +85,7 @@ impl AutomatedReasoningPolicyBuildWorkflowType {
     pub fn as_str(&self) -> &str {
         match self {
             AutomatedReasoningPolicyBuildWorkflowType::GenerateFidelityReport => "GENERATE_FIDELITY_REPORT",
+            AutomatedReasoningPolicyBuildWorkflowType::GeneratePolicyScenarios => "GENERATE_POLICY_SCENARIOS",
             AutomatedReasoningPolicyBuildWorkflowType::ImportPolicy => "IMPORT_POLICY",
             AutomatedReasoningPolicyBuildWorkflowType::IngestContent => "INGEST_CONTENT",
             AutomatedReasoningPolicyBuildWorkflowType::RefinePolicy => "REFINE_POLICY",
@@ -89,7 +94,13 @@ impl AutomatedReasoningPolicyBuildWorkflowType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GENERATE_FIDELITY_REPORT", "IMPORT_POLICY", "INGEST_CONTENT", "REFINE_POLICY"]
+        &[
+            "GENERATE_FIDELITY_REPORT",
+            "GENERATE_POLICY_SCENARIOS",
+            "IMPORT_POLICY",
+            "INGEST_CONTENT",
+            "REFINE_POLICY",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AutomatedReasoningPolicyBuildWorkflowType {
@@ -113,6 +124,7 @@ impl ::std::fmt::Display for AutomatedReasoningPolicyBuildWorkflowType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AutomatedReasoningPolicyBuildWorkflowType::GenerateFidelityReport => write!(f, "GENERATE_FIDELITY_REPORT"),
+            AutomatedReasoningPolicyBuildWorkflowType::GeneratePolicyScenarios => write!(f, "GENERATE_POLICY_SCENARIOS"),
             AutomatedReasoningPolicyBuildWorkflowType::ImportPolicy => write!(f, "IMPORT_POLICY"),
             AutomatedReasoningPolicyBuildWorkflowType::IngestContent => write!(f, "INGEST_CONTENT"),
             AutomatedReasoningPolicyBuildWorkflowType::RefinePolicy => write!(f, "REFINE_POLICY"),

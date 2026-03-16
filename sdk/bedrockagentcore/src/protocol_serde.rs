@@ -61,6 +61,14 @@ pub(crate) mod shape_get_workload_access_token_for_user_id;
 
 pub(crate) mod shape_invoke_agent_runtime;
 
+pub(crate) mod shape_invoke_agent_runtime_command;
+
+pub fn rest_json_unset_struct_payload() -> ::std::vec::Vec<u8> {
+    b"{}"[..].into()
+}
+
+pub(crate) mod shape_invoke_agent_runtime_command_input;
+
 pub(crate) mod shape_invoke_agent_runtime_input;
 
 pub(crate) mod shape_invoke_code_interpreter;
@@ -138,6 +146,8 @@ pub(crate) mod shape_get_workload_access_token_input;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_invalid_input_exception;
+
+pub(crate) mod shape_invoke_agent_runtime_command_output;
 
 pub(crate) mod shape_invoke_agent_runtime_output;
 
@@ -239,6 +249,8 @@ pub(crate) mod shape_extraction_job_metadata_list;
 
 pub(crate) mod shape_filter_input;
 
+pub(crate) mod shape_invoke_agent_runtime_command_request_body;
+
 pub(crate) mod shape_memory_record;
 
 pub(crate) mod shape_memory_record_create_input;
@@ -319,6 +331,8 @@ pub(crate) mod shape_proxy_bypass;
 
 pub(crate) mod shape_resource_location;
 
+pub(crate) mod shape_response_chunk;
+
 pub(crate) mod shape_session_summary;
 
 pub(crate) mod shape_validation_exception_field;
@@ -342,6 +356,12 @@ pub(crate) mod shape_s3_location;
 pub(crate) mod shape_token_usage;
 
 pub(crate) mod shape_content_block_list;
+
+pub(crate) mod shape_content_delta_event;
+
+pub(crate) mod shape_content_start_event;
+
+pub(crate) mod shape_content_stop_event;
 
 pub(crate) mod shape_messages_list;
 

@@ -13,6 +13,10 @@ pub use crate::types::_tool_arguments::ToolArguments;
 
 pub use crate::types::_code_interpreter_stream_output::CodeInterpreterStreamOutput;
 
+pub use crate::types::_invoke_agent_runtime_command_request_body::InvokeAgentRuntimeCommandRequestBody;
+
+pub use crate::types::_invoke_agent_runtime_command_stream_output::InvokeAgentRuntimeCommandStreamOutput;
+
 pub use crate::types::_view_port::ViewPort;
 
 pub use crate::types::_browser_profile_configuration::BrowserProfileConfiguration;
@@ -50,6 +54,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 pub use crate::types::_programming_language::ProgrammingLanguage;
 
 pub use crate::types::_code_interpreter_result::CodeInterpreterResult;
+
+pub use crate::types::_response_chunk::ResponseChunk;
 
 pub use crate::types::_browser_extension::BrowserExtension;
 
@@ -97,6 +103,12 @@ pub use crate::types::_input_content_block::InputContentBlock;
 
 pub use crate::types::_tool_result_structured_content::ToolResultStructuredContent;
 
+pub use crate::types::_content_start_event::ContentStartEvent;
+
+pub use crate::types::_content_delta_event::ContentDeltaEvent;
+
+pub use crate::types::_content_stop_event::ContentStopEvent;
+
 pub use crate::types::_resource_location::ResourceLocation;
 
 pub use crate::types::_automation_stream_status::AutomationStreamStatus;
@@ -120,6 +132,8 @@ pub use crate::types::_memory_metadata_filter_expression::MemoryMetadataFilterEx
 pub use crate::types::_content_block::ContentBlock;
 
 pub use crate::types::_task_status::TaskStatus;
+
+pub use crate::types::_command_execution_status::CommandExecutionStatus;
 
 pub use crate::types::_s3_location::S3Location;
 
@@ -181,11 +195,19 @@ mod _code_interpreter_session_summary;
 
 mod _code_interpreter_stream_output;
 
+mod _command_execution_status;
+
 mod _content;
 
 mod _content_block;
 
 mod _content_block_type;
+
+mod _content_delta_event;
+
+mod _content_start_event;
+
+mod _content_stop_event;
 
 mod _context;
 
@@ -216,6 +238,10 @@ mod _extraction_job_status;
 mod _filter_input;
 
 mod _input_content_block;
+
+mod _invoke_agent_runtime_command_request_body;
+
+mod _invoke_agent_runtime_command_stream_output;
 
 mod _left_expression;
 
@@ -264,6 +290,8 @@ mod _resource_content;
 mod _resource_content_type;
 
 mod _resource_location;
+
+mod _response_chunk;
 
 mod _right_expression;
 

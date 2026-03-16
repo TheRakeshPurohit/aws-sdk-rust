@@ -11,7 +11,7 @@ pub struct StartBrowserSessionInput {
     pub browser_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the browser session. This name helps you identify and manage the session. The name does not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 3600 seconds (1 hour). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
+    /// <p>The duration in seconds (time-to-live) after which the session automatically terminates, regardless of ongoing activity. Defaults to 3600 seconds (1 hour). Recommended minimum: 60 seconds. Maximum allowed: 28,800 seconds (8 hours).</p>
     pub session_timeout_seconds: ::std::option::Option<i32>,
     /// <p>The dimensions of the browser viewport for this session. This determines the visible area of the web content and affects how web pages are rendered. If not specified, Amazon Bedrock AgentCore uses a default viewport size.</p>
     pub view_port: ::std::option::Option<crate::types::ViewPort>,
@@ -41,7 +41,7 @@ impl StartBrowserSessionInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 3600 seconds (1 hour). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
+    /// <p>The duration in seconds (time-to-live) after which the session automatically terminates, regardless of ongoing activity. Defaults to 3600 seconds (1 hour). Recommended minimum: 60 seconds. Maximum allowed: 28,800 seconds (8 hours).</p>
     pub fn session_timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.session_timeout_seconds
     }
@@ -148,17 +148,17 @@ impl StartBrowserSessionInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 3600 seconds (1 hour). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
+    /// <p>The duration in seconds (time-to-live) after which the session automatically terminates, regardless of ongoing activity. Defaults to 3600 seconds (1 hour). Recommended minimum: 60 seconds. Maximum allowed: 28,800 seconds (8 hours).</p>
     pub fn session_timeout_seconds(mut self, input: i32) -> Self {
         self.session_timeout_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 3600 seconds (1 hour). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
+    /// <p>The duration in seconds (time-to-live) after which the session automatically terminates, regardless of ongoing activity. Defaults to 3600 seconds (1 hour). Recommended minimum: 60 seconds. Maximum allowed: 28,800 seconds (8 hours).</p>
     pub fn set_session_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_timeout_seconds = input;
         self
     }
-    /// <p>The time in seconds after which the session automatically terminates if there is no activity. The default value is 3600 seconds (1 hour). The minimum allowed value is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).</p>
+    /// <p>The duration in seconds (time-to-live) after which the session automatically terminates, regardless of ongoing activity. Defaults to 3600 seconds (1 hour). Recommended minimum: 60 seconds. Maximum allowed: 28,800 seconds (8 hours).</p>
     pub fn get_session_timeout_seconds(&self) -> &::std::option::Option<i32> {
         &self.session_timeout_seconds
     }

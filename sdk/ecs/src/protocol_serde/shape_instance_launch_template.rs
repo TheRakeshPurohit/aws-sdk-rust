@@ -24,20 +24,23 @@ pub fn ser_instance_launch_template(
     if let Some(var_6) = &input.capacity_option_type {
         object.key("capacityOptionType").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.instance_requirements {
-        #[allow(unused_mut)]
-        let mut object_8 = object.key("instanceRequirements").start_object();
-        crate::protocol_serde::shape_instance_requirements_request::ser_instance_requirements_request(&mut object_8, var_7)?;
-        object_8.finish();
+    if let Some(var_7) = &input.instance_metadata_tags_propagation {
+        object.key("instanceMetadataTagsPropagation").boolean(*var_7);
     }
-    if let Some(var_9) = &input.fips_enabled {
-        object.key("fipsEnabled").boolean(*var_9);
-    }
-    if let Some(var_10) = &input.capacity_reservations {
+    if let Some(var_8) = &input.instance_requirements {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("capacityReservations").start_object();
-        crate::protocol_serde::shape_capacity_reservation_request::ser_capacity_reservation_request(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_9 = object.key("instanceRequirements").start_object();
+        crate::protocol_serde::shape_instance_requirements_request::ser_instance_requirements_request(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.fips_enabled {
+        object.key("fipsEnabled").boolean(*var_10);
+    }
+    if let Some(var_11) = &input.capacity_reservations {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("capacityReservations").start_object();
+        crate::protocol_serde::shape_capacity_reservation_request::ser_capacity_reservation_request(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }
@@ -95,6 +98,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CapacityOptionType::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "instanceMetadataTagsPropagation" => {
+                            builder = builder
+                                .set_instance_metadata_tags_propagation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "instanceRequirements" => {
                             builder = builder.set_instance_requirements(

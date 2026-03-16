@@ -230,6 +230,15 @@ pub(crate) fn invoke_agent_runtime_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn invoke_agent_runtime_command_output_output_correct_errors(
+    mut builder: crate::operation::invoke_agent_runtime_command::builders::InvokeAgentRuntimeCommandOutputBuilder,
+) -> crate::operation::invoke_agent_runtime_command::builders::InvokeAgentRuntimeCommandOutputBuilder {
+    if builder.content_type.is_none() {
+        builder.content_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_actors_output_output_correct_errors(
     mut builder: crate::operation::list_actors::builders::ListActorsOutputBuilder,
 ) -> crate::operation::list_actors::builders::ListActorsOutputBuilder {
@@ -657,6 +666,18 @@ pub(crate) fn code_interpreter_result_correct_errors(
 ) -> crate::types::builders::CodeInterpreterResultBuilder {
     if builder.content.is_none() {
         builder.content = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn content_stop_event_correct_errors(
+    mut builder: crate::types::builders::ContentStopEventBuilder,
+) -> crate::types::builders::ContentStopEventBuilder {
+    if builder.exit_code.is_none() {
+        builder.exit_code = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CommandExecutionStatus>().ok()
     }
     builder
 }

@@ -58,6 +58,9 @@ pub mod get_workload_access_token_for_user_id;
 /// Types for the `InvokeAgentRuntime` operation.
 pub mod invoke_agent_runtime;
 
+/// Types for the `InvokeAgentRuntimeCommand` operation.
+pub mod invoke_agent_runtime_command;
+
 /// Types for the `InvokeCodeInterpreter` operation.
 pub mod invoke_code_interpreter;
 

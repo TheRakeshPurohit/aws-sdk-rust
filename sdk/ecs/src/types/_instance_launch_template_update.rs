@@ -12,6 +12,11 @@ pub struct InstanceLaunchTemplateUpdate {
     pub network_configuration: ::std::option::Option<crate::types::ManagedInstancesNetworkConfiguration>,
     /// <p>The updated storage configuration for Amazon ECS Managed Instances. Changes to storage settings apply to new instances launched after the update.</p>
     pub storage_configuration: ::std::option::Option<crate::types::ManagedInstancesStorageConfiguration>,
+    /// <p>Determines whether tags are propagated to the instance metadata service (IMDS) for Amazon EC2 instances launched by the Managed Instances capacity provider. When enabled, all tags associated with the instance are available through the instance metadata service. When disabled, tags are not propagated to IMDS.</p>
+    /// <p>Disable this setting if your tags contain characters that are not compatible with IMDS, such as <code>/</code>. IMDS requires tag keys to match the pattern <code>\[0-9a-zA-Z\-_+=,.@:\]{1,255}</code>.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub instance_metadata_tags_propagation: ::std::option::Option<bool>,
     /// <p>CloudWatch provides two categories of monitoring: basic monitoring and detailed monitoring. By default, your managed instance is configured for basic monitoring. You can optionally enable detailed monitoring to help you more quickly identify and act on operational issues. You can enable or turn off detailed monitoring at launch or when the managed instance is running or stopped. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/detailed-monitoring-managed-instances.html">Detailed monitoring for Amazon ECS Managed Instances</a> in the Amazon ECS Developer Guide.</p>
     pub monitoring: ::std::option::Option<crate::types::ManagedInstancesMonitoringOptions>,
     /// <p>The updated instance requirements for attribute-based instance type selection. Changes to instance requirements affect which instance types Amazon ECS selects for new instances.</p>
@@ -32,6 +37,13 @@ impl InstanceLaunchTemplateUpdate {
     /// <p>The updated storage configuration for Amazon ECS Managed Instances. Changes to storage settings apply to new instances launched after the update.</p>
     pub fn storage_configuration(&self) -> ::std::option::Option<&crate::types::ManagedInstancesStorageConfiguration> {
         self.storage_configuration.as_ref()
+    }
+    /// <p>Determines whether tags are propagated to the instance metadata service (IMDS) for Amazon EC2 instances launched by the Managed Instances capacity provider. When enabled, all tags associated with the instance are available through the instance metadata service. When disabled, tags are not propagated to IMDS.</p>
+    /// <p>Disable this setting if your tags contain characters that are not compatible with IMDS, such as <code>/</code>. IMDS requires tag keys to match the pattern <code>\[0-9a-zA-Z\-_+=,.@:\]{1,255}</code>.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn instance_metadata_tags_propagation(&self) -> ::std::option::Option<bool> {
+        self.instance_metadata_tags_propagation
     }
     /// <p>CloudWatch provides two categories of monitoring: basic monitoring and detailed monitoring. By default, your managed instance is configured for basic monitoring. You can optionally enable detailed monitoring to help you more quickly identify and act on operational issues. You can enable or turn off detailed monitoring at launch or when the managed instance is running or stopped. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/detailed-monitoring-managed-instances.html">Detailed monitoring for Amazon ECS Managed Instances</a> in the Amazon ECS Developer Guide.</p>
     pub fn monitoring(&self) -> ::std::option::Option<&crate::types::ManagedInstancesMonitoringOptions> {
@@ -60,6 +72,7 @@ pub struct InstanceLaunchTemplateUpdateBuilder {
     pub(crate) ec2_instance_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::ManagedInstancesNetworkConfiguration>,
     pub(crate) storage_configuration: ::std::option::Option<crate::types::ManagedInstancesStorageConfiguration>,
+    pub(crate) instance_metadata_tags_propagation: ::std::option::Option<bool>,
     pub(crate) monitoring: ::std::option::Option<crate::types::ManagedInstancesMonitoringOptions>,
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
     pub(crate) capacity_reservations: ::std::option::Option<crate::types::CapacityReservationRequest>,
@@ -110,6 +123,29 @@ impl InstanceLaunchTemplateUpdateBuilder {
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::ManagedInstancesStorageConfiguration> {
         &self.storage_configuration
     }
+    /// <p>Determines whether tags are propagated to the instance metadata service (IMDS) for Amazon EC2 instances launched by the Managed Instances capacity provider. When enabled, all tags associated with the instance are available through the instance metadata service. When disabled, tags are not propagated to IMDS.</p>
+    /// <p>Disable this setting if your tags contain characters that are not compatible with IMDS, such as <code>/</code>. IMDS requires tag keys to match the pattern <code>\[0-9a-zA-Z\-_+=,.@:\]{1,255}</code>.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn instance_metadata_tags_propagation(mut self, input: bool) -> Self {
+        self.instance_metadata_tags_propagation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines whether tags are propagated to the instance metadata service (IMDS) for Amazon EC2 instances launched by the Managed Instances capacity provider. When enabled, all tags associated with the instance are available through the instance metadata service. When disabled, tags are not propagated to IMDS.</p>
+    /// <p>Disable this setting if your tags contain characters that are not compatible with IMDS, such as <code>/</code>. IMDS requires tag keys to match the pattern <code>\[0-9a-zA-Z\-_+=,.@:\]{1,255}</code>.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_instance_metadata_tags_propagation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.instance_metadata_tags_propagation = input;
+        self
+    }
+    /// <p>Determines whether tags are propagated to the instance metadata service (IMDS) for Amazon EC2 instances launched by the Managed Instances capacity provider. When enabled, all tags associated with the instance are available through the instance metadata service. When disabled, tags are not propagated to IMDS.</p>
+    /// <p>Disable this setting if your tags contain characters that are not compatible with IMDS, such as <code>/</code>. IMDS requires tag keys to match the pattern <code>\[0-9a-zA-Z\-_+=,.@:\]{1,255}</code>.</p>
+    /// <p>The default value is <code>true</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_instance_metadata_tags_propagation(&self) -> &::std::option::Option<bool> {
+        &self.instance_metadata_tags_propagation
+    }
     /// <p>CloudWatch provides two categories of monitoring: basic monitoring and detailed monitoring. By default, your managed instance is configured for basic monitoring. You can optionally enable detailed monitoring to help you more quickly identify and act on operational issues. You can enable or turn off detailed monitoring at launch or when the managed instance is running or stopped. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/detailed-monitoring-managed-instances.html">Detailed monitoring for Amazon ECS Managed Instances</a> in the Amazon ECS Developer Guide.</p>
     pub fn monitoring(mut self, input: crate::types::ManagedInstancesMonitoringOptions) -> Self {
         self.monitoring = ::std::option::Option::Some(input);
@@ -158,6 +194,7 @@ impl InstanceLaunchTemplateUpdateBuilder {
             ec2_instance_profile_arn: self.ec2_instance_profile_arn,
             network_configuration: self.network_configuration,
             storage_configuration: self.storage_configuration,
+            instance_metadata_tags_propagation: self.instance_metadata_tags_propagation,
             monitoring: self.monitoring,
             instance_requirements: self.instance_requirements,
             capacity_reservations: self.capacity_reservations,
