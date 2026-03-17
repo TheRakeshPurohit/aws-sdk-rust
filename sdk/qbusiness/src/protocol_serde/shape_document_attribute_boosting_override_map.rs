@@ -22,8 +22,15 @@ where
                             crate::protocol_serde::shape_document_attribute_boosting_configuration::de_document_attribute_boosting_configuration(
                                 tokens, _value,
                             )?;
-                        if let Some(value) = value {
-                            map.insert(key, value);
+                        match value {
+                            Some(value) => {
+                                map.insert(key, value);
+                            }
+                            None => {
+                                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "dense map cannot contain null values",
+                                ))
+                            }
                         }
                     }
                     other => {

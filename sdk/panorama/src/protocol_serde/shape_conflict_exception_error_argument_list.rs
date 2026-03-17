@@ -24,6 +24,10 @@ where
                             crate::protocol_serde::shape_conflict_exception_error_argument::de_conflict_exception_error_argument(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

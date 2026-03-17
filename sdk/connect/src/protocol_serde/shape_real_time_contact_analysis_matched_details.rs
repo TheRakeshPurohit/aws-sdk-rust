@@ -22,8 +22,15 @@ where
                             crate::protocol_serde::shape_real_time_contact_analysis_category_details::de_real_time_contact_analysis_category_details(
                                 tokens, _value,
                             )?;
-                        if let Some(value) = value {
-                            map.insert(key, value);
+                        match value {
+                            Some(value) => {
+                                map.insert(key, value);
+                            }
+                            None => {
+                                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "dense map cannot contain null values",
+                                ))
+                            }
                         }
                     }
                     other => {

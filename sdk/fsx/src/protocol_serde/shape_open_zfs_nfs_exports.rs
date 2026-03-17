@@ -20,6 +20,10 @@ where
                         let value = crate::protocol_serde::shape_open_zfs_nfs_export::de_open_zfs_nfs_export(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

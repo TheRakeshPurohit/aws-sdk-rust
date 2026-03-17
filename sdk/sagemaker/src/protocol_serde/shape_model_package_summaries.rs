@@ -21,8 +21,15 @@ where
                         let value = crate::protocol_serde::shape_batch_describe_model_package_summary::de_batch_describe_model_package_summary(
                             tokens, _value,
                         )?;
-                        if let Some(value) = value {
-                            map.insert(key, value);
+                        match value {
+                            Some(value) => {
+                                map.insert(key, value);
+                            }
+                            None => {
+                                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "dense map cannot contain null values",
+                                ))
+                            }
                         }
                     }
                     other => {

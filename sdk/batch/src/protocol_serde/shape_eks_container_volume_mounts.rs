@@ -20,6 +20,10 @@ where
                         let value = crate::protocol_serde::shape_eks_container_volume_mount::de_eks_container_volume_mount(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

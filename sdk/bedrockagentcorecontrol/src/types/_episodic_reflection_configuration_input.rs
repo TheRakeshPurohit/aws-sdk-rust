@@ -5,13 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EpisodicReflectionConfigurationInput {
     /// <p>The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
-    pub namespaces: ::std::vec::Vec<::std::string::String>,
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
+    pub namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The namespaceTemplates over which to create reflections. Can be less nested than episode namespaces.</p>
+    pub namespace_templates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EpisodicReflectionConfigurationInput {
     /// <p>The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespaces.is_none()`.
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn namespaces(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.namespaces.deref()
+        self.namespaces.as_deref().unwrap_or_default()
+    }
+    /// <p>The namespaceTemplates over which to create reflections. Can be less nested than episode namespaces.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespace_templates.is_none()`.
+    pub fn namespace_templates(&self) -> &[::std::string::String] {
+        self.namespace_templates.as_deref().unwrap_or_default()
     }
 }
 impl EpisodicReflectionConfigurationInput {
@@ -26,6 +37,7 @@ impl EpisodicReflectionConfigurationInput {
 #[non_exhaustive]
 pub struct EpisodicReflectionConfigurationInputBuilder {
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) namespace_templates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EpisodicReflectionConfigurationInputBuilder {
     /// Appends an item to `namespaces`.
@@ -33,6 +45,7 @@ impl EpisodicReflectionConfigurationInputBuilder {
     /// To override the contents of this collection use [`set_namespaces`](Self::set_namespaces).
     ///
     /// <p>The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn namespaces(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.namespaces.unwrap_or_default();
         v.push(input.into());
@@ -40,27 +53,41 @@ impl EpisodicReflectionConfigurationInputBuilder {
         self
     }
     /// <p>The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.namespaces = input;
         self
     }
     /// <p>The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.namespaces
     }
+    /// Appends an item to `namespace_templates`.
+    ///
+    /// To override the contents of this collection use [`set_namespace_templates`](Self::set_namespace_templates).
+    ///
+    /// <p>The namespaceTemplates over which to create reflections. Can be less nested than episode namespaces.</p>
+    pub fn namespace_templates(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.namespace_templates.unwrap_or_default();
+        v.push(input.into());
+        self.namespace_templates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The namespaceTemplates over which to create reflections. Can be less nested than episode namespaces.</p>
+    pub fn set_namespace_templates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.namespace_templates = input;
+        self
+    }
+    /// <p>The namespaceTemplates over which to create reflections. Can be less nested than episode namespaces.</p>
+    pub fn get_namespace_templates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.namespace_templates
+    }
     /// Consumes the builder and constructs a [`EpisodicReflectionConfigurationInput`](crate::types::EpisodicReflectionConfigurationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`namespaces`](crate::types::builders::EpisodicReflectionConfigurationInputBuilder::namespaces)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::EpisodicReflectionConfigurationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::EpisodicReflectionConfigurationInput {
-            namespaces: self.namespaces.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "namespaces",
-                    "namespaces was not specified but it is required when building EpisodicReflectionConfigurationInput",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::EpisodicReflectionConfigurationInput {
+        crate::types::EpisodicReflectionConfigurationInput {
+            namespaces: self.namespaces,
+            namespace_templates: self.namespace_templates,
+        }
     }
 }

@@ -18,8 +18,15 @@ where
                         let value = ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i64::try_from)
                             .transpose()?;
-                        if let Some(value) = value {
-                            map.insert(key, value);
+                        match value {
+                            Some(value) => {
+                                map.insert(key, value);
+                            }
+                            None => {
+                                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "dense map cannot contain null values",
+                                ))
+                            }
                         }
                     }
                     other => {

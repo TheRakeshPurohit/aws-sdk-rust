@@ -20,8 +20,15 @@ where
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
                         let value =
                             crate::protocol_serde::shape_anomaly_unusual_behavior_feature::de_anomaly_unusual_behavior_feature(tokens, _value)?;
-                        if let Some(value) = value {
-                            map.insert(key, value);
+                        match value {
+                            Some(value) => {
+                                map.insert(key, value);
+                            }
+                            None => {
+                                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "dense map cannot contain null values",
+                                ))
+                            }
                         }
                     }
                     other => {

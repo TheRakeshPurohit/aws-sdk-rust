@@ -24,6 +24,10 @@ where
                             crate::protocol_serde::shape_protected_job_single_member_output::de_protected_job_single_member_output(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

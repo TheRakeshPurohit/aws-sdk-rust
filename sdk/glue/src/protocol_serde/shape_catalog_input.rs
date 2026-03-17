@@ -61,5 +61,8 @@ pub fn ser_catalog_input(
     if let Some(var_20) = &input.allow_full_table_external_data_access {
         object.key("AllowFullTableExternalDataAccess").string(var_20.as_str());
     }
+    if let Some(var_21) = &input.overwrite_child_resource_permissions_with_default {
+        object.key("OverwriteChildResourcePermissionsWithDefault").string(var_21.as_str());
+    }
     Ok(())
 }

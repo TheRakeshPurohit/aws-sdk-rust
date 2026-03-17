@@ -9,8 +9,10 @@ pub(crate) fn de_datapoint_value_map(
         let key = decoder.string()?;
         let value = match decoder.datatype()? {
             ::aws_smithy_cbor::data::Type::Null => {
-                decoder.null()?;
-                return ::std::result::Result::Ok(map);
+                return ::std::result::Result::Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+                    "dense map cannot contain null values",
+                    decoder.position(),
+                ))
             }
             _ => decoder.double()?,
         };

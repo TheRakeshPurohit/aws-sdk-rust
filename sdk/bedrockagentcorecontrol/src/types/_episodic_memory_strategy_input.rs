@@ -9,7 +9,10 @@ pub struct EpisodicMemoryStrategyInput {
     /// <p>The description of the episodic memory strategy.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The namespaces for which to create episodes.</p>
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The namespaceTemplates for which to create episodes.</p>
+    pub namespace_templates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration for the reflections created with the episodic memory strategy.</p>
     pub reflection_configuration: ::std::option::Option<crate::types::EpisodicReflectionConfigurationInput>,
 }
@@ -26,8 +29,15 @@ impl EpisodicMemoryStrategyInput {
     /// <p>The namespaces for which to create episodes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespaces.is_none()`.
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn namespaces(&self) -> &[::std::string::String] {
         self.namespaces.as_deref().unwrap_or_default()
+    }
+    /// <p>The namespaceTemplates for which to create episodes.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespace_templates.is_none()`.
+    pub fn namespace_templates(&self) -> &[::std::string::String] {
+        self.namespace_templates.as_deref().unwrap_or_default()
     }
     /// <p>The configuration for the reflections created with the episodic memory strategy.</p>
     pub fn reflection_configuration(&self) -> ::std::option::Option<&crate::types::EpisodicReflectionConfigurationInput> {
@@ -40,6 +50,7 @@ impl ::std::fmt::Debug for EpisodicMemoryStrategyInput {
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("namespaces", &self.namespaces);
+        formatter.field("namespace_templates", &self.namespace_templates);
         formatter.field("reflection_configuration", &self.reflection_configuration);
         formatter.finish()
     }
@@ -58,6 +69,7 @@ pub struct EpisodicMemoryStrategyInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) namespace_templates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) reflection_configuration: ::std::option::Option<crate::types::EpisodicReflectionConfigurationInput>,
 }
 impl EpisodicMemoryStrategyInputBuilder {
@@ -95,6 +107,7 @@ impl EpisodicMemoryStrategyInputBuilder {
     /// To override the contents of this collection use [`set_namespaces`](Self::set_namespaces).
     ///
     /// <p>The namespaces for which to create episodes.</p>
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn namespaces(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.namespaces.unwrap_or_default();
         v.push(input.into());
@@ -102,13 +115,35 @@ impl EpisodicMemoryStrategyInputBuilder {
         self
     }
     /// <p>The namespaces for which to create episodes.</p>
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.namespaces = input;
         self
     }
     /// <p>The namespaces for which to create episodes.</p>
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.namespaces
+    }
+    /// Appends an item to `namespace_templates`.
+    ///
+    /// To override the contents of this collection use [`set_namespace_templates`](Self::set_namespace_templates).
+    ///
+    /// <p>The namespaceTemplates for which to create episodes.</p>
+    pub fn namespace_templates(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.namespace_templates.unwrap_or_default();
+        v.push(input.into());
+        self.namespace_templates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The namespaceTemplates for which to create episodes.</p>
+    pub fn set_namespace_templates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.namespace_templates = input;
+        self
+    }
+    /// <p>The namespaceTemplates for which to create episodes.</p>
+    pub fn get_namespace_templates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.namespace_templates
     }
     /// <p>The configuration for the reflections created with the episodic memory strategy.</p>
     pub fn reflection_configuration(mut self, input: crate::types::EpisodicReflectionConfigurationInput) -> Self {
@@ -137,6 +172,7 @@ impl EpisodicMemoryStrategyInputBuilder {
             })?,
             description: self.description,
             namespaces: self.namespaces,
+            namespace_templates: self.namespace_templates,
             reflection_configuration: self.reflection_configuration,
         })
     }
@@ -147,6 +183,7 @@ impl ::std::fmt::Debug for EpisodicMemoryStrategyInputBuilder {
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("namespaces", &self.namespaces);
+        formatter.field("namespace_templates", &self.namespace_templates);
         formatter.field("reflection_configuration", &self.reflection_configuration);
         formatter.finish()
     }

@@ -435,6 +435,8 @@ pub(crate) mod shape_port_range;
 
 pub(crate) mod shape_port_ranges;
 
+pub(crate) mod shape_s3_logging_configuration;
+
 pub(crate) mod shape_scaling_constraints;
 
 pub(crate) mod shape_scaling_rule;
@@ -552,6 +554,8 @@ pub(crate) mod shape_instance_state_change_reason;
 pub(crate) mod shape_instance_timeline;
 
 pub(crate) mod shape_instance_type_specification;
+
+pub(crate) mod shape_log_type_map;
 
 pub(crate) mod shape_log_types_map;
 

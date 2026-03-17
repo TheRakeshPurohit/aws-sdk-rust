@@ -299,6 +299,8 @@ pub use crate::types::_catalog_properties::CatalogProperties;
 
 pub use crate::types::_allow_full_table_external_data_access_enum::AllowFullTableExternalDataAccessEnum;
 
+pub use crate::types::_overwrite_child_resource_permissions_with_default_enum::OverwriteChildResourcePermissionsWithDefaultEnum;
+
 pub use crate::types::_csv_header_option::CsvHeaderOption;
 
 pub use crate::types::_csv_serde_option::CsvSerdeOption;
@@ -1838,6 +1840,8 @@ mod _orphan_file_deletion_configuration;
 mod _orphan_file_deletion_metrics;
 
 mod _other_metadata_value_list_item;
+
+mod _overwrite_child_resource_permissions_with_default_enum;
 
 mod _pagination_configuration;
 

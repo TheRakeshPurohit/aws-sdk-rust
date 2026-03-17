@@ -8,8 +8,10 @@ pub(crate) fn de_insight_rule_metric_datapoints(
     ) -> ::std::result::Result<::std::vec::Vec<crate::types::InsightRuleMetricDatapoint>, ::aws_smithy_cbor::decode::DeserializeError> {
         let value = match decoder.datatype()? {
             ::aws_smithy_cbor::data::Type::Null => {
-                decoder.null()?;
-                return ::std::result::Result::Ok(list);
+                return ::std::result::Result::Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+                    "dense list cannot contain null values",
+                    decoder.position(),
+                ))
             }
             _ => crate::protocol_serde::shape_insight_rule_metric_datapoint::de_insight_rule_metric_datapoint(decoder)?,
         };

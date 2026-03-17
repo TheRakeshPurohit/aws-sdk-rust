@@ -20,6 +20,10 @@ where
                         let value = crate::protocol_serde::shape_rule_configuration_property::de_rule_configuration_property(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

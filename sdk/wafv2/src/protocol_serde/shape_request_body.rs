@@ -21,8 +21,15 @@ where
                         let value =
                             crate::protocol_serde::shape_request_body_associated_resource_type_config::de_request_body_associated_resource_type_config(tokens, _value)?
                         ;
-                        if let Some(value) = value {
-                            map.insert(key, value);
+                        match value {
+                            Some(value) => {
+                                map.insert(key, value);
+                            }
+                            None => {
+                                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "dense map cannot contain null values",
+                                ))
+                            }
                         }
                     }
                     other => {

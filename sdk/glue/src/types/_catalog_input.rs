@@ -20,6 +20,8 @@ pub struct CatalogInput {
     pub create_database_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
     /// <p>Allows third-party engines to access data in Amazon S3 locations that are registered with Lake Formation.</p>
     pub allow_full_table_external_data_access: ::std::option::Option<crate::types::AllowFullTableExternalDataAccessEnum>,
+    /// <p>Overwrites existing Amazon Web Services Lake Formation permissions with <code>CatalogInput$CreateTableDefaultPermissions</code> and <code>CatalogInput$CreateDatabaseDefaultPermissions</code> for all child resources.</p>
+    pub overwrite_child_resource_permissions_with_default: ::std::option::Option<crate::types::OverwriteChildResourcePermissionsWithDefaultEnum>,
 }
 impl CatalogInput {
     /// <p>Description string, not more than 2048 bytes long, matching the URI address multi-line string pattern. A description of the catalog.</p>
@@ -58,6 +60,12 @@ impl CatalogInput {
     pub fn allow_full_table_external_data_access(&self) -> ::std::option::Option<&crate::types::AllowFullTableExternalDataAccessEnum> {
         self.allow_full_table_external_data_access.as_ref()
     }
+    /// <p>Overwrites existing Amazon Web Services Lake Formation permissions with <code>CatalogInput$CreateTableDefaultPermissions</code> and <code>CatalogInput$CreateDatabaseDefaultPermissions</code> for all child resources.</p>
+    pub fn overwrite_child_resource_permissions_with_default(
+        &self,
+    ) -> ::std::option::Option<&crate::types::OverwriteChildResourcePermissionsWithDefaultEnum> {
+        self.overwrite_child_resource_permissions_with_default.as_ref()
+    }
 }
 impl CatalogInput {
     /// Creates a new builder-style object to manufacture [`CatalogInput`](crate::types::CatalogInput).
@@ -78,6 +86,8 @@ pub struct CatalogInputBuilder {
     pub(crate) create_table_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
     pub(crate) create_database_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
     pub(crate) allow_full_table_external_data_access: ::std::option::Option<crate::types::AllowFullTableExternalDataAccessEnum>,
+    pub(crate) overwrite_child_resource_permissions_with_default:
+        ::std::option::Option<crate::types::OverwriteChildResourcePermissionsWithDefaultEnum>,
 }
 impl CatalogInputBuilder {
     /// <p>Description string, not more than 2048 bytes long, matching the URI address multi-line string pattern. A description of the catalog.</p>
@@ -216,6 +226,28 @@ impl CatalogInputBuilder {
     pub fn get_allow_full_table_external_data_access(&self) -> &::std::option::Option<crate::types::AllowFullTableExternalDataAccessEnum> {
         &self.allow_full_table_external_data_access
     }
+    /// <p>Overwrites existing Amazon Web Services Lake Formation permissions with <code>CatalogInput$CreateTableDefaultPermissions</code> and <code>CatalogInput$CreateDatabaseDefaultPermissions</code> for all child resources.</p>
+    pub fn overwrite_child_resource_permissions_with_default(
+        mut self,
+        input: crate::types::OverwriteChildResourcePermissionsWithDefaultEnum,
+    ) -> Self {
+        self.overwrite_child_resource_permissions_with_default = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Overwrites existing Amazon Web Services Lake Formation permissions with <code>CatalogInput$CreateTableDefaultPermissions</code> and <code>CatalogInput$CreateDatabaseDefaultPermissions</code> for all child resources.</p>
+    pub fn set_overwrite_child_resource_permissions_with_default(
+        mut self,
+        input: ::std::option::Option<crate::types::OverwriteChildResourcePermissionsWithDefaultEnum>,
+    ) -> Self {
+        self.overwrite_child_resource_permissions_with_default = input;
+        self
+    }
+    /// <p>Overwrites existing Amazon Web Services Lake Formation permissions with <code>CatalogInput$CreateTableDefaultPermissions</code> and <code>CatalogInput$CreateDatabaseDefaultPermissions</code> for all child resources.</p>
+    pub fn get_overwrite_child_resource_permissions_with_default(
+        &self,
+    ) -> &::std::option::Option<crate::types::OverwriteChildResourcePermissionsWithDefaultEnum> {
+        &self.overwrite_child_resource_permissions_with_default
+    }
     /// Consumes the builder and constructs a [`CatalogInput`](crate::types::CatalogInput).
     pub fn build(self) -> crate::types::CatalogInput {
         crate::types::CatalogInput {
@@ -227,6 +259,7 @@ impl CatalogInputBuilder {
             create_table_default_permissions: self.create_table_default_permissions,
             create_database_default_permissions: self.create_database_default_permissions,
             allow_full_table_external_data_access: self.allow_full_table_external_data_access,
+            overwrite_child_resource_permissions_with_default: self.overwrite_child_resource_permissions_with_default,
         }
     }
 }

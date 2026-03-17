@@ -28,8 +28,15 @@ where
                         let value = crate::protocol_serde::shape_package_group_allowed_repository_update::de_package_group_allowed_repository_update(
                             tokens, _value,
                         )?;
-                        if let Some(value) = value {
-                            map.insert(key, value);
+                        match value {
+                            Some(value) => {
+                                map.insert(key, value);
+                            }
+                            None => {
+                                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "dense map cannot contain null values",
+                                ))
+                            }
                         }
                     }
                     other => {

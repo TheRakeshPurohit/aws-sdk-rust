@@ -24,6 +24,10 @@ where
                             crate::protocol_serde::shape_parent_hyper_parameter_tuning_job::de_parent_hyper_parameter_tuning_job(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

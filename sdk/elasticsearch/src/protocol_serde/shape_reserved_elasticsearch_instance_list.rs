@@ -23,6 +23,10 @@ where
                         let value = crate::protocol_serde::shape_reserved_elasticsearch_instance::de_reserved_elasticsearch_instance(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

@@ -8,8 +8,10 @@ pub(crate) fn de_anomaly_detector_excluded_time_ranges(
     ) -> ::std::result::Result<::std::vec::Vec<crate::types::Range>, ::aws_smithy_cbor::decode::DeserializeError> {
         let value = match decoder.datatype()? {
             ::aws_smithy_cbor::data::Type::Null => {
-                decoder.null()?;
-                return ::std::result::Result::Ok(list);
+                return ::std::result::Result::Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+                    "dense list cannot contain null values",
+                    decoder.position(),
+                ))
             }
             _ => crate::protocol_serde::shape_range::de_range(decoder)?,
         };

@@ -21,6 +21,10 @@ where
                             crate::protocol_serde::shape_aws_waf_rule_group_rules_details::de_aws_waf_rule_group_rules_details(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

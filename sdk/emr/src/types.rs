@@ -161,6 +161,8 @@ pub use crate::types::_placement_group_config::PlacementGroupConfig;
 
 pub use crate::types::_cloud_watch_log_configuration::CloudWatchLogConfiguration;
 
+pub use crate::types::_s3_logging_configuration::S3LoggingConfiguration;
+
 pub use crate::types::_execution_engine_type::ExecutionEngineType;
 
 pub use crate::types::_instance_type_config::InstanceTypeConfig;
@@ -272,6 +274,10 @@ pub use crate::types::_scaling_action::ScalingAction;
 pub use crate::types::_scaling_trigger::ScalingTrigger;
 
 pub use crate::types::_auto_scaling_policy_state_change_reason_code::AutoScalingPolicyStateChangeReasonCode;
+
+pub use crate::types::_log_type::LogType;
+
+pub use crate::types::_log_upload_policy_value::LogUploadPolicyValue;
 
 pub use crate::types::_on_demand_capacity_reservation_usage_strategy::OnDemandCapacityReservationUsageStrategy;
 
@@ -479,6 +485,10 @@ mod _kerberos_attributes;
 
 mod _key_value;
 
+mod _log_type;
+
+mod _log_upload_policy_value;
+
 mod _managed_scaling_policy;
 
 mod _market_type;
@@ -538,6 +548,8 @@ mod _reconfiguration_type;
 mod _release_label_filter;
 
 mod _repo_upgrade_on_boot;
+
+mod _s3_logging_configuration;
 
 mod _s3_monitoring_configuration;
 

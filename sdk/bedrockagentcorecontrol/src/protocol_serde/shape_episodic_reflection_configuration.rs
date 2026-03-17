@@ -18,6 +18,10 @@ where
                         "namespaces" => {
                             builder = builder.set_namespaces(crate::protocol_serde::shape_namespaces_list::de_namespaces_list(tokens, _value)?);
                         }
+                        "namespaceTemplates" => {
+                            builder =
+                                builder.set_namespace_templates(crate::protocol_serde::shape_namespaces_list::de_namespaces_list(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -27,11 +31,7 @@ where
                     }
                 }
             }
-            Ok(Some(
-                crate::serde_util::episodic_reflection_configuration_correct_errors(builder)
-                    .build()
-                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
-            ))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

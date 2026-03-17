@@ -15,7 +15,10 @@ pub struct MemoryStrategy {
     /// <p>The type of the memory strategy.</p>
     pub r#type: crate::types::MemoryStrategyType,
     /// <p>The namespaces associated with the memory strategy.</p>
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub namespaces: ::std::vec::Vec<::std::string::String>,
+    /// <p>The namespaceTemplates associated with the memory strategy.</p>
+    pub namespace_templates: ::std::vec::Vec<::std::string::String>,
     /// <p>The timestamp when the memory strategy was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the memory strategy was last updated.</p>
@@ -47,9 +50,15 @@ impl MemoryStrategy {
         &self.r#type
     }
     /// <p>The namespaces associated with the memory strategy.</p>
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn namespaces(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.namespaces.deref()
+    }
+    /// <p>The namespaceTemplates associated with the memory strategy.</p>
+    pub fn namespace_templates(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.namespace_templates.deref()
     }
     /// <p>The timestamp when the memory strategy was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -73,6 +82,7 @@ impl ::std::fmt::Debug for MemoryStrategy {
         formatter.field("configuration", &self.configuration);
         formatter.field("r#type", &self.r#type);
         formatter.field("namespaces", &self.namespaces);
+        formatter.field("namespace_templates", &self.namespace_templates);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("status", &self.status);
@@ -96,6 +106,7 @@ pub struct MemoryStrategyBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::StrategyConfiguration>,
     pub(crate) r#type: ::std::option::Option<crate::types::MemoryStrategyType>,
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) namespace_templates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::MemoryStrategyStatus>,
@@ -179,6 +190,7 @@ impl MemoryStrategyBuilder {
     /// To override the contents of this collection use [`set_namespaces`](Self::set_namespaces).
     ///
     /// <p>The namespaces associated with the memory strategy.</p>
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn namespaces(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.namespaces.unwrap_or_default();
         v.push(input.into());
@@ -186,13 +198,35 @@ impl MemoryStrategyBuilder {
         self
     }
     /// <p>The namespaces associated with the memory strategy.</p>
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn set_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.namespaces = input;
         self
     }
     /// <p>The namespaces associated with the memory strategy.</p>
+    #[deprecated(note = "Use namespaceTemplates instead", since = "2026-03-02")]
     pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.namespaces
+    }
+    /// Appends an item to `namespace_templates`.
+    ///
+    /// To override the contents of this collection use [`set_namespace_templates`](Self::set_namespace_templates).
+    ///
+    /// <p>The namespaceTemplates associated with the memory strategy.</p>
+    pub fn namespace_templates(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.namespace_templates.unwrap_or_default();
+        v.push(input.into());
+        self.namespace_templates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The namespaceTemplates associated with the memory strategy.</p>
+    pub fn set_namespace_templates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.namespace_templates = input;
+        self
+    }
+    /// <p>The namespaceTemplates associated with the memory strategy.</p>
+    pub fn get_namespace_templates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.namespace_templates
     }
     /// <p>The timestamp when the memory strategy was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -242,6 +276,7 @@ impl MemoryStrategyBuilder {
     /// - [`name`](crate::types::builders::MemoryStrategyBuilder::name)
     /// - [`r#type`](crate::types::builders::MemoryStrategyBuilder::type)
     /// - [`namespaces`](crate::types::builders::MemoryStrategyBuilder::namespaces)
+    /// - [`namespace_templates`](crate::types::builders::MemoryStrategyBuilder::namespace_templates)
     pub fn build(self) -> ::std::result::Result<crate::types::MemoryStrategy, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::MemoryStrategy {
             strategy_id: self.strategy_id.ok_or_else(|| {
@@ -270,6 +305,12 @@ impl MemoryStrategyBuilder {
                     "namespaces was not specified but it is required when building MemoryStrategy",
                 )
             })?,
+            namespace_templates: self.namespace_templates.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "namespace_templates",
+                    "namespace_templates was not specified but it is required when building MemoryStrategy",
+                )
+            })?,
             created_at: self.created_at,
             updated_at: self.updated_at,
             status: self.status,
@@ -285,6 +326,7 @@ impl ::std::fmt::Debug for MemoryStrategyBuilder {
         formatter.field("configuration", &self.configuration);
         formatter.field("r#type", &self.r#type);
         formatter.field("namespaces", &self.namespaces);
+        formatter.field("namespace_templates", &self.namespace_templates);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("status", &self.status);

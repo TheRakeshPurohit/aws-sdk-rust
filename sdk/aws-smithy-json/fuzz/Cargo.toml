@@ -30,7 +30,7 @@ version = "0.62.5"
 
 [dependencies.aws-smithy-types]
 path = "../../aws-smithy-types"
-version = "1.4.6"
+version = "1.4.7"
 
 [dependencies.serde_json]
 version = "1"

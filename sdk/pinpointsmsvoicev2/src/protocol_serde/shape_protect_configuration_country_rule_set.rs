@@ -21,8 +21,15 @@ where
                         let value =
                             crate::protocol_serde::shape_protect_configuration_country_rule_set_information::de_protect_configuration_country_rule_set_information(tokens, _value)?
                         ;
-                        if let Some(value) = value {
-                            map.insert(key, value);
+                        match value {
+                            Some(value) => {
+                                map.insert(key, value);
+                            }
+                            None => {
+                                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "dense map cannot contain null values",
+                                ))
+                            }
                         }
                     }
                     other => {

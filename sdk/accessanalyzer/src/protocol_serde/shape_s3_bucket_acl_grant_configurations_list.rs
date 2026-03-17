@@ -24,6 +24,10 @@ where
                             crate::protocol_serde::shape_s3_bucket_acl_grant_configuration::de_s3_bucket_acl_grant_configuration(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

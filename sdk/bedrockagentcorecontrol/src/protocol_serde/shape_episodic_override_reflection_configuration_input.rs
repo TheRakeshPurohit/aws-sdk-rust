@@ -18,5 +18,14 @@ pub fn ser_episodic_override_reflection_configuration_input(
         }
         array_2.finish();
     }
+    if let Some(var_4) = &input.namespace_templates {
+        let mut array_5 = object.key("namespaceTemplates").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }

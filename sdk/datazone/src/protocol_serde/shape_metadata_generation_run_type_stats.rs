@@ -24,6 +24,10 @@ where
                             crate::protocol_serde::shape_metadata_generation_run_type_stat::de_metadata_generation_run_type_stat(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

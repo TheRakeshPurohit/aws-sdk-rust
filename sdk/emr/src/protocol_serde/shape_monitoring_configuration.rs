@@ -9,6 +9,12 @@ pub fn ser_monitoring_configuration(
         crate::protocol_serde::shape_cloud_watch_log_configuration::ser_cloud_watch_log_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.s3_logging_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("S3LoggingConfiguration").start_object();
+        crate::protocol_serde::shape_s3_logging_configuration::ser_s3_logging_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -31,6 +37,11 @@ where
                         "CloudWatchLogConfiguration" => {
                             builder = builder.set_cloud_watch_log_configuration(
                                 crate::protocol_serde::shape_cloud_watch_log_configuration::de_cloud_watch_log_configuration(tokens, _value)?,
+                            );
+                        }
+                        "S3LoggingConfiguration" => {
+                            builder = builder.set_s3_logging_configuration(
+                                crate::protocol_serde::shape_s3_logging_configuration::de_s3_logging_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

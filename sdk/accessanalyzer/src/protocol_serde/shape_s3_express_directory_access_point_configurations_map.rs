@@ -21,8 +21,15 @@ where
                         let value =
                             crate::protocol_serde::shape_s3_express_directory_access_point_configuration::de_s3_express_directory_access_point_configuration(tokens, _value)?
                         ;
-                        if let Some(value) = value {
-                            map.insert(key, value);
+                        match value {
+                            Some(value) => {
+                                map.insert(key, value);
+                            }
+                            None => {
+                                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "dense map cannot contain null values",
+                                ))
+                            }
                         }
                     }
                     other => {

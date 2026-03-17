@@ -20,6 +20,10 @@ where
                         let value = crate::protocol_serde::shape_prepared_statement_summary::de_prepared_statement_summary(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

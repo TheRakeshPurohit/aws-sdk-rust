@@ -119,6 +119,8 @@ pub use crate::types::_placement_group_config::PlacementGroupConfigBuilder;
 
 pub use crate::types::_cloud_watch_log_configuration::CloudWatchLogConfigurationBuilder;
 
+pub use crate::types::_s3_logging_configuration::S3LoggingConfigurationBuilder;
+
 pub use crate::types::_instance_type_config::InstanceTypeConfigBuilder;
 
 pub use crate::types::_spot_provisioning_specification::SpotProvisioningSpecificationBuilder;

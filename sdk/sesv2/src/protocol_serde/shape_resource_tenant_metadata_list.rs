@@ -20,6 +20,10 @@ where
                         let value = crate::protocol_serde::shape_resource_tenant_metadata::de_resource_tenant_metadata(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

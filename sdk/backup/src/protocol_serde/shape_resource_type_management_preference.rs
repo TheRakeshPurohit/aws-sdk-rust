@@ -16,8 +16,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
                         let value = ::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?;
-                        if let Some(value) = value {
-                            map.insert(key, value);
+                        match value {
+                            Some(value) => {
+                                map.insert(key, value);
+                            }
+                            None => {
+                                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "dense map cannot contain null values",
+                                ))
+                            }
                         }
                     }
                     other => {

@@ -21,6 +21,10 @@ where
                             crate::protocol_serde::shape_aws_ec2_security_group_ipv6_range::de_aws_ec2_security_group_ipv6_range(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

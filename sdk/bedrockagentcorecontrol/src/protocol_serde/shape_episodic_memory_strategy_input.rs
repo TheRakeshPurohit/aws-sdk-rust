@@ -18,11 +18,20 @@ pub fn ser_episodic_memory_strategy_input(
         }
         array_3.finish();
     }
-    if let Some(var_5) = &input.reflection_configuration {
+    if let Some(var_5) = &input.namespace_templates {
+        let mut array_6 = object.key("namespaceTemplates").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
+    if let Some(var_8) = &input.reflection_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("reflectionConfiguration").start_object();
-        crate::protocol_serde::shape_episodic_reflection_configuration_input::ser_episodic_reflection_configuration_input(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_9 = object.key("reflectionConfiguration").start_object();
+        crate::protocol_serde::shape_episodic_reflection_configuration_input::ser_episodic_reflection_configuration_input(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }

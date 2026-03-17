@@ -67,7 +67,7 @@ version = "1.11.6"
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-1-x"]
-version = "1.4.6"
+version = "1.4.7"
 
 [dependencies.aws-types]
 path = "../aws-types"
@@ -129,7 +129,7 @@ version = "1.11.6"
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["test-util"]
-version = "1.4.6"
+version = "1.4.7"
 
 [dev-dependencies.futures-util]
 version = "0.3.29"

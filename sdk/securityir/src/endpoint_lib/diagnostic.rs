@@ -34,6 +34,7 @@ impl DiagnosticCollector {
         }
     }
 
+    #[allow(dead_code)]
     pub(crate) fn take_last_error(&mut self) -> Option<Box<dyn Error + Send + Sync>> {
         self.last_error.take()
     }

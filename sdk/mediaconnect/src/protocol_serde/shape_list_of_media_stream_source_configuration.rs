@@ -24,6 +24,10 @@ where
                             crate::protocol_serde::shape_media_stream_source_configuration::de_media_stream_source_configuration(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

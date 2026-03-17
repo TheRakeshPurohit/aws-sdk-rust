@@ -20,6 +20,10 @@ where
                         let value = crate::protocol_serde::shape_icd10_cm_trait::de_icd10_cm_trait(tokens, _value)?;
                         if let Some(value) = value {
                             items.push(value);
+                        } else {
+                            return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                "dense list cannot contain null values",
+                            ));
                         }
                     }
                 }

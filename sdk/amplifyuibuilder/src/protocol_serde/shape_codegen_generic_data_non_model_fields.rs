@@ -19,8 +19,15 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
                         let value = crate::protocol_serde::shape_codegen_generic_data_field::de_codegen_generic_data_field(tokens, _value)?;
-                        if let Some(value) = value {
-                            map.insert(key, value);
+                        match value {
+                            Some(value) => {
+                                map.insert(key, value);
+                            }
+                            None => {
+                                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "dense map cannot contain null values",
+                                ))
+                            }
                         }
                     }
                     other => {

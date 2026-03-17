@@ -20,8 +20,15 @@ where
                         let key = key.to_unescaped().map(|u| crate::types::ResiliencyScoreType::from(u.as_ref()))?;
                         let value =
                             crate::protocol_serde::shape_scoring_component_resiliency_score::de_scoring_component_resiliency_score(tokens, _value)?;
-                        if let Some(value) = value {
-                            map.insert(key, value);
+                        match value {
+                            Some(value) => {
+                                map.insert(key, value);
+                            }
+                            None => {
+                                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "dense map cannot contain null values",
+                                ))
+                            }
                         }
                     }
                     other => {

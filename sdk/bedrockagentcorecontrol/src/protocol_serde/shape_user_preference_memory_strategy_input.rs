@@ -18,5 +18,14 @@ pub fn ser_user_preference_memory_strategy_input(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.namespace_templates {
+        let mut array_6 = object.key("namespaceTemplates").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }

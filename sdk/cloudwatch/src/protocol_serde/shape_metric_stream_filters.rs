@@ -8,8 +8,10 @@ pub(crate) fn de_metric_stream_filters(
     ) -> ::std::result::Result<::std::vec::Vec<crate::types::MetricStreamFilter>, ::aws_smithy_cbor::decode::DeserializeError> {
         let value = match decoder.datatype()? {
             ::aws_smithy_cbor::data::Type::Null => {
-                decoder.null()?;
-                return ::std::result::Result::Ok(list);
+                return ::std::result::Result::Err(::aws_smithy_cbor::decode::DeserializeError::custom(
+                    "dense list cannot contain null values",
+                    decoder.position(),
+                ))
             }
             _ => crate::protocol_serde::shape_metric_stream_filter::de_metric_stream_filter(decoder)?,
         };

@@ -28,12 +28,12 @@ version = "1.7.2"
 [dev-dependencies.aws-sdk-dynamodb]
 path = "../../sdk/dynamodb"
 features = ["test-util", "behavior-version-latest"]
-version = "1.108.0"
+version = "1.109.0"
 
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
 features = ["test-util", "behavior-version-latest"]
-version = "1.126.0"
+version = "1.127.0"
 
 [dev-dependencies.aws-smithy-observability]
 path = "../../sdk/aws-smithy-observability"
@@ -50,7 +50,7 @@ version = "1.10.3"
 
 [dev-dependencies.aws-smithy-types]
 path = "../../sdk/aws-smithy-types"
-version = "1.4.6"
+version = "1.4.7"
 
 [dev-dependencies.opentelemetry]
 version = "0.26.0"

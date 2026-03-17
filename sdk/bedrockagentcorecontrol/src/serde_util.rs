@@ -2371,6 +2371,9 @@ pub(crate) fn memory_strategy_correct_errors(
     if builder.namespaces.is_none() {
         builder.namespaces = Some(Default::default())
     }
+    if builder.namespace_templates.is_none() {
+        builder.namespace_templates = Some(Default::default())
+    }
     builder
 }
 
@@ -2547,15 +2550,6 @@ pub(crate) fn api_gateway_tool_override_correct_errors(
     }
     if builder.method.is_none() {
         builder.method = "no value was set".parse::<crate::types::RestApiMethod>().ok()
-    }
-    builder
-}
-
-pub(crate) fn episodic_reflection_configuration_correct_errors(
-    mut builder: crate::types::builders::EpisodicReflectionConfigurationBuilder,
-) -> crate::types::builders::EpisodicReflectionConfigurationBuilder {
-    if builder.namespaces.is_none() {
-        builder.namespaces = Some(Default::default())
     }
     builder
 }
