@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ac4Settings {
-    /// Specify the average bitrate in bits per second. Leave blank to use the default bitrate for the coding mode you select according to ETSI TS 103 190. Valid bitrates for coding mode 2.0 (stereo): 192000, 256000, or 320000. Valid bitrates for coding mode 5.1 (3/2 with LFE): 512000. Valid bitrates for coding mode 5.1.4 (immersive): 512000, 768000, or 1024000.
+    /// Specify the average bitrate in bits per second. Leave blank to use the default bitrate for the coding mode you select according to ETSI TS 103 190. Valid bitrates for coding mode 2.0 (stereo): 48000, 64000, 96000, 128000, 144000, 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000. Valid bitrates for coding mode 5.1 (3/2 with LFE): 96000, 128000, 144000, 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000. Valid bitrates for coding mode 5.1.4 (immersive): 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000.
     pub bitrate: ::std::option::Option<i32>,
     /// Specify the bitstream mode for the AC-4 stream that the encoder emits. For more information about the AC-4 bitstream mode, see ETSI TS 103 190. Maps to dlb_paec_ac4_bed_classifier in the encoder implementation. - COMPLETE_MAIN: Complete Main (standard mix) - EMERGENCY: Stereo Emergency content
     pub bitstream_mode: ::std::option::Option<crate::types::Ac4BitstreamMode>,
@@ -32,7 +32,7 @@ pub struct Ac4Settings {
     pub stereo_downmix: ::std::option::Option<crate::types::Ac4StereoDownmix>,
 }
 impl Ac4Settings {
-    /// Specify the average bitrate in bits per second. Leave blank to use the default bitrate for the coding mode you select according to ETSI TS 103 190. Valid bitrates for coding mode 2.0 (stereo): 192000, 256000, or 320000. Valid bitrates for coding mode 5.1 (3/2 with LFE): 512000. Valid bitrates for coding mode 5.1.4 (immersive): 512000, 768000, or 1024000.
+    /// Specify the average bitrate in bits per second. Leave blank to use the default bitrate for the coding mode you select according to ETSI TS 103 190. Valid bitrates for coding mode 2.0 (stereo): 48000, 64000, 96000, 128000, 144000, 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000. Valid bitrates for coding mode 5.1 (3/2 with LFE): 96000, 128000, 144000, 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000. Valid bitrates for coding mode 5.1.4 (immersive): 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000.
     pub fn bitrate(&self) -> ::std::option::Option<i32> {
         self.bitrate
     }
@@ -111,17 +111,17 @@ pub struct Ac4SettingsBuilder {
     pub(crate) stereo_downmix: ::std::option::Option<crate::types::Ac4StereoDownmix>,
 }
 impl Ac4SettingsBuilder {
-    /// Specify the average bitrate in bits per second. Leave blank to use the default bitrate for the coding mode you select according to ETSI TS 103 190. Valid bitrates for coding mode 2.0 (stereo): 192000, 256000, or 320000. Valid bitrates for coding mode 5.1 (3/2 with LFE): 512000. Valid bitrates for coding mode 5.1.4 (immersive): 512000, 768000, or 1024000.
+    /// Specify the average bitrate in bits per second. Leave blank to use the default bitrate for the coding mode you select according to ETSI TS 103 190. Valid bitrates for coding mode 2.0 (stereo): 48000, 64000, 96000, 128000, 144000, 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000. Valid bitrates for coding mode 5.1 (3/2 with LFE): 96000, 128000, 144000, 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000. Valid bitrates for coding mode 5.1.4 (immersive): 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000.
     pub fn bitrate(mut self, input: i32) -> Self {
         self.bitrate = ::std::option::Option::Some(input);
         self
     }
-    /// Specify the average bitrate in bits per second. Leave blank to use the default bitrate for the coding mode you select according to ETSI TS 103 190. Valid bitrates for coding mode 2.0 (stereo): 192000, 256000, or 320000. Valid bitrates for coding mode 5.1 (3/2 with LFE): 512000. Valid bitrates for coding mode 5.1.4 (immersive): 512000, 768000, or 1024000.
+    /// Specify the average bitrate in bits per second. Leave blank to use the default bitrate for the coding mode you select according to ETSI TS 103 190. Valid bitrates for coding mode 2.0 (stereo): 48000, 64000, 96000, 128000, 144000, 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000. Valid bitrates for coding mode 5.1 (3/2 with LFE): 96000, 128000, 144000, 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000. Valid bitrates for coding mode 5.1.4 (immersive): 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000.
     pub fn set_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.bitrate = input;
         self
     }
-    /// Specify the average bitrate in bits per second. Leave blank to use the default bitrate for the coding mode you select according to ETSI TS 103 190. Valid bitrates for coding mode 2.0 (stereo): 192000, 256000, or 320000. Valid bitrates for coding mode 5.1 (3/2 with LFE): 512000. Valid bitrates for coding mode 5.1.4 (immersive): 512000, 768000, or 1024000.
+    /// Specify the average bitrate in bits per second. Leave blank to use the default bitrate for the coding mode you select according to ETSI TS 103 190. Valid bitrates for coding mode 2.0 (stereo): 48000, 64000, 96000, 128000, 144000, 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000. Valid bitrates for coding mode 5.1 (3/2 with LFE): 96000, 128000, 144000, 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000. Valid bitrates for coding mode 5.1.4 (immersive): 192000, 256000, 288000, 320000, 384000, 448000, 512000, or 768000.
     pub fn get_bitrate(&self) -> &::std::option::Option<i32> {
         &self.bitrate
     }

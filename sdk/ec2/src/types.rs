@@ -2397,6 +2397,8 @@ pub use crate::types::_efa_info::EfaInfo;
 
 pub use crate::types::_flexible_ena_queues_support::FlexibleEnaQueuesSupport;
 
+pub use crate::types::_default_connection_tracking_configuration::DefaultConnectionTrackingConfiguration;
+
 pub use crate::types::_boot_mode_type::BootModeType;
 
 pub use crate::types::_pool_cidr_block::PoolCidrBlock;
@@ -3158,6 +3160,8 @@ mod _data_response;
 mod _datafeed_subscription_state;
 
 mod _declarative_policies_report;
+
+mod _default_connection_tracking_configuration;
 
 mod _default_http_tokens_enforced_state;
 

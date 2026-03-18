@@ -5475,6 +5475,8 @@ pub(crate) mod shape_core_count_list;
 
 pub(crate) mod shape_cpu_performance_factor;
 
+pub(crate) mod shape_default_connection_tracking_configuration;
+
 pub(crate) mod shape_describe_fleet_error;
 
 pub(crate) mod shape_describe_fleets_instances;

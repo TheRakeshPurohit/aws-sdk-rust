@@ -34,6 +34,8 @@ pub struct NetworkInfo {
     pub bandwidth_weightings: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthWeightingType>>,
     /// <p>Indicates whether changing the number of ENA queues is supported.</p>
     pub flexible_ena_queues_support: ::std::option::Option<crate::types::FlexibleEnaQueuesSupport>,
+    /// <p>Indicates conntrack information for the instance type</p>
+    pub connection_tracking_configuration: ::std::option::Option<crate::types::DefaultConnectionTrackingConfiguration>,
     /// <p>Indicates whether secondary interface attachments from secondary network are supported.</p>
     pub secondary_network_supported: ::std::option::Option<bool>,
     /// <p>The maximum number of secondary interfaces for the instance type.</p>
@@ -106,6 +108,10 @@ impl NetworkInfo {
     pub fn flexible_ena_queues_support(&self) -> ::std::option::Option<&crate::types::FlexibleEnaQueuesSupport> {
         self.flexible_ena_queues_support.as_ref()
     }
+    /// <p>Indicates conntrack information for the instance type</p>
+    pub fn connection_tracking_configuration(&self) -> ::std::option::Option<&crate::types::DefaultConnectionTrackingConfiguration> {
+        self.connection_tracking_configuration.as_ref()
+    }
     /// <p>Indicates whether secondary interface attachments from secondary network are supported.</p>
     pub fn secondary_network_supported(&self) -> ::std::option::Option<bool> {
         self.secondary_network_supported
@@ -145,6 +151,7 @@ pub struct NetworkInfoBuilder {
     pub(crate) ena_srd_supported: ::std::option::Option<bool>,
     pub(crate) bandwidth_weightings: ::std::option::Option<::std::vec::Vec<crate::types::BandwidthWeightingType>>,
     pub(crate) flexible_ena_queues_support: ::std::option::Option<crate::types::FlexibleEnaQueuesSupport>,
+    pub(crate) connection_tracking_configuration: ::std::option::Option<crate::types::DefaultConnectionTrackingConfiguration>,
     pub(crate) secondary_network_supported: ::std::option::Option<bool>,
     pub(crate) maximum_secondary_network_interfaces: ::std::option::Option<i32>,
     pub(crate) ipv4_addresses_per_secondary_interface: ::std::option::Option<i32>,
@@ -372,6 +379,23 @@ impl NetworkInfoBuilder {
     pub fn get_flexible_ena_queues_support(&self) -> &::std::option::Option<crate::types::FlexibleEnaQueuesSupport> {
         &self.flexible_ena_queues_support
     }
+    /// <p>Indicates conntrack information for the instance type</p>
+    pub fn connection_tracking_configuration(mut self, input: crate::types::DefaultConnectionTrackingConfiguration) -> Self {
+        self.connection_tracking_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates conntrack information for the instance type</p>
+    pub fn set_connection_tracking_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::DefaultConnectionTrackingConfiguration>,
+    ) -> Self {
+        self.connection_tracking_configuration = input;
+        self
+    }
+    /// <p>Indicates conntrack information for the instance type</p>
+    pub fn get_connection_tracking_configuration(&self) -> &::std::option::Option<crate::types::DefaultConnectionTrackingConfiguration> {
+        &self.connection_tracking_configuration
+    }
     /// <p>Indicates whether secondary interface attachments from secondary network are supported.</p>
     pub fn secondary_network_supported(mut self, input: bool) -> Self {
         self.secondary_network_supported = ::std::option::Option::Some(input);
@@ -432,6 +456,7 @@ impl NetworkInfoBuilder {
             ena_srd_supported: self.ena_srd_supported,
             bandwidth_weightings: self.bandwidth_weightings,
             flexible_ena_queues_support: self.flexible_ena_queues_support,
+            connection_tracking_configuration: self.connection_tracking_configuration,
             secondary_network_supported: self.secondary_network_supported,
             maximum_secondary_network_interfaces: self.maximum_secondary_network_interfaces,
             ipv4_addresses_per_secondary_interface: self.ipv4_addresses_per_secondary_interface,

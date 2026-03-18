@@ -1563,6 +1563,8 @@ pub use crate::types::_ebs_optimized_info::EbsOptimizedInfoBuilder;
 
 pub use crate::types::_efa_info::EfaInfoBuilder;
 
+pub use crate::types::_default_connection_tracking_configuration::DefaultConnectionTrackingConfigurationBuilder;
+
 pub use crate::types::_pool_cidr_block::PoolCidrBlockBuilder;
 
 pub use crate::types::_region_geography::RegionGeographyBuilder;
