@@ -15,6 +15,10 @@ pub struct CreateBrowserInput {
     pub recording: ::std::option::Option<crate::types::RecordingConfig>,
     /// <p>The browser signing configuration that enables cryptographic agent identification using HTTP message signatures for web bot authentication.</p>
     pub browser_signing: ::std::option::Option<crate::types::BrowserSigningConfigInput>,
+    /// <p>A list of enterprise policy files for the browser.</p>
+    pub enterprise_policies: ::std::option::Option<::std::vec::Vec<crate::types::BrowserEnterprisePolicy>>,
+    /// <p>A list of certificates to install in the browser.</p>
+    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request but does not return an error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A map of tag keys and values to assign to the browser. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
@@ -45,6 +49,18 @@ impl CreateBrowserInput {
     pub fn browser_signing(&self) -> ::std::option::Option<&crate::types::BrowserSigningConfigInput> {
         self.browser_signing.as_ref()
     }
+    /// <p>A list of enterprise policy files for the browser.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enterprise_policies.is_none()`.
+    pub fn enterprise_policies(&self) -> &[crate::types::BrowserEnterprisePolicy] {
+        self.enterprise_policies.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of certificates to install in the browser.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::Certificate] {
+        self.certificates.as_deref().unwrap_or_default()
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request but does not return an error.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -63,6 +79,8 @@ impl ::std::fmt::Debug for CreateBrowserInput {
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("recording", &self.recording);
         formatter.field("browser_signing", &self.browser_signing);
+        formatter.field("enterprise_policies", &self.enterprise_policies);
+        formatter.field("certificates", &self.certificates);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -85,6 +103,8 @@ pub struct CreateBrowserInputBuilder {
     pub(crate) network_configuration: ::std::option::Option<crate::types::BrowserNetworkConfiguration>,
     pub(crate) recording: ::std::option::Option<crate::types::RecordingConfig>,
     pub(crate) browser_signing: ::std::option::Option<crate::types::BrowserSigningConfigInput>,
+    pub(crate) enterprise_policies: ::std::option::Option<::std::vec::Vec<crate::types::BrowserEnterprisePolicy>>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -175,6 +195,46 @@ impl CreateBrowserInputBuilder {
     pub fn get_browser_signing(&self) -> &::std::option::Option<crate::types::BrowserSigningConfigInput> {
         &self.browser_signing
     }
+    /// Appends an item to `enterprise_policies`.
+    ///
+    /// To override the contents of this collection use [`set_enterprise_policies`](Self::set_enterprise_policies).
+    ///
+    /// <p>A list of enterprise policy files for the browser.</p>
+    pub fn enterprise_policies(mut self, input: crate::types::BrowserEnterprisePolicy) -> Self {
+        let mut v = self.enterprise_policies.unwrap_or_default();
+        v.push(input);
+        self.enterprise_policies = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of enterprise policy files for the browser.</p>
+    pub fn set_enterprise_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrowserEnterprisePolicy>>) -> Self {
+        self.enterprise_policies = input;
+        self
+    }
+    /// <p>A list of enterprise policy files for the browser.</p>
+    pub fn get_enterprise_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserEnterprisePolicy>> {
+        &self.enterprise_policies
+    }
+    /// Appends an item to `certificates`.
+    ///
+    /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
+    ///
+    /// <p>A list of certificates to install in the browser.</p>
+    pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
+        let mut v = self.certificates.unwrap_or_default();
+        v.push(input);
+        self.certificates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of certificates to install in the browser.</p>
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
+        self.certificates = input;
+        self
+    }
+    /// <p>A list of certificates to install in the browser.</p>
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        &self.certificates
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request but does not return an error.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -220,6 +280,8 @@ impl CreateBrowserInputBuilder {
             network_configuration: self.network_configuration,
             recording: self.recording,
             browser_signing: self.browser_signing,
+            enterprise_policies: self.enterprise_policies,
+            certificates: self.certificates,
             client_token: self.client_token,
             tags: self.tags,
         })
@@ -234,6 +296,8 @@ impl ::std::fmt::Debug for CreateBrowserInputBuilder {
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("recording", &self.recording);
         formatter.field("browser_signing", &self.browser_signing);
+        formatter.field("enterprise_policies", &self.enterprise_policies);
+        formatter.field("certificates", &self.certificates);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.finish()

@@ -3285,6 +3285,8 @@ pub(crate) mod shape_request_spot_launch_specification;
 
 pub(crate) mod shape_reservation_fleet_instance_specification;
 
+pub(crate) mod shape_reserved_capacity_options_request;
+
 pub(crate) mod shape_reserved_instance_limit_price;
 
 pub(crate) mod shape_reserved_instances_configuration;
@@ -5313,6 +5315,8 @@ pub(crate) mod shape_region_geography_list;
 
 pub(crate) mod shape_regional_summary_list;
 
+pub(crate) mod shape_reserved_capacity_options;
+
 pub(crate) mod shape_reserved_instances_modification_result_list;
 
 pub(crate) mod shape_reserved_intances_ids;
@@ -5596,6 +5600,8 @@ pub(crate) mod shape_recurring_charge;
 pub(crate) mod shape_region_geography;
 
 pub(crate) mod shape_regional_summary;
+
+pub(crate) mod shape_reservation_type_list;
 
 pub(crate) mod shape_reserved_instances_id;
 

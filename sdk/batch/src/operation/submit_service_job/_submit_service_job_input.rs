@@ -17,6 +17,10 @@ pub struct SubmitServiceJobInput {
     pub service_job_type: ::std::option::Option<crate::types::ServiceJobType>,
     /// <p>The share identifier for the service job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
     pub share_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The quota share for the service job. Don't specify this parameter if the job queue doesn't have a quota share scheduling policy. If the job queue has a quota share scheduling policy, then this parameter must be specified.</p>
+    pub quota_share_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the service job behavior when preempted.</p>
+    pub preemption_configuration: ::std::option::Option<crate::types::ServiceJobPreemptionConfiguration>,
     /// <p>The timeout configuration for the service job. If none is specified, Batch defers to the default timeout of the underlying service handling the job.</p>
     pub timeout_config: ::std::option::Option<crate::types::ServiceJobTimeout>,
     /// <p>The tags that you apply to the service job request. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your Batch resources</a>.</p>
@@ -53,6 +57,14 @@ impl SubmitServiceJobInput {
     pub fn share_identifier(&self) -> ::std::option::Option<&str> {
         self.share_identifier.as_deref()
     }
+    /// <p>The quota share for the service job. Don't specify this parameter if the job queue doesn't have a quota share scheduling policy. If the job queue has a quota share scheduling policy, then this parameter must be specified.</p>
+    pub fn quota_share_name(&self) -> ::std::option::Option<&str> {
+        self.quota_share_name.as_deref()
+    }
+    /// <p>Specifies the service job behavior when preempted.</p>
+    pub fn preemption_configuration(&self) -> ::std::option::Option<&crate::types::ServiceJobPreemptionConfiguration> {
+        self.preemption_configuration.as_ref()
+    }
     /// <p>The timeout configuration for the service job. If none is specified, Batch defers to the default timeout of the underlying service handling the job.</p>
     pub fn timeout_config(&self) -> ::std::option::Option<&crate::types::ServiceJobTimeout> {
         self.timeout_config.as_ref()
@@ -84,6 +96,8 @@ pub struct SubmitServiceJobInputBuilder {
     pub(crate) service_request_payload: ::std::option::Option<::std::string::String>,
     pub(crate) service_job_type: ::std::option::Option<crate::types::ServiceJobType>,
     pub(crate) share_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) quota_share_name: ::std::option::Option<::std::string::String>,
+    pub(crate) preemption_configuration: ::std::option::Option<crate::types::ServiceJobPreemptionConfiguration>,
     pub(crate) timeout_config: ::std::option::Option<crate::types::ServiceJobTimeout>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -191,6 +205,34 @@ impl SubmitServiceJobInputBuilder {
     pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.share_identifier
     }
+    /// <p>The quota share for the service job. Don't specify this parameter if the job queue doesn't have a quota share scheduling policy. If the job queue has a quota share scheduling policy, then this parameter must be specified.</p>
+    pub fn quota_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quota_share_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The quota share for the service job. Don't specify this parameter if the job queue doesn't have a quota share scheduling policy. If the job queue has a quota share scheduling policy, then this parameter must be specified.</p>
+    pub fn set_quota_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.quota_share_name = input;
+        self
+    }
+    /// <p>The quota share for the service job. Don't specify this parameter if the job queue doesn't have a quota share scheduling policy. If the job queue has a quota share scheduling policy, then this parameter must be specified.</p>
+    pub fn get_quota_share_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_share_name
+    }
+    /// <p>Specifies the service job behavior when preempted.</p>
+    pub fn preemption_configuration(mut self, input: crate::types::ServiceJobPreemptionConfiguration) -> Self {
+        self.preemption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the service job behavior when preempted.</p>
+    pub fn set_preemption_configuration(mut self, input: ::std::option::Option<crate::types::ServiceJobPreemptionConfiguration>) -> Self {
+        self.preemption_configuration = input;
+        self
+    }
+    /// <p>Specifies the service job behavior when preempted.</p>
+    pub fn get_preemption_configuration(&self) -> &::std::option::Option<crate::types::ServiceJobPreemptionConfiguration> {
+        &self.preemption_configuration
+    }
     /// <p>The timeout configuration for the service job. If none is specified, Batch defers to the default timeout of the underlying service handling the job.</p>
     pub fn timeout_config(mut self, input: crate::types::ServiceJobTimeout) -> Self {
         self.timeout_config = ::std::option::Option::Some(input);
@@ -251,6 +293,8 @@ impl SubmitServiceJobInputBuilder {
             service_request_payload: self.service_request_payload,
             service_job_type: self.service_job_type,
             share_identifier: self.share_identifier,
+            quota_share_name: self.quota_share_name,
+            preemption_configuration: self.preemption_configuration,
             timeout_config: self.timeout_config,
             tags: self.tags,
             client_token: self.client_token,

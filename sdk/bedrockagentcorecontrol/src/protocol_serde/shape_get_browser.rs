@@ -148,6 +148,9 @@ pub(crate) fn de_get_browser(
                         crate::protocol_serde::shape_browser_signing_config_output::de_browser_signing_config_output(tokens, _value)?,
                     );
                 }
+                "certificates" => {
+                    builder = builder.set_certificates(crate::protocol_serde::shape_certificates::de_certificates(tokens, _value)?);
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -159,6 +162,11 @@ pub(crate) fn de_get_browser(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                    );
+                }
+                "enterprisePolicies" => {
+                    builder = builder.set_enterprise_policies(
+                        crate::protocol_serde::shape_browser_enterprise_policies::de_browser_enterprise_policies(tokens, _value)?,
                     );
                 }
                 "executionRoleArn" => {

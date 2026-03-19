@@ -27,6 +27,11 @@ where
                                 crate::protocol_serde::shape_fairshare_utilization_detail::de_fairshare_utilization_detail(tokens, _value)?,
                             );
                         }
+                        "quotaShareUtilization" => {
+                            builder = builder.set_quota_share_utilization(
+                                crate::protocol_serde::shape_quota_share_utilization_detail::de_quota_share_utilization_detail(tokens, _value)?,
+                            );
+                        }
                         "lastUpdatedAt" => {
                             builder = builder.set_last_updated_at(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

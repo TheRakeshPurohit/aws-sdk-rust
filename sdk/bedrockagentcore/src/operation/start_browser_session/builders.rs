@@ -251,6 +251,44 @@ impl StartBrowserSessionFluentBuilder {
     pub fn get_proxy_configuration(&self) -> &::std::option::Option<crate::types::ProxyConfiguration> {
         self.inner.get_proxy_configuration()
     }
+    ///
+    /// Appends an item to `enterprisePolicies`.
+    ///
+    /// To override the contents of this collection use [`set_enterprise_policies`](Self::set_enterprise_policies).
+    ///
+    /// <p>A list of files containing enterprise policies for the browser.</p>
+    pub fn enterprise_policies(mut self, input: crate::types::BrowserEnterprisePolicy) -> Self {
+        self.inner = self.inner.enterprise_policies(input);
+        self
+    }
+    /// <p>A list of files containing enterprise policies for the browser.</p>
+    pub fn set_enterprise_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrowserEnterprisePolicy>>) -> Self {
+        self.inner = self.inner.set_enterprise_policies(input);
+        self
+    }
+    /// <p>A list of files containing enterprise policies for the browser.</p>
+    pub fn get_enterprise_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserEnterprisePolicy>> {
+        self.inner.get_enterprise_policies()
+    }
+    ///
+    /// Appends an item to `certificates`.
+    ///
+    /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
+    ///
+    /// <p>A list of certificates to install in the browser session.</p>
+    pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
+        self.inner = self.inner.certificates(input);
+        self
+    }
+    /// <p>A list of certificates to install in the browser session.</p>
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
+        self.inner = self.inner.set_certificates(input);
+        self
+    }
+    /// <p>A list of certificates to install in the browser session.</p>
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        self.inner.get_certificates()
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

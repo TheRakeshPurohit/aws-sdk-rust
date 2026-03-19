@@ -526,6 +526,15 @@ pub(crate) fn branch_correct_errors(mut builder: crate::types::builders::BranchB
     builder
 }
 
+pub(crate) fn browser_enterprise_policy_correct_errors(
+    mut builder: crate::types::builders::BrowserEnterprisePolicyBuilder,
+) -> crate::types::builders::BrowserEnterprisePolicyBuilder {
+    if builder.location.is_none() {
+        builder.location = Some(crate::types::ResourceLocation::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn browser_extension_correct_errors(
     mut builder: crate::types::builders::BrowserExtensionBuilder,
 ) -> crate::types::builders::BrowserExtensionBuilder {
@@ -549,6 +558,13 @@ pub(crate) fn browser_session_summary_correct_errors(
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn certificate_correct_errors(mut builder: crate::types::builders::CertificateBuilder) -> crate::types::builders::CertificateBuilder {
+    if builder.location.is_none() {
+        builder.location = Some(crate::types::CertificateLocation::Unknown)
     }
     builder
 }
@@ -712,6 +728,15 @@ pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3
     }
     if builder.prefix.is_none() {
         builder.prefix = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn secrets_manager_location_correct_errors(
+    mut builder: crate::types::builders::SecretsManagerLocationBuilder,
+) -> crate::types::builders::SecretsManagerLocationBuilder {
+    if builder.secret_arn.is_none() {
+        builder.secret_arn = Some(Default::default())
     }
     builder
 }

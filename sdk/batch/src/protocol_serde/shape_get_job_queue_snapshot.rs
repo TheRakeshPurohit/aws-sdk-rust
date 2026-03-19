@@ -102,6 +102,11 @@ pub(crate) fn de_get_job_queue_snapshot(
                         tokens, _value,
                     )?);
                 }
+                "frontOfQuotaShares" => {
+                    builder = builder.set_front_of_quota_shares(
+                        crate::protocol_serde::shape_front_of_quota_shares_detail::de_front_of_quota_shares_detail(tokens, _value)?,
+                    );
+                }
                 "queueUtilization" => {
                     builder = builder.set_queue_utilization(
                         crate::protocol_serde::shape_queue_snapshot_utilization_detail::de_queue_snapshot_utilization_detail(tokens, _value)?,

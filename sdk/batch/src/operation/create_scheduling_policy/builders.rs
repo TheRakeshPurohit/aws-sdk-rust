@@ -122,17 +122,31 @@ impl CreateSchedulingPolicyFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The fair-share scheduling policy details.</p>
+    /// <p>The quota share scheduling policy details. Only one of fairsharePolicy or quotaSharePolicy can be set. Once set, this policy type cannot be removed or changed to a fairSharePolicy.</p>
+    pub fn quota_share_policy(mut self, input: crate::types::QuotaSharePolicy) -> Self {
+        self.inner = self.inner.quota_share_policy(input);
+        self
+    }
+    /// <p>The quota share scheduling policy details. Only one of fairsharePolicy or quotaSharePolicy can be set. Once set, this policy type cannot be removed or changed to a fairSharePolicy.</p>
+    pub fn set_quota_share_policy(mut self, input: ::std::option::Option<crate::types::QuotaSharePolicy>) -> Self {
+        self.inner = self.inner.set_quota_share_policy(input);
+        self
+    }
+    /// <p>The quota share scheduling policy details. Only one of fairsharePolicy or quotaSharePolicy can be set. Once set, this policy type cannot be removed or changed to a fairSharePolicy.</p>
+    pub fn get_quota_share_policy(&self) -> &::std::option::Option<crate::types::QuotaSharePolicy> {
+        self.inner.get_quota_share_policy()
+    }
+    /// <p>The fair-share scheduling policy details. Only one of fairsharePolicy or quotaSharePolicy can be set. Once set, this policy type cannot be removed or changed to a quotaSharePolicy.</p>
     pub fn fairshare_policy(mut self, input: crate::types::FairsharePolicy) -> Self {
         self.inner = self.inner.fairshare_policy(input);
         self
     }
-    /// <p>The fair-share scheduling policy details.</p>
+    /// <p>The fair-share scheduling policy details. Only one of fairsharePolicy or quotaSharePolicy can be set. Once set, this policy type cannot be removed or changed to a quotaSharePolicy.</p>
     pub fn set_fairshare_policy(mut self, input: ::std::option::Option<crate::types::FairsharePolicy>) -> Self {
         self.inner = self.inner.set_fairshare_policy(input);
         self
     }
-    /// <p>The fair-share scheduling policy details.</p>
+    /// <p>The fair-share scheduling policy details. Only one of fairsharePolicy or quotaSharePolicy can be set. Once set, this policy type cannot be removed or changed to a quotaSharePolicy.</p>
     pub fn get_fairshare_policy(&self) -> &::std::option::Option<crate::types::FairsharePolicy> {
         self.inner.get_fairshare_policy()
     }

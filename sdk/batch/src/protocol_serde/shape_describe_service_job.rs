@@ -152,6 +152,23 @@ pub(crate) fn de_describe_service_job(
                         tokens, _value,
                     )?);
                 }
+                "preemptionConfiguration" => {
+                    builder = builder.set_preemption_configuration(
+                        crate::protocol_serde::shape_service_job_preemption_configuration::de_service_job_preemption_configuration(tokens, _value)?,
+                    );
+                }
+                "preemptionSummary" => {
+                    builder = builder.set_preemption_summary(
+                        crate::protocol_serde::shape_service_job_preemption_summary::de_service_job_preemption_summary(tokens, _value)?,
+                    );
+                }
+                "quotaShareName" => {
+                    builder = builder.set_quota_share_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "retryStrategy" => {
                     builder = builder.set_retry_strategy(crate::protocol_serde::shape_service_job_retry_strategy::de_service_job_retry_strategy(
                         tokens, _value,

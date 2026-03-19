@@ -11,6 +11,8 @@ pub struct CreateCodeInterpreterInput {
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The network configuration for the code interpreter. This configuration specifies the network mode for the code interpreter.</p>
     pub network_configuration: ::std::option::Option<crate::types::CodeInterpreterNetworkConfiguration>,
+    /// <p>A list of certificates to install in the code interpreter.</p>
+    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request but does not return an error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A map of tag keys and values to assign to the code interpreter. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
@@ -33,6 +35,12 @@ impl CreateCodeInterpreterInput {
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::CodeInterpreterNetworkConfiguration> {
         self.network_configuration.as_ref()
     }
+    /// <p>A list of certificates to install in the code interpreter.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::Certificate] {
+        self.certificates.as_deref().unwrap_or_default()
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request but does not return an error.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -49,6 +57,7 @@ impl ::std::fmt::Debug for CreateCodeInterpreterInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.field("network_configuration", &self.network_configuration);
+        formatter.field("certificates", &self.certificates);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -69,6 +78,7 @@ pub struct CreateCodeInterpreterInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::CodeInterpreterNetworkConfiguration>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -131,6 +141,26 @@ impl CreateCodeInterpreterInputBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::CodeInterpreterNetworkConfiguration> {
         &self.network_configuration
     }
+    /// Appends an item to `certificates`.
+    ///
+    /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
+    ///
+    /// <p>A list of certificates to install in the code interpreter.</p>
+    pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
+        let mut v = self.certificates.unwrap_or_default();
+        v.push(input);
+        self.certificates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of certificates to install in the code interpreter.</p>
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
+        self.certificates = input;
+        self
+    }
+    /// <p>A list of certificates to install in the code interpreter.</p>
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        &self.certificates
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request but does not return an error.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -175,6 +205,7 @@ impl CreateCodeInterpreterInputBuilder {
             description: self.description,
             execution_role_arn: self.execution_role_arn,
             network_configuration: self.network_configuration,
+            certificates: self.certificates,
             client_token: self.client_token,
             tags: self.tags,
         })
@@ -187,6 +218,7 @@ impl ::std::fmt::Debug for CreateCodeInterpreterInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.field("network_configuration", &self.network_configuration);
+        formatter.field("certificates", &self.certificates);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.finish()

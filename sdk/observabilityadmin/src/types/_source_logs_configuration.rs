@@ -6,6 +6,8 @@
 pub struct SourceLogsConfiguration {
     /// <p>The selection criteria that specifies which source log groups to centralize. The selection criteria uses the same format as OAM link filters.</p>
     pub log_group_selection_criteria: ::std::string::String,
+    /// <p>The selection criteria that specifies which data sources to centralize. The selection criteria uses the same filter expression format as <code>LogGroupSelectionCriteria</code>, but operates on <code>DataSourceName</code> and <code>DataSourceType</code> operands. When both <code>LogGroupSelectionCriteria</code> and <code>DataSourceSelectionCriteria</code> are specified, a log event must match both criteria to be centralized.</p>
+    pub data_source_selection_criteria: ::std::option::Option<::std::string::String>,
     /// <p>A strategy determining whether to centralize source log groups that are encrypted with customer managed KMS keys (CMK). ALLOW will consider CMK encrypted source log groups for centralization while SKIP will skip CMK encrypted source log groups from centralization.</p>
     pub encrypted_log_group_strategy: crate::types::EncryptedLogGroupStrategy,
 }
@@ -14,6 +16,10 @@ impl SourceLogsConfiguration {
     pub fn log_group_selection_criteria(&self) -> &str {
         use std::ops::Deref;
         self.log_group_selection_criteria.deref()
+    }
+    /// <p>The selection criteria that specifies which data sources to centralize. The selection criteria uses the same filter expression format as <code>LogGroupSelectionCriteria</code>, but operates on <code>DataSourceName</code> and <code>DataSourceType</code> operands. When both <code>LogGroupSelectionCriteria</code> and <code>DataSourceSelectionCriteria</code> are specified, a log event must match both criteria to be centralized.</p>
+    pub fn data_source_selection_criteria(&self) -> ::std::option::Option<&str> {
+        self.data_source_selection_criteria.as_deref()
     }
     /// <p>A strategy determining whether to centralize source log groups that are encrypted with customer managed KMS keys (CMK). ALLOW will consider CMK encrypted source log groups for centralization while SKIP will skip CMK encrypted source log groups from centralization.</p>
     pub fn encrypted_log_group_strategy(&self) -> &crate::types::EncryptedLogGroupStrategy {
@@ -32,11 +38,11 @@ impl SourceLogsConfiguration {
 #[non_exhaustive]
 pub struct SourceLogsConfigurationBuilder {
     pub(crate) log_group_selection_criteria: ::std::option::Option<::std::string::String>,
+    pub(crate) data_source_selection_criteria: ::std::option::Option<::std::string::String>,
     pub(crate) encrypted_log_group_strategy: ::std::option::Option<crate::types::EncryptedLogGroupStrategy>,
 }
 impl SourceLogsConfigurationBuilder {
     /// <p>The selection criteria that specifies which source log groups to centralize. The selection criteria uses the same format as OAM link filters.</p>
-    /// This field is required.
     pub fn log_group_selection_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_selection_criteria = ::std::option::Option::Some(input.into());
         self
@@ -49,6 +55,20 @@ impl SourceLogsConfigurationBuilder {
     /// <p>The selection criteria that specifies which source log groups to centralize. The selection criteria uses the same format as OAM link filters.</p>
     pub fn get_log_group_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_group_selection_criteria
+    }
+    /// <p>The selection criteria that specifies which data sources to centralize. The selection criteria uses the same filter expression format as <code>LogGroupSelectionCriteria</code>, but operates on <code>DataSourceName</code> and <code>DataSourceType</code> operands. When both <code>LogGroupSelectionCriteria</code> and <code>DataSourceSelectionCriteria</code> are specified, a log event must match both criteria to be centralized.</p>
+    pub fn data_source_selection_criteria(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source_selection_criteria = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The selection criteria that specifies which data sources to centralize. The selection criteria uses the same filter expression format as <code>LogGroupSelectionCriteria</code>, but operates on <code>DataSourceName</code> and <code>DataSourceType</code> operands. When both <code>LogGroupSelectionCriteria</code> and <code>DataSourceSelectionCriteria</code> are specified, a log event must match both criteria to be centralized.</p>
+    pub fn set_data_source_selection_criteria(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_selection_criteria = input;
+        self
+    }
+    /// <p>The selection criteria that specifies which data sources to centralize. The selection criteria uses the same filter expression format as <code>LogGroupSelectionCriteria</code>, but operates on <code>DataSourceName</code> and <code>DataSourceType</code> operands. When both <code>LogGroupSelectionCriteria</code> and <code>DataSourceSelectionCriteria</code> are specified, a log event must match both criteria to be centralized.</p>
+    pub fn get_data_source_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_selection_criteria
     }
     /// <p>A strategy determining whether to centralize source log groups that are encrypted with customer managed KMS keys (CMK). ALLOW will consider CMK encrypted source log groups for centralization while SKIP will skip CMK encrypted source log groups from centralization.</p>
     /// This field is required.
@@ -67,16 +87,11 @@ impl SourceLogsConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`SourceLogsConfiguration`](crate::types::SourceLogsConfiguration).
     /// This method will fail if any of the following fields are not set:
-    /// - [`log_group_selection_criteria`](crate::types::builders::SourceLogsConfigurationBuilder::log_group_selection_criteria)
     /// - [`encrypted_log_group_strategy`](crate::types::builders::SourceLogsConfigurationBuilder::encrypted_log_group_strategy)
     pub fn build(self) -> ::std::result::Result<crate::types::SourceLogsConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SourceLogsConfiguration {
-            log_group_selection_criteria: self.log_group_selection_criteria.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_group_selection_criteria",
-                    "log_group_selection_criteria was not specified but it is required when building SourceLogsConfiguration",
-                )
-            })?,
+            log_group_selection_criteria: self.log_group_selection_criteria.unwrap_or_else(|| "*".to_owned()),
+            data_source_selection_criteria: self.data_source_selection_criteria,
             encrypted_log_group_strategy: self.encrypted_log_group_strategy.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "encrypted_log_group_strategy",

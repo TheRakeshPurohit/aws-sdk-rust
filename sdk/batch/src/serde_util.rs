@@ -182,6 +182,24 @@ pub(crate) fn update_service_environment_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn quota_share_preemption_configuration_correct_errors(
+    mut builder: crate::types::builders::QuotaSharePreemptionConfigurationBuilder,
+) -> crate::types::builders::QuotaSharePreemptionConfigurationBuilder {
+    if builder.in_share_preemption.is_none() {
+        builder.in_share_preemption = "no value was set".parse::<crate::types::QuotaShareInSharePreemptionState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn quota_share_resource_sharing_configuration_correct_errors(
+    mut builder: crate::types::builders::QuotaShareResourceSharingConfigurationBuilder,
+) -> crate::types::builders::QuotaShareResourceSharingConfigurationBuilder {
+    if builder.strategy.is_none() {
+        builder.strategy = "no value was set".parse::<crate::types::QuotaShareResourceSharingStrategy>().ok()
+    }
+    builder
+}
+
 pub(crate) fn service_job_retry_strategy_correct_errors(
     mut builder: crate::types::builders::ServiceJobRetryStrategyBuilder,
 ) -> crate::types::builders::ServiceJobRetryStrategyBuilder {
@@ -316,6 +334,18 @@ pub(crate) fn list_jobs_by_consumable_resource_summary_correct_errors(
     builder
 }
 
+pub(crate) fn quota_share_capacity_limit_correct_errors(
+    mut builder: crate::types::builders::QuotaShareCapacityLimitBuilder,
+) -> crate::types::builders::QuotaShareCapacityLimitBuilder {
+    if builder.max_capacity.is_none() {
+        builder.max_capacity = Some(Default::default())
+    }
+    if builder.capacity_unit.is_none() {
+        builder.capacity_unit = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn scheduling_policy_detail_correct_errors(
     mut builder: crate::types::builders::SchedulingPolicyDetailBuilder,
 ) -> crate::types::builders::SchedulingPolicyDetailBuilder {
@@ -429,6 +459,15 @@ pub(crate) fn node_properties_correct_errors(
     }
     if builder.node_range_properties.is_none() {
         builder.node_range_properties = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn quota_share_policy_correct_errors(
+    mut builder: crate::types::builders::QuotaSharePolicyBuilder,
+) -> crate::types::builders::QuotaSharePolicyBuilder {
+    if builder.idle_resource_assignment_strategy.is_none() {
+        builder.idle_resource_assignment_strategy = "no value was set".parse::<crate::types::QuotaShareIdleResourceAssignmentStrategy>().ok()
     }
     builder
 }

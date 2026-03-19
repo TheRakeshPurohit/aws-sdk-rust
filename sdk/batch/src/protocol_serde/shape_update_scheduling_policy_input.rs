@@ -12,5 +12,11 @@ pub fn ser_update_scheduling_policy_input_input(
         crate::protocol_serde::shape_fairshare_policy::ser_fairshare_policy(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.quota_share_policy {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("quotaSharePolicy").start_object();
+        crate::protocol_serde::shape_quota_share_policy::ser_quota_share_policy(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

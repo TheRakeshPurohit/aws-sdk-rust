@@ -13,6 +13,9 @@ pub mod create_consumable_resource;
 /// Types for the `CreateJobQueue` operation.
 pub mod create_job_queue;
 
+/// Types for the `CreateQuotaShare` operation.
+pub mod create_quota_share;
+
 /// Types for the `CreateSchedulingPolicy` operation.
 pub mod create_scheduling_policy;
 
@@ -27,6 +30,9 @@ pub mod delete_consumable_resource;
 
 /// Types for the `DeleteJobQueue` operation.
 pub mod delete_job_queue;
+
+/// Types for the `DeleteQuotaShare` operation.
+pub mod delete_quota_share;
 
 /// Types for the `DeleteSchedulingPolicy` operation.
 pub mod delete_scheduling_policy;
@@ -52,6 +58,9 @@ pub mod describe_job_queues;
 /// Types for the `DescribeJobs` operation.
 pub mod describe_jobs;
 
+/// Types for the `DescribeQuotaShare` operation.
+pub mod describe_quota_share;
+
 /// Types for the `DescribeSchedulingPolicies` operation.
 pub mod describe_scheduling_policies;
 
@@ -72,6 +81,9 @@ pub mod list_jobs;
 
 /// Types for the `ListJobsByConsumableResource` operation.
 pub mod list_jobs_by_consumable_resource;
+
+/// Types for the `ListQuotaShares` operation.
+pub mod list_quota_shares;
 
 /// Types for the `ListSchedulingPolicies` operation.
 pub mod list_scheduling_policies;
@@ -112,8 +124,14 @@ pub mod update_consumable_resource;
 /// Types for the `UpdateJobQueue` operation.
 pub mod update_job_queue;
 
+/// Types for the `UpdateQuotaShare` operation.
+pub mod update_quota_share;
+
 /// Types for the `UpdateSchedulingPolicy` operation.
 pub mod update_scheduling_policy;
 
 /// Types for the `UpdateServiceEnvironment` operation.
 pub mod update_service_environment;
+
+/// Types for the `UpdateServiceJob` operation.
+pub mod update_service_job;

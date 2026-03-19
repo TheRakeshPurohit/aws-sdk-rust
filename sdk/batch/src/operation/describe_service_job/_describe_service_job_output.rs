@@ -33,6 +33,12 @@ pub struct DescribeServiceJobOutput {
     pub service_job_type: ::std::option::Option<crate::types::ServiceJobType>,
     /// <p>The share identifier for the service job. This is used for fair-share scheduling.</p>
     pub share_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the quota share that the service job is associated with.</p>
+    pub quota_share_name: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the service job behavior when preempted.</p>
+    pub preemption_configuration: ::std::option::Option<crate::types::ServiceJobPreemptionConfiguration>,
+    /// <p>Summarizes the preemptions of the service job. This field appears on a service job when it has been preempted.</p>
+    pub preemption_summary: ::std::option::Option<crate::types::ServiceJobPreemptionSummary>,
     /// <p>The Unix timestamp (in milliseconds) for when the service job was started.</p>
     pub started_at: ::std::option::Option<i64>,
     /// <p>The current status of the service job.</p>
@@ -112,6 +118,18 @@ impl DescribeServiceJobOutput {
     pub fn share_identifier(&self) -> ::std::option::Option<&str> {
         self.share_identifier.as_deref()
     }
+    /// <p>The name of the quota share that the service job is associated with.</p>
+    pub fn quota_share_name(&self) -> ::std::option::Option<&str> {
+        self.quota_share_name.as_deref()
+    }
+    /// <p>Specifies the service job behavior when preempted.</p>
+    pub fn preemption_configuration(&self) -> ::std::option::Option<&crate::types::ServiceJobPreemptionConfiguration> {
+        self.preemption_configuration.as_ref()
+    }
+    /// <p>Summarizes the preemptions of the service job. This field appears on a service job when it has been preempted.</p>
+    pub fn preemption_summary(&self) -> ::std::option::Option<&crate::types::ServiceJobPreemptionSummary> {
+        self.preemption_summary.as_ref()
+    }
     /// <p>The Unix timestamp (in milliseconds) for when the service job was started.</p>
     pub fn started_at(&self) -> ::std::option::Option<i64> {
         self.started_at
@@ -168,6 +186,9 @@ pub struct DescribeServiceJobOutputBuilder {
     pub(crate) service_request_payload: ::std::option::Option<::std::string::String>,
     pub(crate) service_job_type: ::std::option::Option<crate::types::ServiceJobType>,
     pub(crate) share_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) quota_share_name: ::std::option::Option<::std::string::String>,
+    pub(crate) preemption_configuration: ::std::option::Option<crate::types::ServiceJobPreemptionConfiguration>,
+    pub(crate) preemption_summary: ::std::option::Option<crate::types::ServiceJobPreemptionSummary>,
     pub(crate) started_at: ::std::option::Option<i64>,
     pub(crate) status: ::std::option::Option<crate::types::ServiceJobStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
@@ -403,6 +424,48 @@ impl DescribeServiceJobOutputBuilder {
     pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.share_identifier
     }
+    /// <p>The name of the quota share that the service job is associated with.</p>
+    pub fn quota_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quota_share_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the quota share that the service job is associated with.</p>
+    pub fn set_quota_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.quota_share_name = input;
+        self
+    }
+    /// <p>The name of the quota share that the service job is associated with.</p>
+    pub fn get_quota_share_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_share_name
+    }
+    /// <p>Specifies the service job behavior when preempted.</p>
+    pub fn preemption_configuration(mut self, input: crate::types::ServiceJobPreemptionConfiguration) -> Self {
+        self.preemption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the service job behavior when preempted.</p>
+    pub fn set_preemption_configuration(mut self, input: ::std::option::Option<crate::types::ServiceJobPreemptionConfiguration>) -> Self {
+        self.preemption_configuration = input;
+        self
+    }
+    /// <p>Specifies the service job behavior when preempted.</p>
+    pub fn get_preemption_configuration(&self) -> &::std::option::Option<crate::types::ServiceJobPreemptionConfiguration> {
+        &self.preemption_configuration
+    }
+    /// <p>Summarizes the preemptions of the service job. This field appears on a service job when it has been preempted.</p>
+    pub fn preemption_summary(mut self, input: crate::types::ServiceJobPreemptionSummary) -> Self {
+        self.preemption_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Summarizes the preemptions of the service job. This field appears on a service job when it has been preempted.</p>
+    pub fn set_preemption_summary(mut self, input: ::std::option::Option<crate::types::ServiceJobPreemptionSummary>) -> Self {
+        self.preemption_summary = input;
+        self
+    }
+    /// <p>Summarizes the preemptions of the service job. This field appears on a service job when it has been preempted.</p>
+    pub fn get_preemption_summary(&self) -> &::std::option::Option<crate::types::ServiceJobPreemptionSummary> {
+        &self.preemption_summary
+    }
     /// <p>The Unix timestamp (in milliseconds) for when the service job was started.</p>
     /// This field is required.
     pub fn started_at(mut self, input: i64) -> Self {
@@ -522,6 +585,9 @@ impl DescribeServiceJobOutputBuilder {
             service_request_payload: self.service_request_payload,
             service_job_type: self.service_job_type,
             share_identifier: self.share_identifier,
+            quota_share_name: self.quota_share_name,
+            preemption_configuration: self.preemption_configuration,
+            preemption_summary: self.preemption_summary,
             started_at: self.started_at,
             status: self.status,
             status_reason: self.status_reason,

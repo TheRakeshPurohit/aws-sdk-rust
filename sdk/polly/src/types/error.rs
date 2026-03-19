@@ -21,6 +21,12 @@ pub use crate::types::error::_unsupported_pls_alphabet_exception::UnsupportedPls
 
 pub use crate::types::error::_unsupported_pls_language_exception::UnsupportedPlsLanguageException;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
+pub use crate::types::error::_validation_exception::ValidationException;
+
 pub use crate::types::error::_engine_not_supported_exception::EngineNotSupportedException;
 
 pub use crate::types::error::_invalid_s3_bucket_exception::InvalidS3BucketException;
@@ -40,6 +46,232 @@ pub use crate::types::error::_marks_not_supported_for_format_exception::MarksNot
 pub use crate::types::error::_ssml_marks_not_supported_for_text_type_exception::SsmlMarksNotSupportedForTextTypeException;
 
 pub use crate::types::error::_text_length_exceeded_exception::TextLengthExceededException;
+
+/// Error type for the `StartSpeechSynthesisStreamActionStreamError` operation.
+#[non_exhaustive]
+#[derive(::std::fmt::Debug)]
+pub enum StartSpeechSynthesisStreamActionStreamError {
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-StartSpeechSynthesisStreamActionStreamError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
+}
+impl StartSpeechSynthesisStreamActionStreamError {
+    /// Creates the `StartSpeechSynthesisStreamActionStreamError::Unhandled` variant from any error type.
+    pub fn unhandled(
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
+    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
+    }
+
+    /// Creates the `StartSpeechSynthesisStreamActionStreamError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
+    }
+    ///
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    ///
+    pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::Unhandled(e) => &e.meta,
+        }
+    }
+}
+impl ::std::error::Error for StartSpeechSynthesisStreamActionStreamError {
+    fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
+        match self {
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+        }
+    }
+}
+impl ::std::fmt::Display for StartSpeechSynthesisStreamActionStreamError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
+        }
+    }
+}
+impl ::aws_smithy_types::retry::ProvideErrorKind for StartSpeechSynthesisStreamActionStreamError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+    }
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        ::std::option::Option::None
+    }
+}
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartSpeechSynthesisStreamActionStreamError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::Unhandled(_inner) => &_inner.meta,
+        }
+    }
+}
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for StartSpeechSynthesisStreamActionStreamError {
+    fn create_unhandled_error(
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
+        })
+    }
+}
+impl ::aws_types::request_id::RequestId for crate::types::error::StartSpeechSynthesisStreamActionStreamError {
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
+
+/// Error type for the `StartSpeechSynthesisStreamEventStreamError` operation.
+#[non_exhaustive]
+#[derive(::std::fmt::Debug)]
+pub enum StartSpeechSynthesisStreamEventStreamError {
+    /// <p>The input fails to satisfy the constraints specified by the service.</p>
+    ValidationException(crate::types::error::ValidationException),
+    /// <p>The request would cause a service quota to be exceeded.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p>An unknown condition has caused a service failure.</p>
+    ServiceFailureException(crate::types::error::ServiceFailureException),
+    /// <p>The request was denied because of request throttling.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-StartSpeechSynthesisStreamEventStreamError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
+}
+impl StartSpeechSynthesisStreamEventStreamError {
+    /// Creates the `StartSpeechSynthesisStreamEventStreamError::Unhandled` variant from any error type.
+    pub fn unhandled(
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
+    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
+    }
+
+    /// Creates the `StartSpeechSynthesisStreamEventStreamError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
+    }
+    ///
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    ///
+    pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
+        }
+    }
+    /// Returns `true` if the error kind is `StartSpeechSynthesisStreamEventStreamError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
+    }
+    /// Returns `true` if the error kind is `StartSpeechSynthesisStreamEventStreamError::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ServiceQuotaExceededException(_))
+    }
+    /// Returns `true` if the error kind is `StartSpeechSynthesisStreamEventStreamError::ServiceFailureException`.
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(self, Self::ServiceFailureException(_))
+    }
+    /// Returns `true` if the error kind is `StartSpeechSynthesisStreamEventStreamError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
+}
+impl ::std::error::Error for StartSpeechSynthesisStreamEventStreamError {
+    fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
+        match self {
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+        }
+    }
+}
+impl ::std::fmt::Display for StartSpeechSynthesisStreamEventStreamError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            Self::ValidationException(_inner) => _inner.fmt(f),
+            Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            Self::ServiceFailureException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
+        }
+    }
+}
+impl ::aws_smithy_types::retry::ProvideErrorKind for StartSpeechSynthesisStreamEventStreamError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+    }
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        ::std::option::Option::None
+    }
+}
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartSpeechSynthesisStreamEventStreamError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
+        }
+    }
+}
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for StartSpeechSynthesisStreamEventStreamError {
+    fn create_unhandled_error(
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
+        })
+    }
+}
+impl ::aws_types::request_id::RequestId for crate::types::error::StartSpeechSynthesisStreamEventStreamError {
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
 
 mod _engine_not_supported_exception;
 
@@ -73,15 +305,21 @@ mod _max_lexicons_number_exceeded_exception;
 
 mod _service_failure_exception;
 
+mod _service_quota_exceeded_exception;
+
 mod _ssml_marks_not_supported_for_text_type_exception;
 
 mod _synthesis_task_not_found_exception;
 
 mod _text_length_exceeded_exception;
 
+mod _throttling_exception;
+
 mod _unsupported_pls_alphabet_exception;
 
 mod _unsupported_pls_language_exception;
+
+mod _validation_exception;
 
 /// Builders
 pub mod builders;

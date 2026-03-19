@@ -15,6 +15,8 @@ pub struct GetBrowserSessionOutput {
     pub view_port: ::std::option::Option<crate::types::ViewPort>,
     /// <p>The list of browser extensions that are configured in the browser session.</p>
     pub extensions: ::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>>,
+    /// <p>A list of files containing enterprise policies for the browser session.</p>
+    pub enterprise_policies: ::std::option::Option<::std::vec::Vec<crate::types::BrowserEnterprisePolicy>>,
     /// <p>The browser profile configuration associated with this session. Contains the profile identifier that links to persistent browser data such as cookies and local storage.</p>
     pub profile_configuration: ::std::option::Option<crate::types::BrowserProfileConfiguration>,
     /// <p>The timeout period for the browser session in seconds.</p>
@@ -25,6 +27,8 @@ pub struct GetBrowserSessionOutput {
     pub streams: ::std::option::Option<crate::types::BrowserSessionStream>,
     /// <p>The active proxy configuration for this browser session. This field is only present if proxy configuration was provided when the session was started using <code>StartBrowserSession</code>. The configuration includes proxy servers, domain bypass rules and the proxy authentication credentials.</p>
     pub proxy_configuration: ::std::option::Option<crate::types::ProxyConfiguration>,
+    /// <p>The list of certificates installed in the browser session.</p>
+    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     /// <p>The artifact containing the session replay information.</p>
     pub session_replay_artifact: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the browser session was last updated.</p>
@@ -60,6 +64,12 @@ impl GetBrowserSessionOutput {
     pub fn extensions(&self) -> &[crate::types::BrowserExtension] {
         self.extensions.as_deref().unwrap_or_default()
     }
+    /// <p>A list of files containing enterprise policies for the browser session.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enterprise_policies.is_none()`.
+    pub fn enterprise_policies(&self) -> &[crate::types::BrowserEnterprisePolicy] {
+        self.enterprise_policies.as_deref().unwrap_or_default()
+    }
     /// <p>The browser profile configuration associated with this session. Contains the profile identifier that links to persistent browser data such as cookies and local storage.</p>
     pub fn profile_configuration(&self) -> ::std::option::Option<&crate::types::BrowserProfileConfiguration> {
         self.profile_configuration.as_ref()
@@ -79,6 +89,12 @@ impl GetBrowserSessionOutput {
     /// <p>The active proxy configuration for this browser session. This field is only present if proxy configuration was provided when the session was started using <code>StartBrowserSession</code>. The configuration includes proxy servers, domain bypass rules and the proxy authentication credentials.</p>
     pub fn proxy_configuration(&self) -> ::std::option::Option<&crate::types::ProxyConfiguration> {
         self.proxy_configuration.as_ref()
+    }
+    /// <p>The list of certificates installed in the browser session.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::Certificate] {
+        self.certificates.as_deref().unwrap_or_default()
     }
     /// <p>The artifact containing the session replay information.</p>
     pub fn session_replay_artifact(&self) -> ::std::option::Option<&str> {
@@ -111,11 +127,13 @@ pub struct GetBrowserSessionOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) view_port: ::std::option::Option<crate::types::ViewPort>,
     pub(crate) extensions: ::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>>,
+    pub(crate) enterprise_policies: ::std::option::Option<::std::vec::Vec<crate::types::BrowserEnterprisePolicy>>,
     pub(crate) profile_configuration: ::std::option::Option<crate::types::BrowserProfileConfiguration>,
     pub(crate) session_timeout_seconds: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::BrowserSessionStatus>,
     pub(crate) streams: ::std::option::Option<crate::types::BrowserSessionStream>,
     pub(crate) proxy_configuration: ::std::option::Option<crate::types::ProxyConfiguration>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     pub(crate) session_replay_artifact: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -214,6 +232,26 @@ impl GetBrowserSessionOutputBuilder {
     pub fn get_extensions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserExtension>> {
         &self.extensions
     }
+    /// Appends an item to `enterprise_policies`.
+    ///
+    /// To override the contents of this collection use [`set_enterprise_policies`](Self::set_enterprise_policies).
+    ///
+    /// <p>A list of files containing enterprise policies for the browser session.</p>
+    pub fn enterprise_policies(mut self, input: crate::types::BrowserEnterprisePolicy) -> Self {
+        let mut v = self.enterprise_policies.unwrap_or_default();
+        v.push(input);
+        self.enterprise_policies = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of files containing enterprise policies for the browser session.</p>
+    pub fn set_enterprise_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrowserEnterprisePolicy>>) -> Self {
+        self.enterprise_policies = input;
+        self
+    }
+    /// <p>A list of files containing enterprise policies for the browser session.</p>
+    pub fn get_enterprise_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserEnterprisePolicy>> {
+        &self.enterprise_policies
+    }
     /// <p>The browser profile configuration associated with this session. Contains the profile identifier that links to persistent browser data such as cookies and local storage.</p>
     pub fn profile_configuration(mut self, input: crate::types::BrowserProfileConfiguration) -> Self {
         self.profile_configuration = ::std::option::Option::Some(input);
@@ -284,6 +322,26 @@ impl GetBrowserSessionOutputBuilder {
     pub fn get_proxy_configuration(&self) -> &::std::option::Option<crate::types::ProxyConfiguration> {
         &self.proxy_configuration
     }
+    /// Appends an item to `certificates`.
+    ///
+    /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
+    ///
+    /// <p>The list of certificates installed in the browser session.</p>
+    pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
+        let mut v = self.certificates.unwrap_or_default();
+        v.push(input);
+        self.certificates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of certificates installed in the browser session.</p>
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
+        self.certificates = input;
+        self
+    }
+    /// <p>The list of certificates installed in the browser session.</p>
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        &self.certificates
+    }
     /// <p>The artifact containing the session replay information.</p>
     pub fn session_replay_artifact(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_replay_artifact = ::std::option::Option::Some(input.into());
@@ -351,11 +409,13 @@ impl GetBrowserSessionOutputBuilder {
             })?,
             view_port: self.view_port,
             extensions: self.extensions,
+            enterprise_policies: self.enterprise_policies,
             profile_configuration: self.profile_configuration,
             session_timeout_seconds: self.session_timeout_seconds,
             status: self.status,
             streams: self.streams,
             proxy_configuration: self.proxy_configuration,
+            certificates: self.certificates,
             session_replay_artifact: self.session_replay_artifact,
             last_updated_at: self.last_updated_at,
             _request_id: self._request_id,

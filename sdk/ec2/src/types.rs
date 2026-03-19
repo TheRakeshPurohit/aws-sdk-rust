@@ -137,6 +137,8 @@ pub use crate::types::_spot_options_request::SpotOptionsRequest;
 
 pub use crate::types::_on_demand_options_request::OnDemandOptionsRequest;
 
+pub use crate::types::_reserved_capacity_options_request::ReservedCapacityOptionsRequest;
+
 pub use crate::types::_fleet_excess_capacity_termination_policy::FleetExcessCapacityTerminationPolicy;
 
 pub use crate::types::_target_capacity_specification_request::TargetCapacitySpecificationRequest;
@@ -1785,6 +1787,8 @@ pub use crate::types::_fleet_spot_capacity_rebalance_request::FleetSpotCapacityR
 
 pub use crate::types::_fleet_capacity_reservation_usage_strategy::FleetCapacityReservationUsageStrategy;
 
+pub use crate::types::_fleet_reservation_type::FleetReservationType;
+
 pub use crate::types::_fleet_launch_template_specification_request::FleetLaunchTemplateSpecificationRequest;
 
 pub use crate::types::_launch_template_and_overrides_response::LaunchTemplateAndOverridesResponse;
@@ -1958,6 +1962,8 @@ pub use crate::types::_target_capacity_specification::TargetCapacitySpecificatio
 pub use crate::types::_spot_options::SpotOptions;
 
 pub use crate::types::_on_demand_options::OnDemandOptions;
+
+pub use crate::types::_reserved_capacity_options::ReservedCapacityOptions;
 
 pub use crate::types::_destination_options_response::DestinationOptionsResponse;
 
@@ -3455,6 +3461,8 @@ mod _fleet_on_demand_allocation_strategy;
 
 mod _fleet_replacement_strategy;
 
+mod _fleet_reservation_type;
+
 mod _fleet_spot_capacity_rebalance;
 
 mod _fleet_spot_capacity_rebalance_request;
@@ -4566,6 +4574,10 @@ mod _reservation_state;
 mod _reservation_type;
 
 mod _reservation_value;
+
+mod _reserved_capacity_options;
+
+mod _reserved_capacity_options_request;
 
 mod _reserved_instance_limit_price;
 

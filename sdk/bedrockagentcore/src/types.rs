@@ -59,11 +59,15 @@ pub use crate::types::_response_chunk::ResponseChunk;
 
 pub use crate::types::_browser_extension::BrowserExtension;
 
+pub use crate::types::_browser_enterprise_policy::BrowserEnterprisePolicy;
+
 pub use crate::types::_automation_stream::AutomationStream;
 
 pub use crate::types::_live_view_stream::LiveViewStream;
 
 pub use crate::types::_proxy_bypass::ProxyBypass;
+
+pub use crate::types::_certificate::Certificate;
 
 pub use crate::types::_browser_session_summary::BrowserSessionSummary;
 
@@ -111,9 +115,13 @@ pub use crate::types::_content_stop_event::ContentStopEvent;
 
 pub use crate::types::_resource_location::ResourceLocation;
 
+pub use crate::types::_browser_enterprise_policy_type::BrowserEnterprisePolicyType;
+
 pub use crate::types::_automation_stream_status::AutomationStreamStatus;
 
 pub use crate::types::_proxy::Proxy;
+
+pub use crate::types::_certificate_location::CertificateLocation;
 
 pub use crate::types::_context::Context;
 
@@ -138,6 +146,8 @@ pub use crate::types::_command_execution_status::CommandExecutionStatus;
 pub use crate::types::_s3_location::S3Location;
 
 pub use crate::types::_external_proxy::ExternalProxy;
+
+pub use crate::types::_secrets_manager_location::SecretsManagerLocation;
 
 pub use crate::types::_span_context::SpanContext;
 
@@ -177,6 +187,10 @@ mod _branch;
 
 mod _branch_filter;
 
+mod _browser_enterprise_policy;
+
+mod _browser_enterprise_policy_type;
+
 mod _browser_extension;
 
 mod _browser_profile_configuration;
@@ -186,6 +200,10 @@ mod _browser_session_status;
 mod _browser_session_stream;
 
 mod _browser_session_summary;
+
+mod _certificate;
+
+mod _certificate_location;
 
 mod _code_interpreter_result;
 
@@ -300,6 +318,8 @@ mod _role;
 mod _s3_location;
 
 mod _search_criteria;
+
+mod _secrets_manager_location;
 
 mod _session_status;
 

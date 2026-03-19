@@ -177,6 +177,8 @@ mod list_speech_synthesis_tasks;
 
 mod put_lexicon;
 
+mod start_speech_synthesis_stream;
+
 mod start_speech_synthesis_task;
 
 mod synthesize_speech;

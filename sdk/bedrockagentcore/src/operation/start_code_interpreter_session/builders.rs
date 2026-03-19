@@ -188,6 +188,25 @@ impl StartCodeInterpreterSessionFluentBuilder {
     pub fn get_session_timeout_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_session_timeout_seconds()
     }
+    ///
+    /// Appends an item to `certificates`.
+    ///
+    /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
+    ///
+    /// <p>A list of certificates to install in the code interpreter session.</p>
+    pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
+        self.inner = self.inner.certificates(input);
+        self
+    }
+    /// <p>A list of certificates to install in the code interpreter session.</p>
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
+        self.inner = self.inner.set_certificates(input);
+        self
+    }
+    /// <p>A list of certificates to install in the code interpreter session.</p>
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        self.inner.get_certificates()
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

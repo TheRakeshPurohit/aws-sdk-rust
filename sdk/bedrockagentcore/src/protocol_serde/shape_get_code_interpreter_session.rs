@@ -137,6 +137,9 @@ pub(crate) fn de_get_code_interpreter_session(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "certificates" => {
+                    builder = builder.set_certificates(crate::protocol_serde::shape_certificates::de_certificates(tokens, _value)?);
+                }
                 "codeInterpreterIdentifier" => {
                     builder = builder.set_code_interpreter_identifier(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

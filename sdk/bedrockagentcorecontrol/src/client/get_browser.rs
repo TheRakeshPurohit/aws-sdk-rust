@@ -13,6 +13,8 @@ impl super::Client {
     ///   - [`network_configuration(Option<BrowserNetworkConfiguration>)`](crate::operation::get_browser::GetBrowserOutput::network_configuration): <p>The network configuration for a browser. This structure defines how the browser connects to the network.</p>
     ///   - [`recording(Option<RecordingConfig>)`](crate::operation::get_browser::GetBrowserOutput::recording): <p>The recording configuration for a browser. This structure defines how browser sessions are recorded.</p>
     ///   - [`browser_signing(Option<BrowserSigningConfigOutput>)`](crate::operation::get_browser::GetBrowserOutput::browser_signing): <p>The browser signing configuration that shows whether cryptographic agent identification is enabled for web bot authentication.</p>
+    ///   - [`enterprise_policies(Option<Vec::<BrowserEnterprisePolicy>>)`](crate::operation::get_browser::GetBrowserOutput::enterprise_policies): <p>The list of enterprise policy files configured for the browser.</p>
+    ///   - [`certificates(Option<Vec::<Certificate>>)`](crate::operation::get_browser::GetBrowserOutput::certificates): <p>The list of certificates configured for the browser.</p>
     ///   - [`status(BrowserStatus)`](crate::operation::get_browser::GetBrowserOutput::status): <p>The current status of the browser.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::get_browser::GetBrowserOutput::failure_reason): <p>The reason for failure if the browser is in a failed state.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_browser::GetBrowserOutput::created_at): <p>The timestamp when the browser was created.</p>

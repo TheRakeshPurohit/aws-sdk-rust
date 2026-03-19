@@ -219,6 +219,10 @@ pub(crate) mod shape_agent_card;
 
 pub(crate) mod shape_branch;
 
+pub(crate) mod shape_browser_enterprise_policies;
+
+pub(crate) mod shape_browser_enterprise_policy;
+
 pub(crate) mod shape_browser_extension;
 
 pub(crate) mod shape_browser_extensions;
@@ -228,6 +232,10 @@ pub(crate) mod shape_browser_profile_configuration;
 pub(crate) mod shape_browser_session_stream;
 
 pub(crate) mod shape_browser_session_summaries;
+
+pub(crate) mod shape_certificate;
+
+pub(crate) mod shape_certificates;
 
 pub(crate) mod shape_code_interpreter_session_summaries;
 
@@ -293,6 +301,8 @@ pub(crate) mod shape_branch_filter;
 
 pub(crate) mod shape_browser_session_summary;
 
+pub(crate) mod shape_certificate_location;
+
 pub(crate) mod shape_code_interpreter_result;
 
 pub(crate) mod shape_code_interpreter_session_summary;
@@ -352,6 +362,8 @@ pub(crate) mod shape_left_expression;
 pub(crate) mod shape_right_expression;
 
 pub(crate) mod shape_s3_location;
+
+pub(crate) mod shape_secrets_manager_location;
 
 pub(crate) mod shape_token_usage;
 

@@ -3,15 +3,27 @@ pub use crate::types::_compute_resource::ComputeResourceBuilder;
 
 pub use crate::types::_eks_configuration::EksConfigurationBuilder;
 
+pub use crate::types::_quota_share_resource_sharing_configuration::QuotaShareResourceSharingConfigurationBuilder;
+
+pub use crate::types::_quota_share_preemption_configuration::QuotaSharePreemptionConfigurationBuilder;
+
+pub use crate::types::_quota_share_policy::QuotaSharePolicyBuilder;
+
 pub use crate::types::_fairshare_policy::FairsharePolicyBuilder;
 
 pub use crate::types::_latest_service_job_attempt::LatestServiceJobAttemptBuilder;
 
 pub use crate::types::_service_job_retry_strategy::ServiceJobRetryStrategyBuilder;
 
+pub use crate::types::_service_job_preemption_configuration::ServiceJobPreemptionConfigurationBuilder;
+
+pub use crate::types::_service_job_preemption_summary::ServiceJobPreemptionSummaryBuilder;
+
 pub use crate::types::_service_job_timeout::ServiceJobTimeoutBuilder;
 
 pub use crate::types::_front_of_queue_detail::FrontOfQueueDetailBuilder;
+
+pub use crate::types::_front_of_quota_shares_detail::FrontOfQuotaSharesDetailBuilder;
 
 pub use crate::types::_queue_snapshot_utilization_detail::QueueSnapshotUtilizationDetailBuilder;
 
@@ -53,6 +65,8 @@ pub use crate::types::_service_environment_order::ServiceEnvironmentOrderBuilder
 
 pub use crate::types::_job_state_time_limit_action::JobStateTimeLimitActionBuilder;
 
+pub use crate::types::_quota_share_capacity_limit::QuotaShareCapacityLimitBuilder;
+
 pub use crate::types::_capacity_limit::CapacityLimitBuilder;
 
 pub use crate::types::_compute_environment_detail::ComputeEnvironmentDetailBuilder;
@@ -75,6 +89,8 @@ pub use crate::types::_service_resource_id::ServiceResourceIdBuilder;
 
 pub use crate::types::_fairshare_utilization_detail::FairshareUtilizationDetailBuilder;
 
+pub use crate::types::_quota_share_utilization_detail::QuotaShareUtilizationDetailBuilder;
+
 pub use crate::types::_key_values_pair::KeyValuesPairBuilder;
 
 pub use crate::types::_consumable_resource_summary::ConsumableResourceSummaryBuilder;
@@ -82,6 +98,8 @@ pub use crate::types::_consumable_resource_summary::ConsumableResourceSummaryBui
 pub use crate::types::_job_summary::JobSummaryBuilder;
 
 pub use crate::types::_list_jobs_by_consumable_resource_summary::ListJobsByConsumableResourceSummaryBuilder;
+
+pub use crate::types::_quota_share_detail::QuotaShareDetailBuilder;
 
 pub use crate::types::_scheduling_policy_listing_detail::SchedulingPolicyListingDetailBuilder;
 
@@ -122,6 +140,8 @@ pub use crate::types::_eks_properties_detail::EksPropertiesDetailBuilder;
 pub use crate::types::_ecs_properties_detail::EcsPropertiesDetailBuilder;
 
 pub use crate::types::_service_job_evaluate_on_exit::ServiceJobEvaluateOnExitBuilder;
+
+pub use crate::types::_service_job_preempted_attempt::ServiceJobPreemptedAttemptBuilder;
 
 pub use crate::types::_front_of_queue_job_summary::FrontOfQueueJobSummaryBuilder;
 
@@ -167,7 +187,11 @@ pub use crate::types::_eks_pod_properties_detail::EksPodPropertiesDetailBuilder;
 
 pub use crate::types::_eks_attempt_detail::EksAttemptDetailBuilder;
 
+pub use crate::types::_front_of_quota_share_job_summary::FrontOfQuotaShareJobSummaryBuilder;
+
 pub use crate::types::_fairshare_capacity_utilization::FairshareCapacityUtilizationBuilder;
+
+pub use crate::types::_quota_share_capacity_utilization::QuotaShareCapacityUtilizationBuilder;
 
 pub use crate::types::_job_capacity_usage_summary::JobCapacityUsageSummaryBuilder;
 
@@ -220,6 +244,8 @@ pub use crate::types::_eks_container_detail::EksContainerDetailBuilder;
 pub use crate::types::_eks_attempt_container_detail::EksAttemptContainerDetailBuilder;
 
 pub use crate::types::_fairshare_capacity_usage::FairshareCapacityUsageBuilder;
+
+pub use crate::types::_quota_share_capacity_usage::QuotaShareCapacityUsageBuilder;
 
 pub use crate::types::_eks_container_environment_variable::EksContainerEnvironmentVariableBuilder;
 

@@ -22,6 +22,9 @@ pub mod list_speech_synthesis_tasks;
 /// Types for the `PutLexicon` operation.
 pub mod put_lexicon;
 
+/// Types for the `StartSpeechSynthesisStream` operation.
+pub mod start_speech_synthesis_stream;
+
 /// Types for the `StartSpeechSynthesisTask` operation.
 pub mod start_speech_synthesis_task;
 

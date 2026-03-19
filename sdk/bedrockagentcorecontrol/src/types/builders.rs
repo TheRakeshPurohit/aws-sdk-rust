@@ -79,6 +79,10 @@ pub use crate::types::_browser_summary::BrowserSummaryBuilder;
 
 pub use crate::types::_s3_location::S3LocationBuilder;
 
+pub use crate::types::_browser_enterprise_policy::BrowserEnterprisePolicyBuilder;
+
+pub use crate::types::_certificate::CertificateBuilder;
+
 pub use crate::types::_code_interpreter_summary::CodeInterpreterSummaryBuilder;
 
 pub use crate::types::_evaluator_summary::EvaluatorSummaryBuilder;
@@ -172,6 +176,8 @@ pub use crate::types::_delete_memory_strategy_input::DeleteMemoryStrategyInputBu
 pub use crate::types::_filter::FilterBuilder;
 
 pub use crate::types::_custom_claim_validation_type::CustomClaimValidationTypeBuilder;
+
+pub use crate::types::_secrets_manager_location::SecretsManagerLocationBuilder;
 
 pub use crate::types::_bedrock_evaluator_model_config::BedrockEvaluatorModelConfigBuilder;
 

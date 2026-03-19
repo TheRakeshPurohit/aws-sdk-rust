@@ -11,11 +11,21 @@ pub use crate::types::_jq_state::JqState;
 
 pub use crate::types::_job_queue_type::JobQueueType;
 
+pub use crate::types::_quota_share_resource_sharing_configuration::QuotaShareResourceSharingConfiguration;
+
+pub use crate::types::_quota_share_preemption_configuration::QuotaSharePreemptionConfiguration;
+
+pub use crate::types::_quota_share_state::QuotaShareState;
+
+pub use crate::types::_quota_share_policy::QuotaSharePolicy;
+
 pub use crate::types::_fairshare_policy::FairsharePolicy;
 
 pub use crate::types::_service_environment_type::ServiceEnvironmentType;
 
 pub use crate::types::_service_environment_state::ServiceEnvironmentState;
+
+pub use crate::types::_quota_share_status::QuotaShareStatus;
 
 pub use crate::types::_latest_service_job_attempt::LatestServiceJobAttempt;
 
@@ -23,11 +33,17 @@ pub use crate::types::_service_job_retry_strategy::ServiceJobRetryStrategy;
 
 pub use crate::types::_service_job_type::ServiceJobType;
 
+pub use crate::types::_service_job_preemption_configuration::ServiceJobPreemptionConfiguration;
+
+pub use crate::types::_service_job_preemption_summary::ServiceJobPreemptionSummary;
+
 pub use crate::types::_service_job_status::ServiceJobStatus;
 
 pub use crate::types::_service_job_timeout::ServiceJobTimeout;
 
 pub use crate::types::_front_of_queue_detail::FrontOfQueueDetail;
+
+pub use crate::types::_front_of_quota_shares_detail::FrontOfQuotaSharesDetail;
 
 pub use crate::types::_queue_snapshot_utilization_detail::QueueSnapshotUtilizationDetail;
 
@@ -77,6 +93,14 @@ pub use crate::types::_service_environment_order::ServiceEnvironmentOrder;
 
 pub use crate::types::_job_state_time_limit_action::JobStateTimeLimitAction;
 
+pub use crate::types::_quota_share_capacity_limit::QuotaShareCapacityLimit;
+
+pub use crate::types::_quota_share_resource_sharing_strategy::QuotaShareResourceSharingStrategy;
+
+pub use crate::types::_quota_share_in_share_preemption_state::QuotaShareInSharePreemptionState;
+
+pub use crate::types::_quota_share_idle_resource_assignment_strategy::QuotaShareIdleResourceAssignmentStrategy;
+
 pub use crate::types::_capacity_limit::CapacityLimit;
 
 pub use crate::types::_compute_environment_detail::ComputeEnvironmentDetail;
@@ -99,6 +123,8 @@ pub use crate::types::_service_resource_id::ServiceResourceId;
 
 pub use crate::types::_fairshare_utilization_detail::FairshareUtilizationDetail;
 
+pub use crate::types::_quota_share_utilization_detail::QuotaShareUtilizationDetail;
+
 pub use crate::types::_key_values_pair::KeyValuesPair;
 
 pub use crate::types::_consumable_resource_summary::ConsumableResourceSummary;
@@ -106,6 +132,8 @@ pub use crate::types::_consumable_resource_summary::ConsumableResourceSummary;
 pub use crate::types::_job_summary::JobSummary;
 
 pub use crate::types::_list_jobs_by_consumable_resource_summary::ListJobsByConsumableResourceSummary;
+
+pub use crate::types::_quota_share_detail::QuotaShareDetail;
 
 pub use crate::types::_scheduling_policy_listing_detail::SchedulingPolicyListingDetail;
 
@@ -167,6 +195,8 @@ pub use crate::types::_service_resource_id_name::ServiceResourceIdName;
 
 pub use crate::types::_service_job_evaluate_on_exit::ServiceJobEvaluateOnExit;
 
+pub use crate::types::_service_job_preempted_attempt::ServiceJobPreemptedAttempt;
+
 pub use crate::types::_front_of_queue_job_summary::FrontOfQueueJobSummary;
 
 pub use crate::types::_queue_snapshot_capacity_usage::QueueSnapshotCapacityUsage;
@@ -219,7 +249,11 @@ pub use crate::types::_eks_attempt_detail::EksAttemptDetail;
 
 pub use crate::types::_service_job_retry_action::ServiceJobRetryAction;
 
+pub use crate::types::_front_of_quota_share_job_summary::FrontOfQuotaShareJobSummary;
+
 pub use crate::types::_fairshare_capacity_utilization::FairshareCapacityUtilization;
+
+pub use crate::types::_quota_share_capacity_utilization::QuotaShareCapacityUtilization;
 
 pub use crate::types::_job_capacity_usage_summary::JobCapacityUsageSummary;
 
@@ -278,6 +312,8 @@ pub use crate::types::_eks_container_detail::EksContainerDetail;
 pub use crate::types::_eks_attempt_container_detail::EksAttemptContainerDetail;
 
 pub use crate::types::_fairshare_capacity_usage::FairshareCapacityUsage;
+
+pub use crate::types::_quota_share_capacity_usage::QuotaShareCapacityUsage;
 
 pub use crate::types::_efs_authorization_config_iam::EfsAuthorizationConfigIam;
 
@@ -443,6 +479,10 @@ mod _front_of_queue_detail;
 
 mod _front_of_queue_job_summary;
 
+mod _front_of_quota_share_job_summary;
+
+mod _front_of_quota_shares_detail;
+
 mod _host;
 
 mod _image_pull_secret;
@@ -521,6 +561,32 @@ mod _queue_snapshot_capacity_usage;
 
 mod _queue_snapshot_utilization_detail;
 
+mod _quota_share_capacity_limit;
+
+mod _quota_share_capacity_usage;
+
+mod _quota_share_capacity_utilization;
+
+mod _quota_share_detail;
+
+mod _quota_share_idle_resource_assignment_strategy;
+
+mod _quota_share_in_share_preemption_state;
+
+mod _quota_share_policy;
+
+mod _quota_share_preemption_configuration;
+
+mod _quota_share_resource_sharing_configuration;
+
+mod _quota_share_resource_sharing_strategy;
+
+mod _quota_share_state;
+
+mod _quota_share_status;
+
+mod _quota_share_utilization_detail;
+
 mod _repository_credentials;
 
 mod _resource_requirement;
@@ -556,6 +622,12 @@ mod _service_job_capacity_usage_detail;
 mod _service_job_capacity_usage_summary;
 
 mod _service_job_evaluate_on_exit;
+
+mod _service_job_preempted_attempt;
+
+mod _service_job_preemption_configuration;
+
+mod _service_job_preemption_summary;
 
 mod _service_job_retry_action;
 

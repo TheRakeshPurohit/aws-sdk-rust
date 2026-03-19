@@ -37,6 +37,8 @@ pub(crate) mod shape_list_speech_synthesis_tasks;
 
 pub(crate) mod shape_put_lexicon;
 
+pub(crate) mod shape_start_speech_synthesis_stream;
+
 pub(crate) mod shape_start_speech_synthesis_task;
 
 pub(crate) mod shape_synthesize_speech;
@@ -83,7 +85,13 @@ pub(crate) mod shape_put_lexicon_input;
 
 pub(crate) mod shape_service_failure_exception;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
 pub(crate) mod shape_ssml_marks_not_supported_for_text_type_exception;
+
+pub(crate) mod shape_start_speech_synthesis_stream_action_stream;
+
+pub(crate) mod shape_start_speech_synthesis_stream_output;
 
 pub(crate) mod shape_start_speech_synthesis_task_input;
 
@@ -95,9 +103,21 @@ pub(crate) mod shape_synthesize_speech_output;
 
 pub(crate) mod shape_text_length_exceeded_exception;
 
+pub(crate) mod shape_throttling_exception;
+
 pub(crate) mod shape_unsupported_pls_alphabet_exception;
 
 pub(crate) mod shape_unsupported_pls_language_exception;
+
+pub(crate) mod shape_validation_exception;
+
+pub fn parse_event_stream_error_metadata(
+    payload: &::bytes::Bytes,
+) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
+}
+
+pub(crate) mod shape_close_stream_event;
 
 pub(crate) mod shape_lexicon;
 
@@ -109,13 +129,27 @@ pub(crate) mod shape_synthesis_task;
 
 pub(crate) mod shape_synthesis_tasks;
 
+pub(crate) mod shape_text_event;
+
+pub(crate) mod shape_throttling_reason_list;
+
+pub(crate) mod shape_validation_exception_field_list;
+
 pub(crate) mod shape_voice_list;
+
+pub(crate) mod shape_flush_stream_configuration;
 
 pub(crate) mod shape_lexicon_description;
 
 pub(crate) mod shape_lexicon_name_list;
 
 pub(crate) mod shape_speech_mark_type_list;
+
+pub(crate) mod shape_stream_closed_event;
+
+pub(crate) mod shape_throttling_reason;
+
+pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_voice;
 

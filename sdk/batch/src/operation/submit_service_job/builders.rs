@@ -206,6 +206,34 @@ impl SubmitServiceJobFluentBuilder {
     pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_share_identifier()
     }
+    /// <p>The quota share for the service job. Don't specify this parameter if the job queue doesn't have a quota share scheduling policy. If the job queue has a quota share scheduling policy, then this parameter must be specified.</p>
+    pub fn quota_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.quota_share_name(input.into());
+        self
+    }
+    /// <p>The quota share for the service job. Don't specify this parameter if the job queue doesn't have a quota share scheduling policy. If the job queue has a quota share scheduling policy, then this parameter must be specified.</p>
+    pub fn set_quota_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_quota_share_name(input);
+        self
+    }
+    /// <p>The quota share for the service job. Don't specify this parameter if the job queue doesn't have a quota share scheduling policy. If the job queue has a quota share scheduling policy, then this parameter must be specified.</p>
+    pub fn get_quota_share_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_quota_share_name()
+    }
+    /// <p>Specifies the service job behavior when preempted.</p>
+    pub fn preemption_configuration(mut self, input: crate::types::ServiceJobPreemptionConfiguration) -> Self {
+        self.inner = self.inner.preemption_configuration(input);
+        self
+    }
+    /// <p>Specifies the service job behavior when preempted.</p>
+    pub fn set_preemption_configuration(mut self, input: ::std::option::Option<crate::types::ServiceJobPreemptionConfiguration>) -> Self {
+        self.inner = self.inner.set_preemption_configuration(input);
+        self
+    }
+    /// <p>Specifies the service job behavior when preempted.</p>
+    pub fn get_preemption_configuration(&self) -> &::std::option::Option<crate::types::ServiceJobPreemptionConfiguration> {
+        self.inner.get_preemption_configuration()
+    }
     /// <p>The timeout configuration for the service job. If none is specified, Batch defers to the default timeout of the underlying service handling the job.</p>
     pub fn timeout_config(mut self, input: crate::types::ServiceJobTimeout) -> Self {
         self.inner = self.inner.timeout_config(input);

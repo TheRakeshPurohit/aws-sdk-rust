@@ -164,6 +164,25 @@ impl CreateCodeInterpreterFluentBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::CodeInterpreterNetworkConfiguration> {
         self.inner.get_network_configuration()
     }
+    ///
+    /// Appends an item to `certificates`.
+    ///
+    /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
+    ///
+    /// <p>A list of certificates to install in the code interpreter.</p>
+    pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
+        self.inner = self.inner.certificates(input);
+        self
+    }
+    /// <p>A list of certificates to install in the code interpreter.</p>
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
+        self.inner = self.inner.set_certificates(input);
+        self
+    }
+    /// <p>A list of certificates to install in the code interpreter.</p>
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        self.inner.get_certificates()
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request but does not return an error.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

@@ -19,6 +19,10 @@ pub struct GetBrowserOutput {
     pub recording: ::std::option::Option<crate::types::RecordingConfig>,
     /// <p>The browser signing configuration that shows whether cryptographic agent identification is enabled for web bot authentication.</p>
     pub browser_signing: ::std::option::Option<crate::types::BrowserSigningConfigOutput>,
+    /// <p>The list of enterprise policy files configured for the browser.</p>
+    pub enterprise_policies: ::std::option::Option<::std::vec::Vec<crate::types::BrowserEnterprisePolicy>>,
+    /// <p>The list of certificates configured for the browser.</p>
+    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     /// <p>The current status of the browser.</p>
     pub status: crate::types::BrowserStatus,
     /// <p>The reason for failure if the browser is in a failed state.</p>
@@ -65,6 +69,18 @@ impl GetBrowserOutput {
     pub fn browser_signing(&self) -> ::std::option::Option<&crate::types::BrowserSigningConfigOutput> {
         self.browser_signing.as_ref()
     }
+    /// <p>The list of enterprise policy files configured for the browser.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enterprise_policies.is_none()`.
+    pub fn enterprise_policies(&self) -> &[crate::types::BrowserEnterprisePolicy] {
+        self.enterprise_policies.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of certificates configured for the browser.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::Certificate] {
+        self.certificates.as_deref().unwrap_or_default()
+    }
     /// <p>The current status of the browser.</p>
     pub fn status(&self) -> &crate::types::BrowserStatus {
         &self.status
@@ -93,6 +109,8 @@ impl ::std::fmt::Debug for GetBrowserOutput {
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("recording", &self.recording);
         formatter.field("browser_signing", &self.browser_signing);
+        formatter.field("enterprise_policies", &self.enterprise_policies);
+        formatter.field("certificates", &self.certificates);
         formatter.field("status", &self.status);
         formatter.field("failure_reason", &self.failure_reason);
         formatter.field("created_at", &self.created_at);
@@ -125,6 +143,8 @@ pub struct GetBrowserOutputBuilder {
     pub(crate) network_configuration: ::std::option::Option<crate::types::BrowserNetworkConfiguration>,
     pub(crate) recording: ::std::option::Option<crate::types::RecordingConfig>,
     pub(crate) browser_signing: ::std::option::Option<crate::types::BrowserSigningConfigOutput>,
+    pub(crate) enterprise_policies: ::std::option::Option<::std::vec::Vec<crate::types::BrowserEnterprisePolicy>>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     pub(crate) status: ::std::option::Option<crate::types::BrowserStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -248,6 +268,46 @@ impl GetBrowserOutputBuilder {
     pub fn get_browser_signing(&self) -> &::std::option::Option<crate::types::BrowserSigningConfigOutput> {
         &self.browser_signing
     }
+    /// Appends an item to `enterprise_policies`.
+    ///
+    /// To override the contents of this collection use [`set_enterprise_policies`](Self::set_enterprise_policies).
+    ///
+    /// <p>The list of enterprise policy files configured for the browser.</p>
+    pub fn enterprise_policies(mut self, input: crate::types::BrowserEnterprisePolicy) -> Self {
+        let mut v = self.enterprise_policies.unwrap_or_default();
+        v.push(input);
+        self.enterprise_policies = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of enterprise policy files configured for the browser.</p>
+    pub fn set_enterprise_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BrowserEnterprisePolicy>>) -> Self {
+        self.enterprise_policies = input;
+        self
+    }
+    /// <p>The list of enterprise policy files configured for the browser.</p>
+    pub fn get_enterprise_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BrowserEnterprisePolicy>> {
+        &self.enterprise_policies
+    }
+    /// Appends an item to `certificates`.
+    ///
+    /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
+    ///
+    /// <p>The list of certificates configured for the browser.</p>
+    pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
+        let mut v = self.certificates.unwrap_or_default();
+        v.push(input);
+        self.certificates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of certificates configured for the browser.</p>
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
+        self.certificates = input;
+        self
+    }
+    /// <p>The list of certificates configured for the browser.</p>
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        &self.certificates
+    }
     /// <p>The current status of the browser.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::BrowserStatus) -> Self {
@@ -349,6 +409,8 @@ impl GetBrowserOutputBuilder {
             network_configuration: self.network_configuration,
             recording: self.recording,
             browser_signing: self.browser_signing,
+            enterprise_policies: self.enterprise_policies,
+            certificates: self.certificates,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
@@ -383,6 +445,8 @@ impl ::std::fmt::Debug for GetBrowserOutputBuilder {
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("recording", &self.recording);
         formatter.field("browser_signing", &self.browser_signing);
+        formatter.field("enterprise_policies", &self.enterprise_policies);
+        formatter.field("certificates", &self.certificates);
         formatter.field("status", &self.status);
         formatter.field("failure_reason", &self.failure_reason);
         formatter.field("created_at", &self.created_at);

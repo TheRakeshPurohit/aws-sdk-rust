@@ -10,12 +10,14 @@ pub struct SynthesizeSpeechInput {
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
     pub lexicon_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.</p>
+    /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, ogg_opus, mu-law, a-law or pcm. For speech marks, this will be json.</p>
     /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.</p>
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
     /// <p>The audio frequency specified in Hz.</p>
     /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", "24000", "44100" and "48000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000". The default value for generative voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000".</p>
+    /// <p>Valid value for ogg_opus is "48000".</p>
+    /// <p>Valid value for mu-law and a-law is "8000".</p>
     pub sample_rate: ::std::option::Option<::std::string::String>,
     /// <p>The type of speech marks returned for the input text.</p>
     pub speech_mark_types: ::std::option::Option<::std::vec::Vec<crate::types::SpeechMarkType>>,
@@ -42,7 +44,7 @@ impl SynthesizeSpeechInput {
     pub fn lexicon_names(&self) -> &[::std::string::String] {
         self.lexicon_names.as_deref().unwrap_or_default()
     }
-    /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.</p>
+    /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, ogg_opus, mu-law, a-law or pcm. For speech marks, this will be json.</p>
     /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.</p>
     pub fn output_format(&self) -> ::std::option::Option<&crate::types::OutputFormat> {
         self.output_format.as_ref()
@@ -50,6 +52,8 @@ impl SynthesizeSpeechInput {
     /// <p>The audio frequency specified in Hz.</p>
     /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", "24000", "44100" and "48000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000". The default value for generative voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000".</p>
+    /// <p>Valid value for ogg_opus is "48000".</p>
+    /// <p>Valid value for mu-law and a-law is "8000".</p>
     pub fn sample_rate(&self) -> ::std::option::Option<&str> {
         self.sample_rate.as_deref()
     }
@@ -145,20 +149,20 @@ impl SynthesizeSpeechInputBuilder {
     pub fn get_lexicon_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.lexicon_names
     }
-    /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.</p>
+    /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, ogg_opus, mu-law, a-law or pcm. For speech marks, this will be json.</p>
     /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.</p>
     /// This field is required.
     pub fn output_format(mut self, input: crate::types::OutputFormat) -> Self {
         self.output_format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.</p>
+    /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, ogg_opus, mu-law, a-law or pcm. For speech marks, this will be json.</p>
     /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.</p>
     pub fn set_output_format(mut self, input: ::std::option::Option<crate::types::OutputFormat>) -> Self {
         self.output_format = input;
         self
     }
-    /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.</p>
+    /// <p>The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, ogg_opus, mu-law, a-law or pcm. For speech marks, this will be json.</p>
     /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.</p>
     pub fn get_output_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
         &self.output_format
@@ -166,6 +170,8 @@ impl SynthesizeSpeechInputBuilder {
     /// <p>The audio frequency specified in Hz.</p>
     /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", "24000", "44100" and "48000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000". The default value for generative voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000".</p>
+    /// <p>Valid value for ogg_opus is "48000".</p>
+    /// <p>Valid value for mu-law and a-law is "8000".</p>
     pub fn sample_rate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sample_rate = ::std::option::Option::Some(input.into());
         self
@@ -173,6 +179,8 @@ impl SynthesizeSpeechInputBuilder {
     /// <p>The audio frequency specified in Hz.</p>
     /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", "24000", "44100" and "48000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000". The default value for generative voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000".</p>
+    /// <p>Valid value for ogg_opus is "48000".</p>
+    /// <p>Valid value for mu-law and a-law is "8000".</p>
     pub fn set_sample_rate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_rate = input;
         self
@@ -180,6 +188,8 @@ impl SynthesizeSpeechInputBuilder {
     /// <p>The audio frequency specified in Hz.</p>
     /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", "24000", "44100" and "48000". The default value for standard voices is "22050". The default value for neural voices is "24000". The default value for long-form voices is "24000". The default value for generative voices is "24000".</p>
     /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000".</p>
+    /// <p>Valid value for ogg_opus is "48000".</p>
+    /// <p>Valid value for mu-law and a-law is "8000".</p>
     pub fn get_sample_rate(&self) -> &::std::option::Option<::std::string::String> {
         &self.sample_rate
     }

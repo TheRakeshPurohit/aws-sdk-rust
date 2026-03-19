@@ -31,6 +31,8 @@ pub(crate) mod shape_create_consumable_resource;
 
 pub(crate) mod shape_create_job_queue;
 
+pub(crate) mod shape_create_quota_share;
+
 pub(crate) mod shape_create_scheduling_policy;
 
 pub(crate) mod shape_create_service_environment;
@@ -40,6 +42,8 @@ pub(crate) mod shape_delete_compute_environment;
 pub(crate) mod shape_delete_consumable_resource;
 
 pub(crate) mod shape_delete_job_queue;
+
+pub(crate) mod shape_delete_quota_share;
 
 pub(crate) mod shape_delete_scheduling_policy;
 
@@ -57,6 +61,8 @@ pub(crate) mod shape_describe_job_queues;
 
 pub(crate) mod shape_describe_jobs;
 
+pub(crate) mod shape_describe_quota_share;
+
 pub(crate) mod shape_describe_scheduling_policies;
 
 pub(crate) mod shape_describe_service_environments;
@@ -70,6 +76,8 @@ pub(crate) mod shape_list_consumable_resources;
 pub(crate) mod shape_list_jobs;
 
 pub(crate) mod shape_list_jobs_by_consumable_resource;
+
+pub(crate) mod shape_list_quota_shares;
 
 pub(crate) mod shape_list_scheduling_policies;
 
@@ -97,9 +105,13 @@ pub(crate) mod shape_update_consumable_resource;
 
 pub(crate) mod shape_update_job_queue;
 
+pub(crate) mod shape_update_quota_share;
+
 pub(crate) mod shape_update_scheduling_policy;
 
 pub(crate) mod shape_update_service_environment;
+
+pub(crate) mod shape_update_service_job;
 
 pub(crate) mod shape_cancel_job_input;
 
@@ -119,6 +131,8 @@ pub(crate) mod shape_create_consumable_resource_input;
 
 pub(crate) mod shape_create_job_queue_input;
 
+pub(crate) mod shape_create_quota_share_input;
+
 pub(crate) mod shape_create_scheduling_policy_input;
 
 pub(crate) mod shape_create_service_environment_input;
@@ -128,6 +142,8 @@ pub(crate) mod shape_delete_compute_environment_input;
 pub(crate) mod shape_delete_consumable_resource_input;
 
 pub(crate) mod shape_delete_job_queue_input;
+
+pub(crate) mod shape_delete_quota_share_input;
 
 pub(crate) mod shape_delete_scheduling_policy_input;
 
@@ -145,6 +161,8 @@ pub(crate) mod shape_describe_job_queues_input;
 
 pub(crate) mod shape_describe_jobs_input;
 
+pub(crate) mod shape_describe_quota_share_input;
+
 pub(crate) mod shape_describe_scheduling_policies_input;
 
 pub(crate) mod shape_describe_service_environments_input;
@@ -158,6 +176,8 @@ pub(crate) mod shape_list_consumable_resources_input;
 pub(crate) mod shape_list_jobs_by_consumable_resource_input;
 
 pub(crate) mod shape_list_jobs_input;
+
+pub(crate) mod shape_list_quota_shares_input;
 
 pub(crate) mod shape_list_scheduling_policies_input;
 
@@ -183,9 +203,13 @@ pub(crate) mod shape_update_consumable_resource_input;
 
 pub(crate) mod shape_update_job_queue_input;
 
+pub(crate) mod shape_update_quota_share_input;
+
 pub(crate) mod shape_update_scheduling_policy_input;
 
 pub(crate) mod shape_update_service_environment_input;
+
+pub(crate) mod shape_update_service_job_input;
 
 pub(crate) mod shape_array_properties;
 
@@ -221,6 +245,8 @@ pub(crate) mod shape_fairshare_policy;
 
 pub(crate) mod shape_front_of_queue_detail;
 
+pub(crate) mod shape_front_of_quota_shares_detail;
+
 pub(crate) mod shape_job_definition_list;
 
 pub(crate) mod shape_job_dependency;
@@ -247,6 +273,18 @@ pub(crate) mod shape_node_properties;
 
 pub(crate) mod shape_queue_snapshot_utilization_detail;
 
+pub(crate) mod shape_quota_share_capacity_limit;
+
+pub(crate) mod shape_quota_share_capacity_limits;
+
+pub(crate) mod shape_quota_share_list;
+
+pub(crate) mod shape_quota_share_policy;
+
+pub(crate) mod shape_quota_share_preemption_configuration;
+
+pub(crate) mod shape_quota_share_resource_sharing_configuration;
+
 pub(crate) mod shape_retry_strategy;
 
 pub(crate) mod shape_scheduling_policy_detail_list;
@@ -260,6 +298,10 @@ pub(crate) mod shape_service_environment_order;
 pub(crate) mod shape_service_job_attempt_details;
 
 pub(crate) mod shape_service_job_capacity_usage_detail_list;
+
+pub(crate) mod shape_service_job_preemption_configuration;
+
+pub(crate) mod shape_service_job_preemption_summary;
 
 pub(crate) mod shape_service_job_retry_strategy;
 
@@ -297,6 +339,8 @@ pub(crate) mod shape_fargate_platform_configuration;
 
 pub(crate) mod shape_front_of_queue_job_summary_list;
 
+pub(crate) mod shape_front_of_quota_shares_job_summary_map;
+
 pub(crate) mod shape_job_definition;
 
 pub(crate) mod shape_job_detail;
@@ -325,6 +369,10 @@ pub(crate) mod shape_node_range_property;
 
 pub(crate) mod shape_queue_snapshot_capacity_usage_list;
 
+pub(crate) mod shape_quota_share_detail;
+
+pub(crate) mod shape_quota_share_utilization_detail;
+
 pub(crate) mod shape_repository_credentials;
 
 pub(crate) mod shape_resource_requirement;
@@ -346,6 +394,8 @@ pub(crate) mod shape_service_job_capacity_usage_detail;
 pub(crate) mod shape_service_job_evaluate_on_exit;
 
 pub(crate) mod shape_service_job_evaluate_on_exit_list;
+
+pub(crate) mod shape_service_job_recent_preempted_attempt_list;
 
 pub(crate) mod shape_service_job_summary;
 
@@ -395,6 +445,8 @@ pub(crate) mod shape_fairshare_capacity_utilization_list;
 
 pub(crate) mod shape_front_of_queue_job_summary;
 
+pub(crate) mod shape_front_of_quota_share_job_summary_list;
+
 pub(crate) mod shape_host;
 
 pub(crate) mod shape_image_pull_secret;
@@ -417,9 +469,13 @@ pub(crate) mod shape_platform_capability_list;
 
 pub(crate) mod shape_queue_snapshot_capacity_usage;
 
+pub(crate) mod shape_quota_share_capacity_utilization_list;
+
 pub(crate) mod shape_service_environment_orders;
 
 pub(crate) mod shape_service_job_capacity_usage_summary_list;
+
+pub(crate) mod shape_service_job_preempted_attempt;
 
 pub(crate) mod shape_task_container_overrides;
 
@@ -465,6 +521,8 @@ pub(crate) mod shape_fairshare_capacity_utilization;
 
 pub(crate) mod shape_firelens_configuration;
 
+pub(crate) mod shape_front_of_quota_share_job_summary;
+
 pub(crate) mod shape_job_capacity_usage_summary;
 
 pub(crate) mod shape_list_ecs_task_details;
@@ -476,6 +534,8 @@ pub(crate) mod shape_mount_points;
 pub(crate) mod shape_network_interface_list;
 
 pub(crate) mod shape_node_range_properties;
+
+pub(crate) mod shape_quota_share_capacity_utilization;
 
 pub(crate) mod shape_resource_requirements;
 
@@ -521,6 +581,8 @@ pub(crate) mod shape_log_configuration_options_map;
 
 pub(crate) mod shape_network_interface;
 
+pub(crate) mod shape_quota_share_capacity_usage_list;
+
 pub(crate) mod shape_tmpfs_list;
 
 pub(crate) mod shape_attempt_ecs_task_details;
@@ -538,6 +600,8 @@ pub(crate) mod shape_fairshare_capacity_usage;
 pub(crate) mod shape_list_task_container_details;
 
 pub(crate) mod shape_list_task_container_properties;
+
+pub(crate) mod shape_quota_share_capacity_usage;
 
 pub(crate) mod shape_device_cgroup_permissions;
 

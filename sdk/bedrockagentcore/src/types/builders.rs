@@ -33,11 +33,15 @@ pub use crate::types::_response_chunk::ResponseChunkBuilder;
 
 pub use crate::types::_browser_extension::BrowserExtensionBuilder;
 
+pub use crate::types::_browser_enterprise_policy::BrowserEnterprisePolicyBuilder;
+
 pub use crate::types::_automation_stream::AutomationStreamBuilder;
 
 pub use crate::types::_live_view_stream::LiveViewStreamBuilder;
 
 pub use crate::types::_proxy_bypass::ProxyBypassBuilder;
+
+pub use crate::types::_certificate::CertificateBuilder;
 
 pub use crate::types::_browser_session_summary::BrowserSessionSummaryBuilder;
 
@@ -88,6 +92,8 @@ pub use crate::types::_content_block::ContentBlockBuilder;
 pub use crate::types::_s3_location::S3LocationBuilder;
 
 pub use crate::types::_external_proxy::ExternalProxyBuilder;
+
+pub use crate::types::_secrets_manager_location::SecretsManagerLocationBuilder;
 
 pub use crate::types::_span_context::SpanContextBuilder;
 

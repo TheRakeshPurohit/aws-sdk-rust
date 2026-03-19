@@ -136,11 +136,19 @@ pub(crate) fn de_get_browser_session(
                             .transpose()?,
                     );
                 }
+                "certificates" => {
+                    builder = builder.set_certificates(crate::protocol_serde::shape_certificates::de_certificates(tokens, _value)?);
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
+                }
+                "enterprisePolicies" => {
+                    builder = builder.set_enterprise_policies(
+                        crate::protocol_serde::shape_browser_enterprise_policies::de_browser_enterprise_policies(tokens, _value)?,
+                    );
                 }
                 "extensions" => {
                     builder = builder.set_extensions(crate::protocol_serde::shape_browser_extensions::de_browser_extensions(tokens, _value)?);

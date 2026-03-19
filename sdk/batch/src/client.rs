@@ -144,6 +144,8 @@ mod create_consumable_resource;
 
 mod create_job_queue;
 
+mod create_quota_share;
+
 mod create_scheduling_policy;
 
 mod create_service_environment;
@@ -181,6 +183,8 @@ mod delete_consumable_resource;
 
 mod delete_job_queue;
 
+mod delete_quota_share;
+
 mod delete_scheduling_policy;
 
 mod delete_service_environment;
@@ -197,6 +201,8 @@ mod describe_job_queues;
 
 mod describe_jobs;
 
+mod describe_quota_share;
+
 mod describe_scheduling_policies;
 
 mod describe_service_environments;
@@ -210,6 +216,8 @@ mod list_consumable_resources;
 mod list_jobs;
 
 mod list_jobs_by_consumable_resource;
+
+mod list_quota_shares;
 
 mod list_scheduling_policies;
 
@@ -237,6 +245,10 @@ mod update_consumable_resource;
 
 mod update_job_queue;
 
+mod update_quota_share;
+
 mod update_scheduling_policy;
 
 mod update_service_environment;
+
+mod update_service_job;

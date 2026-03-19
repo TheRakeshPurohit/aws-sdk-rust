@@ -8,6 +8,9 @@ pub fn ser_source_logs_configuration(
             .key("LogGroupSelectionCriteria")
             .string(input.log_group_selection_criteria.as_str());
     }
+    if let Some(var_1) = &input.data_source_selection_criteria {
+        object.key("DataSourceSelectionCriteria").string(var_1.as_str());
+    }
     {
         object
             .key("EncryptedLogGroupStrategy")
@@ -34,6 +37,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "LogGroupSelectionCriteria" => {
                             builder = builder.set_log_group_selection_criteria(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "DataSourceSelectionCriteria" => {
+                            builder = builder.set_data_source_selection_criteria(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

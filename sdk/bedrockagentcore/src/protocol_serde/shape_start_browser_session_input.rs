@@ -3,47 +3,71 @@ pub fn ser_start_browser_session_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_browser_session::StartBrowserSessionInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.extensions {
-        let mut array_3 = object.key("extensions").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.certificates {
+        let mut array_2 = object.key("certificates").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_browser_extension::ser_browser_extension(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_certificate::ser_certificate(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    if let Some(var_5) = &input.client_token {
+        object.key("clientToken").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.profile_configuration {
+    if let Some(var_6) = &input.enterprise_policies {
+        let mut array_7 = object.key("enterprisePolicies").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_browser_enterprise_policy::ser_browser_enterprise_policy(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
+    if let Some(var_10) = &input.extensions {
+        let mut array_11 = object.key("extensions").start_array();
+        for item_12 in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_browser_extension::ser_browser_extension(&mut object_13, item_12)?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
+    }
+    if let Some(var_14) = &input.name {
+        object.key("name").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.profile_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("profileConfiguration").start_object();
-        crate::protocol_serde::shape_browser_profile_configuration::ser_browser_profile_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_16 = object.key("profileConfiguration").start_object();
+        crate::protocol_serde::shape_browser_profile_configuration::ser_browser_profile_configuration(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_9) = &input.proxy_configuration {
+    if let Some(var_17) = &input.proxy_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("proxyConfiguration").start_object();
-        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_18 = object.key("proxyConfiguration").start_object();
+        crate::protocol_serde::shape_proxy_configuration::ser_proxy_configuration(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_11) = &input.session_timeout_seconds {
+    if let Some(var_19) = &input.session_timeout_seconds {
         object.key("sessionTimeoutSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
         );
     }
-    if let Some(var_12) = &input.view_port {
+    if let Some(var_20) = &input.view_port {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("viewPort").start_object();
-        crate::protocol_serde::shape_view_port::ser_view_port(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_21 = object.key("viewPort").start_object();
+        crate::protocol_serde::shape_view_port::ser_view_port(&mut object_21, var_20)?;
+        object_21.finish();
     }
     Ok(())
 }

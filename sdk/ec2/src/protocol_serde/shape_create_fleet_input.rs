@@ -26,70 +26,75 @@ pub fn ser_create_fleet_input_input_input(
         crate::protocol_serde::shape_on_demand_options_request::ser_on_demand_options_request(scope_7, var_8)?;
     }
     #[allow(unused_mut)]
-    let mut scope_9 = writer.prefix("ExcessCapacityTerminationPolicy");
-    if let Some(var_10) = &input.excess_capacity_termination_policy {
-        scope_9.string(var_10.as_str());
+    let mut scope_9 = writer.prefix("ReservedCapacityOptions");
+    if let Some(var_10) = &input.reserved_capacity_options {
+        crate::protocol_serde::shape_reserved_capacity_options_request::ser_reserved_capacity_options_request(scope_9, var_10)?;
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("LaunchTemplateConfigs");
-    if let Some(var_12) = &input.launch_template_configs {
-        if !var_12.is_empty() {
-            let mut list_14 = scope_11.start_list(true, Some("item"));
-            for item_13 in var_12 {
+    let mut scope_11 = writer.prefix("ExcessCapacityTerminationPolicy");
+    if let Some(var_12) = &input.excess_capacity_termination_policy {
+        scope_11.string(var_12.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("LaunchTemplateConfigs");
+    if let Some(var_14) = &input.launch_template_configs {
+        if !var_14.is_empty() {
+            let mut list_16 = scope_13.start_list(true, Some("item"));
+            for item_15 in var_14 {
                 #[allow(unused_mut)]
-                let mut entry_15 = list_14.entry();
-                crate::protocol_serde::shape_fleet_launch_template_config_request::ser_fleet_launch_template_config_request(entry_15, item_13)?;
+                let mut entry_17 = list_16.entry();
+                crate::protocol_serde::shape_fleet_launch_template_config_request::ser_fleet_launch_template_config_request(entry_17, item_15)?;
             }
-            list_14.finish();
+            list_16.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_16 = writer.prefix("TargetCapacitySpecification");
-    if let Some(var_17) = &input.target_capacity_specification {
-        crate::protocol_serde::shape_target_capacity_specification_request::ser_target_capacity_specification_request(scope_16, var_17)?;
+    let mut scope_18 = writer.prefix("TargetCapacitySpecification");
+    if let Some(var_19) = &input.target_capacity_specification {
+        crate::protocol_serde::shape_target_capacity_specification_request::ser_target_capacity_specification_request(scope_18, var_19)?;
     }
     #[allow(unused_mut)]
-    let mut scope_18 = writer.prefix("TerminateInstancesWithExpiration");
-    if let Some(var_19) = &input.terminate_instances_with_expiration {
-        scope_18.boolean(*var_19);
+    let mut scope_20 = writer.prefix("TerminateInstancesWithExpiration");
+    if let Some(var_21) = &input.terminate_instances_with_expiration {
+        scope_20.boolean(*var_21);
     }
     #[allow(unused_mut)]
-    let mut scope_20 = writer.prefix("Type");
-    if let Some(var_21) = &input.r#type {
-        scope_20.string(var_21.as_str());
+    let mut scope_22 = writer.prefix("Type");
+    if let Some(var_23) = &input.r#type {
+        scope_22.string(var_23.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_22 = writer.prefix("ValidFrom");
-    if let Some(var_23) = &input.valid_from {
-        scope_22.date_time(var_23, ::aws_smithy_types::date_time::Format::DateTime)?;
-    }
-    #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("ValidUntil");
-    if let Some(var_25) = &input.valid_until {
+    let mut scope_24 = writer.prefix("ValidFrom");
+    if let Some(var_25) = &input.valid_from {
         scope_24.date_time(var_25, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_26 = writer.prefix("ReplaceUnhealthyInstances");
-    if let Some(var_27) = &input.replace_unhealthy_instances {
-        scope_26.boolean(*var_27);
+    let mut scope_26 = writer.prefix("ValidUntil");
+    if let Some(var_27) = &input.valid_until {
+        scope_26.date_time(var_27, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     #[allow(unused_mut)]
-    let mut scope_28 = writer.prefix("TagSpecification");
-    if let Some(var_29) = &input.tag_specifications {
-        if !var_29.is_empty() {
-            let mut list_31 = scope_28.start_list(true, Some("item"));
-            for item_30 in var_29 {
+    let mut scope_28 = writer.prefix("ReplaceUnhealthyInstances");
+    if let Some(var_29) = &input.replace_unhealthy_instances {
+        scope_28.boolean(*var_29);
+    }
+    #[allow(unused_mut)]
+    let mut scope_30 = writer.prefix("TagSpecification");
+    if let Some(var_31) = &input.tag_specifications {
+        if !var_31.is_empty() {
+            let mut list_33 = scope_30.start_list(true, Some("item"));
+            for item_32 in var_31 {
                 #[allow(unused_mut)]
-                let mut entry_32 = list_31.entry();
-                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_32, item_30)?;
+                let mut entry_34 = list_33.entry();
+                crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_34, item_32)?;
             }
-            list_31.finish();
+            list_33.finish();
         }
     }
     #[allow(unused_mut)]
-    let mut scope_33 = writer.prefix("Context");
-    if let Some(var_34) = &input.context {
-        scope_33.string(var_34);
+    let mut scope_35 = writer.prefix("Context");
+    if let Some(var_36) = &input.context {
+        scope_35.string(var_36);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

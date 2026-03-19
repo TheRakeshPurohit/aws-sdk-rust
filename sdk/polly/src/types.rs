@@ -13,19 +13,49 @@ pub use crate::types::_task_status::TaskStatus;
 
 pub use crate::types::_output_format::OutputFormat;
 
-pub use crate::types::_text_type::TextType;
-
 pub use crate::types::_voice_id::VoiceId;
+
+pub use crate::types::_start_speech_synthesis_stream_action_stream::StartSpeechSynthesisStreamActionStream;
+
+pub use crate::types::_start_speech_synthesis_stream_event_stream::StartSpeechSynthesisStreamEventStream;
+
+pub use crate::types::_quota_code::QuotaCode;
+
+pub use crate::types::_service_code::ServiceCode;
+
+pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
+
+pub use crate::types::_text_type::TextType;
 
 pub use crate::types::_voice::Voice;
 
 pub use crate::types::_lexicon_description::LexiconDescription;
 
+pub use crate::types::_text_event::TextEvent;
+
+pub use crate::types::_close_stream_event::CloseStreamEvent;
+
+pub use crate::types::_audio_event::AudioEvent;
+
+pub use crate::types::_stream_closed_event::StreamClosedEvent;
+
+pub use crate::types::_throttling_reason::ThrottlingReason;
+
+pub use crate::types::_validation_exception_field::ValidationExceptionField;
+
 pub use crate::types::_speech_mark_type::SpeechMarkType;
 
 pub use crate::types::_gender::Gender;
 
+pub use crate::types::_flush_stream_configuration::FlushStreamConfiguration;
+
+mod _audio_event;
+
+mod _close_stream_event;
+
 mod _engine;
+
+mod _flush_stream_configuration;
 
 mod _gender;
 
@@ -39,13 +69,31 @@ mod _lexicon_description;
 
 mod _output_format;
 
+mod _quota_code;
+
+mod _service_code;
+
 mod _speech_mark_type;
+
+mod _start_speech_synthesis_stream_action_stream;
+
+mod _start_speech_synthesis_stream_event_stream;
+
+mod _stream_closed_event;
 
 mod _synthesis_task;
 
 mod _task_status;
 
+mod _text_event;
+
 mod _text_type;
+
+mod _throttling_reason;
+
+mod _validation_exception_field;
+
+mod _validation_exception_reason;
 
 mod _voice;
 

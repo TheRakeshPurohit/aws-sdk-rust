@@ -122,17 +122,31 @@ impl UpdateSchedulingPolicyFluentBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
-    /// <p>The fair-share policy scheduling details.</p>
+    /// <p>The quota share scheduling policy details. Once set during creation, a quotaSharePolicy cannot be removed or changed to a fairsharePolicy.</p>
+    pub fn quota_share_policy(mut self, input: crate::types::QuotaSharePolicy) -> Self {
+        self.inner = self.inner.quota_share_policy(input);
+        self
+    }
+    /// <p>The quota share scheduling policy details. Once set during creation, a quotaSharePolicy cannot be removed or changed to a fairsharePolicy.</p>
+    pub fn set_quota_share_policy(mut self, input: ::std::option::Option<crate::types::QuotaSharePolicy>) -> Self {
+        self.inner = self.inner.set_quota_share_policy(input);
+        self
+    }
+    /// <p>The quota share scheduling policy details. Once set during creation, a quotaSharePolicy cannot be removed or changed to a fairsharePolicy.</p>
+    pub fn get_quota_share_policy(&self) -> &::std::option::Option<crate::types::QuotaSharePolicy> {
+        self.inner.get_quota_share_policy()
+    }
+    /// <p>The fair-share policy scheduling details. Once set during creation, a fairsharePolicy cannot be removed or changed to a quotaSharePolicy.</p>
     pub fn fairshare_policy(mut self, input: crate::types::FairsharePolicy) -> Self {
         self.inner = self.inner.fairshare_policy(input);
         self
     }
-    /// <p>The fair-share policy scheduling details.</p>
+    /// <p>The fair-share policy scheduling details. Once set during creation, a fairsharePolicy cannot be removed or changed to a quotaSharePolicy.</p>
     pub fn set_fairshare_policy(mut self, input: ::std::option::Option<crate::types::FairsharePolicy>) -> Self {
         self.inner = self.inner.set_fairshare_policy(input);
         self
     }
-    /// <p>The fair-share policy scheduling details.</p>
+    /// <p>The fair-share policy scheduling details. Once set during creation, a fairsharePolicy cannot be removed or changed to a quotaSharePolicy.</p>
     pub fn get_fairshare_policy(&self) -> &::std::option::Option<crate::types::FairsharePolicy> {
         self.inner.get_fairshare_policy()
     }

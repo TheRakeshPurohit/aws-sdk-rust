@@ -15,6 +15,8 @@ pub struct GetCodeInterpreterSessionOutput {
     pub session_timeout_seconds: ::std::option::Option<i32>,
     /// <p>The current status of the code interpreter session. Possible values include ACTIVE, STOPPING, and STOPPED.</p>
     pub status: ::std::option::Option<crate::types::CodeInterpreterSessionStatus>,
+    /// <p>The list of certificates installed in the code interpreter session.</p>
+    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     _request_id: Option<String>,
 }
 impl GetCodeInterpreterSessionOutput {
@@ -44,6 +46,12 @@ impl GetCodeInterpreterSessionOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::CodeInterpreterSessionStatus> {
         self.status.as_ref()
     }
+    /// <p>The list of certificates installed in the code interpreter session.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::Certificate] {
+        self.certificates.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetCodeInterpreterSessionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -67,6 +75,7 @@ pub struct GetCodeInterpreterSessionOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) session_timeout_seconds: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::CodeInterpreterSessionStatus>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     _request_id: Option<String>,
 }
 impl GetCodeInterpreterSessionOutputBuilder {
@@ -157,6 +166,26 @@ impl GetCodeInterpreterSessionOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CodeInterpreterSessionStatus> {
         &self.status
     }
+    /// Appends an item to `certificates`.
+    ///
+    /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
+    ///
+    /// <p>The list of certificates installed in the code interpreter session.</p>
+    pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
+        let mut v = self.certificates.unwrap_or_default();
+        v.push(input);
+        self.certificates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of certificates installed in the code interpreter session.</p>
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
+        self.certificates = input;
+        self
+    }
+    /// <p>The list of certificates installed in the code interpreter session.</p>
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        &self.certificates
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -199,6 +228,7 @@ impl GetCodeInterpreterSessionOutputBuilder {
             })?,
             session_timeout_seconds: self.session_timeout_seconds,
             status: self.status,
+            certificates: self.certificates,
             _request_id: self._request_id,
         })
     }

@@ -21,6 +21,12 @@ pub use crate::types::error::_unsupported_pls_alphabet_exception::UnsupportedPls
 
 pub use crate::types::error::_unsupported_pls_language_exception::UnsupportedPlsLanguageExceptionBuilder;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
+
+pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
+
+pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
+
 pub use crate::types::error::_engine_not_supported_exception::EngineNotSupportedExceptionBuilder;
 
 pub use crate::types::error::_invalid_s3_bucket_exception::InvalidS3BucketExceptionBuilder;

@@ -42,6 +42,8 @@ pub struct FleetData {
     pub spot_options: ::std::option::Option<crate::types::SpotOptions>,
     /// <p>The allocation strategy of On-Demand Instances in an EC2 Fleet.</p>
     pub on_demand_options: ::std::option::Option<crate::types::OnDemandOptions>,
+    /// <p>Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p>
+    pub reserved_capacity_options: ::std::option::Option<crate::types::ReservedCapacityOptions>,
     /// <p>The tags for an EC2 Fleet resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Information about the instances that could not be launched by the fleet. Valid only when <b>Type</b> is set to <code>instant</code>.</p>
@@ -126,6 +128,10 @@ impl FleetData {
     pub fn on_demand_options(&self) -> ::std::option::Option<&crate::types::OnDemandOptions> {
         self.on_demand_options.as_ref()
     }
+    /// <p>Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p>
+    pub fn reserved_capacity_options(&self) -> ::std::option::Option<&crate::types::ReservedCapacityOptions> {
+        self.reserved_capacity_options.as_ref()
+    }
     /// <p>The tags for an EC2 Fleet resource.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -177,6 +183,7 @@ pub struct FleetDataBuilder {
     pub(crate) replace_unhealthy_instances: ::std::option::Option<bool>,
     pub(crate) spot_options: ::std::option::Option<crate::types::SpotOptions>,
     pub(crate) on_demand_options: ::std::option::Option<crate::types::OnDemandOptions>,
+    pub(crate) reserved_capacity_options: ::std::option::Option<crate::types::ReservedCapacityOptions>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::DescribeFleetError>>,
     pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::DescribeFleetsInstances>>,
@@ -442,6 +449,20 @@ impl FleetDataBuilder {
     pub fn get_on_demand_options(&self) -> &::std::option::Option<crate::types::OnDemandOptions> {
         &self.on_demand_options
     }
+    /// <p>Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p>
+    pub fn reserved_capacity_options(mut self, input: crate::types::ReservedCapacityOptions) -> Self {
+        self.reserved_capacity_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p>
+    pub fn set_reserved_capacity_options(mut self, input: ::std::option::Option<crate::types::ReservedCapacityOptions>) -> Self {
+        self.reserved_capacity_options = input;
+        self
+    }
+    /// <p>Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p>
+    pub fn get_reserved_capacity_options(&self) -> &::std::option::Option<crate::types::ReservedCapacityOptions> {
+        &self.reserved_capacity_options
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -536,6 +557,7 @@ impl FleetDataBuilder {
             replace_unhealthy_instances: self.replace_unhealthy_instances,
             spot_options: self.spot_options,
             on_demand_options: self.on_demand_options,
+            reserved_capacity_options: self.reserved_capacity_options,
             tags: self.tags,
             errors: self.errors,
             instances: self.instances,

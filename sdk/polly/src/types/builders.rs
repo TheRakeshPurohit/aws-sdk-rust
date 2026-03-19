@@ -8,3 +8,17 @@ pub use crate::types::_synthesis_task::SynthesisTaskBuilder;
 pub use crate::types::_voice::VoiceBuilder;
 
 pub use crate::types::_lexicon_description::LexiconDescriptionBuilder;
+
+pub use crate::types::_text_event::TextEventBuilder;
+
+pub use crate::types::_close_stream_event::CloseStreamEventBuilder;
+
+pub use crate::types::_audio_event::AudioEventBuilder;
+
+pub use crate::types::_stream_closed_event::StreamClosedEventBuilder;
+
+pub use crate::types::_throttling_reason::ThrottlingReasonBuilder;
+
+pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
+
+pub use crate::types::_flush_stream_configuration::FlushStreamConfigurationBuilder;

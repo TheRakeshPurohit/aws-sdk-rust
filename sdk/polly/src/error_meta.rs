@@ -36,16 +36,22 @@ pub enum Error {
     MaxLexiconsNumberExceededException(crate::types::error::MaxLexiconsNumberExceededException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),
+    /// <p>The request would cause a service quota to be exceeded.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>SSML speech marks are not supported for plain text-type input.</p>
     SsmlMarksNotSupportedForTextTypeException(crate::types::error::SsmlMarksNotSupportedForTextTypeException),
     /// <p>The Speech Synthesis task with requested Task ID cannot be found.</p>
     SynthesisTaskNotFoundException(crate::types::error::SynthesisTaskNotFoundException),
     /// <p>The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of which no more than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code> API, the maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not counted as billed characters.</p>
     TextLengthExceededException(crate::types::error::TextLengthExceededException),
+    /// <p>The request was denied because of request throttling.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are <code>x-sampa</code> and <code>ipa</code>.</p>
     UnsupportedPlsAlphabetException(crate::types::error::UnsupportedPlsAlphabetException),
     /// <p>The language specified in the lexicon is unsupported. For a list of supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
     UnsupportedPlsLanguageException(crate::types::error::UnsupportedPlsLanguageException),
+    /// <p>The input fails to satisfy the constraints specified by the service.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -74,11 +80,14 @@ impl ::std::fmt::Display for Error {
             Error::MaxLexemeLengthExceededException(inner) => inner.fmt(f),
             Error::MaxLexiconsNumberExceededException(inner) => inner.fmt(f),
             Error::ServiceFailureException(inner) => inner.fmt(f),
+            Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::SsmlMarksNotSupportedForTextTypeException(inner) => inner.fmt(f),
             Error::SynthesisTaskNotFoundException(inner) => inner.fmt(f),
             Error::TextLengthExceededException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::UnsupportedPlsAlphabetException(inner) => inner.fmt(f),
             Error::UnsupportedPlsLanguageException(inner) => inner.fmt(f),
+            Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -116,11 +125,14 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::MaxLexemeLengthExceededException(inner) => inner.meta(),
             Self::MaxLexiconsNumberExceededException(inner) => inner.meta(),
             Self::ServiceFailureException(inner) => inner.meta(),
+            Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::SsmlMarksNotSupportedForTextTypeException(inner) => inner.meta(),
             Self::SynthesisTaskNotFoundException(inner) => inner.meta(),
             Self::TextLengthExceededException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
             Self::UnsupportedPlsAlphabetException(inner) => inner.meta(),
             Self::UnsupportedPlsLanguageException(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -310,6 +322,42 @@ impl From<crate::operation::put_lexicon::PutLexiconError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_speech_synthesis_stream::StartSpeechSynthesisStreamError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_speech_synthesis_stream::StartSpeechSynthesisStreamError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_speech_synthesis_stream::StartSpeechSynthesisStreamError> for Error {
+    fn from(err: crate::operation::start_speech_synthesis_stream::StartSpeechSynthesisStreamError) -> Self {
+        match err {
+            crate::operation::start_speech_synthesis_stream::StartSpeechSynthesisStreamError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::start_speech_synthesis_stream::StartSpeechSynthesisStreamError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_speech_synthesis_stream::StartSpeechSynthesisStreamError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_speech_synthesis_stream::StartSpeechSynthesisStreamError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_speech_synthesis_stream::StartSpeechSynthesisStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError, R>>
     for Error
 where
@@ -410,6 +458,54 @@ impl From<crate::operation::synthesize_speech::SynthesizeSpeechError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::StartSpeechSynthesisStreamActionStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::StartSpeechSynthesisStreamActionStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::StartSpeechSynthesisStreamActionStreamError> for Error {
+    fn from(err: crate::types::error::StartSpeechSynthesisStreamActionStreamError) -> Self {
+        match err {
+            crate::types::error::StartSpeechSynthesisStreamActionStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::StartSpeechSynthesisStreamEventStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::StartSpeechSynthesisStreamEventStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::StartSpeechSynthesisStreamEventStreamError> for Error {
+    fn from(err: crate::types::error::StartSpeechSynthesisStreamEventStreamError) -> Self {
+        match err {
+            crate::types::error::StartSpeechSynthesisStreamEventStreamError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::types::error::StartSpeechSynthesisStreamEventStreamError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::types::error::StartSpeechSynthesisStreamEventStreamError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::types::error::StartSpeechSynthesisStreamEventStreamError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::types::error::StartSpeechSynthesisStreamEventStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
@@ -429,11 +525,14 @@ impl ::std::error::Error for Error {
             Error::MaxLexemeLengthExceededException(inner) => inner.source(),
             Error::MaxLexiconsNumberExceededException(inner) => inner.source(),
             Error::ServiceFailureException(inner) => inner.source(),
+            Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::SsmlMarksNotSupportedForTextTypeException(inner) => inner.source(),
             Error::SynthesisTaskNotFoundException(inner) => inner.source(),
             Error::TextLengthExceededException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
             Error::UnsupportedPlsAlphabetException(inner) => inner.source(),
             Error::UnsupportedPlsLanguageException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -457,11 +556,14 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::MaxLexemeLengthExceededException(e) => e.request_id(),
             Self::MaxLexiconsNumberExceededException(e) => e.request_id(),
             Self::ServiceFailureException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::SsmlMarksNotSupportedForTextTypeException(e) => e.request_id(),
             Self::SynthesisTaskNotFoundException(e) => e.request_id(),
             Self::TextLengthExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::UnsupportedPlsAlphabetException(e) => e.request_id(),
             Self::UnsupportedPlsLanguageException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

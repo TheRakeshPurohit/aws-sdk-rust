@@ -13,6 +13,8 @@ pub struct StartCodeInterpreterSessionInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The duration in seconds (time-to-live) after which the session automatically terminates, regardless of ongoing activity. Defaults to 900 seconds (15 minutes). Recommended minimum: 60 seconds. Maximum allowed: 28,800 seconds (8 hours).</p>
     pub session_timeout_seconds: ::std::option::Option<i32>,
+    /// <p>A list of certificates to install in the code interpreter session.</p>
+    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -37,6 +39,12 @@ impl StartCodeInterpreterSessionInput {
     pub fn session_timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.session_timeout_seconds
     }
+    /// <p>A list of certificates to install in the code interpreter session.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificates.is_none()`.
+    pub fn certificates(&self) -> &[crate::types::Certificate] {
+        self.certificates.as_deref().unwrap_or_default()
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -58,6 +66,7 @@ pub struct StartCodeInterpreterSessionInputBuilder {
     pub(crate) code_interpreter_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) session_timeout_seconds: ::std::option::Option<i32>,
+    pub(crate) certificates: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartCodeInterpreterSessionInputBuilder {
@@ -132,6 +141,26 @@ impl StartCodeInterpreterSessionInputBuilder {
     pub fn get_session_timeout_seconds(&self) -> &::std::option::Option<i32> {
         &self.session_timeout_seconds
     }
+    /// Appends an item to `certificates`.
+    ///
+    /// To override the contents of this collection use [`set_certificates`](Self::set_certificates).
+    ///
+    /// <p>A list of certificates to install in the code interpreter session.</p>
+    pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
+        let mut v = self.certificates.unwrap_or_default();
+        v.push(input);
+        self.certificates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of certificates to install in the code interpreter session.</p>
+    pub fn set_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Certificate>>) -> Self {
+        self.certificates = input;
+        self
+    }
+    /// <p>A list of certificates to install in the code interpreter session.</p>
+    pub fn get_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Certificate>> {
+        &self.certificates
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -159,6 +188,7 @@ impl StartCodeInterpreterSessionInputBuilder {
             code_interpreter_identifier: self.code_interpreter_identifier,
             name: self.name,
             session_timeout_seconds: self.session_timeout_seconds,
+            certificates: self.certificates,
             client_token: self.client_token,
         })
     }

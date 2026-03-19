@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-polly = "1.103.0"
+//! aws-sdk-polly = "1.104.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -191,6 +191,10 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
+mod event_receiver;
+
+mod event_stream_serde;
+
 mod observability_feature;
 
 pub mod presigning;
@@ -206,6 +210,8 @@ mod serialization_settings;
 mod endpoint_lib;
 
 mod lens;
+
+mod serde_util;
 
 mod json_errors;
 

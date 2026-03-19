@@ -29,6 +29,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "quotaSharePolicy" => {
+                            builder = builder
+                                .set_quota_share_policy(crate::protocol_serde::shape_quota_share_policy::de_quota_share_policy(tokens, _value)?);
+                        }
                         "fairsharePolicy" => {
                             builder =
                                 builder.set_fairshare_policy(crate::protocol_serde::shape_fairshare_policy::de_fairshare_policy(tokens, _value)?);

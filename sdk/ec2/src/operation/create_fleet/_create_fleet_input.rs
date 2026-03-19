@@ -12,6 +12,9 @@ pub struct CreateFleetInput {
     pub spot_options: ::std::option::Option<crate::types::SpotOptionsRequest>,
     /// <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
     pub on_demand_options: ::std::option::Option<crate::types::OnDemandOptionsRequest>,
+    /// <p>Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p>
+    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    pub reserved_capacity_options: ::std::option::Option<crate::types::ReservedCapacityOptionsRequest>,
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub excess_capacity_termination_policy: ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
@@ -62,6 +65,11 @@ impl CreateFleetInput {
     /// <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
     pub fn on_demand_options(&self) -> ::std::option::Option<&crate::types::OnDemandOptionsRequest> {
         self.on_demand_options.as_ref()
+    }
+    /// <p>Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p>
+    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    pub fn reserved_capacity_options(&self) -> ::std::option::Option<&crate::types::ReservedCapacityOptionsRequest> {
+        self.reserved_capacity_options.as_ref()
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
@@ -135,6 +143,7 @@ pub struct CreateFleetInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) spot_options: ::std::option::Option<crate::types::SpotOptionsRequest>,
     pub(crate) on_demand_options: ::std::option::Option<crate::types::OnDemandOptionsRequest>,
+    pub(crate) reserved_capacity_options: ::std::option::Option<crate::types::ReservedCapacityOptionsRequest>,
     pub(crate) excess_capacity_termination_policy: ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
     pub(crate) launch_template_configs: ::std::option::Option<::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>,
     pub(crate) target_capacity_specification: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
@@ -205,6 +214,23 @@ impl CreateFleetInputBuilder {
     /// <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
     pub fn get_on_demand_options(&self) -> &::std::option::Option<crate::types::OnDemandOptionsRequest> {
         &self.on_demand_options
+    }
+    /// <p>Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p>
+    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    pub fn reserved_capacity_options(mut self, input: crate::types::ReservedCapacityOptionsRequest) -> Self {
+        self.reserved_capacity_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p>
+    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    pub fn set_reserved_capacity_options(mut self, input: ::std::option::Option<crate::types::ReservedCapacityOptionsRequest>) -> Self {
+        self.reserved_capacity_options = input;
+        self
+    }
+    /// <p>Defines EC2 Fleet preferences for utilizing reserved capacity when DefaultTargetCapacityType is set to <code>reserved-capacity</code>.</p>
+    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    pub fn get_reserved_capacity_options(&self) -> &::std::option::Option<crate::types::ReservedCapacityOptionsRequest> {
+        &self.reserved_capacity_options
     }
     /// <p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
@@ -408,6 +434,7 @@ impl CreateFleetInputBuilder {
             client_token: self.client_token,
             spot_options: self.spot_options,
             on_demand_options: self.on_demand_options,
+            reserved_capacity_options: self.reserved_capacity_options,
             excess_capacity_termination_policy: self.excess_capacity_termination_policy,
             launch_template_configs: self.launch_template_configs,
             target_capacity_specification: self.target_capacity_specification,

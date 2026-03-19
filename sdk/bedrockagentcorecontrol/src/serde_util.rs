@@ -1723,6 +1723,15 @@ pub(crate) fn atlassian_oauth2_provider_config_output_correct_errors(
     builder
 }
 
+pub(crate) fn browser_enterprise_policy_correct_errors(
+    mut builder: crate::types::builders::BrowserEnterprisePolicyBuilder,
+) -> crate::types::builders::BrowserEnterprisePolicyBuilder {
+    if builder.location.is_none() {
+        builder.location = Some(crate::types::ResourceLocation::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn browser_profile_summary_correct_errors(
     mut builder: crate::types::builders::BrowserProfileSummaryBuilder,
 ) -> crate::types::builders::BrowserProfileSummaryBuilder {
@@ -1768,6 +1777,13 @@ pub(crate) fn browser_summary_correct_errors(
 pub(crate) fn cedar_policy_correct_errors(mut builder: crate::types::builders::CedarPolicyBuilder) -> crate::types::builders::CedarPolicyBuilder {
     if builder.statement.is_none() {
         builder.statement = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn certificate_correct_errors(mut builder: crate::types::builders::CertificateBuilder) -> crate::types::builders::CertificateBuilder {
+    if builder.location.is_none() {
+        builder.location = Some(crate::types::CertificateLocation::Unknown)
     }
     builder
 }
@@ -2454,6 +2470,15 @@ pub(crate) fn oauth2_authorization_server_metadata_correct_errors(
     }
     if builder.token_endpoint.is_none() {
         builder.token_endpoint = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn secrets_manager_location_correct_errors(
+    mut builder: crate::types::builders::SecretsManagerLocationBuilder,
+) -> crate::types::builders::SecretsManagerLocationBuilder {
+    if builder.secret_arn.is_none() {
+        builder.secret_arn = Some(Default::default())
     }
     builder
 }

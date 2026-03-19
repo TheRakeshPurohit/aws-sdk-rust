@@ -6,7 +6,9 @@
 pub struct UpdateSchedulingPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The fair-share policy scheduling details.</p>
+    /// <p>The quota share scheduling policy details. Once set during creation, a quotaSharePolicy cannot be removed or changed to a fairsharePolicy.</p>
+    pub quota_share_policy: ::std::option::Option<crate::types::QuotaSharePolicy>,
+    /// <p>The fair-share policy scheduling details. Once set during creation, a fairsharePolicy cannot be removed or changed to a quotaSharePolicy.</p>
     pub fairshare_policy: ::std::option::Option<crate::types::FairsharePolicy>,
 }
 impl UpdateSchedulingPolicyInput {
@@ -14,7 +16,11 @@ impl UpdateSchedulingPolicyInput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The fair-share policy scheduling details.</p>
+    /// <p>The quota share scheduling policy details. Once set during creation, a quotaSharePolicy cannot be removed or changed to a fairsharePolicy.</p>
+    pub fn quota_share_policy(&self) -> ::std::option::Option<&crate::types::QuotaSharePolicy> {
+        self.quota_share_policy.as_ref()
+    }
+    /// <p>The fair-share policy scheduling details. Once set during creation, a fairsharePolicy cannot be removed or changed to a quotaSharePolicy.</p>
     pub fn fairshare_policy(&self) -> ::std::option::Option<&crate::types::FairsharePolicy> {
         self.fairshare_policy.as_ref()
     }
@@ -31,6 +37,7 @@ impl UpdateSchedulingPolicyInput {
 #[non_exhaustive]
 pub struct UpdateSchedulingPolicyInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) quota_share_policy: ::std::option::Option<crate::types::QuotaSharePolicy>,
     pub(crate) fairshare_policy: ::std::option::Option<crate::types::FairsharePolicy>,
 }
 impl UpdateSchedulingPolicyInputBuilder {
@@ -49,17 +56,31 @@ impl UpdateSchedulingPolicyInputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The fair-share policy scheduling details.</p>
+    /// <p>The quota share scheduling policy details. Once set during creation, a quotaSharePolicy cannot be removed or changed to a fairsharePolicy.</p>
+    pub fn quota_share_policy(mut self, input: crate::types::QuotaSharePolicy) -> Self {
+        self.quota_share_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The quota share scheduling policy details. Once set during creation, a quotaSharePolicy cannot be removed or changed to a fairsharePolicy.</p>
+    pub fn set_quota_share_policy(mut self, input: ::std::option::Option<crate::types::QuotaSharePolicy>) -> Self {
+        self.quota_share_policy = input;
+        self
+    }
+    /// <p>The quota share scheduling policy details. Once set during creation, a quotaSharePolicy cannot be removed or changed to a fairsharePolicy.</p>
+    pub fn get_quota_share_policy(&self) -> &::std::option::Option<crate::types::QuotaSharePolicy> {
+        &self.quota_share_policy
+    }
+    /// <p>The fair-share policy scheduling details. Once set during creation, a fairsharePolicy cannot be removed or changed to a quotaSharePolicy.</p>
     pub fn fairshare_policy(mut self, input: crate::types::FairsharePolicy) -> Self {
         self.fairshare_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The fair-share policy scheduling details.</p>
+    /// <p>The fair-share policy scheduling details. Once set during creation, a fairsharePolicy cannot be removed or changed to a quotaSharePolicy.</p>
     pub fn set_fairshare_policy(mut self, input: ::std::option::Option<crate::types::FairsharePolicy>) -> Self {
         self.fairshare_policy = input;
         self
     }
-    /// <p>The fair-share policy scheduling details.</p>
+    /// <p>The fair-share policy scheduling details. Once set during creation, a fairsharePolicy cannot be removed or changed to a quotaSharePolicy.</p>
     pub fn get_fairshare_policy(&self) -> &::std::option::Option<crate::types::FairsharePolicy> {
         &self.fairshare_policy
     }
@@ -72,6 +93,7 @@ impl UpdateSchedulingPolicyInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::update_scheduling_policy::UpdateSchedulingPolicyInput {
             arn: self.arn,
+            quota_share_policy: self.quota_share_policy,
             fairshare_policy: self.fairshare_policy,
         })
     }

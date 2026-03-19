@@ -146,6 +146,29 @@ impl From<crate::operation::create_job_queue::CreateJobQueueError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_quota_share::CreateQuotaShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_quota_share::CreateQuotaShareError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_quota_share::CreateQuotaShareError> for Error {
+    fn from(err: crate::operation::create_quota_share::CreateQuotaShareError) -> Self {
+        match err {
+            crate::operation::create_quota_share::CreateQuotaShareError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_quota_share::CreateQuotaShareError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::create_quota_share::CreateQuotaShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_scheduling_policy::CreateSchedulingPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -269,6 +292,29 @@ impl From<crate::operation::delete_job_queue::DeleteJobQueueError> for Error {
             crate::operation::delete_job_queue::DeleteJobQueueError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::delete_job_queue::DeleteJobQueueError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::delete_job_queue::DeleteJobQueueError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_quota_share::DeleteQuotaShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_quota_share::DeleteQuotaShareError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_quota_share::DeleteQuotaShareError> for Error {
+    fn from(err: crate::operation::delete_quota_share::DeleteQuotaShareError) -> Self {
+        match err {
+            crate::operation::delete_quota_share::DeleteQuotaShareError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::delete_quota_share::DeleteQuotaShareError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::delete_quota_share::DeleteQuotaShareError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -476,6 +522,29 @@ impl From<crate::operation::describe_jobs::DescribeJobsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_quota_share::DescribeQuotaShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_quota_share::DescribeQuotaShareError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_quota_share::DescribeQuotaShareError> for Error {
+    fn from(err: crate::operation::describe_quota_share::DescribeQuotaShareError) -> Self {
+        match err {
+            crate::operation::describe_quota_share::DescribeQuotaShareError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_quota_share::DescribeQuotaShareError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_quota_share::DescribeQuotaShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesError, R>>
     for Error
 where
@@ -658,6 +727,29 @@ impl From<crate::operation::list_jobs_by_consumable_resource::ListJobsByConsumab
                 Error::ServerException(inner)
             }
             crate::operation::list_jobs_by_consumable_resource::ListJobsByConsumableResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_quota_shares::ListQuotaSharesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_quota_shares::ListQuotaSharesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_quota_shares::ListQuotaSharesError> for Error {
+    fn from(err: crate::operation::list_quota_shares::ListQuotaSharesError) -> Self {
+        match err {
+            crate::operation::list_quota_shares::ListQuotaSharesError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_quota_shares::ListQuotaSharesError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_quota_shares::ListQuotaSharesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -970,6 +1062,29 @@ impl From<crate::operation::update_job_queue::UpdateJobQueueError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_quota_share::UpdateQuotaShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_quota_share::UpdateQuotaShareError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_quota_share::UpdateQuotaShareError> for Error {
+    fn from(err: crate::operation::update_quota_share::UpdateQuotaShareError) -> Self {
+        match err {
+            crate::operation::update_quota_share::UpdateQuotaShareError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::update_quota_share::UpdateQuotaShareError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::update_quota_share::UpdateQuotaShareError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_scheduling_policy::UpdateSchedulingPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1018,6 +1133,29 @@ impl From<crate::operation::update_service_environment::UpdateServiceEnvironment
             crate::operation::update_service_environment::UpdateServiceEnvironmentError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::update_service_environment::UpdateServiceEnvironmentError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::update_service_environment::UpdateServiceEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_service_job::UpdateServiceJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_service_job::UpdateServiceJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_service_job::UpdateServiceJobError> for Error {
+    fn from(err: crate::operation::update_service_job::UpdateServiceJobError) -> Self {
+        match err {
+            crate::operation::update_service_job::UpdateServiceJobError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::update_service_job::UpdateServiceJobError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::update_service_job::UpdateServiceJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

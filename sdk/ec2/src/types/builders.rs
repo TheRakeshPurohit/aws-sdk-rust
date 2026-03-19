@@ -93,6 +93,8 @@ pub use crate::types::_spot_options_request::SpotOptionsRequestBuilder;
 
 pub use crate::types::_on_demand_options_request::OnDemandOptionsRequestBuilder;
 
+pub use crate::types::_reserved_capacity_options_request::ReservedCapacityOptionsRequestBuilder;
+
 pub use crate::types::_target_capacity_specification_request::TargetCapacitySpecificationRequestBuilder;
 
 pub use crate::types::_destination_options_request::DestinationOptionsRequestBuilder;
@@ -1288,6 +1290,8 @@ pub use crate::types::_target_capacity_specification::TargetCapacitySpecificatio
 pub use crate::types::_spot_options::SpotOptionsBuilder;
 
 pub use crate::types::_on_demand_options::OnDemandOptionsBuilder;
+
+pub use crate::types::_reserved_capacity_options::ReservedCapacityOptionsBuilder;
 
 pub use crate::types::_destination_options_response::DestinationOptionsResponseBuilder;
 

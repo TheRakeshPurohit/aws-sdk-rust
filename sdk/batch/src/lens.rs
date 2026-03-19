@@ -69,6 +69,16 @@ pub(crate) fn reflens_list_jobs_by_consumable_resource_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_quota_shares_output_output_next_token(
+    input: &crate::operation::list_quota_shares::ListQuotaSharesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_scheduling_policies_output_output_next_token(
     input: &crate::operation::list_scheduling_policies::ListSchedulingPoliciesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -135,6 +145,13 @@ pub(crate) fn lens_list_jobs_by_consumable_resource_output_output_jobs(
     input: crate::operation::list_jobs_by_consumable_resource::ListJobsByConsumableResourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListJobsByConsumableResourceSummary>> {
     let input = input.jobs?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_quota_shares_output_output_quota_shares(
+    input: crate::operation::list_quota_shares::ListQuotaSharesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::QuotaShareDetail>> {
+    let input = input.quota_shares?;
     ::std::option::Option::Some(input)
 }
 

@@ -8,6 +8,8 @@ pub struct SchedulingPolicyDetail {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy. An example is <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The quota share scheduling policy details.</p>
+    pub quota_share_policy: ::std::option::Option<crate::types::QuotaSharePolicy>,
     /// <p>The fair-share scheduling policy details.</p>
     pub fairshare_policy: ::std::option::Option<crate::types::FairsharePolicy>,
     /// <p>The tags that you apply to the fair-share scheduling policy to categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in <i>Amazon Web Services General Reference</i>.</p>
@@ -21,6 +23,10 @@ impl SchedulingPolicyDetail {
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy. An example is <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>The quota share scheduling policy details.</p>
+    pub fn quota_share_policy(&self) -> ::std::option::Option<&crate::types::QuotaSharePolicy> {
+        self.quota_share_policy.as_ref()
     }
     /// <p>The fair-share scheduling policy details.</p>
     pub fn fairshare_policy(&self) -> ::std::option::Option<&crate::types::FairsharePolicy> {
@@ -44,6 +50,7 @@ impl SchedulingPolicyDetail {
 pub struct SchedulingPolicyDetailBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) quota_share_policy: ::std::option::Option<crate::types::QuotaSharePolicy>,
     pub(crate) fairshare_policy: ::std::option::Option<crate::types::FairsharePolicy>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -77,6 +84,20 @@ impl SchedulingPolicyDetailBuilder {
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy. An example is <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i> </code>.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
+    }
+    /// <p>The quota share scheduling policy details.</p>
+    pub fn quota_share_policy(mut self, input: crate::types::QuotaSharePolicy) -> Self {
+        self.quota_share_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The quota share scheduling policy details.</p>
+    pub fn set_quota_share_policy(mut self, input: ::std::option::Option<crate::types::QuotaSharePolicy>) -> Self {
+        self.quota_share_policy = input;
+        self
+    }
+    /// <p>The quota share scheduling policy details.</p>
+    pub fn get_quota_share_policy(&self) -> &::std::option::Option<crate::types::QuotaSharePolicy> {
+        &self.quota_share_policy
     }
     /// <p>The fair-share scheduling policy details.</p>
     pub fn fairshare_policy(mut self, input: crate::types::FairsharePolicy) -> Self {
@@ -117,6 +138,7 @@ impl SchedulingPolicyDetailBuilder {
         crate::types::SchedulingPolicyDetail {
             name: self.name,
             arn: self.arn,
+            quota_share_policy: self.quota_share_policy,
             fairshare_policy: self.fairshare_policy,
             tags: self.tags,
         }

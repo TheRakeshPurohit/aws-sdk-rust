@@ -159,6 +159,10 @@ pub use crate::types::_browser_network_mode::BrowserNetworkMode;
 
 pub use crate::types::_s3_location::S3Location;
 
+pub use crate::types::_browser_enterprise_policy::BrowserEnterprisePolicy;
+
+pub use crate::types::_certificate::Certificate;
+
 pub use crate::types::_code_interpreter_summary::CodeInterpreterSummary;
 
 pub use crate::types::_code_interpreter_network_mode::CodeInterpreterNetworkMode;
@@ -239,6 +243,12 @@ pub use crate::types::_code::Code;
 
 pub use crate::types::_agent_managed_runtime_type::AgentManagedRuntimeType;
 
+pub use crate::types::_resource_location::ResourceLocation;
+
+pub use crate::types::_browser_enterprise_policy_type::BrowserEnterprisePolicyType;
+
+pub use crate::types::_certificate_location::CertificateLocation;
+
 pub use crate::types::_evaluator_type::EvaluatorType;
 
 pub use crate::types::_rating_scale::RatingScale;
@@ -284,6 +294,8 @@ pub use crate::types::_delete_memory_strategy_input::DeleteMemoryStrategyInput;
 pub use crate::types::_filter::Filter;
 
 pub use crate::types::_custom_claim_validation_type::CustomClaimValidationType;
+
+pub use crate::types::_secrets_manager_location::SecretsManagerLocation;
 
 pub use crate::types::_bedrock_evaluator_model_config::BedrockEvaluatorModelConfig;
 
@@ -493,6 +505,10 @@ mod _authorizing_claim_match_value_type;
 
 mod _bedrock_evaluator_model_config;
 
+mod _browser_enterprise_policy;
+
+mod _browser_enterprise_policy_type;
+
 mod _browser_network_configuration;
 
 mod _browser_network_mode;
@@ -512,6 +528,10 @@ mod _browser_summary;
 mod _categorical_scale_definition;
 
 mod _cedar_policy;
+
+mod _certificate;
+
+mod _certificate_location;
 
 mod _claim_match_operator_type;
 
@@ -801,6 +821,8 @@ mod _request_header_configuration;
 
 mod _resource;
 
+mod _resource_location;
+
 mod _resource_type;
 
 mod _rest_api_method;
@@ -826,6 +848,8 @@ mod _schema_type;
 mod _search_type;
 
 mod _secret;
+
+mod _secrets_manager_location;
 
 mod _self_managed_configuration;
 

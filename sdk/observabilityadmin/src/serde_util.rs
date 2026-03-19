@@ -81,9 +81,6 @@ pub(crate) fn cloudtrail_parameters_correct_errors(
 pub(crate) fn source_logs_configuration_correct_errors(
     mut builder: crate::types::builders::SourceLogsConfigurationBuilder,
 ) -> crate::types::builders::SourceLogsConfigurationBuilder {
-    if builder.log_group_selection_criteria.is_none() {
-        builder.log_group_selection_criteria = Some(Default::default())
-    }
     if builder.encrypted_log_group_strategy.is_none() {
         builder.encrypted_log_group_strategy = "no value was set".parse::<crate::types::EncryptedLogGroupStrategy>().ok()
     }

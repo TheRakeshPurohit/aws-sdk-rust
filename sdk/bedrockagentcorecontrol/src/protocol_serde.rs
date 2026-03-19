@@ -327,6 +327,10 @@ pub(crate) mod shape_api_key_credential_providers;
 
 pub(crate) mod shape_authorizer_configuration;
 
+pub(crate) mod shape_browser_enterprise_policies;
+
+pub(crate) mod shape_browser_enterprise_policy;
+
 pub(crate) mod shape_browser_network_configuration;
 
 pub(crate) mod shape_browser_profile_summaries;
@@ -336,6 +340,10 @@ pub(crate) mod shape_browser_signing_config_input;
 pub(crate) mod shape_browser_signing_config_output;
 
 pub(crate) mod shape_browser_summaries;
+
+pub(crate) mod shape_certificate;
+
+pub(crate) mod shape_certificates;
 
 pub(crate) mod shape_code_interpreter_network_configuration;
 
@@ -465,6 +473,8 @@ pub(crate) mod shape_browser_summary;
 
 pub(crate) mod shape_cedar_policy;
 
+pub(crate) mod shape_certificate_location;
+
 pub(crate) mod shape_cloud_watch_logs_input_config;
 
 pub(crate) mod shape_cloud_watch_output_config;
@@ -551,6 +561,8 @@ pub(crate) mod shape_policy_generation_details;
 
 pub(crate) mod shape_request_header_allowlist;
 
+pub(crate) mod shape_resource_location;
+
 pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_salesforce_oauth2_provider_config_input;
@@ -634,6 +646,8 @@ pub(crate) mod shape_o_auth_credential_provider;
 pub(crate) mod shape_oauth2_discovery;
 
 pub(crate) mod shape_rating_scale;
+
+pub(crate) mod shape_secrets_manager_location;
 
 pub(crate) mod shape_security_groups;
 

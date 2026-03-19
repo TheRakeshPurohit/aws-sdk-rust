@@ -231,38 +231,48 @@ pub fn de_fleet_data(
                 builder = builder.set_on_demand_options(var_17);
             }
             ,
-            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#FleetData$Tags */ =>  {
+            s if s.matches("reservedCapacityOptions") /* ReservedCapacityOptions com.amazonaws.ec2#FleetData$ReservedCapacityOptions */ =>  {
                 let var_18 =
+                    Some(
+                        crate::protocol_serde::shape_reserved_capacity_options::de_reserved_capacity_options(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_reserved_capacity_options(var_18);
+            }
+            ,
+            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#FleetData$Tags */ =>  {
+                let var_19 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_18);
+                builder = builder.set_tags(var_19);
             }
             ,
             s if s.matches("errorSet") /* Errors com.amazonaws.ec2#FleetData$Errors */ =>  {
-                let var_19 =
+                let var_20 =
                     Some(
                         crate::protocol_serde::shape_describe_fleets_error_set::de_describe_fleets_error_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_errors(var_19);
+                builder = builder.set_errors(var_20);
             }
             ,
             s if s.matches("fleetInstanceSet") /* Instances com.amazonaws.ec2#FleetData$Instances */ =>  {
-                let var_20 =
+                let var_21 =
                     Some(
                         crate::protocol_serde::shape_describe_fleets_instances_set::de_describe_fleets_instances_set(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instances(var_20);
+                builder = builder.set_instances(var_21);
             }
             ,
             s if s.matches("context") /* Context com.amazonaws.ec2#FleetData$Context */ =>  {
-                let var_21 =
+                let var_22 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -271,7 +281,7 @@ pub fn de_fleet_data(
                         ?
                     )
                 ;
-                builder = builder.set_context(var_21);
+                builder = builder.set_context(var_22);
             }
             ,
             _ => {}

@@ -22,6 +22,8 @@ pub struct ServiceJobSummary {
     pub service_job_type: ::std::option::Option<crate::types::ServiceJobType>,
     /// <p>The share identifier for the job.</p>
     pub share_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The quota share for the service job.</p>
+    pub quota_share_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the service job.</p>
     pub status: ::std::option::Option<crate::types::ServiceJobStatus>,
     /// <p>A short string to provide more details on the current status of the service job.</p>
@@ -70,6 +72,10 @@ impl ServiceJobSummary {
     pub fn share_identifier(&self) -> ::std::option::Option<&str> {
         self.share_identifier.as_deref()
     }
+    /// <p>The quota share for the service job.</p>
+    pub fn quota_share_name(&self) -> ::std::option::Option<&str> {
+        self.quota_share_name.as_deref()
+    }
     /// <p>The current status of the service job.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ServiceJobStatus> {
         self.status.as_ref()
@@ -107,6 +113,7 @@ pub struct ServiceJobSummaryBuilder {
     pub(crate) scheduled_at: ::std::option::Option<i64>,
     pub(crate) service_job_type: ::std::option::Option<crate::types::ServiceJobType>,
     pub(crate) share_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) quota_share_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ServiceJobStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) started_at: ::std::option::Option<i64>,
@@ -248,6 +255,20 @@ impl ServiceJobSummaryBuilder {
     pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.share_identifier
     }
+    /// <p>The quota share for the service job.</p>
+    pub fn quota_share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quota_share_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The quota share for the service job.</p>
+    pub fn set_quota_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.quota_share_name = input;
+        self
+    }
+    /// <p>The quota share for the service job.</p>
+    pub fn get_quota_share_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quota_share_name
+    }
     /// <p>The current status of the service job.</p>
     pub fn status(mut self, input: crate::types::ServiceJobStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -316,6 +337,7 @@ impl ServiceJobSummaryBuilder {
             scheduled_at: self.scheduled_at,
             service_job_type: self.service_job_type,
             share_identifier: self.share_identifier,
+            quota_share_name: self.quota_share_name,
             status: self.status,
             status_reason: self.status_reason,
             started_at: self.started_at,

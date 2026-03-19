@@ -10,11 +10,11 @@ pub struct LogGroupNameConfiguration {
     /// <li>
     /// <p><b>${source.logGroup}</b> — The original log group name from the source account.</p></li>
     /// <li>
-    /// <p><b>${source.accountId}</b> — The AWS account ID where the log originated.</p></li>
+    /// <p><b>${source.accountId}</b> — The Amazon Web Services account ID where the log originated.</p></li>
     /// <li>
-    /// <p><b>${source.region}</b> — The AWS Region where the log originated.</p></li>
+    /// <p><b>${source.region}</b> — The Amazon Web Services Region where the log originated.</p></li>
     /// <li>
-    /// <p><b>${source.org.id}</b> — The AWS Organization ID of the source account.</p></li>
+    /// <p><b>${source.org.id}</b> — The Amazon Web Services Organization ID of the source account.</p></li>
     /// <li>
     /// <p><b>${source.org.ouId}</b> — The organizational unit ID of the source account.</p></li>
     /// <li>
@@ -31,11 +31,11 @@ impl LogGroupNameConfiguration {
     /// <li>
     /// <p><b>${source.logGroup}</b> — The original log group name from the source account.</p></li>
     /// <li>
-    /// <p><b>${source.accountId}</b> — The AWS account ID where the log originated.</p></li>
+    /// <p><b>${source.accountId}</b> — The Amazon Web Services account ID where the log originated.</p></li>
     /// <li>
-    /// <p><b>${source.region}</b> — The AWS Region where the log originated.</p></li>
+    /// <p><b>${source.region}</b> — The Amazon Web Services Region where the log originated.</p></li>
     /// <li>
-    /// <p><b>${source.org.id}</b> — The AWS Organization ID of the source account.</p></li>
+    /// <p><b>${source.org.id}</b> — The Amazon Web Services Organization ID of the source account.</p></li>
     /// <li>
     /// <p><b>${source.org.ouId}</b> — The organizational unit ID of the source account.</p></li>
     /// <li>
@@ -68,11 +68,11 @@ impl LogGroupNameConfigurationBuilder {
     /// <li>
     /// <p><b>${source.logGroup}</b> — The original log group name from the source account.</p></li>
     /// <li>
-    /// <p><b>${source.accountId}</b> — The AWS account ID where the log originated.</p></li>
+    /// <p><b>${source.accountId}</b> — The Amazon Web Services account ID where the log originated.</p></li>
     /// <li>
-    /// <p><b>${source.region}</b> — The AWS Region where the log originated.</p></li>
+    /// <p><b>${source.region}</b> — The Amazon Web Services Region where the log originated.</p></li>
     /// <li>
-    /// <p><b>${source.org.id}</b> — The AWS Organization ID of the source account.</p></li>
+    /// <p><b>${source.org.id}</b> — The Amazon Web Services Organization ID of the source account.</p></li>
     /// <li>
     /// <p><b>${source.org.ouId}</b> — The organizational unit ID of the source account.</p></li>
     /// <li>
@@ -91,11 +91,11 @@ impl LogGroupNameConfigurationBuilder {
     /// <li>
     /// <p><b>${source.logGroup}</b> — The original log group name from the source account.</p></li>
     /// <li>
-    /// <p><b>${source.accountId}</b> — The AWS account ID where the log originated.</p></li>
+    /// <p><b>${source.accountId}</b> — The Amazon Web Services account ID where the log originated.</p></li>
     /// <li>
-    /// <p><b>${source.region}</b> — The AWS Region where the log originated.</p></li>
+    /// <p><b>${source.region}</b> — The Amazon Web Services Region where the log originated.</p></li>
     /// <li>
-    /// <p><b>${source.org.id}</b> — The AWS Organization ID of the source account.</p></li>
+    /// <p><b>${source.org.id}</b> — The Amazon Web Services Organization ID of the source account.</p></li>
     /// <li>
     /// <p><b>${source.org.ouId}</b> — The organizational unit ID of the source account.</p></li>
     /// <li>
@@ -113,11 +113,11 @@ impl LogGroupNameConfigurationBuilder {
     /// <li>
     /// <p><b>${source.logGroup}</b> — The original log group name from the source account.</p></li>
     /// <li>
-    /// <p><b>${source.accountId}</b> — The AWS account ID where the log originated.</p></li>
+    /// <p><b>${source.accountId}</b> — The Amazon Web Services account ID where the log originated.</p></li>
     /// <li>
-    /// <p><b>${source.region}</b> — The AWS Region where the log originated.</p></li>
+    /// <p><b>${source.region}</b> — The Amazon Web Services Region where the log originated.</p></li>
     /// <li>
-    /// <p><b>${source.org.id}</b> — The AWS Organization ID of the source account.</p></li>
+    /// <p><b>${source.org.id}</b> — The Amazon Web Services Organization ID of the source account.</p></li>
     /// <li>
     /// <p><b>${source.org.ouId}</b> — The organizational unit ID of the source account.</p></li>
     /// <li>
