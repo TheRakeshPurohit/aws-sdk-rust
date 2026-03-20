@@ -15,6 +15,8 @@ pub struct GetPolicyTemplateOutput {
     pub created_date: ::aws_smithy_types::DateTime,
     /// <p>The date and time that the policy template was most recently updated.</p>
     pub last_updated_date: ::aws_smithy_types::DateTime,
+    /// <p>The name of the policy template, if one was assigned when the policy template was created or last updated.</p>
+    pub name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPolicyTemplateOutput {
@@ -45,6 +47,10 @@ impl GetPolicyTemplateOutput {
     pub fn last_updated_date(&self) -> &::aws_smithy_types::DateTime {
         &self.last_updated_date
     }
+    /// <p>The name of the policy template, if one was assigned when the policy template was created or last updated.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl ::std::fmt::Debug for GetPolicyTemplateOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -55,6 +61,7 @@ impl ::std::fmt::Debug for GetPolicyTemplateOutput {
         formatter.field("statement", &"*** Sensitive Data Redacted ***");
         formatter.field("created_date", &self.created_date);
         formatter.field("last_updated_date", &self.last_updated_date);
+        formatter.field("name", &self.name);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -81,6 +88,7 @@ pub struct GetPolicyTemplateOutputBuilder {
     pub(crate) statement: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPolicyTemplateOutputBuilder {
@@ -173,6 +181,20 @@ impl GetPolicyTemplateOutputBuilder {
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date
     }
+    /// <p>The name of the policy template, if one was assigned when the policy template was created or last updated.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the policy template, if one was assigned when the policy template was created or last updated.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>The name of the policy template, if one was assigned when the policy template was created or last updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -224,6 +246,7 @@ impl GetPolicyTemplateOutputBuilder {
                     "last_updated_date was not specified but it is required when building GetPolicyTemplateOutput",
                 )
             })?,
+            name: self.name,
             _request_id: self._request_id,
         })
     }
@@ -237,6 +260,7 @@ impl ::std::fmt::Debug for GetPolicyTemplateOutputBuilder {
         formatter.field("statement", &"*** Sensitive Data Redacted ***");
         formatter.field("created_date", &self.created_date);
         formatter.field("last_updated_date", &self.last_updated_date);
+        formatter.field("name", &self.name);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

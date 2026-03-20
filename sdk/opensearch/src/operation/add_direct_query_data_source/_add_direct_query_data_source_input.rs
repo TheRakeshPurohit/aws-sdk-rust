@@ -9,7 +9,7 @@ pub struct AddDirectQueryDataSourceInput {
     pub data_source_type: ::std::option::Option<crate::types::DirectQueryDataSourceType>,
     /// <p>An optional text field for providing additional context and details about the data source.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source.</p>
+    /// <p>An optional list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source. This field is required for CloudWatchLogs and SecurityLake datasource types.</p>
     pub open_search_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An optional IAM access policy document that defines the permissions for accessing the data source. The policy document must be in valid JSON format and follow IAM policy syntax.</p>
     pub data_source_access_policy: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl AddDirectQueryDataSourceInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source.</p>
+    /// <p>An optional list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source. This field is required for CloudWatchLogs and SecurityLake datasource types.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.open_search_arns.is_none()`.
     pub fn open_search_arns(&self) -> &[::std::string::String] {
@@ -113,19 +113,19 @@ impl AddDirectQueryDataSourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_open_search_arns`](Self::set_open_search_arns).
     ///
-    /// <p>A list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source.</p>
+    /// <p>An optional list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source. This field is required for CloudWatchLogs and SecurityLake datasource types.</p>
     pub fn open_search_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.open_search_arns.unwrap_or_default();
         v.push(input.into());
         self.open_search_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source.</p>
+    /// <p>An optional list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source. This field is required for CloudWatchLogs and SecurityLake datasource types.</p>
     pub fn set_open_search_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.open_search_arns = input;
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source.</p>
+    /// <p>An optional list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source. This field is required for CloudWatchLogs and SecurityLake datasource types.</p>
     pub fn get_open_search_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.open_search_arns
     }

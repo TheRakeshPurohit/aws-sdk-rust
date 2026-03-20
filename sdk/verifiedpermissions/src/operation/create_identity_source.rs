@@ -275,7 +275,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateIdentit
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateIdentitySourceError {
-    /// <p>The request failed because another request to modify a resource occurred at the same.</p>
+    /// <p>The request failed because another request to modify a resource occurred at the same time.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request failed because it references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

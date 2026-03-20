@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_policies_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_policy_store_aliases_output_output_next_token(
+    input: &crate::operation::list_policy_store_aliases::ListPolicyStoreAliasesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_policy_stores_output_output_next_token(
     input: &crate::operation::list_policy_stores::ListPolicyStoresOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -50,6 +60,13 @@ pub(crate) fn lens_list_policies_output_output_policies(
     input: crate::operation::list_policies::ListPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyItem>> {
     let input = input.policies;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_policy_store_aliases_output_output_policy_store_aliases(
+    input: crate::operation::list_policy_store_aliases::ListPolicyStoreAliasesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyStoreAliasItem>> {
+    let input = input.policy_store_aliases;
     ::std::option::Option::Some(input)
 }
 

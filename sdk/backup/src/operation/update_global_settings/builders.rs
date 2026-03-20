@@ -22,7 +22,7 @@ impl crate::operation::update_global_settings::builders::UpdateGlobalSettingsInp
 }
 /// Fluent builder constructing a request to `UpdateGlobalSettings`.
 ///
-/// <p>Updates whether the Amazon Web Services account is opted in to cross-account backup. Returns an error if the account is not an Organizations management account. Use the <code>DescribeGlobalSettings</code> API to determine the current settings.</p>
+/// <p>Updates whether the Amazon Web Services account has enabled different cross-account management options, including cross-account backup, multi-party approval, and delegated administrator. Returns an error if the account is not an Organizations management account. Use the <code>DescribeGlobalSettings</code> API to determine the current settings.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGlobalSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,9 +114,9 @@ impl UpdateGlobalSettingsFluentBuilder {
     /// To override the contents of this collection use [`set_global_settings`](Self::set_global_settings).
     ///
     /// <p>Inputs can include:</p>
-    /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
-    /// <p>A value for Multi-party approval, styled as "Mpa": <code>isMpaEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isMpaEnabled=false --region us-west-2</code>.</p>
-    /// <p>A value for Backup Service-Linked Role creation, styled as<code>isDelegatedAdministratorEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isDelegatedAdministratorEnabled=false --region us-west-2</code>.</p>
+    /// <p>A value for <code>isCrossAccountBackupEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false</code>.</p>
+    /// <p>A value for Multi-party approval, styled as <code>isMpaEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isMpaEnabled=false</code>.</p>
+    /// <p>A value for Backup Service-Linked Role creation, styled as <code>isDelegatedAdministratorEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isDelegatedAdministratorEnabled=false</code>.</p>
     pub fn global_settings(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -126,9 +126,9 @@ impl UpdateGlobalSettingsFluentBuilder {
         self
     }
     /// <p>Inputs can include:</p>
-    /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
-    /// <p>A value for Multi-party approval, styled as "Mpa": <code>isMpaEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isMpaEnabled=false --region us-west-2</code>.</p>
-    /// <p>A value for Backup Service-Linked Role creation, styled as<code>isDelegatedAdministratorEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isDelegatedAdministratorEnabled=false --region us-west-2</code>.</p>
+    /// <p>A value for <code>isCrossAccountBackupEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false</code>.</p>
+    /// <p>A value for Multi-party approval, styled as <code>isMpaEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isMpaEnabled=false</code>.</p>
+    /// <p>A value for Backup Service-Linked Role creation, styled as <code>isDelegatedAdministratorEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isDelegatedAdministratorEnabled=false</code>.</p>
     pub fn set_global_settings(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -137,9 +137,9 @@ impl UpdateGlobalSettingsFluentBuilder {
         self
     }
     /// <p>Inputs can include:</p>
-    /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.</p>
-    /// <p>A value for Multi-party approval, styled as "Mpa": <code>isMpaEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isMpaEnabled=false --region us-west-2</code>.</p>
-    /// <p>A value for Backup Service-Linked Role creation, styled as<code>isDelegatedAdministratorEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isDelegatedAdministratorEnabled=false --region us-west-2</code>.</p>
+    /// <p>A value for <code>isCrossAccountBackupEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false</code>.</p>
+    /// <p>A value for Multi-party approval, styled as <code>isMpaEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isMpaEnabled=false</code>.</p>
+    /// <p>A value for Backup Service-Linked Role creation, styled as <code>isDelegatedAdministratorEnabled</code>. Values can be true or false. Example: <code>update-global-settings --global-settings isDelegatedAdministratorEnabled=false</code>.</p>
     pub fn get_global_settings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_global_settings()
     }

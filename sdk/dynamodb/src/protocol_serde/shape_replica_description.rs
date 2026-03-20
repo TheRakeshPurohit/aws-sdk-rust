@@ -29,6 +29,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ReplicaArn" => {
+                            builder = builder.set_replica_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "ReplicaStatusDescription" => {
                             builder = builder.set_replica_status_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -23,6 +23,8 @@ pub struct GetPolicyOutput {
     pub last_updated_date: ::aws_smithy_types::DateTime,
     /// <p>The effect of the decision that a policy returns to an authorization request. For example, <code>"effect": "Permit"</code>.</p>
     pub effect: ::std::option::Option<crate::types::PolicyEffect>,
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPolicyOutput {
@@ -70,6 +72,10 @@ impl GetPolicyOutput {
     pub fn effect(&self) -> ::std::option::Option<&crate::types::PolicyEffect> {
         self.effect.as_ref()
     }
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetPolicyOutput {
     fn request_id(&self) -> Option<&str> {
@@ -97,6 +103,7 @@ pub struct GetPolicyOutputBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) effect: ::std::option::Option<crate::types::PolicyEffect>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetPolicyOutputBuilder {
@@ -252,6 +259,20 @@ impl GetPolicyOutputBuilder {
     pub fn get_effect(&self) -> &::std::option::Option<crate::types::PolicyEffect> {
         &self.effect
     }
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -305,6 +326,7 @@ impl GetPolicyOutputBuilder {
                 )
             })?,
             effect: self.effect,
+            name: self.name,
             _request_id: self._request_id,
         })
     }

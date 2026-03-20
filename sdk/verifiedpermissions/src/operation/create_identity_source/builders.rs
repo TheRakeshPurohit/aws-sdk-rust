@@ -145,16 +145,40 @@ impl CreateIdentitySourceFluentBuilder {
         self.inner.get_client_token()
     }
     /// <p>Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
     /// <p>Specifies the ID of the policy store in which you want to store this identity source. Only policies and requests made using this policy store can reference identities from the identity provider configured in the new identity source.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_store_id()
     }

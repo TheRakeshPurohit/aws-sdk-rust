@@ -16,6 +16,12 @@ pub fn ser_direct_query_data_source_type(
             crate::protocol_serde::shape_security_lake_direct_query_data_source::ser_security_lake_direct_query_data_source(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::DirectQueryDataSourceType::Prometheus(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_4.key("Prometheus").start_object();
+            crate::protocol_serde::shape_prometheus_direct_query_data_source::ser_prometheus_direct_query_data_source(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::DirectQueryDataSourceType::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "DirectQueryDataSourceType",
@@ -71,6 +77,12 @@ where
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SecurityLake' cannot be null")
                             })?,
+                        )),
+                        "Prometheus" => Some(crate::types::DirectQueryDataSourceType::Prometheus(
+                            crate::protocol_serde::shape_prometheus_direct_query_data_source::de_prometheus_direct_query_data_source(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Prometheus' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

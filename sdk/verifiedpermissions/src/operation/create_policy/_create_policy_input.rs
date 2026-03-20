@@ -9,9 +9,20 @@ pub struct CreatePolicyInput {
     /// <p>Verified Permissions recognizes a <code>ClientToken</code> for eight hours. After eight hours, the next request with the same parameters performs the operation again regardless of the value of <code>ClientToken</code>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <code>PolicyStoreId</code> of the policy store you want to store the policy in.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>A structure that specifies the policy type and content to use for the new policy. You must include either a static or a templateLinked element. The policy content must be written in the Cedar policy language.</p>
     pub definition: ::std::option::Option<crate::types::PolicyDefinition>,
+    /// <p>Specifies a name for the policy that is unique among all policies within the policy store. You can use the name in place of the policy ID in API operations that reference the policy. The name must be prefixed with <code>name/</code>.</p>
+    /// <p>If you specify a name that is already associated with another policy in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl CreatePolicyInput {
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
@@ -22,12 +33,25 @@ impl CreatePolicyInput {
         self.client_token.as_deref()
     }
     /// <p>Specifies the <code>PolicyStoreId</code> of the policy store you want to store the policy in.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
         self.policy_store_id.as_deref()
     }
     /// <p>A structure that specifies the policy type and content to use for the new policy. You must include either a static or a templateLinked element. The policy content must be written in the Cedar policy language.</p>
     pub fn definition(&self) -> ::std::option::Option<&crate::types::PolicyDefinition> {
         self.definition.as_ref()
+    }
+    /// <p>Specifies a name for the policy that is unique among all policies within the policy store. You can use the name in place of the policy ID in API operations that reference the policy. The name must be prefixed with <code>name/</code>.</p>
+    /// <p>If you specify a name that is already associated with another policy in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 impl CreatePolicyInput {
@@ -44,6 +68,7 @@ pub struct CreatePolicyInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::PolicyDefinition>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl CreatePolicyInputBuilder {
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
@@ -70,17 +95,41 @@ impl CreatePolicyInputBuilder {
         &self.client_token
     }
     /// <p>Specifies the <code>PolicyStoreId</code> of the policy store you want to store the policy in.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the <code>PolicyStoreId</code> of the policy store you want to store the policy in.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
     /// <p>Specifies the <code>PolicyStoreId</code> of the policy store you want to store the policy in.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_store_id
     }
@@ -99,6 +148,23 @@ impl CreatePolicyInputBuilder {
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::PolicyDefinition> {
         &self.definition
     }
+    /// <p>Specifies a name for the policy that is unique among all policies within the policy store. You can use the name in place of the policy ID in API operations that reference the policy. The name must be prefixed with <code>name/</code>.</p>
+    /// <p>If you specify a name that is already associated with another policy in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies a name for the policy that is unique among all policies within the policy store. You can use the name in place of the policy ID in API operations that reference the policy. The name must be prefixed with <code>name/</code>.</p>
+    /// <p>If you specify a name that is already associated with another policy in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>Specifies a name for the policy that is unique among all policies within the policy store. You can use the name in place of the policy ID in API operations that reference the policy. The name must be prefixed with <code>name/</code>.</p>
+    /// <p>If you specify a name that is already associated with another policy in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`CreatePolicyInput`](crate::operation::create_policy::CreatePolicyInput).
     pub fn build(
         self,
@@ -107,6 +173,7 @@ impl CreatePolicyInputBuilder {
             client_token: self.client_token,
             policy_store_id: self.policy_store_id,
             definition: self.definition,
+            name: self.name,
         })
     }
 }

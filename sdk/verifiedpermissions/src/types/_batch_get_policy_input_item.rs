@@ -7,6 +7,13 @@ pub struct BatchGetPolicyInputItem {
     /// <p>The identifier of the policy store where the policy you want information about is stored.</p>
     pub policy_store_id: ::std::string::String,
     /// <p>The identifier of the policy you want information about.</p>
+    /// <p>You can use the policy name in place of the policy ID. When using a name, prefix it with <code>name/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>SPEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Name: <code>name/example-policy</code></p></li>
+    /// </ul>
     pub policy_id: ::std::string::String,
 }
 impl BatchGetPolicyInputItem {
@@ -16,6 +23,13 @@ impl BatchGetPolicyInputItem {
         self.policy_store_id.deref()
     }
     /// <p>The identifier of the policy you want information about.</p>
+    /// <p>You can use the policy name in place of the policy ID. When using a name, prefix it with <code>name/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>SPEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Name: <code>name/example-policy</code></p></li>
+    /// </ul>
     pub fn policy_id(&self) -> &str {
         use std::ops::Deref;
         self.policy_id.deref()
@@ -52,17 +66,38 @@ impl BatchGetPolicyInputItemBuilder {
         &self.policy_store_id
     }
     /// <p>The identifier of the policy you want information about.</p>
+    /// <p>You can use the policy name in place of the policy ID. When using a name, prefix it with <code>name/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>SPEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Name: <code>name/example-policy</code></p></li>
+    /// </ul>
     /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the policy you want information about.</p>
+    /// <p>You can use the policy name in place of the policy ID. When using a name, prefix it with <code>name/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>SPEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Name: <code>name/example-policy</code></p></li>
+    /// </ul>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_id = input;
         self
     }
     /// <p>The identifier of the policy you want information about.</p>
+    /// <p>You can use the policy name in place of the policy ID. When using a name, prefix it with <code>name/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>SPEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Name: <code>name/example-policy</code></p></li>
+    /// </ul>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_id
     }

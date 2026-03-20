@@ -155,17 +155,17 @@ impl AddDirectQueryDataSourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_open_search_arns`](Self::set_open_search_arns).
     ///
-    /// <p>A list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source.</p>
+    /// <p>An optional list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source. This field is required for CloudWatchLogs and SecurityLake datasource types.</p>
     pub fn open_search_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.open_search_arns(input.into());
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source.</p>
+    /// <p>An optional list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source. This field is required for CloudWatchLogs and SecurityLake datasource types.</p>
     pub fn set_open_search_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_open_search_arns(input);
         self
     }
-    /// <p>A list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source.</p>
+    /// <p>An optional list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source. This field is required for CloudWatchLogs and SecurityLake datasource types.</p>
     pub fn get_open_search_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_open_search_arns()
     }

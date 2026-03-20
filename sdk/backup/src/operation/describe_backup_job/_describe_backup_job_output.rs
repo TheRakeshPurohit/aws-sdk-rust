@@ -51,6 +51,8 @@ pub struct DescribeBackupJobOutput {
     /// <li>
     /// <p>For Amazon EFS, this value refers to the delta bytes transferred during a backup.</p></li>
     /// <li>
+    /// <p>For Amazon EKS, this value refers to the size of your nested EKS recovery point.</p></li>
+    /// <li>
     /// <p>Amazon FSx does not populate this value from the operation <code>GetBackupJobStatus</code> for FSx file systems.</p></li>
     /// <li>
     /// <p>An Amazon RDS instance will show as <code>0</code>.</p></li>
@@ -171,6 +173,8 @@ impl DescribeBackupJobOutput {
     /// <p>Amazon EC2 and Amazon EBS show volume size (provisioned storage) returned as part of this value. Amazon EBS does not return backup size information; snapshot size will have the same value as the original resource that was backed up.</p></li>
     /// <li>
     /// <p>For Amazon EFS, this value refers to the delta bytes transferred during a backup.</p></li>
+    /// <li>
+    /// <p>For Amazon EKS, this value refers to the size of your nested EKS recovery point.</p></li>
     /// <li>
     /// <p>Amazon FSx does not populate this value from the operation <code>GetBackupJobStatus</code> for FSx file systems.</p></li>
     /// <li>
@@ -540,6 +544,8 @@ impl DescribeBackupJobOutputBuilder {
     /// <li>
     /// <p>For Amazon EFS, this value refers to the delta bytes transferred during a backup.</p></li>
     /// <li>
+    /// <p>For Amazon EKS, this value refers to the size of your nested EKS recovery point.</p></li>
+    /// <li>
     /// <p>Amazon FSx does not populate this value from the operation <code>GetBackupJobStatus</code> for FSx file systems.</p></li>
     /// <li>
     /// <p>An Amazon RDS instance will show as <code>0</code>.</p></li>
@@ -563,6 +569,8 @@ impl DescribeBackupJobOutputBuilder {
     /// <li>
     /// <p>For Amazon EFS, this value refers to the delta bytes transferred during a backup.</p></li>
     /// <li>
+    /// <p>For Amazon EKS, this value refers to the size of your nested EKS recovery point.</p></li>
+    /// <li>
     /// <p>Amazon FSx does not populate this value from the operation <code>GetBackupJobStatus</code> for FSx file systems.</p></li>
     /// <li>
     /// <p>An Amazon RDS instance will show as <code>0</code>.</p></li>
@@ -585,6 +593,8 @@ impl DescribeBackupJobOutputBuilder {
     /// <p>Amazon EC2 and Amazon EBS show volume size (provisioned storage) returned as part of this value. Amazon EBS does not return backup size information; snapshot size will have the same value as the original resource that was backed up.</p></li>
     /// <li>
     /// <p>For Amazon EFS, this value refers to the delta bytes transferred during a backup.</p></li>
+    /// <li>
+    /// <p>For Amazon EKS, this value refers to the size of your nested EKS recovery point.</p></li>
     /// <li>
     /// <p>Amazon FSx does not populate this value from the operation <code>GetBackupJobStatus</code> for FSx file systems.</p></li>
     /// <li>

@@ -19,6 +19,9 @@ pub mod create_policy;
 /// Types for the `CreatePolicyStore` operation.
 pub mod create_policy_store;
 
+/// Types for the `CreatePolicyStoreAlias` operation.
+pub mod create_policy_store_alias;
+
 /// Types for the `CreatePolicyTemplate` operation.
 pub mod create_policy_template;
 
@@ -31,6 +34,9 @@ pub mod delete_policy;
 /// Types for the `DeletePolicyStore` operation.
 pub mod delete_policy_store;
 
+/// Types for the `DeletePolicyStoreAlias` operation.
+pub mod delete_policy_store_alias;
+
 /// Types for the `DeletePolicyTemplate` operation.
 pub mod delete_policy_template;
 
@@ -42,6 +48,9 @@ pub mod get_policy;
 
 /// Types for the `GetPolicyStore` operation.
 pub mod get_policy_store;
+
+/// Types for the `GetPolicyStoreAlias` operation.
+pub mod get_policy_store_alias;
 
 /// Types for the `GetPolicyTemplate` operation.
 pub mod get_policy_template;
@@ -60,6 +69,9 @@ pub mod list_identity_sources;
 
 /// Types for the `ListPolicies` operation.
 pub mod list_policies;
+
+/// Types for the `ListPolicyStoreAliases` operation.
+pub mod list_policy_store_aliases;
 
 /// Types for the `ListPolicyStores` operation.
 pub mod list_policy_stores;

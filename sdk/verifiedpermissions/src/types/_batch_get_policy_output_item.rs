@@ -22,6 +22,8 @@ pub struct BatchGetPolicyOutputItem {
     pub created_date: ::aws_smithy_types::DateTime,
     /// <p>The date and time the policy was most recently updated.</p>
     pub last_updated_date: ::aws_smithy_types::DateTime,
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetPolicyOutputItem {
     /// <p>The identifier of the policy store where the policy you want information about is stored.</p>
@@ -56,6 +58,10 @@ impl BatchGetPolicyOutputItem {
     pub fn last_updated_date(&self) -> &::aws_smithy_types::DateTime {
         &self.last_updated_date
     }
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl BatchGetPolicyOutputItem {
     /// Creates a new builder-style object to manufacture [`BatchGetPolicyOutputItem`](crate::types::BatchGetPolicyOutputItem).
@@ -74,6 +80,7 @@ pub struct BatchGetPolicyOutputItemBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::PolicyDefinitionDetail>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetPolicyOutputItemBuilder {
     /// <p>The identifier of the policy store where the policy you want information about is stored.</p>
@@ -184,6 +191,20 @@ impl BatchGetPolicyOutputItemBuilder {
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date
     }
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`BatchGetPolicyOutputItem`](crate::types::BatchGetPolicyOutputItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_store_id`](crate::types::builders::BatchGetPolicyOutputItemBuilder::policy_store_id)
@@ -224,6 +245,7 @@ impl BatchGetPolicyOutputItemBuilder {
                     "last_updated_date was not specified but it is required when building BatchGetPolicyOutputItem",
                 )
             })?,
+            name: self.name,
         })
     }
 }

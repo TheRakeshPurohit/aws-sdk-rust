@@ -9,11 +9,22 @@ pub struct CreatePolicyTemplateInput {
     /// <p>Verified Permissions recognizes a <code>ClientToken</code> for eight hours. After eight hours, the next request with the same parameters performs the operation again regardless of the value of <code>ClientToken</code>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the policy store in which to create the policy template.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a description for the policy template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the content that you want to use for the new policy template, written in the Cedar policy language.</p>
     pub statement: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies a name for the policy template that is unique among all policy templates within the policy store. You can use the name in place of the policy template ID in API operations that reference the policy template. The name must be prefixed with <code>name/</code>.</p>
+    /// <p>If you specify a name that is already associated with another policy template in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl CreatePolicyTemplateInput {
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
@@ -24,6 +35,14 @@ impl CreatePolicyTemplateInput {
         self.client_token.as_deref()
     }
     /// <p>The ID of the policy store in which to create the policy template.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
         self.policy_store_id.as_deref()
     }
@@ -35,6 +54,11 @@ impl CreatePolicyTemplateInput {
     pub fn statement(&self) -> ::std::option::Option<&str> {
         self.statement.as_deref()
     }
+    /// <p>Specifies a name for the policy template that is unique among all policy templates within the policy store. You can use the name in place of the policy template ID in API operations that reference the policy template. The name must be prefixed with <code>name/</code>.</p>
+    /// <p>If you specify a name that is already associated with another policy template in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreatePolicyTemplateInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -43,6 +67,7 @@ impl ::std::fmt::Debug for CreatePolicyTemplateInput {
         formatter.field("policy_store_id", &self.policy_store_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("statement", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
         formatter.finish()
     }
 }
@@ -61,6 +86,7 @@ pub struct CreatePolicyTemplateInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) statement: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl CreatePolicyTemplateInputBuilder {
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
@@ -87,17 +113,41 @@ impl CreatePolicyTemplateInputBuilder {
         &self.client_token
     }
     /// <p>The ID of the policy store in which to create the policy template.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the policy store in which to create the policy template.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
     /// <p>The ID of the policy store in which to create the policy template.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_store_id
     }
@@ -130,6 +180,23 @@ impl CreatePolicyTemplateInputBuilder {
     pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
         &self.statement
     }
+    /// <p>Specifies a name for the policy template that is unique among all policy templates within the policy store. You can use the name in place of the policy template ID in API operations that reference the policy template. The name must be prefixed with <code>name/</code>.</p>
+    /// <p>If you specify a name that is already associated with another policy template in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies a name for the policy template that is unique among all policy templates within the policy store. You can use the name in place of the policy template ID in API operations that reference the policy template. The name must be prefixed with <code>name/</code>.</p>
+    /// <p>If you specify a name that is already associated with another policy template in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>Specifies a name for the policy template that is unique among all policy templates within the policy store. You can use the name in place of the policy template ID in API operations that reference the policy template. The name must be prefixed with <code>name/</code>.</p>
+    /// <p>If you specify a name that is already associated with another policy template in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`CreatePolicyTemplateInput`](crate::operation::create_policy_template::CreatePolicyTemplateInput).
     pub fn build(
         self,
@@ -140,6 +207,7 @@ impl CreatePolicyTemplateInputBuilder {
             policy_store_id: self.policy_store_id,
             description: self.description,
             statement: self.statement,
+            name: self.name,
         })
     }
 }
@@ -150,6 +218,7 @@ impl ::std::fmt::Debug for CreatePolicyTemplateInputBuilder {
         formatter.field("policy_store_id", &self.policy_store_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("statement", &"*** Sensitive Data Redacted ***");
+        formatter.field("name", &self.name);
         formatter.finish()
     }
 }

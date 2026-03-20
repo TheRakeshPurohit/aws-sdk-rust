@@ -161,6 +161,24 @@ pub(crate) fn create_policy_store_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_policy_store_alias_output_output_correct_errors(
+    mut builder: crate::operation::create_policy_store_alias::builders::CreatePolicyStoreAliasOutputBuilder,
+) -> crate::operation::create_policy_store_alias::builders::CreatePolicyStoreAliasOutputBuilder {
+    if builder.alias_name.is_none() {
+        builder.alias_name = Some(Default::default())
+    }
+    if builder.policy_store_id.is_none() {
+        builder.policy_store_id = Some(Default::default())
+    }
+    if builder.alias_arn.is_none() {
+        builder.alias_arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn create_policy_template_output_output_correct_errors(
     mut builder: crate::operation::create_policy_template::builders::CreatePolicyTemplateOutputBuilder,
 ) -> crate::operation::create_policy_template::builders::CreatePolicyTemplateOutputBuilder {
@@ -257,6 +275,27 @@ pub(crate) fn get_policy_store_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_policy_store_alias_output_output_correct_errors(
+    mut builder: crate::operation::get_policy_store_alias::builders::GetPolicyStoreAliasOutputBuilder,
+) -> crate::operation::get_policy_store_alias::builders::GetPolicyStoreAliasOutputBuilder {
+    if builder.alias_name.is_none() {
+        builder.alias_name = Some(Default::default())
+    }
+    if builder.policy_store_id.is_none() {
+        builder.policy_store_id = Some(Default::default())
+    }
+    if builder.alias_arn.is_none() {
+        builder.alias_arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::AliasState>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_policy_template_output_output_correct_errors(
     mut builder: crate::operation::get_policy_template::builders::GetPolicyTemplateOutputBuilder,
 ) -> crate::operation::get_policy_template::builders::GetPolicyTemplateOutputBuilder {
@@ -340,6 +379,15 @@ pub(crate) fn list_policies_output_output_correct_errors(
 ) -> crate::operation::list_policies::builders::ListPoliciesOutputBuilder {
     if builder.policies.is_none() {
         builder.policies = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_policy_store_aliases_output_output_correct_errors(
+    mut builder: crate::operation::list_policy_store_aliases::builders::ListPolicyStoreAliasesOutputBuilder,
+) -> crate::operation::list_policy_store_aliases::builders::ListPolicyStoreAliasesOutputBuilder {
+    if builder.policy_store_aliases.is_none() {
+        builder.policy_store_aliases = Some(Default::default())
     }
     builder
 }
@@ -668,6 +716,27 @@ pub(crate) fn policy_item_correct_errors(mut builder: crate::types::builders::Po
     }
     if builder.last_updated_date.is_none() {
         builder.last_updated_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn policy_store_alias_item_correct_errors(
+    mut builder: crate::types::builders::PolicyStoreAliasItemBuilder,
+) -> crate::types::builders::PolicyStoreAliasItemBuilder {
+    if builder.alias_name.is_none() {
+        builder.alias_name = Some(Default::default())
+    }
+    if builder.policy_store_id.is_none() {
+        builder.policy_store_id = Some(Default::default())
+    }
+    if builder.alias_arn.is_none() {
+        builder.alias_arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::AliasState>().ok()
     }
     builder
 }

@@ -15,6 +15,7 @@
 ///     ResourceType::IdentitySource => { /* ... */ },
 ///     ResourceType::Policy => { /* ... */ },
 ///     ResourceType::PolicyStore => { /* ... */ },
+///     ResourceType::PolicyStoreAlias => { /* ... */ },
 ///     ResourceType::PolicyTemplate => { /* ... */ },
 ///     ResourceType::Schema => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -52,6 +53,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     PolicyStore,
     #[allow(missing_docs)] // documentation missing in model
+    PolicyStoreAlias,
+    #[allow(missing_docs)] // documentation missing in model
     PolicyTemplate,
     #[allow(missing_docs)] // documentation missing in model
     Schema,
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "IDENTITY_SOURCE" => ResourceType::IdentitySource,
             "POLICY" => ResourceType::Policy,
             "POLICY_STORE" => ResourceType::PolicyStore,
+            "POLICY_STORE_ALIAS" => ResourceType::PolicyStoreAlias,
             "POLICY_TEMPLATE" => ResourceType::PolicyTemplate,
             "SCHEMA" => ResourceType::Schema,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -85,6 +89,7 @@ impl ResourceType {
             ResourceType::IdentitySource => "IDENTITY_SOURCE",
             ResourceType::Policy => "POLICY",
             ResourceType::PolicyStore => "POLICY_STORE",
+            ResourceType::PolicyStoreAlias => "POLICY_STORE_ALIAS",
             ResourceType::PolicyTemplate => "POLICY_TEMPLATE",
             ResourceType::Schema => "SCHEMA",
             ResourceType::Unknown(value) => value.as_str(),
@@ -92,7 +97,14 @@ impl ResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IDENTITY_SOURCE", "POLICY", "POLICY_STORE", "POLICY_TEMPLATE", "SCHEMA"]
+        &[
+            "IDENTITY_SOURCE",
+            "POLICY",
+            "POLICY_STORE",
+            "POLICY_STORE_ALIAS",
+            "POLICY_TEMPLATE",
+            "SCHEMA",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {
@@ -118,6 +130,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::IdentitySource => write!(f, "IDENTITY_SOURCE"),
             ResourceType::Policy => write!(f, "POLICY"),
             ResourceType::PolicyStore => write!(f, "POLICY_STORE"),
+            ResourceType::PolicyStoreAlias => write!(f, "POLICY_STORE_ALIAS"),
             ResourceType::PolicyTemplate => write!(f, "POLICY_TEMPLATE"),
             ResourceType::Schema => write!(f, "SCHEMA"),
             ResourceType::Unknown(value) => write!(f, "{value}"),

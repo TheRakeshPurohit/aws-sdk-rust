@@ -113,30 +113,75 @@ impl UpdatePolicyTemplateFluentBuilder {
         self
     }
     /// <p>Specifies the ID of the policy store that contains the policy template that you want to update.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the policy template that you want to update.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
     /// <p>Specifies the ID of the policy store that contains the policy template that you want to update.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_store_id()
     }
     /// <p>Specifies the ID of the policy template that you want to update.</p>
+    /// <p>You can use the policy template name in place of the policy template ID. When using a name, prefix it with <code>name/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PTEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Name: <code>name/example-policy-template</code></p></li>
+    /// </ul>
     pub fn policy_template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_template_id(input.into());
         self
     }
     /// <p>Specifies the ID of the policy template that you want to update.</p>
+    /// <p>You can use the policy template name in place of the policy template ID. When using a name, prefix it with <code>name/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PTEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Name: <code>name/example-policy-template</code></p></li>
+    /// </ul>
     pub fn set_policy_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_template_id(input);
         self
     }
     /// <p>Specifies the ID of the policy template that you want to update.</p>
+    /// <p>You can use the policy template name in place of the policy template ID. When using a name, prefix it with <code>name/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PTEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Name: <code>name/example-policy-template</code></p></li>
+    /// </ul>
     pub fn get_policy_template_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_template_id()
     }
@@ -215,5 +260,28 @@ impl UpdatePolicyTemplateFluentBuilder {
     /// </ul>
     pub fn get_statement(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_statement()
+    }
+    /// <p>Specifies a name for the policy template that is unique among all policy templates within the policy store. You can use the name in place of the policy template ID in API operations that reference the policy template. The name must be prefixed with <code>name/</code>.</p><note>
+    /// <p>If you don't include the name in an update request, the existing name is unchanged. To remove a name, set it to an empty string (<code>""</code>).</p>
+    /// </note>
+    /// <p>If you specify a name that is already associated with another policy template in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.name(input.into());
+        self
+    }
+    /// <p>Specifies a name for the policy template that is unique among all policy templates within the policy store. You can use the name in place of the policy template ID in API operations that reference the policy template. The name must be prefixed with <code>name/</code>.</p><note>
+    /// <p>If you don't include the name in an update request, the existing name is unchanged. To remove a name, set it to an empty string (<code>""</code>).</p>
+    /// </note>
+    /// <p>If you specify a name that is already associated with another policy template in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_name(input);
+        self
+    }
+    /// <p>Specifies a name for the policy template that is unique among all policy templates within the policy store. You can use the name in place of the policy template ID in API operations that reference the policy template. The name must be prefixed with <code>name/</code>.</p><note>
+    /// <p>If you don't include the name in an update request, the existing name is unchanged. To remove a name, set it to an empty string (<code>""</code>).</p>
+    /// </note>
+    /// <p>If you specify a name that is already associated with another policy template in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
     }
 }

@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>You don't have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The request failed because another request to modify a resource occurred at the same.</p>
+    /// <p>The request failed because another request to modify a resource occurred at the same time.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request failed because of an internal error. Try your request again later</p>
     InternalServerException(crate::types::error::InternalServerException),
@@ -292,6 +292,45 @@ impl From<crate::operation::create_policy_store::CreatePolicyStoreError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_policy_store_alias::CreatePolicyStoreAliasError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_policy_store_alias::CreatePolicyStoreAliasError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_policy_store_alias::CreatePolicyStoreAliasError> for Error {
+    fn from(err: crate::operation::create_policy_store_alias::CreatePolicyStoreAliasError) -> Self {
+        match err {
+            crate::operation::create_policy_store_alias::CreatePolicyStoreAliasError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_policy_store_alias::CreatePolicyStoreAliasError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_policy_store_alias::CreatePolicyStoreAliasError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_policy_store_alias::CreatePolicyStoreAliasError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_policy_store_alias::CreatePolicyStoreAliasError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_policy_store_alias::CreatePolicyStoreAliasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_policy_store_alias::CreatePolicyStoreAliasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_policy_store_alias::CreatePolicyStoreAliasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_policy_template::CreatePolicyTemplateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -410,6 +449,41 @@ impl From<crate::operation::delete_policy_store::DeletePolicyStoreError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_policy_store_alias::DeletePolicyStoreAliasError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_policy_store_alias::DeletePolicyStoreAliasError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_policy_store_alias::DeletePolicyStoreAliasError> for Error {
+    fn from(err: crate::operation::delete_policy_store_alias::DeletePolicyStoreAliasError) -> Self {
+        match err {
+            crate::operation::delete_policy_store_alias::DeletePolicyStoreAliasError::InvalidStateException(inner) => {
+                Error::InvalidStateException(inner)
+            }
+            crate::operation::delete_policy_store_alias::DeletePolicyStoreAliasError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_policy_store_alias::DeletePolicyStoreAliasError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_policy_store_alias::DeletePolicyStoreAliasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_policy_store_alias::DeletePolicyStoreAliasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_policy_store_alias::DeletePolicyStoreAliasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_policy_template::DeletePolicyTemplateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -518,6 +592,36 @@ impl From<crate::operation::get_policy_store::GetPolicyStoreError> for Error {
             crate::operation::get_policy_store::GetPolicyStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_policy_store::GetPolicyStoreError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_policy_store::GetPolicyStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_policy_store_alias::GetPolicyStoreAliasError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_policy_store_alias::GetPolicyStoreAliasError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_policy_store_alias::GetPolicyStoreAliasError> for Error {
+    fn from(err: crate::operation::get_policy_store_alias::GetPolicyStoreAliasError) -> Self {
+        match err {
+            crate::operation::get_policy_store_alias::GetPolicyStoreAliasError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_policy_store_alias::GetPolicyStoreAliasError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_policy_store_alias::GetPolicyStoreAliasError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_policy_store_alias::GetPolicyStoreAliasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_policy_store_alias::GetPolicyStoreAliasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_policy_store_alias::GetPolicyStoreAliasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -688,6 +792,38 @@ impl From<crate::operation::list_policies::ListPoliciesError> for Error {
             crate::operation::list_policies::ListPoliciesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_policies::ListPoliciesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_policies::ListPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_policy_store_aliases::ListPolicyStoreAliasesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_policy_store_aliases::ListPolicyStoreAliasesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_policy_store_aliases::ListPolicyStoreAliasesError> for Error {
+    fn from(err: crate::operation::list_policy_store_aliases::ListPolicyStoreAliasesError) -> Self {
+        match err {
+            crate::operation::list_policy_store_aliases::ListPolicyStoreAliasesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_policy_store_aliases::ListPolicyStoreAliasesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_policy_store_aliases::ListPolicyStoreAliasesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_policy_store_aliases::ListPolicyStoreAliasesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_policy_store_aliases::ListPolicyStoreAliasesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

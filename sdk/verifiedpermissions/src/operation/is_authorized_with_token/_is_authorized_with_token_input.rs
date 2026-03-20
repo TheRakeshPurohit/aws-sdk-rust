@@ -4,6 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IsAuthorizedWithTokenInput {
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies an identity token for the principal to be authorized. This token is provided to you by the identity provider (IdP) associated with the specified identity source. You must specify either an <code>accessToken</code>, an <code>identityToken</code>, or both.</p>
     /// <p>Must be an ID token. Verified Permissions returns an error if the <code>token_use</code> claim in the submitted token isn't <code>id</code>.</p>
@@ -30,6 +38,14 @@ pub struct IsAuthorizedWithTokenInput {
 }
 impl IsAuthorizedWithTokenInput {
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
         self.policy_store_id.as_deref()
     }
@@ -102,17 +118,41 @@ pub struct IsAuthorizedWithTokenInputBuilder {
 }
 impl IsAuthorizedWithTokenInputBuilder {
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
     /// <p>Specifies the ID of the policy store. Policies in this policy store will be used to make an authorization decision for the input.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_store_id
     }

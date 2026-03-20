@@ -26,6 +26,8 @@ pub struct ReplicaDescription {
     /// </note></li>
     /// </ul>
     pub replica_status: ::std::option::Option<crate::types::ReplicaStatus>,
+    /// <p>The Amazon Resource Name (ARN) of the global table replica.</p>
+    pub replica_arn: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about the replica status.</p>
     pub replica_status_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the progress of a Create, Update, or Delete action on the replica as a percentage.</p>
@@ -81,6 +83,10 @@ impl ReplicaDescription {
     /// </ul>
     pub fn replica_status(&self) -> ::std::option::Option<&crate::types::ReplicaStatus> {
         self.replica_status.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the global table replica.</p>
+    pub fn replica_arn(&self) -> ::std::option::Option<&str> {
+        self.replica_arn.as_deref()
     }
     /// <p>Detailed information about the replica status.</p>
     pub fn replica_status_description(&self) -> ::std::option::Option<&str> {
@@ -146,6 +152,7 @@ impl ReplicaDescription {
 pub struct ReplicaDescriptionBuilder {
     pub(crate) region_name: ::std::option::Option<::std::string::String>,
     pub(crate) replica_status: ::std::option::Option<crate::types::ReplicaStatus>,
+    pub(crate) replica_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replica_status_description: ::std::option::Option<::std::string::String>,
     pub(crate) replica_status_percent_progress: ::std::option::Option<::std::string::String>,
     pub(crate) kms_master_key_id: ::std::option::Option<::std::string::String>,
@@ -239,6 +246,20 @@ impl ReplicaDescriptionBuilder {
     /// </ul>
     pub fn get_replica_status(&self) -> &::std::option::Option<crate::types::ReplicaStatus> {
         &self.replica_status
+    }
+    /// <p>The Amazon Resource Name (ARN) of the global table replica.</p>
+    pub fn replica_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.replica_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the global table replica.</p>
+    pub fn set_replica_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.replica_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the global table replica.</p>
+    pub fn get_replica_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replica_arn
     }
     /// <p>Detailed information about the replica status.</p>
     pub fn replica_status_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -421,6 +442,7 @@ impl ReplicaDescriptionBuilder {
         crate::types::ReplicaDescription {
             region_name: self.region_name,
             replica_status: self.replica_status,
+            replica_arn: self.replica_arn,
             replica_status_description: self.replica_status_description,
             replica_status_percent_progress: self.replica_status_percent_progress,
             kms_master_key_id: self.kms_master_key_id,

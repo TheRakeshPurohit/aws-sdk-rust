@@ -133,6 +133,8 @@ pub use crate::types::_cloud_watch_direct_query_data_source::CloudWatchDirectQue
 
 pub use crate::types::_security_lake_direct_query_data_source::SecurityLakeDirectQueryDataSource;
 
+pub use crate::types::_prometheus_direct_query_data_source::PrometheusDirectQueryDataSource;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_key_store_access_option::KeyStoreAccessOption;
@@ -688,6 +690,8 @@ mod _package_version_history;
 mod _plugin_properties;
 
 mod _principal_type;
+
+mod _prometheus_direct_query_data_source;
 
 mod _property_value_type;
 

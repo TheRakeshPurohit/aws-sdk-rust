@@ -4,10 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePolicyInput {
     /// <p>Specifies the ID of the policy store that contains the policy that you want to update.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the ID of the policy that you want to update. To find this value, you can use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>.</p>
+    /// <p>You can use the policy name in place of the policy ID. When using a name, prefix it with <code>name/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>SPEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Name: <code>name/example-policy</code></p></li>
+    /// </ul>
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
+    /// <p>If you don't specify this parameter, the existing policy definition remains unchanged.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
     /// <ul>
     /// <li>
@@ -27,17 +43,38 @@ pub struct UpdatePolicyInput {
     /// <p>The <code>resource</code> referenced by the policy.</p></li>
     /// </ul>
     pub definition: ::std::option::Option<crate::types::UpdatePolicyDefinition>,
+    /// <p>Specifies a name for the policy that is unique among all policies within the policy store. You can use the name in place of the policy ID in API operations that reference the policy. The name must be prefixed with <code>name/</code>.</p><note>
+    /// <p>If you don't include the name in an update request, the existing name is unchanged. To remove a name, set it to an empty string (<code>""</code>).</p>
+    /// </note>
+    /// <p>If you specify a name that is already associated with another policy in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePolicyInput {
     /// <p>Specifies the ID of the policy store that contains the policy that you want to update.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
         self.policy_store_id.as_deref()
     }
     /// <p>Specifies the ID of the policy that you want to update. To find this value, you can use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>.</p>
+    /// <p>You can use the policy name in place of the policy ID. When using a name, prefix it with <code>name/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>SPEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Name: <code>name/example-policy</code></p></li>
+    /// </ul>
     pub fn policy_id(&self) -> ::std::option::Option<&str> {
         self.policy_id.as_deref()
     }
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
+    /// <p>If you don't specify this parameter, the existing policy definition remains unchanged.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
     /// <ul>
     /// <li>
@@ -59,6 +96,13 @@ impl UpdatePolicyInput {
     pub fn definition(&self) -> ::std::option::Option<&crate::types::UpdatePolicyDefinition> {
         self.definition.as_ref()
     }
+    /// <p>Specifies a name for the policy that is unique among all policies within the policy store. You can use the name in place of the policy ID in API operations that reference the policy. The name must be prefixed with <code>name/</code>.</p><note>
+    /// <p>If you don't include the name in an update request, the existing name is unchanged. To remove a name, set it to an empty string (<code>""</code>).</p>
+    /// </note>
+    /// <p>If you specify a name that is already associated with another policy in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl UpdatePolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdatePolicyInput`](crate::operation::update_policy::UpdatePolicyInput).
@@ -74,39 +118,86 @@ pub struct UpdatePolicyInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) definition: ::std::option::Option<crate::types::UpdatePolicyDefinition>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePolicyInputBuilder {
     /// <p>Specifies the ID of the policy store that contains the policy that you want to update.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the policy store that contains the policy that you want to update.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
     /// <p>Specifies the ID of the policy store that contains the policy that you want to update.</p>
+    /// <p>To specify a policy store, use its ID or alias name. When using an alias name, prefix it with <code>policy-store-alias/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>PSEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Alias name: <code>policy-store-alias/example-policy-store</code></p></li>
+    /// </ul>
+    /// <p>To view aliases, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicyStoreAliases.html">ListPolicyStoreAliases</a>.</p>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_store_id
     }
     /// <p>Specifies the ID of the policy that you want to update. To find this value, you can use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>.</p>
+    /// <p>You can use the policy name in place of the policy ID. When using a name, prefix it with <code>name/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>SPEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Name: <code>name/example-policy</code></p></li>
+    /// </ul>
     /// This field is required.
     pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID of the policy that you want to update. To find this value, you can use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>.</p>
+    /// <p>You can use the policy name in place of the policy ID. When using a name, prefix it with <code>name/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>SPEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Name: <code>name/example-policy</code></p></li>
+    /// </ul>
     pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_id = input;
         self
     }
     /// <p>Specifies the ID of the policy that you want to update. To find this value, you can use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>.</p>
+    /// <p>You can use the policy name in place of the policy ID. When using a name, prefix it with <code>name/</code>. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ID: <code>SPEXAMPLEabcdefg111111</code></p></li>
+    /// <li>
+    /// <p>Name: <code>name/example-policy</code></p></li>
+    /// </ul>
     pub fn get_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_id
     }
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
+    /// <p>If you don't specify this parameter, the existing policy definition remains unchanged.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
     /// <ul>
     /// <li>
@@ -130,6 +221,7 @@ impl UpdatePolicyInputBuilder {
         self
     }
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
+    /// <p>If you don't specify this parameter, the existing policy definition remains unchanged.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
     /// <ul>
     /// <li>
@@ -153,6 +245,7 @@ impl UpdatePolicyInputBuilder {
         self
     }
     /// <p>Specifies the updated policy content that you want to replace on the specified policy. The content must be valid Cedar policy language text.</p>
+    /// <p>If you don't specify this parameter, the existing policy definition remains unchanged.</p>
     /// <p>You can change only the following elements from the policy definition:</p>
     /// <ul>
     /// <li>
@@ -174,6 +267,29 @@ impl UpdatePolicyInputBuilder {
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::UpdatePolicyDefinition> {
         &self.definition
     }
+    /// <p>Specifies a name for the policy that is unique among all policies within the policy store. You can use the name in place of the policy ID in API operations that reference the policy. The name must be prefixed with <code>name/</code>.</p><note>
+    /// <p>If you don't include the name in an update request, the existing name is unchanged. To remove a name, set it to an empty string (<code>""</code>).</p>
+    /// </note>
+    /// <p>If you specify a name that is already associated with another policy in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies a name for the policy that is unique among all policies within the policy store. You can use the name in place of the policy ID in API operations that reference the policy. The name must be prefixed with <code>name/</code>.</p><note>
+    /// <p>If you don't include the name in an update request, the existing name is unchanged. To remove a name, set it to an empty string (<code>""</code>).</p>
+    /// </note>
+    /// <p>If you specify a name that is already associated with another policy in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>Specifies a name for the policy that is unique among all policies within the policy store. You can use the name in place of the policy ID in API operations that reference the policy. The name must be prefixed with <code>name/</code>.</p><note>
+    /// <p>If you don't include the name in an update request, the existing name is unchanged. To remove a name, set it to an empty string (<code>""</code>).</p>
+    /// </note>
+    /// <p>If you specify a name that is already associated with another policy in the policy store, you receive a <code>ConflictException</code> error.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`UpdatePolicyInput`](crate::operation::update_policy::UpdatePolicyInput).
     pub fn build(
         self,
@@ -182,6 +298,7 @@ impl UpdatePolicyInputBuilder {
             policy_store_id: self.policy_store_id,
             policy_id: self.policy_id,
             definition: self.definition,
+            name: self.name,
         })
     }
 }

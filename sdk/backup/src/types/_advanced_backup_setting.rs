@@ -11,7 +11,7 @@ pub struct AdvancedBackupSetting {
     /// <p>Valid values:</p>
     /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup.</p>
     /// <p>Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
-    /// <p>For S3 backups, set to <code>"S3BackupACLs":"disabled"</code> to exclude ACLs from the backup, or <code>"S3BackupObjectTags":"disabled"</code> to exclude object tags from the backup. By default, both ACLs and object tags are included in S3 backups.</p>
+    /// <p>For S3 backups, set to <code>"BackupACLs":"disabled"</code> to exclude ACLs from the backup, or <code>"BackupObjectTags":"disabled"</code> to exclude object tags from the backup. By default, both ACLs and object tags are included in S3 backups.</p>
     /// <p>If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
     /// <p>For more information about Windows VSS backups, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating a VSS-Enabled Windows Backup</a>.</p>
     pub backup_options: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -26,7 +26,7 @@ impl AdvancedBackupSetting {
     /// <p>Valid values:</p>
     /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup.</p>
     /// <p>Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
-    /// <p>For S3 backups, set to <code>"S3BackupACLs":"disabled"</code> to exclude ACLs from the backup, or <code>"S3BackupObjectTags":"disabled"</code> to exclude object tags from the backup. By default, both ACLs and object tags are included in S3 backups.</p>
+    /// <p>For S3 backups, set to <code>"BackupACLs":"disabled"</code> to exclude ACLs from the backup, or <code>"BackupObjectTags":"disabled"</code> to exclude object tags from the backup. By default, both ACLs and object tags are included in S3 backups.</p>
     /// <p>If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
     /// <p>For more information about Windows VSS backups, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating a VSS-Enabled Windows Backup</a>.</p>
     pub fn backup_options(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -73,7 +73,7 @@ impl AdvancedBackupSettingBuilder {
     /// <p>Valid values:</p>
     /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup.</p>
     /// <p>Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
-    /// <p>For S3 backups, set to <code>"S3BackupACLs":"disabled"</code> to exclude ACLs from the backup, or <code>"S3BackupObjectTags":"disabled"</code> to exclude object tags from the backup. By default, both ACLs and object tags are included in S3 backups.</p>
+    /// <p>For S3 backups, set to <code>"BackupACLs":"disabled"</code> to exclude ACLs from the backup, or <code>"BackupObjectTags":"disabled"</code> to exclude object tags from the backup. By default, both ACLs and object tags are included in S3 backups.</p>
     /// <p>If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
     /// <p>For more information about Windows VSS backups, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating a VSS-Enabled Windows Backup</a>.</p>
     pub fn backup_options(
@@ -90,7 +90,7 @@ impl AdvancedBackupSettingBuilder {
     /// <p>Valid values:</p>
     /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup.</p>
     /// <p>Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
-    /// <p>For S3 backups, set to <code>"S3BackupACLs":"disabled"</code> to exclude ACLs from the backup, or <code>"S3BackupObjectTags":"disabled"</code> to exclude object tags from the backup. By default, both ACLs and object tags are included in S3 backups.</p>
+    /// <p>For S3 backups, set to <code>"BackupACLs":"disabled"</code> to exclude ACLs from the backup, or <code>"BackupObjectTags":"disabled"</code> to exclude object tags from the backup. By default, both ACLs and object tags are included in S3 backups.</p>
     /// <p>If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
     /// <p>For more information about Windows VSS backups, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating a VSS-Enabled Windows Backup</a>.</p>
     pub fn set_backup_options(
@@ -104,7 +104,7 @@ impl AdvancedBackupSettingBuilder {
     /// <p>Valid values:</p>
     /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup option and create a Windows VSS backup.</p>
     /// <p>Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.</p>
-    /// <p>For S3 backups, set to <code>"S3BackupACLs":"disabled"</code> to exclude ACLs from the backup, or <code>"S3BackupObjectTags":"disabled"</code> to exclude object tags from the backup. By default, both ACLs and object tags are included in S3 backups.</p>
+    /// <p>For S3 backups, set to <code>"BackupACLs":"disabled"</code> to exclude ACLs from the backup, or <code>"BackupObjectTags":"disabled"</code> to exclude object tags from the backup. By default, both ACLs and object tags are included in S3 backups.</p>
     /// <p>If you specify an invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
     /// <p>For more information about Windows VSS backups, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating a VSS-Enabled Windows Backup</a>.</p>
     pub fn get_backup_options(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {

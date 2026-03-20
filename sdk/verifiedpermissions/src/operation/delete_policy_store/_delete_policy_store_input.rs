@@ -3,11 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePolicyStoreInput {
-    /// <p>Specifies the ID of the policy store that you want to delete.</p>
+    /// <p>Specifies the ID of the policy store that you want to delete.</p><note>
+    /// <p>To specify a policy store, the alias name cannot be used. Only the ID can be used.</p>
+    /// </note>
     pub policy_store_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePolicyStoreInput {
-    /// <p>Specifies the ID of the policy store that you want to delete.</p>
+    /// <p>Specifies the ID of the policy store that you want to delete.</p><note>
+    /// <p>To specify a policy store, the alias name cannot be used. Only the ID can be used.</p>
+    /// </note>
     pub fn policy_store_id(&self) -> ::std::option::Option<&str> {
         self.policy_store_id.as_deref()
     }
@@ -26,18 +30,24 @@ pub struct DeletePolicyStoreInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePolicyStoreInputBuilder {
-    /// <p>Specifies the ID of the policy store that you want to delete.</p>
+    /// <p>Specifies the ID of the policy store that you want to delete.</p><note>
+    /// <p>To specify a policy store, the alias name cannot be used. Only the ID can be used.</p>
+    /// </note>
     /// This field is required.
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_store_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the ID of the policy store that you want to delete.</p>
+    /// <p>Specifies the ID of the policy store that you want to delete.</p><note>
+    /// <p>To specify a policy store, the alias name cannot be used. Only the ID can be used.</p>
+    /// </note>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_store_id = input;
         self
     }
-    /// <p>Specifies the ID of the policy store that you want to delete.</p>
+    /// <p>Specifies the ID of the policy store that you want to delete.</p><note>
+    /// <p>To specify a policy store, the alias name cannot be used. Only the ID can be used.</p>
+    /// </note>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_store_id
     }

@@ -32,6 +32,8 @@ pub struct ListRecoveryPointsByBackupVaultInput {
     /// <li>
     /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
     /// <li>
+    /// <p><code>EKS</code> for Amazon Elastic Kubernetes Service</p></li>
+    /// <li>
     /// <p><code>FSx</code> for Amazon FSx</p></li>
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
@@ -99,6 +101,8 @@ impl ListRecoveryPointsByBackupVaultInput {
     /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
     /// <li>
     /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>EKS</code> for Amazon Elastic Kubernetes Service</p></li>
     /// <li>
     /// <p><code>FSx</code> for Amazon FSx</p></li>
     /// <li>
@@ -255,6 +259,8 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     /// <li>
     /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
     /// <li>
+    /// <p><code>EKS</code> for Amazon Elastic Kubernetes Service</p></li>
+    /// <li>
     /// <p><code>FSx</code> for Amazon FSx</p></li>
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
@@ -294,6 +300,8 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     /// <li>
     /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
     /// <li>
+    /// <p><code>EKS</code> for Amazon Elastic Kubernetes Service</p></li>
+    /// <li>
     /// <p><code>FSx</code> for Amazon FSx</p></li>
     /// <li>
     /// <p><code>Neptune</code> for Amazon Neptune</p></li>
@@ -332,6 +340,8 @@ impl ListRecoveryPointsByBackupVaultInputBuilder {
     /// <p><code>EC2</code> for Amazon Elastic Compute Cloud</p></li>
     /// <li>
     /// <p><code>EFS</code> for Amazon Elastic File System</p></li>
+    /// <li>
+    /// <p><code>EKS</code> for Amazon Elastic Kubernetes Service</p></li>
     /// <li>
     /// <p><code>FSx</code> for Amazon FSx</p></li>
     /// <li>

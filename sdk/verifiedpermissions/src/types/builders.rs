@@ -5,6 +5,8 @@ pub use crate::types::_entity_identifier::EntityIdentifierBuilder;
 
 pub use crate::types::_action_identifier::ActionIdentifierBuilder;
 
+pub use crate::types::_policy_store_alias_filter::PolicyStoreAliasFilterBuilder;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
 pub use crate::types::_identity_source_details::IdentitySourceDetailsBuilder;
@@ -38,6 +40,8 @@ pub use crate::types::_batch_get_policy_input_item::BatchGetPolicyInputItemBuild
 pub use crate::types::_batch_get_policy_output_item::BatchGetPolicyOutputItemBuilder;
 
 pub use crate::types::_batch_get_policy_error_item::BatchGetPolicyErrorItemBuilder;
+
+pub use crate::types::_policy_store_alias_item::PolicyStoreAliasItemBuilder;
 
 pub use crate::types::_identity_source_filter::IdentitySourceFilterBuilder;
 

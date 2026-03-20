@@ -273,7 +273,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreatePolicyS
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreatePolicyStoreError {
-    /// <p>The request failed because another request to modify a resource occurred at the same.</p>
+    /// <p>The request failed because another request to modify a resource occurred at the same time.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request failed because it would cause a service quota to be exceeded.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),

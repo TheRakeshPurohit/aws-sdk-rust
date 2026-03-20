@@ -23,6 +23,10 @@ pub use crate::types::_decision::Decision;
 
 pub use crate::types::_schema_definition::SchemaDefinition;
 
+pub use crate::types::_policy_store_alias_filter::PolicyStoreAliasFilter;
+
+pub use crate::types::_alias_state::AliasState;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_configuration::Configuration;
@@ -74,6 +78,8 @@ pub use crate::types::_batch_get_policy_input_item::BatchGetPolicyInputItem;
 pub use crate::types::_batch_get_policy_output_item::BatchGetPolicyOutputItem;
 
 pub use crate::types::_batch_get_policy_error_item::BatchGetPolicyErrorItem;
+
+pub use crate::types::_policy_store_alias_item::PolicyStoreAliasItem;
 
 pub use crate::types::_identity_source_filter::IdentitySourceFilter;
 
@@ -172,6 +178,8 @@ pub use crate::types::_open_id_connect_access_token_configuration_item::OpenIdCo
 pub use crate::types::_open_id_connect_identity_token_configuration_item::OpenIdConnectIdentityTokenConfigurationItem;
 
 mod _action_identifier;
+
+mod _alias_state;
 
 mod _attribute_value;
 
@@ -290,6 +298,10 @@ mod _policy_effect;
 mod _policy_filter;
 
 mod _policy_item;
+
+mod _policy_store_alias_filter;
+
+mod _policy_store_alias_item;
 
 mod _policy_store_item;
 

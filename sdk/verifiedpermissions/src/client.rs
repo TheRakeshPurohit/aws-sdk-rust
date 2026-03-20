@@ -148,6 +148,8 @@ mod create_policy;
 
 mod create_policy_store;
 
+mod create_policy_store_alias;
+
 mod create_policy_template;
 
 /// Operation customization and supporting types.
@@ -183,6 +185,8 @@ mod delete_policy;
 
 mod delete_policy_store;
 
+mod delete_policy_store_alias;
+
 mod delete_policy_template;
 
 mod get_identity_source;
@@ -190,6 +194,8 @@ mod get_identity_source;
 mod get_policy;
 
 mod get_policy_store;
+
+mod get_policy_store_alias;
 
 mod get_policy_template;
 
@@ -202,6 +208,8 @@ mod is_authorized_with_token;
 mod list_identity_sources;
 
 mod list_policies;
+
+mod list_policy_store_aliases;
 
 mod list_policy_stores;
 

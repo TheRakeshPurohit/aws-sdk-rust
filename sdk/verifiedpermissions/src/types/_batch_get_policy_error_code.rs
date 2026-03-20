@@ -13,6 +13,7 @@
 /// # let batchgetpolicyerrorcode = unimplemented!();
 /// match batchgetpolicyerrorcode {
 ///     BatchGetPolicyErrorCode::PolicyNotFound => { /* ... */ },
+///     BatchGetPolicyErrorCode::PolicyStoreAliasNotFound => { /* ... */ },
 ///     BatchGetPolicyErrorCode::PolicyStoreNotFound => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum BatchGetPolicyErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     PolicyNotFound,
     #[allow(missing_docs)] // documentation missing in model
+    PolicyStoreAliasNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     PolicyStoreNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for BatchGetPolicyErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "POLICY_NOT_FOUND" => BatchGetPolicyErrorCode::PolicyNotFound,
+            "POLICY_STORE_ALIAS_NOT_FOUND" => BatchGetPolicyErrorCode::PolicyStoreAliasNotFound,
             "POLICY_STORE_NOT_FOUND" => BatchGetPolicyErrorCode::PolicyStoreNotFound,
             other => BatchGetPolicyErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl BatchGetPolicyErrorCode {
     pub fn as_str(&self) -> &str {
         match self {
             BatchGetPolicyErrorCode::PolicyNotFound => "POLICY_NOT_FOUND",
+            BatchGetPolicyErrorCode::PolicyStoreAliasNotFound => "POLICY_STORE_ALIAS_NOT_FOUND",
             BatchGetPolicyErrorCode::PolicyStoreNotFound => "POLICY_STORE_NOT_FOUND",
             BatchGetPolicyErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["POLICY_NOT_FOUND", "POLICY_STORE_NOT_FOUND"]
+        &["POLICY_NOT_FOUND", "POLICY_STORE_ALIAS_NOT_FOUND", "POLICY_STORE_NOT_FOUND"]
     }
 }
 impl ::std::convert::AsRef<str> for BatchGetPolicyErrorCode {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for BatchGetPolicyErrorCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             BatchGetPolicyErrorCode::PolicyNotFound => write!(f, "POLICY_NOT_FOUND"),
+            BatchGetPolicyErrorCode::PolicyStoreAliasNotFound => write!(f, "POLICY_STORE_ALIAS_NOT_FOUND"),
             BatchGetPolicyErrorCode::PolicyStoreNotFound => write!(f, "POLICY_STORE_NOT_FOUND"),
             BatchGetPolicyErrorCode::Unknown(value) => write!(f, "{value}"),
         }

@@ -31,6 +31,8 @@ pub struct PolicyItem {
     pub last_updated_date: ::aws_smithy_types::DateTime,
     /// <p>The effect of the decision that a policy returns to an authorization request. For example, <code>"effect": "Permit"</code>.</p>
     pub effect: ::std::option::Option<crate::types::PolicyEffect>,
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl PolicyItem {
     /// <p>The identifier of the policy store where the policy you want information about is stored.</p>
@@ -83,6 +85,10 @@ impl PolicyItem {
     pub fn effect(&self) -> ::std::option::Option<&crate::types::PolicyEffect> {
         self.effect.as_ref()
     }
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl PolicyItem {
     /// Creates a new builder-style object to manufacture [`PolicyItem`](crate::types::PolicyItem).
@@ -105,6 +111,7 @@ pub struct PolicyItemBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) effect: ::std::option::Option<crate::types::PolicyEffect>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl PolicyItemBuilder {
     /// <p>The identifier of the policy store where the policy you want information about is stored.</p>
@@ -277,6 +284,20 @@ impl PolicyItemBuilder {
     pub fn get_effect(&self) -> &::std::option::Option<crate::types::PolicyEffect> {
         &self.effect
     }
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>The name of the policy, if one was assigned when the policy was created or last updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`PolicyItem`](crate::types::PolicyItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_store_id`](crate::types::builders::PolicyItemBuilder::policy_store_id)
@@ -321,6 +342,7 @@ impl PolicyItemBuilder {
                 )
             })?,
             effect: self.effect,
+            name: self.name,
         })
     }
 }

@@ -109,17 +109,23 @@ impl DeletePolicyStoreFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specifies the ID of the policy store that you want to delete.</p>
+    /// <p>Specifies the ID of the policy store that you want to delete.</p><note>
+    /// <p>To specify a policy store, the alias name cannot be used. Only the ID can be used.</p>
+    /// </note>
     pub fn policy_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_store_id(input.into());
         self
     }
-    /// <p>Specifies the ID of the policy store that you want to delete.</p>
+    /// <p>Specifies the ID of the policy store that you want to delete.</p><note>
+    /// <p>To specify a policy store, the alias name cannot be used. Only the ID can be used.</p>
+    /// </note>
     pub fn set_policy_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_store_id(input);
         self
     }
-    /// <p>Specifies the ID of the policy store that you want to delete.</p>
+    /// <p>Specifies the ID of the policy store that you want to delete.</p><note>
+    /// <p>To specify a policy store, the alias name cannot be used. Only the ID can be used.</p>
+    /// </note>
     pub fn get_policy_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_store_id()
     }

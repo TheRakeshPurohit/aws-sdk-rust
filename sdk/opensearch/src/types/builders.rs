@@ -89,6 +89,8 @@ pub use crate::types::_cloud_watch_direct_query_data_source::CloudWatchDirectQue
 
 pub use crate::types::_security_lake_direct_query_data_source::SecurityLakeDirectQueryDataSourceBuilder;
 
+pub use crate::types::_prometheus_direct_query_data_source::PrometheusDirectQueryDataSourceBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_key_store_access_option::KeyStoreAccessOptionBuilder;

@@ -571,6 +571,8 @@ pub(crate) mod shape_package_version_history;
 
 pub(crate) mod shape_plugin_properties;
 
+pub(crate) mod shape_prometheus_direct_query_data_source;
+
 pub(crate) mod shape_reserved_instance;
 
 pub(crate) mod shape_reserved_instance_offering;

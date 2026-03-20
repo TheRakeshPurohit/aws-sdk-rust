@@ -12,7 +12,9 @@ pub struct BackupSelection {
     pub iam_role_arn: ::std::string::String,
     /// <p>The Amazon Resource Names (ARNs) of the resources to assign to a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to assign many resources to a backup plan, consider a different resource selection strategy, such as assigning all resources of a resource type or refining your resource selection using tags.</p>
-    /// <p>If you specify multiple ARNs, the resources much match any of the ARNs (OR logic).</p>
+    /// <p>If you specify multiple ARNs, the resources much match any of the ARNs (OR logic).</p><note>
+    /// <p>When using wildcards in ARN patterns for backup selections, the asterisk (*) must appear at the end of the ARN string (prefix pattern). For example, <code>arn:aws:s3:::my-bucket-*</code> is valid, but <code>arn:aws:s3:::*-logs</code> is not supported.</p>
+    /// </note>
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The conditions that you define to assign resources to your backup plans using tags. For example, <code>"StringEquals": { "ConditionKey": "backup", "ConditionValue": "daily"}</code>.</p>
     /// <p><code>ListOfTags</code> supports only <code>StringEquals</code>. Condition operators are case sensitive.</p>
@@ -39,7 +41,9 @@ impl BackupSelection {
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources to assign to a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to assign many resources to a backup plan, consider a different resource selection strategy, such as assigning all resources of a resource type or refining your resource selection using tags.</p>
-    /// <p>If you specify multiple ARNs, the resources much match any of the ARNs (OR logic).</p>
+    /// <p>If you specify multiple ARNs, the resources much match any of the ARNs (OR logic).</p><note>
+    /// <p>When using wildcards in ARN patterns for backup selections, the asterisk (*) must appear at the end of the ARN string (prefix pattern). For example, <code>arn:aws:s3:::my-bucket-*</code> is valid, but <code>arn:aws:s3:::*-logs</code> is not supported.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
     pub fn resources(&self) -> &[::std::string::String] {
@@ -122,7 +126,9 @@ impl BackupSelectionBuilder {
     ///
     /// <p>The Amazon Resource Names (ARNs) of the resources to assign to a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to assign many resources to a backup plan, consider a different resource selection strategy, such as assigning all resources of a resource type or refining your resource selection using tags.</p>
-    /// <p>If you specify multiple ARNs, the resources much match any of the ARNs (OR logic).</p>
+    /// <p>If you specify multiple ARNs, the resources much match any of the ARNs (OR logic).</p><note>
+    /// <p>When using wildcards in ARN patterns for backup selections, the asterisk (*) must appear at the end of the ARN string (prefix pattern). For example, <code>arn:aws:s3:::my-bucket-*</code> is valid, but <code>arn:aws:s3:::*-logs</code> is not supported.</p>
+    /// </note>
     pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input.into());
@@ -131,14 +137,18 @@ impl BackupSelectionBuilder {
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources to assign to a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to assign many resources to a backup plan, consider a different resource selection strategy, such as assigning all resources of a resource type or refining your resource selection using tags.</p>
-    /// <p>If you specify multiple ARNs, the resources much match any of the ARNs (OR logic).</p>
+    /// <p>If you specify multiple ARNs, the resources much match any of the ARNs (OR logic).</p><note>
+    /// <p>When using wildcards in ARN patterns for backup selections, the asterisk (*) must appear at the end of the ARN string (prefix pattern). For example, <code>arn:aws:s3:::my-bucket-*</code> is valid, but <code>arn:aws:s3:::*-logs</code> is not supported.</p>
+    /// </note>
     pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources to assign to a backup plan. The maximum number of ARNs is 500 without wildcards, or 30 ARNs with wildcards.</p>
     /// <p>If you need to assign many resources to a backup plan, consider a different resource selection strategy, such as assigning all resources of a resource type or refining your resource selection using tags.</p>
-    /// <p>If you specify multiple ARNs, the resources much match any of the ARNs (OR logic).</p>
+    /// <p>If you specify multiple ARNs, the resources much match any of the ARNs (OR logic).</p><note>
+    /// <p>When using wildcards in ARN patterns for backup selections, the asterisk (*) must appear at the end of the ARN string (prefix pattern). For example, <code>arn:aws:s3:::my-bucket-*</code> is valid, but <code>arn:aws:s3:::*-logs</code> is not supported.</p>
+    /// </note>
     pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resources
     }

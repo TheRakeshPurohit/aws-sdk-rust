@@ -15,5 +15,8 @@ pub fn ser_create_policy_template_input_input(
     if let Some(var_4) = &input.statement {
         object.key("statement").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.name {
+        object.key("name").string(var_5.as_str());
+    }
     Ok(())
 }

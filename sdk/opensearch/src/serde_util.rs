@@ -495,6 +495,18 @@ pub(crate) fn package_vending_options_correct_errors(
     builder
 }
 
+pub(crate) fn prometheus_direct_query_data_source_correct_errors(
+    mut builder: crate::types::builders::PrometheusDirectQueryDataSourceBuilder,
+) -> crate::types::builders::PrometheusDirectQueryDataSourceBuilder {
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.workspace_arn.is_none() {
+        builder.workspace_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn security_lake_direct_query_data_source_correct_errors(
     mut builder: crate::types::builders::SecurityLakeDirectQueryDataSourceBuilder,
 ) -> crate::types::builders::SecurityLakeDirectQueryDataSourceBuilder {

@@ -35,6 +35,8 @@ pub(crate) mod shape_create_policy;
 
 pub(crate) mod shape_create_policy_store;
 
+pub(crate) mod shape_create_policy_store_alias;
+
 pub(crate) mod shape_create_policy_template;
 
 pub(crate) mod shape_delete_identity_source;
@@ -43,6 +45,8 @@ pub(crate) mod shape_delete_policy;
 
 pub(crate) mod shape_delete_policy_store;
 
+pub(crate) mod shape_delete_policy_store_alias;
+
 pub(crate) mod shape_delete_policy_template;
 
 pub(crate) mod shape_get_identity_source;
@@ -50,6 +54,8 @@ pub(crate) mod shape_get_identity_source;
 pub(crate) mod shape_get_policy;
 
 pub(crate) mod shape_get_policy_store;
+
+pub(crate) mod shape_get_policy_store_alias;
 
 pub(crate) mod shape_get_policy_template;
 
@@ -62,6 +68,8 @@ pub(crate) mod shape_is_authorized_with_token;
 pub(crate) mod shape_list_identity_sources;
 
 pub(crate) mod shape_list_policies;
+
+pub(crate) mod shape_list_policy_store_aliases;
 
 pub(crate) mod shape_list_policy_stores;
 
@@ -105,6 +113,8 @@ pub(crate) mod shape_create_identity_source_input;
 
 pub(crate) mod shape_create_policy_input;
 
+pub(crate) mod shape_create_policy_store_alias_input;
+
 pub(crate) mod shape_create_policy_store_input;
 
 pub(crate) mod shape_create_policy_template_input;
@@ -113,6 +123,8 @@ pub(crate) mod shape_delete_identity_source_input;
 
 pub(crate) mod shape_delete_policy_input;
 
+pub(crate) mod shape_delete_policy_store_alias_input;
+
 pub(crate) mod shape_delete_policy_store_input;
 
 pub(crate) mod shape_delete_policy_template_input;
@@ -120,6 +132,8 @@ pub(crate) mod shape_delete_policy_template_input;
 pub(crate) mod shape_get_identity_source_input;
 
 pub(crate) mod shape_get_policy_input;
+
+pub(crate) mod shape_get_policy_store_alias_input;
 
 pub(crate) mod shape_get_policy_store_input;
 
@@ -138,6 +152,8 @@ pub(crate) mod shape_is_authorized_with_token_input;
 pub(crate) mod shape_list_identity_sources_input;
 
 pub(crate) mod shape_list_policies_input;
+
+pub(crate) mod shape_list_policy_store_aliases_input;
 
 pub(crate) mod shape_list_policy_stores_input;
 
@@ -221,6 +237,10 @@ pub(crate) mod shape_policy_filter;
 
 pub(crate) mod shape_policy_list;
 
+pub(crate) mod shape_policy_store_alias_filter;
+
+pub(crate) mod shape_policy_store_alias_list;
+
 pub(crate) mod shape_policy_store_list;
 
 pub(crate) mod shape_policy_templates_list;
@@ -274,6 +294,8 @@ pub(crate) mod shape_open_id_connect_configuration;
 pub(crate) mod shape_open_id_connect_configuration_detail;
 
 pub(crate) mod shape_policy_item;
+
+pub(crate) mod shape_policy_store_alias_item;
 
 pub(crate) mod shape_policy_store_item;
 

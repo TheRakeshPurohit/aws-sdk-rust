@@ -15,5 +15,8 @@ pub fn ser_create_policy_input_input(
         crate::protocol_serde::shape_policy_definition::ser_policy_definition(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.name {
+        object.key("name").string(var_5.as_str());
+    }
     Ok(())
 }

@@ -15,6 +15,8 @@ pub struct PolicyTemplateItem {
     pub created_date: ::aws_smithy_types::DateTime,
     /// <p>The date and time that the policy template was most recently updated.</p>
     pub last_updated_date: ::aws_smithy_types::DateTime,
+    /// <p>The name of the policy template, if one was assigned when the policy template was created or last updated.</p>
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl PolicyTemplateItem {
     /// <p>The unique identifier of the policy store that contains the template.</p>
@@ -39,6 +41,10 @@ impl PolicyTemplateItem {
     pub fn last_updated_date(&self) -> &::aws_smithy_types::DateTime {
         &self.last_updated_date
     }
+    /// <p>The name of the policy template, if one was assigned when the policy template was created or last updated.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
+    }
 }
 impl ::std::fmt::Debug for PolicyTemplateItem {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -48,6 +54,7 @@ impl ::std::fmt::Debug for PolicyTemplateItem {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_date", &self.created_date);
         formatter.field("last_updated_date", &self.last_updated_date);
+        formatter.field("name", &self.name);
         formatter.finish()
     }
 }
@@ -67,6 +74,7 @@ pub struct PolicyTemplateItemBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl PolicyTemplateItemBuilder {
     /// <p>The unique identifier of the policy store that contains the template.</p>
@@ -143,6 +151,20 @@ impl PolicyTemplateItemBuilder {
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_date
     }
+    /// <p>The name of the policy template, if one was assigned when the policy template was created or last updated.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the policy template, if one was assigned when the policy template was created or last updated.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>The name of the policy template, if one was assigned when the policy template was created or last updated.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`PolicyTemplateItem`](crate::types::PolicyTemplateItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`policy_store_id`](crate::types::builders::PolicyTemplateItemBuilder::policy_store_id)
@@ -176,6 +198,7 @@ impl PolicyTemplateItemBuilder {
                     "last_updated_date was not specified but it is required when building PolicyTemplateItem",
                 )
             })?,
+            name: self.name,
         })
     }
 }
@@ -187,6 +210,7 @@ impl ::std::fmt::Debug for PolicyTemplateItemBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_date", &self.created_date);
         formatter.field("last_updated_date", &self.last_updated_date);
+        formatter.field("name", &self.name);
         formatter.finish()
     }
 }

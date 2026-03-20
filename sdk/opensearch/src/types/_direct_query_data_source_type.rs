@@ -6,6 +6,8 @@
 pub enum DirectQueryDataSourceType {
     /// <p>Specifies CloudWatch Logs as a type of data source for direct queries.</p>
     CloudWatchLog(crate::types::CloudWatchDirectQueryDataSource),
+    /// <p>Specifies Prometheus as a type of data source for direct queries.</p>
+    Prometheus(crate::types::PrometheusDirectQueryDataSource),
     /// <p>Specifies Security Lake as a type of data source for direct queries.</p>
     SecurityLake(crate::types::SecurityLakeDirectQueryDataSource),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -31,6 +33,19 @@ impl DirectQueryDataSourceType {
     /// Returns true if this is a [`CloudWatchLog`](crate::types::DirectQueryDataSourceType::CloudWatchLog).
     pub fn is_cloud_watch_log(&self) -> bool {
         self.as_cloud_watch_log().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Prometheus`](crate::types::DirectQueryDataSourceType::Prometheus), extracting the inner [`PrometheusDirectQueryDataSource`](crate::types::PrometheusDirectQueryDataSource).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_prometheus(&self) -> ::std::result::Result<&crate::types::PrometheusDirectQueryDataSource, &Self> {
+        if let DirectQueryDataSourceType::Prometheus(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Prometheus`](crate::types::DirectQueryDataSourceType::Prometheus).
+    pub fn is_prometheus(&self) -> bool {
+        self.as_prometheus().is_ok()
     }
     /// Tries to convert the enum instance into [`SecurityLake`](crate::types::DirectQueryDataSourceType::SecurityLake), extracting the inner [`SecurityLakeDirectQueryDataSource`](crate::types::SecurityLakeDirectQueryDataSource).
     /// Returns `Err(&Self)` if it can't be converted.
