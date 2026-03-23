@@ -177,6 +177,13 @@ pub(crate) fn de_get_run(
                             .transpose()?,
                     );
                 }
+                "batchId" => {
+                    builder = builder.set_batch_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "cacheBehavior" => {
                     builder = builder.set_cache_behavior(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

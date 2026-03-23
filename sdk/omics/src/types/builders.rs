@@ -11,6 +11,12 @@ pub use crate::types::_reference_store_filter::ReferenceStoreFilterBuilder;
 
 pub use crate::types::_import_reference_filter::ImportReferenceFilterBuilder;
 
+pub use crate::types::_default_run_setting::DefaultRunSettingBuilder;
+
+pub use crate::types::_submission_summary::SubmissionSummaryBuilder;
+
+pub use crate::types::_run_summary::RunSummaryBuilder;
+
 pub use crate::types::_run_log_location::RunLogLocationBuilder;
 
 pub use crate::types::_sequence_store_filter::SequenceStoreFilterBuilder;
@@ -83,6 +89,10 @@ pub use crate::types::_import_reference_job_item::ImportReferenceJobItemBuilder;
 
 pub use crate::types::_start_reference_import_job_source_item::StartReferenceImportJobSourceItemBuilder;
 
+pub use crate::types::_batch_list_item::BatchListItemBuilder;
+
+pub use crate::types::_run_batch_list_item::RunBatchListItemBuilder;
+
 pub use crate::types::_run_cache_list_item::RunCacheListItemBuilder;
 
 pub use crate::types::_run_group_list_item::RunGroupListItemBuilder;
@@ -142,6 +152,8 @@ pub use crate::types::_read_set_batch_error::ReadSetBatchErrorBuilder;
 pub use crate::types::_workflow_version_list_item::WorkflowVersionListItemBuilder;
 
 pub use crate::types::_read_options::ReadOptionsBuilder;
+
+pub use crate::types::_inline_setting::InlineSettingBuilder;
 
 pub use crate::types::_source_files::SourceFilesBuilder;
 

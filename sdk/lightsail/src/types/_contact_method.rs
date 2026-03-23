@@ -32,6 +32,8 @@ pub struct ContactMethod {
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The support code. Include this code in your email to support when you have questions about your Lightsail contact method. This code enables our support team to look up your Lightsail information more easily.</p>
     pub support_code: ::std::option::Option<::std::string::String>,
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ContactMethod {
     /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
@@ -79,6 +81,12 @@ impl ContactMethod {
     pub fn support_code(&self) -> ::std::option::Option<&str> {
         self.support_code.as_deref()
     }
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl ContactMethod {
     /// Creates a new builder-style object to manufacture [`ContactMethod`](crate::types::ContactMethod).
@@ -100,6 +108,7 @@ pub struct ContactMethodBuilder {
     pub(crate) location: ::std::option::Option<crate::types::ResourceLocation>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) support_code: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ContactMethodBuilder {
     /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
@@ -255,6 +264,26 @@ impl ContactMethodBuilder {
     pub fn get_support_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.support_code
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`ContactMethod`](crate::types::ContactMethod).
     pub fn build(self) -> crate::types::ContactMethod {
         crate::types::ContactMethod {
@@ -267,6 +296,7 @@ impl ContactMethodBuilder {
             location: self.location,
             resource_type: self.resource_type,
             support_code: self.support_code,
+            tags: self.tags,
         }
     }
 }

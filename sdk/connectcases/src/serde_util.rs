@@ -359,6 +359,27 @@ pub(crate) fn search_related_items_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_related_item_output_output_correct_errors(
+    mut builder: crate::operation::update_related_item::builders::UpdateRelatedItemOutputBuilder,
+) -> crate::operation::update_related_item::builders::UpdateRelatedItemOutputBuilder {
+    if builder.related_item_id.is_none() {
+        builder.related_item_id = Some(Default::default())
+    }
+    if builder.related_item_arn.is_none() {
+        builder.related_item_arn = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::RelatedItemType>().ok()
+    }
+    if builder.content.is_none() {
+        builder.content = Some(crate::types::RelatedItemContent::Unknown)
+    }
+    if builder.association_time.is_none() {
+        builder.association_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn event_bridge_configuration_correct_errors(
     mut builder: crate::types::builders::EventBridgeConfigurationBuilder,
 ) -> crate::types::builders::EventBridgeConfigurationBuilder {
@@ -420,6 +441,51 @@ pub(crate) fn case_summary_correct_errors(mut builder: crate::types::builders::C
     }
     if builder.template_id.is_none() {
         builder.template_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn comment_content_correct_errors(
+    mut builder: crate::types::builders::CommentContentBuilder,
+) -> crate::types::builders::CommentContentBuilder {
+    if builder.body.is_none() {
+        builder.body = Some(Default::default())
+    }
+    if builder.content_type.is_none() {
+        builder.content_type = "no value was set".parse::<crate::types::CommentBodyTextType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn connect_case_content_correct_errors(
+    mut builder: crate::types::builders::ConnectCaseContentBuilder,
+) -> crate::types::builders::ConnectCaseContentBuilder {
+    if builder.case_id.is_none() {
+        builder.case_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn contact_content_correct_errors(
+    mut builder: crate::types::builders::ContactContentBuilder,
+) -> crate::types::builders::ContactContentBuilder {
+    if builder.contact_arn.is_none() {
+        builder.contact_arn = Some(Default::default())
+    }
+    if builder.channel.is_none() {
+        builder.channel = Some(Default::default())
+    }
+    if builder.connected_to_system_time.is_none() {
+        builder.connected_to_system_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn custom_content_correct_errors(
+    mut builder: crate::types::builders::CustomContentBuilder,
+) -> crate::types::builders::CustomContentBuilder {
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
     }
     builder
 }
@@ -502,6 +568,13 @@ pub(crate) fn field_value_correct_errors(mut builder: crate::types::builders::Fi
     }
     if builder.value.is_none() {
         builder.value = Some(crate::types::FieldValueUnion::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn file_content_correct_errors(mut builder: crate::types::builders::FileContentBuilder) -> crate::types::builders::FileContentBuilder {
+    if builder.file_arn.is_none() {
+        builder.file_arn = Some(Default::default())
     }
     builder
 }
@@ -623,6 +696,16 @@ pub(crate) fn search_related_items_response_item_correct_errors(
     builder
 }
 
+pub(crate) fn sla_content_correct_errors(mut builder: crate::types::builders::SlaContentBuilder) -> crate::types::builders::SlaContentBuilder {
+    if builder.sla_configuration.is_none() {
+        builder.sla_configuration = {
+            let builder = crate::types::builders::SlaConfigurationBuilder::default();
+            crate::serde_util::sla_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn tag_propagation_configuration_correct_errors(
     mut builder: crate::types::builders::TagPropagationConfigurationBuilder,
 ) -> crate::types::builders::TagPropagationConfigurationBuilder {
@@ -687,6 +770,24 @@ pub(crate) fn related_item_event_included_data_correct_errors(
     builder
 }
 
+pub(crate) fn sla_configuration_correct_errors(
+    mut builder: crate::types::builders::SlaConfigurationBuilder,
+) -> crate::types::builders::SlaConfigurationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::SlaType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SlaStatus>().ok()
+    }
+    if builder.target_time.is_none() {
+        builder.target_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn audit_event_field_correct_errors(
     mut builder: crate::types::builders::AuditEventFieldBuilder,
 ) -> crate::types::builders::AuditEventFieldBuilder {
@@ -699,63 +800,11 @@ pub(crate) fn audit_event_field_correct_errors(
     builder
 }
 
-pub(crate) fn comment_content_correct_errors(
-    mut builder: crate::types::builders::CommentContentBuilder,
-) -> crate::types::builders::CommentContentBuilder {
-    if builder.body.is_none() {
-        builder.body = Some(Default::default())
-    }
-    if builder.content_type.is_none() {
-        builder.content_type = "no value was set".parse::<crate::types::CommentBodyTextType>().ok()
-    }
-    builder
-}
-
-pub(crate) fn connect_case_content_correct_errors(
-    mut builder: crate::types::builders::ConnectCaseContentBuilder,
-) -> crate::types::builders::ConnectCaseContentBuilder {
-    if builder.case_id.is_none() {
-        builder.case_id = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn contact_content_correct_errors(
-    mut builder: crate::types::builders::ContactContentBuilder,
-) -> crate::types::builders::ContactContentBuilder {
-    if builder.contact_arn.is_none() {
-        builder.contact_arn = Some(Default::default())
-    }
-    if builder.channel.is_none() {
-        builder.channel = Some(Default::default())
-    }
-    if builder.connected_to_system_time.is_none() {
-        builder.connected_to_system_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    builder
-}
-
-pub(crate) fn custom_content_correct_errors(
-    mut builder: crate::types::builders::CustomContentBuilder,
-) -> crate::types::builders::CustomContentBuilder {
-    if builder.fields.is_none() {
-        builder.fields = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn field_options_case_rule_correct_errors(
     mut builder: crate::types::builders::FieldOptionsCaseRuleBuilder,
 ) -> crate::types::builders::FieldOptionsCaseRuleBuilder {
     if builder.parent_child_field_options_mappings.is_none() {
         builder.parent_child_field_options_mappings = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn file_content_correct_errors(mut builder: crate::types::builders::FileContentBuilder) -> crate::types::builders::FileContentBuilder {
-    if builder.file_arn.is_none() {
-        builder.file_arn = Some(Default::default())
     }
     builder
 }
@@ -784,16 +833,6 @@ pub(crate) fn required_case_rule_correct_errors(
     builder
 }
 
-pub(crate) fn sla_content_correct_errors(mut builder: crate::types::builders::SlaContentBuilder) -> crate::types::builders::SlaContentBuilder {
-    if builder.sla_configuration.is_none() {
-        builder.sla_configuration = {
-            let builder = crate::types::builders::SlaConfigurationBuilder::default();
-            crate::serde_util::sla_configuration_correct_errors(builder).build().ok()
-        }
-    }
-    builder
-}
-
 pub(crate) fn text_attributes_correct_errors(
     mut builder: crate::types::builders::TextAttributesBuilder,
 ) -> crate::types::builders::TextAttributesBuilder {
@@ -808,24 +847,6 @@ pub(crate) fn field_identifier_correct_errors(
 ) -> crate::types::builders::FieldIdentifierBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn sla_configuration_correct_errors(
-    mut builder: crate::types::builders::SlaConfigurationBuilder,
-) -> crate::types::builders::SlaConfigurationBuilder {
-    if builder.name.is_none() {
-        builder.name = Some(Default::default())
-    }
-    if builder.r#type.is_none() {
-        builder.r#type = "no value was set".parse::<crate::types::SlaType>().ok()
-    }
-    if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::SlaStatus>().ok()
-    }
-    if builder.target_time.is_none() {
-        builder.target_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

@@ -888,6 +888,18 @@ pub(crate) fn sse_config_correct_errors(mut builder: crate::types::builders::Sse
     builder
 }
 
+pub(crate) fn default_run_setting_correct_errors(
+    mut builder: crate::types::builders::DefaultRunSettingBuilder,
+) -> crate::types::builders::DefaultRunSettingBuilder {
+    if builder.workflow_id.is_none() {
+        builder.workflow_id = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn activate_read_set_job_item_correct_errors(
     mut builder: crate::types::builders::ActivateReadSetJobItemBuilder,
 ) -> crate::types::builders::ActivateReadSetJobItemBuilder {

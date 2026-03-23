@@ -31,6 +31,18 @@ pub use crate::types::_reference_import_job_status::ReferenceImportJobStatus;
 
 pub use crate::types::_import_reference_filter::ImportReferenceFilter;
 
+pub use crate::types::_batch_status::BatchStatus;
+
+pub use crate::types::_default_run_setting::DefaultRunSetting;
+
+pub use crate::types::_batch_run_settings::BatchRunSettings;
+
+pub use crate::types::_submission_summary::SubmissionSummary;
+
+pub use crate::types::_run_summary::RunSummary;
+
+pub use crate::types::_submission_status::SubmissionStatus;
+
 pub use crate::types::_cache_behavior::CacheBehavior;
 
 pub use crate::types::_run_cache_status::RunCacheStatus;
@@ -157,6 +169,10 @@ pub use crate::types::_import_reference_job_item::ImportReferenceJobItem;
 
 pub use crate::types::_start_reference_import_job_source_item::StartReferenceImportJobSourceItem;
 
+pub use crate::types::_batch_list_item::BatchListItem;
+
+pub use crate::types::_run_batch_list_item::RunBatchListItem;
+
 pub use crate::types::_run_cache_list_item::RunCacheListItem;
 
 pub use crate::types::_run_group_list_item::RunGroupListItem;
@@ -227,6 +243,8 @@ pub use crate::types::_annotation_type::AnnotationType;
 
 pub use crate::types::_reference_import_job_item_status::ReferenceImportJobItemStatus;
 
+pub use crate::types::_inline_setting::InlineSetting;
+
 pub use crate::types::_read_set_activation_job_item_status::ReadSetActivationJobItemStatus;
 
 pub use crate::types::_read_set_export_job_item_status::ReadSetExportJobItemStatus;
@@ -269,6 +287,12 @@ mod _annotation_store_version_item;
 
 mod _annotation_type;
 
+mod _batch_list_item;
+
+mod _batch_run_settings;
+
+mod _batch_status;
+
 mod _cache_behavior;
 
 mod _complete_read_set_upload_part_list_item;
@@ -276,6 +300,8 @@ mod _complete_read_set_upload_part_list_item;
 mod _container_registry_map;
 
 mod _creation_type;
+
+mod _default_run_setting;
 
 mod _definition_repository;
 
@@ -322,6 +348,8 @@ mod _import_reference_filter;
 mod _import_reference_job_item;
 
 mod _import_reference_source_item;
+
+mod _inline_setting;
 
 mod _job_status;
 
@@ -397,6 +425,8 @@ mod _registry_mapping;
 
 mod _resource_owner;
 
+mod _run_batch_list_item;
+
 mod _run_cache_list_item;
 
 mod _run_cache_status;
@@ -414,6 +444,8 @@ mod _run_log_location;
 mod _run_retention_mode;
 
 mod _run_status;
+
+mod _run_summary;
 
 mod _s3_access_config;
 
@@ -458,6 +490,10 @@ mod _store_options;
 mod _store_status;
 
 mod _store_type;
+
+mod _submission_status;
+
+mod _submission_summary;
 
 mod _task_list_item;
 

@@ -245,4 +245,6 @@ mod update_field;
 
 mod update_layout;
 
+mod update_related_item;
+
 mod update_template;

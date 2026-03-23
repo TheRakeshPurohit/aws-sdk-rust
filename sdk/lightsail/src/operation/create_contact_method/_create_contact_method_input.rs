@@ -25,6 +25,9 @@ pub struct CreateContactMethodInput {
     /// <p>The destination of the contact method, such as an email address or a mobile phone number.</p>
     /// <p>Use the E.164 format when specifying a mobile phone number. E.164 is a standard for the phone number structure used for international telecommunication. Phone numbers that follow this format can have a maximum of 15 digits, and they are prefixed with the plus character (+) and the country code. For example, a U.S. phone number in E.164 format would be specified as +1XXX5550100. For more information, see <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
     pub contact_endpoint: ::std::option::Option<::std::string::String>,
+    /// <p>The tag keys and optional values to add to the contact method during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateContactMethodInput {
     /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
@@ -53,6 +56,13 @@ impl CreateContactMethodInput {
     pub fn contact_endpoint(&self) -> ::std::option::Option<&str> {
         self.contact_endpoint.as_deref()
     }
+    /// <p>The tag keys and optional values to add to the contact method during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl CreateContactMethodInput {
     /// Creates a new builder-style object to manufacture [`CreateContactMethodInput`](crate::operation::create_contact_method::CreateContactMethodInput).
@@ -67,6 +77,7 @@ impl CreateContactMethodInput {
 pub struct CreateContactMethodInputBuilder {
     pub(crate) protocol: ::std::option::Option<crate::types::ContactProtocol>,
     pub(crate) contact_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateContactMethodInputBuilder {
     /// <p>The protocol of the contact method, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
@@ -153,6 +164,29 @@ impl CreateContactMethodInputBuilder {
     pub fn get_contact_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.contact_endpoint
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tag keys and optional values to add to the contact method during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tag keys and optional values to add to the contact method during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tag keys and optional values to add to the contact method during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateContactMethodInput`](crate::operation::create_contact_method::CreateContactMethodInput).
     pub fn build(
         self,
@@ -161,6 +195,7 @@ impl CreateContactMethodInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_contact_method::CreateContactMethodInput {
             protocol: self.protocol,
             contact_endpoint: self.contact_endpoint,
+            tags: self.tags,
         })
     }
 }

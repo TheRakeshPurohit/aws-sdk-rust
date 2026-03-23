@@ -7,6 +7,8 @@ pub struct ListRunsInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Filter the list by run group ID.</p>
     pub run_group_id: ::std::option::Option<::std::string::String>,
+    /// <p>Filter by batch ID.</p>
+    pub batch_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub starting_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of runs to return in one page of results.</p>
@@ -22,6 +24,10 @@ impl ListRunsInput {
     /// <p>Filter the list by run group ID.</p>
     pub fn run_group_id(&self) -> ::std::option::Option<&str> {
         self.run_group_id.as_deref()
+    }
+    /// <p>Filter by batch ID.</p>
+    pub fn batch_id(&self) -> ::std::option::Option<&str> {
+        self.batch_id.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn starting_token(&self) -> ::std::option::Option<&str> {
@@ -49,6 +55,7 @@ impl ListRunsInput {
 pub struct ListRunsInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) run_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) batch_id: ::std::option::Option<::std::string::String>,
     pub(crate) starting_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<crate::types::RunStatus>,
@@ -81,6 +88,20 @@ impl ListRunsInputBuilder {
     /// <p>Filter the list by run group ID.</p>
     pub fn get_run_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_group_id
+    }
+    /// <p>Filter by batch ID.</p>
+    pub fn batch_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.batch_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Filter by batch ID.</p>
+    pub fn set_batch_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.batch_id = input;
+        self
+    }
+    /// <p>Filter by batch ID.</p>
+    pub fn get_batch_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch_id
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn starting_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -129,6 +150,7 @@ impl ListRunsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_runs::ListRunsInput {
             name: self.name,
             run_group_id: self.run_group_id,
+            batch_id: self.batch_id,
             starting_token: self.starting_token,
             max_results: self.max_results,
             status: self.status,

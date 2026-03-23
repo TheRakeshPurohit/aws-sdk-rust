@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`role_arn(Option<String>)`](crate::operation::get_run::GetRunOutput::role_arn): <p>The run's service role ARN.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_run::GetRunOutput::name): <p>The run's name.</p>
     ///   - [`run_group_id(Option<String>)`](crate::operation::get_run::GetRunOutput::run_group_id): <p>The run's group ID.</p>
+    ///   - [`batch_id(Option<String>)`](crate::operation::get_run::GetRunOutput::batch_id): <p>The run's batch ID.</p>
     ///   - [`priority(Option<i32>)`](crate::operation::get_run::GetRunOutput::priority): <p>The run's priority.</p>
     ///   - [`definition(Option<String>)`](crate::operation::get_run::GetRunOutput::definition): <p>The run's definition.</p>
     ///   - [`digest(Option<String>)`](crate::operation::get_run::GetRunOutput::digest): <p>The run's digest.</p>

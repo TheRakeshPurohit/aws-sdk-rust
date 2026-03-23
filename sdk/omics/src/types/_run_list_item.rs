@@ -12,6 +12,8 @@ pub struct RunListItem {
     pub status: ::std::option::Option<crate::types::RunStatus>,
     /// <p>The run's workflow ID.</p>
     pub workflow_id: ::std::option::Option<::std::string::String>,
+    /// <p>The run's batch ID.</p>
+    pub batch_id: ::std::option::Option<::std::string::String>,
     /// <p>The run's name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The run's priority.</p>
@@ -45,6 +47,10 @@ impl RunListItem {
     /// <p>The run's workflow ID.</p>
     pub fn workflow_id(&self) -> ::std::option::Option<&str> {
         self.workflow_id.as_deref()
+    }
+    /// <p>The run's batch ID.</p>
+    pub fn batch_id(&self) -> ::std::option::Option<&str> {
+        self.batch_id.as_deref()
     }
     /// <p>The run's name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -94,6 +100,7 @@ pub struct RunListItemBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RunStatus>,
     pub(crate) workflow_id: ::std::option::Option<::std::string::String>,
+    pub(crate) batch_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) storage_capacity: ::std::option::Option<i32>,
@@ -159,6 +166,20 @@ impl RunListItemBuilder {
     /// <p>The run's workflow ID.</p>
     pub fn get_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_id
+    }
+    /// <p>The run's batch ID.</p>
+    pub fn batch_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.batch_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The run's batch ID.</p>
+    pub fn set_batch_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.batch_id = input;
+        self
+    }
+    /// <p>The run's batch ID.</p>
+    pub fn get_batch_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch_id
     }
     /// <p>The run's name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -279,6 +300,7 @@ impl RunListItemBuilder {
             id: self.id,
             status: self.status,
             workflow_id: self.workflow_id,
+            batch_id: self.batch_id,
             name: self.name,
             priority: self.priority,
             storage_capacity: self.storage_capacity,

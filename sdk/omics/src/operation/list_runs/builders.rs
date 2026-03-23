@@ -134,6 +134,20 @@ impl ListRunsFluentBuilder {
     pub fn get_run_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_run_group_id()
     }
+    /// <p>Filter by batch ID.</p>
+    pub fn batch_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.batch_id(input.into());
+        self
+    }
+    /// <p>Filter by batch ID.</p>
+    pub fn set_batch_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_batch_id(input);
+        self
+    }
+    /// <p>Filter by batch ID.</p>
+    pub fn get_batch_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_batch_id()
+    }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn starting_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.starting_token(input.into());

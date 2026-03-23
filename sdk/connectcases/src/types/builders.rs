@@ -73,6 +73,18 @@ pub use crate::types::_connect_case_input_content::ConnectCaseInputContentBuilde
 
 pub use crate::types::_custom_input_content::CustomInputContentBuilder;
 
+pub use crate::types::_comment_update_content::CommentUpdateContentBuilder;
+
+pub use crate::types::_custom_update_content::CustomUpdateContentBuilder;
+
+pub use crate::types::_contact_content::ContactContentBuilder;
+
+pub use crate::types::_sla_content::SlaContentBuilder;
+
+pub use crate::types::_connect_case_content::ConnectCaseContentBuilder;
+
+pub use crate::types::_custom_content::CustomContentBuilder;
+
 pub use crate::types::_audit_event_performed_by::AuditEventPerformedByBuilder;
 
 pub use crate::types::_tag_value::TagValueBuilder;
@@ -97,25 +109,17 @@ pub use crate::types::_layout_sections::LayoutSectionsBuilder;
 
 pub use crate::types::_sla_input_configuration::SlaInputConfigurationBuilder;
 
+pub use crate::types::_sla_configuration::SlaConfigurationBuilder;
+
 pub use crate::types::_empty_field_value::EmptyFieldValueBuilder;
 
 pub use crate::types::_audit_event_field::AuditEventFieldBuilder;
 
 pub use crate::types::_parent_child_field_options_mapping::ParentChildFieldOptionsMappingBuilder;
 
-pub use crate::types::_contact_content::ContactContentBuilder;
-
-pub use crate::types::_sla_content::SlaContentBuilder;
-
-pub use crate::types::_connect_case_content::ConnectCaseContentBuilder;
-
-pub use crate::types::_custom_content::CustomContentBuilder;
-
 pub use crate::types::_boolean_operands::BooleanOperandsBuilder;
 
 pub use crate::types::_compound_condition::CompoundConditionBuilder;
-
-pub use crate::types::_sla_configuration::SlaConfigurationBuilder;
 
 pub use crate::types::_field_group::FieldGroupBuilder;
 

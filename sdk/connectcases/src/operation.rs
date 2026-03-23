@@ -124,5 +124,8 @@ pub mod update_field;
 /// Types for the `UpdateLayout` operation.
 pub mod update_layout;
 
+/// Types for the `UpdateRelatedItem` operation.
+pub mod update_related_item;
+
 /// Types for the `UpdateTemplate` operation.
 pub mod update_template;

@@ -16,6 +16,9 @@ pub mod cancel_annotation_import_job;
 /// Types for the `CancelRun` operation.
 pub mod cancel_run;
 
+/// Types for the `CancelRunBatch` operation.
+pub mod cancel_run_batch;
+
 /// Types for the `CancelVariantImportJob` operation.
 pub mod cancel_variant_import_job;
 
@@ -61,6 +64,9 @@ pub mod delete_annotation_store;
 /// Types for the `DeleteAnnotationStoreVersions` operation.
 pub mod delete_annotation_store_versions;
 
+/// Types for the `DeleteBatch` operation.
+pub mod delete_batch;
+
 /// Types for the `DeleteReference` operation.
 pub mod delete_reference;
 
@@ -69,6 +75,9 @@ pub mod delete_reference_store;
 
 /// Types for the `DeleteRun` operation.
 pub mod delete_run;
+
+/// Types for the `DeleteRunBatch` operation.
+pub mod delete_run_batch;
 
 /// Types for the `DeleteRunCache` operation.
 pub mod delete_run_cache;
@@ -102,6 +111,9 @@ pub mod get_annotation_store;
 
 /// Types for the `GetAnnotationStoreVersion` operation.
 pub mod get_annotation_store_version;
+
+/// Types for the `GetBatch` operation.
+pub mod get_batch;
 
 /// Types for the `GetReadSet` operation.
 pub mod get_read_set;
@@ -172,6 +184,9 @@ pub mod list_annotation_store_versions;
 /// Types for the `ListAnnotationStores` operation.
 pub mod list_annotation_stores;
 
+/// Types for the `ListBatch` operation.
+pub mod list_batch;
+
 /// Types for the `ListMultipartReadSetUploads` operation.
 pub mod list_multipart_read_set_uploads;
 
@@ -210,6 +225,9 @@ pub mod list_run_tasks;
 
 /// Types for the `ListRuns` operation.
 pub mod list_runs;
+
+/// Types for the `ListRunsInBatch` operation.
+pub mod list_runs_in_batch;
 
 /// Types for the `ListSequenceStores` operation.
 pub mod list_sequence_stores;
@@ -252,6 +270,9 @@ pub mod start_reference_import_job;
 
 /// Types for the `StartRun` operation.
 pub mod start_run;
+
+/// Types for the `StartRunBatch` operation.
+pub mod start_run_batch;
 
 /// Types for the `StartVariantImportJob` operation.
 pub mod start_variant_import_job;

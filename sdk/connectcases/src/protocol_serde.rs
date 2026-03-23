@@ -105,6 +105,8 @@ pub(crate) mod shape_update_field;
 
 pub(crate) mod shape_update_layout;
 
+pub(crate) mod shape_update_related_item;
+
 pub(crate) mod shape_update_template;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -171,6 +173,8 @@ pub(crate) mod shape_update_field_input;
 
 pub(crate) mod shape_update_layout_input;
 
+pub(crate) mod shape_update_related_item_input;
+
 pub(crate) mod shape_update_template_input;
 
 pub(crate) mod shape_validation_exception;
@@ -223,9 +227,13 @@ pub(crate) mod shape_layout_content;
 
 pub(crate) mod shape_layout_summary_list;
 
+pub(crate) mod shape_related_item_content;
+
 pub(crate) mod shape_related_item_input_content;
 
 pub(crate) mod shape_related_item_type_filter;
+
+pub(crate) mod shape_related_item_update_content;
 
 pub(crate) mod shape_required_field;
 
@@ -269,17 +277,27 @@ pub(crate) mod shape_comment_content;
 
 pub(crate) mod shape_comment_filter;
 
+pub(crate) mod shape_comment_update_content;
+
+pub(crate) mod shape_connect_case_content;
+
 pub(crate) mod shape_connect_case_filter;
 
 pub(crate) mod shape_connect_case_input_content;
 
 pub(crate) mod shape_contact;
 
+pub(crate) mod shape_contact_content;
+
 pub(crate) mod shape_contact_filter;
+
+pub(crate) mod shape_custom_content;
 
 pub(crate) mod shape_custom_filter;
 
 pub(crate) mod shape_custom_input_content;
+
+pub(crate) mod shape_custom_update_content;
 
 pub(crate) mod shape_domain_summary;
 
@@ -317,6 +335,8 @@ pub(crate) mod shape_search_cases_response_item;
 
 pub(crate) mod shape_search_related_items_response_item;
 
+pub(crate) mod shape_sla_content;
+
 pub(crate) mod shape_sla_filter;
 
 pub(crate) mod shape_sla_input_content;
@@ -345,9 +365,9 @@ pub(crate) mod shape_mutable_tags;
 
 pub(crate) mod shape_parent_child_field_options_mapping;
 
-pub(crate) mod shape_related_item_content;
-
 pub(crate) mod shape_related_item_event_included_data;
+
+pub(crate) mod shape_sla_configuration;
 
 pub(crate) mod shape_sla_input_configuration;
 
@@ -359,19 +379,13 @@ pub(crate) mod shape_boolean_operands;
 
 pub(crate) mod shape_compound_condition;
 
-pub(crate) mod shape_connect_case_content;
-
-pub(crate) mod shape_contact_content;
-
-pub(crate) mod shape_custom_content;
-
 pub(crate) mod shape_field_identifier_list;
 
 pub(crate) mod shape_section;
 
 pub(crate) mod shape_sections_list;
 
-pub(crate) mod shape_sla_content;
+pub(crate) mod shape_sla_field_value_union_list;
 
 pub(crate) mod shape_audit_event_field_value_union;
 
@@ -385,13 +399,9 @@ pub(crate) mod shape_operand_two;
 
 pub(crate) mod shape_parent_child_field_options_mapping_list;
 
-pub(crate) mod shape_sla_configuration;
-
 pub(crate) mod shape_empty_operand_value;
 
 pub(crate) mod shape_field_item;
-
-pub(crate) mod shape_sla_field_value_union_list;
 
 pub(crate) mod shape_field_list;
 

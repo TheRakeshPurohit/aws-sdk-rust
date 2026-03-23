@@ -272,6 +272,8 @@ mod cancel_annotation_import_job;
 
 mod cancel_run;
 
+mod cancel_run_batch;
+
 mod cancel_variant_import_job;
 
 mod complete_multipart_read_set_upload;
@@ -329,11 +331,15 @@ mod delete_annotation_store;
 
 mod delete_annotation_store_versions;
 
+mod delete_batch;
+
 mod delete_reference;
 
 mod delete_reference_store;
 
 mod delete_run;
+
+mod delete_run_batch;
 
 mod delete_run_cache;
 
@@ -356,6 +362,8 @@ mod get_annotation_import_job;
 mod get_annotation_store;
 
 mod get_annotation_store_version;
+
+mod get_batch;
 
 mod get_read_set;
 
@@ -403,6 +411,8 @@ mod list_annotation_store_versions;
 
 mod list_annotation_stores;
 
+mod list_batch;
+
 mod list_multipart_read_set_uploads;
 
 mod list_read_set_activation_jobs;
@@ -428,6 +438,8 @@ mod list_run_groups;
 mod list_run_tasks;
 
 mod list_runs;
+
+mod list_runs_in_batch;
 
 mod list_sequence_stores;
 
@@ -456,6 +468,8 @@ mod start_read_set_import_job;
 mod start_reference_import_job;
 
 mod start_run;
+
+mod start_run_batch;
 
 mod start_variant_import_job;
 

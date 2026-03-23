@@ -29,6 +29,16 @@ pub(crate) fn reflens_list_annotation_stores_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_batch_output_output_next_token(
+    input: &crate::operation::list_batch::ListBatchOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_multipart_read_set_uploads_output_output_next_token(
     input: &crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -159,6 +169,16 @@ pub(crate) fn reflens_list_runs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_runs_in_batch_output_output_next_token(
+    input: &crate::operation::list_runs_in_batch::ListRunsInBatchOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_sequence_stores_output_output_next_token(
     input: &crate::operation::list_sequence_stores::ListSequenceStoresOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -237,6 +257,13 @@ pub(crate) fn lens_list_annotation_stores_output_output_annotation_stores(
     input: crate::operation::list_annotation_stores::ListAnnotationStoresOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnnotationStoreItem>> {
     let input = input.annotation_stores?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_batch_output_output_items(
+    input: crate::operation::list_batch::ListBatchOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::BatchListItem>> {
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 
@@ -328,6 +355,13 @@ pub(crate) fn lens_list_runs_output_output_items(
     input: crate::operation::list_runs::ListRunsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RunListItem>> {
     let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_runs_in_batch_output_output_runs(
+    input: crate::operation::list_runs_in_batch::ListRunsInBatchOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RunBatchListItem>> {
+    let input = input.runs?;
     ::std::option::Option::Some(input)
 }
 

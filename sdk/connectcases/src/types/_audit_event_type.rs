@@ -15,6 +15,8 @@
 ///     AuditEventType::CaseCreated => { /* ... */ },
 ///     AuditEventType::CaseUpdated => { /* ... */ },
 ///     AuditEventType::RelatedItemCreated => { /* ... */ },
+///     AuditEventType::RelatedItemDeleted => { /* ... */ },
+///     AuditEventType::RelatedItemUpdated => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +51,10 @@ pub enum AuditEventType {
     CaseUpdated,
     #[allow(missing_docs)] // documentation missing in model
     RelatedItemCreated,
+    #[allow(missing_docs)] // documentation missing in model
+    RelatedItemDeleted,
+    #[allow(missing_docs)] // documentation missing in model
+    RelatedItemUpdated,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +65,8 @@ impl ::std::convert::From<&str> for AuditEventType {
             "Case.Created" => AuditEventType::CaseCreated,
             "Case.Updated" => AuditEventType::CaseUpdated,
             "RelatedItem.Created" => AuditEventType::RelatedItemCreated,
+            "RelatedItem.Deleted" => AuditEventType::RelatedItemDeleted,
+            "RelatedItem.Updated" => AuditEventType::RelatedItemUpdated,
             other => AuditEventType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +85,20 @@ impl AuditEventType {
             AuditEventType::CaseCreated => "Case.Created",
             AuditEventType::CaseUpdated => "Case.Updated",
             AuditEventType::RelatedItemCreated => "RelatedItem.Created",
+            AuditEventType::RelatedItemDeleted => "RelatedItem.Deleted",
+            AuditEventType::RelatedItemUpdated => "RelatedItem.Updated",
             AuditEventType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Case.Created", "Case.Updated", "RelatedItem.Created"]
+        &[
+            "Case.Created",
+            "Case.Updated",
+            "RelatedItem.Created",
+            "RelatedItem.Deleted",
+            "RelatedItem.Updated",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AuditEventType {
@@ -108,6 +124,8 @@ impl ::std::fmt::Display for AuditEventType {
             AuditEventType::CaseCreated => write!(f, "Case.Created"),
             AuditEventType::CaseUpdated => write!(f, "Case.Updated"),
             AuditEventType::RelatedItemCreated => write!(f, "RelatedItem.Created"),
+            AuditEventType::RelatedItemDeleted => write!(f, "RelatedItem.Deleted"),
+            AuditEventType::RelatedItemUpdated => write!(f, "RelatedItem.Updated"),
             AuditEventType::Unknown(value) => write!(f, "{value}"),
         }
     }

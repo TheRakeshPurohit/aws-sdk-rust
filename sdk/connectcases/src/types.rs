@@ -23,6 +23,10 @@ pub use crate::types::_related_item_type::RelatedItemType;
 
 pub use crate::types::_related_item_input_content::RelatedItemInputContent;
 
+pub use crate::types::_related_item_update_content::RelatedItemUpdateContent;
+
+pub use crate::types::_related_item_content::RelatedItemContent;
+
 pub use crate::types::_field_value::FieldValue;
 
 pub use crate::types::_field_identifier::FieldIdentifier;
@@ -101,6 +105,18 @@ pub use crate::types::_connect_case_input_content::ConnectCaseInputContent;
 
 pub use crate::types::_custom_input_content::CustomInputContent;
 
+pub use crate::types::_comment_update_content::CommentUpdateContent;
+
+pub use crate::types::_custom_update_content::CustomUpdateContent;
+
+pub use crate::types::_contact_content::ContactContent;
+
+pub use crate::types::_sla_content::SlaContent;
+
+pub use crate::types::_connect_case_content::ConnectCaseContent;
+
+pub use crate::types::_custom_content::CustomContent;
+
 pub use crate::types::_field_value_union::FieldValueUnion;
 
 pub use crate::types::_audit_event_type::AuditEventType;
@@ -131,8 +147,6 @@ pub use crate::types::_custom_filter::CustomFilter;
 
 pub use crate::types::_search_all_related_items_sort_property::SearchAllRelatedItemsSortProperty;
 
-pub use crate::types::_related_item_content::RelatedItemContent;
-
 pub use crate::types::_field_namespace::FieldNamespace;
 
 pub use crate::types::_layout_sections::LayoutSections;
@@ -142,6 +156,8 @@ pub use crate::types::_tag_propagation_resource_type::TagPropagationResourceType
 pub use crate::types::_comment_body_text_type::CommentBodyTextType;
 
 pub use crate::types::_sla_input_configuration::SlaInputConfiguration;
+
+pub use crate::types::_sla_configuration::SlaConfiguration;
 
 pub use crate::types::_empty_field_value::EmptyFieldValue;
 
@@ -155,14 +171,6 @@ pub use crate::types::_sla_status::SlaStatus;
 
 pub use crate::types::_custom_fields_filter::CustomFieldsFilter;
 
-pub use crate::types::_contact_content::ContactContent;
-
-pub use crate::types::_sla_content::SlaContent;
-
-pub use crate::types::_connect_case_content::ConnectCaseContent;
-
-pub use crate::types::_custom_content::CustomContent;
-
 pub use crate::types::_sla_type::SlaType;
 
 pub use crate::types::_audit_event_field_value_union::AuditEventFieldValueUnion;
@@ -170,8 +178,6 @@ pub use crate::types::_audit_event_field_value_union::AuditEventFieldValueUnion;
 pub use crate::types::_boolean_operands::BooleanOperands;
 
 pub use crate::types::_compound_condition::CompoundCondition;
-
-pub use crate::types::_sla_configuration::SlaConfiguration;
 
 pub use crate::types::_section::Section;
 
@@ -221,6 +227,8 @@ mod _comment_content;
 
 mod _comment_filter;
 
+mod _comment_update_content;
+
 mod _compound_condition;
 
 mod _connect_case_content;
@@ -242,6 +250,8 @@ mod _custom_fields_filter;
 mod _custom_filter;
 
 mod _custom_input_content;
+
+mod _custom_update_content;
 
 mod _domain_status;
 
@@ -318,6 +328,8 @@ mod _related_item_input_content;
 mod _related_item_type;
 
 mod _related_item_type_filter;
+
+mod _related_item_update_content;
 
 mod _required_case_rule;
 

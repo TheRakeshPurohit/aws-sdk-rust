@@ -27,6 +27,8 @@ pub struct GetRunOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The run's group ID.</p>
     pub run_group_id: ::std::option::Option<::std::string::String>,
+    /// <p>The run's batch ID.</p>
+    pub batch_id: ::std::option::Option<::std::string::String>,
     /// <p>The run's priority.</p>
     pub priority: ::std::option::Option<i32>,
     /// <p>The run's definition.</p>
@@ -125,6 +127,10 @@ impl GetRunOutput {
     /// <p>The run's group ID.</p>
     pub fn run_group_id(&self) -> ::std::option::Option<&str> {
         self.run_group_id.as_deref()
+    }
+    /// <p>The run's batch ID.</p>
+    pub fn batch_id(&self) -> ::std::option::Option<&str> {
+        self.batch_id.as_deref()
     }
     /// <p>The run's priority.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
@@ -251,6 +257,7 @@ pub struct GetRunOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) run_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) batch_id: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) definition: ::std::option::Option<::std::string::String>,
     pub(crate) digest: ::std::option::Option<::std::string::String>,
@@ -445,6 +452,20 @@ impl GetRunOutputBuilder {
     /// <p>The run's group ID.</p>
     pub fn get_run_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_group_id
+    }
+    /// <p>The run's batch ID.</p>
+    pub fn batch_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.batch_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The run's batch ID.</p>
+    pub fn set_batch_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.batch_id = input;
+        self
+    }
+    /// <p>The run's batch ID.</p>
+    pub fn get_batch_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.batch_id
     }
     /// <p>The run's priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -825,6 +846,7 @@ impl GetRunOutputBuilder {
             role_arn: self.role_arn,
             name: self.name,
             run_group_id: self.run_group_id,
+            batch_id: self.batch_id,
             priority: self.priority,
             definition: self.definition,
             digest: self.digest,

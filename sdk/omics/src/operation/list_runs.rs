@@ -195,19 +195,24 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRunsRequ
                         query.push_kv("runGroupId", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
-                if let ::std::option::Option::Some(inner_3) = &_input.starting_token {
+                if let ::std::option::Option::Some(inner_3) = &_input.batch_id {
                     {
-                        query.push_kv("startingToken", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("batchId", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
-                if let ::std::option::Option::Some(inner_4) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_4) = &_input.starting_token {
                     {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
+                        query.push_kv("startingToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
-                if let ::std::option::Option::Some(inner_5) = &_input.status {
+                if let ::std::option::Option::Some(inner_5) = &_input.max_results {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_6) = &_input.status {
+                    {
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 ::std::result::Result::Ok(())

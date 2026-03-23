@@ -9,8 +9,11 @@ pub fn ser_ec2_configuration(
     if let Some(var_2) = &input.image_id_override {
         object.key("imageIdOverride").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.image_kubernetes_version {
-        object.key("imageKubernetesVersion").string(var_3.as_str());
+    if let Some(var_3) = &input.batch_image_status {
+        object.key("batchImageStatus").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.image_kubernetes_version {
+        object.key("imageKubernetesVersion").string(var_4.as_str());
     }
     Ok(())
 }
@@ -40,6 +43,13 @@ where
                         }
                         "imageIdOverride" => {
                             builder = builder.set_image_id_override(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "batchImageStatus" => {
+                            builder = builder.set_batch_image_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

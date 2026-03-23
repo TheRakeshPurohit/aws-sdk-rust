@@ -6,7 +6,8 @@
 pub struct AuditEvent {
     /// <p>Unique identifier of a case audit history event.</p>
     pub event_id: ::std::string::String,
-    /// <p>The Type of an audit history event.</p>
+    /// <p>The type of audit history event.</p>
+    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code></p>
     pub r#type: crate::types::AuditEventType,
     /// <p>The Type of the related item.</p>
     pub related_item_type: ::std::option::Option<crate::types::RelatedItemType>,
@@ -23,7 +24,8 @@ impl AuditEvent {
         use std::ops::Deref;
         self.event_id.deref()
     }
-    /// <p>The Type of an audit history event.</p>
+    /// <p>The type of audit history event.</p>
+    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code></p>
     pub fn r#type(&self) -> &crate::types::AuditEventType {
         &self.r#type
     }
@@ -79,18 +81,21 @@ impl AuditEventBuilder {
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_id
     }
-    /// <p>The Type of an audit history event.</p>
+    /// <p>The type of audit history event.</p>
+    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code></p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::AuditEventType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Type of an audit history event.</p>
+    /// <p>The type of audit history event.</p>
+    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code></p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AuditEventType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The Type of an audit history event.</p>
+    /// <p>The type of audit history event.</p>
+    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code></p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AuditEventType> {
         &self.r#type
     }

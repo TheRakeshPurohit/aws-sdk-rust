@@ -9,5 +9,17 @@ pub fn ser_create_contact_method_input_input(
     if let Some(var_2) = &input.contact_endpoint {
         object.key("contactEndpoint").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.tags {
+        let mut array_4 = object.key("tags").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }
