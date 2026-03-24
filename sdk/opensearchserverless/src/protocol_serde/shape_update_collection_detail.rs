@@ -50,6 +50,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "vectorOptions" => {
+                            builder = builder.set_vector_options(crate::protocol_serde::shape_vector_options::de_vector_options(tokens, _value)?);
+                        }
                         "arn" => {
                             builder = builder.set_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

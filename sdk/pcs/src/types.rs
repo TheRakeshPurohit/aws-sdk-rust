@@ -81,6 +81,10 @@ pub use crate::types::_queue_summary::QueueSummary;
 
 pub use crate::types::_slurm_custom_setting::SlurmCustomSetting;
 
+pub use crate::types::_slurmdbd_custom_setting::SlurmdbdCustomSetting;
+
+pub use crate::types::_cgroup_custom_setting::CgroupCustomSetting;
+
 pub use crate::types::_accounting_mode::AccountingMode;
 
 pub use crate::types::_slurm_rest_mode::SlurmRestMode;
@@ -104,6 +108,8 @@ mod _accounting;
 mod _accounting_mode;
 
 mod _accounting_request;
+
+mod _cgroup_custom_setting;
 
 mod _cluster;
 
@@ -180,6 +186,8 @@ mod _slurm_rest;
 mod _slurm_rest_mode;
 
 mod _slurm_rest_request;
+
+mod _slurmdbd_custom_setting;
 
 mod _spot_allocation_strategy;
 

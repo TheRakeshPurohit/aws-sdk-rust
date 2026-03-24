@@ -275,6 +275,25 @@ impl CreateAgentRuntimeFluentBuilder {
         self.inner.get_environment_variables()
     }
     ///
+    /// Appends an item to `filesystemConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_filesystem_configurations`](Self::set_filesystem_configurations).
+    ///
+    /// <p>The filesystem configurations to mount into the AgentCore Runtime. Use filesystem configurations to provide persistent storage to your AgentCore Runtime sessions.</p>
+    pub fn filesystem_configurations(mut self, input: crate::types::FilesystemConfiguration) -> Self {
+        self.inner = self.inner.filesystem_configurations(input);
+        self
+    }
+    /// <p>The filesystem configurations to mount into the AgentCore Runtime. Use filesystem configurations to provide persistent storage to your AgentCore Runtime sessions.</p>
+    pub fn set_filesystem_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>) -> Self {
+        self.inner = self.inner.set_filesystem_configurations(input);
+        self
+    }
+    /// <p>The filesystem configurations to mount into the AgentCore Runtime. Use filesystem configurations to provide persistent storage to your AgentCore Runtime sessions.</p>
+    pub fn get_filesystem_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>> {
+        self.inner.get_filesystem_configurations()
+    }
+    ///
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

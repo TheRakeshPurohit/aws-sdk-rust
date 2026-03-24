@@ -274,6 +274,25 @@ impl UpdateAgentRuntimeFluentBuilder {
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_environment_variables()
     }
+    ///
+    /// Appends an item to `filesystemConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_filesystem_configurations`](Self::set_filesystem_configurations).
+    ///
+    /// <p>The updated filesystem configurations to mount into the AgentCore Runtime.</p>
+    pub fn filesystem_configurations(mut self, input: crate::types::FilesystemConfiguration) -> Self {
+        self.inner = self.inner.filesystem_configurations(input);
+        self
+    }
+    /// <p>The updated filesystem configurations to mount into the AgentCore Runtime.</p>
+    pub fn set_filesystem_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>) -> Self {
+        self.inner = self.inner.set_filesystem_configurations(input);
+        self
+    }
+    /// <p>The updated filesystem configurations to mount into the AgentCore Runtime.</p>
+    pub fn get_filesystem_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>> {
+        self.inner.get_filesystem_configurations()
+    }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

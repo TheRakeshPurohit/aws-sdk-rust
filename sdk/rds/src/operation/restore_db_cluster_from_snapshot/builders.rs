@@ -23,7 +23,8 @@ impl crate::operation::restore_db_cluster_from_snapshot::builders::RestoreDbClus
 /// Fluent builder constructing a request to `RestoreDBClusterFromSnapshot`.
 ///
 /// <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p>
-/// <p>The target DB cluster is created from the source snapshot with a default configuration. If you don't specify a security group, the new DB cluster is associated with the default security group.</p><note>
+/// <p>The target DB cluster is created from the source snapshot with a default configuration. If you don't specify a security group, the new DB cluster is associated with the default security group.</p>
+/// <p>You can use the <code>EnableVPCNetworking</code> and <code>EnableInternetAccessGateway</code> parameters together to restore an Aurora PostgreSQL cluster without VPC networking and with internet-based connectivity. These two parameters must always be specified together. Set <code>EnableVPCNetworking</code> to <code>false</code> to disable the VPC network interface (ENI) for the cluster. <code>EnableInternetAccessGateway</code> enables internet-based connectivity through an internet access gateway. IAM database authentication is required and must be enabled using <code>EnableIAMDatabaseAuthentication</code>. Once the cluster is restored, you need to modify the DB cluster to update <code>MasterUserAuthenticationType</code> to <code>iam-db-auth</code>.</p><note>
 /// <p>This operation only restores the DB cluster, not the DB instances for that DB cluster. You must invoke the <code>CreateDBInstance</code> operation to create DB instances for the restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>. You can create DB instances only after the <code>RestoreDBClusterFromSnapshot</code> operation has completed and the DB cluster is available.</p>
 /// </note>
 /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -1245,5 +1246,45 @@ impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// </ul>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
+    }
+    /// <p>Specifies whether to enable VPC networking for the restored DB cluster. Set this parameter to <code>false</code> to create a cluster without the VPC network interface (ENI).</p>
+    /// <p>This parameter must be used together with <code>EnableInternetAccessGateway</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub fn enable_vpc_networking(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_vpc_networking(input);
+        self
+    }
+    /// <p>Specifies whether to enable VPC networking for the restored DB cluster. Set this parameter to <code>false</code> to create a cluster without the VPC network interface (ENI).</p>
+    /// <p>This parameter must be used together with <code>EnableInternetAccessGateway</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub fn set_enable_vpc_networking(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_vpc_networking(input);
+        self
+    }
+    /// <p>Specifies whether to enable VPC networking for the restored DB cluster. Set this parameter to <code>false</code> to create a cluster without the VPC network interface (ENI).</p>
+    /// <p>This parameter must be used together with <code>EnableInternetAccessGateway</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub fn get_enable_vpc_networking(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_vpc_networking()
+    }
+    /// <p>Specifies that the restored DB cluster should use internet-based connectivity through an internet access gateway. This allows clients to connect to the cluster over the internet without requiring a VPC.</p>
+    /// <p>This parameter must be used together with <code>EnableVPCNetworking</code> set to <code>false</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub fn enable_internet_access_gateway(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_internet_access_gateway(input);
+        self
+    }
+    /// <p>Specifies that the restored DB cluster should use internet-based connectivity through an internet access gateway. This allows clients to connect to the cluster over the internet without requiring a VPC.</p>
+    /// <p>This parameter must be used together with <code>EnableVPCNetworking</code> set to <code>false</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub fn set_enable_internet_access_gateway(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_internet_access_gateway(input);
+        self
+    }
+    /// <p>Specifies that the restored DB cluster should use internet-based connectivity through an internet access gateway. This allows clients to connect to the cluster over the internet without requiring a VPC.</p>
+    /// <p>This parameter must be used together with <code>EnableVPCNetworking</code> set to <code>false</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub fn get_enable_internet_access_gateway(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_internet_access_gateway()
     }
 }

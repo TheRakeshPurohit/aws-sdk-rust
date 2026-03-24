@@ -10,7 +10,7 @@ pub struct LocationModel {
     /// ::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub location_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the UDP ping beacon for this location.</p>
+    /// <p>Information about the UDP ping beacon for this location. Ping beacons are fixed endpoints that you can use to measure network latency between a player device and an Amazon GameLift Servers hosting location.</p>
     pub ping_beacon: ::std::option::Option<crate::types::PingBeacon>,
 }
 impl LocationModel {
@@ -24,7 +24,7 @@ impl LocationModel {
     pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
-    /// <p>Information about the UDP ping beacon for this location.</p>
+    /// <p>Information about the UDP ping beacon for this location. Ping beacons are fixed endpoints that you can use to measure network latency between a player device and an Amazon GameLift Servers hosting location.</p>
     pub fn ping_beacon(&self) -> ::std::option::Option<&crate::types::PingBeacon> {
         self.ping_beacon.as_ref()
     }
@@ -79,17 +79,17 @@ impl LocationModelBuilder {
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
-    /// <p>Information about the UDP ping beacon for this location.</p>
+    /// <p>Information about the UDP ping beacon for this location. Ping beacons are fixed endpoints that you can use to measure network latency between a player device and an Amazon GameLift Servers hosting location.</p>
     pub fn ping_beacon(mut self, input: crate::types::PingBeacon) -> Self {
         self.ping_beacon = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Information about the UDP ping beacon for this location.</p>
+    /// <p>Information about the UDP ping beacon for this location. Ping beacons are fixed endpoints that you can use to measure network latency between a player device and an Amazon GameLift Servers hosting location.</p>
     pub fn set_ping_beacon(mut self, input: ::std::option::Option<crate::types::PingBeacon>) -> Self {
         self.ping_beacon = input;
         self
     }
-    /// <p>Information about the UDP ping beacon for this location.</p>
+    /// <p>Information about the UDP ping beacon for this location. Ping beacons are fixed endpoints that you can use to measure network latency between a player device and an Amazon GameLift Servers hosting location.</p>
     pub fn get_ping_beacon(&self) -> &::std::option::Option<crate::types::PingBeacon> {
         &self.ping_beacon
     }

@@ -167,6 +167,8 @@ pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_accounting_request;
 
+pub(crate) mod shape_cgroup_custom_setting;
+
 pub(crate) mod shape_cluster_slurm_configuration;
 
 pub(crate) mod shape_cluster_summary;
@@ -197,6 +199,8 @@ pub(crate) mod shape_slurm_custom_setting;
 
 pub(crate) mod shape_slurm_rest_request;
 
+pub(crate) mod shape_slurmdbd_custom_setting;
+
 pub(crate) mod shape_subnet_id_list;
 
 pub(crate) mod shape_update_accounting_request;
@@ -206,6 +210,8 @@ pub(crate) mod shape_update_slurm_rest_request;
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_accounting;
+
+pub(crate) mod shape_cgroup_custom_settings;
 
 pub(crate) mod shape_error_info;
 
@@ -218,5 +224,7 @@ pub(crate) mod shape_slurm_auth_key;
 pub(crate) mod shape_slurm_custom_settings;
 
 pub(crate) mod shape_slurm_rest;
+
+pub(crate) mod shape_slurmdbd_custom_settings;
 
 pub(crate) mod shape_jwt_key;

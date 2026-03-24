@@ -16,6 +16,8 @@
 ///     CollectionStatus::Creating => { /* ... */ },
 ///     CollectionStatus::Deleting => { /* ... */ },
 ///     CollectionStatus::Failed => { /* ... */ },
+///     CollectionStatus::UpdateFailed => { /* ... */ },
+///     CollectionStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +54,10 @@ pub enum CollectionStatus {
     Deleting,
     /// Collection resource create or delete failed
     Failed,
+    /// Collection resource update failed
+    UpdateFailed,
+    /// Updating collection resource
+    Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +69,8 @@ impl ::std::convert::From<&str> for CollectionStatus {
             "CREATING" => CollectionStatus::Creating,
             "DELETING" => CollectionStatus::Deleting,
             "FAILED" => CollectionStatus::Failed,
+            "UPDATE_FAILED" => CollectionStatus::UpdateFailed,
+            "UPDATING" => CollectionStatus::Updating,
             other => CollectionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +90,14 @@ impl CollectionStatus {
             CollectionStatus::Creating => "CREATING",
             CollectionStatus::Deleting => "DELETING",
             CollectionStatus::Failed => "FAILED",
+            CollectionStatus::UpdateFailed => "UPDATE_FAILED",
+            CollectionStatus::Updating => "UPDATING",
             CollectionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DELETING", "FAILED"]
+        &["ACTIVE", "CREATING", "DELETING", "FAILED", "UPDATE_FAILED", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for CollectionStatus {
@@ -114,6 +124,8 @@ impl ::std::fmt::Display for CollectionStatus {
             CollectionStatus::Creating => write!(f, "CREATING"),
             CollectionStatus::Deleting => write!(f, "DELETING"),
             CollectionStatus::Failed => write!(f, "FAILED"),
+            CollectionStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            CollectionStatus::Updating => write!(f, "UPDATING"),
             CollectionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -25,6 +25,8 @@ pub struct CreateAgentRuntimeInput {
     pub lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
     /// <p>Environment variables to set in the AgentCore Runtime environment.</p>
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The filesystem configurations to mount into the AgentCore Runtime. Use filesystem configurations to provide persistent storage to your AgentCore Runtime sessions.</p>
+    pub filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
     /// <p>A map of tag keys and values to assign to the agent runtime. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -73,6 +75,12 @@ impl CreateAgentRuntimeInput {
     pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
+    /// <p>The filesystem configurations to mount into the AgentCore Runtime. Use filesystem configurations to provide persistent storage to your AgentCore Runtime sessions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filesystem_configurations.is_none()`.
+    pub fn filesystem_configurations(&self) -> &[crate::types::FilesystemConfiguration] {
+        self.filesystem_configurations.as_deref().unwrap_or_default()
+    }
     /// <p>A map of tag keys and values to assign to the agent runtime. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -92,6 +100,7 @@ impl ::std::fmt::Debug for CreateAgentRuntimeInput {
         formatter.field("protocol_configuration", &self.protocol_configuration);
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -118,6 +127,7 @@ pub struct CreateAgentRuntimeInputBuilder {
     pub(crate) protocol_configuration: ::std::option::Option<crate::types::ProtocolConfiguration>,
     pub(crate) lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAgentRuntimeInputBuilder {
@@ -292,6 +302,26 @@ impl CreateAgentRuntimeInputBuilder {
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
+    /// Appends an item to `filesystem_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_filesystem_configurations`](Self::set_filesystem_configurations).
+    ///
+    /// <p>The filesystem configurations to mount into the AgentCore Runtime. Use filesystem configurations to provide persistent storage to your AgentCore Runtime sessions.</p>
+    pub fn filesystem_configurations(mut self, input: crate::types::FilesystemConfiguration) -> Self {
+        let mut v = self.filesystem_configurations.unwrap_or_default();
+        v.push(input);
+        self.filesystem_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The filesystem configurations to mount into the AgentCore Runtime. Use filesystem configurations to provide persistent storage to your AgentCore Runtime sessions.</p>
+    pub fn set_filesystem_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>) -> Self {
+        self.filesystem_configurations = input;
+        self
+    }
+    /// <p>The filesystem configurations to mount into the AgentCore Runtime. Use filesystem configurations to provide persistent storage to your AgentCore Runtime sessions.</p>
+    pub fn get_filesystem_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>> {
+        &self.filesystem_configurations
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -329,6 +359,7 @@ impl CreateAgentRuntimeInputBuilder {
             protocol_configuration: self.protocol_configuration,
             lifecycle_configuration: self.lifecycle_configuration,
             environment_variables: self.environment_variables,
+            filesystem_configurations: self.filesystem_configurations,
             tags: self.tags,
         })
     }
@@ -347,6 +378,7 @@ impl ::std::fmt::Debug for CreateAgentRuntimeInputBuilder {
         formatter.field("protocol_configuration", &self.protocol_configuration);
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

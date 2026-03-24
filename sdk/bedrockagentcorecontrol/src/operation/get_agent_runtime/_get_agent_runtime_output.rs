@@ -41,6 +41,8 @@ pub struct GetAgentRuntimeOutput {
     pub request_header_configuration: ::std::option::Option<crate::types::RequestHeaderConfiguration>,
     /// <p>Configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
     pub metadata_configuration: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>,
+    /// <p>The filesystem configurations mounted into the AgentCore Runtime.</p>
+    pub filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetAgentRuntimeOutput {
@@ -125,6 +127,12 @@ impl GetAgentRuntimeOutput {
     pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::RuntimeMetadataConfiguration> {
         self.metadata_configuration.as_ref()
     }
+    /// <p>The filesystem configurations mounted into the AgentCore Runtime.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filesystem_configurations.is_none()`.
+    pub fn filesystem_configurations(&self) -> &[crate::types::FilesystemConfiguration] {
+        self.filesystem_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GetAgentRuntimeOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -148,6 +156,7 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutput {
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("request_header_configuration", &self.request_header_configuration);
         formatter.field("metadata_configuration", &self.metadata_configuration);
+        formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -187,6 +196,7 @@ pub struct GetAgentRuntimeOutputBuilder {
     pub(crate) authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     pub(crate) request_header_configuration: ::std::option::Option<crate::types::RequestHeaderConfiguration>,
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>,
+    pub(crate) filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
     _request_id: Option<String>,
 }
 impl GetAgentRuntimeOutputBuilder {
@@ -479,6 +489,26 @@ impl GetAgentRuntimeOutputBuilder {
     pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::RuntimeMetadataConfiguration> {
         &self.metadata_configuration
     }
+    /// Appends an item to `filesystem_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_filesystem_configurations`](Self::set_filesystem_configurations).
+    ///
+    /// <p>The filesystem configurations mounted into the AgentCore Runtime.</p>
+    pub fn filesystem_configurations(mut self, input: crate::types::FilesystemConfiguration) -> Self {
+        let mut v = self.filesystem_configurations.unwrap_or_default();
+        v.push(input);
+        self.filesystem_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The filesystem configurations mounted into the AgentCore Runtime.</p>
+    pub fn set_filesystem_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>) -> Self {
+        self.filesystem_configurations = input;
+        self
+    }
+    /// <p>The filesystem configurations mounted into the AgentCore Runtime.</p>
+    pub fn get_filesystem_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>> {
+        &self.filesystem_configurations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -561,6 +591,7 @@ impl GetAgentRuntimeOutputBuilder {
             authorizer_configuration: self.authorizer_configuration,
             request_header_configuration: self.request_header_configuration,
             metadata_configuration: self.metadata_configuration,
+            filesystem_configurations: self.filesystem_configurations,
             _request_id: self._request_id,
         })
     }
@@ -587,6 +618,7 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutputBuilder {
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("request_header_configuration", &self.request_header_configuration);
         formatter.field("metadata_configuration", &self.metadata_configuration);
+        formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

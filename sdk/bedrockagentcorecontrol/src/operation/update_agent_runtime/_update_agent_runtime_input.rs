@@ -25,6 +25,8 @@ pub struct UpdateAgentRuntimeInput {
     pub metadata_configuration: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>,
     /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The updated filesystem configurations to mount into the AgentCore Runtime.</p>
+    pub filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -73,6 +75,12 @@ impl UpdateAgentRuntimeInput {
     pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
+    /// <p>The updated filesystem configurations to mount into the AgentCore Runtime.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filesystem_configurations.is_none()`.
+    pub fn filesystem_configurations(&self) -> &[crate::types::FilesystemConfiguration] {
+        self.filesystem_configurations.as_deref().unwrap_or_default()
+    }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -92,6 +100,7 @@ impl ::std::fmt::Debug for UpdateAgentRuntimeInput {
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
         formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
@@ -118,6 +127,7 @@ pub struct UpdateAgentRuntimeInputBuilder {
     pub(crate) lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>,
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAgentRuntimeInputBuilder {
@@ -292,6 +302,26 @@ impl UpdateAgentRuntimeInputBuilder {
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
+    /// Appends an item to `filesystem_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_filesystem_configurations`](Self::set_filesystem_configurations).
+    ///
+    /// <p>The updated filesystem configurations to mount into the AgentCore Runtime.</p>
+    pub fn filesystem_configurations(mut self, input: crate::types::FilesystemConfiguration) -> Self {
+        let mut v = self.filesystem_configurations.unwrap_or_default();
+        v.push(input);
+        self.filesystem_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The updated filesystem configurations to mount into the AgentCore Runtime.</p>
+    pub fn set_filesystem_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>) -> Self {
+        self.filesystem_configurations = input;
+        self
+    }
+    /// <p>The updated filesystem configurations to mount into the AgentCore Runtime.</p>
+    pub fn get_filesystem_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>> {
+        &self.filesystem_configurations
+    }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -323,6 +353,7 @@ impl UpdateAgentRuntimeInputBuilder {
             lifecycle_configuration: self.lifecycle_configuration,
             metadata_configuration: self.metadata_configuration,
             environment_variables: self.environment_variables,
+            filesystem_configurations: self.filesystem_configurations,
             client_token: self.client_token,
         })
     }
@@ -341,6 +372,7 @@ impl ::std::fmt::Debug for UpdateAgentRuntimeInputBuilder {
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
         formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }

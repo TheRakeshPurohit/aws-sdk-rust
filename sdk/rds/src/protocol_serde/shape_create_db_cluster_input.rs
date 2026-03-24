@@ -346,6 +346,11 @@ pub fn ser_create_db_cluster_input_input_input(
     if let Some(var_131) = &input.master_user_authentication_type {
         scope_130.string(var_131.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_132 = writer.prefix("WithExpressConfiguration");
+    if let Some(var_133) = &input.with_express_configuration {
+        scope_132.boolean(*var_133);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

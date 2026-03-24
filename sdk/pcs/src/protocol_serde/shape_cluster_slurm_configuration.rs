@@ -27,6 +27,16 @@ where
                                 crate::protocol_serde::shape_slurm_custom_settings::de_slurm_custom_settings(tokens, _value)?,
                             );
                         }
+                        "slurmdbdCustomSettings" => {
+                            builder = builder.set_slurmdbd_custom_settings(
+                                crate::protocol_serde::shape_slurmdbd_custom_settings::de_slurmdbd_custom_settings(tokens, _value)?,
+                            );
+                        }
+                        "cgroupCustomSettings" => {
+                            builder = builder.set_cgroup_custom_settings(
+                                crate::protocol_serde::shape_cgroup_custom_settings::de_cgroup_custom_settings(tokens, _value)?,
+                            );
+                        }
                         "authKey" => {
                             builder = builder.set_auth_key(crate::protocol_serde::shape_slurm_auth_key::de_slurm_auth_key(tokens, _value)?);
                         }

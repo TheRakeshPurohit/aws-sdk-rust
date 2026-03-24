@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PingBeacon {
-    /// <p>The domain name and port of the UDP ping beacon.</p>
+    /// <p>The domain name and port of the UDP ping beacon. Your game client can send UDP messages to this endpoint and receive responses to measure network latency.</p>
     pub udp_endpoint: ::std::option::Option<crate::types::UdpEndpoint>,
 }
 impl PingBeacon {
-    /// <p>The domain name and port of the UDP ping beacon.</p>
+    /// <p>The domain name and port of the UDP ping beacon. Your game client can send UDP messages to this endpoint and receive responses to measure network latency.</p>
     pub fn udp_endpoint(&self) -> ::std::option::Option<&crate::types::UdpEndpoint> {
         self.udp_endpoint.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct PingBeaconBuilder {
     pub(crate) udp_endpoint: ::std::option::Option<crate::types::UdpEndpoint>,
 }
 impl PingBeaconBuilder {
-    /// <p>The domain name and port of the UDP ping beacon.</p>
+    /// <p>The domain name and port of the UDP ping beacon. Your game client can send UDP messages to this endpoint and receive responses to measure network latency.</p>
     pub fn udp_endpoint(mut self, input: crate::types::UdpEndpoint) -> Self {
         self.udp_endpoint = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The domain name and port of the UDP ping beacon.</p>
+    /// <p>The domain name and port of the UDP ping beacon. Your game client can send UDP messages to this endpoint and receive responses to measure network latency.</p>
     pub fn set_udp_endpoint(mut self, input: ::std::option::Option<crate::types::UdpEndpoint>) -> Self {
         self.udp_endpoint = input;
         self
     }
-    /// <p>The domain name and port of the UDP ping beacon.</p>
+    /// <p>The domain name and port of the UDP ping beacon. Your game client can send UDP messages to this endpoint and receive responses to measure network latency.</p>
     pub fn get_udp_endpoint(&self) -> &::std::option::Option<crate::types::UdpEndpoint> {
         &self.udp_endpoint
     }

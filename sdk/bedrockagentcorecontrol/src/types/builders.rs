@@ -149,6 +149,8 @@ pub use crate::types::_workload_identity_type::WorkloadIdentityTypeBuilder;
 
 pub use crate::types::_oauth2_authorization_server_metadata::Oauth2AuthorizationServerMetadataBuilder;
 
+pub use crate::types::_session_storage_configuration::SessionStorageConfigurationBuilder;
+
 pub use crate::types::_interceptor_input_configuration::InterceptorInputConfigurationBuilder;
 
 pub use crate::types::_mcp_lambda_target_configuration::McpLambdaTargetConfigurationBuilder;

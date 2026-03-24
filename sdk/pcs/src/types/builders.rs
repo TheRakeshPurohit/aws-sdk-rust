@@ -63,6 +63,10 @@ pub use crate::types::_queue_summary::QueueSummaryBuilder;
 
 pub use crate::types::_slurm_custom_setting::SlurmCustomSettingBuilder;
 
+pub use crate::types::_slurmdbd_custom_setting::SlurmdbdCustomSettingBuilder;
+
+pub use crate::types::_cgroup_custom_setting::CgroupCustomSettingBuilder;
+
 pub use crate::types::_slurm_auth_key::SlurmAuthKeyBuilder;
 
 pub use crate::types::_jwt_auth::JwtAuthBuilder;

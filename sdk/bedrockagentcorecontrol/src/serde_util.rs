@@ -2393,6 +2393,15 @@ pub(crate) fn memory_strategy_correct_errors(
     builder
 }
 
+pub(crate) fn session_storage_configuration_correct_errors(
+    mut builder: crate::types::builders::SessionStorageConfigurationBuilder,
+) -> crate::types::builders::SessionStorageConfigurationBuilder {
+    if builder.mount_path.is_none() {
+        builder.mount_path = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn api_gateway_tool_configuration_correct_errors(
     mut builder: crate::types::builders::ApiGatewayToolConfigurationBuilder,
 ) -> crate::types::builders::ApiGatewayToolConfigurationBuilder {

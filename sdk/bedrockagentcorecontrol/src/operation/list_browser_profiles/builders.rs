@@ -142,4 +142,18 @@ impl ListBrowserProfilesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>The name of the browser profile to filter results by.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.name(input.into());
+        self
+    }
+    /// <p>The name of the browser profile to filter results by.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_name(input);
+        self
+    }
+    /// <p>The name of the browser profile to filter results by.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_name()
+    }
 }

@@ -243,6 +243,16 @@ pub fn ser_restore_db_cluster_from_snapshot_input_input_input(
         }
         list_90.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_92 = writer.prefix("EnableVPCNetworking");
+    if let Some(var_93) = &input.enable_vpc_networking {
+        scope_92.boolean(*var_93);
+    }
+    #[allow(unused_mut)]
+    let mut scope_94 = writer.prefix("EnableInternetAccessGateway");
+    if let Some(var_95) = &input.enable_internet_access_gateway {
+        scope_94.boolean(*var_95);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

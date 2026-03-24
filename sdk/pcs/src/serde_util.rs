@@ -394,6 +394,18 @@ pub(crate) fn slurm_rest_correct_errors(mut builder: crate::types::builders::Slu
     builder
 }
 
+pub(crate) fn cgroup_custom_setting_correct_errors(
+    mut builder: crate::types::builders::CgroupCustomSettingBuilder,
+) -> crate::types::builders::CgroupCustomSettingBuilder {
+    if builder.parameter_name.is_none() {
+        builder.parameter_name = Some(Default::default())
+    }
+    if builder.parameter_value.is_none() {
+        builder.parameter_value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn jwt_key_correct_errors(mut builder: crate::types::builders::JwtKeyBuilder) -> crate::types::builders::JwtKeyBuilder {
     if builder.secret_arn.is_none() {
         builder.secret_arn = Some(Default::default())
@@ -407,6 +419,18 @@ pub(crate) fn jwt_key_correct_errors(mut builder: crate::types::builders::JwtKey
 pub(crate) fn slurm_custom_setting_correct_errors(
     mut builder: crate::types::builders::SlurmCustomSettingBuilder,
 ) -> crate::types::builders::SlurmCustomSettingBuilder {
+    if builder.parameter_name.is_none() {
+        builder.parameter_name = Some(Default::default())
+    }
+    if builder.parameter_value.is_none() {
+        builder.parameter_value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn slurmdbd_custom_setting_correct_errors(
+    mut builder: crate::types::builders::SlurmdbdCustomSettingBuilder,
+) -> crate::types::builders::SlurmdbdCustomSettingBuilder {
     if builder.parameter_name.is_none() {
         builder.parameter_name = Some(Default::default())
     }

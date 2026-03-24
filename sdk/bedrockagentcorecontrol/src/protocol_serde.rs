@@ -261,6 +261,8 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_api_key_credential_providers_input;
 
+pub(crate) mod shape_list_browser_profiles_input;
+
 pub(crate) mod shape_list_memories_input;
 
 pub(crate) mod shape_list_oauth2_credential_providers_input;
@@ -366,6 +368,10 @@ pub(crate) mod shape_evaluator_list;
 pub(crate) mod shape_evaluator_reference;
 
 pub(crate) mod shape_evaluator_summary_list;
+
+pub(crate) mod shape_filesystem_configuration;
+
+pub(crate) mod shape_filesystem_configurations;
 
 pub(crate) mod shape_gateway_interceptor_configuration;
 
@@ -574,6 +580,8 @@ pub(crate) mod shape_sampling_config;
 pub(crate) mod shape_semantic_memory_strategy_input;
 
 pub(crate) mod shape_session_config;
+
+pub(crate) mod shape_session_storage_configuration;
 
 pub(crate) mod shape_slack_oauth2_provider_config_input;
 

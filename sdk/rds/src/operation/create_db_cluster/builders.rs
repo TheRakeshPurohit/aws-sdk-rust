@@ -26,6 +26,7 @@ impl crate::operation::create_db_cluster::builders::CreateDbClusterInputBuilder 
 /// <p>If you create an Aurora DB cluster, the request creates an empty cluster. You must explicitly create the writer instance for your DB cluster using the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html">CreateDBInstance</a> operation. If you create a Multi-AZ DB cluster, the request creates a writer and two reader DB instances for you, each in a different Availability Zone.</p>
 /// <p>You can use the <code>ReplicationSourceIdentifier</code> parameter to create an Amazon Aurora DB cluster as a read replica of another DB cluster or Amazon RDS for MySQL or PostgreSQL DB instance. For more information about Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p>
 /// <p>You can also use the <code>ReplicationSourceIdentifier</code> parameter to create a Multi-AZ DB cluster read replica with an RDS for MySQL or PostgreSQL DB instance as the source. For more information about Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
+/// <p>You can use the <code>WithExpressConfiguration</code> parameter to create an Aurora DB Cluster with express configuration and create cluster in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDBClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -1925,5 +1926,22 @@ impl CreateDBClusterFluentBuilder {
     /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
     pub fn get_master_user_authentication_type(&self) -> &::std::option::Option<crate::types::MasterUserAuthenticationType> {
         self.inner.get_master_user_authentication_type()
+    }
+    /// <p>Specifies to create an Aurora DB Cluster with express configuration in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters</p>
+    pub fn with_express_configuration(mut self, input: bool) -> Self {
+        self.inner = self.inner.with_express_configuration(input);
+        self
+    }
+    /// <p>Specifies to create an Aurora DB Cluster with express configuration in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters</p>
+    pub fn set_with_express_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_with_express_configuration(input);
+        self
+    }
+    /// <p>Specifies to create an Aurora DB Cluster with express configuration in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters</p>
+    pub fn get_with_express_configuration(&self) -> &::std::option::Option<bool> {
+        self.inner.get_with_express_configuration()
     }
 }

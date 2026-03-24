@@ -136,6 +136,20 @@ impl UpdateCollectionFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn vector_options(mut self, input: crate::types::VectorOptions) -> Self {
+        self.inner = self.inner.vector_options(input);
+        self
+    }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn set_vector_options(mut self, input: ::std::option::Option<crate::types::VectorOptions>) -> Self {
+        self.inner = self.inner.set_vector_options(input);
+        self
+    }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn get_vector_options(&self) -> &::std::option::Option<crate::types::VectorOptions> {
+        self.inner.get_vector_options()
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

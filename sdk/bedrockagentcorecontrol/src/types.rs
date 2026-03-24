@@ -149,6 +149,8 @@ pub use crate::types::_custom_jwt_authorizer_configuration::CustomJwtAuthorizerC
 
 pub use crate::types::_server_protocol::ServerProtocol;
 
+pub use crate::types::_filesystem_configuration::FilesystemConfiguration;
+
 pub use crate::types::_api_key_credential_provider_item::ApiKeyCredentialProviderItem;
 
 pub use crate::types::_browser_profile_summary::BrowserProfileSummary;
@@ -242,6 +244,8 @@ pub use crate::types::_oauth2_authorization_server_metadata::Oauth2Authorization
 pub use crate::types::_code::Code;
 
 pub use crate::types::_agent_managed_runtime_type::AgentManagedRuntimeType;
+
+pub use crate::types::_session_storage_configuration::SessionStorageConfiguration;
 
 pub use crate::types::_resource_location::ResourceLocation;
 
@@ -639,6 +643,8 @@ mod _exception_level;
 
 mod _extraction_configuration;
 
+mod _filesystem_configuration;
+
 mod _filter;
 
 mod _filter_operator;
@@ -870,6 +876,8 @@ mod _semantic_override_extraction_configuration_input;
 mod _server_protocol;
 
 mod _session_config;
+
+mod _session_storage_configuration;
 
 mod _slack_oauth2_provider_config_input;
 

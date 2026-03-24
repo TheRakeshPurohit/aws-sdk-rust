@@ -259,7 +259,7 @@ pub enum ModifyDBInstanceError {
     /// <p>The specified CIDR IP range or Amazon EC2 security group might not be authorized for the specified DB security group.</p>
     /// <p>Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.</p>
     AuthorizationNotFoundFault(crate::types::error::AuthorizationNotFoundFault),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p></p>
     #[deprecated(note = "Please avoid using this fault")]
     BackupPolicyNotFoundFault(crate::types::error::BackupPolicyNotFoundFault),
     /// <p><code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>

@@ -10,7 +10,7 @@ pub enum Error {
     AuthorizationNotFoundFault(crate::types::error::AuthorizationNotFoundFault),
     /// <p>The DB security group authorization quota has been reached.</p>
     AuthorizationQuotaExceededFault(crate::types::error::AuthorizationQuotaExceededFault),
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p></p>
     #[deprecated(note = "Please avoid using this fault")]
     BackupPolicyNotFoundFault(crate::types::error::BackupPolicyNotFoundFault),
     /// <p>A blue/green deployment with the specified name already exists.</p>

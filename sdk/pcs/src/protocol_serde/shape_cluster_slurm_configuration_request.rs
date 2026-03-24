@@ -21,17 +21,41 @@ pub fn ser_cluster_slurm_configuration_request(
         }
         array_3.finish();
     }
-    if let Some(var_6) = &input.accounting {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("accounting").start_object();
-        crate::protocol_serde::shape_accounting_request::ser_accounting_request(&mut object_7, var_6)?;
-        object_7.finish();
+    if let Some(var_6) = &input.slurmdbd_custom_settings {
+        let mut array_7 = object.key("slurmdbdCustomSettings").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_slurmdbd_custom_setting::ser_slurmdbd_custom_setting(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
     }
-    if let Some(var_8) = &input.slurm_rest {
+    if let Some(var_10) = &input.cgroup_custom_settings {
+        let mut array_11 = object.key("cgroupCustomSettings").start_array();
+        for item_12 in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_cgroup_custom_setting::ser_cgroup_custom_setting(&mut object_13, item_12)?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
+    }
+    if let Some(var_14) = &input.accounting {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("slurmRest").start_object();
-        crate::protocol_serde::shape_slurm_rest_request::ser_slurm_rest_request(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_15 = object.key("accounting").start_object();
+        crate::protocol_serde::shape_accounting_request::ser_accounting_request(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.slurm_rest {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("slurmRest").start_object();
+        crate::protocol_serde::shape_slurm_rest_request::ser_slurm_rest_request(&mut object_17, var_16)?;
+        object_17.finish();
     }
     Ok(())
 }

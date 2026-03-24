@@ -1127,6 +1127,36 @@ pub fn de_db_cluster(
                 builder = builder.set_engine_lifecycle_support(var_86);
             }
             ,
+            s if s.matches("VPCNetworkingEnabled") /* VPCNetworkingEnabled com.amazonaws.rds#DBCluster$VPCNetworkingEnabled */ =>  {
+                let var_87 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_vpc_networking_enabled(var_87);
+            }
+            ,
+            s if s.matches("InternetAccessGatewayEnabled") /* InternetAccessGatewayEnabled com.amazonaws.rds#DBCluster$InternetAccessGatewayEnabled */ =>  {
+                let var_88 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_internet_access_gateway_enabled(var_88);
+            }
+            ,
             _ => {}
         }
     }

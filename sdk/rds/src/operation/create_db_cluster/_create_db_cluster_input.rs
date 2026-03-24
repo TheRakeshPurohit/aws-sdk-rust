@@ -446,6 +446,9 @@ pub struct CreateDbClusterInput {
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.</p>
     pub master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
+    /// <p>Specifies to create an Aurora DB Cluster with express configuration in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters</p>
+    pub with_express_configuration: ::std::option::Option<bool>,
 }
 impl CreateDbClusterInput {
     /// <p>A list of Availability Zones (AZs) where you specifically want to create DB instances in the DB cluster.</p>
@@ -1016,6 +1019,11 @@ impl CreateDbClusterInput {
     pub fn master_user_authentication_type(&self) -> ::std::option::Option<&crate::types::MasterUserAuthenticationType> {
         self.master_user_authentication_type.as_ref()
     }
+    /// <p>Specifies to create an Aurora DB Cluster with express configuration in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters</p>
+    pub fn with_express_configuration(&self) -> ::std::option::Option<bool> {
+        self.with_express_configuration
+    }
 }
 impl ::std::fmt::Debug for CreateDbClusterInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -1078,6 +1086,7 @@ impl ::std::fmt::Debug for CreateDbClusterInput {
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
         formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
+        formatter.field("with_express_configuration", &self.with_express_configuration);
         formatter.finish()
     }
 }
@@ -1150,6 +1159,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
+    pub(crate) with_express_configuration: ::std::option::Option<bool>,
 }
 impl CreateDbClusterInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -2974,6 +2984,23 @@ impl CreateDbClusterInputBuilder {
     pub fn get_master_user_authentication_type(&self) -> &::std::option::Option<crate::types::MasterUserAuthenticationType> {
         &self.master_user_authentication_type
     }
+    /// <p>Specifies to create an Aurora DB Cluster with express configuration in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters</p>
+    pub fn with_express_configuration(mut self, input: bool) -> Self {
+        self.with_express_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies to create an Aurora DB Cluster with express configuration in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters</p>
+    pub fn set_with_express_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.with_express_configuration = input;
+        self
+    }
+    /// <p>Specifies to create an Aurora DB Cluster with express configuration in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters</p>
+    pub fn get_with_express_configuration(&self) -> &::std::option::Option<bool> {
+        &self.with_express_configuration
+    }
     /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
     pub fn build(
         self,
@@ -3037,6 +3064,7 @@ impl CreateDbClusterInputBuilder {
             engine_lifecycle_support: self.engine_lifecycle_support,
             tag_specifications: self.tag_specifications,
             master_user_authentication_type: self.master_user_authentication_type,
+            with_express_configuration: self.with_express_configuration,
         })
     }
 }
@@ -3101,6 +3129,7 @@ impl ::std::fmt::Debug for CreateDbClusterInputBuilder {
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
         formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
+        formatter.field("with_express_configuration", &self.with_express_configuration);
         formatter.finish()
     }
 }

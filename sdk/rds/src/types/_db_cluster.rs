@@ -242,6 +242,12 @@ pub struct DbCluster {
     /// <p>The lifecycle type for the DB cluster.</p>
     /// <p>For more information, see CreateDBCluster.</p>
     pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the DB cluster uses VPC-based networking.</p>
+    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    pub vpc_networking_enabled: ::std::option::Option<bool>,
+    /// <p>Indicates whether the DB cluster has internet-based connectivity enabled through an internet access gateway.</p>
+    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    pub internet_access_gateway_enabled: ::std::option::Option<bool>,
 }
 impl DbCluster {
     /// <p><code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> can vary because Aurora DB cluster storage size adjusts as needed.</p>
@@ -672,6 +678,16 @@ impl DbCluster {
     pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
         self.engine_lifecycle_support.as_deref()
     }
+    /// <p>Indicates whether the DB cluster uses VPC-based networking.</p>
+    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    pub fn vpc_networking_enabled(&self) -> ::std::option::Option<bool> {
+        self.vpc_networking_enabled
+    }
+    /// <p>Indicates whether the DB cluster has internet-based connectivity enabled through an internet access gateway.</p>
+    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    pub fn internet_access_gateway_enabled(&self) -> ::std::option::Option<bool> {
+        self.internet_access_gateway_enabled
+    }
 }
 impl DbCluster {
     /// Creates a new builder-style object to manufacture [`DbCluster`](crate::types::DbCluster).
@@ -770,6 +786,8 @@ pub struct DbClusterBuilder {
     pub(crate) cluster_scalability_type: ::std::option::Option<crate::types::ClusterScalabilityType>,
     pub(crate) certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_networking_enabled: ::std::option::Option<bool>,
+    pub(crate) internet_access_gateway_enabled: ::std::option::Option<bool>,
 }
 impl DbClusterBuilder {
     /// <p><code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> can vary because Aurora DB cluster storage size adjusts as needed.</p>
@@ -2234,6 +2252,40 @@ impl DbClusterBuilder {
     pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_lifecycle_support
     }
+    /// <p>Indicates whether the DB cluster uses VPC-based networking.</p>
+    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    pub fn vpc_networking_enabled(mut self, input: bool) -> Self {
+        self.vpc_networking_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB cluster uses VPC-based networking.</p>
+    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    pub fn set_vpc_networking_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.vpc_networking_enabled = input;
+        self
+    }
+    /// <p>Indicates whether the DB cluster uses VPC-based networking.</p>
+    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    pub fn get_vpc_networking_enabled(&self) -> &::std::option::Option<bool> {
+        &self.vpc_networking_enabled
+    }
+    /// <p>Indicates whether the DB cluster has internet-based connectivity enabled through an internet access gateway.</p>
+    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    pub fn internet_access_gateway_enabled(mut self, input: bool) -> Self {
+        self.internet_access_gateway_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB cluster has internet-based connectivity enabled through an internet access gateway.</p>
+    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    pub fn set_internet_access_gateway_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.internet_access_gateway_enabled = input;
+        self
+    }
+    /// <p>Indicates whether the DB cluster has internet-based connectivity enabled through an internet access gateway.</p>
+    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    pub fn get_internet_access_gateway_enabled(&self) -> &::std::option::Option<bool> {
+        &self.internet_access_gateway_enabled
+    }
     /// Consumes the builder and constructs a [`DbCluster`](crate::types::DbCluster).
     pub fn build(self) -> crate::types::DbCluster {
         crate::types::DbCluster {
@@ -2323,6 +2375,8 @@ impl DbClusterBuilder {
             cluster_scalability_type: self.cluster_scalability_type,
             certificate_details: self.certificate_details,
             engine_lifecycle_support: self.engine_lifecycle_support,
+            vpc_networking_enabled: self.vpc_networking_enabled,
+            internet_access_gateway_enabled: self.internet_access_gateway_enabled,
         }
     }
 }

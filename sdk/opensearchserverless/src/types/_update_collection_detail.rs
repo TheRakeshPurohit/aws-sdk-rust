@@ -14,6 +14,8 @@ pub struct UpdateCollectionDetail {
     pub r#type: ::std::option::Option<crate::types::CollectionType>,
     /// <p>The description of the collection.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub vector_options: ::std::option::Option<crate::types::VectorOptions>,
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the collection was created.</p>
@@ -41,6 +43,10 @@ impl UpdateCollectionDetail {
     /// <p>The description of the collection.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn vector_options(&self) -> ::std::option::Option<&crate::types::VectorOptions> {
+        self.vector_options.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -71,6 +77,7 @@ pub struct UpdateCollectionDetailBuilder {
     pub(crate) status: ::std::option::Option<crate::types::CollectionStatus>,
     pub(crate) r#type: ::std::option::Option<crate::types::CollectionType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) vector_options: ::std::option::Option<crate::types::VectorOptions>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<i64>,
     pub(crate) last_modified_date: ::std::option::Option<i64>,
@@ -146,6 +153,20 @@ impl UpdateCollectionDetailBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn vector_options(mut self, input: crate::types::VectorOptions) -> Self {
+        self.vector_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn set_vector_options(mut self, input: ::std::option::Option<crate::types::VectorOptions>) -> Self {
+        self.vector_options = input;
+        self
+    }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn get_vector_options(&self) -> &::std::option::Option<crate::types::VectorOptions> {
+        &self.vector_options
+    }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -196,6 +217,7 @@ impl UpdateCollectionDetailBuilder {
             status: self.status,
             r#type: self.r#type,
             description: self.description,
+            vector_options: self.vector_options,
             arn: self.arn,
             created_date: self.created_date,
             last_modified_date: self.last_modified_date,

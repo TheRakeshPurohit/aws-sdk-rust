@@ -190,6 +190,11 @@ pub(crate) fn de_get_agent_runtime(
                             .transpose()?,
                     );
                 }
+                "filesystemConfigurations" => {
+                    builder = builder.set_filesystem_configurations(
+                        crate::protocol_serde::shape_filesystem_configurations::de_filesystem_configurations(tokens, _value)?,
+                    );
+                }
                 "lastUpdatedAt" => {
                     builder = builder.set_last_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

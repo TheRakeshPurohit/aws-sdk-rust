@@ -272,6 +272,14 @@ pub struct RestoreDbClusterToPointInTimeInput {
     /// <p><code>cluster-auto-backup</code> - The DB cluster's automated backup.</p></li>
     /// </ul>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    /// <p>Specifies whether to enable VPC networking for the restored DB cluster. Set this parameter to <code>false</code> to create a cluster without the VPC network interface (ENI).</p>
+    /// <p>This parameter must be used together with <code>EnableInternetAccessGateway</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub enable_vpc_networking: ::std::option::Option<bool>,
+    /// <p>Specifies that the restored DB cluster should use internet-based connectivity through an internet access gateway. This allows clients to connect to the cluster over the internet without requiring a VPC.</p>
+    /// <p>This parameter must be used together with <code>EnableVPCNetworking</code> set to <code>false</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub enable_internet_access_gateway: ::std::option::Option<bool>,
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// <p>The name of the new DB cluster to be created.</p>
@@ -626,6 +634,18 @@ impl RestoreDbClusterToPointInTimeInput {
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies whether to enable VPC networking for the restored DB cluster. Set this parameter to <code>false</code> to create a cluster without the VPC network interface (ENI).</p>
+    /// <p>This parameter must be used together with <code>EnableInternetAccessGateway</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub fn enable_vpc_networking(&self) -> ::std::option::Option<bool> {
+        self.enable_vpc_networking
+    }
+    /// <p>Specifies that the restored DB cluster should use internet-based connectivity through an internet access gateway. This allows clients to connect to the cluster over the internet without requiring a VPC.</p>
+    /// <p>This parameter must be used together with <code>EnableVPCNetworking</code> set to <code>false</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub fn enable_internet_access_gateway(&self) -> ::std::option::Option<bool> {
+        self.enable_internet_access_gateway
+    }
 }
 impl RestoreDbClusterToPointInTimeInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
@@ -676,6 +696,8 @@ pub struct RestoreDbClusterToPointInTimeInputBuilder {
     pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) enable_vpc_networking: ::std::option::Option<bool>,
+    pub(crate) enable_internet_access_gateway: ::std::option::Option<bool>,
 }
 impl RestoreDbClusterToPointInTimeInputBuilder {
     /// <p>The name of the new DB cluster to be created.</p>
@@ -1811,6 +1833,46 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
+    /// <p>Specifies whether to enable VPC networking for the restored DB cluster. Set this parameter to <code>false</code> to create a cluster without the VPC network interface (ENI).</p>
+    /// <p>This parameter must be used together with <code>EnableInternetAccessGateway</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub fn enable_vpc_networking(mut self, input: bool) -> Self {
+        self.enable_vpc_networking = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable VPC networking for the restored DB cluster. Set this parameter to <code>false</code> to create a cluster without the VPC network interface (ENI).</p>
+    /// <p>This parameter must be used together with <code>EnableInternetAccessGateway</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub fn set_enable_vpc_networking(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_vpc_networking = input;
+        self
+    }
+    /// <p>Specifies whether to enable VPC networking for the restored DB cluster. Set this parameter to <code>false</code> to create a cluster without the VPC network interface (ENI).</p>
+    /// <p>This parameter must be used together with <code>EnableInternetAccessGateway</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub fn get_enable_vpc_networking(&self) -> &::std::option::Option<bool> {
+        &self.enable_vpc_networking
+    }
+    /// <p>Specifies that the restored DB cluster should use internet-based connectivity through an internet access gateway. This allows clients to connect to the cluster over the internet without requiring a VPC.</p>
+    /// <p>This parameter must be used together with <code>EnableVPCNetworking</code> set to <code>false</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub fn enable_internet_access_gateway(mut self, input: bool) -> Self {
+        self.enable_internet_access_gateway = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies that the restored DB cluster should use internet-based connectivity through an internet access gateway. This allows clients to connect to the cluster over the internet without requiring a VPC.</p>
+    /// <p>This parameter must be used together with <code>EnableVPCNetworking</code> set to <code>false</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub fn set_enable_internet_access_gateway(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_internet_access_gateway = input;
+        self
+    }
+    /// <p>Specifies that the restored DB cluster should use internet-based connectivity through an internet access gateway. This allows clients to connect to the cluster over the internet without requiring a VPC.</p>
+    /// <p>This parameter must be used together with <code>EnableVPCNetworking</code> set to <code>false</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
+    pub fn get_enable_internet_access_gateway(&self) -> &::std::option::Option<bool> {
+        &self.enable_internet_access_gateway
+    }
     /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeInput`](crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeInput).
     pub fn build(
         self,
@@ -1858,6 +1920,8 @@ impl RestoreDbClusterToPointInTimeInputBuilder {
                 preferred_backup_window: self.preferred_backup_window,
                 engine_lifecycle_support: self.engine_lifecycle_support,
                 tag_specifications: self.tag_specifications,
+                enable_vpc_networking: self.enable_vpc_networking,
+                enable_internet_access_gateway: self.enable_internet_access_gateway,
             },
         )
     }

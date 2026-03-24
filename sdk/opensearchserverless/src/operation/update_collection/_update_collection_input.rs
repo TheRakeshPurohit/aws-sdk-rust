@@ -7,6 +7,8 @@ pub struct UpdateCollectionInput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the collection.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub vector_options: ::std::option::Option<crate::types::VectorOptions>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -18,6 +20,10 @@ impl UpdateCollectionInput {
     /// <p>A description of the collection.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn vector_options(&self) -> ::std::option::Option<&crate::types::VectorOptions> {
+        self.vector_options.as_ref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -37,6 +43,7 @@ impl UpdateCollectionInput {
 pub struct UpdateCollectionInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) vector_options: ::std::option::Option<crate::types::VectorOptions>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCollectionInputBuilder {
@@ -69,6 +76,20 @@ impl UpdateCollectionInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn vector_options(mut self, input: crate::types::VectorOptions) -> Self {
+        self.vector_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn set_vector_options(mut self, input: ::std::option::Option<crate::types::VectorOptions>) -> Self {
+        self.vector_options = input;
+        self
+    }
+    /// <p>Configuration options for vector search capabilities in the collection.</p>
+    pub fn get_vector_options(&self) -> &::std::option::Option<crate::types::VectorOptions> {
+        &self.vector_options
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -90,6 +111,7 @@ impl UpdateCollectionInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_collection::UpdateCollectionInput {
             id: self.id,
             description: self.description,
+            vector_options: self.vector_options,
             client_token: self.client_token,
         })
     }

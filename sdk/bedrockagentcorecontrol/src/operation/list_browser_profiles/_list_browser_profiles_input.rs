@@ -7,6 +7,8 @@ pub struct ListBrowserProfilesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the browser profile to filter results by.</p>
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl ListBrowserProfilesInput {
     /// <p>The maximum number of results to return in the response.</p>
@@ -16,6 +18,10 @@ impl ListBrowserProfilesInput {
     /// <p>A token to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The name of the browser profile to filter results by.</p>
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 impl ListBrowserProfilesInput {
@@ -31,6 +37,7 @@ impl ListBrowserProfilesInput {
 pub struct ListBrowserProfilesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl ListBrowserProfilesInputBuilder {
     /// <p>The maximum number of results to return in the response.</p>
@@ -61,6 +68,20 @@ impl ListBrowserProfilesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The name of the browser profile to filter results by.</p>
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the browser profile to filter results by.</p>
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
+        self
+    }
+    /// <p>The name of the browser profile to filter results by.</p>
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
+    }
     /// Consumes the builder and constructs a [`ListBrowserProfilesInput`](crate::operation::list_browser_profiles::ListBrowserProfilesInput).
     pub fn build(
         self,
@@ -69,6 +90,7 @@ impl ListBrowserProfilesInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_browser_profiles::ListBrowserProfilesInput {
             max_results: self.max_results,
             next_token: self.next_token,
+            name: self.name,
         })
     }
 }

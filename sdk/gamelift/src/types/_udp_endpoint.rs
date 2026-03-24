@@ -6,7 +6,7 @@
 pub struct UdpEndpoint {
     /// <p>The domain name of the UDP endpoint.</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The port number of the UDP endpoint.</p>
+    /// <p>The port number of the UDP endpoint. For Amazon GameLift Servers ping beacons, this is typically port 7770.</p>
     pub port: ::std::option::Option<i32>,
 }
 impl UdpEndpoint {
@@ -14,7 +14,7 @@ impl UdpEndpoint {
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The port number of the UDP endpoint.</p>
+    /// <p>The port number of the UDP endpoint. For Amazon GameLift Servers ping beacons, this is typically port 7770.</p>
     pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
@@ -48,17 +48,17 @@ impl UdpEndpointBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The port number of the UDP endpoint.</p>
+    /// <p>The port number of the UDP endpoint. For Amazon GameLift Servers ping beacons, this is typically port 7770.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.port = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The port number of the UDP endpoint.</p>
+    /// <p>The port number of the UDP endpoint. For Amazon GameLift Servers ping beacons, this is typically port 7770.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
-    /// <p>The port number of the UDP endpoint.</p>
+    /// <p>The port number of the UDP endpoint. For Amazon GameLift Servers ping beacons, this is typically port 7770.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         &self.port
     }

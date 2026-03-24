@@ -9,6 +9,10 @@ pub struct ClusterSlurmConfigurationRequest {
     pub scale_down_idle_time_in_seconds: ::std::option::Option<i32>,
     /// <p>Additional Slurm-specific configuration that directly maps to Slurm settings.</p>
     pub slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
+    /// <p>Additional SlurmDBD-specific configuration that directly maps to SlurmDBD settings.</p>
+    pub slurmdbd_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmdbdCustomSetting>>,
+    /// <p>Additional Cgroup-specific configuration that directly maps to Cgroup settings.</p>
+    pub cgroup_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::CgroupCustomSetting>>,
     /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
     pub accounting: ::std::option::Option<crate::types::AccountingRequest>,
     /// <p>The Slurm REST API configuration for the cluster.</p>
@@ -25,6 +29,18 @@ impl ClusterSlurmConfigurationRequest {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slurm_custom_settings.is_none()`.
     pub fn slurm_custom_settings(&self) -> &[crate::types::SlurmCustomSetting] {
         self.slurm_custom_settings.as_deref().unwrap_or_default()
+    }
+    /// <p>Additional SlurmDBD-specific configuration that directly maps to SlurmDBD settings.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.slurmdbd_custom_settings.is_none()`.
+    pub fn slurmdbd_custom_settings(&self) -> &[crate::types::SlurmdbdCustomSetting] {
+        self.slurmdbd_custom_settings.as_deref().unwrap_or_default()
+    }
+    /// <p>Additional Cgroup-specific configuration that directly maps to Cgroup settings.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cgroup_custom_settings.is_none()`.
+    pub fn cgroup_custom_settings(&self) -> &[crate::types::CgroupCustomSetting] {
+        self.cgroup_custom_settings.as_deref().unwrap_or_default()
     }
     /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
     pub fn accounting(&self) -> ::std::option::Option<&crate::types::AccountingRequest> {
@@ -48,6 +64,8 @@ impl ClusterSlurmConfigurationRequest {
 pub struct ClusterSlurmConfigurationRequestBuilder {
     pub(crate) scale_down_idle_time_in_seconds: ::std::option::Option<i32>,
     pub(crate) slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
+    pub(crate) slurmdbd_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmdbdCustomSetting>>,
+    pub(crate) cgroup_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::CgroupCustomSetting>>,
     pub(crate) accounting: ::std::option::Option<crate::types::AccountingRequest>,
     pub(crate) slurm_rest: ::std::option::Option<crate::types::SlurmRestRequest>,
 }
@@ -89,6 +107,46 @@ impl ClusterSlurmConfigurationRequestBuilder {
     pub fn get_slurm_custom_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>> {
         &self.slurm_custom_settings
     }
+    /// Appends an item to `slurmdbd_custom_settings`.
+    ///
+    /// To override the contents of this collection use [`set_slurmdbd_custom_settings`](Self::set_slurmdbd_custom_settings).
+    ///
+    /// <p>Additional SlurmDBD-specific configuration that directly maps to SlurmDBD settings.</p>
+    pub fn slurmdbd_custom_settings(mut self, input: crate::types::SlurmdbdCustomSetting) -> Self {
+        let mut v = self.slurmdbd_custom_settings.unwrap_or_default();
+        v.push(input);
+        self.slurmdbd_custom_settings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Additional SlurmDBD-specific configuration that directly maps to SlurmDBD settings.</p>
+    pub fn set_slurmdbd_custom_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SlurmdbdCustomSetting>>) -> Self {
+        self.slurmdbd_custom_settings = input;
+        self
+    }
+    /// <p>Additional SlurmDBD-specific configuration that directly maps to SlurmDBD settings.</p>
+    pub fn get_slurmdbd_custom_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SlurmdbdCustomSetting>> {
+        &self.slurmdbd_custom_settings
+    }
+    /// Appends an item to `cgroup_custom_settings`.
+    ///
+    /// To override the contents of this collection use [`set_cgroup_custom_settings`](Self::set_cgroup_custom_settings).
+    ///
+    /// <p>Additional Cgroup-specific configuration that directly maps to Cgroup settings.</p>
+    pub fn cgroup_custom_settings(mut self, input: crate::types::CgroupCustomSetting) -> Self {
+        let mut v = self.cgroup_custom_settings.unwrap_or_default();
+        v.push(input);
+        self.cgroup_custom_settings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Additional Cgroup-specific configuration that directly maps to Cgroup settings.</p>
+    pub fn set_cgroup_custom_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CgroupCustomSetting>>) -> Self {
+        self.cgroup_custom_settings = input;
+        self
+    }
+    /// <p>Additional Cgroup-specific configuration that directly maps to Cgroup settings.</p>
+    pub fn get_cgroup_custom_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CgroupCustomSetting>> {
+        &self.cgroup_custom_settings
+    }
     /// <p>The accounting configuration includes configurable settings for Slurm accounting.</p>
     pub fn accounting(mut self, input: crate::types::AccountingRequest) -> Self {
         self.accounting = ::std::option::Option::Some(input);
@@ -122,6 +180,8 @@ impl ClusterSlurmConfigurationRequestBuilder {
         crate::types::ClusterSlurmConfigurationRequest {
             scale_down_idle_time_in_seconds: self.scale_down_idle_time_in_seconds,
             slurm_custom_settings: self.slurm_custom_settings,
+            slurmdbd_custom_settings: self.slurmdbd_custom_settings,
+            cgroup_custom_settings: self.cgroup_custom_settings,
             accounting: self.accounting,
             slurm_rest: self.slurm_rest,
         }
