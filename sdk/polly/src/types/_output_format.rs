@@ -12,8 +12,10 @@
 /// ```text
 /// # let outputformat = unimplemented!();
 /// match outputformat {
+///     OutputFormat::Alaw => { /* ... */ },
 ///     OutputFormat::Json => { /* ... */ },
 ///     OutputFormat::Mp3 => { /* ... */ },
+///     OutputFormat::Mulaw => { /* ... */ },
 ///     OutputFormat::OggOpus => { /* ... */ },
 ///     OutputFormat::OggVorbis => { /* ... */ },
 ///     OutputFormat::Pcm => { /* ... */ },
@@ -46,9 +48,13 @@
 )]
 pub enum OutputFormat {
     #[allow(missing_docs)] // documentation missing in model
+    Alaw,
+    #[allow(missing_docs)] // documentation missing in model
     Json,
     #[allow(missing_docs)] // documentation missing in model
     Mp3,
+    #[allow(missing_docs)] // documentation missing in model
+    Mulaw,
     #[allow(missing_docs)] // documentation missing in model
     OggOpus,
     #[allow(missing_docs)] // documentation missing in model
@@ -62,8 +68,10 @@ pub enum OutputFormat {
 impl ::std::convert::From<&str> for OutputFormat {
     fn from(s: &str) -> Self {
         match s {
+            "alaw" => OutputFormat::Alaw,
             "json" => OutputFormat::Json,
             "mp3" => OutputFormat::Mp3,
+            "mulaw" => OutputFormat::Mulaw,
             "ogg_opus" => OutputFormat::OggOpus,
             "ogg_vorbis" => OutputFormat::OggVorbis,
             "pcm" => OutputFormat::Pcm,
@@ -82,8 +90,10 @@ impl OutputFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            OutputFormat::Alaw => "alaw",
             OutputFormat::Json => "json",
             OutputFormat::Mp3 => "mp3",
+            OutputFormat::Mulaw => "mulaw",
             OutputFormat::OggOpus => "ogg_opus",
             OutputFormat::OggVorbis => "ogg_vorbis",
             OutputFormat::Pcm => "pcm",
@@ -92,7 +102,7 @@ impl OutputFormat {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["json", "mp3", "ogg_opus", "ogg_vorbis", "pcm"]
+        &["alaw", "json", "mp3", "mulaw", "ogg_opus", "ogg_vorbis", "pcm"]
     }
 }
 impl ::std::convert::AsRef<str> for OutputFormat {
@@ -115,8 +125,10 @@ impl OutputFormat {
 impl ::std::fmt::Display for OutputFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            OutputFormat::Alaw => write!(f, "alaw"),
             OutputFormat::Json => write!(f, "json"),
             OutputFormat::Mp3 => write!(f, "mp3"),
+            OutputFormat::Mulaw => write!(f, "mulaw"),
             OutputFormat::OggOpus => write!(f, "ogg_opus"),
             OutputFormat::OggVorbis => write!(f, "ogg_vorbis"),
             OutputFormat::Pcm => write!(f, "pcm"),

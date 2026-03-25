@@ -235,6 +235,67 @@ impl ListServiceLevelObjectivesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
+    /// Appends an item to `MetricSourceTypes`.
+    ///
+    /// To override the contents of this collection use [`set_metric_source_types`](Self::set_metric_source_types).
+    ///
+    /// <p>Use this optional field to only include SLOs with the specified metric source types in the output. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>Service</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// <li>
+    /// <p>AppMonitor</p></li>
+    /// <li>
+    /// <p>Canary</p></li>
+    /// </ul>
+    pub fn metric_source_types(mut self, input: crate::types::MetricSourceType) -> Self {
+        self.inner = self.inner.metric_source_types(input);
+        self
+    }
+    /// <p>Use this optional field to only include SLOs with the specified metric source types in the output. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>Service</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// <li>
+    /// <p>AppMonitor</p></li>
+    /// <li>
+    /// <p>Canary</p></li>
+    /// </ul>
+    pub fn set_metric_source_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSourceType>>) -> Self {
+        self.inner = self.inner.set_metric_source_types(input);
+        self
+    }
+    /// <p>Use this optional field to only include SLOs with the specified metric source types in the output. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>Service</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// <li>
+    /// <p>AppMonitor</p></li>
+    /// <li>
+    /// <p>Canary</p></li>
+    /// </ul>
+    pub fn get_metric_source_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSourceType>> {
+        self.inner.get_metric_source_types()
+    }
     /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include SLO from source accounts in the returned data.</p>
     /// <p>When you are monitoring an account, you can use Amazon Web Services account ID in <code>KeyAttribute</code> filter for service source account and <code>SloOwnerawsaccountID</code> for SLO source account with <code>IncludeLinkedAccounts</code> to filter the returned data to only a single source account.</p>
     pub fn include_linked_accounts(mut self, input: bool) -> Self {
@@ -266,47 +327,18 @@ impl ListServiceLevelObjectivesFluentBuilder {
     pub fn get_slo_owner_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_slo_owner_aws_account_id()
     }
-    ///
-    /// Appends an item to `MetricSourceTypes`.
-    ///
-    /// To override the contents of this collection use [`set_metric_source_types`](Self::set_metric_source_types).
-    ///
-    /// <p>Use this optional field to only include SLOs with the specified metric source types in the output. Supported types are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Service operation</p></li>
-    /// <li>
-    /// <p>Service dependency</p></li>
-    /// <li>
-    /// <p>CloudWatch metric</p></li>
-    /// </ul>
-    pub fn metric_source_types(mut self, input: crate::types::MetricSourceType) -> Self {
-        self.inner = self.inner.metric_source_types(input);
+    /// <p>Identifies the metric source to filter SLOs by.</p>
+    pub fn metric_source(mut self, input: crate::types::MetricSource) -> Self {
+        self.inner = self.inner.metric_source(input);
         self
     }
-    /// <p>Use this optional field to only include SLOs with the specified metric source types in the output. Supported types are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Service operation</p></li>
-    /// <li>
-    /// <p>Service dependency</p></li>
-    /// <li>
-    /// <p>CloudWatch metric</p></li>
-    /// </ul>
-    pub fn set_metric_source_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSourceType>>) -> Self {
-        self.inner = self.inner.set_metric_source_types(input);
+    /// <p>Identifies the metric source to filter SLOs by.</p>
+    pub fn set_metric_source(mut self, input: ::std::option::Option<crate::types::MetricSource>) -> Self {
+        self.inner = self.inner.set_metric_source(input);
         self
     }
-    /// <p>Use this optional field to only include SLOs with the specified metric source types in the output. Supported types are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Service operation</p></li>
-    /// <li>
-    /// <p>Service dependency</p></li>
-    /// <li>
-    /// <p>CloudWatch metric</p></li>
-    /// </ul>
-    pub fn get_metric_source_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSourceType>> {
-        self.inner.get_metric_source_types()
+    /// <p>Identifies the metric source to filter SLOs by.</p>
+    pub fn get_metric_source(&self) -> &::std::option::Option<crate::types::MetricSource> {
+        self.inner.get_metric_source()
     }
 }

@@ -11,6 +11,8 @@ pub use crate::types::_sort::SortBuilder;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
+pub use crate::types::_payment_request_summary::PaymentRequestSummaryBuilder;
+
 pub use crate::types::_filter::FilterBuilder;
 
 pub use crate::types::_agreement_view_summary::AgreementViewSummaryBuilder;

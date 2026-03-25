@@ -40,7 +40,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-marketplaceagreement = "1.95.0"
+//! aws-sdk-marketplaceagreement = "1.96.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -157,14 +157,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DescribeAgreement`](crate::operation::describe_agreement) operation has
-/// a [`Client::describe_agreement`], function which returns a builder for that operation.
+/// For example, the [`CancelAgreementPaymentRequest`](crate::operation::cancel_agreement_payment_request) operation has
+/// a [`Client::cancel_agreement_payment_request`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.describe_agreement()
-///     .agreement_id("example")
+/// let result = client.cancel_agreement_payment_request()
+///     .payment_request_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -194,6 +194,10 @@ pub mod primitives;
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
+pub(crate) mod client_idempotency_token;
+
+mod idempotency_token;
+
 mod observability_feature;
 
 pub(crate) mod protocol_serde;
@@ -206,9 +210,9 @@ mod endpoint_lib;
 
 mod lens;
 
-mod json_errors;
-
 mod serde_util;
+
+mod json_errors;
 
 #[doc(inline)]
 pub use client::Client;

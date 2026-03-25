@@ -128,22 +128,22 @@ impl ListServiceJobsFluentBuilder {
     pub fn get_job_queue(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_queue()
     }
-    /// <p>The job status used to filter service jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. The exception is the <code>SHARE_IDENTIFIER</code> filter and <code>jobStatus</code> can be used together. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p><note>
-    /// <p>The <code>SHARE_IDENTIFIER</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
+    /// <p>The job status used to filter service jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. The exceptions are the <code>SHARE_IDENTIFIER</code> filter and <code>QUOTA_SHARE_NAME</code> filter, which can be used with <code>jobStatus</code>. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p><note>
+    /// <p>The <code>SHARE_IDENTIFIER</code> filter or <code>QUOTA_SHARE_NAME</code> filter can be used with the <code>jobStatus</code> field to filter results.</p>
     /// </note>
     pub fn job_status(mut self, input: crate::types::ServiceJobStatus) -> Self {
         self.inner = self.inner.job_status(input);
         self
     }
-    /// <p>The job status used to filter service jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. The exception is the <code>SHARE_IDENTIFIER</code> filter and <code>jobStatus</code> can be used together. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p><note>
-    /// <p>The <code>SHARE_IDENTIFIER</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
+    /// <p>The job status used to filter service jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. The exceptions are the <code>SHARE_IDENTIFIER</code> filter and <code>QUOTA_SHARE_NAME</code> filter, which can be used with <code>jobStatus</code>. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p><note>
+    /// <p>The <code>SHARE_IDENTIFIER</code> filter or <code>QUOTA_SHARE_NAME</code> filter can be used with the <code>jobStatus</code> field to filter results.</p>
     /// </note>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::ServiceJobStatus>) -> Self {
         self.inner = self.inner.set_job_status(input);
         self
     }
-    /// <p>The job status used to filter service jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. The exception is the <code>SHARE_IDENTIFIER</code> filter and <code>jobStatus</code> can be used together. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p><note>
-    /// <p>The <code>SHARE_IDENTIFIER</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
+    /// <p>The job status used to filter service jobs in the specified queue. If the <code>filters</code> parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. The exceptions are the <code>SHARE_IDENTIFIER</code> filter and <code>QUOTA_SHARE_NAME</code> filter, which can be used with <code>jobStatus</code>. If you don't specify a status, only <code>RUNNING</code> jobs are returned.</p><note>
+    /// <p>The <code>SHARE_IDENTIFIER</code> filter or <code>QUOTA_SHARE_NAME</code> filter can be used with the <code>jobStatus</code> field to filter results.</p>
     /// </note>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::ServiceJobStatus> {
         self.inner.get_job_status()
@@ -187,8 +187,8 @@ impl ListServiceJobsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored with the exception that <code>SHARE_IDENTIFIER</code> and <code>jobStatus</code> can be used together. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p><note>
-    /// <p>The <code>SHARE_IDENTIFIER</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
+    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored with the exception that <code>SHARE_IDENTIFIER</code> or <code>QUOTA_SHARE_NAME</code> and <code>jobStatus</code> can be used together. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p><note>
+    /// <p>The <code>SHARE_IDENTIFIER</code> or <code>QUOTA_SHARE_NAME</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -214,14 +214,20 @@ impl ListServiceJobsFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>The value for the filter is the fairshare scheduling share identifier.</p>
+    /// </dd>
+    /// <dt>
+    /// QUOTA_SHARE_NAME
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the quota management share name.</p>
     /// </dd>
     /// </dl>
     pub fn filters(mut self, input: crate::types::KeyValuesPair) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored with the exception that <code>SHARE_IDENTIFIER</code> and <code>jobStatus</code> can be used together. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p><note>
-    /// <p>The <code>SHARE_IDENTIFIER</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
+    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored with the exception that <code>SHARE_IDENTIFIER</code> or <code>QUOTA_SHARE_NAME</code> and <code>jobStatus</code> can be used together. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p><note>
+    /// <p>The <code>SHARE_IDENTIFIER</code> or <code>QUOTA_SHARE_NAME</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -247,14 +253,20 @@ impl ListServiceJobsFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>The value for the filter is the fairshare scheduling share identifier.</p>
+    /// </dd>
+    /// <dt>
+    /// QUOTA_SHARE_NAME
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the quota management share name.</p>
     /// </dd>
     /// </dl>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuesPair>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored with the exception that <code>SHARE_IDENTIFIER</code> and <code>jobStatus</code> can be used together. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p><note>
-    /// <p>The <code>SHARE_IDENTIFIER</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
+    /// <p>The filter to apply to the query. Only one filter can be used at a time. When the filter is used, <code>jobStatus</code> is ignored with the exception that <code>SHARE_IDENTIFIER</code> or <code>QUOTA_SHARE_NAME</code> and <code>jobStatus</code> can be used together. The results are sorted by the <code>createdAt</code> field, with the most recent jobs being first.</p><note>
+    /// <p>The <code>SHARE_IDENTIFIER</code> or <code>QUOTA_SHARE_NAME</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
     /// </note>
     /// <dl>
     /// <dt>
@@ -280,6 +292,12 @@ impl ListServiceJobsFluentBuilder {
     /// </dt>
     /// <dd>
     /// <p>The value for the filter is the fairshare scheduling share identifier.</p>
+    /// </dd>
+    /// <dt>
+    /// QUOTA_SHARE_NAME
+    /// </dt>
+    /// <dd>
+    /// <p>The value for the filter is the quota management share name.</p>
     /// </dd>
     /// </dl>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyValuesPair>> {

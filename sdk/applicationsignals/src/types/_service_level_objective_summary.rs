@@ -37,9 +37,17 @@ pub struct ServiceLevelObjectiveSummary {
     /// <li>
     /// <p>Service dependency</p></li>
     /// <li>
+    /// <p>Service</p></li>
+    /// <li>
     /// <p>CloudWatch metric</p></li>
+    /// <li>
+    /// <p>AppMonitor</p></li>
+    /// <li>
+    /// <p>Canary</p></li>
     /// </ul>
     pub metric_source_type: ::std::option::Option<crate::types::MetricSourceType>,
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub metric_source: ::std::option::Option<crate::types::MetricSource>,
 }
 impl ServiceLevelObjectiveSummary {
     /// <p>The ARN of this service level objective.</p>
@@ -91,10 +99,20 @@ impl ServiceLevelObjectiveSummary {
     /// <li>
     /// <p>Service dependency</p></li>
     /// <li>
+    /// <p>Service</p></li>
+    /// <li>
     /// <p>CloudWatch metric</p></li>
+    /// <li>
+    /// <p>AppMonitor</p></li>
+    /// <li>
+    /// <p>Canary</p></li>
     /// </ul>
     pub fn metric_source_type(&self) -> ::std::option::Option<&crate::types::MetricSourceType> {
         self.metric_source_type.as_ref()
+    }
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub fn metric_source(&self) -> ::std::option::Option<&crate::types::MetricSource> {
+        self.metric_source.as_ref()
     }
 }
 impl ServiceLevelObjectiveSummary {
@@ -116,6 +134,7 @@ pub struct ServiceLevelObjectiveSummaryBuilder {
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     pub(crate) metric_source_type: ::std::option::Option<crate::types::MetricSourceType>,
+    pub(crate) metric_source: ::std::option::Option<crate::types::MetricSource>,
 }
 impl ServiceLevelObjectiveSummaryBuilder {
     /// <p>The ARN of this service level objective.</p>
@@ -274,7 +293,13 @@ impl ServiceLevelObjectiveSummaryBuilder {
     /// <li>
     /// <p>Service dependency</p></li>
     /// <li>
+    /// <p>Service</p></li>
+    /// <li>
     /// <p>CloudWatch metric</p></li>
+    /// <li>
+    /// <p>AppMonitor</p></li>
+    /// <li>
+    /// <p>Canary</p></li>
     /// </ul>
     pub fn metric_source_type(mut self, input: crate::types::MetricSourceType) -> Self {
         self.metric_source_type = ::std::option::Option::Some(input);
@@ -287,7 +312,13 @@ impl ServiceLevelObjectiveSummaryBuilder {
     /// <li>
     /// <p>Service dependency</p></li>
     /// <li>
+    /// <p>Service</p></li>
+    /// <li>
     /// <p>CloudWatch metric</p></li>
+    /// <li>
+    /// <p>AppMonitor</p></li>
+    /// <li>
+    /// <p>Canary</p></li>
     /// </ul>
     pub fn set_metric_source_type(mut self, input: ::std::option::Option<crate::types::MetricSourceType>) -> Self {
         self.metric_source_type = input;
@@ -300,10 +331,30 @@ impl ServiceLevelObjectiveSummaryBuilder {
     /// <li>
     /// <p>Service dependency</p></li>
     /// <li>
+    /// <p>Service</p></li>
+    /// <li>
     /// <p>CloudWatch metric</p></li>
+    /// <li>
+    /// <p>AppMonitor</p></li>
+    /// <li>
+    /// <p>Canary</p></li>
     /// </ul>
     pub fn get_metric_source_type(&self) -> &::std::option::Option<crate::types::MetricSourceType> {
         &self.metric_source_type
+    }
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub fn metric_source(mut self, input: crate::types::MetricSource) -> Self {
+        self.metric_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub fn set_metric_source(mut self, input: ::std::option::Option<crate::types::MetricSource>) -> Self {
+        self.metric_source = input;
+        self
+    }
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub fn get_metric_source(&self) -> &::std::option::Option<crate::types::MetricSource> {
+        &self.metric_source
     }
     /// Consumes the builder and constructs a [`ServiceLevelObjectiveSummary`](crate::types::ServiceLevelObjectiveSummary).
     /// This method will fail if any of the following fields are not set:
@@ -329,6 +380,7 @@ impl ServiceLevelObjectiveSummaryBuilder {
             created_time: self.created_time,
             evaluation_type: self.evaluation_type,
             metric_source_type: self.metric_source_type,
+            metric_source: self.metric_source,
         })
     }
 }

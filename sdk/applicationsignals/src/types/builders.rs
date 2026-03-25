@@ -5,6 +5,8 @@ pub use crate::types::_grouping_configuration::GroupingConfigurationBuilder;
 
 pub use crate::types::_dependency_config::DependencyConfigBuilder;
 
+pub use crate::types::_metric_source::MetricSourceBuilder;
+
 pub use crate::types::_service_level_indicator_config::ServiceLevelIndicatorConfigBuilder;
 
 pub use crate::types::_request_based_service_level_indicator_config::RequestBasedServiceLevelIndicatorConfigBuilder;

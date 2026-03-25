@@ -31,7 +31,13 @@ pub struct ServiceLevelObjective {
     /// <li>
     /// <p>Service dependency</p></li>
     /// <li>
+    /// <p>Service</p></li>
+    /// <li>
     /// <p>CloudWatch metric</p></li>
+    /// <li>
+    /// <p>AppMonitor</p></li>
+    /// <li>
+    /// <p>Canary</p></li>
     /// </ul>
     pub metric_source_type: ::std::option::Option<crate::types::MetricSourceType>,
 }
@@ -87,7 +93,13 @@ impl ServiceLevelObjective {
     /// <li>
     /// <p>Service dependency</p></li>
     /// <li>
+    /// <p>Service</p></li>
+    /// <li>
     /// <p>CloudWatch metric</p></li>
+    /// <li>
+    /// <p>AppMonitor</p></li>
+    /// <li>
+    /// <p>Canary</p></li>
     /// </ul>
     pub fn metric_source_type(&self) -> ::std::option::Option<&crate::types::MetricSourceType> {
         self.metric_source_type.as_ref()
@@ -275,7 +287,13 @@ impl ServiceLevelObjectiveBuilder {
     /// <li>
     /// <p>Service dependency</p></li>
     /// <li>
+    /// <p>Service</p></li>
+    /// <li>
     /// <p>CloudWatch metric</p></li>
+    /// <li>
+    /// <p>AppMonitor</p></li>
+    /// <li>
+    /// <p>Canary</p></li>
     /// </ul>
     pub fn metric_source_type(mut self, input: crate::types::MetricSourceType) -> Self {
         self.metric_source_type = ::std::option::Option::Some(input);
@@ -288,7 +306,13 @@ impl ServiceLevelObjectiveBuilder {
     /// <li>
     /// <p>Service dependency</p></li>
     /// <li>
+    /// <p>Service</p></li>
+    /// <li>
     /// <p>CloudWatch metric</p></li>
+    /// <li>
+    /// <p>AppMonitor</p></li>
+    /// <li>
+    /// <p>Canary</p></li>
     /// </ul>
     pub fn set_metric_source_type(mut self, input: ::std::option::Option<crate::types::MetricSourceType>) -> Self {
         self.metric_source_type = input;
@@ -301,7 +325,13 @@ impl ServiceLevelObjectiveBuilder {
     /// <li>
     /// <p>Service dependency</p></li>
     /// <li>
+    /// <p>Service</p></li>
+    /// <li>
     /// <p>CloudWatch metric</p></li>
+    /// <li>
+    /// <p>AppMonitor</p></li>
+    /// <li>
+    /// <p>Canary</p></li>
     /// </ul>
     pub fn get_metric_source_type(&self) -> &::std::option::Option<crate::types::MetricSourceType> {
         &self.metric_source_type

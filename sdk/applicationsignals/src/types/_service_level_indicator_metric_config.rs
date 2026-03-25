@@ -29,6 +29,8 @@ pub struct ServiceLevelIndicatorMetricConfig {
     pub statistic: ::std::option::Option<::std::string::String>,
     /// <p>The number of seconds to use as the period for SLO evaluation. Your application's performance is compared to the SLI during each period. For each period, the application is determined to have either achieved or not achieved the necessary performance.</p>
     pub period_seconds: ::std::option::Option<i32>,
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub metric_source: ::std::option::Option<crate::types::MetricSource>,
     /// <p>If this SLO monitors a CloudWatch metric or the result of a CloudWatch metric math expression, use this structure to specify that metric or expression.</p>
     pub metric_data_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
     /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
@@ -72,6 +74,10 @@ impl ServiceLevelIndicatorMetricConfig {
     pub fn period_seconds(&self) -> ::std::option::Option<i32> {
         self.period_seconds
     }
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub fn metric_source(&self) -> ::std::option::Option<&crate::types::MetricSource> {
+        self.metric_source.as_ref()
+    }
     /// <p>If this SLO monitors a CloudWatch metric or the result of a CloudWatch metric math expression, use this structure to specify that metric or expression.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_data_queries.is_none()`.
@@ -100,6 +106,7 @@ pub struct ServiceLevelIndicatorMetricConfigBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
     pub(crate) statistic: ::std::option::Option<::std::string::String>,
     pub(crate) period_seconds: ::std::option::Option<i32>,
+    pub(crate) metric_source: ::std::option::Option<crate::types::MetricSource>,
     pub(crate) metric_data_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
     pub(crate) dependency_config: ::std::option::Option<crate::types::DependencyConfig>,
 }
@@ -240,6 +247,20 @@ impl ServiceLevelIndicatorMetricConfigBuilder {
     pub fn get_period_seconds(&self) -> &::std::option::Option<i32> {
         &self.period_seconds
     }
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub fn metric_source(mut self, input: crate::types::MetricSource) -> Self {
+        self.metric_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub fn set_metric_source(mut self, input: ::std::option::Option<crate::types::MetricSource>) -> Self {
+        self.metric_source = input;
+        self
+    }
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub fn get_metric_source(&self) -> &::std::option::Option<crate::types::MetricSource> {
+        &self.metric_source
+    }
     /// Appends an item to `metric_data_queries`.
     ///
     /// To override the contents of this collection use [`set_metric_data_queries`](Self::set_metric_data_queries).
@@ -283,6 +304,7 @@ impl ServiceLevelIndicatorMetricConfigBuilder {
             metric_name: self.metric_name,
             statistic: self.statistic,
             period_seconds: self.period_seconds,
+            metric_source: self.metric_source,
             metric_data_queries: self.metric_data_queries,
             dependency_config: self.dependency_config,
         }

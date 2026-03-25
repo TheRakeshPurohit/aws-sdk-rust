@@ -9,6 +9,16 @@ pub(crate) fn reflens_get_agreement_terms_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_agreement_payment_requests_output_output_next_token(
+    input: &crate::operation::list_agreement_payment_requests::ListAgreementPaymentRequestsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_agreements_output_output_next_token(
     input: &crate::operation::search_agreements::SearchAgreementsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -16,5 +26,12 @@ pub(crate) fn reflens_search_agreements_output_output_next_token(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_agreement_payment_requests_output_output_items(
+    input: crate::operation::list_agreement_payment_requests::ListAgreementPaymentRequestsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PaymentRequestSummary>> {
+    let input = input.items;
     ::std::option::Option::Some(input)
 }

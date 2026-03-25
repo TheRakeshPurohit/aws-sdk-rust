@@ -40,6 +40,9 @@ where
                             builder =
                                 builder.set_dependency_config(crate::protocol_serde::shape_dependency_config::de_dependency_config(tokens, _value)?);
                         }
+                        "MetricSource" => {
+                            builder = builder.set_metric_source(crate::protocol_serde::shape_metric_source::de_metric_source(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

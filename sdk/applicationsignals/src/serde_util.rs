@@ -549,6 +549,13 @@ pub(crate) fn metric_reference_correct_errors(
     builder
 }
 
+pub(crate) fn metric_source_correct_errors(mut builder: crate::types::builders::MetricSourceBuilder) -> crate::types::builders::MetricSourceBuilder {
+    if builder.metric_source_key_attributes.is_none() {
+        builder.metric_source_key_attributes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn recurrence_rule_correct_errors(
     mut builder: crate::types::builders::RecurrenceRuleBuilder,
 ) -> crate::types::builders::RecurrenceRuleBuilder {

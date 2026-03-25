@@ -23,11 +23,19 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_cancel_agreement_payment_request;
+
 pub(crate) mod shape_describe_agreement;
+
+pub(crate) mod shape_get_agreement_payment_request;
 
 pub(crate) mod shape_get_agreement_terms;
 
+pub(crate) mod shape_list_agreement_payment_requests;
+
 pub(crate) mod shape_search_agreements;
+
+pub(crate) mod shape_send_agreement_payment_request;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -39,15 +47,25 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_cancel_agreement_payment_request_input;
+
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_describe_agreement_input;
+
+pub(crate) mod shape_get_agreement_payment_request_input;
 
 pub(crate) mod shape_get_agreement_terms_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_list_agreement_payment_requests_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_search_agreements_input;
+
+pub(crate) mod shape_send_agreement_payment_request_input;
 
 pub(crate) mod shape_throttling_exception;
 
@@ -63,6 +81,8 @@ pub(crate) mod shape_estimated_charges;
 
 pub(crate) mod shape_filter;
 
+pub(crate) mod shape_payment_request_summary_list;
+
 pub(crate) mod shape_proposal_summary;
 
 pub(crate) mod shape_proposer;
@@ -74,6 +94,8 @@ pub(crate) mod shape_validation_exception_field_list;
 pub(crate) mod shape_accepted_term;
 
 pub(crate) mod shape_agreement_view_summary;
+
+pub(crate) mod shape_payment_request_summary;
 
 pub(crate) mod shape_resources;
 

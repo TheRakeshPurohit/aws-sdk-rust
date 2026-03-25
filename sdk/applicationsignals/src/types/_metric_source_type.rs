@@ -12,7 +12,10 @@
 /// ```text
 /// # let metricsourcetype = unimplemented!();
 /// match metricsourcetype {
+///     MetricSourceType::Appmonitor => { /* ... */ },
+///     MetricSourceType::Canary => { /* ... */ },
 ///     MetricSourceType::CloudwatchMetric => { /* ... */ },
+///     MetricSourceType::Service => { /* ... */ },
 ///     MetricSourceType::ServiceDependency => { /* ... */ },
 ///     MetricSourceType::ServiceOperation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -44,7 +47,13 @@
 )]
 pub enum MetricSourceType {
     #[allow(missing_docs)] // documentation missing in model
+    Appmonitor,
+    #[allow(missing_docs)] // documentation missing in model
+    Canary,
+    #[allow(missing_docs)] // documentation missing in model
     CloudwatchMetric,
+    #[allow(missing_docs)] // documentation missing in model
+    Service,
     #[allow(missing_docs)] // documentation missing in model
     ServiceDependency,
     #[allow(missing_docs)] // documentation missing in model
@@ -56,7 +65,10 @@ pub enum MetricSourceType {
 impl ::std::convert::From<&str> for MetricSourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AppMonitor" => MetricSourceType::Appmonitor,
+            "Canary" => MetricSourceType::Canary,
             "CloudWatchMetric" => MetricSourceType::CloudwatchMetric,
+            "Service" => MetricSourceType::Service,
             "ServiceDependency" => MetricSourceType::ServiceDependency,
             "ServiceOperation" => MetricSourceType::ServiceOperation,
             other => MetricSourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -74,7 +86,10 @@ impl MetricSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            MetricSourceType::Appmonitor => "AppMonitor",
+            MetricSourceType::Canary => "Canary",
             MetricSourceType::CloudwatchMetric => "CloudWatchMetric",
+            MetricSourceType::Service => "Service",
             MetricSourceType::ServiceDependency => "ServiceDependency",
             MetricSourceType::ServiceOperation => "ServiceOperation",
             MetricSourceType::Unknown(value) => value.as_str(),
@@ -82,7 +97,14 @@ impl MetricSourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CloudWatchMetric", "ServiceDependency", "ServiceOperation"]
+        &[
+            "AppMonitor",
+            "Canary",
+            "CloudWatchMetric",
+            "Service",
+            "ServiceDependency",
+            "ServiceOperation",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for MetricSourceType {
@@ -105,7 +127,10 @@ impl MetricSourceType {
 impl ::std::fmt::Display for MetricSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            MetricSourceType::Appmonitor => write!(f, "AppMonitor"),
+            MetricSourceType::Canary => write!(f, "Canary"),
             MetricSourceType::CloudwatchMetric => write!(f, "CloudWatchMetric"),
+            MetricSourceType::Service => write!(f, "Service"),
             MetricSourceType::ServiceDependency => write!(f, "ServiceDependency"),
             MetricSourceType::ServiceOperation => write!(f, "ServiceOperation"),
             MetricSourceType::Unknown(value) => write!(f, "{value}"),

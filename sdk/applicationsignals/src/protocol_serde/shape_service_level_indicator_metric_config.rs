@@ -31,23 +31,29 @@ pub fn ser_service_level_indicator_metric_config(
             ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_10) = &input.metric_data_queries {
-        let mut array_11 = object.key("MetricDataQueries").start_array();
-        for item_12 in var_10 {
+    if let Some(var_10) = &input.metric_source {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("MetricSource").start_object();
+        crate::protocol_serde::shape_metric_source::ser_metric_source(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.metric_data_queries {
+        let mut array_13 = object.key("MetricDataQueries").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_metric_data_query::ser_metric_data_query(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_metric_data_query::ser_metric_data_query(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
-    if let Some(var_14) = &input.dependency_config {
+    if let Some(var_16) = &input.dependency_config {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("DependencyConfig").start_object();
-        crate::protocol_serde::shape_dependency_config::ser_dependency_config(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_17 = object.key("DependencyConfig").start_object();
+        crate::protocol_serde::shape_dependency_config::ser_dependency_config(&mut object_17, var_16)?;
+        object_17.finish();
     }
     Ok(())
 }

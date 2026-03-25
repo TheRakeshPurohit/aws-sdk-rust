@@ -19,14 +19,20 @@ pub fn ser_list_service_level_objectives_input_input(
         }
         object_4.finish();
     }
-    if let Some(var_7) = &input.metric_source_types {
-        let mut array_8 = object.key("MetricSourceTypes").start_array();
-        for item_9 in var_7 {
+    if let Some(var_7) = &input.metric_source {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("MetricSource").start_object();
+        crate::protocol_serde::shape_metric_source::ser_metric_source(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.metric_source_types {
+        let mut array_10 = object.key("MetricSourceTypes").start_array();
+        for item_11 in var_9 {
             {
-                array_8.value().string(item_9.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_8.finish();
+        array_10.finish();
     }
     Ok(())
 }

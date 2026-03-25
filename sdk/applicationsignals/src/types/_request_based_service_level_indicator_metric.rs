@@ -28,6 +28,8 @@ pub struct RequestBasedServiceLevelIndicatorMetric {
     pub monitored_request_count_metric: ::std::option::Option<crate::types::MonitoredRequestCountMetricDataQueries>,
     /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
     pub dependency_config: ::std::option::Option<crate::types::DependencyConfig>,
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub metric_source: ::std::option::Option<crate::types::MetricSource>,
 }
 impl RequestBasedServiceLevelIndicatorMetric {
     /// <p>This is a string-to-string map that contains information about the type of object that this SLO is related to. It can include the following fields.</p>
@@ -67,6 +69,10 @@ impl RequestBasedServiceLevelIndicatorMetric {
     pub fn dependency_config(&self) -> ::std::option::Option<&crate::types::DependencyConfig> {
         self.dependency_config.as_ref()
     }
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub fn metric_source(&self) -> ::std::option::Option<&crate::types::MetricSource> {
+        self.metric_source.as_ref()
+    }
 }
 impl RequestBasedServiceLevelIndicatorMetric {
     /// Creates a new builder-style object to manufacture [`RequestBasedServiceLevelIndicatorMetric`](crate::types::RequestBasedServiceLevelIndicatorMetric).
@@ -85,6 +91,7 @@ pub struct RequestBasedServiceLevelIndicatorMetricBuilder {
     pub(crate) total_request_count_metric: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
     pub(crate) monitored_request_count_metric: ::std::option::Option<crate::types::MonitoredRequestCountMetricDataQueries>,
     pub(crate) dependency_config: ::std::option::Option<crate::types::DependencyConfig>,
+    pub(crate) metric_source: ::std::option::Option<crate::types::MetricSource>,
 }
 impl RequestBasedServiceLevelIndicatorMetricBuilder {
     /// Adds a key-value pair to `key_attributes`.
@@ -227,6 +234,20 @@ impl RequestBasedServiceLevelIndicatorMetricBuilder {
     pub fn get_dependency_config(&self) -> &::std::option::Option<crate::types::DependencyConfig> {
         &self.dependency_config
     }
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub fn metric_source(mut self, input: crate::types::MetricSource) -> Self {
+        self.metric_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub fn set_metric_source(mut self, input: ::std::option::Option<crate::types::MetricSource>) -> Self {
+        self.metric_source = input;
+        self
+    }
+    /// <p>Identifies the metric source for SLOs on resources other than Application Signals services.</p>
+    pub fn get_metric_source(&self) -> &::std::option::Option<crate::types::MetricSource> {
+        &self.metric_source
+    }
     /// Consumes the builder and constructs a [`RequestBasedServiceLevelIndicatorMetric`](crate::types::RequestBasedServiceLevelIndicatorMetric).
     /// This method will fail if any of the following fields are not set:
     /// - [`total_request_count_metric`](crate::types::builders::RequestBasedServiceLevelIndicatorMetricBuilder::total_request_count_metric)
@@ -245,6 +266,7 @@ impl RequestBasedServiceLevelIndicatorMetricBuilder {
             })?,
             monitored_request_count_metric: self.monitored_request_count_metric,
             dependency_config: self.dependency_config,
+            metric_source: self.metric_source,
         })
     }
 }

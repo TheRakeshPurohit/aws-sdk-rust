@@ -13,6 +13,8 @@
 /// # let publishstatus = unimplemented!();
 /// match publishstatus {
 ///     PublishStatus::Disabled => { /* ... */ },
+///     PublishStatus::DisableFailed => { /* ... */ },
+///     PublishStatus::DisableInProgress => { /* ... */ },
 ///     PublishStatus::Published => { /* ... */ },
 ///     PublishStatus::PublishFailed => { /* ... */ },
 ///     PublishStatus::PublishInProgress => { /* ... */ },
@@ -47,6 +49,10 @@ pub enum PublishStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
+    DisableFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    DisableInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Published,
     #[allow(missing_docs)] // documentation missing in model
     PublishFailed,
@@ -60,6 +66,8 @@ impl ::std::convert::From<&str> for PublishStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => PublishStatus::Disabled,
+            "DISABLE_FAILED" => PublishStatus::DisableFailed,
+            "DISABLE_IN_PROGRESS" => PublishStatus::DisableInProgress,
             "PUBLISHED" => PublishStatus::Published,
             "PUBLISH_FAILED" => PublishStatus::PublishFailed,
             "PUBLISH_IN_PROGRESS" => PublishStatus::PublishInProgress,
@@ -79,6 +87,8 @@ impl PublishStatus {
     pub fn as_str(&self) -> &str {
         match self {
             PublishStatus::Disabled => "DISABLED",
+            PublishStatus::DisableFailed => "DISABLE_FAILED",
+            PublishStatus::DisableInProgress => "DISABLE_IN_PROGRESS",
             PublishStatus::Published => "PUBLISHED",
             PublishStatus::PublishFailed => "PUBLISH_FAILED",
             PublishStatus::PublishInProgress => "PUBLISH_IN_PROGRESS",
@@ -87,7 +97,14 @@ impl PublishStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "PUBLISHED", "PUBLISH_FAILED", "PUBLISH_IN_PROGRESS"]
+        &[
+            "DISABLED",
+            "DISABLE_FAILED",
+            "DISABLE_IN_PROGRESS",
+            "PUBLISHED",
+            "PUBLISH_FAILED",
+            "PUBLISH_IN_PROGRESS",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for PublishStatus {
@@ -111,6 +128,8 @@ impl ::std::fmt::Display for PublishStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PublishStatus::Disabled => write!(f, "DISABLED"),
+            PublishStatus::DisableFailed => write!(f, "DISABLE_FAILED"),
+            PublishStatus::DisableInProgress => write!(f, "DISABLE_IN_PROGRESS"),
             PublishStatus::Published => write!(f, "PUBLISHED"),
             PublishStatus::PublishFailed => write!(f, "PUBLISH_FAILED"),
             PublishStatus::PublishInProgress => write!(f, "PUBLISH_IN_PROGRESS"),

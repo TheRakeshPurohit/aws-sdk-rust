@@ -7,6 +7,8 @@ pub use crate::types::_grouping_configuration::GroupingConfiguration;
 
 pub use crate::types::_dependency_config::DependencyConfig;
 
+pub use crate::types::_metric_source::MetricSource;
+
 pub use crate::types::_service_level_indicator_config::ServiceLevelIndicatorConfig;
 
 pub use crate::types::_request_based_service_level_indicator_config::RequestBasedServiceLevelIndicatorConfig;
@@ -180,6 +182,8 @@ mod _metric_data_query;
 mod _metric_graph;
 
 mod _metric_reference;
+
+mod _metric_source;
 
 mod _metric_source_type;
 

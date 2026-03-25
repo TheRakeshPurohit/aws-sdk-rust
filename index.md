@@ -166,6 +166,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Systems Manager for SAP | [aws-sdk-ssmsap](https://crates.io/crates/aws-sdk-ssmsap) ([docs](https://docs.rs/aws-sdk-ssmsap)) |
 | AWS Telco Network Builder | [aws-sdk-tnb](https://crates.io/crates/aws-sdk-tnb) ([docs](https://docs.rs/aws-sdk-tnb)) |
 | AWS Transfer Family | [aws-sdk-transfer](https://crates.io/crates/aws-sdk-transfer) ([docs](https://docs.rs/aws-sdk-transfer)) |
+| AWS User Experience Customization | [aws-sdk-uxc](https://crates.io/crates/aws-sdk-uxc) ([docs](https://docs.rs/aws-sdk-uxc)) |
 | AWS User Notifications | [aws-sdk-notifications](https://crates.io/crates/aws-sdk-notifications) ([docs](https://docs.rs/aws-sdk-notifications)) |
 | AWS User Notifications Contacts | [aws-sdk-notificationscontacts](https://crates.io/crates/aws-sdk-notificationscontacts) ([docs](https://docs.rs/aws-sdk-notificationscontacts)) |
 | AWS WAF | [aws-sdk-waf](https://crates.io/crates/aws-sdk-waf) ([docs](https://docs.rs/aws-sdk-waf)) |

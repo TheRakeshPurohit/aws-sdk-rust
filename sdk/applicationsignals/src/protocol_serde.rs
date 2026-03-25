@@ -147,6 +147,8 @@ pub(crate) mod shape_grouping_configuration;
 
 pub(crate) mod shape_log_group_references;
 
+pub(crate) mod shape_metric_source;
+
 pub(crate) mod shape_request_based_service_level_indicator_config;
 
 pub(crate) mod shape_service;

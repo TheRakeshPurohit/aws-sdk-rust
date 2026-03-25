@@ -46,5 +46,14 @@ pub fn ser_request_based_service_level_indicator_metric_config(
         crate::protocol_serde::shape_dependency_config::ser_dependency_config(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.metric_source {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("MetricSource").start_object();
+        crate::protocol_serde::shape_metric_source::ser_metric_source(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.metric_name {
+        object.key("MetricName").string(var_17.as_str());
+    }
     Ok(())
 }

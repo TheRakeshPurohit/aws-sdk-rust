@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DescribeAgreement`](crate::operation::describe_agreement) operation has
-/// a [`Client::describe_agreement`], function which returns a builder for that operation.
+/// For example, the [`CancelAgreementPaymentRequest`](crate::operation::cancel_agreement_payment_request) operation has
+/// a [`Client::cancel_agreement_payment_request`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.describe_agreement()
-///     .agreement_id("example")
+/// let result = client.cancel_agreement_payment_request()
+///     .payment_request_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod cancel_agreement_payment_request;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -147,7 +149,7 @@ impl Client {
 /// # let client: aws_sdk_marketplaceagreement::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.describe_agreement()
+/// let result = client.cancel_agreement_payment_request()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -165,6 +167,12 @@ pub mod customize;
 
 mod describe_agreement;
 
+mod get_agreement_payment_request;
+
 mod get_agreement_terms;
 
+mod list_agreement_payment_requests;
+
 mod search_agreements;
+
+mod send_agreement_payment_request;
