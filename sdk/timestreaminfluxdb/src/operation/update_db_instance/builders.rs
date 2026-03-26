@@ -232,4 +232,18 @@ impl UpdateDbInstanceFluentBuilder {
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         self.inner.get_allocated_storage()
     }
+    /// <p>Specifies the maintenance schedule for the DB instance, including the preferred maintenance window and timezone.</p>
+    pub fn maintenance_schedule(mut self, input: crate::types::MaintenanceSchedule) -> Self {
+        self.inner = self.inner.maintenance_schedule(input);
+        self
+    }
+    /// <p>Specifies the maintenance schedule for the DB instance, including the preferred maintenance window and timezone.</p>
+    pub fn set_maintenance_schedule(mut self, input: ::std::option::Option<crate::types::MaintenanceSchedule>) -> Self {
+        self.inner = self.inner.set_maintenance_schedule(input);
+        self
+    }
+    /// <p>Specifies the maintenance schedule for the DB instance, including the preferred maintenance window and timezone.</p>
+    pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
+        self.inner.get_maintenance_schedule()
+    }
 }

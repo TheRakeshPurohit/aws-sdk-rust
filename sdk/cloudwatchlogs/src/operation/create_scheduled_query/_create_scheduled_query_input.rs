@@ -7,7 +7,7 @@ pub struct CreateScheduledQueryInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for the scheduled query to help identify its purpose and functionality.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The query language to use for the scheduled query. Valid values are <code>LogsQL</code>, <code>PPL</code>, and <code>SQL</code>.</p>
+    /// <p>The query language to use for the scheduled query. Valid values are <code>CWLI</code>, <code>PPL</code>, and <code>SQL</code>.</p>
     pub query_language: ::std::option::Option<crate::types::QueryLanguage>,
     /// <p>The query string to execute. This is the same query syntax used in CloudWatch Logs Insights. Maximum length is 10,000 characters.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
@@ -41,7 +41,7 @@ impl CreateScheduledQueryInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The query language to use for the scheduled query. Valid values are <code>LogsQL</code>, <code>PPL</code>, and <code>SQL</code>.</p>
+    /// <p>The query language to use for the scheduled query. Valid values are <code>CWLI</code>, <code>PPL</code>, and <code>SQL</code>.</p>
     pub fn query_language(&self) -> ::std::option::Option<&crate::types::QueryLanguage> {
         self.query_language.as_ref()
     }
@@ -148,18 +148,18 @@ impl CreateScheduledQueryInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The query language to use for the scheduled query. Valid values are <code>LogsQL</code>, <code>PPL</code>, and <code>SQL</code>.</p>
+    /// <p>The query language to use for the scheduled query. Valid values are <code>CWLI</code>, <code>PPL</code>, and <code>SQL</code>.</p>
     /// This field is required.
     pub fn query_language(mut self, input: crate::types::QueryLanguage) -> Self {
         self.query_language = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The query language to use for the scheduled query. Valid values are <code>LogsQL</code>, <code>PPL</code>, and <code>SQL</code>.</p>
+    /// <p>The query language to use for the scheduled query. Valid values are <code>CWLI</code>, <code>PPL</code>, and <code>SQL</code>.</p>
     pub fn set_query_language(mut self, input: ::std::option::Option<crate::types::QueryLanguage>) -> Self {
         self.query_language = input;
         self
     }
-    /// <p>The query language to use for the scheduled query. Valid values are <code>LogsQL</code>, <code>PPL</code>, and <code>SQL</code>.</p>
+    /// <p>The query language to use for the scheduled query. Valid values are <code>CWLI</code>, <code>PPL</code>, and <code>SQL</code>.</p>
     pub fn get_query_language(&self) -> &::std::option::Option<crate::types::QueryLanguage> {
         &self.query_language
     }

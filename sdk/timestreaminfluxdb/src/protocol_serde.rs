@@ -121,6 +121,8 @@ pub(crate) mod shape_update_db_instance_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_cluster_configuration;
+
 pub(crate) mod shape_db_cluster_summary_list;
 
 pub(crate) mod shape_db_instance_for_cluster_summary_list;
@@ -132,6 +134,8 @@ pub(crate) mod shape_db_parameter_group_summary_list;
 pub(crate) mod shape_instance_mode_list;
 
 pub(crate) mod shape_log_delivery_configuration;
+
+pub(crate) mod shape_maintenance_schedule;
 
 pub(crate) mod shape_parameters;
 

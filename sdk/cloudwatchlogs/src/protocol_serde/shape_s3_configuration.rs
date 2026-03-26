@@ -9,6 +9,12 @@ pub fn ser_s3_configuration(
     {
         object.key("roleArn").string(input.role_arn.as_str());
     }
+    if let Some(var_1) = &input.owner_account_id {
+        object.key("ownerAccountId").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.kms_key_id {
+        object.key("kmsKeyId").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -37,6 +43,20 @@ where
                         }
                         "roleArn" => {
                             builder = builder.set_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ownerAccountId" => {
+                            builder = builder.set_owner_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "kmsKeyId" => {
+                            builder = builder.set_kms_key_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

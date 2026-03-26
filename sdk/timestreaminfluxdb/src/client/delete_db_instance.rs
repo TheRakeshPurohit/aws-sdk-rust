@@ -27,6 +27,9 @@ impl super::Client {
     ///   - [`db_cluster_id(Option<String>)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::db_cluster_id): <p>Specifies the DbCluster to which this DbInstance belongs to.</p>
     ///   - [`instance_mode(Option<InstanceMode>)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::instance_mode): <p>Specifies the DbInstance's role in the cluster.</p>
     ///   - [`instance_modes(Option<Vec::<InstanceMode>>)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::instance_modes): <p>Specifies the DbInstance's roles in the cluster.</p>
+    ///   - [`maintenance_schedule(Option<MaintenanceSchedule>)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::maintenance_schedule): <p>The maintenance schedule for the DB instance.</p>
+    ///   - [`last_maintenance_time(Option<DateTime>)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::last_maintenance_time): <p>The timestamp of the last completed maintenance operation on the DB instance.</p>
+    ///   - [`next_maintenance_time(Option<DateTime>)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::next_maintenance_time): <p>The timestamp of the next scheduled maintenance operation on the DB instance.</p>
     /// - On failure, responds with [`SdkError<DeleteDbInstanceError>`](crate::operation::delete_db_instance::DeleteDbInstanceError)
     pub fn delete_db_instance(&self) -> crate::operation::delete_db_instance::builders::DeleteDbInstanceFluentBuilder {
         crate::operation::delete_db_instance::builders::DeleteDbInstanceFluentBuilder::new(self.handle.clone())

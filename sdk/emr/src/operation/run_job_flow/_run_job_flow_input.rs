@@ -20,6 +20,10 @@ pub struct RunJobFlowInput {
     pub instances: ::std::option::Option<crate::types::JobFlowInstancesConfig>,
     /// <p>A list of steps to run.</p>
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::StepConfig>>,
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for steps specified in the RunJobFlow request. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:iam::account-id:role/role-name</code>.</p>
+    /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+    /// <p>This parameter applies only to steps included in the <code>Steps</code> parameter of this RunJobFlow request. It does not apply to steps added later to the cluster.</p>
+    pub step_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
     pub bootstrap_actions: ::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionConfig>>,
     /// <note>
@@ -140,6 +144,12 @@ impl RunJobFlowInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
     pub fn steps(&self) -> &[crate::types::StepConfig] {
         self.steps.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for steps specified in the RunJobFlow request. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:iam::account-id:role/role-name</code>.</p>
+    /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+    /// <p>This parameter applies only to steps included in the <code>Steps</code> parameter of this RunJobFlow request. It does not apply to steps added later to the cluster.</p>
+    pub fn step_execution_role_arn(&self) -> ::std::option::Option<&str> {
+        self.step_execution_role_arn.as_deref()
     }
     /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
     ///
@@ -310,6 +320,7 @@ pub struct RunJobFlowInputBuilder {
     pub(crate) release_label: ::std::option::Option<::std::string::String>,
     pub(crate) instances: ::std::option::Option<crate::types::JobFlowInstancesConfig>,
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::StepConfig>>,
+    pub(crate) step_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bootstrap_actions: ::std::option::Option<::std::vec::Vec<crate::types::BootstrapActionConfig>>,
     pub(crate) supported_products: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) new_supported_products: ::std::option::Option<::std::vec::Vec<crate::types::SupportedProductConfig>>,
@@ -456,6 +467,26 @@ impl RunJobFlowInputBuilder {
     /// <p>A list of steps to run.</p>
     pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StepConfig>> {
         &self.steps
+    }
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for steps specified in the RunJobFlow request. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:iam::account-id:role/role-name</code>.</p>
+    /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+    /// <p>This parameter applies only to steps included in the <code>Steps</code> parameter of this RunJobFlow request. It does not apply to steps added later to the cluster.</p>
+    pub fn step_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.step_execution_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for steps specified in the RunJobFlow request. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:iam::account-id:role/role-name</code>.</p>
+    /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+    /// <p>This parameter applies only to steps included in the <code>Steps</code> parameter of this RunJobFlow request. It does not apply to steps added later to the cluster.</p>
+    pub fn set_step_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.step_execution_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the runtime role for steps specified in the RunJobFlow request. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:iam::account-id:role/role-name</code>.</p>
+    /// <p>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted runtime role ARN.</p>
+    /// <p>This parameter applies only to steps included in the <code>Steps</code> parameter of this RunJobFlow request. It does not apply to steps added later to the cluster.</p>
+    pub fn get_step_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_execution_role_arn
     }
     /// Appends an item to `bootstrap_actions`.
     ///
@@ -965,6 +996,7 @@ impl RunJobFlowInputBuilder {
             release_label: self.release_label,
             instances: self.instances,
             steps: self.steps,
+            step_execution_role_arn: self.step_execution_role_arn,
             bootstrap_actions: self.bootstrap_actions,
             supported_products: self.supported_products,
             new_supported_products: self.new_supported_products,

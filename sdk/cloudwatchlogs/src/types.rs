@@ -157,6 +157,8 @@ pub use crate::types::_entity_rejection_error_type::EntityRejectionErrorType;
 
 pub use crate::types::_metric_transformation::MetricTransformation;
 
+pub use crate::types::_query_parameter::QueryParameter;
+
 pub use crate::types::_live_tail_session_start::LiveTailSessionStart;
 
 pub use crate::types::_live_tail_session_update::LiveTailSessionUpdate;
@@ -516,6 +518,8 @@ mod _query_definition;
 mod _query_info;
 
 mod _query_language;
+
+mod _query_parameter;
 
 mod _query_statistics;
 

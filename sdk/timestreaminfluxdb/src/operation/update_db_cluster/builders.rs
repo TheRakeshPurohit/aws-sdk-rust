@@ -192,4 +192,18 @@ impl UpdateDbClusterFluentBuilder {
     pub fn get_failover_mode(&self) -> &::std::option::Option<crate::types::FailoverMode> {
         self.inner.get_failover_mode()
     }
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub fn maintenance_schedule(mut self, input: crate::types::MaintenanceSchedule) -> Self {
+        self.inner = self.inner.maintenance_schedule(input);
+        self
+    }
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub fn set_maintenance_schedule(mut self, input: ::std::option::Option<crate::types::MaintenanceSchedule>) -> Self {
+        self.inner = self.inner.set_maintenance_schedule(input);
+        self
+    }
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
+        self.inner.get_maintenance_schedule()
+    }
 }

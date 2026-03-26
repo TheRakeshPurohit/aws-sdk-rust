@@ -21,10 +21,14 @@ impl super::Client {
     ///   - [`publicly_accessible(Option<bool>)`](crate::operation::get_db_cluster::GetDbClusterOutput::publicly_accessible): <p>Indicates if the DB cluster has a public IP to facilitate access from outside the VPC.</p>
     ///   - [`db_parameter_group_identifier(Option<String>)`](crate::operation::get_db_cluster::GetDbClusterOutput::db_parameter_group_identifier): <p>The ID of the DB parameter group assigned to your DB cluster.</p>
     ///   - [`log_delivery_configuration(Option<LogDeliveryConfiguration>)`](crate::operation::get_db_cluster::GetDbClusterOutput::log_delivery_configuration): <p>Configuration for sending InfluxDB engine logs to send to specified S3 bucket.</p>
+    ///   - [`maintenance_schedule(Option<MaintenanceSchedule>)`](crate::operation::get_db_cluster::GetDbClusterOutput::maintenance_schedule): <p>The maintenance schedule for the DB cluster.</p>
+    ///   - [`last_maintenance_time(Option<DateTime>)`](crate::operation::get_db_cluster::GetDbClusterOutput::last_maintenance_time): <p>The timestamp of the last completed maintenance operation on the DB cluster.</p>
+    ///   - [`next_maintenance_time(Option<DateTime>)`](crate::operation::get_db_cluster::GetDbClusterOutput::next_maintenance_time): <p>The timestamp of the next scheduled maintenance operation on the DB cluster.</p>
     ///   - [`influx_auth_parameters_secret_arn(Option<String>)`](crate::operation::get_db_cluster::GetDbClusterOutput::influx_auth_parameters_secret_arn): <p>The Amazon Resource Name (ARN) of the Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
     ///   - [`vpc_subnet_ids(Option<Vec::<String>>)`](crate::operation::get_db_cluster::GetDbClusterOutput::vpc_subnet_ids): <p>A list of VPC subnet IDs associated with the DB cluster.</p>
     ///   - [`vpc_security_group_ids(Option<Vec::<String>>)`](crate::operation::get_db_cluster::GetDbClusterOutput::vpc_security_group_ids): <p>A list of VPC security group IDs associated with the DB cluster.</p>
     ///   - [`failover_mode(Option<FailoverMode>)`](crate::operation::get_db_cluster::GetDbClusterOutput::failover_mode): <p>The configured failover mode for the DB cluster.</p>
+    ///   - [`cluster_configuration(Option<ClusterConfiguration>)`](crate::operation::get_db_cluster::GetDbClusterOutput::cluster_configuration): <p>Configuration for node modes in the DbCluster.</p>
     /// - On failure, responds with [`SdkError<GetDbClusterError>`](crate::operation::get_db_cluster::GetDbClusterError)
     pub fn get_db_cluster(&self) -> crate::operation::get_db_cluster::builders::GetDbClusterFluentBuilder {
         crate::operation::get_db_cluster::builders::GetDbClusterFluentBuilder::new(self.handle.clone())

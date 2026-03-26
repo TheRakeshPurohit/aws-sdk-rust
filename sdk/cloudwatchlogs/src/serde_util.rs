@@ -243,6 +243,15 @@ pub(crate) fn metric_transformation_correct_errors(
     builder
 }
 
+pub(crate) fn query_parameter_correct_errors(
+    mut builder: crate::types::builders::QueryParameterBuilder,
+) -> crate::types::builders::QueryParameterBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn add_key_entry_correct_errors(mut builder: crate::types::builders::AddKeyEntryBuilder) -> crate::types::builders::AddKeyEntryBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())

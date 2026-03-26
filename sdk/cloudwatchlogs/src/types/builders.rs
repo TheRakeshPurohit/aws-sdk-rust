@@ -103,6 +103,8 @@ pub use crate::types::_input_log_event::InputLogEventBuilder;
 
 pub use crate::types::_metric_transformation::MetricTransformationBuilder;
 
+pub use crate::types::_query_parameter::QueryParameterBuilder;
+
 pub use crate::types::_live_tail_session_start::LiveTailSessionStartBuilder;
 
 pub use crate::types::_live_tail_session_update::LiveTailSessionUpdateBuilder;

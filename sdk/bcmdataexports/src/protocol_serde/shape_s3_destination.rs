@@ -6,17 +6,20 @@ pub fn ser_s3_destination(
     {
         object.key("S3Bucket").string(input.s3_bucket.as_str());
     }
+    if let Some(var_1) = &input.s3_bucket_owner {
+        object.key("S3BucketOwner").string(var_1.as_str());
+    }
     {
         object.key("S3Prefix").string(input.s3_prefix.as_str());
     }
     {
         object.key("S3Region").string(input.s3_region.as_str());
     }
-    if let Some(var_1) = &input.s3_output_configurations {
+    if let Some(var_2) = &input.s3_output_configurations {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("S3OutputConfigurations").start_object();
-        crate::protocol_serde::shape_s3_output_configurations::ser_s3_output_configurations(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("S3OutputConfigurations").start_object();
+        crate::protocol_serde::shape_s3_output_configurations::ser_s3_output_configurations(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -39,6 +42,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "S3Bucket" => {
                             builder = builder.set_s3_bucket(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "S3BucketOwner" => {
+                            builder = builder.set_s3_bucket_owner(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

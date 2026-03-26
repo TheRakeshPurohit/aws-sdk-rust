@@ -17,6 +17,8 @@ pub struct PutQueryDefinitionInput {
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>Used as an idempotency token, to avoid returning an exception if the service receives the same request twice because of a network error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Use this parameter to include specific query parameters as part of your query definition. Query parameters are supported only for Logs Insights QL queries. Query parameters allow you to use placeholder variables in your query string that are substituted with values at execution time. Use the <code>{{parameterName}}</code> syntax in your query string to reference a parameter.</p>
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::QueryParameter>>,
 }
 impl PutQueryDefinitionInput {
     /// <p>Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
@@ -47,6 +49,12 @@ impl PutQueryDefinitionInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>Use this parameter to include specific query parameters as part of your query definition. Query parameters are supported only for Logs Insights QL queries. Query parameters allow you to use placeholder variables in your query string that are substituted with values at execution time. Use the <code>{{parameterName}}</code> syntax in your query string to reference a parameter.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::QueryParameter] {
+        self.parameters.as_deref().unwrap_or_default()
+    }
 }
 impl PutQueryDefinitionInput {
     /// Creates a new builder-style object to manufacture [`PutQueryDefinitionInput`](crate::operation::put_query_definition::PutQueryDefinitionInput).
@@ -65,6 +73,7 @@ pub struct PutQueryDefinitionInputBuilder {
     pub(crate) log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::QueryParameter>>,
 }
 impl PutQueryDefinitionInputBuilder {
     /// <p>Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
@@ -165,6 +174,26 @@ impl PutQueryDefinitionInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// Appends an item to `parameters`.
+    ///
+    /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+    ///
+    /// <p>Use this parameter to include specific query parameters as part of your query definition. Query parameters are supported only for Logs Insights QL queries. Query parameters allow you to use placeholder variables in your query string that are substituted with values at execution time. Use the <code>{{parameterName}}</code> syntax in your query string to reference a parameter.</p>
+    pub fn parameters(mut self, input: crate::types::QueryParameter) -> Self {
+        let mut v = self.parameters.unwrap_or_default();
+        v.push(input);
+        self.parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Use this parameter to include specific query parameters as part of your query definition. Query parameters are supported only for Logs Insights QL queries. Query parameters allow you to use placeholder variables in your query string that are substituted with values at execution time. Use the <code>{{parameterName}}</code> syntax in your query string to reference a parameter.</p>
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryParameter>>) -> Self {
+        self.parameters = input;
+        self
+    }
+    /// <p>Use this parameter to include specific query parameters as part of your query definition. Query parameters are supported only for Logs Insights QL queries. Query parameters allow you to use placeholder variables in your query string that are substituted with values at execution time. Use the <code>{{parameterName}}</code> syntax in your query string to reference a parameter.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryParameter>> {
+        &self.parameters
+    }
     /// Consumes the builder and constructs a [`PutQueryDefinitionInput`](crate::operation::put_query_definition::PutQueryDefinitionInput).
     pub fn build(
         self,
@@ -177,6 +206,7 @@ impl PutQueryDefinitionInputBuilder {
             log_group_names: self.log_group_names,
             query_string: self.query_string,
             client_token: self.client_token,
+            parameters: self.parameters,
         })
     }
 }

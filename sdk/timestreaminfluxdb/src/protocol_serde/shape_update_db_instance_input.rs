@@ -36,5 +36,11 @@ pub fn ser_update_db_instance_input_input(
             ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
+    if let Some(var_10) = &input.maintenance_schedule {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("maintenanceSchedule").start_object();
+        crate::protocol_serde::shape_maintenance_schedule::ser_maintenance_schedule(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

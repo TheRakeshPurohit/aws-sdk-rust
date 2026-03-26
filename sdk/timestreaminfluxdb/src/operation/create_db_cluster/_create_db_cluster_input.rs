@@ -49,6 +49,8 @@ pub struct CreateDbClusterInput {
     pub failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     /// <p>Configuration for sending InfluxDB engine logs to a specified S3 bucket.</p>
     pub log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
     /// <p>A list of key-value pairs to associate with the DB instance.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -137,6 +139,10 @@ impl CreateDbClusterInput {
     pub fn log_delivery_configuration(&self) -> ::std::option::Option<&crate::types::LogDeliveryConfiguration> {
         self.log_delivery_configuration.as_ref()
     }
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub fn maintenance_schedule(&self) -> ::std::option::Option<&crate::types::MaintenanceSchedule> {
+        self.maintenance_schedule.as_ref()
+    }
     /// <p>A list of key-value pairs to associate with the DB instance.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -162,6 +168,7 @@ impl ::std::fmt::Debug for CreateDbClusterInput {
         formatter.field("deployment_type", &self.deployment_type);
         formatter.field("failover_mode", &self.failover_mode);
         formatter.field("log_delivery_configuration", &self.log_delivery_configuration);
+        formatter.field("maintenance_schedule", &self.maintenance_schedule);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -194,6 +201,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) deployment_type: ::std::option::Option<crate::types::ClusterDeploymentType>,
     pub(crate) failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     pub(crate) log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
+    pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDbClusterInputBuilder {
@@ -485,6 +493,20 @@ impl CreateDbClusterInputBuilder {
     pub fn get_log_delivery_configuration(&self) -> &::std::option::Option<crate::types::LogDeliveryConfiguration> {
         &self.log_delivery_configuration
     }
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub fn maintenance_schedule(mut self, input: crate::types::MaintenanceSchedule) -> Self {
+        self.maintenance_schedule = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub fn set_maintenance_schedule(mut self, input: ::std::option::Option<crate::types::MaintenanceSchedule>) -> Self {
+        self.maintenance_schedule = input;
+        self
+    }
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
+        &self.maintenance_schedule
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -527,6 +549,7 @@ impl CreateDbClusterInputBuilder {
             deployment_type: self.deployment_type,
             failover_mode: self.failover_mode,
             log_delivery_configuration: self.log_delivery_configuration,
+            maintenance_schedule: self.maintenance_schedule,
             tags: self.tags,
         })
     }
@@ -551,6 +574,7 @@ impl ::std::fmt::Debug for CreateDbClusterInputBuilder {
         formatter.field("deployment_type", &self.deployment_type);
         formatter.field("failover_mode", &self.failover_mode);
         formatter.field("log_delivery_configuration", &self.log_delivery_configuration);
+        formatter.field("maintenance_schedule", &self.maintenance_schedule);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

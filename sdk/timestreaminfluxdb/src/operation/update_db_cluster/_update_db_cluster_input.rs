@@ -15,6 +15,8 @@ pub struct UpdateDbClusterInput {
     pub db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
     /// <p>Update the DB cluster's failover behavior.</p>
     pub failover_mode: ::std::option::Option<crate::types::FailoverMode>,
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
 }
 impl UpdateDbClusterInput {
     /// <p>Service-generated unique identifier of the DB cluster to update.</p>
@@ -41,6 +43,10 @@ impl UpdateDbClusterInput {
     pub fn failover_mode(&self) -> ::std::option::Option<&crate::types::FailoverMode> {
         self.failover_mode.as_ref()
     }
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub fn maintenance_schedule(&self) -> ::std::option::Option<&crate::types::MaintenanceSchedule> {
+        self.maintenance_schedule.as_ref()
+    }
 }
 impl UpdateDbClusterInput {
     /// Creates a new builder-style object to manufacture [`UpdateDbClusterInput`](crate::operation::update_db_cluster::UpdateDbClusterInput).
@@ -59,6 +65,7 @@ pub struct UpdateDbClusterInputBuilder {
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
     pub(crate) failover_mode: ::std::option::Option<crate::types::FailoverMode>,
+    pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
 }
 impl UpdateDbClusterInputBuilder {
     /// <p>Service-generated unique identifier of the DB cluster to update.</p>
@@ -146,6 +153,20 @@ impl UpdateDbClusterInputBuilder {
     pub fn get_failover_mode(&self) -> &::std::option::Option<crate::types::FailoverMode> {
         &self.failover_mode
     }
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub fn maintenance_schedule(mut self, input: crate::types::MaintenanceSchedule) -> Self {
+        self.maintenance_schedule = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub fn set_maintenance_schedule(mut self, input: ::std::option::Option<crate::types::MaintenanceSchedule>) -> Self {
+        self.maintenance_schedule = input;
+        self
+    }
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
+        &self.maintenance_schedule
+    }
     /// Consumes the builder and constructs a [`UpdateDbClusterInput`](crate::operation::update_db_cluster::UpdateDbClusterInput).
     pub fn build(
         self,
@@ -157,6 +178,7 @@ impl UpdateDbClusterInputBuilder {
             port: self.port,
             db_instance_type: self.db_instance_type,
             failover_mode: self.failover_mode,
+            maintenance_schedule: self.maintenance_schedule,
         })
     }
 }

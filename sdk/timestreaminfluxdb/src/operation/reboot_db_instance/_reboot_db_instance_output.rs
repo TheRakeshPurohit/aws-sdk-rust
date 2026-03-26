@@ -47,6 +47,12 @@ pub struct RebootDbInstanceOutput {
     pub instance_mode: ::std::option::Option<crate::types::InstanceMode>,
     /// <p>Specifies the DbInstance's roles in the cluster.</p>
     pub instance_modes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMode>>,
+    /// <p>The maintenance schedule for the DB instance.</p>
+    pub maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    /// <p>The timestamp of the last completed maintenance operation on the DB instance.</p>
+    pub last_maintenance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp of the next scheduled maintenance operation on the DB instance.</p>
+    pub next_maintenance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl RebootDbInstanceOutput {
@@ -146,6 +152,18 @@ impl RebootDbInstanceOutput {
     pub fn instance_modes(&self) -> &[crate::types::InstanceMode] {
         self.instance_modes.as_deref().unwrap_or_default()
     }
+    /// <p>The maintenance schedule for the DB instance.</p>
+    pub fn maintenance_schedule(&self) -> ::std::option::Option<&crate::types::MaintenanceSchedule> {
+        self.maintenance_schedule.as_ref()
+    }
+    /// <p>The timestamp of the last completed maintenance operation on the DB instance.</p>
+    pub fn last_maintenance_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_maintenance_time.as_ref()
+    }
+    /// <p>The timestamp of the next scheduled maintenance operation on the DB instance.</p>
+    pub fn next_maintenance_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.next_maintenance_time.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for RebootDbInstanceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -185,6 +203,9 @@ pub struct RebootDbInstanceOutputBuilder {
     pub(crate) db_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_mode: ::std::option::Option<crate::types::InstanceMode>,
     pub(crate) instance_modes: ::std::option::Option<::std::vec::Vec<crate::types::InstanceMode>>,
+    pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    pub(crate) last_maintenance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) next_maintenance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl RebootDbInstanceOutputBuilder {
@@ -517,6 +538,48 @@ impl RebootDbInstanceOutputBuilder {
     pub fn get_instance_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceMode>> {
         &self.instance_modes
     }
+    /// <p>The maintenance schedule for the DB instance.</p>
+    pub fn maintenance_schedule(mut self, input: crate::types::MaintenanceSchedule) -> Self {
+        self.maintenance_schedule = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maintenance schedule for the DB instance.</p>
+    pub fn set_maintenance_schedule(mut self, input: ::std::option::Option<crate::types::MaintenanceSchedule>) -> Self {
+        self.maintenance_schedule = input;
+        self
+    }
+    /// <p>The maintenance schedule for the DB instance.</p>
+    pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
+        &self.maintenance_schedule
+    }
+    /// <p>The timestamp of the last completed maintenance operation on the DB instance.</p>
+    pub fn last_maintenance_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_maintenance_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp of the last completed maintenance operation on the DB instance.</p>
+    pub fn set_last_maintenance_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_maintenance_time = input;
+        self
+    }
+    /// <p>The timestamp of the last completed maintenance operation on the DB instance.</p>
+    pub fn get_last_maintenance_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_maintenance_time
+    }
+    /// <p>The timestamp of the next scheduled maintenance operation on the DB instance.</p>
+    pub fn next_maintenance_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.next_maintenance_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp of the next scheduled maintenance operation on the DB instance.</p>
+    pub fn set_next_maintenance_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.next_maintenance_time = input;
+        self
+    }
+    /// <p>The timestamp of the next scheduled maintenance operation on the DB instance.</p>
+    pub fn get_next_maintenance_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.next_maintenance_time
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -578,6 +641,9 @@ impl RebootDbInstanceOutputBuilder {
             db_cluster_id: self.db_cluster_id,
             instance_mode: self.instance_mode,
             instance_modes: self.instance_modes,
+            maintenance_schedule: self.maintenance_schedule,
+            last_maintenance_time: self.last_maintenance_time,
+            next_maintenance_time: self.next_maintenance_time,
             _request_id: self._request_id,
         })
     }

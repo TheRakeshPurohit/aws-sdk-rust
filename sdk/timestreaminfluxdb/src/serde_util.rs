@@ -260,6 +260,18 @@ pub(crate) fn log_delivery_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn maintenance_schedule_correct_errors(
+    mut builder: crate::types::builders::MaintenanceScheduleBuilder,
+) -> crate::types::builders::MaintenanceScheduleBuilder {
+    if builder.timezone.is_none() {
+        builder.timezone = Some(Default::default())
+    }
+    if builder.preferred_maintenance_window.is_none() {
+        builder.preferred_maintenance_window = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn db_cluster_summary_correct_errors(
     mut builder: crate::types::builders::DbClusterSummaryBuilder,
 ) -> crate::types::builders::DbClusterSummaryBuilder {

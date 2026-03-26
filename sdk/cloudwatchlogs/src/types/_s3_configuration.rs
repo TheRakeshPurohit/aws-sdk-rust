@@ -8,6 +8,10 @@ pub struct S3Configuration {
     pub destination_identifier: ::std::string::String,
     /// <p>The ARN of the IAM role that grants permissions to write query results to the specified Amazon S3 destination.</p>
     pub role_arn: ::std::string::String,
+    /// <p>The AWS accountId for the bucket owning account.</p>
+    pub owner_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same AWS Region as the destination Amazon S3 bucket.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl S3Configuration {
     /// <p>The Amazon S3 URI where query results are delivered. Must be a valid S3 URI format.</p>
@@ -19,6 +23,14 @@ impl S3Configuration {
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
+    }
+    /// <p>The AWS accountId for the bucket owning account.</p>
+    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.owner_account_id.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same AWS Region as the destination Amazon S3 bucket.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
     }
 }
 impl S3Configuration {
@@ -34,6 +46,8 @@ impl S3Configuration {
 pub struct S3ConfigurationBuilder {
     pub(crate) destination_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl S3ConfigurationBuilder {
     /// <p>The Amazon S3 URI where query results are delivered. Must be a valid S3 URI format.</p>
@@ -66,6 +80,34 @@ impl S3ConfigurationBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p>The AWS accountId for the bucket owning account.</p>
+    pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS accountId for the bucket owning account.</p>
+    pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.owner_account_id = input;
+        self
+    }
+    /// <p>The AWS accountId for the bucket owning account.</p>
+    pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.owner_account_id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same AWS Region as the destination Amazon S3 bucket.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same AWS Region as the destination Amazon S3 bucket.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same AWS Region as the destination Amazon S3 bucket.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Consumes the builder and constructs a [`S3Configuration`](crate::types::S3Configuration).
     /// This method will fail if any of the following fields are not set:
     /// - [`destination_identifier`](crate::types::builders::S3ConfigurationBuilder::destination_identifier)
@@ -84,6 +126,8 @@ impl S3ConfigurationBuilder {
                     "role_arn was not specified but it is required when building S3Configuration",
                 )
             })?,
+            owner_account_id: self.owner_account_id,
+            kms_key_id: self.kms_key_id,
         })
     }
 }

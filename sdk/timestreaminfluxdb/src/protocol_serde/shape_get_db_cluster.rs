@@ -239,6 +239,23 @@ pub(crate) fn de_get_db_cluster(
                         crate::protocol_serde::shape_log_delivery_configuration::de_log_delivery_configuration(tokens, _value)?,
                     );
                 }
+                "maintenanceSchedule" => {
+                    builder = builder.set_maintenance_schedule(crate::protocol_serde::shape_maintenance_schedule::de_maintenance_schedule(
+                        tokens, _value,
+                    )?);
+                }
+                "lastMaintenanceTime" => {
+                    builder = builder.set_last_maintenance_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
+                "nextMaintenanceTime" => {
+                    builder = builder.set_next_maintenance_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
                 "influxAuthParametersSecretArn" => {
                     builder = builder.set_influx_auth_parameters_secret_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -260,6 +277,11 @@ pub(crate) fn de_get_db_cluster(
                             .map(|s| s.to_unescaped().map(|u| crate::types::FailoverMode::from(u.as_ref())))
                             .transpose()?,
                     );
+                }
+                "clusterConfiguration" => {
+                    builder = builder.set_cluster_configuration(crate::protocol_serde::shape_cluster_configuration::de_cluster_configuration(
+                        tokens, _value,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

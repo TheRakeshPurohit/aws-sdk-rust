@@ -613,6 +613,8 @@ pub(crate) mod shape_query_definition_list;
 
 pub(crate) mod shape_query_info_list;
 
+pub(crate) mod shape_query_parameter;
+
 pub(crate) mod shape_query_results;
 
 pub(crate) mod shape_query_statistics;
@@ -818,6 +820,8 @@ pub(crate) mod shape_open_search_workspace;
 pub(crate) mod shape_output_formats;
 
 pub(crate) mod shape_pattern_tokens;
+
+pub(crate) mod shape_query_parameter_list;
 
 pub(crate) mod shape_rename_key_entry;
 

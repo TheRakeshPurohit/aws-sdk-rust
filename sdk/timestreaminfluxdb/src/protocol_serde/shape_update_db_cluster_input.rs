@@ -27,5 +27,11 @@ pub fn ser_update_db_cluster_input_input(
     if let Some(var_7) = &input.failover_mode {
         object.key("failoverMode").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.maintenance_schedule {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("maintenanceSchedule").start_object();
+        crate::protocol_serde::shape_maintenance_schedule::ser_maintenance_schedule(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }

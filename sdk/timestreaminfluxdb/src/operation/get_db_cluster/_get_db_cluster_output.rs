@@ -35,6 +35,12 @@ pub struct GetDbClusterOutput {
     pub db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Configuration for sending InfluxDB engine logs to send to specified S3 bucket.</p>
     pub log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
+    /// <p>The maintenance schedule for the DB cluster.</p>
+    pub maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    /// <p>The timestamp of the last completed maintenance operation on the DB cluster.</p>
+    pub last_maintenance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp of the next scheduled maintenance operation on the DB cluster.</p>
+    pub next_maintenance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
     pub influx_auth_parameters_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of VPC subnet IDs associated with the DB cluster.</p>
@@ -43,6 +49,8 @@ pub struct GetDbClusterOutput {
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configured failover mode for the DB cluster.</p>
     pub failover_mode: ::std::option::Option<crate::types::FailoverMode>,
+    /// <p>Configuration for node modes in the DbCluster.</p>
+    pub cluster_configuration: ::std::option::Option<crate::types::ClusterConfiguration>,
     _request_id: Option<String>,
 }
 impl GetDbClusterOutput {
@@ -113,6 +121,18 @@ impl GetDbClusterOutput {
     pub fn log_delivery_configuration(&self) -> ::std::option::Option<&crate::types::LogDeliveryConfiguration> {
         self.log_delivery_configuration.as_ref()
     }
+    /// <p>The maintenance schedule for the DB cluster.</p>
+    pub fn maintenance_schedule(&self) -> ::std::option::Option<&crate::types::MaintenanceSchedule> {
+        self.maintenance_schedule.as_ref()
+    }
+    /// <p>The timestamp of the last completed maintenance operation on the DB cluster.</p>
+    pub fn last_maintenance_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_maintenance_time.as_ref()
+    }
+    /// <p>The timestamp of the next scheduled maintenance operation on the DB cluster.</p>
+    pub fn next_maintenance_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.next_maintenance_time.as_ref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
     pub fn influx_auth_parameters_secret_arn(&self) -> ::std::option::Option<&str> {
         self.influx_auth_parameters_secret_arn.as_deref()
@@ -132,6 +152,10 @@ impl GetDbClusterOutput {
     /// <p>The configured failover mode for the DB cluster.</p>
     pub fn failover_mode(&self) -> ::std::option::Option<&crate::types::FailoverMode> {
         self.failover_mode.as_ref()
+    }
+    /// <p>Configuration for node modes in the DbCluster.</p>
+    pub fn cluster_configuration(&self) -> ::std::option::Option<&crate::types::ClusterConfiguration> {
+        self.cluster_configuration.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDbClusterOutput {
@@ -166,10 +190,14 @@ pub struct GetDbClusterOutputBuilder {
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
+    pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    pub(crate) last_maintenance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) next_maintenance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) influx_auth_parameters_secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) failover_mode: ::std::option::Option<crate::types::FailoverMode>,
+    pub(crate) cluster_configuration: ::std::option::Option<crate::types::ClusterConfiguration>,
     _request_id: Option<String>,
 }
 impl GetDbClusterOutputBuilder {
@@ -400,6 +428,48 @@ impl GetDbClusterOutputBuilder {
     pub fn get_log_delivery_configuration(&self) -> &::std::option::Option<crate::types::LogDeliveryConfiguration> {
         &self.log_delivery_configuration
     }
+    /// <p>The maintenance schedule for the DB cluster.</p>
+    pub fn maintenance_schedule(mut self, input: crate::types::MaintenanceSchedule) -> Self {
+        self.maintenance_schedule = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maintenance schedule for the DB cluster.</p>
+    pub fn set_maintenance_schedule(mut self, input: ::std::option::Option<crate::types::MaintenanceSchedule>) -> Self {
+        self.maintenance_schedule = input;
+        self
+    }
+    /// <p>The maintenance schedule for the DB cluster.</p>
+    pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
+        &self.maintenance_schedule
+    }
+    /// <p>The timestamp of the last completed maintenance operation on the DB cluster.</p>
+    pub fn last_maintenance_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_maintenance_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp of the last completed maintenance operation on the DB cluster.</p>
+    pub fn set_last_maintenance_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_maintenance_time = input;
+        self
+    }
+    /// <p>The timestamp of the last completed maintenance operation on the DB cluster.</p>
+    pub fn get_last_maintenance_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_maintenance_time
+    }
+    /// <p>The timestamp of the next scheduled maintenance operation on the DB cluster.</p>
+    pub fn next_maintenance_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.next_maintenance_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp of the next scheduled maintenance operation on the DB cluster.</p>
+    pub fn set_next_maintenance_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.next_maintenance_time = input;
+        self
+    }
+    /// <p>The timestamp of the next scheduled maintenance operation on the DB cluster.</p>
+    pub fn get_next_maintenance_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.next_maintenance_time
+    }
     /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
     pub fn influx_auth_parameters_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.influx_auth_parameters_secret_arn = ::std::option::Option::Some(input.into());
@@ -468,6 +538,20 @@ impl GetDbClusterOutputBuilder {
     pub fn get_failover_mode(&self) -> &::std::option::Option<crate::types::FailoverMode> {
         &self.failover_mode
     }
+    /// <p>Configuration for node modes in the DbCluster.</p>
+    pub fn cluster_configuration(mut self, input: crate::types::ClusterConfiguration) -> Self {
+        self.cluster_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for node modes in the DbCluster.</p>
+    pub fn set_cluster_configuration(mut self, input: ::std::option::Option<crate::types::ClusterConfiguration>) -> Self {
+        self.cluster_configuration = input;
+        self
+    }
+    /// <p>Configuration for node modes in the DbCluster.</p>
+    pub fn get_cluster_configuration(&self) -> &::std::option::Option<crate::types::ClusterConfiguration> {
+        &self.cluster_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -517,10 +601,14 @@ impl GetDbClusterOutputBuilder {
             publicly_accessible: self.publicly_accessible,
             db_parameter_group_identifier: self.db_parameter_group_identifier,
             log_delivery_configuration: self.log_delivery_configuration,
+            maintenance_schedule: self.maintenance_schedule,
+            last_maintenance_time: self.last_maintenance_time,
+            next_maintenance_time: self.next_maintenance_time,
             influx_auth_parameters_secret_arn: self.influx_auth_parameters_secret_arn,
             vpc_subnet_ids: self.vpc_subnet_ids,
             vpc_security_group_ids: self.vpc_security_group_ids,
             failover_mode: self.failover_mode,
+            cluster_configuration: self.cluster_configuration,
             _request_id: self._request_id,
         })
     }

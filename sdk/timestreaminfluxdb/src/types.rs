@@ -13,9 +13,13 @@ pub use crate::types::_failover_mode::FailoverMode;
 
 pub use crate::types::_log_delivery_configuration::LogDeliveryConfiguration;
 
+pub use crate::types::_maintenance_schedule::MaintenanceSchedule;
+
 pub use crate::types::_cluster_status::ClusterStatus;
 
 pub use crate::types::_engine_type::EngineType;
+
+pub use crate::types::_cluster_configuration::ClusterConfiguration;
 
 pub use crate::types::_deployment_type::DeploymentType;
 
@@ -54,6 +58,8 @@ pub use crate::types::_data_fusion_runtime_type::DataFusionRuntimeType;
 pub use crate::types::_percent_or_absolute_long::PercentOrAbsoluteLong;
 
 pub use crate::types::_duration_type::DurationType;
+
+mod _cluster_configuration;
 
 mod _cluster_deployment_type;
 
@@ -96,6 +102,8 @@ mod _log_delivery_configuration;
 mod _log_formats;
 
 mod _log_level;
+
+mod _maintenance_schedule;
 
 mod _network_type;
 

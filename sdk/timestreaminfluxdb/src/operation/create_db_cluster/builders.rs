@@ -392,6 +392,20 @@ impl CreateDbClusterFluentBuilder {
     pub fn get_log_delivery_configuration(&self) -> &::std::option::Option<crate::types::LogDeliveryConfiguration> {
         self.inner.get_log_delivery_configuration()
     }
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub fn maintenance_schedule(mut self, input: crate::types::MaintenanceSchedule) -> Self {
+        self.inner = self.inner.maintenance_schedule(input);
+        self
+    }
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub fn set_maintenance_schedule(mut self, input: ::std::option::Option<crate::types::MaintenanceSchedule>) -> Self {
+        self.inner = self.inner.set_maintenance_schedule(input);
+        self
+    }
+    /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
+    pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
+        self.inner.get_maintenance_schedule()
+    }
     ///
     /// Adds a key-value pair to `tags`.
     ///

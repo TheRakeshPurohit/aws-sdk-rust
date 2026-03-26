@@ -53,6 +53,11 @@ where
                         "logGroupNames" => {
                             builder = builder.set_log_group_names(crate::protocol_serde::shape_log_group_names::de_log_group_names(tokens, _value)?);
                         }
+                        "parameters" => {
+                            builder = builder.set_parameters(crate::protocol_serde::shape_query_parameter_list::de_query_parameter_list(
+                                tokens, _value,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

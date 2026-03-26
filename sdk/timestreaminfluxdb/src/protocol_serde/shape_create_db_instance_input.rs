@@ -63,24 +63,30 @@ pub fn ser_create_db_instance_input_input(
         crate::protocol_serde::shape_log_delivery_configuration::ser_log_delivery_configuration(&mut object_19, var_18)?;
         object_19.finish();
     }
-    if let Some(var_20) = &input.tags {
+    if let Some(var_20) = &input.maintenance_schedule {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("tags").start_object();
-        for (key_22, value_23) in var_20 {
-            {
-                object_21.key(key_22.as_str()).string(value_23.as_str());
-            }
-        }
+        let mut object_21 = object.key("maintenanceSchedule").start_object();
+        crate::protocol_serde::shape_maintenance_schedule::ser_maintenance_schedule(&mut object_21, var_20)?;
         object_21.finish();
     }
-    if let Some(var_24) = &input.port {
+    if let Some(var_22) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("tags").start_object();
+        for (key_24, value_25) in var_22 {
+            {
+                object_23.key(key_24.as_str()).string(value_25.as_str());
+            }
+        }
+        object_23.finish();
+    }
+    if let Some(var_26) = &input.port {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_24).into()),
+            ::aws_smithy_types::Number::NegInt((*var_26).into()),
         );
     }
-    if let Some(var_25) = &input.network_type {
-        object.key("networkType").string(var_25.as_str());
+    if let Some(var_27) = &input.network_type {
+        object.key("networkType").string(var_27.as_str());
     }
     Ok(())
 }

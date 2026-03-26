@@ -40,6 +40,8 @@ pub struct CreateDbInstanceInput {
     pub deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     /// <p>Configuration for sending InfluxDB engine logs to a specified S3 bucket.</p>
     pub log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
+    /// <p>Specifies the maintenance schedule for the DB instance, including the preferred maintenance window and timezone.</p>
+    pub maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
     /// <p>A list of key-value pairs to associate with the DB instance.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The port number on which InfluxDB accepts connections.</p>
@@ -120,6 +122,10 @@ impl CreateDbInstanceInput {
     pub fn log_delivery_configuration(&self) -> ::std::option::Option<&crate::types::LogDeliveryConfiguration> {
         self.log_delivery_configuration.as_ref()
     }
+    /// <p>Specifies the maintenance schedule for the DB instance, including the preferred maintenance window and timezone.</p>
+    pub fn maintenance_schedule(&self) -> ::std::option::Option<&crate::types::MaintenanceSchedule> {
+        self.maintenance_schedule.as_ref()
+    }
     /// <p>A list of key-value pairs to associate with the DB instance.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -153,6 +159,7 @@ impl ::std::fmt::Debug for CreateDbInstanceInput {
         formatter.field("db_parameter_group_identifier", &self.db_parameter_group_identifier);
         formatter.field("deployment_type", &self.deployment_type);
         formatter.field("log_delivery_configuration", &self.log_delivery_configuration);
+        formatter.field("maintenance_schedule", &self.maintenance_schedule);
         formatter.field("tags", &self.tags);
         formatter.field("port", &self.port);
         formatter.field("network_type", &self.network_type);
@@ -184,6 +191,7 @@ pub struct CreateDbInstanceInputBuilder {
     pub(crate) db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     pub(crate) log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
+    pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
@@ -428,6 +436,20 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_log_delivery_configuration(&self) -> &::std::option::Option<crate::types::LogDeliveryConfiguration> {
         &self.log_delivery_configuration
     }
+    /// <p>Specifies the maintenance schedule for the DB instance, including the preferred maintenance window and timezone.</p>
+    pub fn maintenance_schedule(mut self, input: crate::types::MaintenanceSchedule) -> Self {
+        self.maintenance_schedule = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the maintenance schedule for the DB instance, including the preferred maintenance window and timezone.</p>
+    pub fn set_maintenance_schedule(mut self, input: ::std::option::Option<crate::types::MaintenanceSchedule>) -> Self {
+        self.maintenance_schedule = input;
+        self
+    }
+    /// <p>Specifies the maintenance schedule for the DB instance, including the preferred maintenance window and timezone.</p>
+    pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
+        &self.maintenance_schedule
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -504,6 +526,7 @@ impl CreateDbInstanceInputBuilder {
             db_parameter_group_identifier: self.db_parameter_group_identifier,
             deployment_type: self.deployment_type,
             log_delivery_configuration: self.log_delivery_configuration,
+            maintenance_schedule: self.maintenance_schedule,
             tags: self.tags,
             port: self.port,
             network_type: self.network_type,
@@ -527,6 +550,7 @@ impl ::std::fmt::Debug for CreateDbInstanceInputBuilder {
         formatter.field("db_parameter_group_identifier", &self.db_parameter_group_identifier);
         formatter.field("deployment_type", &self.deployment_type);
         formatter.field("log_delivery_configuration", &self.log_delivery_configuration);
+        formatter.field("maintenance_schedule", &self.maintenance_schedule);
         formatter.field("tags", &self.tags);
         formatter.field("port", &self.port);
         formatter.field("network_type", &self.network_type);

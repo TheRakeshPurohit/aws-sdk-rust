@@ -23,6 +23,8 @@ pub struct UpdateDbInstanceInput {
     pub db_storage_type: ::std::option::Option<crate::types::DbStorageType>,
     /// <p>The amount of storage to allocate for your DB storage type (in gibibytes).</p>
     pub allocated_storage: ::std::option::Option<i32>,
+    /// <p>Specifies the maintenance schedule for the DB instance, including the preferred maintenance window and timezone.</p>
+    pub maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
 }
 impl UpdateDbInstanceInput {
     /// <p>The id of the DB instance.</p>
@@ -61,6 +63,10 @@ impl UpdateDbInstanceInput {
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
     }
+    /// <p>Specifies the maintenance schedule for the DB instance, including the preferred maintenance window and timezone.</p>
+    pub fn maintenance_schedule(&self) -> ::std::option::Option<&crate::types::MaintenanceSchedule> {
+        self.maintenance_schedule.as_ref()
+    }
 }
 impl UpdateDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`UpdateDbInstanceInput`](crate::operation::update_db_instance::UpdateDbInstanceInput).
@@ -81,6 +87,7 @@ pub struct UpdateDbInstanceInputBuilder {
     pub(crate) deployment_type: ::std::option::Option<crate::types::DeploymentType>,
     pub(crate) db_storage_type: ::std::option::Option<crate::types::DbStorageType>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
+    pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
 }
 impl UpdateDbInstanceInputBuilder {
     /// <p>The id of the DB instance.</p>
@@ -208,6 +215,20 @@ impl UpdateDbInstanceInputBuilder {
     pub fn get_allocated_storage(&self) -> &::std::option::Option<i32> {
         &self.allocated_storage
     }
+    /// <p>Specifies the maintenance schedule for the DB instance, including the preferred maintenance window and timezone.</p>
+    pub fn maintenance_schedule(mut self, input: crate::types::MaintenanceSchedule) -> Self {
+        self.maintenance_schedule = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the maintenance schedule for the DB instance, including the preferred maintenance window and timezone.</p>
+    pub fn set_maintenance_schedule(mut self, input: ::std::option::Option<crate::types::MaintenanceSchedule>) -> Self {
+        self.maintenance_schedule = input;
+        self
+    }
+    /// <p>Specifies the maintenance schedule for the DB instance, including the preferred maintenance window and timezone.</p>
+    pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
+        &self.maintenance_schedule
+    }
     /// Consumes the builder and constructs a [`UpdateDbInstanceInput`](crate::operation::update_db_instance::UpdateDbInstanceInput).
     pub fn build(
         self,
@@ -221,6 +242,7 @@ impl UpdateDbInstanceInputBuilder {
             deployment_type: self.deployment_type,
             db_storage_type: self.db_storage_type,
             allocated_storage: self.allocated_storage,
+            maintenance_schedule: self.maintenance_schedule,
         })
     }
 }

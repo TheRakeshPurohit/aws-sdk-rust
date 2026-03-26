@@ -285,6 +285,23 @@ pub(crate) fn de_update_db_instance(
                 "instanceModes" => {
                     builder = builder.set_instance_modes(crate::protocol_serde::shape_instance_mode_list::de_instance_mode_list(tokens, _value)?);
                 }
+                "maintenanceSchedule" => {
+                    builder = builder.set_maintenance_schedule(crate::protocol_serde::shape_maintenance_schedule::de_maintenance_schedule(
+                        tokens, _value,
+                    )?);
+                }
+                "lastMaintenanceTime" => {
+                    builder = builder.set_last_maintenance_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
+                "nextMaintenanceTime" => {
+                    builder = builder.set_next_maintenance_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

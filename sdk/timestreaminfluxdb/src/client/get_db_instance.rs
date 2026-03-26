@@ -27,6 +27,9 @@ impl super::Client {
     ///   - [`db_cluster_id(Option<String>)`](crate::operation::get_db_instance::GetDbInstanceOutput::db_cluster_id): <p>Specifies the DbCluster to which this DbInstance belongs to.</p>
     ///   - [`instance_mode(Option<InstanceMode>)`](crate::operation::get_db_instance::GetDbInstanceOutput::instance_mode): <p>Specifies the DbInstance's role in the cluster.</p>
     ///   - [`instance_modes(Option<Vec::<InstanceMode>>)`](crate::operation::get_db_instance::GetDbInstanceOutput::instance_modes): <p>Specifies the DbInstance's roles in the cluster.</p>
+    ///   - [`maintenance_schedule(Option<MaintenanceSchedule>)`](crate::operation::get_db_instance::GetDbInstanceOutput::maintenance_schedule): <p>The maintenance schedule for the DB instance.</p>
+    ///   - [`last_maintenance_time(Option<DateTime>)`](crate::operation::get_db_instance::GetDbInstanceOutput::last_maintenance_time): <p>The timestamp of the last completed maintenance operation on the DB instance.</p>
+    ///   - [`next_maintenance_time(Option<DateTime>)`](crate::operation::get_db_instance::GetDbInstanceOutput::next_maintenance_time): <p>The timestamp of the next scheduled maintenance operation on the DB instance.</p>
     /// - On failure, responds with [`SdkError<GetDbInstanceError>`](crate::operation::get_db_instance::GetDbInstanceError)
     pub fn get_db_instance(&self) -> crate::operation::get_db_instance::builders::GetDbInstanceFluentBuilder {
         crate::operation::get_db_instance::builders::GetDbInstanceFluentBuilder::new(self.handle.clone())

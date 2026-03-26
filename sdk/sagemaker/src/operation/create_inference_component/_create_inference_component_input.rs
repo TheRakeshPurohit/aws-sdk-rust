@@ -108,7 +108,6 @@ impl CreateInferenceComponentInputBuilder {
         &self.variant_name
     }
     /// <p>Details about the resources to deploy with this inference component, including the model, container, and compute resources.</p>
-    /// This field is required.
     pub fn specification(mut self, input: crate::types::InferenceComponentSpecification) -> Self {
         self.specification = ::std::option::Option::Some(input);
         self

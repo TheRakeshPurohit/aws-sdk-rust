@@ -16,6 +16,8 @@ pub struct QueryDefinition {
     pub last_modified: ::std::option::Option<i64>,
     /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
     pub log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>If this query definition contains a list of query parameters that define placeholder variables for the query string, that list appears here.</p>
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::QueryParameter>>,
 }
 impl QueryDefinition {
     /// <p>The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
@@ -44,6 +46,12 @@ impl QueryDefinition {
     pub fn log_group_names(&self) -> &[::std::string::String] {
         self.log_group_names.as_deref().unwrap_or_default()
     }
+    /// <p>If this query definition contains a list of query parameters that define placeholder variables for the query string, that list appears here.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::QueryParameter] {
+        self.parameters.as_deref().unwrap_or_default()
+    }
 }
 impl QueryDefinition {
     /// Creates a new builder-style object to manufacture [`QueryDefinition`](crate::types::QueryDefinition).
@@ -62,6 +70,7 @@ pub struct QueryDefinitionBuilder {
     pub(crate) query_string: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified: ::std::option::Option<i64>,
     pub(crate) log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::QueryParameter>>,
 }
 impl QueryDefinitionBuilder {
     /// <p>The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
@@ -154,6 +163,26 @@ impl QueryDefinitionBuilder {
     pub fn get_log_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_group_names
     }
+    /// Appends an item to `parameters`.
+    ///
+    /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+    ///
+    /// <p>If this query definition contains a list of query parameters that define placeholder variables for the query string, that list appears here.</p>
+    pub fn parameters(mut self, input: crate::types::QueryParameter) -> Self {
+        let mut v = self.parameters.unwrap_or_default();
+        v.push(input);
+        self.parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>If this query definition contains a list of query parameters that define placeholder variables for the query string, that list appears here.</p>
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryParameter>>) -> Self {
+        self.parameters = input;
+        self
+    }
+    /// <p>If this query definition contains a list of query parameters that define placeholder variables for the query string, that list appears here.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryParameter>> {
+        &self.parameters
+    }
     /// Consumes the builder and constructs a [`QueryDefinition`](crate::types::QueryDefinition).
     pub fn build(self) -> crate::types::QueryDefinition {
         crate::types::QueryDefinition {
@@ -163,6 +192,7 @@ impl QueryDefinitionBuilder {
             query_string: self.query_string,
             last_modified: self.last_modified,
             log_group_names: self.log_group_names,
+            parameters: self.parameters,
         }
     }
 }

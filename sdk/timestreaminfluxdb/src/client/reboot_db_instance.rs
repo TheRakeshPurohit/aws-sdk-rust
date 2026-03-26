@@ -27,6 +27,9 @@ impl super::Client {
     ///   - [`db_cluster_id(Option<String>)`](crate::operation::reboot_db_instance::RebootDbInstanceOutput::db_cluster_id): <p>Specifies the DbCluster to which this DbInstance belongs to.</p>
     ///   - [`instance_mode(Option<InstanceMode>)`](crate::operation::reboot_db_instance::RebootDbInstanceOutput::instance_mode): <p>Specifies the DbInstance's role in the cluster.</p>
     ///   - [`instance_modes(Option<Vec::<InstanceMode>>)`](crate::operation::reboot_db_instance::RebootDbInstanceOutput::instance_modes): <p>Specifies the DbInstance's roles in the cluster.</p>
+    ///   - [`maintenance_schedule(Option<MaintenanceSchedule>)`](crate::operation::reboot_db_instance::RebootDbInstanceOutput::maintenance_schedule): <p>The maintenance schedule for the DB instance.</p>
+    ///   - [`last_maintenance_time(Option<DateTime>)`](crate::operation::reboot_db_instance::RebootDbInstanceOutput::last_maintenance_time): <p>The timestamp of the last completed maintenance operation on the DB instance.</p>
+    ///   - [`next_maintenance_time(Option<DateTime>)`](crate::operation::reboot_db_instance::RebootDbInstanceOutput::next_maintenance_time): <p>The timestamp of the next scheduled maintenance operation on the DB instance.</p>
     /// - On failure, responds with [`SdkError<RebootDbInstanceError>`](crate::operation::reboot_db_instance::RebootDbInstanceError)
     pub fn reboot_db_instance(&self) -> crate::operation::reboot_db_instance::builders::RebootDbInstanceFluentBuilder {
         crate::operation::reboot_db_instance::builders::RebootDbInstanceFluentBuilder::new(self.handle.clone())

@@ -6,6 +6,8 @@
 pub struct S3Destination {
     /// <p>The name of the Amazon S3 bucket used as the destination of a data export file.</p>
     pub s3_bucket: ::std::string::String,
+    /// <p>The AWS Account ID that owns the S3 bucket used as the destination for the data export.</p>
+    pub s3_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>The S3 path prefix you want prepended to the name of your data export.</p>
     pub s3_prefix: ::std::string::String,
     /// <p>The S3 bucket Region.</p>
@@ -18,6 +20,10 @@ impl S3Destination {
     pub fn s3_bucket(&self) -> &str {
         use std::ops::Deref;
         self.s3_bucket.deref()
+    }
+    /// <p>The AWS Account ID that owns the S3 bucket used as the destination for the data export.</p>
+    pub fn s3_bucket_owner(&self) -> ::std::option::Option<&str> {
+        self.s3_bucket_owner.as_deref()
     }
     /// <p>The S3 path prefix you want prepended to the name of your data export.</p>
     pub fn s3_prefix(&self) -> &str {
@@ -46,6 +52,7 @@ impl S3Destination {
 #[non_exhaustive]
 pub struct S3DestinationBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_bucket_owner: ::std::option::Option<::std::string::String>,
     pub(crate) s3_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) s3_region: ::std::option::Option<::std::string::String>,
     pub(crate) s3_output_configurations: ::std::option::Option<crate::types::S3OutputConfigurations>,
@@ -65,6 +72,20 @@ impl S3DestinationBuilder {
     /// <p>The name of the Amazon S3 bucket used as the destination of a data export file.</p>
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket
+    }
+    /// <p>The AWS Account ID that owns the S3 bucket used as the destination for the data export.</p>
+    pub fn s3_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_bucket_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The AWS Account ID that owns the S3 bucket used as the destination for the data export.</p>
+    pub fn set_s3_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_bucket_owner = input;
+        self
+    }
+    /// <p>The AWS Account ID that owns the S3 bucket used as the destination for the data export.</p>
+    pub fn get_s3_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_owner
     }
     /// <p>The S3 path prefix you want prepended to the name of your data export.</p>
     /// This field is required.
@@ -124,6 +145,7 @@ impl S3DestinationBuilder {
                     "s3_bucket was not specified but it is required when building S3Destination",
                 )
             })?,
+            s3_bucket_owner: self.s3_bucket_owner,
             s3_prefix: self.s3_prefix.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "s3_prefix",
