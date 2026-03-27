@@ -10,6 +10,12 @@ pub fn ser_evaluator_config(
             crate::protocol_serde::shape_llm_as_a_judge_evaluator_config::ser_llm_as_a_judge_evaluator_config(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::EvaluatorConfig::CodeBased(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_4.key("codeBased").start_object();
+            crate::protocol_serde::shape_code_based_evaluator_config::ser_code_based_evaluator_config(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::EvaluatorConfig::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EvaluatorConfig",
@@ -55,6 +61,11 @@ where
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'llmAsAJudge' cannot be null")
                                 })?,
+                        )),
+                        "codeBased" => Some(crate::types::EvaluatorConfig::CodeBased(
+                            crate::protocol_serde::shape_code_based_evaluator_config::de_code_based_evaluator_config(tokens, _value)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'codeBased' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

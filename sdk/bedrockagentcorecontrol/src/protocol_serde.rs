@@ -485,6 +485,8 @@ pub(crate) mod shape_cloud_watch_logs_input_config;
 
 pub(crate) mod shape_cloud_watch_output_config;
 
+pub(crate) mod shape_code_based_evaluator_config;
+
 pub(crate) mod shape_code_configuration;
 
 pub(crate) mod shape_code_interpreter_summary;
@@ -634,6 +636,8 @@ pub(crate) mod shape_gateway_api_key_credential_provider;
 pub(crate) mod shape_gateway_interception_points;
 
 pub(crate) mod shape_kinesis_resource;
+
+pub(crate) mod shape_lambda_evaluator_config;
 
 pub(crate) mod shape_lambda_interceptor_configuration;
 

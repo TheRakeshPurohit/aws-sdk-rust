@@ -466,6 +466,39 @@ impl From<crate::operation::create_annotation_store_version::CreateAnnotationSto
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_configuration::CreateConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_configuration::CreateConfigurationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_configuration::CreateConfigurationError> for Error {
+    fn from(err: crate::operation::create_configuration::CreateConfigurationError) -> Self {
+        match err {
+            crate::operation::create_configuration::CreateConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_configuration::CreateConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_configuration::CreateConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_configuration::CreateConfigurationError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::create_configuration::CreateConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_configuration::CreateConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_configuration::CreateConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_configuration::CreateConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_configuration::CreateConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_multipart_read_set_upload::CreateMultipartReadSetUploadError, R>>
     for Error
@@ -886,6 +919,39 @@ impl From<crate::operation::delete_batch::DeleteBatchError> for Error {
             crate::operation::delete_batch::DeleteBatchError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_batch::DeleteBatchError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_batch::DeleteBatchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_configuration::DeleteConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_configuration::DeleteConfigurationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_configuration::DeleteConfigurationError> for Error {
+    fn from(err: crate::operation::delete_configuration::DeleteConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_configuration::DeleteConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_configuration::DeleteConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_configuration::DeleteConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_configuration::DeleteConfigurationError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::delete_configuration::DeleteConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_configuration::DeleteConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::delete_configuration::DeleteConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_configuration::DeleteConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_configuration::DeleteConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1400,6 +1466,37 @@ impl From<crate::operation::get_batch::GetBatchError> for Error {
             crate::operation::get_batch::GetBatchError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_batch::GetBatchError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_batch::GetBatchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configuration::GetConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_configuration::GetConfigurationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_configuration::GetConfigurationError> for Error {
+    fn from(err: crate::operation::get_configuration::GetConfigurationError) -> Self {
+        match err {
+            crate::operation::get_configuration::GetConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_configuration::GetConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_configuration::GetConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_configuration::GetConfigurationError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::get_configuration::GetConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_configuration::GetConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_configuration::GetConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_configuration::GetConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_configuration::GetConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2155,6 +2252,39 @@ impl From<crate::operation::list_batch::ListBatchError> for Error {
             crate::operation::list_batch::ListBatchError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_batch::ListBatchError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_batch::ListBatchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_configurations::ListConfigurationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_configurations::ListConfigurationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_configurations::ListConfigurationsError> for Error {
+    fn from(err: crate::operation::list_configurations::ListConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_configurations::ListConfigurationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_configurations::ListConfigurationsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::list_configurations::ListConfigurationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_configurations::ListConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

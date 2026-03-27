@@ -151,6 +151,8 @@ pub use crate::types::_oauth2_authorization_server_metadata::Oauth2Authorization
 
 pub use crate::types::_session_storage_configuration::SessionStorageConfigurationBuilder;
 
+pub use crate::types::_lambda_evaluator_config::LambdaEvaluatorConfigBuilder;
+
 pub use crate::types::_interceptor_input_configuration::InterceptorInputConfigurationBuilder;
 
 pub use crate::types::_mcp_lambda_target_configuration::McpLambdaTargetConfigurationBuilder;

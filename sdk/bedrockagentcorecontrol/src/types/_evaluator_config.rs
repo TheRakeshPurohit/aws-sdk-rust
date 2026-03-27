@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EvaluatorConfig {
+    /// <p>Configuration for a code-based evaluator that uses a customer-managed Lambda function to programmatically assess agent performance.</p>
+    CodeBased(crate::types::CodeBasedEvaluatorConfig),
     /// <p>The LLM-as-a-Judge configuration that uses a language model to evaluate agent performance based on custom instructions and rating scales.</p>
     LlmAsAJudge(crate::types::LlmAsAJudgeEvaluatorConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum EvaluatorConfig {
     Unknown,
 }
 impl EvaluatorConfig {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`CodeBased`](crate::types::EvaluatorConfig::CodeBased), extracting the inner [`CodeBasedEvaluatorConfig`](crate::types::CodeBasedEvaluatorConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_code_based(&self) -> ::std::result::Result<&crate::types::CodeBasedEvaluatorConfig, &Self> {
+        if let EvaluatorConfig::CodeBased(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CodeBased`](crate::types::EvaluatorConfig::CodeBased).
+    pub fn is_code_based(&self) -> bool {
+        self.as_code_based().is_ok()
+    }
     /// Tries to convert the enum instance into [`LlmAsAJudge`](crate::types::EvaluatorConfig::LlmAsAJudge), extracting the inner [`LlmAsAJudgeEvaluatorConfig`](crate::types::LlmAsAJudgeEvaluatorConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_llm_as_a_judge(&self) -> ::std::result::Result<&crate::types::LlmAsAJudgeEvaluatorConfig, &Self> {

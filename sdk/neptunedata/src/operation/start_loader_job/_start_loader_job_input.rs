@@ -43,16 +43,16 @@ pub struct StartLoaderJobInput {
     /// <p class="title"><b></b></p>
     /// <ul>
     /// <li>
-    /// <p><code>RESUME</code> &nbsp; – &nbsp; In RESUME mode, the loader looks for a previous load from this source, and if it finds one, resumes that load job. If no previous load job is found, the loader stops.</p>
+    /// <p><code>RESUME</code> - In RESUME mode, the loader looks for a previous load from this source, and if it finds one, resumes that load job. If no previous load job is found, the loader stops.</p>
     /// <p>The loader avoids reloading files that were successfully loaded in a previous job. It only tries to process failed files. If you dropped previously loaded data from your Neptune cluster, that data is not reloaded in this mode. If a previous load job loaded all files from the same source successfully, nothing is reloaded, and the loader returns success.</p></li>
     /// <li>
-    /// <p><code>NEW</code> &nbsp; – &nbsp; In NEW mode, the creates a new load request regardless of any previous loads. You can use this mode to reload all the data from a source after dropping previously loaded data from your Neptune cluster, or to load new data available at the same source.</p></li>
+    /// <p><code>NEW</code> - In NEW mode, the creates a new load request regardless of any previous loads. You can use this mode to reload all the data from a source after dropping previously loaded data from your Neptune cluster, or to load new data available at the same source.</p></li>
     /// <li>
-    /// <p><code>AUTO</code> &nbsp; – &nbsp; In AUTO mode, the loader looks for a previous load job from the same source, and if it finds one, resumes that job, just as in <code>RESUME</code> mode.</p>
+    /// <p><code>AUTO</code> - In AUTO mode, the loader looks for a previous load job from the same source, and if it finds one, resumes that job, just as in <code>RESUME</code> mode.</p>
     /// <p>If the loader doesn't find a previous load job from the same source, it loads all data from the source, just as in <code>NEW</code> mode.</p></li>
     /// </ul>
     pub mode: ::std::option::Option<crate::types::Mode>,
-    /// <p><b> <code>failOnError</code> </b> &nbsp; – &nbsp; A flag to toggle a complete stop on an error.</p>
+    /// <p><b> <code>failOnError</code> </b> - A flag to toggle a complete stop on an error.</p>
     /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
     /// <p><i>Default value</i>: <code>"TRUE"</code>.</p>
     /// <p>When this parameter is set to <code>"FALSE"</code>, the loader tries to load all the data in the location specified, skipping any entries with errors.</p>
@@ -78,13 +78,13 @@ pub struct StartLoaderJobInput {
     /// <p class="title"><b></b></p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>namedGraphUri</code> </b> &nbsp; – &nbsp; The default graph for all RDF formats when no graph is specified (for non-quads formats and NQUAD entries with no graph).</p>
+    /// <p><b> <code>namedGraphUri</code> </b> - The default graph for all RDF formats when no graph is specified (for non-quads formats and NQUAD entries with no graph).</p>
     /// <p>The default is <code>https://aws.amazon.com/neptune/vocab/v01/DefaultNamedGraph</code>.</p></li>
     /// <li>
-    /// <p><b> <code>baseUri</code> </b> &nbsp; – &nbsp; The base URI for RDF/XML and Turtle formats.</p>
+    /// <p><b> <code>baseUri</code> </b> - The base URI for RDF/XML and Turtle formats.</p>
     /// <p>The default is <code>https://aws.amazon.com/neptune/default</code>.</p></li>
     /// <li>
-    /// <p><b> <code>allowEmptyStrings</code> </b> &nbsp; – &nbsp; Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
+    /// <p><b> <code>allowEmptyStrings</code> </b> - Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
     /// <p>If <code>allowEmptyStrings</code> is set to <code>true</code>, the loader treats empty strings as valid property values and loads them accordingly.</p></li>
     /// </ul>
     pub parser_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -117,7 +117,7 @@ pub struct StartLoaderJobInput {
     /// <p>When <code>userProvidedEdgeIds</code> is present and set to <code>False</code>, relationship files in the load <b>must not</b> contain an <code>:ID</code> column. Instead, the Neptune loader automatically generates an ID for each relationship.</p>
     /// <p>It's useful to provide relationship IDs explicitly so that the loader can resume loading after error in the CSV data have been fixed, without having to reload any relationships that have already been loaded. If relationship IDs have not been explicitly assigned, the loader cannot resume a failed load if any relationship file has had to be corrected, and must instead reload all the relationships.</p>
     pub user_provided_edge_ids: ::std::option::Option<bool>,
-    /// <p><b> <code>edgeOnlyLoad</code> </b> &nbsp; – &nbsp; A flag that controls file processing order during bulk loading.</p>
+    /// <p><b> <code>edgeOnlyLoad</code> </b> - A flag that controls file processing order during bulk loading.</p>
     /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
     /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
     /// <p>When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.</p>
@@ -172,18 +172,18 @@ impl StartLoaderJobInput {
     /// <p class="title"><b></b></p>
     /// <ul>
     /// <li>
-    /// <p><code>RESUME</code> &nbsp; – &nbsp; In RESUME mode, the loader looks for a previous load from this source, and if it finds one, resumes that load job. If no previous load job is found, the loader stops.</p>
+    /// <p><code>RESUME</code> - In RESUME mode, the loader looks for a previous load from this source, and if it finds one, resumes that load job. If no previous load job is found, the loader stops.</p>
     /// <p>The loader avoids reloading files that were successfully loaded in a previous job. It only tries to process failed files. If you dropped previously loaded data from your Neptune cluster, that data is not reloaded in this mode. If a previous load job loaded all files from the same source successfully, nothing is reloaded, and the loader returns success.</p></li>
     /// <li>
-    /// <p><code>NEW</code> &nbsp; – &nbsp; In NEW mode, the creates a new load request regardless of any previous loads. You can use this mode to reload all the data from a source after dropping previously loaded data from your Neptune cluster, or to load new data available at the same source.</p></li>
+    /// <p><code>NEW</code> - In NEW mode, the creates a new load request regardless of any previous loads. You can use this mode to reload all the data from a source after dropping previously loaded data from your Neptune cluster, or to load new data available at the same source.</p></li>
     /// <li>
-    /// <p><code>AUTO</code> &nbsp; – &nbsp; In AUTO mode, the loader looks for a previous load job from the same source, and if it finds one, resumes that job, just as in <code>RESUME</code> mode.</p>
+    /// <p><code>AUTO</code> - In AUTO mode, the loader looks for a previous load job from the same source, and if it finds one, resumes that job, just as in <code>RESUME</code> mode.</p>
     /// <p>If the loader doesn't find a previous load job from the same source, it loads all data from the source, just as in <code>NEW</code> mode.</p></li>
     /// </ul>
     pub fn mode(&self) -> ::std::option::Option<&crate::types::Mode> {
         self.mode.as_ref()
     }
-    /// <p><b> <code>failOnError</code> </b> &nbsp; – &nbsp; A flag to toggle a complete stop on an error.</p>
+    /// <p><b> <code>failOnError</code> </b> - A flag to toggle a complete stop on an error.</p>
     /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
     /// <p><i>Default value</i>: <code>"TRUE"</code>.</p>
     /// <p>When this parameter is set to <code>"FALSE"</code>, the loader tries to load all the data in the location specified, skipping any entries with errors.</p>
@@ -213,13 +213,13 @@ impl StartLoaderJobInput {
     /// <p class="title"><b></b></p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>namedGraphUri</code> </b> &nbsp; – &nbsp; The default graph for all RDF formats when no graph is specified (for non-quads formats and NQUAD entries with no graph).</p>
+    /// <p><b> <code>namedGraphUri</code> </b> - The default graph for all RDF formats when no graph is specified (for non-quads formats and NQUAD entries with no graph).</p>
     /// <p>The default is <code>https://aws.amazon.com/neptune/vocab/v01/DefaultNamedGraph</code>.</p></li>
     /// <li>
-    /// <p><b> <code>baseUri</code> </b> &nbsp; – &nbsp; The base URI for RDF/XML and Turtle formats.</p>
+    /// <p><b> <code>baseUri</code> </b> - The base URI for RDF/XML and Turtle formats.</p>
     /// <p>The default is <code>https://aws.amazon.com/neptune/default</code>.</p></li>
     /// <li>
-    /// <p><b> <code>allowEmptyStrings</code> </b> &nbsp; – &nbsp; Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
+    /// <p><b> <code>allowEmptyStrings</code> </b> - Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
     /// <p>If <code>allowEmptyStrings</code> is set to <code>true</code>, the loader treats empty strings as valid property values and loads them accordingly.</p></li>
     /// </ul>
     pub fn parser_configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -264,7 +264,7 @@ impl StartLoaderJobInput {
     pub fn user_provided_edge_ids(&self) -> ::std::option::Option<bool> {
         self.user_provided_edge_ids
     }
-    /// <p><b> <code>edgeOnlyLoad</code> </b> &nbsp; – &nbsp; A flag that controls file processing order during bulk loading.</p>
+    /// <p><b> <code>edgeOnlyLoad</code> </b> - A flag that controls file processing order during bulk loading.</p>
     /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
     /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
     /// <p>When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.</p>
@@ -442,12 +442,12 @@ impl StartLoaderJobInputBuilder {
     /// <p class="title"><b></b></p>
     /// <ul>
     /// <li>
-    /// <p><code>RESUME</code> &nbsp; – &nbsp; In RESUME mode, the loader looks for a previous load from this source, and if it finds one, resumes that load job. If no previous load job is found, the loader stops.</p>
+    /// <p><code>RESUME</code> - In RESUME mode, the loader looks for a previous load from this source, and if it finds one, resumes that load job. If no previous load job is found, the loader stops.</p>
     /// <p>The loader avoids reloading files that were successfully loaded in a previous job. It only tries to process failed files. If you dropped previously loaded data from your Neptune cluster, that data is not reloaded in this mode. If a previous load job loaded all files from the same source successfully, nothing is reloaded, and the loader returns success.</p></li>
     /// <li>
-    /// <p><code>NEW</code> &nbsp; – &nbsp; In NEW mode, the creates a new load request regardless of any previous loads. You can use this mode to reload all the data from a source after dropping previously loaded data from your Neptune cluster, or to load new data available at the same source.</p></li>
+    /// <p><code>NEW</code> - In NEW mode, the creates a new load request regardless of any previous loads. You can use this mode to reload all the data from a source after dropping previously loaded data from your Neptune cluster, or to load new data available at the same source.</p></li>
     /// <li>
-    /// <p><code>AUTO</code> &nbsp; – &nbsp; In AUTO mode, the loader looks for a previous load job from the same source, and if it finds one, resumes that job, just as in <code>RESUME</code> mode.</p>
+    /// <p><code>AUTO</code> - In AUTO mode, the loader looks for a previous load job from the same source, and if it finds one, resumes that job, just as in <code>RESUME</code> mode.</p>
     /// <p>If the loader doesn't find a previous load job from the same source, it loads all data from the source, just as in <code>NEW</code> mode.</p></li>
     /// </ul>
     pub fn mode(mut self, input: crate::types::Mode) -> Self {
@@ -460,12 +460,12 @@ impl StartLoaderJobInputBuilder {
     /// <p class="title"><b></b></p>
     /// <ul>
     /// <li>
-    /// <p><code>RESUME</code> &nbsp; – &nbsp; In RESUME mode, the loader looks for a previous load from this source, and if it finds one, resumes that load job. If no previous load job is found, the loader stops.</p>
+    /// <p><code>RESUME</code> - In RESUME mode, the loader looks for a previous load from this source, and if it finds one, resumes that load job. If no previous load job is found, the loader stops.</p>
     /// <p>The loader avoids reloading files that were successfully loaded in a previous job. It only tries to process failed files. If you dropped previously loaded data from your Neptune cluster, that data is not reloaded in this mode. If a previous load job loaded all files from the same source successfully, nothing is reloaded, and the loader returns success.</p></li>
     /// <li>
-    /// <p><code>NEW</code> &nbsp; – &nbsp; In NEW mode, the creates a new load request regardless of any previous loads. You can use this mode to reload all the data from a source after dropping previously loaded data from your Neptune cluster, or to load new data available at the same source.</p></li>
+    /// <p><code>NEW</code> - In NEW mode, the creates a new load request regardless of any previous loads. You can use this mode to reload all the data from a source after dropping previously loaded data from your Neptune cluster, or to load new data available at the same source.</p></li>
     /// <li>
-    /// <p><code>AUTO</code> &nbsp; – &nbsp; In AUTO mode, the loader looks for a previous load job from the same source, and if it finds one, resumes that job, just as in <code>RESUME</code> mode.</p>
+    /// <p><code>AUTO</code> - In AUTO mode, the loader looks for a previous load job from the same source, and if it finds one, resumes that job, just as in <code>RESUME</code> mode.</p>
     /// <p>If the loader doesn't find a previous load job from the same source, it loads all data from the source, just as in <code>NEW</code> mode.</p></li>
     /// </ul>
     pub fn set_mode(mut self, input: ::std::option::Option<crate::types::Mode>) -> Self {
@@ -478,18 +478,18 @@ impl StartLoaderJobInputBuilder {
     /// <p class="title"><b></b></p>
     /// <ul>
     /// <li>
-    /// <p><code>RESUME</code> &nbsp; – &nbsp; In RESUME mode, the loader looks for a previous load from this source, and if it finds one, resumes that load job. If no previous load job is found, the loader stops.</p>
+    /// <p><code>RESUME</code> - In RESUME mode, the loader looks for a previous load from this source, and if it finds one, resumes that load job. If no previous load job is found, the loader stops.</p>
     /// <p>The loader avoids reloading files that were successfully loaded in a previous job. It only tries to process failed files. If you dropped previously loaded data from your Neptune cluster, that data is not reloaded in this mode. If a previous load job loaded all files from the same source successfully, nothing is reloaded, and the loader returns success.</p></li>
     /// <li>
-    /// <p><code>NEW</code> &nbsp; – &nbsp; In NEW mode, the creates a new load request regardless of any previous loads. You can use this mode to reload all the data from a source after dropping previously loaded data from your Neptune cluster, or to load new data available at the same source.</p></li>
+    /// <p><code>NEW</code> - In NEW mode, the creates a new load request regardless of any previous loads. You can use this mode to reload all the data from a source after dropping previously loaded data from your Neptune cluster, or to load new data available at the same source.</p></li>
     /// <li>
-    /// <p><code>AUTO</code> &nbsp; – &nbsp; In AUTO mode, the loader looks for a previous load job from the same source, and if it finds one, resumes that job, just as in <code>RESUME</code> mode.</p>
+    /// <p><code>AUTO</code> - In AUTO mode, the loader looks for a previous load job from the same source, and if it finds one, resumes that job, just as in <code>RESUME</code> mode.</p>
     /// <p>If the loader doesn't find a previous load job from the same source, it loads all data from the source, just as in <code>NEW</code> mode.</p></li>
     /// </ul>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::Mode> {
         &self.mode
     }
-    /// <p><b> <code>failOnError</code> </b> &nbsp; – &nbsp; A flag to toggle a complete stop on an error.</p>
+    /// <p><b> <code>failOnError</code> </b> - A flag to toggle a complete stop on an error.</p>
     /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
     /// <p><i>Default value</i>: <code>"TRUE"</code>.</p>
     /// <p>When this parameter is set to <code>"FALSE"</code>, the loader tries to load all the data in the location specified, skipping any entries with errors.</p>
@@ -498,7 +498,7 @@ impl StartLoaderJobInputBuilder {
         self.fail_on_error = ::std::option::Option::Some(input);
         self
     }
-    /// <p><b> <code>failOnError</code> </b> &nbsp; – &nbsp; A flag to toggle a complete stop on an error.</p>
+    /// <p><b> <code>failOnError</code> </b> - A flag to toggle a complete stop on an error.</p>
     /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
     /// <p><i>Default value</i>: <code>"TRUE"</code>.</p>
     /// <p>When this parameter is set to <code>"FALSE"</code>, the loader tries to load all the data in the location specified, skipping any entries with errors.</p>
@@ -507,7 +507,7 @@ impl StartLoaderJobInputBuilder {
         self.fail_on_error = input;
         self
     }
-    /// <p><b> <code>failOnError</code> </b> &nbsp; – &nbsp; A flag to toggle a complete stop on an error.</p>
+    /// <p><b> <code>failOnError</code> </b> - A flag to toggle a complete stop on an error.</p>
     /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
     /// <p><i>Default value</i>: <code>"TRUE"</code>.</p>
     /// <p>When this parameter is set to <code>"FALSE"</code>, the loader tries to load all the data in the location specified, skipping any entries with errors.</p>
@@ -579,13 +579,13 @@ impl StartLoaderJobInputBuilder {
     /// <p class="title"><b></b></p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>namedGraphUri</code> </b> &nbsp; – &nbsp; The default graph for all RDF formats when no graph is specified (for non-quads formats and NQUAD entries with no graph).</p>
+    /// <p><b> <code>namedGraphUri</code> </b> - The default graph for all RDF formats when no graph is specified (for non-quads formats and NQUAD entries with no graph).</p>
     /// <p>The default is <code>https://aws.amazon.com/neptune/vocab/v01/DefaultNamedGraph</code>.</p></li>
     /// <li>
-    /// <p><b> <code>baseUri</code> </b> &nbsp; – &nbsp; The base URI for RDF/XML and Turtle formats.</p>
+    /// <p><b> <code>baseUri</code> </b> - The base URI for RDF/XML and Turtle formats.</p>
     /// <p>The default is <code>https://aws.amazon.com/neptune/default</code>.</p></li>
     /// <li>
-    /// <p><b> <code>allowEmptyStrings</code> </b> &nbsp; – &nbsp; Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
+    /// <p><b> <code>allowEmptyStrings</code> </b> - Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
     /// <p>If <code>allowEmptyStrings</code> is set to <code>true</code>, the loader treats empty strings as valid property values and loads them accordingly.</p></li>
     /// </ul>
     pub fn parser_configuration(
@@ -602,13 +602,13 @@ impl StartLoaderJobInputBuilder {
     /// <p class="title"><b></b></p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>namedGraphUri</code> </b> &nbsp; – &nbsp; The default graph for all RDF formats when no graph is specified (for non-quads formats and NQUAD entries with no graph).</p>
+    /// <p><b> <code>namedGraphUri</code> </b> - The default graph for all RDF formats when no graph is specified (for non-quads formats and NQUAD entries with no graph).</p>
     /// <p>The default is <code>https://aws.amazon.com/neptune/vocab/v01/DefaultNamedGraph</code>.</p></li>
     /// <li>
-    /// <p><b> <code>baseUri</code> </b> &nbsp; – &nbsp; The base URI for RDF/XML and Turtle formats.</p>
+    /// <p><b> <code>baseUri</code> </b> - The base URI for RDF/XML and Turtle formats.</p>
     /// <p>The default is <code>https://aws.amazon.com/neptune/default</code>.</p></li>
     /// <li>
-    /// <p><b> <code>allowEmptyStrings</code> </b> &nbsp; – &nbsp; Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
+    /// <p><b> <code>allowEmptyStrings</code> </b> - Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
     /// <p>If <code>allowEmptyStrings</code> is set to <code>true</code>, the loader treats empty strings as valid property values and loads them accordingly.</p></li>
     /// </ul>
     pub fn set_parser_configuration(
@@ -622,13 +622,13 @@ impl StartLoaderJobInputBuilder {
     /// <p class="title"><b></b></p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>namedGraphUri</code> </b> &nbsp; – &nbsp; The default graph for all RDF formats when no graph is specified (for non-quads formats and NQUAD entries with no graph).</p>
+    /// <p><b> <code>namedGraphUri</code> </b> - The default graph for all RDF formats when no graph is specified (for non-quads formats and NQUAD entries with no graph).</p>
     /// <p>The default is <code>https://aws.amazon.com/neptune/vocab/v01/DefaultNamedGraph</code>.</p></li>
     /// <li>
-    /// <p><b> <code>baseUri</code> </b> &nbsp; – &nbsp; The base URI for RDF/XML and Turtle formats.</p>
+    /// <p><b> <code>baseUri</code> </b> - The base URI for RDF/XML and Turtle formats.</p>
     /// <p>The default is <code>https://aws.amazon.com/neptune/default</code>.</p></li>
     /// <li>
-    /// <p><b> <code>allowEmptyStrings</code> </b> &nbsp; – &nbsp; Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
+    /// <p><b> <code>allowEmptyStrings</code> </b> - Gremlin users need to be able to pass empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code> is set to <code>false</code> (the default), such empty strings are treated as nulls and are not loaded.</p>
     /// <p>If <code>allowEmptyStrings</code> is set to <code>true</code>, the loader treats empty strings as valid property values and loads them accordingly.</p></li>
     /// </ul>
     pub fn get_parser_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -759,7 +759,7 @@ impl StartLoaderJobInputBuilder {
     pub fn get_user_provided_edge_ids(&self) -> &::std::option::Option<bool> {
         &self.user_provided_edge_ids
     }
-    /// <p><b> <code>edgeOnlyLoad</code> </b> &nbsp; – &nbsp; A flag that controls file processing order during bulk loading.</p>
+    /// <p><b> <code>edgeOnlyLoad</code> </b> - A flag that controls file processing order during bulk loading.</p>
     /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
     /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
     /// <p>When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.</p>
@@ -767,7 +767,7 @@ impl StartLoaderJobInputBuilder {
         self.edge_only_load = ::std::option::Option::Some(input);
         self
     }
-    /// <p><b> <code>edgeOnlyLoad</code> </b> &nbsp; – &nbsp; A flag that controls file processing order during bulk loading.</p>
+    /// <p><b> <code>edgeOnlyLoad</code> </b> - A flag that controls file processing order during bulk loading.</p>
     /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
     /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
     /// <p>When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.</p>
@@ -775,7 +775,7 @@ impl StartLoaderJobInputBuilder {
         self.edge_only_load = input;
         self
     }
-    /// <p><b> <code>edgeOnlyLoad</code> </b> &nbsp; – &nbsp; A flag that controls file processing order during bulk loading.</p>
+    /// <p><b> <code>edgeOnlyLoad</code> </b> - A flag that controls file processing order during bulk loading.</p>
     /// <p><i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p>
     /// <p><i>Default value</i>: <code>"FALSE"</code>.</p>
     /// <p>When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.</p>

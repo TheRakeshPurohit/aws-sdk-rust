@@ -180,8 +180,20 @@ pub(crate) fn de_start_run(
                             .transpose()?,
                     );
                 }
+                "configuration" => {
+                    builder = builder.set_configuration(crate::protocol_serde::shape_configuration_details::de_configuration_details(
+                        tokens, _value,
+                    )?);
+                }
                 "id" => {
                     builder = builder.set_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "networkingMode" => {
+                    builder = builder.set_networking_mode(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

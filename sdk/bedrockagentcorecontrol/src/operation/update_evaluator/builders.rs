@@ -150,17 +150,17 @@ impl UpdateEvaluatorFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The updated configuration for the evaluator, including LLM-as-a-Judge settings with instructions, rating scale, and model configuration.</p>
+    /// <p>The updated configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function.</p>
     pub fn evaluator_config(mut self, input: crate::types::EvaluatorConfig) -> Self {
         self.inner = self.inner.evaluator_config(input);
         self
     }
-    /// <p>The updated configuration for the evaluator, including LLM-as-a-Judge settings with instructions, rating scale, and model configuration.</p>
+    /// <p>The updated configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function.</p>
     pub fn set_evaluator_config(mut self, input: ::std::option::Option<crate::types::EvaluatorConfig>) -> Self {
         self.inner = self.inner.set_evaluator_config(input);
         self
     }
-    /// <p>The updated configuration for the evaluator, including LLM-as-a-Judge settings with instructions, rating scale, and model configuration.</p>
+    /// <p>The updated configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function.</p>
     pub fn get_evaluator_config(&self) -> &::std::option::Option<crate::types::EvaluatorConfig> {
         self.inner.get_evaluator_config()
     }

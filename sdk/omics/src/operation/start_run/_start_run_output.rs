@@ -15,6 +15,10 @@ pub struct StartRunOutput {
     pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>The destination for workflow outputs.</p>
     pub run_output_uri: ::std::option::Option<::std::string::String>,
+    /// <p>Configuration details for the workflow run.</p>
+    pub configuration: ::std::option::Option<crate::types::ConfigurationDetails>,
+    /// <p>Networking mode for the workflow run.</p>
+    pub networking_mode: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartRunOutput {
@@ -42,6 +46,14 @@ impl StartRunOutput {
     pub fn run_output_uri(&self) -> ::std::option::Option<&str> {
         self.run_output_uri.as_deref()
     }
+    /// <p>Configuration details for the workflow run.</p>
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ConfigurationDetails> {
+        self.configuration.as_ref()
+    }
+    /// <p>Networking mode for the workflow run.</p>
+    pub fn networking_mode(&self) -> ::std::option::Option<&str> {
+        self.networking_mode.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for StartRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -65,6 +77,8 @@ pub struct StartRunOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) uuid: ::std::option::Option<::std::string::String>,
     pub(crate) run_output_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) configuration: ::std::option::Option<crate::types::ConfigurationDetails>,
+    pub(crate) networking_mode: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartRunOutputBuilder {
@@ -158,6 +172,34 @@ impl StartRunOutputBuilder {
     pub fn get_run_output_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.run_output_uri
     }
+    /// <p>Configuration details for the workflow run.</p>
+    pub fn configuration(mut self, input: crate::types::ConfigurationDetails) -> Self {
+        self.configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration details for the workflow run.</p>
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ConfigurationDetails>) -> Self {
+        self.configuration = input;
+        self
+    }
+    /// <p>Configuration details for the workflow run.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ConfigurationDetails> {
+        &self.configuration
+    }
+    /// <p>Networking mode for the workflow run.</p>
+    pub fn networking_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.networking_mode = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Networking mode for the workflow run.</p>
+    pub fn set_networking_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.networking_mode = input;
+        self
+    }
+    /// <p>Networking mode for the workflow run.</p>
+    pub fn get_networking_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.networking_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -176,6 +218,8 @@ impl StartRunOutputBuilder {
             tags: self.tags,
             uuid: self.uuid,
             run_output_uri: self.run_output_uri,
+            configuration: self.configuration,
+            networking_mode: self.networking_mode,
             _request_id: self._request_id,
         }
     }

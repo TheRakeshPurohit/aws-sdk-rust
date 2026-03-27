@@ -53,6 +53,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_programming_language::ProgrammingLanguage;
 
+pub use crate::types::_language_runtime::LanguageRuntime;
+
 pub use crate::types::_code_interpreter_result::CodeInterpreterResult;
 
 pub use crate::types::_response_chunk::ResponseChunk;
@@ -260,6 +262,8 @@ mod _input_content_block;
 mod _invoke_agent_runtime_command_request_body;
 
 mod _invoke_agent_runtime_command_stream_output;
+
+mod _language_runtime;
 
 mod _left_expression;
 

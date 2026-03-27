@@ -408,4 +408,32 @@ impl StartRunFluentBuilder {
     pub fn get_workflow_version_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_version_name()
     }
+    /// <p>Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.</p>
+    pub fn networking_mode(mut self, input: crate::types::NetworkingMode) -> Self {
+        self.inner = self.inner.networking_mode(input);
+        self
+    }
+    /// <p>Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.</p>
+    pub fn set_networking_mode(mut self, input: ::std::option::Option<crate::types::NetworkingMode>) -> Self {
+        self.inner = self.inner.set_networking_mode(input);
+        self
+    }
+    /// <p>Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.</p>
+    pub fn get_networking_mode(&self) -> &::std::option::Option<crate::types::NetworkingMode> {
+        self.inner.get_networking_mode()
+    }
+    /// <p>Optional configuration name to use for the workflow run.</p>
+    pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.configuration_name(input.into());
+        self
+    }
+    /// <p>Optional configuration name to use for the workflow run.</p>
+    pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_configuration_name(input);
+        self
+    }
+    /// <p>Optional configuration name to use for the workflow run.</p>
+    pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_configuration_name()
+    }
 }

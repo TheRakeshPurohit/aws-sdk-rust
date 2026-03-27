@@ -2351,6 +2351,15 @@ pub(crate) fn interceptor_input_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn lambda_evaluator_config_correct_errors(
+    mut builder: crate::types::builders::LambdaEvaluatorConfigBuilder,
+) -> crate::types::builders::LambdaEvaluatorConfigBuilder {
+    if builder.lambda_arn.is_none() {
+        builder.lambda_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn mcp_lambda_target_configuration_correct_errors(
     mut builder: crate::types::builders::McpLambdaTargetConfigurationBuilder,
 ) -> crate::types::builders::McpLambdaTargetConfigurationBuilder {

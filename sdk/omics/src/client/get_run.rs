@@ -43,6 +43,9 @@ impl super::Client {
     ///   - [`workflow_owner_id(Option<String>)`](crate::operation::get_run::GetRunOutput::workflow_owner_id): <p>The ID of the workflow owner.</p>
     ///   - [`workflow_version_name(Option<String>)`](crate::operation::get_run::GetRunOutput::workflow_version_name): <p>The workflow version name.</p>
     ///   - [`workflow_uuid(Option<String>)`](crate::operation::get_run::GetRunOutput::workflow_uuid): <p>The universally unique identifier (UUID) value for the workflow.</p>
+    ///   - [`networking_mode(Option<NetworkingMode>)`](crate::operation::get_run::GetRunOutput::networking_mode): <p>Configuration for run networking behavior. If absent, this will default to RESTRICTED.</p>
+    ///   - [`configuration(Option<ConfigurationDetails>)`](crate::operation::get_run::GetRunOutput::configuration): <p>Configuration details for the workflow run.</p>
+    ///   - [`vpc_config(Option<VpcConfigResponse>)`](crate::operation::get_run::GetRunOutput::vpc_config): <p>VPC configuration for the workflow run.</p>
     /// - On failure, responds with [`SdkError<GetRunError>`](crate::operation::get_run::GetRunError)
     pub fn get_run(&self) -> crate::operation::get_run::builders::GetRunFluentBuilder {
         crate::operation::get_run::builders::GetRunFluentBuilder::new(self.handle.clone())

@@ -45,5 +45,8 @@ pub fn ser_tool_arguments(
     if let Some(var_14) = &input.task_id {
         object.key("taskId").string(var_14.as_str());
     }
+    if let Some(var_15) = &input.runtime {
+        object.key("runtime").string(var_15.as_str());
+    }
     Ok(())
 }

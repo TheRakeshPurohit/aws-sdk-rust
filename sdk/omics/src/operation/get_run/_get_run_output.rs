@@ -77,6 +77,12 @@ pub struct GetRunOutput {
     pub workflow_version_name: ::std::option::Option<::std::string::String>,
     /// <p>The universally unique identifier (UUID) value for the workflow.</p>
     pub workflow_uuid: ::std::option::Option<::std::string::String>,
+    /// <p>Configuration for run networking behavior. If absent, this will default to RESTRICTED.</p>
+    pub networking_mode: ::std::option::Option<crate::types::NetworkingMode>,
+    /// <p>Configuration details for the workflow run.</p>
+    pub configuration: ::std::option::Option<crate::types::ConfigurationDetails>,
+    /// <p>VPC configuration for the workflow run.</p>
+    pub vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
     _request_id: Option<String>,
 }
 impl GetRunOutput {
@@ -228,6 +234,18 @@ impl GetRunOutput {
     pub fn workflow_uuid(&self) -> ::std::option::Option<&str> {
         self.workflow_uuid.as_deref()
     }
+    /// <p>Configuration for run networking behavior. If absent, this will default to RESTRICTED.</p>
+    pub fn networking_mode(&self) -> ::std::option::Option<&crate::types::NetworkingMode> {
+        self.networking_mode.as_ref()
+    }
+    /// <p>Configuration details for the workflow run.</p>
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ConfigurationDetails> {
+        self.configuration.as_ref()
+    }
+    /// <p>VPC configuration for the workflow run.</p>
+    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfigResponse> {
+        self.vpc_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -282,6 +300,9 @@ pub struct GetRunOutputBuilder {
     pub(crate) workflow_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_version_name: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_uuid: ::std::option::Option<::std::string::String>,
+    pub(crate) networking_mode: ::std::option::Option<crate::types::NetworkingMode>,
+    pub(crate) configuration: ::std::option::Option<crate::types::ConfigurationDetails>,
+    pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
     _request_id: Option<String>,
 }
 impl GetRunOutputBuilder {
@@ -822,6 +843,48 @@ impl GetRunOutputBuilder {
     pub fn get_workflow_uuid(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_uuid
     }
+    /// <p>Configuration for run networking behavior. If absent, this will default to RESTRICTED.</p>
+    pub fn networking_mode(mut self, input: crate::types::NetworkingMode) -> Self {
+        self.networking_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for run networking behavior. If absent, this will default to RESTRICTED.</p>
+    pub fn set_networking_mode(mut self, input: ::std::option::Option<crate::types::NetworkingMode>) -> Self {
+        self.networking_mode = input;
+        self
+    }
+    /// <p>Configuration for run networking behavior. If absent, this will default to RESTRICTED.</p>
+    pub fn get_networking_mode(&self) -> &::std::option::Option<crate::types::NetworkingMode> {
+        &self.networking_mode
+    }
+    /// <p>Configuration details for the workflow run.</p>
+    pub fn configuration(mut self, input: crate::types::ConfigurationDetails) -> Self {
+        self.configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration details for the workflow run.</p>
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::ConfigurationDetails>) -> Self {
+        self.configuration = input;
+        self
+    }
+    /// <p>Configuration details for the workflow run.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::ConfigurationDetails> {
+        &self.configuration
+    }
+    /// <p>VPC configuration for the workflow run.</p>
+    pub fn vpc_config(mut self, input: crate::types::VpcConfigResponse) -> Self {
+        self.vpc_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>VPC configuration for the workflow run.</p>
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfigResponse>) -> Self {
+        self.vpc_config = input;
+        self
+    }
+    /// <p>VPC configuration for the workflow run.</p>
+    pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfigResponse> {
+        &self.vpc_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -871,6 +934,9 @@ impl GetRunOutputBuilder {
             workflow_owner_id: self.workflow_owner_id,
             workflow_version_name: self.workflow_version_name,
             workflow_uuid: self.workflow_uuid,
+            networking_mode: self.networking_mode,
+            configuration: self.configuration,
+            vpc_config: self.vpc_config,
             _request_id: self._request_id,
         }
     }

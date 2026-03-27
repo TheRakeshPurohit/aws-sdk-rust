@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`evaluator_id(String)`](crate::operation::get_evaluator::GetEvaluatorOutput::evaluator_id): <p>The unique identifier of the evaluator.</p>
     ///   - [`evaluator_name(String)`](crate::operation::get_evaluator::GetEvaluatorOutput::evaluator_name): <p>The name of the evaluator.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_evaluator::GetEvaluatorOutput::description): <p>The description of the evaluator.</p>
-    ///   - [`evaluator_config(Option<EvaluatorConfig>)`](crate::operation::get_evaluator::GetEvaluatorOutput::evaluator_config): <p>The configuration of the evaluator, including LLM-as-a-Judge settings for custom evaluators.</p>
+    ///   - [`evaluator_config(Option<EvaluatorConfig>)`](crate::operation::get_evaluator::GetEvaluatorOutput::evaluator_config): <p>The configuration of the evaluator, including LLM-as-a-Judge or code-based settings.</p>
     ///   - [`level(EvaluatorLevel)`](crate::operation::get_evaluator::GetEvaluatorOutput::level): <p>The evaluation level (<code>TOOL_CALL</code>, <code>TRACE</code>, or <code>SESSION</code>) that determines the scope of evaluation.</p>
     ///   - [`status(EvaluatorStatus)`](crate::operation::get_evaluator::GetEvaluatorOutput::status): <p>The current status of the evaluator.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_evaluator::GetEvaluatorOutput::created_at): <p>The timestamp when the evaluator was created.</p>

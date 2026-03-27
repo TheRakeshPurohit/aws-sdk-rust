@@ -14,6 +14,7 @@
 /// match evaluatortype {
 ///     EvaluatorType::Builtin => { /* ... */ },
 ///     EvaluatorType::Custom => { /* ... */ },
+///     EvaluatorType::Code => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum EvaluatorType {
     Builtin,
     #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
+    Code,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for EvaluatorType {
         match s {
             "Builtin" => EvaluatorType::Builtin,
             "Custom" => EvaluatorType::Custom,
+            "CustomCode" => EvaluatorType::Code,
             other => EvaluatorType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl EvaluatorType {
         match self {
             EvaluatorType::Builtin => "Builtin",
             EvaluatorType::Custom => "Custom",
+            EvaluatorType::Code => "CustomCode",
             EvaluatorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Builtin", "Custom"]
+        &["Builtin", "Custom", "CustomCode"]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluatorType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for EvaluatorType {
         match self {
             EvaluatorType::Builtin => write!(f, "Builtin"),
             EvaluatorType::Custom => write!(f, "Custom"),
+            EvaluatorType::Code => write!(f, "CustomCode"),
             EvaluatorType::Unknown(value) => write!(f, "{value}"),
         }
     }

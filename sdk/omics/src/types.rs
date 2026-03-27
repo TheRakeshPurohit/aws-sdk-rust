@@ -25,6 +25,12 @@ pub use crate::types::_version_options::VersionOptions;
 
 pub use crate::types::_version_status::VersionStatus;
 
+pub use crate::types::_run_configurations::RunConfigurations;
+
+pub use crate::types::_run_configurations_response::RunConfigurationsResponse;
+
+pub use crate::types::_configuration_status::ConfigurationStatus;
+
 pub use crate::types::_reference_store_filter::ReferenceStoreFilter;
 
 pub use crate::types::_reference_import_job_status::ReferenceImportJobStatus;
@@ -57,9 +63,15 @@ pub use crate::types::_run_retention_mode::RunRetentionMode;
 
 pub use crate::types::_storage_type::StorageType;
 
+pub use crate::types::_networking_mode::NetworkingMode;
+
+pub use crate::types::_configuration_details::ConfigurationDetails;
+
 pub use crate::types::_accelerators::Accelerators;
 
 pub use crate::types::_run_log_location::RunLogLocation;
+
+pub use crate::types::_vpc_config_response::VpcConfigResponse;
 
 pub use crate::types::_sequence_store_filter::SequenceStoreFilter;
 
@@ -160,6 +172,10 @@ pub use crate::types::_annotation_store_version_item::AnnotationStoreVersionItem
 pub use crate::types::_tsv_version_options::TsvVersionOptions;
 
 pub use crate::types::_version_delete_error::VersionDeleteError;
+
+pub use crate::types::_configuration_list_item::ConfigurationListItem;
+
+pub use crate::types::_vpc_config::VpcConfig;
 
 pub use crate::types::_reference_store_detail::ReferenceStoreDetail;
 
@@ -297,6 +313,12 @@ mod _cache_behavior;
 
 mod _complete_read_set_upload_part_list_item;
 
+mod _configuration_details;
+
+mod _configuration_list_item;
+
+mod _configuration_status;
+
 mod _container_registry_map;
 
 mod _creation_type;
@@ -365,6 +387,8 @@ mod _list_variant_stores_filter;
 
 mod _multipart_read_set_upload_list_item;
 
+mod _networking_mode;
+
 mod _read_options;
 
 mod _read_set_activation_job_item_status;
@@ -430,6 +454,10 @@ mod _run_batch_list_item;
 mod _run_cache_list_item;
 
 mod _run_cache_status;
+
+mod _run_configurations;
+
+mod _run_configurations_response;
 
 mod _run_export;
 
@@ -520,6 +548,10 @@ mod _version_delete_error;
 mod _version_options;
 
 mod _version_status;
+
+mod _vpc_config;
+
+mod _vpc_config_response;
 
 mod _workflow_engine;
 

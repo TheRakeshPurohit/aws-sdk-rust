@@ -22,7 +22,7 @@ impl crate::operation::create_evaluator::builders::CreateEvaluatorInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateEvaluator`.
 ///
-/// <p>Creates a custom evaluator for agent quality assessment. Custom evaluators use LLM-as-a-Judge configurations with user-defined prompts, rating scales, and model settings to evaluate agent performance at tool call, trace, or session levels.</p>
+/// <p>Creates a custom evaluator for agent quality assessment. Custom evaluators can use either LLM-as-a-Judge configurations with user-defined prompts, rating scales, and model settings, or code-based configurations with customer-managed Lambda functions to evaluate agent performance at tool call, trace, or session levels.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEvaluatorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -150,17 +150,17 @@ impl CreateEvaluatorFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The configuration for the evaluator, including LLM-as-a-Judge settings with instructions, rating scale, and model configuration.</p>
+    /// <p>The configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function.</p>
     pub fn evaluator_config(mut self, input: crate::types::EvaluatorConfig) -> Self {
         self.inner = self.inner.evaluator_config(input);
         self
     }
-    /// <p>The configuration for the evaluator, including LLM-as-a-Judge settings with instructions, rating scale, and model configuration.</p>
+    /// <p>The configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function.</p>
     pub fn set_evaluator_config(mut self, input: ::std::option::Option<crate::types::EvaluatorConfig>) -> Self {
         self.inner = self.inner.set_evaluator_config(input);
         self
     }
-    /// <p>The configuration for the evaluator, including LLM-as-a-Judge settings with instructions, rating scale, and model configuration.</p>
+    /// <p>The configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function.</p>
     pub fn get_evaluator_config(&self) -> &::std::option::Option<crate::types::EvaluatorConfig> {
         self.inner.get_evaluator_config()
     }

@@ -282,6 +282,8 @@ mod create_annotation_store;
 
 mod create_annotation_store_version;
 
+mod create_configuration;
+
 mod create_multipart_read_set_upload;
 
 mod create_reference_store;
@@ -333,6 +335,8 @@ mod delete_annotation_store_versions;
 
 mod delete_batch;
 
+mod delete_configuration;
+
 mod delete_reference;
 
 mod delete_reference_store;
@@ -364,6 +368,8 @@ mod get_annotation_store;
 mod get_annotation_store_version;
 
 mod get_batch;
+
+mod get_configuration;
 
 mod get_read_set;
 
@@ -412,6 +418,8 @@ mod list_annotation_store_versions;
 mod list_annotation_stores;
 
 mod list_batch;
+
+mod list_configurations;
 
 mod list_multipart_read_set_uploads;
 

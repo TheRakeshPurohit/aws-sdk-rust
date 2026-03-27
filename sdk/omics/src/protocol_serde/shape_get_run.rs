@@ -198,6 +198,11 @@ pub(crate) fn de_get_run(
                             .transpose()?,
                     );
                 }
+                "configuration" => {
+                    builder = builder.set_configuration(crate::protocol_serde::shape_configuration_details::de_configuration_details(
+                        tokens, _value,
+                    )?);
+                }
                 "creationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -253,6 +258,13 @@ pub(crate) fn de_get_run(
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "networkingMode" => {
+                    builder = builder.set_networking_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::NetworkingMode::from(u.as_ref())))
                             .transpose()?,
                     );
                 }
@@ -369,6 +381,9 @@ pub(crate) fn de_get_run(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "vpcConfig" => {
+                    builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config_response::de_vpc_config_response(tokens, _value)?);
                 }
                 "workflowId" => {
                     builder = builder.set_workflow_id(

@@ -9,7 +9,7 @@ pub struct UpdateEvaluatorInput {
     pub evaluator_id: ::std::option::Option<::std::string::String>,
     /// <p>The updated description of the evaluator.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The updated configuration for the evaluator, including LLM-as-a-Judge settings with instructions, rating scale, and model configuration.</p>
+    /// <p>The updated configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function.</p>
     pub evaluator_config: ::std::option::Option<crate::types::EvaluatorConfig>,
     /// <p>The updated evaluation level (<code>TOOL_CALL</code>, <code>TRACE</code>, or <code>SESSION</code>) that determines the scope of evaluation.</p>
     pub level: ::std::option::Option<crate::types::EvaluatorLevel>,
@@ -27,7 +27,7 @@ impl UpdateEvaluatorInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The updated configuration for the evaluator, including LLM-as-a-Judge settings with instructions, rating scale, and model configuration.</p>
+    /// <p>The updated configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function.</p>
     pub fn evaluator_config(&self) -> ::std::option::Option<&crate::types::EvaluatorConfig> {
         self.evaluator_config.as_ref()
     }
@@ -108,17 +108,17 @@ impl UpdateEvaluatorInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The updated configuration for the evaluator, including LLM-as-a-Judge settings with instructions, rating scale, and model configuration.</p>
+    /// <p>The updated configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function.</p>
     pub fn evaluator_config(mut self, input: crate::types::EvaluatorConfig) -> Self {
         self.evaluator_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated configuration for the evaluator, including LLM-as-a-Judge settings with instructions, rating scale, and model configuration.</p>
+    /// <p>The updated configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function.</p>
     pub fn set_evaluator_config(mut self, input: ::std::option::Option<crate::types::EvaluatorConfig>) -> Self {
         self.evaluator_config = input;
         self
     }
-    /// <p>The updated configuration for the evaluator, including LLM-as-a-Judge settings with instructions, rating scale, and model configuration.</p>
+    /// <p>The updated configuration for the evaluator. Specify either LLM-as-a-Judge settings with instructions, rating scale, and model configuration, or code-based settings with a customer-managed Lambda function.</p>
     pub fn get_evaluator_config(&self) -> &::std::option::Option<crate::types::EvaluatorConfig> {
         &self.evaluator_config
     }

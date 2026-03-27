@@ -173,6 +173,8 @@ pub use crate::types::_evaluator_summary::EvaluatorSummary;
 
 pub use crate::types::_llm_as_a_judge_evaluator_config::LlmAsAJudgeEvaluatorConfig;
 
+pub use crate::types::_code_based_evaluator_config::CodeBasedEvaluatorConfig;
+
 pub use crate::types::_mcp_gateway_configuration::McpGatewayConfiguration;
 
 pub use crate::types::_gateway_interceptor_configuration::GatewayInterceptorConfiguration;
@@ -258,6 +260,8 @@ pub use crate::types::_evaluator_type::EvaluatorType;
 pub use crate::types::_rating_scale::RatingScale;
 
 pub use crate::types::_evaluator_model_config::EvaluatorModelConfig;
+
+pub use crate::types::_lambda_evaluator_config::LambdaEvaluatorConfig;
 
 pub use crate::types::_search_type::SearchType;
 
@@ -547,6 +551,8 @@ mod _cloud_watch_output_config;
 
 mod _code;
 
+mod _code_based_evaluator_config;
+
 mod _code_configuration;
 
 mod _code_interpreter_network_configuration;
@@ -704,6 +710,8 @@ mod _key_type;
 mod _kinesis_resource;
 
 mod _kms_configuration;
+
+mod _lambda_evaluator_config;
 
 mod _lambda_interceptor_configuration;
 

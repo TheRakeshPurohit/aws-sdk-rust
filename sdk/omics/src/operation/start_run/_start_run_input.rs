@@ -43,6 +43,10 @@ pub struct StartRunInput {
     pub workflow_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workflow version. Use workflow versions to track and organize changes to the workflow. If your workflow has multiple versions, the run uses the default version unless you specify a version name. To learn more, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html">Workflow versioning</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub workflow_version_name: ::std::option::Option<::std::string::String>,
+    /// <p>Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.</p>
+    pub networking_mode: ::std::option::Option<crate::types::NetworkingMode>,
+    /// <p>Optional configuration name to use for the workflow run.</p>
+    pub configuration_name: ::std::option::Option<::std::string::String>,
 }
 impl StartRunInput {
     /// <p>The run's workflow ID. The <code>workflowId</code> is not the UUID.</p>
@@ -123,6 +127,14 @@ impl StartRunInput {
     pub fn workflow_version_name(&self) -> ::std::option::Option<&str> {
         self.workflow_version_name.as_deref()
     }
+    /// <p>Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.</p>
+    pub fn networking_mode(&self) -> ::std::option::Option<&crate::types::NetworkingMode> {
+        self.networking_mode.as_ref()
+    }
+    /// <p>Optional configuration name to use for the workflow run.</p>
+    pub fn configuration_name(&self) -> ::std::option::Option<&str> {
+        self.configuration_name.as_deref()
+    }
 }
 impl StartRunInput {
     /// Creates a new builder-style object to manufacture [`StartRunInput`](crate::operation::start_run::StartRunInput).
@@ -154,6 +166,8 @@ pub struct StartRunInputBuilder {
     pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
     pub(crate) workflow_owner_id: ::std::option::Option<::std::string::String>,
     pub(crate) workflow_version_name: ::std::option::Option<::std::string::String>,
+    pub(crate) networking_mode: ::std::option::Option<crate::types::NetworkingMode>,
+    pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
 }
 impl StartRunInputBuilder {
     /// <p>The run's workflow ID. The <code>workflowId</code> is not the UUID.</p>
@@ -437,6 +451,34 @@ impl StartRunInputBuilder {
     pub fn get_workflow_version_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_version_name
     }
+    /// <p>Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.</p>
+    pub fn networking_mode(mut self, input: crate::types::NetworkingMode) -> Self {
+        self.networking_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.</p>
+    pub fn set_networking_mode(mut self, input: ::std::option::Option<crate::types::NetworkingMode>) -> Self {
+        self.networking_mode = input;
+        self
+    }
+    /// <p>Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.</p>
+    pub fn get_networking_mode(&self) -> &::std::option::Option<crate::types::NetworkingMode> {
+        &self.networking_mode
+    }
+    /// <p>Optional configuration name to use for the workflow run.</p>
+    pub fn configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.configuration_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Optional configuration name to use for the workflow run.</p>
+    pub fn set_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.configuration_name = input;
+        self
+    }
+    /// <p>Optional configuration name to use for the workflow run.</p>
+    pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_name
+    }
     /// Consumes the builder and constructs a [`StartRunInput`](crate::operation::start_run::StartRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_run::StartRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_run::StartRunInput {
@@ -459,6 +501,8 @@ impl StartRunInputBuilder {
             storage_type: self.storage_type,
             workflow_owner_id: self.workflow_owner_id,
             workflow_version_name: self.workflow_version_name,
+            networking_mode: self.networking_mode,
+            configuration_name: self.configuration_name,
         })
     }
 }

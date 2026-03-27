@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateInput {
-    /// <p>The unique identifier of the evaluator to use for scoring. Can be a built-in evaluator (e.g., <code>Builtin.Helpfulness</code>, <code>Builtin.Correctness</code>) or a custom evaluator ARN created through the control plane API.</p>
+    /// <p>The unique identifier of the evaluator to use for scoring. Can be a built-in evaluator (e.g., <code>Builtin.Helpfulness</code>, <code>Builtin.Correctness</code>) or a custom evaluator Id created through the control plane API.</p>
     pub evaluator_id: ::std::option::Option<::std::string::String>,
     /// <p>The input data containing agent session spans to be evaluated. Includes a list of spans in OpenTelemetry format from supported frameworks like Strands (AgentCore Runtime) or LangGraph with OpenInference instrumentation.</p>
     pub evaluation_input: ::std::option::Option<crate::types::EvaluationInput>,
@@ -11,7 +11,7 @@ pub struct EvaluateInput {
     pub evaluation_target: ::std::option::Option<crate::types::EvaluationTarget>,
 }
 impl EvaluateInput {
-    /// <p>The unique identifier of the evaluator to use for scoring. Can be a built-in evaluator (e.g., <code>Builtin.Helpfulness</code>, <code>Builtin.Correctness</code>) or a custom evaluator ARN created through the control plane API.</p>
+    /// <p>The unique identifier of the evaluator to use for scoring. Can be a built-in evaluator (e.g., <code>Builtin.Helpfulness</code>, <code>Builtin.Correctness</code>) or a custom evaluator Id created through the control plane API.</p>
     pub fn evaluator_id(&self) -> ::std::option::Option<&str> {
         self.evaluator_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct EvaluateInputBuilder {
     pub(crate) evaluation_target: ::std::option::Option<crate::types::EvaluationTarget>,
 }
 impl EvaluateInputBuilder {
-    /// <p>The unique identifier of the evaluator to use for scoring. Can be a built-in evaluator (e.g., <code>Builtin.Helpfulness</code>, <code>Builtin.Correctness</code>) or a custom evaluator ARN created through the control plane API.</p>
+    /// <p>The unique identifier of the evaluator to use for scoring. Can be a built-in evaluator (e.g., <code>Builtin.Helpfulness</code>, <code>Builtin.Correctness</code>) or a custom evaluator Id created through the control plane API.</p>
     /// This field is required.
     pub fn evaluator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluator_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the evaluator to use for scoring. Can be a built-in evaluator (e.g., <code>Builtin.Helpfulness</code>, <code>Builtin.Correctness</code>) or a custom evaluator ARN created through the control plane API.</p>
+    /// <p>The unique identifier of the evaluator to use for scoring. Can be a built-in evaluator (e.g., <code>Builtin.Helpfulness</code>, <code>Builtin.Correctness</code>) or a custom evaluator Id created through the control plane API.</p>
     pub fn set_evaluator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.evaluator_id = input;
         self
     }
-    /// <p>The unique identifier of the evaluator to use for scoring. Can be a built-in evaluator (e.g., <code>Builtin.Helpfulness</code>, <code>Builtin.Correctness</code>) or a custom evaluator ARN created through the control plane API.</p>
+    /// <p>The unique identifier of the evaluator to use for scoring. Can be a built-in evaluator (e.g., <code>Builtin.Helpfulness</code>, <code>Builtin.Correctness</code>) or a custom evaluator Id created through the control plane API.</p>
     pub fn get_evaluator_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluator_id
     }

@@ -7,6 +7,10 @@ pub use crate::types::_sse_config::SseConfigBuilder;
 
 pub use crate::types::_list_annotation_store_versions_filter::ListAnnotationStoreVersionsFilterBuilder;
 
+pub use crate::types::_run_configurations::RunConfigurationsBuilder;
+
+pub use crate::types::_run_configurations_response::RunConfigurationsResponseBuilder;
+
 pub use crate::types::_reference_store_filter::ReferenceStoreFilterBuilder;
 
 pub use crate::types::_import_reference_filter::ImportReferenceFilterBuilder;
@@ -17,7 +21,11 @@ pub use crate::types::_submission_summary::SubmissionSummaryBuilder;
 
 pub use crate::types::_run_summary::RunSummaryBuilder;
 
+pub use crate::types::_configuration_details::ConfigurationDetailsBuilder;
+
 pub use crate::types::_run_log_location::RunLogLocationBuilder;
+
+pub use crate::types::_vpc_config_response::VpcConfigResponseBuilder;
 
 pub use crate::types::_sequence_store_filter::SequenceStoreFilterBuilder;
 
@@ -80,6 +88,10 @@ pub use crate::types::_annotation_store_version_item::AnnotationStoreVersionItem
 pub use crate::types::_tsv_version_options::TsvVersionOptionsBuilder;
 
 pub use crate::types::_version_delete_error::VersionDeleteErrorBuilder;
+
+pub use crate::types::_configuration_list_item::ConfigurationListItemBuilder;
+
+pub use crate::types::_vpc_config::VpcConfigBuilder;
 
 pub use crate::types::_reference_store_detail::ReferenceStoreDetailBuilder;
 

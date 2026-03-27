@@ -31,6 +31,9 @@ pub mod create_annotation_store;
 /// Types for the `CreateAnnotationStoreVersion` operation.
 pub mod create_annotation_store_version;
 
+/// Types for the `CreateConfiguration` operation.
+pub mod create_configuration;
+
 /// Types for the `CreateMultipartReadSetUpload` operation.
 pub mod create_multipart_read_set_upload;
 
@@ -66,6 +69,9 @@ pub mod delete_annotation_store_versions;
 
 /// Types for the `DeleteBatch` operation.
 pub mod delete_batch;
+
+/// Types for the `DeleteConfiguration` operation.
+pub mod delete_configuration;
 
 /// Types for the `DeleteReference` operation.
 pub mod delete_reference;
@@ -114,6 +120,9 @@ pub mod get_annotation_store_version;
 
 /// Types for the `GetBatch` operation.
 pub mod get_batch;
+
+/// Types for the `GetConfiguration` operation.
+pub mod get_configuration;
 
 /// Types for the `GetReadSet` operation.
 pub mod get_read_set;
@@ -186,6 +195,9 @@ pub mod list_annotation_stores;
 
 /// Types for the `ListBatch` operation.
 pub mod list_batch;
+
+/// Types for the `ListConfigurations` operation.
+pub mod list_configurations;
 
 /// Types for the `ListMultipartReadSetUploads` operation.
 pub mod list_multipart_read_set_uploads;

@@ -6,7 +6,7 @@
 pub struct ToolArguments {
     /// <p>The code to execute in a code interpreter session. This is the source code in the specified programming language that will be executed by the code interpreter.</p>
     pub code: ::std::option::Option<::std::string::String>,
-    /// <p>The programming language of the code to execute. This tells the code interpreter which language runtime to use for execution. Common values include 'python', 'javascript', and 'r'.</p>
+    /// <p>The programming language of the code to execute. This tells the code interpreter which language runtime to use for execution.</p>
     pub language: ::std::option::Option<crate::types::ProgrammingLanguage>,
     /// <p>Whether to clear the context for the tool.</p>
     pub clear_context: ::std::option::Option<bool>,
@@ -22,13 +22,15 @@ pub struct ToolArguments {
     pub directory_path: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the task for the tool operation.</p>
     pub task_id: ::std::option::Option<::std::string::String>,
+    /// <p>The runtime environment to use for code execution. If not specified, defaults to <code>deno</code> for JavaScript and TypeScript.</p>
+    pub runtime: ::std::option::Option<crate::types::LanguageRuntime>,
 }
 impl ToolArguments {
     /// <p>The code to execute in a code interpreter session. This is the source code in the specified programming language that will be executed by the code interpreter.</p>
     pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
-    /// <p>The programming language of the code to execute. This tells the code interpreter which language runtime to use for execution. Common values include 'python', 'javascript', and 'r'.</p>
+    /// <p>The programming language of the code to execute. This tells the code interpreter which language runtime to use for execution.</p>
     pub fn language(&self) -> ::std::option::Option<&crate::types::ProgrammingLanguage> {
         self.language.as_ref()
     }
@@ -64,6 +66,10 @@ impl ToolArguments {
     pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
+    /// <p>The runtime environment to use for code execution. If not specified, defaults to <code>deno</code> for JavaScript and TypeScript.</p>
+    pub fn runtime(&self) -> ::std::option::Option<&crate::types::LanguageRuntime> {
+        self.runtime.as_ref()
+    }
 }
 impl ToolArguments {
     /// Creates a new builder-style object to manufacture [`ToolArguments`](crate::types::ToolArguments).
@@ -85,6 +91,7 @@ pub struct ToolArgumentsBuilder {
     pub(crate) content: ::std::option::Option<::std::vec::Vec<crate::types::InputContentBlock>>,
     pub(crate) directory_path: ::std::option::Option<::std::string::String>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
+    pub(crate) runtime: ::std::option::Option<crate::types::LanguageRuntime>,
 }
 impl ToolArgumentsBuilder {
     /// <p>The code to execute in a code interpreter session. This is the source code in the specified programming language that will be executed by the code interpreter.</p>
@@ -101,17 +108,17 @@ impl ToolArgumentsBuilder {
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.code
     }
-    /// <p>The programming language of the code to execute. This tells the code interpreter which language runtime to use for execution. Common values include 'python', 'javascript', and 'r'.</p>
+    /// <p>The programming language of the code to execute. This tells the code interpreter which language runtime to use for execution.</p>
     pub fn language(mut self, input: crate::types::ProgrammingLanguage) -> Self {
         self.language = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The programming language of the code to execute. This tells the code interpreter which language runtime to use for execution. Common values include 'python', 'javascript', and 'r'.</p>
+    /// <p>The programming language of the code to execute. This tells the code interpreter which language runtime to use for execution.</p>
     pub fn set_language(mut self, input: ::std::option::Option<crate::types::ProgrammingLanguage>) -> Self {
         self.language = input;
         self
     }
-    /// <p>The programming language of the code to execute. This tells the code interpreter which language runtime to use for execution. Common values include 'python', 'javascript', and 'r'.</p>
+    /// <p>The programming language of the code to execute. This tells the code interpreter which language runtime to use for execution.</p>
     pub fn get_language(&self) -> &::std::option::Option<crate::types::ProgrammingLanguage> {
         &self.language
     }
@@ -225,6 +232,20 @@ impl ToolArgumentsBuilder {
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_id
     }
+    /// <p>The runtime environment to use for code execution. If not specified, defaults to <code>deno</code> for JavaScript and TypeScript.</p>
+    pub fn runtime(mut self, input: crate::types::LanguageRuntime) -> Self {
+        self.runtime = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The runtime environment to use for code execution. If not specified, defaults to <code>deno</code> for JavaScript and TypeScript.</p>
+    pub fn set_runtime(mut self, input: ::std::option::Option<crate::types::LanguageRuntime>) -> Self {
+        self.runtime = input;
+        self
+    }
+    /// <p>The runtime environment to use for code execution. If not specified, defaults to <code>deno</code> for JavaScript and TypeScript.</p>
+    pub fn get_runtime(&self) -> &::std::option::Option<crate::types::LanguageRuntime> {
+        &self.runtime
+    }
     /// Consumes the builder and constructs a [`ToolArguments`](crate::types::ToolArguments).
     pub fn build(self) -> crate::types::ToolArguments {
         crate::types::ToolArguments {
@@ -237,6 +258,7 @@ impl ToolArgumentsBuilder {
             content: self.content,
             directory_path: self.directory_path,
             task_id: self.task_id,
+            runtime: self.runtime,
         }
     }
 }

@@ -43,6 +43,8 @@ pub(crate) mod shape_create_annotation_store;
 
 pub(crate) mod shape_create_annotation_store_version;
 
+pub(crate) mod shape_create_configuration;
+
 pub(crate) mod shape_create_multipart_read_set_upload;
 
 pub(crate) mod shape_create_reference_store;
@@ -66,6 +68,8 @@ pub(crate) mod shape_delete_annotation_store;
 pub(crate) mod shape_delete_annotation_store_versions;
 
 pub(crate) mod shape_delete_batch;
+
+pub(crate) mod shape_delete_configuration;
 
 pub(crate) mod shape_delete_reference;
 
@@ -98,6 +102,8 @@ pub(crate) mod shape_get_annotation_store;
 pub(crate) mod shape_get_annotation_store_version;
 
 pub(crate) mod shape_get_batch;
+
+pub(crate) mod shape_get_configuration;
 
 pub(crate) mod shape_get_read_set;
 
@@ -146,6 +152,8 @@ pub(crate) mod shape_list_annotation_store_versions;
 pub(crate) mod shape_list_annotation_stores;
 
 pub(crate) mod shape_list_batch;
+
+pub(crate) mod shape_list_configurations;
 
 pub(crate) mod shape_list_multipart_read_set_uploads;
 
@@ -252,6 +260,8 @@ pub(crate) mod shape_conflict_exception;
 pub(crate) mod shape_create_annotation_store_input;
 
 pub(crate) mod shape_create_annotation_store_version_input;
+
+pub(crate) mod shape_create_configuration_input;
 
 pub(crate) mod shape_create_multipart_read_set_upload_input;
 
@@ -385,6 +395,10 @@ pub(crate) mod shape_batch_run_settings;
 
 pub(crate) mod shape_complete_read_set_upload_part_list_item;
 
+pub(crate) mod shape_configuration_details;
+
+pub(crate) mod shape_configuration_list;
+
 pub(crate) mod shape_container_registry_map;
 
 pub(crate) mod shape_default_run_setting;
@@ -463,6 +477,10 @@ pub(crate) mod shape_run_batch_list;
 
 pub(crate) mod shape_run_cache_list;
 
+pub(crate) mod shape_run_configurations;
+
+pub(crate) mod shape_run_configurations_response;
+
 pub(crate) mod shape_run_group_list;
 
 pub(crate) mod shape_run_list;
@@ -515,6 +533,8 @@ pub(crate) mod shape_version_delete_error_list;
 
 pub(crate) mod shape_version_options;
 
+pub(crate) mod shape_vpc_config_response;
+
 pub(crate) mod shape_workflow_list;
 
 pub(crate) mod shape_workflow_metadata;
@@ -538,6 +558,8 @@ pub(crate) mod shape_annotation_store_item;
 pub(crate) mod shape_annotation_store_version_item;
 
 pub(crate) mod shape_batch_list_item;
+
+pub(crate) mod shape_configuration_list_item;
 
 pub(crate) mod shape_export_read_set_detail;
 
@@ -583,11 +605,15 @@ pub(crate) mod shape_run_group_list_item;
 
 pub(crate) mod shape_run_list_item;
 
+pub(crate) mod shape_security_group_ids;
+
 pub(crate) mod shape_sequence_store_detail;
 
 pub(crate) mod shape_source_files;
 
 pub(crate) mod shape_source_reference;
+
+pub(crate) mod shape_subnet_ids;
 
 pub(crate) mod shape_task_list_item;
 
@@ -606,6 +632,8 @@ pub(crate) mod shape_variant_store_item;
 pub(crate) mod shape_vcf_options;
 
 pub(crate) mod shape_version_delete_error;
+
+pub(crate) mod shape_vpc_config;
 
 pub(crate) mod shape_workflow_list_item;
 
