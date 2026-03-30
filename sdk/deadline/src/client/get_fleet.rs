@@ -9,7 +9,6 @@ impl super::Client {
     ///   - [`fleet_id(String)`](crate::operation::get_fleet::GetFleetOutput::fleet_id): <p>The fleet ID.</p>
     ///   - [`farm_id(String)`](crate::operation::get_fleet::GetFleetOutput::farm_id): <p>The farm ID of the farm in the fleet.</p>
     ///   - [`display_name(String)`](crate::operation::get_fleet::GetFleetOutput::display_name): <p>The display name of the fleet.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
-    ///   - [`description(Option<String>)`](crate::operation::get_fleet::GetFleetOutput::description): <p>The description of the fleet.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
     ///   - [`status(FleetStatus)`](crate::operation::get_fleet::GetFleetOutput::status): <p>The status of the fleet.</p>
     ///   - [`status_message(Option<String>)`](crate::operation::get_fleet::GetFleetOutput::status_message): <p>A message that communicates a suspended status of the fleet.</p>
     ///   - [`auto_scaling_status(Option<AutoScalingStatus>)`](crate::operation::get_fleet::GetFleetOutput::auto_scaling_status): <p>The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or <code>SHRINKING</code>.</p>
@@ -18,13 +17,14 @@ impl super::Client {
     ///   - [`min_worker_count(i32)`](crate::operation::get_fleet::GetFleetOutput::min_worker_count): <p>The minimum number of workers specified in the fleet.</p>
     ///   - [`max_worker_count(i32)`](crate::operation::get_fleet::GetFleetOutput::max_worker_count): <p>The maximum number of workers specified in the fleet.</p>
     ///   - [`configuration(Option<FleetConfiguration>)`](crate::operation::get_fleet::GetFleetOutput::configuration): <p>The configuration setting for the fleet.</p>
-    ///   - [`host_configuration(Option<HostConfiguration>)`](crate::operation::get_fleet::GetFleetOutput::host_configuration): <p>The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
-    ///   - [`capabilities(Option<FleetCapabilities>)`](crate::operation::get_fleet::GetFleetOutput::capabilities): <p>Outlines what the fleet is capable of for minimums, maximums, and naming, in addition to attribute names and values.</p>
-    ///   - [`role_arn(String)`](crate::operation::get_fleet::GetFleetOutput::role_arn): <p>The IAM role ARN.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_fleet::GetFleetOutput::created_at): <p>The date and time the resource was created.</p>
     ///   - [`created_by(String)`](crate::operation::get_fleet::GetFleetOutput::created_by): <p>The user or system that created this resource.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_fleet::GetFleetOutput::updated_at): <p>The date and time the resource was updated.</p>
     ///   - [`updated_by(Option<String>)`](crate::operation::get_fleet::GetFleetOutput::updated_by): <p>The user or system that updated this resource.</p>
+    ///   - [`description(Option<String>)`](crate::operation::get_fleet::GetFleetOutput::description): <p>The description of the fleet.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
+    ///   - [`host_configuration(Option<HostConfiguration>)`](crate::operation::get_fleet::GetFleetOutput::host_configuration): <p>The script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.</p>
+    ///   - [`capabilities(Option<FleetCapabilities>)`](crate::operation::get_fleet::GetFleetOutput::capabilities): <p>Outlines what the fleet is capable of for minimums, maximums, and naming, in addition to attribute names and values.</p>
+    ///   - [`role_arn(String)`](crate::operation::get_fleet::GetFleetOutput::role_arn): <p>The IAM role ARN.</p>
     /// - On failure, responds with [`SdkError<GetFleetError>`](crate::operation::get_fleet::GetFleetError)
     pub fn get_fleet(&self) -> crate::operation::get_fleet::builders::GetFleetFluentBuilder {
         crate::operation::get_fleet::builders::GetFleetFluentBuilder::new(self.handle.clone())

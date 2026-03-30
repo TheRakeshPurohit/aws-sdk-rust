@@ -18,7 +18,13 @@ pub struct DataLakeSettings {
     /// <p>The only permitted values are an empty array or an array that contains a single JSON object that grants ALL to IAM_ALLOWED_PRINCIPALS.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/change-settings.html">Changing the Default Security Settings for Your Data Lake</a>.</p>
     pub create_table_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
-    /// <p>A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, 3, 4 and 5.</p>
+    /// <p>A key-value map that provides an additional configuration on your data lake. The following key-value pairs are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CROSS_ACCOUNT_VERSION</code> - Accepted values are 1, 2, 3, 4, and 5.</p></li>
+    /// <li>
+    /// <p><code>SET_SOURCE_IDENTITY</code> - Accepted values are <code>TRUE</code> and <code>FALSE</code>. When set to <code>TRUE</code>, Lake Formation includes the IAM role identifier that was used to query in the S3 data event CloudTrail logs for <code>s3:GetObject</code> calls. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/cloudtrail-logging.html#source-identity-cloudtrail">Tracking query engine IAM roles in S3 data events</a>.</p></li>
+    /// </ul>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of the resource-owning account IDs that the caller's account can use to share their user access details (user ARNs). The user ARNs can be logged in the resource owner's CloudTrail log.</p>
     /// <p>You may want to specify this property when you are in a high-trust boundary, such as the same team or company.</p>
@@ -66,7 +72,13 @@ impl DataLakeSettings {
     pub fn create_table_default_permissions(&self) -> &[crate::types::PrincipalPermissions] {
         self.create_table_default_permissions.as_deref().unwrap_or_default()
     }
-    /// <p>A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, 3, 4 and 5.</p>
+    /// <p>A key-value map that provides an additional configuration on your data lake. The following key-value pairs are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CROSS_ACCOUNT_VERSION</code> - Accepted values are 1, 2, 3, 4, and 5.</p></li>
+    /// <li>
+    /// <p><code>SET_SOURCE_IDENTITY</code> - Accepted values are <code>TRUE</code> and <code>FALSE</code>. When set to <code>TRUE</code>, Lake Formation includes the IAM role identifier that was used to query in the S3 data event CloudTrail logs for <code>s3:GetObject</code> calls. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/cloudtrail-logging.html#source-identity-cloudtrail">Tracking query engine IAM roles in S3 data events</a>.</p></li>
+    /// </ul>
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
@@ -229,19 +241,37 @@ impl DataLakeSettingsBuilder {
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, 3, 4 and 5.</p>
+    /// <p>A key-value map that provides an additional configuration on your data lake. The following key-value pairs are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CROSS_ACCOUNT_VERSION</code> - Accepted values are 1, 2, 3, 4, and 5.</p></li>
+    /// <li>
+    /// <p><code>SET_SOURCE_IDENTITY</code> - Accepted values are <code>TRUE</code> and <code>FALSE</code>. When set to <code>TRUE</code>, Lake Formation includes the IAM role identifier that was used to query in the S3 data event CloudTrail logs for <code>s3:GetObject</code> calls. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/cloudtrail-logging.html#source-identity-cloudtrail">Tracking query engine IAM roles in S3 data events</a>.</p></li>
+    /// </ul>
     pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, 3, 4 and 5.</p>
+    /// <p>A key-value map that provides an additional configuration on your data lake. The following key-value pairs are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CROSS_ACCOUNT_VERSION</code> - Accepted values are 1, 2, 3, 4, and 5.</p></li>
+    /// <li>
+    /// <p><code>SET_SOURCE_IDENTITY</code> - Accepted values are <code>TRUE</code> and <code>FALSE</code>. When set to <code>TRUE</code>, Lake Formation includes the IAM role identifier that was used to query in the S3 data event CloudTrail logs for <code>s3:GetObject</code> calls. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/cloudtrail-logging.html#source-identity-cloudtrail">Tracking query engine IAM roles in S3 data events</a>.</p></li>
+    /// </ul>
     pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.parameters = input;
         self
     }
-    /// <p>A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, 3, 4 and 5.</p>
+    /// <p>A key-value map that provides an additional configuration on your data lake. The following key-value pairs are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CROSS_ACCOUNT_VERSION</code> - Accepted values are 1, 2, 3, 4, and 5.</p></li>
+    /// <li>
+    /// <p><code>SET_SOURCE_IDENTITY</code> - Accepted values are <code>TRUE</code> and <code>FALSE</code>. When set to <code>TRUE</code>, Lake Formation includes the IAM role identifier that was used to query in the S3 data event CloudTrail logs for <code>s3:GetObject</code> calls. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/cloudtrail-logging.html#source-identity-cloudtrail">Tracking query engine IAM roles in S3 data events</a>.</p></li>
+    /// </ul>
     pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }

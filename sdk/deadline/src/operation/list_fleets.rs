@@ -200,29 +200,29 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListFleetsRe
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_2) = &_input.principal_id {
+                if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("principalId", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
-                if let ::std::option::Option::Some(inner_3) = &_input.display_name {
+                if let ::std::option::Option::Some(inner_3) = &_input.max_results {
                     {
-                        query.push_kv("displayName", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }
-                if let ::std::option::Option::Some(inner_4) = &_input.status {
+                if let ::std::option::Option::Some(inner_4) = &_input.principal_id {
                     {
-                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("principalId", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
-                if let ::std::option::Option::Some(inner_5) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_5) = &_input.display_name {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("displayName", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
-                if let ::std::option::Option::Some(inner_6) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_6) = &_input.status {
                     {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
+                        query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
                 ::std::result::Result::Ok(())

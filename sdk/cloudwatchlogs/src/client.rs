@@ -156,6 +156,8 @@ mod create_log_group;
 
 mod create_log_stream;
 
+mod create_lookup_table;
+
 mod create_scheduled_query;
 
 /// Operation customization and supporting types.
@@ -209,6 +211,8 @@ mod delete_log_group;
 
 mod delete_log_stream;
 
+mod delete_lookup_table;
+
 mod delete_metric_filter;
 
 mod delete_query_definition;
@@ -249,6 +253,8 @@ mod describe_log_groups;
 
 mod describe_log_streams;
 
+mod describe_lookup_tables;
+
 mod describe_metric_filters;
 
 mod describe_queries;
@@ -288,6 +294,8 @@ mod get_log_group_fields;
 mod get_log_object;
 
 mod get_log_record;
+
+mod get_lookup_table;
 
 mod get_query_results;
 
@@ -376,5 +384,7 @@ mod update_anomaly;
 mod update_delivery_configuration;
 
 mod update_log_anomaly_detector;
+
+mod update_lookup_table;
 
 mod update_scheduled_query;

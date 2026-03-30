@@ -141,4 +141,23 @@ impl EvaluateFluentBuilder {
     pub fn get_evaluation_target(&self) -> &::std::option::Option<crate::types::EvaluationTarget> {
         self.inner.get_evaluation_target()
     }
+    ///
+    /// Appends an item to `evaluationReferenceInputs`.
+    ///
+    /// To override the contents of this collection use [`set_evaluation_reference_inputs`](Self::set_evaluation_reference_inputs).
+    ///
+    /// <p>Ground truth data to compare against agent responses during evaluation. Allows to provide expected responses, assertions, and expected tool trajectories at different evaluation levels. Session-level reference inputs apply to the entire conversation, while trace-level reference inputs target specific request-response interactions identified by trace ID.</p>
+    pub fn evaluation_reference_inputs(mut self, input: crate::types::EvaluationReferenceInput) -> Self {
+        self.inner = self.inner.evaluation_reference_inputs(input);
+        self
+    }
+    /// <p>Ground truth data to compare against agent responses during evaluation. Allows to provide expected responses, assertions, and expected tool trajectories at different evaluation levels. Session-level reference inputs apply to the entire conversation, while trace-level reference inputs target specific request-response interactions identified by trace ID.</p>
+    pub fn set_evaluation_reference_inputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationReferenceInput>>) -> Self {
+        self.inner = self.inner.set_evaluation_reference_inputs(input);
+        self
+    }
+    /// <p>Ground truth data to compare against agent responses during evaluation. Allows to provide expected responses, assertions, and expected tool trajectories at different evaluation levels. Session-level reference inputs apply to the entire conversation, while trace-level reference inputs target specific request-response interactions identified by trace ID.</p>
+    pub fn get_evaluation_reference_inputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationReferenceInput>> {
+        self.inner.get_evaluation_reference_inputs()
+    }
 }

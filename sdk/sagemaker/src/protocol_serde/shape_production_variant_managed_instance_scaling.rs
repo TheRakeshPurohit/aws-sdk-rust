@@ -18,6 +18,12 @@ pub fn ser_production_variant_managed_instance_scaling(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.scale_in_policy {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ScaleInPolicy").start_object();
+        crate::protocol_serde::shape_production_variant_managed_instance_scaling_scale_in_policy::ser_production_variant_managed_instance_scaling_scale_in_policy(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -57,6 +63,11 @@ where
                                     .map(i32::try_from)
                                     .transpose()?,
                             );
+                        }
+                        "ScaleInPolicy" => {
+                            builder = builder.set_scale_in_policy(
+                                    crate::protocol_serde::shape_production_variant_managed_instance_scaling_scale_in_policy::de_production_variant_managed_instance_scaling_scale_in_policy(tokens, _value)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

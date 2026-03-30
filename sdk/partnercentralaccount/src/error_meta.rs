@@ -100,6 +100,9 @@ impl From<crate::operation::accept_connection_invitation::AcceptConnectionInvita
             crate::operation::accept_connection_invitation::AcceptConnectionInvitationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::accept_connection_invitation::AcceptConnectionInvitationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::accept_connection_invitation::AcceptConnectionInvitationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
@@ -288,6 +291,9 @@ impl From<crate::operation::create_connection_invitation::CreateConnectionInvita
             }
             crate::operation::create_connection_invitation::CreateConnectionInvitationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_connection_invitation::CreateConnectionInvitationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::create_connection_invitation::CreateConnectionInvitationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)

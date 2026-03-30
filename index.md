@@ -60,6 +60,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Data Pipeline | [aws-sdk-datapipeline](https://crates.io/crates/aws-sdk-datapipeline) ([docs](https://docs.rs/aws-sdk-datapipeline)) |
 | AWS DataSync | [aws-sdk-datasync](https://crates.io/crates/aws-sdk-datasync) ([docs](https://docs.rs/aws-sdk-datasync)) |
 | AWS Database Migration Service | [aws-sdk-databasemigration](https://crates.io/crates/aws-sdk-databasemigration) ([docs](https://docs.rs/aws-sdk-databasemigration)) |
+| AWS DevOps Agent Service | [aws-sdk-devopsagent](https://crates.io/crates/aws-sdk-devopsagent) ([docs](https://docs.rs/aws-sdk-devopsagent)) |
 | AWS Device Farm | [aws-sdk-devicefarm](https://crates.io/crates/aws-sdk-devicefarm) ([docs](https://docs.rs/aws-sdk-devicefarm)) |
 | AWS Direct Connect | [aws-sdk-directconnect](https://crates.io/crates/aws-sdk-directconnect) ([docs](https://docs.rs/aws-sdk-directconnect)) |
 | AWS Directory Service | [aws-sdk-directory](https://crates.io/crates/aws-sdk-directory) ([docs](https://docs.rs/aws-sdk-directory)) |

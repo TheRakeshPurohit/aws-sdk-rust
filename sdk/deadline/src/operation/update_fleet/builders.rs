@@ -108,20 +108,6 @@ impl UpdateFleetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.client_token(input.into());
-        self
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_client_token(input);
-        self
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_client_token()
-    }
     /// <p>The farm ID to update.</p>
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
@@ -149,6 +135,20 @@ impl UpdateFleetFluentBuilder {
     /// <p>The fleet ID to update.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_token(input.into());
+        self
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_token(input);
+        self
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
     }
     /// <p>The display name of the fleet to update.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>

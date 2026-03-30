@@ -94,6 +94,10 @@ where
                                 crate::protocol_serde::shape_streaming_experience_settings::de_streaming_experience_settings(tokens, _value)?,
                             );
                         }
+                        "ContentRedirection" => {
+                            builder = builder
+                                .set_content_redirection(crate::protocol_serde::shape_content_redirection::de_content_redirection(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

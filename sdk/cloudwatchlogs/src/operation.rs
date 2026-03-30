@@ -31,6 +31,9 @@ pub mod create_log_group;
 /// Types for the `CreateLogStream` operation.
 pub mod create_log_stream;
 
+/// Types for the `CreateLookupTable` operation.
+pub mod create_lookup_table;
+
 /// Types for the `CreateScheduledQuery` operation.
 pub mod create_scheduled_query;
 
@@ -69,6 +72,9 @@ pub mod delete_log_group;
 
 /// Types for the `DeleteLogStream` operation.
 pub mod delete_log_stream;
+
+/// Types for the `DeleteLookupTable` operation.
+pub mod delete_lookup_table;
 
 /// Types for the `DeleteMetricFilter` operation.
 pub mod delete_metric_filter;
@@ -130,6 +136,9 @@ pub mod describe_log_groups;
 /// Types for the `DescribeLogStreams` operation.
 pub mod describe_log_streams;
 
+/// Types for the `DescribeLookupTables` operation.
+pub mod describe_lookup_tables;
+
 /// Types for the `DescribeMetricFilters` operation.
 pub mod describe_metric_filters;
 
@@ -189,6 +198,9 @@ pub mod get_log_object;
 
 /// Types for the `GetLogRecord` operation.
 pub mod get_log_record;
+
+/// Types for the `GetLookupTable` operation.
+pub mod get_lookup_table;
 
 /// Types for the `GetQueryResults` operation.
 pub mod get_query_results;
@@ -321,6 +333,9 @@ pub mod update_delivery_configuration;
 
 /// Types for the `UpdateLogAnomalyDetector` operation.
 pub mod update_log_anomaly_detector;
+
+/// Types for the `UpdateLookupTable` operation.
+pub mod update_lookup_table;
 
 /// Types for the `UpdateScheduledQuery` operation.
 pub mod update_scheduled_query;

@@ -15,12 +15,12 @@ impl super::Client {
     ///   - [`run_status(TaskRunStatus)`](crate::operation::get_task::GetTaskOutput::run_status): <p>The run status for the task.</p>
     ///   - [`target_run_status(Option<TaskTargetRunStatus>)`](crate::operation::get_task::GetTaskOutput::target_run_status): <p>The run status with which to start the task.</p>
     ///   - [`failure_retry_count(Option<i32>)`](crate::operation::get_task::GetTaskOutput::failure_retry_count): <p>The number of times that the task failed and was retried.</p>
-    ///   - [`parameters(Option<HashMap::<String, TaskParameterValue>>)`](crate::operation::get_task::GetTaskOutput::parameters): <p>The parameters for the task.</p>
     ///   - [`started_at(Option<DateTime>)`](crate::operation::get_task::GetTaskOutput::started_at): <p>The date and time the resource started running.</p>
     ///   - [`ended_at(Option<DateTime>)`](crate::operation::get_task::GetTaskOutput::ended_at): <p>The date and time the resource ended running.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_task::GetTaskOutput::updated_at): <p>The date and time the resource was updated.</p>
     ///   - [`updated_by(Option<String>)`](crate::operation::get_task::GetTaskOutput::updated_by): <p>The user or system that updated this resource.</p>
     ///   - [`latest_session_action_id(Option<String>)`](crate::operation::get_task::GetTaskOutput::latest_session_action_id): <p>The latest session action ID for the task.</p>
+    ///   - [`parameters(Option<HashMap::<String, TaskParameterValue>>)`](crate::operation::get_task::GetTaskOutput::parameters): <p>The parameters for the task.</p>
     /// - On failure, responds with [`SdkError<GetTaskError>`](crate::operation::get_task::GetTaskError)
     pub fn get_task(&self) -> crate::operation::get_task::builders::GetTaskFluentBuilder {
         crate::operation::get_task::builders::GetTaskFluentBuilder::new(self.handle.clone())

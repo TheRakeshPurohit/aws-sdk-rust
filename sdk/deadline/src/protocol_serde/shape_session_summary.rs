@@ -55,6 +55,13 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "targetLifecycleStatus" => {
+                            builder = builder.set_target_lifecycle_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SessionLifecycleTargetStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "updatedAt" => {
                             builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
@@ -65,13 +72,6 @@ where
                             builder = builder.set_updated_by(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "targetLifecycleStatus" => {
-                            builder = builder.set_target_lifecycle_status(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::SessionLifecycleTargetStatus::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

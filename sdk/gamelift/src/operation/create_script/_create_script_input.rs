@@ -14,7 +14,9 @@ pub struct CreateScriptInput {
     pub zip_file: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>, <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>, and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging limits.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p><note>
+    /// <p>Node.js 10 will reach end of support on September 30, 2026. See more details in the <a href="http://aws.amazon.com/gamelift/faq/nodejs10/">Node.js 10 FAQs</a>. For migration guidance, see <a href="https://docs.aws.amazon.com/gamelift/latest/realtimeguide/realtime-script.html#realtime-script-nodejs-migration"> Migrating from Node.js 10 to 24</a>.</p>
+    /// </note>
     pub node_js_version: ::std::option::Option<::std::string::String>,
 }
 impl CreateScriptInput {
@@ -41,7 +43,9 @@ impl CreateScriptInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p><note>
+    /// <p>Node.js 10 will reach end of support on September 30, 2026. See more details in the <a href="http://aws.amazon.com/gamelift/faq/nodejs10/">Node.js 10 FAQs</a>. For migration guidance, see <a href="https://docs.aws.amazon.com/gamelift/latest/realtimeguide/realtime-script.html#realtime-script-nodejs-migration"> Migrating from Node.js 10 to 24</a>.</p>
+    /// </note>
     pub fn node_js_version(&self) -> ::std::option::Option<&str> {
         self.node_js_version.as_deref()
     }
@@ -144,17 +148,23 @@ impl CreateScriptInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p><note>
+    /// <p>Node.js 10 will reach end of support on September 30, 2026. See more details in the <a href="http://aws.amazon.com/gamelift/faq/nodejs10/">Node.js 10 FAQs</a>. For migration guidance, see <a href="https://docs.aws.amazon.com/gamelift/latest/realtimeguide/realtime-script.html#realtime-script-nodejs-migration"> Migrating from Node.js 10 to 24</a>.</p>
+    /// </note>
     pub fn node_js_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_js_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p><note>
+    /// <p>Node.js 10 will reach end of support on September 30, 2026. See more details in the <a href="http://aws.amazon.com/gamelift/faq/nodejs10/">Node.js 10 FAQs</a>. For migration guidance, see <a href="https://docs.aws.amazon.com/gamelift/latest/realtimeguide/realtime-script.html#realtime-script-nodejs-migration"> Migrating from Node.js 10 to 24</a>.</p>
+    /// </note>
     pub fn set_node_js_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_js_version = input;
         self
     }
-    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p><note>
+    /// <p>Node.js 10 will reach end of support on September 30, 2026. See more details in the <a href="http://aws.amazon.com/gamelift/faq/nodejs10/">Node.js 10 FAQs</a>. For migration guidance, see <a href="https://docs.aws.amazon.com/gamelift/latest/realtimeguide/realtime-script.html#realtime-script-nodejs-migration"> Migrating from Node.js 10 to 24</a>.</p>
+    /// </note>
     pub fn get_node_js_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_js_version
     }

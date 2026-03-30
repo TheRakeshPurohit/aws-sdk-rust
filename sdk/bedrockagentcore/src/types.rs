@@ -77,6 +77,8 @@ pub use crate::types::_automation_stream_update::AutomationStreamUpdate;
 
 pub use crate::types::_code_interpreter_session_summary::CodeInterpreterSessionSummary;
 
+pub use crate::types::_evaluation_reference_input::EvaluationReferenceInput;
+
 pub use crate::types::_evaluation_result_content::EvaluationResultContent;
 
 pub use crate::types::_memory_record_create_input::MemoryRecordCreateInput;
@@ -126,6 +128,10 @@ pub use crate::types::_proxy::Proxy;
 pub use crate::types::_certificate_location::CertificateLocation;
 
 pub use crate::types::_context::Context;
+
+pub use crate::types::_evaluation_content::EvaluationContent;
+
+pub use crate::types::_evaluation_expected_trajectory::EvaluationExpectedTrajectory;
 
 pub use crate::types::_token_usage::TokenUsage;
 
@@ -233,7 +239,13 @@ mod _context;
 
 mod _conversational;
 
+mod _evaluation_content;
+
+mod _evaluation_expected_trajectory;
+
 mod _evaluation_input;
+
+mod _evaluation_reference_input;
 
 mod _evaluation_result_content;
 

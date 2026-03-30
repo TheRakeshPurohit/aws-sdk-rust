@@ -6,11 +6,23 @@
 pub struct BusinessVerificationResponse {
     /// <p>The business verification details that were processed and verified, potentially including additional information discovered during the verification process.</p>
     pub business_verification_details: ::std::option::Option<crate::types::BusinessVerificationDetails>,
+    /// <p>A secure URL where the registrant can complete additional verification steps, such as document upload or identity confirmation through a third-party verification service.</p>
+    pub completion_url: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp when the completion URL expires and is no longer valid for accessing the verification workflow.</p>
+    pub completion_url_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BusinessVerificationResponse {
     /// <p>The business verification details that were processed and verified, potentially including additional information discovered during the verification process.</p>
     pub fn business_verification_details(&self) -> ::std::option::Option<&crate::types::BusinessVerificationDetails> {
         self.business_verification_details.as_ref()
+    }
+    /// <p>A secure URL where the registrant can complete additional verification steps, such as document upload or identity confirmation through a third-party verification service.</p>
+    pub fn completion_url(&self) -> ::std::option::Option<&str> {
+        self.completion_url.as_deref()
+    }
+    /// <p>The timestamp when the completion URL expires and is no longer valid for accessing the verification workflow.</p>
+    pub fn completion_url_expires_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.completion_url_expires_at.as_ref()
     }
 }
 impl BusinessVerificationResponse {
@@ -25,6 +37,8 @@ impl BusinessVerificationResponse {
 #[non_exhaustive]
 pub struct BusinessVerificationResponseBuilder {
     pub(crate) business_verification_details: ::std::option::Option<crate::types::BusinessVerificationDetails>,
+    pub(crate) completion_url: ::std::option::Option<::std::string::String>,
+    pub(crate) completion_url_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BusinessVerificationResponseBuilder {
     /// <p>The business verification details that were processed and verified, potentially including additional information discovered during the verification process.</p>
@@ -42,10 +56,40 @@ impl BusinessVerificationResponseBuilder {
     pub fn get_business_verification_details(&self) -> &::std::option::Option<crate::types::BusinessVerificationDetails> {
         &self.business_verification_details
     }
+    /// <p>A secure URL where the registrant can complete additional verification steps, such as document upload or identity confirmation through a third-party verification service.</p>
+    pub fn completion_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.completion_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A secure URL where the registrant can complete additional verification steps, such as document upload or identity confirmation through a third-party verification service.</p>
+    pub fn set_completion_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.completion_url = input;
+        self
+    }
+    /// <p>A secure URL where the registrant can complete additional verification steps, such as document upload or identity confirmation through a third-party verification service.</p>
+    pub fn get_completion_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.completion_url
+    }
+    /// <p>The timestamp when the completion URL expires and is no longer valid for accessing the verification workflow.</p>
+    pub fn completion_url_expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.completion_url_expires_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the completion URL expires and is no longer valid for accessing the verification workflow.</p>
+    pub fn set_completion_url_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.completion_url_expires_at = input;
+        self
+    }
+    /// <p>The timestamp when the completion URL expires and is no longer valid for accessing the verification workflow.</p>
+    pub fn get_completion_url_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.completion_url_expires_at
+    }
     /// Consumes the builder and constructs a [`BusinessVerificationResponse`](crate::types::BusinessVerificationResponse).
     pub fn build(self) -> crate::types::BusinessVerificationResponse {
         crate::types::BusinessVerificationResponse {
             business_verification_details: self.business_verification_details,
+            completion_url: self.completion_url,
+            completion_url_expires_at: self.completion_url_expires_at,
         }
     }
 }

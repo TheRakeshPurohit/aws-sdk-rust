@@ -214,27 +214,27 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSessionsS
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                let inner_2 = &_input.aggregation_id;
-                let inner_2 = inner_2
-                    .as_ref()
-                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("aggregation_id", "cannot be empty or unset"))?;
-                if inner_2.is_empty() {
-                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
-                        "aggregation_id",
-                        "cannot be empty or unset",
-                    ));
+                if let ::std::option::Option::Some(inner_2) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
+                    }
                 }
-                query.push_kv("aggregationId", &::aws_smithy_http::query::fmt_string(inner_2));
                 if let ::std::option::Option::Some(inner_3) = &_input.max_results {
                     {
                         query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }
-                if let ::std::option::Option::Some(inner_4) = &_input.next_token {
-                    {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
-                    }
+                let inner_4 = &_input.aggregation_id;
+                let inner_4 = inner_4
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("aggregation_id", "cannot be empty or unset"))?;
+                if inner_4.is_empty() {
+                    return ::std::result::Result::Err(::aws_smithy_types::error::operation::BuildError::missing_field(
+                        "aggregation_id",
+                        "cannot be empty or unset",
+                    ));
                 }
+                query.push_kv("aggregationId", &::aws_smithy_http::query::fmt_string(inner_4));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

@@ -176,17 +176,17 @@ impl CreateFarmFluentBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_arn()
     }
-    /// <p>The cost scale factor to apply on the farm.</p>
+    /// <p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment. The default value is 1.</p>
     pub fn cost_scale_factor(mut self, input: f32) -> Self {
         self.inner = self.inner.cost_scale_factor(input);
         self
     }
-    /// <p>The cost scale factor to apply on the farm.</p>
+    /// <p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment. The default value is 1.</p>
     pub fn set_cost_scale_factor(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_cost_scale_factor(input);
         self
     }
-    /// <p>The cost scale factor to apply on the farm.</p>
+    /// <p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment. The default value is 1.</p>
     pub fn get_cost_scale_factor(&self) -> &::std::option::Option<f32> {
         self.inner.get_cost_scale_factor()
     }

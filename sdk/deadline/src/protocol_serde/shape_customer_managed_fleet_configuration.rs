@@ -6,17 +6,26 @@ pub fn ser_customer_managed_fleet_configuration(
     {
         object.key("mode").string(input.mode.as_str());
     }
-    if let Some(var_1) = &input.worker_capabilities {
+    if let Some(var_1) = &input.auto_scaling_configuration {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("workerCapabilities").start_object();
-        crate::protocol_serde::shape_customer_managed_worker_capabilities::ser_customer_managed_worker_capabilities(&mut object_2, var_1)?;
+        let mut object_2 = object.key("autoScalingConfiguration").start_object();
+        crate::protocol_serde::shape_customer_managed_auto_scaling_configuration::ser_customer_managed_auto_scaling_configuration(
+            &mut object_2,
+            var_1,
+        )?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.storage_profile_id {
-        object.key("storageProfileId").string(var_3.as_str());
+    if let Some(var_3) = &input.worker_capabilities {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("workerCapabilities").start_object();
+        crate::protocol_serde::shape_customer_managed_worker_capabilities::ser_customer_managed_worker_capabilities(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.tag_propagation_mode {
-        object.key("tagPropagationMode").string(var_4.as_str());
+    if let Some(var_5) = &input.storage_profile_id {
+        object.key("storageProfileId").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.tag_propagation_mode {
+        object.key("tagPropagationMode").string(var_6.as_str());
     }
     Ok(())
 }
@@ -43,6 +52,11 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AutoScalingMode::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "autoScalingConfiguration" => {
+                            builder = builder.set_auto_scaling_configuration(
+                                    crate::protocol_serde::shape_customer_managed_auto_scaling_configuration::de_customer_managed_auto_scaling_configuration(tokens, _value)?
+                                );
                         }
                         "workerCapabilities" => {
                             builder = builder.set_worker_capabilities(

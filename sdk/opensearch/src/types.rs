@@ -95,6 +95,8 @@ pub use crate::types::_dry_run_progress_status::DryRunProgressStatus;
 
 pub use crate::types::_dry_run_results::DryRunResults;
 
+pub use crate::types::_insight_entity::InsightEntity;
+
 pub use crate::types::_open_search_partition_instance_type::OpenSearchPartitionInstanceType;
 
 pub use crate::types::_application_status::ApplicationStatus;
@@ -110,6 +112,10 @@ pub use crate::types::_upgrade_step::UpgradeStep;
 pub use crate::types::_upgrade_status::UpgradeStatus;
 
 pub use crate::types::_engine_type::EngineType;
+
+pub use crate::types::_insight_time_range::InsightTimeRange;
+
+pub use crate::types::_insight_sort_order::InsightSortOrder;
 
 pub use crate::types::_schedule_at::ScheduleAt;
 
@@ -273,6 +279,10 @@ pub use crate::types::_domain_nodes_status::DomainNodesStatus;
 
 pub use crate::types::_filter::Filter;
 
+pub use crate::types::_insight_entity_type::InsightEntityType;
+
+pub use crate::types::_insight_field::InsightField;
+
 pub use crate::types::_limits::Limits;
 
 pub use crate::types::_describe_packages_filter::DescribePackagesFilter;
@@ -298,6 +308,8 @@ pub use crate::types::_direct_query_data_source::DirectQueryDataSource;
 pub use crate::types::_domain_maintenance_details::DomainMaintenanceDetails;
 
 pub use crate::types::_domain_info::DomainInfo;
+
+pub use crate::types::_insight::Insight;
 
 pub use crate::types::_instance_type_details::InstanceTypeDetails;
 
@@ -353,6 +365,8 @@ pub use crate::types::_node_status::NodeStatus;
 
 pub use crate::types::_validation_failure::ValidationFailure;
 
+pub use crate::types::_insight_field_type::InsightFieldType;
+
 pub use crate::types::_instance_limits::InstanceLimits;
 
 pub use crate::types::_describe_packages_filter_name::DescribePackagesFilterName;
@@ -360,6 +374,12 @@ pub use crate::types::_describe_packages_filter_name::DescribePackagesFilterName
 pub use crate::types::_reserved_instance_payment_option::ReservedInstancePaymentOption;
 
 pub use crate::types::_vpc_endpoint_error_code::VpcEndpointErrorCode;
+
+pub use crate::types::_insight_type::InsightType;
+
+pub use crate::types::_insight_priority_level::InsightPriorityLevel;
+
+pub use crate::types::_insight_status::InsightStatus;
 
 pub use crate::types::_node_options_node_type::NodeOptionsNodeType;
 
@@ -586,6 +606,26 @@ mod _inbound_connection_status_code;
 mod _index_status;
 
 mod _initiated_by;
+
+mod _insight;
+
+mod _insight_entity;
+
+mod _insight_entity_type;
+
+mod _insight_field;
+
+mod _insight_field_type;
+
+mod _insight_priority_level;
+
+mod _insight_sort_order;
+
+mod _insight_status;
+
+mod _insight_time_range;
+
+mod _insight_type;
 
 mod _instance_count_limits;
 

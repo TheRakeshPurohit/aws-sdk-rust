@@ -24,6 +24,8 @@ pub struct EvaluationResultContent {
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The error code indicating the type of failure that occurred during evaluation. Used to programmatically identify and handle different categories of evaluation errors.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
+    /// <p>The list of reference input field names that were provided but not used by the evaluator. Helps identify which ground truth data was not consumed during evaluation.</p>
+    pub ignored_reference_input_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EvaluationResultContent {
     /// <p>The Amazon Resource Name (ARN) of the evaluator used to generate this result. For custom evaluators, this is the full ARN; for built-in evaluators, this follows the pattern <code>Builtin.{EvaluatorName}</code>.</p>
@@ -69,6 +71,12 @@ impl EvaluationResultContent {
     pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
+    /// <p>The list of reference input field names that were provided but not used by the evaluator. Helps identify which ground truth data was not consumed during evaluation.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ignored_reference_input_fields.is_none()`.
+    pub fn ignored_reference_input_fields(&self) -> &[::std::string::String] {
+        self.ignored_reference_input_fields.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for EvaluationResultContent {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -83,6 +91,7 @@ impl ::std::fmt::Debug for EvaluationResultContent {
         formatter.field("token_usage", &self.token_usage);
         formatter.field("error_message", &self.error_message);
         formatter.field("error_code", &self.error_code);
+        formatter.field("ignored_reference_input_fields", &self.ignored_reference_input_fields);
         formatter.finish()
     }
 }
@@ -107,6 +116,7 @@ pub struct EvaluationResultContentBuilder {
     pub(crate) token_usage: ::std::option::Option<crate::types::TokenUsage>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) ignored_reference_input_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EvaluationResultContentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the evaluator used to generate this result. For custom evaluators, this is the full ARN; for built-in evaluators, this follows the pattern <code>Builtin.{EvaluatorName}</code>.</p>
@@ -253,6 +263,26 @@ impl EvaluationResultContentBuilder {
     pub fn get_error_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_code
     }
+    /// Appends an item to `ignored_reference_input_fields`.
+    ///
+    /// To override the contents of this collection use [`set_ignored_reference_input_fields`](Self::set_ignored_reference_input_fields).
+    ///
+    /// <p>The list of reference input field names that were provided but not used by the evaluator. Helps identify which ground truth data was not consumed during evaluation.</p>
+    pub fn ignored_reference_input_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ignored_reference_input_fields.unwrap_or_default();
+        v.push(input.into());
+        self.ignored_reference_input_fields = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of reference input field names that were provided but not used by the evaluator. Helps identify which ground truth data was not consumed during evaluation.</p>
+    pub fn set_ignored_reference_input_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ignored_reference_input_fields = input;
+        self
+    }
+    /// <p>The list of reference input field names that were provided but not used by the evaluator. Helps identify which ground truth data was not consumed during evaluation.</p>
+    pub fn get_ignored_reference_input_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ignored_reference_input_fields
+    }
     /// Consumes the builder and constructs a [`EvaluationResultContent`](crate::types::EvaluationResultContent).
     /// This method will fail if any of the following fields are not set:
     /// - [`evaluator_arn`](crate::types::builders::EvaluationResultContentBuilder::evaluator_arn)
@@ -285,6 +315,7 @@ impl EvaluationResultContentBuilder {
             token_usage: self.token_usage,
             error_message: self.error_message,
             error_code: self.error_code,
+            ignored_reference_input_fields: self.ignored_reference_input_fields,
         })
     }
 }
@@ -301,6 +332,7 @@ impl ::std::fmt::Debug for EvaluationResultContentBuilder {
         formatter.field("token_usage", &self.token_usage);
         formatter.field("error_message", &self.error_message);
         formatter.field("error_code", &self.error_code);
+        formatter.field("ignored_reference_input_fields", &self.ignored_reference_input_fields);
         formatter.finish()
     }
 }

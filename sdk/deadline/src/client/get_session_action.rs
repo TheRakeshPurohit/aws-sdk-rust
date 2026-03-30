@@ -14,12 +14,12 @@ impl super::Client {
     ///   - [`ended_at(Option<DateTime>)`](crate::operation::get_session_action::GetSessionActionOutput::ended_at): <p>The date and time the resource ended running.</p>
     ///   - [`worker_updated_at(Option<DateTime>)`](crate::operation::get_session_action::GetSessionActionOutput::worker_updated_at): <p>The Linux timestamp of the date and time the session action was last updated.</p>
     ///   - [`progress_percent(Option<f32>)`](crate::operation::get_session_action::GetSessionActionOutput::progress_percent): <p>The percentage completed for a session action.</p>
+    ///   - [`manifests(Option<Vec::<TaskRunManifestPropertiesResponse>>)`](crate::operation::get_session_action::GetSessionActionOutput::manifests): <p>The list of manifest properties that describe file attachments for the task run.</p>
     ///   - [`session_id(String)`](crate::operation::get_session_action::GetSessionActionOutput::session_id): <p>The session ID for the session action.</p>
     ///   - [`process_exit_code(Option<i32>)`](crate::operation::get_session_action::GetSessionActionOutput::process_exit_code): <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
     ///   - [`progress_message(Option<String>)`](crate::operation::get_session_action::GetSessionActionOutput::progress_message): <p>The message that communicates the progress of the session action.</p>
-    ///   - [`definition(Option<SessionActionDefinition>)`](crate::operation::get_session_action::GetSessionActionOutput::definition): <p>The session action definition.</p>
     ///   - [`acquired_limits(Option<Vec::<AcquiredLimit>>)`](crate::operation::get_session_action::GetSessionActionOutput::acquired_limits): <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
-    ///   - [`manifests(Option<Vec::<TaskRunManifestPropertiesResponse>>)`](crate::operation::get_session_action::GetSessionActionOutput::manifests): <p>The list of manifest properties that describe file attachments for the task run.</p>
+    ///   - [`definition(Option<SessionActionDefinition>)`](crate::operation::get_session_action::GetSessionActionOutput::definition): <p>The session action definition.</p>
     /// - On failure, responds with [`SdkError<GetSessionActionError>`](crate::operation::get_session_action::GetSessionActionError)
     pub fn get_session_action(&self) -> crate::operation::get_session_action::builders::GetSessionActionFluentBuilder {
         crate::operation::get_session_action::builders::GetSessionActionFluentBuilder::new(self.handle.clone())

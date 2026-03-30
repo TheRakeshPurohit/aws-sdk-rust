@@ -3,18 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFleetInput {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The farm ID of the farm to remove from the fleet.</p>
     pub farm_id: ::std::option::Option<::std::string::String>,
     /// <p>The fleet ID of the fleet to delete.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFleetInput {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
-        self.client_token.as_deref()
-    }
     /// <p>The farm ID of the farm to remove from the fleet.</p>
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
@@ -22,6 +18,10 @@ impl DeleteFleetInput {
     /// <p>The fleet ID of the fleet to delete.</p>
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl DeleteFleetInput {
@@ -35,25 +35,11 @@ impl DeleteFleetInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DeleteFleetInputBuilder {
-    pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFleetInputBuilder {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.client_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.client_token
-    }
     /// <p>The farm ID of the farm to remove from the fleet.</p>
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -84,12 +70,26 @@ impl DeleteFleetInputBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`DeleteFleetInput`](crate::operation::delete_fleet::DeleteFleetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_fleet::DeleteFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_fleet::DeleteFleetInput {
-            client_token: self.client_token,
             farm_id: self.farm_id,
             fleet_id: self.fleet_id,
+            client_token: self.client_token,
         })
     }
 }

@@ -15,8 +15,6 @@ pub struct GetTaskOutput {
     pub target_run_status: ::std::option::Option<crate::types::TaskTargetRunStatus>,
     /// <p>The number of times that the task failed and was retried.</p>
     pub failure_retry_count: ::std::option::Option<i32>,
-    /// <p>The parameters for the task.</p>
-    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>>,
     /// <p>The date and time the resource started running.</p>
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the resource ended running.</p>
@@ -27,6 +25,8 @@ pub struct GetTaskOutput {
     pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The latest session action ID for the task.</p>
     pub latest_session_action_id: ::std::option::Option<::std::string::String>,
+    /// <p>The parameters for the task.</p>
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>>,
     _request_id: Option<String>,
 }
 impl GetTaskOutput {
@@ -56,10 +56,6 @@ impl GetTaskOutput {
     pub fn failure_retry_count(&self) -> ::std::option::Option<i32> {
         self.failure_retry_count
     }
-    /// <p>The parameters for the task.</p>
-    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>> {
-        self.parameters.as_ref()
-    }
     /// <p>The date and time the resource started running.</p>
     pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
@@ -80,6 +76,10 @@ impl GetTaskOutput {
     pub fn latest_session_action_id(&self) -> ::std::option::Option<&str> {
         self.latest_session_action_id.as_deref()
     }
+    /// <p>The parameters for the task.</p>
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>> {
+        self.parameters.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetTaskOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -90,12 +90,12 @@ impl ::std::fmt::Debug for GetTaskOutput {
         formatter.field("run_status", &self.run_status);
         formatter.field("target_run_status", &self.target_run_status);
         formatter.field("failure_retry_count", &self.failure_retry_count);
-        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("started_at", &self.started_at);
         formatter.field("ended_at", &self.ended_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("updated_by", &self.updated_by);
         formatter.field("latest_session_action_id", &self.latest_session_action_id);
+        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -122,12 +122,12 @@ pub struct GetTaskOutputBuilder {
     pub(crate) run_status: ::std::option::Option<crate::types::TaskRunStatus>,
     pub(crate) target_run_status: ::std::option::Option<crate::types::TaskTargetRunStatus>,
     pub(crate) failure_retry_count: ::std::option::Option<i32>,
-    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,
     pub(crate) latest_session_action_id: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>>,
     _request_id: Option<String>,
 }
 impl GetTaskOutputBuilder {
@@ -219,29 +219,6 @@ impl GetTaskOutputBuilder {
     pub fn get_failure_retry_count(&self) -> &::std::option::Option<i32> {
         &self.failure_retry_count
     }
-    /// Adds a key-value pair to `parameters`.
-    ///
-    /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
-    ///
-    /// <p>The parameters for the task.</p>
-    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::TaskParameterValue) -> Self {
-        let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = ::std::option::Option::Some(hash_map);
-        self
-    }
-    /// <p>The parameters for the task.</p>
-    pub fn set_parameters(
-        mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>>,
-    ) -> Self {
-        self.parameters = input;
-        self
-    }
-    /// <p>The parameters for the task.</p>
-    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>> {
-        &self.parameters
-    }
     /// <p>The date and time the resource started running.</p>
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_at = ::std::option::Option::Some(input);
@@ -312,6 +289,29 @@ impl GetTaskOutputBuilder {
     pub fn get_latest_session_action_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_session_action_id
     }
+    /// Adds a key-value pair to `parameters`.
+    ///
+    /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+    ///
+    /// <p>The parameters for the task.</p>
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::TaskParameterValue) -> Self {
+        let mut hash_map = self.parameters.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.parameters = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The parameters for the task.</p>
+    pub fn set_parameters(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>>,
+    ) -> Self {
+        self.parameters = input;
+        self
+    }
+    /// <p>The parameters for the task.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TaskParameterValue>> {
+        &self.parameters
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -355,12 +355,12 @@ impl GetTaskOutputBuilder {
             })?,
             target_run_status: self.target_run_status,
             failure_retry_count: self.failure_retry_count,
-            parameters: self.parameters,
             started_at: self.started_at,
             ended_at: self.ended_at,
             updated_at: self.updated_at,
             updated_by: self.updated_by,
             latest_session_action_id: self.latest_session_action_id,
+            parameters: self.parameters,
             _request_id: self._request_id,
         })
     }
@@ -374,12 +374,12 @@ impl ::std::fmt::Debug for GetTaskOutputBuilder {
         formatter.field("run_status", &self.run_status);
         formatter.field("target_run_status", &self.target_run_status);
         formatter.field("failure_retry_count", &self.failure_retry_count);
-        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("started_at", &self.started_at);
         formatter.field("ended_at", &self.ended_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("updated_by", &self.updated_by);
         formatter.field("latest_session_action_id", &self.latest_session_action_id);
+        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

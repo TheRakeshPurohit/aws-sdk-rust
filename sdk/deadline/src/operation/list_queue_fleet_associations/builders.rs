@@ -128,34 +128,6 @@ impl ListQueueFleetAssociationsFluentBuilder {
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The queue ID for the queue-fleet association list.</p>
-    pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.queue_id(input.into());
-        self
-    }
-    /// <p>The queue ID for the queue-fleet association list.</p>
-    pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_queue_id(input);
-        self
-    }
-    /// <p>The queue ID for the queue-fleet association list.</p>
-    pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_queue_id()
-    }
-    /// <p>The fleet ID for the queue-fleet association list.</p>
-    pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.fleet_id(input.into());
-        self
-    }
-    /// <p>The fleet ID for the queue-fleet association list.</p>
-    pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_fleet_id(input);
-        self
-    }
-    /// <p>The fleet ID for the queue-fleet association list.</p>
-    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_fleet_id()
-    }
     /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -183,5 +155,33 @@ impl ListQueueFleetAssociationsFluentBuilder {
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>The queue ID for the queue-fleet association list.</p>
+    pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.queue_id(input.into());
+        self
+    }
+    /// <p>The queue ID for the queue-fleet association list.</p>
+    pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_queue_id(input);
+        self
+    }
+    /// <p>The queue ID for the queue-fleet association list.</p>
+    pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue_id()
+    }
+    /// <p>The fleet ID for the queue-fleet association list.</p>
+    pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.fleet_id(input.into());
+        self
+    }
+    /// <p>The fleet ID for the queue-fleet association list.</p>
+    pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_fleet_id(input);
+        self
+    }
+    /// <p>The fleet ID for the queue-fleet association list.</p>
+    pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_fleet_id()
     }
 }

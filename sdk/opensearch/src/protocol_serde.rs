@@ -89,6 +89,8 @@ pub(crate) mod shape_describe_dry_run_progress;
 
 pub(crate) mod shape_describe_inbound_connections;
 
+pub(crate) mod shape_describe_insight_details;
+
 pub(crate) mod shape_describe_instance_type_limits;
 
 pub(crate) mod shape_describe_outbound_connections;
@@ -136,6 +138,8 @@ pub(crate) mod shape_list_domain_maintenances;
 pub(crate) mod shape_list_domain_names;
 
 pub(crate) mod shape_list_domains_for_package;
+
+pub(crate) mod shape_list_insights;
 
 pub(crate) mod shape_list_instance_type_details;
 
@@ -235,6 +239,8 @@ pub(crate) mod shape_describe_domains_input;
 
 pub(crate) mod shape_describe_inbound_connections_input;
 
+pub(crate) mod shape_describe_insight_details_input;
+
 pub(crate) mod shape_describe_outbound_connections_input;
 
 pub(crate) mod shape_describe_packages_input;
@@ -252,6 +258,8 @@ pub(crate) mod shape_invalid_pagination_token_exception;
 pub(crate) mod shape_invalid_type_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
+
+pub(crate) mod shape_list_insights_input;
 
 pub(crate) mod shape_purchase_reserved_instance_offering_input;
 
@@ -392,6 +400,14 @@ pub(crate) mod shape_identity_center_options_input;
 pub(crate) mod shape_inbound_connection;
 
 pub(crate) mod shape_inbound_connections;
+
+pub(crate) mod shape_insight_entity;
+
+pub(crate) mod shape_insight_field_list;
+
+pub(crate) mod shape_insight_list;
+
+pub(crate) mod shape_insight_time_range;
 
 pub(crate) mod shape_instance_type_details_list;
 
@@ -536,6 +552,10 @@ pub(crate) mod shape_identity_center_options;
 pub(crate) mod shape_identity_center_options_status;
 
 pub(crate) mod shape_inbound_connection_status;
+
+pub(crate) mod shape_insight;
+
+pub(crate) mod shape_insight_field;
 
 pub(crate) mod shape_instance_type_details;
 

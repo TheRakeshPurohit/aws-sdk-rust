@@ -74,6 +74,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ignoredReferenceInputFields" => {
+                            builder = builder.set_ignored_reference_input_fields(
+                                crate::protocol_serde::shape_ignored_reference_input_fields::de_ignored_reference_input_fields(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

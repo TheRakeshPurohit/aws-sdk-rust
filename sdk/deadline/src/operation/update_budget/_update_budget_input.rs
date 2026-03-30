@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateBudgetInput {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The farm ID of the budget to update.</p>
     pub farm_id: ::std::option::Option<::std::string::String>,
     /// <p>The budget ID to update.</p>
     pub budget_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the budget to update.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
@@ -35,10 +35,6 @@ pub struct UpdateBudgetInput {
     pub schedule: ::std::option::Option<crate::types::BudgetSchedule>,
 }
 impl UpdateBudgetInput {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
-        self.client_token.as_deref()
-    }
     /// <p>The farm ID of the budget to update.</p>
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
@@ -46,6 +42,10 @@ impl UpdateBudgetInput {
     /// <p>The budget ID to update.</p>
     pub fn budget_id(&self) -> ::std::option::Option<&str> {
         self.budget_id.as_deref()
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
     /// <p>The display name of the budget to update.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
@@ -93,9 +93,9 @@ impl UpdateBudgetInput {
 impl ::std::fmt::Debug for UpdateBudgetInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBudgetInput");
-        formatter.field("client_token", &self.client_token);
         formatter.field("farm_id", &self.farm_id);
         formatter.field("budget_id", &self.budget_id);
+        formatter.field("client_token", &self.client_token);
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
@@ -117,9 +117,9 @@ impl UpdateBudgetInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct UpdateBudgetInputBuilder {
-    pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) budget_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::BudgetStatus>,
@@ -129,20 +129,6 @@ pub struct UpdateBudgetInputBuilder {
     pub(crate) schedule: ::std::option::Option<crate::types::BudgetSchedule>,
 }
 impl UpdateBudgetInputBuilder {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.client_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.client_token
-    }
     /// <p>The farm ID of the budget to update.</p>
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -172,6 +158,20 @@ impl UpdateBudgetInputBuilder {
     /// <p>The budget ID to update.</p>
     pub fn get_budget_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.budget_id
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The display name of the budget to update.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
@@ -318,9 +318,9 @@ impl UpdateBudgetInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::update_budget::UpdateBudgetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_budget::UpdateBudgetInput {
-            client_token: self.client_token,
             farm_id: self.farm_id,
             budget_id: self.budget_id,
+            client_token: self.client_token,
             display_name: self.display_name,
             description: self.description,
             status: self.status,
@@ -334,9 +334,9 @@ impl UpdateBudgetInputBuilder {
 impl ::std::fmt::Debug for UpdateBudgetInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBudgetInputBuilder");
-        formatter.field("client_token", &self.client_token);
         formatter.field("farm_id", &self.farm_id);
         formatter.field("budget_id", &self.budget_id);
+        formatter.field("client_token", &self.client_token);
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);

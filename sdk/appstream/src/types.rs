@@ -57,6 +57,8 @@ pub use crate::types::_application_settings::ApplicationSettings;
 
 pub use crate::types::_streaming_experience_settings::StreamingExperienceSettings;
 
+pub use crate::types::_content_redirection::ContentRedirection;
+
 pub use crate::types::_stack::Stack;
 
 pub use crate::types::_theme_styling::ThemeStyling;
@@ -122,6 +124,8 @@ pub use crate::types::_storage_connector::StorageConnector;
 pub use crate::types::_user_setting::UserSetting;
 
 pub use crate::types::_preferred_protocol::PreferredProtocol;
+
+pub use crate::types::_url_redirection_config::UrlRedirectionConfig;
 
 pub use crate::types::_application_settings_response::ApplicationSettingsResponse;
 
@@ -243,6 +247,8 @@ mod _compute_capacity;
 
 mod _compute_capacity_status;
 
+mod _content_redirection;
+
 mod _directory_config;
 
 mod _domain_join_info;
@@ -360,6 +366,8 @@ mod _theme_footer_link;
 mod _theme_state;
 
 mod _theme_styling;
+
+mod _url_redirection_config;
 
 mod _usage_report_execution_error_code;
 

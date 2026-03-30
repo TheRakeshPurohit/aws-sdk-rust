@@ -44,6 +44,18 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.reason.is_none() {
+        builder.reason = "no value was set".parse::<crate::types::ServiceQuotaExceededExceptionReason>().ok()
+    }
+    builder
+}
+
 pub(crate) fn throttling_exception_correct_errors(
     mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
 ) -> crate::types::error::builders::ThrottlingExceptionBuilder {
@@ -73,18 +85,6 @@ pub(crate) fn accept_connection_invitation_output_output_correct_errors(
             let builder = crate::types::builders::ConnectionBuilder::default();
             crate::serde_util::connection_correct_errors(builder).build().ok()
         }
-    }
-    builder
-}
-
-pub(crate) fn service_quota_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
-) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    if builder.reason.is_none() {
-        builder.reason = "no value was set".parse::<crate::types::ServiceQuotaExceededExceptionReason>().ok()
     }
     builder
 }

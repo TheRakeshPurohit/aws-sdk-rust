@@ -9,8 +9,10 @@ pub struct InstanceLaunchTemplate {
     pub ec2_instance_profile_arn: ::std::string::String,
     /// <p>The network configuration for Amazon ECS Managed Instances. This specifies the subnets and security groups that instances use for network connectivity.</p>
     pub network_configuration: ::std::option::Option<crate::types::ManagedInstancesNetworkConfiguration>,
-    /// <p>The storage configuration for Amazon ECS Managed Instances. This defines the root volume size and type for the instances.</p>
+    /// <p>The storage configuration for Amazon ECS Managed Instances. This defines the data volume properties for the instances.</p>
     pub storage_configuration: ::std::option::Option<crate::types::ManagedInstancesStorageConfiguration>,
+    /// <p>The local storage configuration for Amazon ECS Managed Instances. This defines how ECS uses instance store volumes available on the container instance.</p>
+    pub local_storage_configuration: ::std::option::Option<crate::types::ManagedInstancesLocalStorageConfiguration>,
     /// <p>CloudWatch provides two categories of monitoring: basic monitoring and detailed monitoring. By default, your managed instance is configured for basic monitoring. You can optionally enable detailed monitoring to help you more quickly identify and act on operational issues. You can enable or turn off detailed monitoring at launch or when the managed instance is running or stopped. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/detailed-monitoring-managed-instances.html">Detailed monitoring for Amazon ECS Managed Instances</a> in the Amazon ECS Developer Guide.</p>
     pub monitoring: ::std::option::Option<crate::types::ManagedInstancesMonitoringOptions>,
     /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand, Spot or Capacity Reservation Instances for your managed instance capacity provider.</p>
@@ -64,9 +66,13 @@ impl InstanceLaunchTemplate {
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::ManagedInstancesNetworkConfiguration> {
         self.network_configuration.as_ref()
     }
-    /// <p>The storage configuration for Amazon ECS Managed Instances. This defines the root volume size and type for the instances.</p>
+    /// <p>The storage configuration for Amazon ECS Managed Instances. This defines the data volume properties for the instances.</p>
     pub fn storage_configuration(&self) -> ::std::option::Option<&crate::types::ManagedInstancesStorageConfiguration> {
         self.storage_configuration.as_ref()
+    }
+    /// <p>The local storage configuration for Amazon ECS Managed Instances. This defines how ECS uses instance store volumes available on the container instance.</p>
+    pub fn local_storage_configuration(&self) -> ::std::option::Option<&crate::types::ManagedInstancesLocalStorageConfiguration> {
+        self.local_storage_configuration.as_ref()
     }
     /// <p>CloudWatch provides two categories of monitoring: basic monitoring and detailed monitoring. By default, your managed instance is configured for basic monitoring. You can optionally enable detailed monitoring to help you more quickly identify and act on operational issues. You can enable or turn off detailed monitoring at launch or when the managed instance is running or stopped. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/detailed-monitoring-managed-instances.html">Detailed monitoring for Amazon ECS Managed Instances</a> in the Amazon ECS Developer Guide.</p>
     pub fn monitoring(&self) -> ::std::option::Option<&crate::types::ManagedInstancesMonitoringOptions> {
@@ -136,6 +142,7 @@ pub struct InstanceLaunchTemplateBuilder {
     pub(crate) ec2_instance_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::ManagedInstancesNetworkConfiguration>,
     pub(crate) storage_configuration: ::std::option::Option<crate::types::ManagedInstancesStorageConfiguration>,
+    pub(crate) local_storage_configuration: ::std::option::Option<crate::types::ManagedInstancesLocalStorageConfiguration>,
     pub(crate) monitoring: ::std::option::Option<crate::types::ManagedInstancesMonitoringOptions>,
     pub(crate) capacity_option_type: ::std::option::Option<crate::types::CapacityOptionType>,
     pub(crate) instance_metadata_tags_propagation: ::std::option::Option<bool>,
@@ -177,19 +184,33 @@ impl InstanceLaunchTemplateBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::ManagedInstancesNetworkConfiguration> {
         &self.network_configuration
     }
-    /// <p>The storage configuration for Amazon ECS Managed Instances. This defines the root volume size and type for the instances.</p>
+    /// <p>The storage configuration for Amazon ECS Managed Instances. This defines the data volume properties for the instances.</p>
     pub fn storage_configuration(mut self, input: crate::types::ManagedInstancesStorageConfiguration) -> Self {
         self.storage_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The storage configuration for Amazon ECS Managed Instances. This defines the root volume size and type for the instances.</p>
+    /// <p>The storage configuration for Amazon ECS Managed Instances. This defines the data volume properties for the instances.</p>
     pub fn set_storage_configuration(mut self, input: ::std::option::Option<crate::types::ManagedInstancesStorageConfiguration>) -> Self {
         self.storage_configuration = input;
         self
     }
-    /// <p>The storage configuration for Amazon ECS Managed Instances. This defines the root volume size and type for the instances.</p>
+    /// <p>The storage configuration for Amazon ECS Managed Instances. This defines the data volume properties for the instances.</p>
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::ManagedInstancesStorageConfiguration> {
         &self.storage_configuration
+    }
+    /// <p>The local storage configuration for Amazon ECS Managed Instances. This defines how ECS uses instance store volumes available on the container instance.</p>
+    pub fn local_storage_configuration(mut self, input: crate::types::ManagedInstancesLocalStorageConfiguration) -> Self {
+        self.local_storage_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The local storage configuration for Amazon ECS Managed Instances. This defines how ECS uses instance store volumes available on the container instance.</p>
+    pub fn set_local_storage_configuration(mut self, input: ::std::option::Option<crate::types::ManagedInstancesLocalStorageConfiguration>) -> Self {
+        self.local_storage_configuration = input;
+        self
+    }
+    /// <p>The local storage configuration for Amazon ECS Managed Instances. This defines how ECS uses instance store volumes available on the container instance.</p>
+    pub fn get_local_storage_configuration(&self) -> &::std::option::Option<crate::types::ManagedInstancesLocalStorageConfiguration> {
+        &self.local_storage_configuration
     }
     /// <p>CloudWatch provides two categories of monitoring: basic monitoring and detailed monitoring. By default, your managed instance is configured for basic monitoring. You can optionally enable detailed monitoring to help you more quickly identify and act on operational issues. You can enable or turn off detailed monitoring at launch or when the managed instance is running or stopped. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/detailed-monitoring-managed-instances.html">Detailed monitoring for Amazon ECS Managed Instances</a> in the Amazon ECS Developer Guide.</p>
     pub fn monitoring(mut self, input: crate::types::ManagedInstancesMonitoringOptions) -> Self {
@@ -375,6 +396,7 @@ impl InstanceLaunchTemplateBuilder {
             })?,
             network_configuration: self.network_configuration,
             storage_configuration: self.storage_configuration,
+            local_storage_configuration: self.local_storage_configuration,
             monitoring: self.monitoring,
             capacity_option_type: self.capacity_option_type,
             instance_metadata_tags_propagation: self.instance_metadata_tags_propagation,

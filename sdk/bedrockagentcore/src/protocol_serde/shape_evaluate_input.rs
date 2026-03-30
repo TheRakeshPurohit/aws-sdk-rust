@@ -9,11 +9,23 @@ pub fn ser_evaluate_input_input(
         crate::protocol_serde::shape_evaluation_input::ser_evaluation_input(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.evaluation_target {
+    if let Some(var_3) = &input.evaluation_reference_inputs {
+        let mut array_4 = object.key("evaluationReferenceInputs").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_evaluation_reference_input::ser_evaluation_reference_input(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
+    }
+    if let Some(var_7) = &input.evaluation_target {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("evaluationTarget").start_object();
-        crate::protocol_serde::shape_evaluation_target::ser_evaluation_target(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_8 = object.key("evaluationTarget").start_object();
+        crate::protocol_serde::shape_evaluation_target::ser_evaluation_target(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

@@ -128,20 +128,6 @@ impl ListJobParameterDefinitionsFluentBuilder {
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The job ID to include on the list.</p>
-    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.job_id(input.into());
-        self
-    }
-    /// <p>The job ID to include on the list.</p>
-    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_job_id(input);
-        self
-    }
-    /// <p>The job ID to include on the list.</p>
-    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_job_id()
-    }
     /// <p>The queue ID to include on the list.</p>
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
@@ -155,6 +141,20 @@ impl ListJobParameterDefinitionsFluentBuilder {
     /// <p>The queue ID to include on the list.</p>
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_queue_id()
+    }
+    /// <p>The job ID to include on the list.</p>
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.job_id(input.into());
+        self
+    }
+    /// <p>The job ID to include on the list.</p>
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_job_id(input);
+        self
+    }
+    /// <p>The job ID to include on the list.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
     /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

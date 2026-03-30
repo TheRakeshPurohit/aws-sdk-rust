@@ -150,20 +150,6 @@ impl AssociateMemberToJobFluentBuilder {
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }
-    /// <p>The member's principal ID to associate with the job.</p>
-    pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.principal_id(input.into());
-        self
-    }
-    /// <p>The member's principal ID to associate with the job.</p>
-    pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_principal_id(input);
-        self
-    }
-    /// <p>The member's principal ID to associate with the job.</p>
-    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_principal_id()
-    }
     /// <p>The member's principal type to associate with the job.</p>
     pub fn principal_type(mut self, input: crate::types::DeadlinePrincipalType) -> Self {
         self.inner = self.inner.principal_type(input);
@@ -205,5 +191,19 @@ impl AssociateMemberToJobFluentBuilder {
     /// <p>The principal's membership level for the associated job.</p>
     pub fn get_membership_level(&self) -> &::std::option::Option<crate::types::MembershipLevel> {
         self.inner.get_membership_level()
+    }
+    /// <p>The member's principal ID to associate with the job.</p>
+    pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.principal_id(input.into());
+        self
+    }
+    /// <p>The member's principal ID to associate with the job.</p>
+    pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_principal_id(input);
+        self
+    }
+    /// <p>The member's principal ID to associate with the job.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal_id()
     }
 }

@@ -22,7 +22,9 @@ impl crate::operation::invoke_agent_runtime_command::builders::InvokeAgentRuntim
 }
 /// Fluent builder constructing a request to `InvokeAgentRuntimeCommand`.
 ///
-/// Executes a command in a runtime session container. Returns streaming output with contentStart, contentDelta, and contentStop events.
+/// <p>Executes a command in a runtime session container and streams the output back to the caller. This operation allows you to run shell commands within the agent runtime environment and receive real-time streaming responses including standard output and standard error.</p>
+/// <p>To invoke a command, you must specify the agent runtime ARN and a runtime session ID. The command execution supports streaming responses, allowing you to receive output as it becomes available through <code>contentStart</code>, <code>contentDelta</code>, and <code>contentStop</code> events.</p>
+/// <p>To use this operation, you must have the <code>bedrock-agentcore:InvokeAgentRuntimeCommand</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InvokeAgentRuntimeCommandFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -166,17 +168,17 @@ impl InvokeAgentRuntimeCommandFluentBuilder {
     pub fn get_accept(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_accept()
     }
-    /// Runtime session identifier
+    /// <p>The unique identifier of the runtime session in which to execute the command. This session ID is used to maintain state and context across multiple command invocations.</p>
     pub fn runtime_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.runtime_session_id(input.into());
         self
     }
-    /// Runtime session identifier
+    /// <p>The unique identifier of the runtime session in which to execute the command. This session ID is used to maintain state and context across multiple command invocations.</p>
     pub fn set_runtime_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_runtime_session_id(input);
         self
     }
-    /// Runtime session identifier
+    /// <p>The unique identifier of the runtime session in which to execute the command. This session ID is used to maintain state and context across multiple command invocations.</p>
     pub fn get_runtime_session_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_runtime_session_id()
     }
@@ -236,59 +238,59 @@ impl InvokeAgentRuntimeCommandFluentBuilder {
     pub fn get_baggage(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_baggage()
     }
-    /// ARN of the agent runtime
+    /// <p>The Amazon Resource Name (ARN) of the agent runtime on which to execute the command. This identifies the specific agent runtime environment where the command will run.</p>
     pub fn agent_runtime_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_runtime_arn(input.into());
         self
     }
-    /// ARN of the agent runtime
+    /// <p>The Amazon Resource Name (ARN) of the agent runtime on which to execute the command. This identifies the specific agent runtime environment where the command will run.</p>
     pub fn set_agent_runtime_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_runtime_arn(input);
         self
     }
-    /// ARN of the agent runtime
+    /// <p>The Amazon Resource Name (ARN) of the agent runtime on which to execute the command. This identifies the specific agent runtime environment where the command will run.</p>
     pub fn get_agent_runtime_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_runtime_arn()
     }
-    /// Version or alias qualifier
+    /// <p>The qualifier to use for the agent runtime. This is an endpoint name that points to a specific version. If not specified, Amazon Bedrock AgentCore uses the default endpoint of the agent runtime.</p>
     pub fn qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qualifier(input.into());
         self
     }
-    /// Version or alias qualifier
+    /// <p>The qualifier to use for the agent runtime. This is an endpoint name that points to a specific version. If not specified, Amazon Bedrock AgentCore uses the default endpoint of the agent runtime.</p>
     pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qualifier(input);
         self
     }
-    /// Version or alias qualifier
+    /// <p>The qualifier to use for the agent runtime. This is an endpoint name that points to a specific version. If not specified, Amazon Bedrock AgentCore uses the default endpoint of the agent runtime.</p>
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qualifier()
     }
-    /// Account ID (12 digits)
+    /// <p>The identifier of the Amazon Web Services account for the agent runtime resource. This parameter is required when you specify an agent ID instead of the full ARN for <code>agentRuntimeArn</code>.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
-    /// Account ID (12 digits)
+    /// <p>The identifier of the Amazon Web Services account for the agent runtime resource. This parameter is required when you specify an agent ID instead of the full ARN for <code>agentRuntimeArn</code>.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
-    /// Account ID (12 digits)
+    /// <p>The identifier of the Amazon Web Services account for the agent runtime resource. This parameter is required when you specify an agent ID instead of the full ARN for <code>agentRuntimeArn</code>.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }
-    /// Request body containing command and timeout
+    /// <p>The request body containing the command to execute and optional configuration parameters such as timeout settings.</p>
     pub fn body(mut self, input: crate::types::InvokeAgentRuntimeCommandRequestBody) -> Self {
         self.inner = self.inner.body(input);
         self
     }
-    /// Request body containing command and timeout
+    /// <p>The request body containing the command to execute and optional configuration parameters such as timeout settings.</p>
     pub fn set_body(mut self, input: ::std::option::Option<crate::types::InvokeAgentRuntimeCommandRequestBody>) -> Self {
         self.inner = self.inner.set_body(input);
         self
     }
-    /// Request body containing command and timeout
+    /// <p>The request body containing the command to execute and optional configuration parameters such as timeout settings.</p>
     pub fn get_body(&self) -> &::std::option::Option<crate::types::InvokeAgentRuntimeCommandRequestBody> {
         self.inner.get_body()
     }

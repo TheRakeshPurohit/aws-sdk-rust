@@ -12,12 +12,12 @@ impl super::Client {
     ///   - [`fleet_id(String)`](crate::operation::get_session::GetSessionOutput::fleet_id): <p>The fleet ID for the session.</p>
     ///   - [`worker_id(String)`](crate::operation::get_session::GetSessionOutput::worker_id): <p>The worker ID for the session.</p>
     ///   - [`started_at(DateTime)`](crate::operation::get_session::GetSessionOutput::started_at): <p>The date and time the resource started running.</p>
-    ///   - [`log(Option<LogConfiguration>)`](crate::operation::get_session::GetSessionOutput::log): <p>The session log.</p>
     ///   - [`lifecycle_status(SessionLifecycleStatus)`](crate::operation::get_session::GetSessionOutput::lifecycle_status): <p>The life cycle status of the session.</p>
     ///   - [`ended_at(Option<DateTime>)`](crate::operation::get_session::GetSessionOutput::ended_at): <p>The date and time the resource ended running.</p>
+    ///   - [`target_lifecycle_status(Option<SessionLifecycleTargetStatus>)`](crate::operation::get_session::GetSessionOutput::target_lifecycle_status): <p>The life cycle status with which the session started.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_session::GetSessionOutput::updated_at): <p>The date and time the resource was updated.</p>
     ///   - [`updated_by(Option<String>)`](crate::operation::get_session::GetSessionOutput::updated_by): <p>The user or system that updated this resource.</p>
-    ///   - [`target_lifecycle_status(Option<SessionLifecycleTargetStatus>)`](crate::operation::get_session::GetSessionOutput::target_lifecycle_status): <p>The life cycle status with which the session started.</p>
+    ///   - [`log(Option<LogConfiguration>)`](crate::operation::get_session::GetSessionOutput::log): <p>The session log.</p>
     ///   - [`host_properties(Option<HostPropertiesResponse>)`](crate::operation::get_session::GetSessionOutput::host_properties): <p>Provides the Amazon EC2 properties of the host.</p>
     ///   - [`worker_log(Option<LogConfiguration>)`](crate::operation::get_session::GetSessionOutput::worker_log): <p>The worker log for the session.</p>
     /// - On failure, responds with [`SdkError<GetSessionError>`](crate::operation::get_session::GetSessionError)

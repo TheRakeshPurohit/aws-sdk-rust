@@ -105,6 +105,48 @@ impl UpdateJobFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>The farm ID of the job to update.</p>
+    pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.farm_id(input.into());
+        self
+    }
+    /// <p>The farm ID of the job to update.</p>
+    pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_farm_id(input);
+        self
+    }
+    /// <p>The farm ID of the job to update.</p>
+    pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_farm_id()
+    }
+    /// <p>The queue ID of the job to update.</p>
+    pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.queue_id(input.into());
+        self
+    }
+    /// <p>The queue ID of the job to update.</p>
+    pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_queue_id(input);
+        self
+    }
+    /// <p>The queue ID of the job to update.</p>
+    pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_queue_id()
+    }
+    /// <p>The job ID to update.</p>
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.job_id(input.into());
+        self
+    }
+    /// <p>The job ID to update.</p>
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_job_id(input);
+        self
+    }
+    /// <p>The job ID to update.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
+    }
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -245,47 +287,5 @@ impl UpdateJobFluentBuilder {
     /// <p>The updated job description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
-    }
-    /// <p>The farm ID of the job to update.</p>
-    pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.farm_id(input.into());
-        self
-    }
-    /// <p>The farm ID of the job to update.</p>
-    pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_farm_id(input);
-        self
-    }
-    /// <p>The farm ID of the job to update.</p>
-    pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_farm_id()
-    }
-    /// <p>The queue ID of the job to update.</p>
-    pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.queue_id(input.into());
-        self
-    }
-    /// <p>The queue ID of the job to update.</p>
-    pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_queue_id(input);
-        self
-    }
-    /// <p>The queue ID of the job to update.</p>
-    pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_queue_id()
-    }
-    /// <p>The job ID to update.</p>
-    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.job_id(input.into());
-        self
-    }
-    /// <p>The job ID to update.</p>
-    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_job_id(input);
-        self
-    }
-    /// <p>The job ID to update.</p>
-    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_job_id()
     }
 }

@@ -156,34 +156,6 @@ impl ListSessionActionsFluentBuilder {
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }
-    /// <p>The session ID to include on the sessions action list.</p>
-    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.session_id(input.into());
-        self
-    }
-    /// <p>The session ID to include on the sessions action list.</p>
-    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_session_id(input);
-        self
-    }
-    /// <p>The session ID to include on the sessions action list.</p>
-    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_session_id()
-    }
-    /// <p>The task ID for the session actions list.</p>
-    pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.task_id(input.into());
-        self
-    }
-    /// <p>The task ID for the session actions list.</p>
-    pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_task_id(input);
-        self
-    }
-    /// <p>The task ID for the session actions list.</p>
-    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_task_id()
-    }
     /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -211,5 +183,33 @@ impl ListSessionActionsFluentBuilder {
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>The session ID to include on the sessions action list.</p>
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.session_id(input.into());
+        self
+    }
+    /// <p>The session ID to include on the sessions action list.</p>
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_session_id(input);
+        self
+    }
+    /// <p>The session ID to include on the sessions action list.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
+    }
+    /// <p>The task ID for the session actions list.</p>
+    pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.task_id(input.into());
+        self
+    }
+    /// <p>The task ID for the session actions list.</p>
+    pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_task_id(input);
+        self
+    }
+    /// <p>The task ID for the session actions list.</p>
+    pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_task_id()
     }
 }

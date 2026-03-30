@@ -15,22 +15,22 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "displayName" => {
-                            builder = builder.set_display_name(
+                        "farmId" => {
+                            builder = builder.set_farm_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
-                        "amountRequirementName" => {
-                            builder = builder.set_amount_requirement_name(
+                        "limitId" => {
+                            builder = builder.set_limit_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
-                        "maxCount" => {
-                            builder = builder.set_max_count(
+                        "currentCount" => {
+                            builder = builder.set_current_count(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
@@ -62,22 +62,22 @@ where
                                     .transpose()?,
                             );
                         }
-                        "farmId" => {
-                            builder = builder.set_farm_id(
+                        "displayName" => {
+                            builder = builder.set_display_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
-                        "limitId" => {
-                            builder = builder.set_limit_id(
+                        "amountRequirementName" => {
+                            builder = builder.set_amount_requirement_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
-                        "currentCount" => {
-                            builder = builder.set_current_count(
+                        "maxCount" => {
+                            builder = builder.set_max_count(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

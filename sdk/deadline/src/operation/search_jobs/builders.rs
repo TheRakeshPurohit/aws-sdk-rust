@@ -122,25 +122,6 @@ impl SearchJobsFluentBuilder {
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    ///
-    /// Appends an item to `queueIds`.
-    ///
-    /// To override the contents of this collection use [`set_queue_ids`](Self::set_queue_ids).
-    ///
-    /// <p>The queue ID to use in the job search.</p>
-    pub fn queue_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.queue_ids(input.into());
-        self
-    }
-    /// <p>The queue ID to use in the job search.</p>
-    pub fn set_queue_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_queue_ids(input);
-        self
-    }
-    /// <p>The queue ID to use in the job search.</p>
-    pub fn get_queue_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_queue_ids()
-    }
     /// <p>The search terms for a resource.</p>
     pub fn filter_expressions(mut self, input: crate::types::SearchGroupedFilterExpressions) -> Self {
         self.inner = self.inner.filter_expressions(input);
@@ -201,5 +182,24 @@ impl SearchJobsFluentBuilder {
     /// <p>Specifies the number of results to return.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_page_size()
+    }
+    ///
+    /// Appends an item to `queueIds`.
+    ///
+    /// To override the contents of this collection use [`set_queue_ids`](Self::set_queue_ids).
+    ///
+    /// <p>The queue ID to use in the job search.</p>
+    pub fn queue_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.queue_ids(input.into());
+        self
+    }
+    /// <p>The queue ID to use in the job search.</p>
+    pub fn set_queue_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_queue_ids(input);
+        self
+    }
+    /// <p>The queue ID to use in the job search.</p>
+    pub fn get_queue_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_queue_ids()
     }
 }

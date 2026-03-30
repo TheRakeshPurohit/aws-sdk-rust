@@ -989,6 +989,8 @@ pub use crate::types::_inference_component_compute_resource_requirements::Infere
 
 pub use crate::types::_inference_component_data_cache_config::InferenceComponentDataCacheConfig;
 
+pub use crate::types::_inference_component_scheduling_config::InferenceComponentSchedulingConfig;
+
 pub use crate::types::_model_variant_config::ModelVariantConfig;
 
 pub use crate::types::_traffic_pattern::TrafficPattern;
@@ -1557,6 +1559,10 @@ pub use crate::types::_hyper_parameter_tuning_allocation_strategy::HyperParamete
 
 pub use crate::types::_parent_hyper_parameter_tuning_job::ParentHyperParameterTuningJob;
 
+pub use crate::types::_inference_component_placement_strategy::InferenceComponentPlacementStrategy;
+
+pub use crate::types::_inference_component_availability_zone_balance::InferenceComponentAvailabilityZoneBalance;
+
 pub use crate::types::_model_infrastructure_config::ModelInfrastructureConfig;
 
 pub use crate::types::_shadow_model_variant_config::ShadowModelVariantConfig;
@@ -1859,6 +1865,8 @@ pub use crate::types::_alarm::Alarm;
 
 pub use crate::types::_managed_instance_scaling_status::ManagedInstanceScalingStatus;
 
+pub use crate::types::_production_variant_managed_instance_scaling_scale_in_policy::ProductionVariantManagedInstanceScalingScaleInPolicy;
+
 pub use crate::types::_routing_strategy::RoutingStrategy;
 
 pub use crate::types::_capacity_reservation_preference::CapacityReservationPreference;
@@ -1882,6 +1890,8 @@ pub use crate::types::_auto_parameter::AutoParameter;
 pub use crate::types::_complete_on_convergence::CompleteOnConvergence;
 
 pub use crate::types::_hyper_parameter_tuning_instance_config::HyperParameterTuningInstanceConfig;
+
+pub use crate::types::_availability_zone_balance_enforcement_mode::AvailabilityZoneBalanceEnforcementMode;
 
 pub use crate::types::_model_infrastructure_type::ModelInfrastructureType;
 
@@ -2060,6 +2070,8 @@ pub use crate::types::_data_source_name::DataSourceName;
 pub use crate::types::_lifecycle_management::LifecycleManagement;
 
 pub use crate::types::_sage_maker_image_name::SageMakerImageName;
+
+pub use crate::types::_managed_instance_scaling_scale_in_strategy::ManagedInstanceScalingScaleInStrategy;
 
 pub use crate::types::_async_notification_topic_types::AsyncNotificationTopicTypes;
 
@@ -2336,6 +2348,8 @@ mod _auto_rollback_config;
 mod _autotune;
 
 mod _autotune_mode;
+
+mod _availability_zone_balance_enforcement_mode;
 
 mod _available_upgrade;
 
@@ -3035,6 +3049,8 @@ mod _image_version_sort_order;
 
 mod _image_version_status;
 
+mod _inference_component_availability_zone_balance;
+
 mod _inference_component_capacity_size;
 
 mod _inference_component_capacity_size_type;
@@ -3053,11 +3069,15 @@ mod _inference_component_deployment_config;
 
 mod _inference_component_metadata;
 
+mod _inference_component_placement_strategy;
+
 mod _inference_component_rolling_update_policy;
 
 mod _inference_component_runtime_config;
 
 mod _inference_component_runtime_config_summary;
+
+mod _inference_component_scheduling_config;
 
 mod _inference_component_sort_key;
 
@@ -3212,6 +3232,8 @@ mod _list_workteams_sort_by_options;
 mod _m_lflow_configuration;
 
 mod _maintenance_status;
+
+mod _managed_instance_scaling_scale_in_strategy;
 
 mod _managed_instance_scaling_status;
 
@@ -3704,6 +3726,8 @@ mod _production_variant_inference_ami_version;
 mod _production_variant_instance_type;
 
 mod _production_variant_managed_instance_scaling;
+
+mod _production_variant_managed_instance_scaling_scale_in_policy;
 
 mod _production_variant_routing_config;
 

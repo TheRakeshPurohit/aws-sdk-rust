@@ -314,6 +314,15 @@ pub(crate) fn storage_connector_correct_errors(
     builder
 }
 
+pub(crate) fn url_redirection_config_correct_errors(
+    mut builder: crate::types::builders::UrlRedirectionConfigBuilder,
+) -> crate::types::builders::UrlRedirectionConfigBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn user_setting_correct_errors(mut builder: crate::types::builders::UserSettingBuilder) -> crate::types::builders::UserSettingBuilder {
     if builder.action.is_none() {
         builder.action = "no value was set".parse::<crate::types::Action>().ok()

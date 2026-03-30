@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateFleetInput {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The farm ID to update.</p>
     pub farm_id: ::std::option::Option<::std::string::String>,
     /// <p>The fleet ID to update.</p>
     pub fleet_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the fleet to update.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
@@ -30,10 +30,6 @@ pub struct UpdateFleetInput {
     pub host_configuration: ::std::option::Option<crate::types::HostConfiguration>,
 }
 impl UpdateFleetInput {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
-        self.client_token.as_deref()
-    }
     /// <p>The farm ID to update.</p>
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
@@ -41,6 +37,10 @@ impl UpdateFleetInput {
     /// <p>The fleet ID to update.</p>
     pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
     /// <p>The display name of the fleet to update.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
@@ -79,9 +79,9 @@ impl UpdateFleetInput {
 impl ::std::fmt::Debug for UpdateFleetInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFleetInput");
-        formatter.field("client_token", &self.client_token);
         formatter.field("farm_id", &self.farm_id);
         formatter.field("fleet_id", &self.fleet_id);
+        formatter.field("client_token", &self.client_token);
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("role_arn", &self.role_arn);
@@ -103,9 +103,9 @@ impl UpdateFleetInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct UpdateFleetInputBuilder {
-    pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
@@ -115,20 +115,6 @@ pub struct UpdateFleetInputBuilder {
     pub(crate) host_configuration: ::std::option::Option<crate::types::HostConfiguration>,
 }
 impl UpdateFleetInputBuilder {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.client_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.client_token
-    }
     /// <p>The farm ID to update.</p>
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,6 +144,20 @@ impl UpdateFleetInputBuilder {
     /// <p>The fleet ID to update.</p>
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The display name of the fleet to update.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
@@ -275,9 +275,9 @@ impl UpdateFleetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFleetInput`](crate::operation::update_fleet::UpdateFleetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_fleet::UpdateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_fleet::UpdateFleetInput {
-            client_token: self.client_token,
             farm_id: self.farm_id,
             fleet_id: self.fleet_id,
+            client_token: self.client_token,
             display_name: self.display_name,
             description: self.description,
             role_arn: self.role_arn,
@@ -291,9 +291,9 @@ impl UpdateFleetInputBuilder {
 impl ::std::fmt::Debug for UpdateFleetInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFleetInputBuilder");
-        formatter.field("client_token", &self.client_token);
         formatter.field("farm_id", &self.farm_id);
         formatter.field("fleet_id", &self.fleet_id);
+        formatter.field("client_token", &self.client_token);
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("role_arn", &self.role_arn);

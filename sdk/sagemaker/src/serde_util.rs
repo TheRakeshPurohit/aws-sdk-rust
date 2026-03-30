@@ -4620,6 +4620,15 @@ pub(crate) fn inference_component_rolling_update_policy_correct_errors(
     builder
 }
 
+pub(crate) fn inference_component_scheduling_config_correct_errors(
+    mut builder: crate::types::builders::InferenceComponentSchedulingConfigBuilder,
+) -> crate::types::builders::InferenceComponentSchedulingConfigBuilder {
+    if builder.placement_strategy.is_none() {
+        builder.placement_strategy = "no value was set".parse::<crate::types::InferenceComponentPlacementStrategy>().ok()
+    }
+    builder
+}
+
 pub(crate) fn inference_component_summary_correct_errors(
     mut builder: crate::types::builders::InferenceComponentSummaryBuilder,
 ) -> crate::types::builders::InferenceComponentSummaryBuilder {
@@ -5833,6 +5842,15 @@ pub(crate) fn hyper_parameter_specification_correct_errors(
     builder
 }
 
+pub(crate) fn inference_component_availability_zone_balance_correct_errors(
+    mut builder: crate::types::builders::InferenceComponentAvailabilityZoneBalanceBuilder,
+) -> crate::types::builders::InferenceComponentAvailabilityZoneBalanceBuilder {
+    if builder.enforcement_mode.is_none() {
+        builder.enforcement_mode = "no value was set".parse::<crate::types::AvailabilityZoneBalanceEnforcementMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn inference_component_capacity_size_correct_errors(
     mut builder: crate::types::builders::InferenceComponentCapacitySizeBuilder,
 ) -> crate::types::builders::InferenceComponentCapacitySizeBuilder {
@@ -6589,6 +6607,15 @@ pub(crate) fn processing_s3_output_correct_errors(
     }
     if builder.s3_upload_mode.is_none() {
         builder.s3_upload_mode = "no value was set".parse::<crate::types::ProcessingS3UploadMode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn production_variant_managed_instance_scaling_scale_in_policy_correct_errors(
+    mut builder: crate::types::builders::ProductionVariantManagedInstanceScalingScaleInPolicyBuilder,
+) -> crate::types::builders::ProductionVariantManagedInstanceScalingScaleInPolicyBuilder {
+    if builder.strategy.is_none() {
+        builder.strategy = "no value was set".parse::<crate::types::ManagedInstanceScalingScaleInStrategy>().ok()
     }
     builder
 }

@@ -13,7 +13,7 @@ pub struct UpdateFarmInput {
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The cost scale factor of the farm to update.</p>
+    /// <p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.</p>
     pub cost_scale_factor: ::std::option::Option<f32>,
 }
 impl UpdateFarmInput {
@@ -33,7 +33,7 @@ impl UpdateFarmInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The cost scale factor of the farm to update.</p>
+    /// <p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.</p>
     pub fn cost_scale_factor(&self) -> ::std::option::Option<f32> {
         self.cost_scale_factor
     }
@@ -120,17 +120,17 @@ impl UpdateFarmInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The cost scale factor of the farm to update.</p>
+    /// <p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.</p>
     pub fn cost_scale_factor(mut self, input: f32) -> Self {
         self.cost_scale_factor = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The cost scale factor of the farm to update.</p>
+    /// <p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.</p>
     pub fn set_cost_scale_factor(mut self, input: ::std::option::Option<f32>) -> Self {
         self.cost_scale_factor = input;
         self
     }
-    /// <p>The cost scale factor of the farm to update.</p>
+    /// <p>A multiplier applied to the farm's calculated costs for usage data and budget tracking. A value less than 1 represents a discount, a value greater than 1 represents a premium, and a value of 1 represents no adjustment.</p>
     pub fn get_cost_scale_factor(&self) -> &::std::option::Option<f32> {
         &self.cost_scale_factor
     }

@@ -7,7 +7,7 @@
 pub struct MatchedPlayerSession {
     /// <p>A unique identifier for a player</p>
     pub player_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique identifier for a player session</p>
+    /// <p>A unique identifier for a player session. PlayerSessionId will only be populated for player sessions that are in ACTIVE or RESERVED status when the ticket is completed.</p>
     pub player_session_id: ::std::option::Option<::std::string::String>,
 }
 impl MatchedPlayerSession {
@@ -15,7 +15,7 @@ impl MatchedPlayerSession {
     pub fn player_id(&self) -> ::std::option::Option<&str> {
         self.player_id.as_deref()
     }
-    /// <p>A unique identifier for a player session</p>
+    /// <p>A unique identifier for a player session. PlayerSessionId will only be populated for player sessions that are in ACTIVE or RESERVED status when the ticket is completed.</p>
     pub fn player_session_id(&self) -> ::std::option::Option<&str> {
         self.player_session_id.as_deref()
     }
@@ -57,17 +57,17 @@ impl MatchedPlayerSessionBuilder {
     pub fn get_player_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.player_id
     }
-    /// <p>A unique identifier for a player session</p>
+    /// <p>A unique identifier for a player session. PlayerSessionId will only be populated for player sessions that are in ACTIVE or RESERVED status when the ticket is completed.</p>
     pub fn player_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.player_session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for a player session</p>
+    /// <p>A unique identifier for a player session. PlayerSessionId will only be populated for player sessions that are in ACTIVE or RESERVED status when the ticket is completed.</p>
     pub fn set_player_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.player_session_id = input;
         self
     }
-    /// <p>A unique identifier for a player session</p>
+    /// <p>A unique identifier for a player session. PlayerSessionId will only be populated for player sessions that are in ACTIVE or RESERVED status when the ticket is completed.</p>
     pub fn get_player_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.player_session_id
     }

@@ -443,6 +443,39 @@ impl From<crate::operation::create_log_stream::CreateLogStreamError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_lookup_table::CreateLookupTableError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_lookup_table::CreateLookupTableError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_lookup_table::CreateLookupTableError> for Error {
+    fn from(err: crate::operation::create_lookup_table::CreateLookupTableError) -> Self {
+        match err {
+            crate::operation::create_lookup_table::CreateLookupTableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_lookup_table::CreateLookupTableError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_lookup_table::CreateLookupTableError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_lookup_table::CreateLookupTableError::ResourceAlreadyExistsException(inner) => {
+                Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::create_lookup_table::CreateLookupTableError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_lookup_table::CreateLookupTableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_lookup_table::CreateLookupTableError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_scheduled_query::CreateScheduledQueryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -869,6 +902,37 @@ impl From<crate::operation::delete_log_stream::DeleteLogStreamError> for Error {
             }
             crate::operation::delete_log_stream::DeleteLogStreamError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_log_stream::DeleteLogStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_lookup_table::DeleteLookupTableError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_lookup_table::DeleteLookupTableError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_lookup_table::DeleteLookupTableError> for Error {
+    fn from(err: crate::operation::delete_lookup_table::DeleteLookupTableError) -> Self {
+        match err {
+            crate::operation::delete_lookup_table::DeleteLookupTableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_lookup_table::DeleteLookupTableError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_lookup_table::DeleteLookupTableError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_lookup_table::DeleteLookupTableError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_lookup_table::DeleteLookupTableError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1540,6 +1604,37 @@ impl From<crate::operation::describe_log_streams::DescribeLogStreamsError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_lookup_tables::DescribeLookupTablesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_lookup_tables::DescribeLookupTablesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_lookup_tables::DescribeLookupTablesError> for Error {
+    fn from(err: crate::operation::describe_lookup_tables::DescribeLookupTablesError) -> Self {
+        match err {
+            crate::operation::describe_lookup_tables::DescribeLookupTablesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_lookup_tables::DescribeLookupTablesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_lookup_tables::DescribeLookupTablesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_lookup_tables::DescribeLookupTablesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_lookup_tables::DescribeLookupTablesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_metric_filters::DescribeMetricFiltersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2138,6 +2233,31 @@ impl From<crate::operation::get_log_record::GetLogRecordError> for Error {
             crate::operation::get_log_record::GetLogRecordError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_log_record::GetLogRecordError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::operation::get_log_record::GetLogRecordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lookup_table::GetLookupTableError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_lookup_table::GetLookupTableError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_lookup_table::GetLookupTableError> for Error {
+    fn from(err: crate::operation::get_lookup_table::GetLookupTableError) -> Self {
+        match err {
+            crate::operation::get_lookup_table::GetLookupTableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_lookup_table::GetLookupTableError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_lookup_table::GetLookupTableError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_lookup_table::GetLookupTableError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_lookup_table::GetLookupTableError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3493,6 +3613,38 @@ impl From<crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetecto
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_lookup_table::UpdateLookupTableError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_lookup_table::UpdateLookupTableError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_lookup_table::UpdateLookupTableError> for Error {
+    fn from(err: crate::operation::update_lookup_table::UpdateLookupTableError) -> Self {
+        match err {
+            crate::operation::update_lookup_table::UpdateLookupTableError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_lookup_table::UpdateLookupTableError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_lookup_table::UpdateLookupTableError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_lookup_table::UpdateLookupTableError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_lookup_table::UpdateLookupTableError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_lookup_table::UpdateLookupTableError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -40,6 +40,13 @@ pub struct Filter {
     /// <li>
     /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
     /// </ul>
+    /// <p><code>StartTimeLowerBound</code> and <code>StartTimeUpperBound</code> accept ISO 8601 formatted timestamps. Timestamps without a timezone offset are assumed to be UTC.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>2000-01-18T08:15:00Z</code></p></li>
+    /// <li>
+    /// <p><code>2000-01-18T16:15:00+08:00</code></p></li>
+    /// </ul>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>One or more filter values. Filter values are case-sensitive.</p>
     /// <p>If you specify multiple values for a filter, the values are automatically logically joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
@@ -81,6 +88,13 @@ impl Filter {
     /// <p><code>StartTimeUpperBound</code> - The latest scaling activities to return based on the activity start time. Scaling activities with a start time later than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
     /// <li>
     /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
+    /// </ul>
+    /// <p><code>StartTimeLowerBound</code> and <code>StartTimeUpperBound</code> accept ISO 8601 formatted timestamps. Timestamps without a timezone offset are assumed to be UTC.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>2000-01-18T08:15:00Z</code></p></li>
+    /// <li>
+    /// <p><code>2000-01-18T16:15:00+08:00</code></p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -144,6 +158,13 @@ impl FilterBuilder {
     /// <li>
     /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
     /// </ul>
+    /// <p><code>StartTimeLowerBound</code> and <code>StartTimeUpperBound</code> accept ISO 8601 formatted timestamps. Timestamps without a timezone offset are assumed to be UTC.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>2000-01-18T08:15:00Z</code></p></li>
+    /// <li>
+    /// <p><code>2000-01-18T16:15:00+08:00</code></p></li>
+    /// </ul>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
@@ -182,6 +203,13 @@ impl FilterBuilder {
     /// <li>
     /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
     /// </ul>
+    /// <p><code>StartTimeLowerBound</code> and <code>StartTimeUpperBound</code> accept ISO 8601 formatted timestamps. Timestamps without a timezone offset are assumed to be UTC.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>2000-01-18T08:15:00Z</code></p></li>
+    /// <li>
+    /// <p><code>2000-01-18T16:15:00+08:00</code></p></li>
+    /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
@@ -219,6 +247,13 @@ impl FilterBuilder {
     /// <p><code>StartTimeUpperBound</code> - The latest scaling activities to return based on the activity start time. Scaling activities with a start time later than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
     /// <li>
     /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
+    /// </ul>
+    /// <p><code>StartTimeLowerBound</code> and <code>StartTimeUpperBound</code> accept ISO 8601 formatted timestamps. Timestamps without a timezone offset are assumed to be UTC.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>2000-01-18T08:15:00Z</code></p></li>
+    /// <li>
+    /// <p><code>2000-01-18T16:15:00+08:00</code></p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name

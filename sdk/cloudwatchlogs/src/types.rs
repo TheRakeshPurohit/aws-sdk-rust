@@ -105,6 +105,8 @@ pub use crate::types::_log_group::LogGroup;
 
 pub use crate::types::_log_stream::LogStream;
 
+pub use crate::types::_lookup_table::LookupTable;
+
 pub use crate::types::_metric_filter::MetricFilter;
 
 pub use crate::types::_query_info::QueryInfo;
@@ -438,6 +440,8 @@ mod _log_group_field;
 mod _log_group_summary;
 
 mod _log_stream;
+
+mod _lookup_table;
 
 mod _lower_case_string;
 

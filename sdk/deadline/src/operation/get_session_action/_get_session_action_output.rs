@@ -15,18 +15,18 @@ pub struct GetSessionActionOutput {
     pub worker_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The percentage completed for a session action.</p>
     pub progress_percent: ::std::option::Option<f32>,
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    pub manifests: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>>,
     /// <p>The session ID for the session action.</p>
     pub session_id: ::std::string::String,
     /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
     pub process_exit_code: ::std::option::Option<i32>,
     /// <p>The message that communicates the progress of the session action.</p>
     pub progress_message: ::std::option::Option<::std::string::String>,
-    /// <p>The session action definition.</p>
-    pub definition: ::std::option::Option<crate::types::SessionActionDefinition>,
     /// <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
     pub acquired_limits: ::std::option::Option<::std::vec::Vec<crate::types::AcquiredLimit>>,
-    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
-    pub manifests: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>>,
+    /// <p>The session action definition.</p>
+    pub definition: ::std::option::Option<crate::types::SessionActionDefinition>,
     _request_id: Option<String>,
 }
 impl GetSessionActionOutput {
@@ -55,6 +55,12 @@ impl GetSessionActionOutput {
     pub fn progress_percent(&self) -> ::std::option::Option<f32> {
         self.progress_percent
     }
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.manifests.is_none()`.
+    pub fn manifests(&self) -> &[crate::types::TaskRunManifestPropertiesResponse] {
+        self.manifests.as_deref().unwrap_or_default()
+    }
     /// <p>The session ID for the session action.</p>
     pub fn session_id(&self) -> &str {
         use std::ops::Deref;
@@ -68,21 +74,15 @@ impl GetSessionActionOutput {
     pub fn progress_message(&self) -> ::std::option::Option<&str> {
         self.progress_message.as_deref()
     }
-    /// <p>The session action definition.</p>
-    pub fn definition(&self) -> ::std::option::Option<&crate::types::SessionActionDefinition> {
-        self.definition.as_ref()
-    }
     /// <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.acquired_limits.is_none()`.
     pub fn acquired_limits(&self) -> &[crate::types::AcquiredLimit] {
         self.acquired_limits.as_deref().unwrap_or_default()
     }
-    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.manifests.is_none()`.
-    pub fn manifests(&self) -> &[crate::types::TaskRunManifestPropertiesResponse] {
-        self.manifests.as_deref().unwrap_or_default()
+    /// <p>The session action definition.</p>
+    pub fn definition(&self) -> ::std::option::Option<&crate::types::SessionActionDefinition> {
+        self.definition.as_ref()
     }
 }
 impl ::std::fmt::Debug for GetSessionActionOutput {
@@ -94,12 +94,12 @@ impl ::std::fmt::Debug for GetSessionActionOutput {
         formatter.field("ended_at", &self.ended_at);
         formatter.field("worker_updated_at", &self.worker_updated_at);
         formatter.field("progress_percent", &self.progress_percent);
+        formatter.field("manifests", &self.manifests);
         formatter.field("session_id", &self.session_id);
         formatter.field("process_exit_code", &self.process_exit_code);
         formatter.field("progress_message", &"*** Sensitive Data Redacted ***");
-        formatter.field("definition", &self.definition);
         formatter.field("acquired_limits", &self.acquired_limits);
-        formatter.field("manifests", &self.manifests);
+        formatter.field("definition", &self.definition);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -126,12 +126,12 @@ pub struct GetSessionActionOutputBuilder {
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) worker_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) progress_percent: ::std::option::Option<f32>,
+    pub(crate) manifests: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
     pub(crate) process_exit_code: ::std::option::Option<i32>,
     pub(crate) progress_message: ::std::option::Option<::std::string::String>,
-    pub(crate) definition: ::std::option::Option<crate::types::SessionActionDefinition>,
     pub(crate) acquired_limits: ::std::option::Option<::std::vec::Vec<crate::types::AcquiredLimit>>,
-    pub(crate) manifests: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>>,
+    pub(crate) definition: ::std::option::Option<crate::types::SessionActionDefinition>,
     _request_id: Option<String>,
 }
 impl GetSessionActionOutputBuilder {
@@ -221,6 +221,26 @@ impl GetSessionActionOutputBuilder {
     pub fn get_progress_percent(&self) -> &::std::option::Option<f32> {
         &self.progress_percent
     }
+    /// Appends an item to `manifests`.
+    ///
+    /// To override the contents of this collection use [`set_manifests`](Self::set_manifests).
+    ///
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    pub fn manifests(mut self, input: crate::types::TaskRunManifestPropertiesResponse) -> Self {
+        let mut v = self.manifests.unwrap_or_default();
+        v.push(input);
+        self.manifests = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    pub fn set_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>>) -> Self {
+        self.manifests = input;
+        self
+    }
+    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
+    pub fn get_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>> {
+        &self.manifests
+    }
     /// <p>The session ID for the session action.</p>
     /// This field is required.
     pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -264,21 +284,6 @@ impl GetSessionActionOutputBuilder {
     pub fn get_progress_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.progress_message
     }
-    /// <p>The session action definition.</p>
-    /// This field is required.
-    pub fn definition(mut self, input: crate::types::SessionActionDefinition) -> Self {
-        self.definition = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The session action definition.</p>
-    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::SessionActionDefinition>) -> Self {
-        self.definition = input;
-        self
-    }
-    /// <p>The session action definition.</p>
-    pub fn get_definition(&self) -> &::std::option::Option<crate::types::SessionActionDefinition> {
-        &self.definition
-    }
     /// Appends an item to `acquired_limits`.
     ///
     /// To override the contents of this collection use [`set_acquired_limits`](Self::set_acquired_limits).
@@ -299,25 +304,20 @@ impl GetSessionActionOutputBuilder {
     pub fn get_acquired_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AcquiredLimit>> {
         &self.acquired_limits
     }
-    /// Appends an item to `manifests`.
-    ///
-    /// To override the contents of this collection use [`set_manifests`](Self::set_manifests).
-    ///
-    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
-    pub fn manifests(mut self, input: crate::types::TaskRunManifestPropertiesResponse) -> Self {
-        let mut v = self.manifests.unwrap_or_default();
-        v.push(input);
-        self.manifests = ::std::option::Option::Some(v);
+    /// <p>The session action definition.</p>
+    /// This field is required.
+    pub fn definition(mut self, input: crate::types::SessionActionDefinition) -> Self {
+        self.definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
-    pub fn set_manifests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>>) -> Self {
-        self.manifests = input;
+    /// <p>The session action definition.</p>
+    pub fn set_definition(mut self, input: ::std::option::Option<crate::types::SessionActionDefinition>) -> Self {
+        self.definition = input;
         self
     }
-    /// <p>The list of manifest properties that describe file attachments for the task run.</p>
-    pub fn get_manifests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskRunManifestPropertiesResponse>> {
-        &self.manifests
+    /// <p>The session action definition.</p>
+    pub fn get_definition(&self) -> &::std::option::Option<crate::types::SessionActionDefinition> {
+        &self.definition
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -353,6 +353,7 @@ impl GetSessionActionOutputBuilder {
             ended_at: self.ended_at,
             worker_updated_at: self.worker_updated_at,
             progress_percent: self.progress_percent,
+            manifests: self.manifests,
             session_id: self.session_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "session_id",
@@ -361,9 +362,8 @@ impl GetSessionActionOutputBuilder {
             })?,
             process_exit_code: self.process_exit_code,
             progress_message: self.progress_message,
-            definition: self.definition,
             acquired_limits: self.acquired_limits,
-            manifests: self.manifests,
+            definition: self.definition,
             _request_id: self._request_id,
         })
     }
@@ -377,12 +377,12 @@ impl ::std::fmt::Debug for GetSessionActionOutputBuilder {
         formatter.field("ended_at", &self.ended_at);
         formatter.field("worker_updated_at", &self.worker_updated_at);
         formatter.field("progress_percent", &self.progress_percent);
+        formatter.field("manifests", &self.manifests);
         formatter.field("session_id", &self.session_id);
         formatter.field("process_exit_code", &self.process_exit_code);
         formatter.field("progress_message", &"*** Sensitive Data Redacted ***");
-        formatter.field("definition", &self.definition);
         formatter.field("acquired_limits", &self.acquired_limits);
-        formatter.field("manifests", &self.manifests);
+        formatter.field("definition", &self.definition);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

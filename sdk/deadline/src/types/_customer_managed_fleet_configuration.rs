@@ -6,6 +6,8 @@
 pub struct CustomerManagedFleetConfiguration {
     /// <p>The Auto Scaling mode for the customer managed fleet.</p>
     pub mode: crate::types::AutoScalingMode,
+    /// <p>The auto scaling configuration options for the customer managed fleet.</p>
+    pub auto_scaling_configuration: ::std::option::Option<crate::types::CustomerManagedAutoScalingConfiguration>,
     /// <p>The worker capabilities for the customer managed fleet.</p>
     pub worker_capabilities: ::std::option::Option<crate::types::CustomerManagedWorkerCapabilities>,
     /// <p>The storage profile ID for the customer managed fleet.</p>
@@ -17,6 +19,10 @@ impl CustomerManagedFleetConfiguration {
     /// <p>The Auto Scaling mode for the customer managed fleet.</p>
     pub fn mode(&self) -> &crate::types::AutoScalingMode {
         &self.mode
+    }
+    /// <p>The auto scaling configuration options for the customer managed fleet.</p>
+    pub fn auto_scaling_configuration(&self) -> ::std::option::Option<&crate::types::CustomerManagedAutoScalingConfiguration> {
+        self.auto_scaling_configuration.as_ref()
     }
     /// <p>The worker capabilities for the customer managed fleet.</p>
     pub fn worker_capabilities(&self) -> ::std::option::Option<&crate::types::CustomerManagedWorkerCapabilities> {
@@ -43,6 +49,7 @@ impl CustomerManagedFleetConfiguration {
 #[non_exhaustive]
 pub struct CustomerManagedFleetConfigurationBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::AutoScalingMode>,
+    pub(crate) auto_scaling_configuration: ::std::option::Option<crate::types::CustomerManagedAutoScalingConfiguration>,
     pub(crate) worker_capabilities: ::std::option::Option<crate::types::CustomerManagedWorkerCapabilities>,
     pub(crate) storage_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) tag_propagation_mode: ::std::option::Option<crate::types::TagPropagationMode>,
@@ -62,6 +69,20 @@ impl CustomerManagedFleetConfigurationBuilder {
     /// <p>The Auto Scaling mode for the customer managed fleet.</p>
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::AutoScalingMode> {
         &self.mode
+    }
+    /// <p>The auto scaling configuration options for the customer managed fleet.</p>
+    pub fn auto_scaling_configuration(mut self, input: crate::types::CustomerManagedAutoScalingConfiguration) -> Self {
+        self.auto_scaling_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The auto scaling configuration options for the customer managed fleet.</p>
+    pub fn set_auto_scaling_configuration(mut self, input: ::std::option::Option<crate::types::CustomerManagedAutoScalingConfiguration>) -> Self {
+        self.auto_scaling_configuration = input;
+        self
+    }
+    /// <p>The auto scaling configuration options for the customer managed fleet.</p>
+    pub fn get_auto_scaling_configuration(&self) -> &::std::option::Option<crate::types::CustomerManagedAutoScalingConfiguration> {
+        &self.auto_scaling_configuration
     }
     /// <p>The worker capabilities for the customer managed fleet.</p>
     /// This field is required.
@@ -117,6 +138,7 @@ impl CustomerManagedFleetConfigurationBuilder {
                     "mode was not specified but it is required when building CustomerManagedFleetConfiguration",
                 )
             })?,
+            auto_scaling_configuration: self.auto_scaling_configuration,
             worker_capabilities: self.worker_capabilities,
             storage_profile_id: self.storage_profile_id,
             tag_propagation_mode: self.tag_propagation_mode,

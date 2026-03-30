@@ -241,6 +241,8 @@ pub(crate) mod shape_code_interpreter_session_summaries;
 
 pub(crate) mod shape_evaluation_input;
 
+pub(crate) mod shape_evaluation_reference_input;
+
 pub(crate) mod shape_evaluation_results;
 
 pub(crate) mod shape_evaluation_target;
@@ -307,7 +309,13 @@ pub(crate) mod shape_code_interpreter_result;
 
 pub(crate) mod shape_code_interpreter_session_summary;
 
+pub(crate) mod shape_context;
+
 pub(crate) mod shape_conversational;
+
+pub(crate) mod shape_evaluation_content;
+
+pub(crate) mod shape_evaluation_expected_trajectory;
 
 pub(crate) mod shape_evaluation_result_content;
 
@@ -349,13 +357,13 @@ pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_content;
 
-pub(crate) mod shape_context;
-
 pub(crate) mod shape_domain_patterns;
 
 pub(crate) mod shape_external_proxy;
 
 pub(crate) mod shape_extraction_job_messages;
+
+pub(crate) mod shape_ignored_reference_input_fields;
 
 pub(crate) mod shape_left_expression;
 
@@ -364,6 +372,8 @@ pub(crate) mod shape_right_expression;
 pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_secrets_manager_location;
+
+pub(crate) mod shape_span_context;
 
 pub(crate) mod shape_token_usage;
 
@@ -378,8 +388,6 @@ pub(crate) mod shape_content_stop_event;
 pub(crate) mod shape_messages_list;
 
 pub(crate) mod shape_proxy_credentials;
-
-pub(crate) mod shape_span_context;
 
 pub(crate) mod shape_tool_result_structured_content;
 

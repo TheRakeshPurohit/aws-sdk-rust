@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateQueueInput {
-    /// <p>The idempotency token to update in the queue.</p>
-    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The farm ID to update in the queue.</p>
     pub farm_id: ::std::option::Option<::std::string::String>,
     /// <p>The queue ID to update.</p>
     pub queue_id: ::std::option::Option<::std::string::String>,
+    /// <p>The idempotency token to update in the queue.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the queue to update.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
@@ -35,10 +35,6 @@ pub struct UpdateQueueInput {
     pub allowed_storage_profile_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateQueueInput {
-    /// <p>The idempotency token to update in the queue.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
-        self.client_token.as_deref()
-    }
     /// <p>The farm ID to update in the queue.</p>
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
@@ -46,6 +42,10 @@ impl UpdateQueueInput {
     /// <p>The queue ID to update.</p>
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
+    }
+    /// <p>The idempotency token to update in the queue.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
     /// <p>The display name of the queue to update.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
@@ -103,9 +103,9 @@ impl UpdateQueueInput {
 impl ::std::fmt::Debug for UpdateQueueInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateQueueInput");
-        formatter.field("client_token", &self.client_token);
         formatter.field("farm_id", &self.farm_id);
         formatter.field("queue_id", &self.queue_id);
+        formatter.field("client_token", &self.client_token);
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("default_budget_action", &self.default_budget_action);
@@ -136,9 +136,9 @@ impl UpdateQueueInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct UpdateQueueInputBuilder {
-    pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) default_budget_action: ::std::option::Option<crate::types::DefaultQueueBudgetAction>,
@@ -151,20 +151,6 @@ pub struct UpdateQueueInputBuilder {
     pub(crate) allowed_storage_profile_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateQueueInputBuilder {
-    /// <p>The idempotency token to update in the queue.</p>
-    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.client_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The idempotency token to update in the queue.</p>
-    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
-    }
-    /// <p>The idempotency token to update in the queue.</p>
-    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.client_token
-    }
     /// <p>The farm ID to update in the queue.</p>
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -194,6 +180,20 @@ impl UpdateQueueInputBuilder {
     /// <p>The queue ID to update.</p>
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
+    }
+    /// <p>The idempotency token to update in the queue.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The idempotency token to update in the queue.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>The idempotency token to update in the queue.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>The display name of the queue to update.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
@@ -374,9 +374,9 @@ impl UpdateQueueInputBuilder {
     /// Consumes the builder and constructs a [`UpdateQueueInput`](crate::operation::update_queue::UpdateQueueInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_queue::UpdateQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_queue::UpdateQueueInput {
-            client_token: self.client_token,
             farm_id: self.farm_id,
             queue_id: self.queue_id,
+            client_token: self.client_token,
             display_name: self.display_name,
             description: self.description,
             default_budget_action: self.default_budget_action,
@@ -393,9 +393,9 @@ impl UpdateQueueInputBuilder {
 impl ::std::fmt::Debug for UpdateQueueInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateQueueInputBuilder");
-        formatter.field("client_token", &self.client_token);
         formatter.field("farm_id", &self.farm_id);
         formatter.field("queue_id", &self.queue_id);
+        formatter.field("client_token", &self.client_token);
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("default_budget_action", &self.default_budget_action);

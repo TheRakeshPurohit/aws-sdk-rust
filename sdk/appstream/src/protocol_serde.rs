@@ -441,6 +441,8 @@ pub(crate) mod shape_certificate_based_auth_properties;
 
 pub(crate) mod shape_compute_capacity;
 
+pub(crate) mod shape_content_redirection;
+
 pub(crate) mod shape_directory_config;
 
 pub(crate) mod shape_directory_config_list;
@@ -567,6 +569,8 @@ pub(crate) mod shape_storage_connector_list;
 
 pub(crate) mod shape_theme_footer_links;
 
+pub(crate) mod shape_url_redirection_config;
+
 pub(crate) mod shape_usage_report_subscription;
 
 pub(crate) mod shape_usb_device_filter_strings;
@@ -594,3 +598,5 @@ pub(crate) mod shape_subnet_id_list;
 pub(crate) mod shape_domain_list;
 
 pub(crate) mod shape_last_report_generation_execution_error;
+
+pub(crate) mod shape_url_pattern_list;

@@ -31,6 +31,8 @@ pub struct CreateStackInput {
     pub embed_host_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The streaming protocol you want your stack to prefer. This can be UDP or TCP. Currently, UDP is only supported in the Windows native client.</p>
     pub streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
+    /// <p>Configuration for bidirectional URL redirection between the streaming session and the local client. Use HostToClient to redirect URLs from the remote desktop to the local browser.</p>
+    pub content_redirection: ::std::option::Option<crate::types::ContentRedirection>,
 }
 impl CreateStackInput {
     /// <p>The name of the stack.</p>
@@ -93,6 +95,10 @@ impl CreateStackInput {
     pub fn streaming_experience_settings(&self) -> ::std::option::Option<&crate::types::StreamingExperienceSettings> {
         self.streaming_experience_settings.as_ref()
     }
+    /// <p>Configuration for bidirectional URL redirection between the streaming session and the local client. Use HostToClient to redirect URLs from the remote desktop to the local browser.</p>
+    pub fn content_redirection(&self) -> ::std::option::Option<&crate::types::ContentRedirection> {
+        self.content_redirection.as_ref()
+    }
 }
 impl CreateStackInput {
     /// Creates a new builder-style object to manufacture [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
@@ -117,6 +123,7 @@ pub struct CreateStackInputBuilder {
     pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
     pub(crate) embed_host_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
+    pub(crate) content_redirection: ::std::option::Option<crate::types::ContentRedirection>,
 }
 impl CreateStackInputBuilder {
     /// <p>The name of the stack.</p>
@@ -330,6 +337,20 @@ impl CreateStackInputBuilder {
     pub fn get_streaming_experience_settings(&self) -> &::std::option::Option<crate::types::StreamingExperienceSettings> {
         &self.streaming_experience_settings
     }
+    /// <p>Configuration for bidirectional URL redirection between the streaming session and the local client. Use HostToClient to redirect URLs from the remote desktop to the local browser.</p>
+    pub fn content_redirection(mut self, input: crate::types::ContentRedirection) -> Self {
+        self.content_redirection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for bidirectional URL redirection between the streaming session and the local client. Use HostToClient to redirect URLs from the remote desktop to the local browser.</p>
+    pub fn set_content_redirection(mut self, input: ::std::option::Option<crate::types::ContentRedirection>) -> Self {
+        self.content_redirection = input;
+        self
+    }
+    /// <p>Configuration for bidirectional URL redirection between the streaming session and the local client. Use HostToClient to redirect URLs from the remote desktop to the local browser.</p>
+    pub fn get_content_redirection(&self) -> &::std::option::Option<crate::types::ContentRedirection> {
+        &self.content_redirection
+    }
     /// Consumes the builder and constructs a [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_stack::CreateStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stack::CreateStackInput {
@@ -345,6 +366,7 @@ impl CreateStackInputBuilder {
             access_endpoints: self.access_endpoints,
             embed_host_domains: self.embed_host_domains,
             streaming_experience_settings: self.streaming_experience_settings,
+            content_redirection: self.content_redirection,
         })
     }
 }

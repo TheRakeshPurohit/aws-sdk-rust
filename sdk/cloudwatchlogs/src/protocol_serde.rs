@@ -43,6 +43,8 @@ pub(crate) mod shape_create_log_group;
 
 pub(crate) mod shape_create_log_stream;
 
+pub(crate) mod shape_create_lookup_table;
+
 pub(crate) mod shape_create_scheduled_query;
 
 pub(crate) mod shape_delete_account_policy;
@@ -68,6 +70,8 @@ pub(crate) mod shape_delete_log_anomaly_detector;
 pub(crate) mod shape_delete_log_group;
 
 pub(crate) mod shape_delete_log_stream;
+
+pub(crate) mod shape_delete_lookup_table;
 
 pub(crate) mod shape_delete_metric_filter;
 
@@ -109,6 +113,8 @@ pub(crate) mod shape_describe_log_groups;
 
 pub(crate) mod shape_describe_log_streams;
 
+pub(crate) mod shape_describe_lookup_tables;
+
 pub(crate) mod shape_describe_metric_filters;
 
 pub(crate) mod shape_describe_queries;
@@ -148,6 +154,8 @@ pub(crate) mod shape_get_log_group_fields;
 pub(crate) mod shape_get_log_object;
 
 pub(crate) mod shape_get_log_record;
+
+pub(crate) mod shape_get_lookup_table;
 
 pub(crate) mod shape_get_query_results;
 
@@ -237,6 +245,8 @@ pub(crate) mod shape_update_delivery_configuration;
 
 pub(crate) mod shape_update_log_anomaly_detector;
 
+pub(crate) mod shape_update_lookup_table;
+
 pub(crate) mod shape_update_scheduled_query;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -271,6 +281,8 @@ pub(crate) mod shape_create_log_group_input;
 
 pub(crate) mod shape_create_log_stream_input;
 
+pub(crate) mod shape_create_lookup_table_input;
+
 pub(crate) mod shape_create_scheduled_query_input;
 
 pub(crate) mod shape_data_already_accepted_exception;
@@ -298,6 +310,8 @@ pub(crate) mod shape_delete_log_anomaly_detector_input;
 pub(crate) mod shape_delete_log_group_input;
 
 pub(crate) mod shape_delete_log_stream_input;
+
+pub(crate) mod shape_delete_lookup_table_input;
 
 pub(crate) mod shape_delete_metric_filter_input;
 
@@ -338,6 +352,8 @@ pub(crate) mod shape_describe_index_policies_input;
 pub(crate) mod shape_describe_log_groups_input;
 
 pub(crate) mod shape_describe_log_streams_input;
+
+pub(crate) mod shape_describe_lookup_tables_input;
 
 pub(crate) mod shape_describe_metric_filters_input;
 
@@ -380,6 +396,8 @@ pub(crate) mod shape_get_log_object_input;
 pub(crate) mod shape_get_log_object_output;
 
 pub(crate) mod shape_get_log_record_input;
+
+pub(crate) mod shape_get_lookup_table_input;
 
 pub(crate) mod shape_get_query_results_input;
 
@@ -505,6 +523,8 @@ pub(crate) mod shape_update_delivery_configuration_input;
 
 pub(crate) mod shape_update_log_anomaly_detector_input;
 
+pub(crate) mod shape_update_lookup_table_input;
+
 pub(crate) mod shape_update_scheduled_query_input;
 
 pub(crate) mod shape_validation_exception;
@@ -592,6 +612,8 @@ pub(crate) mod shape_log_groups;
 pub(crate) mod shape_log_record;
 
 pub(crate) mod shape_log_streams;
+
+pub(crate) mod shape_lookup_tables;
 
 pub(crate) mod shape_metric_filter_matches;
 
@@ -698,6 +720,8 @@ pub(crate) mod shape_log_group_field;
 pub(crate) mod shape_log_group_summary;
 
 pub(crate) mod shape_log_stream;
+
+pub(crate) mod shape_lookup_table;
 
 pub(crate) mod shape_lower_case_string;
 
@@ -832,6 +856,8 @@ pub(crate) mod shape_scheduled_query_destination_list;
 pub(crate) mod shape_split_string_entry;
 
 pub(crate) mod shape_substitute_string_entry;
+
+pub(crate) mod shape_table_fields;
 
 pub(crate) mod shape_type_converter_entry;
 

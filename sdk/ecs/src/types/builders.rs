@@ -161,6 +161,8 @@ pub use crate::types::_managed_instances_network_configuration::ManagedInstances
 
 pub use crate::types::_managed_instances_storage_configuration::ManagedInstancesStorageConfigurationBuilder;
 
+pub use crate::types::_managed_instances_local_storage_configuration::ManagedInstancesLocalStorageConfigurationBuilder;
+
 pub use crate::types::_instance_requirements_request::InstanceRequirementsRequestBuilder;
 
 pub use crate::types::_capacity_reservation_request::CapacityReservationRequestBuilder;

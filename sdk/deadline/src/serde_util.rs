@@ -287,17 +287,17 @@ pub(crate) fn get_budget_output_output_correct_errors(
             crate::serde_util::consumed_usages_correct_errors(builder).build().ok()
         }
     }
-    if builder.actions.is_none() {
-        builder.actions = Some(Default::default())
-    }
-    if builder.schedule.is_none() {
-        builder.schedule = Some(crate::types::BudgetSchedule::Unknown)
-    }
     if builder.created_by.is_none() {
         builder.created_by = Some(Default::default())
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.actions.is_none() {
+        builder.actions = Some(Default::default())
+    }
+    if builder.schedule.is_none() {
+        builder.schedule = Some(crate::types::BudgetSchedule::Unknown)
     }
     builder
 }
@@ -311,14 +311,14 @@ pub(crate) fn get_farm_output_output_correct_errors(
     if builder.display_name.is_none() {
         builder.display_name = Some(Default::default())
     }
-    if builder.cost_scale_factor.is_none() {
-        builder.cost_scale_factor = Some(Default::default())
-    }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     if builder.created_by.is_none() {
         builder.created_by = Some(Default::default())
+    }
+    if builder.cost_scale_factor.is_none() {
+        builder.cost_scale_factor = Some(Default::default())
     }
     builder
 }
@@ -350,14 +350,14 @@ pub(crate) fn get_fleet_output_output_correct_errors(
     if builder.configuration.is_none() {
         builder.configuration = Some(crate::types::FleetConfiguration::Unknown)
     }
-    if builder.role_arn.is_none() {
-        builder.role_arn = Some(Default::default())
-    }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     if builder.created_by.is_none() {
         builder.created_by = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
     }
     builder
 }
@@ -407,21 +407,6 @@ pub(crate) fn get_license_endpoint_output_output_correct_errors(
 pub(crate) fn get_limit_output_output_correct_errors(
     mut builder: crate::operation::get_limit::builders::GetLimitOutputBuilder,
 ) -> crate::operation::get_limit::builders::GetLimitOutputBuilder {
-    if builder.display_name.is_none() {
-        builder.display_name = Some(Default::default())
-    }
-    if builder.amount_requirement_name.is_none() {
-        builder.amount_requirement_name = Some(Default::default())
-    }
-    if builder.max_count.is_none() {
-        builder.max_count = Some(Default::default())
-    }
-    if builder.created_at.is_none() {
-        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.created_by.is_none() {
-        builder.created_by = Some(Default::default())
-    }
     if builder.farm_id.is_none() {
         builder.farm_id = Some(Default::default())
     }
@@ -430,6 +415,21 @@ pub(crate) fn get_limit_output_output_correct_errors(
     }
     if builder.current_count.is_none() {
         builder.current_count = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.amount_requirement_name.is_none() {
+        builder.amount_requirement_name = Some(Default::default())
+    }
+    if builder.max_count.is_none() {
+        builder.max_count = Some(Default::default())
     }
     builder
 }
@@ -470,14 +470,14 @@ pub(crate) fn get_monitor_output_output_correct_errors(
 pub(crate) fn get_queue_output_output_correct_errors(
     mut builder: crate::operation::get_queue::builders::GetQueueOutputBuilder,
 ) -> crate::operation::get_queue::builders::GetQueueOutputBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
     if builder.queue_id.is_none() {
         builder.queue_id = Some(Default::default())
     }
     if builder.display_name.is_none() {
         builder.display_name = Some(Default::default())
-    }
-    if builder.farm_id.is_none() {
-        builder.farm_id = Some(Default::default())
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::QueueStatus>().ok()
@@ -545,12 +545,6 @@ pub(crate) fn get_queue_fleet_association_output_output_correct_errors(
 pub(crate) fn get_queue_limit_association_output_output_correct_errors(
     mut builder: crate::operation::get_queue_limit_association::builders::GetQueueLimitAssociationOutputBuilder,
 ) -> crate::operation::get_queue_limit_association::builders::GetQueueLimitAssociationOutputBuilder {
-    if builder.created_at.is_none() {
-        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.created_by.is_none() {
-        builder.created_by = Some(Default::default())
-    }
     if builder.queue_id.is_none() {
         builder.queue_id = Some(Default::default())
     }
@@ -559,6 +553,12 @@ pub(crate) fn get_queue_limit_association_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::QueueLimitAssociationStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
     }
     builder
 }
@@ -578,14 +578,14 @@ pub(crate) fn get_session_output_output_correct_errors(
     if builder.started_at.is_none() {
         builder.started_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
+    if builder.lifecycle_status.is_none() {
+        builder.lifecycle_status = "no value was set".parse::<crate::types::SessionLifecycleStatus>().ok()
+    }
     if builder.log.is_none() {
         builder.log = {
             let builder = crate::types::builders::LogConfigurationBuilder::default();
             crate::serde_util::log_configuration_correct_errors(builder).build().ok()
         }
-    }
-    if builder.lifecycle_status.is_none() {
-        builder.lifecycle_status = "no value was set".parse::<crate::types::SessionLifecycleStatus>().ok()
     }
     builder
 }
@@ -1428,21 +1428,6 @@ pub(crate) fn job_summary_correct_errors(mut builder: crate::types::builders::Jo
 }
 
 pub(crate) fn limit_summary_correct_errors(mut builder: crate::types::builders::LimitSummaryBuilder) -> crate::types::builders::LimitSummaryBuilder {
-    if builder.display_name.is_none() {
-        builder.display_name = Some(Default::default())
-    }
-    if builder.amount_requirement_name.is_none() {
-        builder.amount_requirement_name = Some(Default::default())
-    }
-    if builder.max_count.is_none() {
-        builder.max_count = Some(Default::default())
-    }
-    if builder.created_at.is_none() {
-        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.created_by.is_none() {
-        builder.created_by = Some(Default::default())
-    }
     if builder.farm_id.is_none() {
         builder.farm_id = Some(Default::default())
     }
@@ -1451,6 +1436,21 @@ pub(crate) fn limit_summary_correct_errors(mut builder: crate::types::builders::
     }
     if builder.current_count.is_none() {
         builder.current_count = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.amount_requirement_name.is_none() {
+        builder.amount_requirement_name = Some(Default::default())
+    }
+    if builder.max_count.is_none() {
+        builder.max_count = Some(Default::default())
     }
     builder
 }
@@ -1555,12 +1555,6 @@ pub(crate) fn queue_fleet_association_summary_correct_errors(
 pub(crate) fn queue_limit_association_summary_correct_errors(
     mut builder: crate::types::builders::QueueLimitAssociationSummaryBuilder,
 ) -> crate::types::builders::QueueLimitAssociationSummaryBuilder {
-    if builder.created_at.is_none() {
-        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.created_by.is_none() {
-        builder.created_by = Some(Default::default())
-    }
     if builder.queue_id.is_none() {
         builder.queue_id = Some(Default::default())
     }
@@ -1569,6 +1563,12 @@ pub(crate) fn queue_limit_association_summary_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::QueueLimitAssociationStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
     }
     builder
 }
@@ -1845,14 +1845,14 @@ pub(crate) fn worker_session_summary_correct_errors(
 pub(crate) fn worker_summary_correct_errors(
     mut builder: crate::types::builders::WorkerSummaryBuilder,
 ) -> crate::types::builders::WorkerSummaryBuilder {
-    if builder.worker_id.is_none() {
-        builder.worker_id = Some(Default::default())
-    }
     if builder.farm_id.is_none() {
         builder.farm_id = Some(Default::default())
     }
     if builder.fleet_id.is_none() {
         builder.fleet_id = Some(Default::default())
+    }
+    if builder.worker_id.is_none() {
+        builder.worker_id = Some(Default::default())
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::WorkerStatus>().ok()

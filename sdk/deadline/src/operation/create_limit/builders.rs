@@ -109,6 +109,20 @@ impl CreateLimitFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>The farm ID of the farm that contains the limit.</p>
+    pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.farm_id(input.into());
+        self
+    }
+    /// <p>The farm ID of the farm that contains the limit.</p>
+    pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_farm_id(input);
+        self
+    }
+    /// <p>The farm ID of the farm that contains the limit.</p>
+    pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_farm_id()
+    }
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -173,20 +187,6 @@ impl CreateLimitFluentBuilder {
     /// <p>The <code>maxCount</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
     pub fn get_max_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_count()
-    }
-    /// <p>The farm ID of the farm that contains the limit.</p>
-    pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.farm_id(input.into());
-        self
-    }
-    /// <p>The farm ID of the farm that contains the limit.</p>
-    pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_farm_id(input);
-        self
-    }
-    /// <p>The farm ID of the farm that contains the limit.</p>
-    pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_farm_id()
     }
     /// <p>A description of the limit. A description helps you identify the purpose of the limit.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>

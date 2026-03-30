@@ -75,6 +75,10 @@ pub use crate::types::_dry_run_progress_status::DryRunProgressStatusBuilder;
 
 pub use crate::types::_dry_run_results::DryRunResultsBuilder;
 
+pub use crate::types::_insight_entity::InsightEntityBuilder;
+
+pub use crate::types::_insight_time_range::InsightTimeRangeBuilder;
+
 pub use crate::types::_auto_tune_options::AutoTuneOptionsBuilder;
 
 pub use crate::types::_scheduled_action::ScheduledActionBuilder;
@@ -191,6 +195,8 @@ pub use crate::types::_domain_nodes_status::DomainNodesStatusBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
 
+pub use crate::types::_insight_field::InsightFieldBuilder;
+
 pub use crate::types::_limits::LimitsBuilder;
 
 pub use crate::types::_describe_packages_filter::DescribePackagesFilterBuilder;
@@ -216,6 +222,8 @@ pub use crate::types::_direct_query_data_source::DirectQueryDataSourceBuilder;
 pub use crate::types::_domain_maintenance_details::DomainMaintenanceDetailsBuilder;
 
 pub use crate::types::_domain_info::DomainInfoBuilder;
+
+pub use crate::types::_insight::InsightBuilder;
 
 pub use crate::types::_instance_type_details::InstanceTypeDetailsBuilder;
 

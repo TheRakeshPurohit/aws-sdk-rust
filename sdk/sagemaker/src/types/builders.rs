@@ -585,6 +585,8 @@ pub use crate::types::_inference_component_compute_resource_requirements::Infere
 
 pub use crate::types::_inference_component_data_cache_config::InferenceComponentDataCacheConfigBuilder;
 
+pub use crate::types::_inference_component_scheduling_config::InferenceComponentSchedulingConfigBuilder;
+
 pub use crate::types::_model_variant_config::ModelVariantConfigBuilder;
 
 pub use crate::types::_traffic_pattern::TrafficPatternBuilder;
@@ -1025,6 +1027,8 @@ pub use crate::types::_convergence_detected::ConvergenceDetectedBuilder;
 
 pub use crate::types::_parent_hyper_parameter_tuning_job::ParentHyperParameterTuningJobBuilder;
 
+pub use crate::types::_inference_component_availability_zone_balance::InferenceComponentAvailabilityZoneBalanceBuilder;
+
 pub use crate::types::_model_infrastructure_config::ModelInfrastructureConfigBuilder;
 
 pub use crate::types::_shadow_model_variant_config::ShadowModelVariantConfigBuilder;
@@ -1262,6 +1266,8 @@ pub use crate::types::_s3_file_system_config::S3FileSystemConfigBuilder;
 pub use crate::types::_hidden_sage_maker_image::HiddenSageMakerImageBuilder;
 
 pub use crate::types::_alarm::AlarmBuilder;
+
+pub use crate::types::_production_variant_managed_instance_scaling_scale_in_policy::ProductionVariantManagedInstanceScalingScaleInPolicyBuilder;
 
 pub use crate::types::_clarify_shap_baseline_config::ClarifyShapBaselineConfigBuilder;
 

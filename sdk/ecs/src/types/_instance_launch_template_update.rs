@@ -17,6 +17,8 @@ pub struct InstanceLaunchTemplateUpdate {
     /// <p>The default value is <code>true</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub instance_metadata_tags_propagation: ::std::option::Option<bool>,
+    /// <p>The updated local storage configuration for Amazon ECS Managed Instances. Changes to local storage settings apply to new instances launched after the update.</p>
+    pub local_storage_configuration: ::std::option::Option<crate::types::ManagedInstancesLocalStorageConfiguration>,
     /// <p>CloudWatch provides two categories of monitoring: basic monitoring and detailed monitoring. By default, your managed instance is configured for basic monitoring. You can optionally enable detailed monitoring to help you more quickly identify and act on operational issues. You can enable or turn off detailed monitoring at launch or when the managed instance is running or stopped. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/detailed-monitoring-managed-instances.html">Detailed monitoring for Amazon ECS Managed Instances</a> in the Amazon ECS Developer Guide.</p>
     pub monitoring: ::std::option::Option<crate::types::ManagedInstancesMonitoringOptions>,
     /// <p>The updated instance requirements for attribute-based instance type selection. Changes to instance requirements affect which instance types Amazon ECS selects for new instances.</p>
@@ -44,6 +46,10 @@ impl InstanceLaunchTemplateUpdate {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with instance tags in instance metadata</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn instance_metadata_tags_propagation(&self) -> ::std::option::Option<bool> {
         self.instance_metadata_tags_propagation
+    }
+    /// <p>The updated local storage configuration for Amazon ECS Managed Instances. Changes to local storage settings apply to new instances launched after the update.</p>
+    pub fn local_storage_configuration(&self) -> ::std::option::Option<&crate::types::ManagedInstancesLocalStorageConfiguration> {
+        self.local_storage_configuration.as_ref()
     }
     /// <p>CloudWatch provides two categories of monitoring: basic monitoring and detailed monitoring. By default, your managed instance is configured for basic monitoring. You can optionally enable detailed monitoring to help you more quickly identify and act on operational issues. You can enable or turn off detailed monitoring at launch or when the managed instance is running or stopped. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/detailed-monitoring-managed-instances.html">Detailed monitoring for Amazon ECS Managed Instances</a> in the Amazon ECS Developer Guide.</p>
     pub fn monitoring(&self) -> ::std::option::Option<&crate::types::ManagedInstancesMonitoringOptions> {
@@ -73,6 +79,7 @@ pub struct InstanceLaunchTemplateUpdateBuilder {
     pub(crate) network_configuration: ::std::option::Option<crate::types::ManagedInstancesNetworkConfiguration>,
     pub(crate) storage_configuration: ::std::option::Option<crate::types::ManagedInstancesStorageConfiguration>,
     pub(crate) instance_metadata_tags_propagation: ::std::option::Option<bool>,
+    pub(crate) local_storage_configuration: ::std::option::Option<crate::types::ManagedInstancesLocalStorageConfiguration>,
     pub(crate) monitoring: ::std::option::Option<crate::types::ManagedInstancesMonitoringOptions>,
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
     pub(crate) capacity_reservations: ::std::option::Option<crate::types::CapacityReservationRequest>,
@@ -146,6 +153,20 @@ impl InstanceLaunchTemplateUpdateBuilder {
     pub fn get_instance_metadata_tags_propagation(&self) -> &::std::option::Option<bool> {
         &self.instance_metadata_tags_propagation
     }
+    /// <p>The updated local storage configuration for Amazon ECS Managed Instances. Changes to local storage settings apply to new instances launched after the update.</p>
+    pub fn local_storage_configuration(mut self, input: crate::types::ManagedInstancesLocalStorageConfiguration) -> Self {
+        self.local_storage_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated local storage configuration for Amazon ECS Managed Instances. Changes to local storage settings apply to new instances launched after the update.</p>
+    pub fn set_local_storage_configuration(mut self, input: ::std::option::Option<crate::types::ManagedInstancesLocalStorageConfiguration>) -> Self {
+        self.local_storage_configuration = input;
+        self
+    }
+    /// <p>The updated local storage configuration for Amazon ECS Managed Instances. Changes to local storage settings apply to new instances launched after the update.</p>
+    pub fn get_local_storage_configuration(&self) -> &::std::option::Option<crate::types::ManagedInstancesLocalStorageConfiguration> {
+        &self.local_storage_configuration
+    }
     /// <p>CloudWatch provides two categories of monitoring: basic monitoring and detailed monitoring. By default, your managed instance is configured for basic monitoring. You can optionally enable detailed monitoring to help you more quickly identify and act on operational issues. You can enable or turn off detailed monitoring at launch or when the managed instance is running or stopped. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/detailed-monitoring-managed-instances.html">Detailed monitoring for Amazon ECS Managed Instances</a> in the Amazon ECS Developer Guide.</p>
     pub fn monitoring(mut self, input: crate::types::ManagedInstancesMonitoringOptions) -> Self {
         self.monitoring = ::std::option::Option::Some(input);
@@ -195,6 +216,7 @@ impl InstanceLaunchTemplateUpdateBuilder {
             network_configuration: self.network_configuration,
             storage_configuration: self.storage_configuration,
             instance_metadata_tags_propagation: self.instance_metadata_tags_propagation,
+            local_storage_configuration: self.local_storage_configuration,
             monitoring: self.monitoring,
             instance_requirements: self.instance_requirements,
             capacity_reservations: self.capacity_reservations,

@@ -27,6 +27,15 @@ pub fn ser_service_managed_ec2_fleet_configuration(
     if let Some(var_7) = &input.storage_profile_id {
         object.key("storageProfileId").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.auto_scaling_configuration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("autoScalingConfiguration").start_object();
+        crate::protocol_serde::shape_service_managed_ec2_auto_scaling_configuration::ser_service_managed_ec2_auto_scaling_configuration(
+            &mut object_9,
+            var_8,
+        )?;
+        object_9.finish();
+    }
     Ok(())
 }
 
@@ -66,6 +75,11 @@ where
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                         .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                         .transpose()?,
+                                );
+                            }
+                            "autoScalingConfiguration" => {
+                                builder = builder.set_auto_scaling_configuration(
+                                    crate::protocol_serde::shape_service_managed_ec2_auto_scaling_configuration::de_service_managed_ec2_auto_scaling_configuration(tokens, _value)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

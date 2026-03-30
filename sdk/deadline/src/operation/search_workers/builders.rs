@@ -122,25 +122,6 @@ impl SearchWorkersFluentBuilder {
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    ///
-    /// Appends an item to `fleetIds`.
-    ///
-    /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
-    ///
-    /// <p>The fleet ID of the workers to search for.</p>
-    pub fn fleet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.fleet_ids(input.into());
-        self
-    }
-    /// <p>The fleet ID of the workers to search for.</p>
-    pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_fleet_ids(input);
-        self
-    }
-    /// <p>The fleet ID of the workers to search for.</p>
-    pub fn get_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_fleet_ids()
-    }
     /// <p>The search terms for a resource.</p>
     pub fn filter_expressions(mut self, input: crate::types::SearchGroupedFilterExpressions) -> Self {
         self.inner = self.inner.filter_expressions(input);
@@ -201,5 +182,24 @@ impl SearchWorkersFluentBuilder {
     /// <p>Specifies the number of results to return.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_page_size()
+    }
+    ///
+    /// Appends an item to `fleetIds`.
+    ///
+    /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).
+    ///
+    /// <p>The fleet ID of the workers to search for.</p>
+    pub fn fleet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.fleet_ids(input.into());
+        self
+    }
+    /// <p>The fleet ID of the workers to search for.</p>
+    pub fn set_fleet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_fleet_ids(input);
+        self
+    }
+    /// <p>The fleet ID of the workers to search for.</p>
+    pub fn get_fleet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_fleet_ids()
     }
 }

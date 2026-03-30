@@ -122,39 +122,6 @@ impl SearchStepsFluentBuilder {
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    ///
-    /// Appends an item to `queueIds`.
-    ///
-    /// To override the contents of this collection use [`set_queue_ids`](Self::set_queue_ids).
-    ///
-    /// <p>The queue IDs in the step search.</p>
-    pub fn queue_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.queue_ids(input.into());
-        self
-    }
-    /// <p>The queue IDs in the step search.</p>
-    pub fn set_queue_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_queue_ids(input);
-        self
-    }
-    /// <p>The queue IDs in the step search.</p>
-    pub fn get_queue_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_queue_ids()
-    }
-    /// <p>The job ID to use in the step search.</p>
-    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.job_id(input.into());
-        self
-    }
-    /// <p>The job ID to use in the step search.</p>
-    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_job_id(input);
-        self
-    }
-    /// <p>The job ID to use in the step search.</p>
-    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_job_id()
-    }
     /// <p>The search terms for a resource.</p>
     pub fn filter_expressions(mut self, input: crate::types::SearchGroupedFilterExpressions) -> Self {
         self.inner = self.inner.filter_expressions(input);
@@ -215,5 +182,38 @@ impl SearchStepsFluentBuilder {
     /// <p>Specifies the number of results to return.</p>
     pub fn get_page_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_page_size()
+    }
+    ///
+    /// Appends an item to `queueIds`.
+    ///
+    /// To override the contents of this collection use [`set_queue_ids`](Self::set_queue_ids).
+    ///
+    /// <p>The queue IDs in the step search.</p>
+    pub fn queue_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.queue_ids(input.into());
+        self
+    }
+    /// <p>The queue IDs in the step search.</p>
+    pub fn set_queue_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_queue_ids(input);
+        self
+    }
+    /// <p>The queue IDs in the step search.</p>
+    pub fn get_queue_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_queue_ids()
+    }
+    /// <p>The job ID to use in the step search.</p>
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.job_id(input.into());
+        self
+    }
+    /// <p>The job ID to use in the step search.</p>
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_job_id(input);
+        self
+    }
+    /// <p>The job ID to use in the step search.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_job_id()
     }
 }

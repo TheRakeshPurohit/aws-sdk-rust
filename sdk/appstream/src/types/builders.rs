@@ -43,6 +43,8 @@ pub use crate::types::_application_settings::ApplicationSettingsBuilder;
 
 pub use crate::types::_streaming_experience_settings::StreamingExperienceSettingsBuilder;
 
+pub use crate::types::_content_redirection::ContentRedirectionBuilder;
+
 pub use crate::types::_stack::StackBuilder;
 
 pub use crate::types::_theme::ThemeBuilder;
@@ -72,6 +74,8 @@ pub use crate::types::_image_state_change_reason::ImageStateChangeReasonBuilder;
 pub use crate::types::_storage_connector::StorageConnectorBuilder;
 
 pub use crate::types::_user_setting::UserSettingBuilder;
+
+pub use crate::types::_url_redirection_config::UrlRedirectionConfigBuilder;
 
 pub use crate::types::_application_settings_response::ApplicationSettingsResponseBuilder;
 

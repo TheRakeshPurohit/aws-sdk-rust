@@ -647,6 +647,8 @@ pub(crate) mod shape_worker_summary;
 
 pub(crate) mod shape_assigned_session_actions;
 
+pub(crate) mod shape_customer_managed_auto_scaling_configuration;
+
 pub(crate) mod shape_customer_managed_worker_capabilities;
 
 pub(crate) mod shape_date_time_filter_expression;
@@ -674,6 +676,8 @@ pub(crate) mod shape_job_details_error;
 pub(crate) mod shape_parameter_filter_expression;
 
 pub(crate) mod shape_search_term_filter_expression;
+
+pub(crate) mod shape_service_managed_ec2_auto_scaling_configuration;
 
 pub(crate) mod shape_service_managed_ec2_instance_capabilities;
 

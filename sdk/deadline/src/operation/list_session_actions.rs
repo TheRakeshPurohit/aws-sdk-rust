@@ -235,24 +235,24 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListSessionA
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_4) = &_input.session_id {
+                if let ::std::option::Option::Some(inner_4) = &_input.next_token {
                     {
-                        query.push_kv("sessionId", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
-                if let ::std::option::Option::Some(inner_5) = &_input.task_id {
+                if let ::std::option::Option::Some(inner_5) = &_input.max_results {
                     {
-                        query.push_kv("taskId", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
                     }
                 }
-                if let ::std::option::Option::Some(inner_6) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_6) = &_input.session_id {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("sessionId", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
-                if let ::std::option::Option::Some(inner_7) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_7) = &_input.task_id {
                     {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_7).encode());
+                        query.push_kv("taskId", &::aws_smithy_http::query::fmt_string(inner_7));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -49,6 +49,8 @@ pub use crate::types::_automation_stream_update::AutomationStreamUpdateBuilder;
 
 pub use crate::types::_code_interpreter_session_summary::CodeInterpreterSessionSummaryBuilder;
 
+pub use crate::types::_evaluation_reference_input::EvaluationReferenceInputBuilder;
+
 pub use crate::types::_evaluation_result_content::EvaluationResultContentBuilder;
 
 pub use crate::types::_memory_record_create_input::MemoryRecordCreateInputBuilder;
@@ -78,6 +80,8 @@ pub use crate::types::_content_start_event::ContentStartEventBuilder;
 pub use crate::types::_content_delta_event::ContentDeltaEventBuilder;
 
 pub use crate::types::_content_stop_event::ContentStopEventBuilder;
+
+pub use crate::types::_evaluation_expected_trajectory::EvaluationExpectedTrajectoryBuilder;
 
 pub use crate::types::_token_usage::TokenUsageBuilder;
 

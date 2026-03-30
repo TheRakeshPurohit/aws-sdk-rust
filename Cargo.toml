@@ -156,6 +156,7 @@ members = [
     "sdk/deadline",
     "sdk/detective",
     "sdk/devicefarm",
+    "sdk/devopsagent",
     "sdk/devopsguru",
     "sdk/directconnect",
     "sdk/directory",

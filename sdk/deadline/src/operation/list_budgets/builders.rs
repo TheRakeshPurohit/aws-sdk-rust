@@ -114,20 +114,6 @@ impl ListBudgetsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_budgets::paginator::ListBudgetsPaginator {
         crate::operation::list_budgets::paginator::ListBudgetsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
-    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.next_token(input.into());
-        self
-    }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
-    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_next_token(input);
-        self
-    }
-    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
-    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_next_token()
-    }
     /// <p>The farm ID associated with the budgets.</p>
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
@@ -141,6 +127,20 @@ impl ListBudgetsFluentBuilder {
     /// <p>The farm ID associated with the budgets.</p>
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
+    }
+    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.next_token(input.into());
+        self
+    }
+    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_next_token(input);
+        self
+    }
+    /// <p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn max_results(mut self, input: i32) -> Self {

@@ -39,5 +39,11 @@ pub fn ser_inference_component_specification(
         crate::protocol_serde::shape_inference_component_data_cache_config::ser_inference_component_data_cache_config(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.scheduling_config {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("SchedulingConfig").start_object();
+        crate::protocol_serde::shape_inference_component_scheduling_config::ser_inference_component_scheduling_config(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

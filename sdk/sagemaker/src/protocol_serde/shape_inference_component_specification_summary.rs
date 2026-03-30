@@ -51,6 +51,13 @@ where
                                     crate::protocol_serde::shape_inference_component_data_cache_config_summary::de_inference_component_data_cache_config_summary(tokens, _value)?
                                 );
                         }
+                        "SchedulingConfig" => {
+                            builder = builder.set_scheduling_config(
+                                crate::protocol_serde::shape_inference_component_scheduling_config::de_inference_component_scheduling_config(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -3,10 +3,6 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStepInput {
-    /// <p>The task status to update the step's tasks to.</p>
-    pub target_task_run_status: ::std::option::Option<crate::types::StepTargetTaskRunStatus>,
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The farm ID to update.</p>
     pub farm_id: ::std::option::Option<::std::string::String>,
     /// <p>The queue ID to update.</p>
@@ -15,16 +11,12 @@ pub struct UpdateStepInput {
     pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The step ID to update.</p>
     pub step_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The task status to update the step's tasks to.</p>
+    pub target_task_run_status: ::std::option::Option<crate::types::StepTargetTaskRunStatus>,
 }
 impl UpdateStepInput {
-    /// <p>The task status to update the step's tasks to.</p>
-    pub fn target_task_run_status(&self) -> ::std::option::Option<&crate::types::StepTargetTaskRunStatus> {
-        self.target_task_run_status.as_ref()
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
-        self.client_token.as_deref()
-    }
     /// <p>The farm ID to update.</p>
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
@@ -41,6 +33,14 @@ impl UpdateStepInput {
     pub fn step_id(&self) -> ::std::option::Option<&str> {
         self.step_id.as_deref()
     }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
+    /// <p>The task status to update the step's tasks to.</p>
+    pub fn target_task_run_status(&self) -> ::std::option::Option<&crate::types::StepTargetTaskRunStatus> {
+        self.target_task_run_status.as_ref()
+    }
 }
 impl UpdateStepInput {
     /// Creates a new builder-style object to manufacture [`UpdateStepInput`](crate::operation::update_step::UpdateStepInput).
@@ -53,43 +53,14 @@ impl UpdateStepInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct UpdateStepInputBuilder {
-    pub(crate) target_task_run_status: ::std::option::Option<crate::types::StepTargetTaskRunStatus>,
-    pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) target_task_run_status: ::std::option::Option<crate::types::StepTargetTaskRunStatus>,
 }
 impl UpdateStepInputBuilder {
-    /// <p>The task status to update the step's tasks to.</p>
-    /// This field is required.
-    pub fn target_task_run_status(mut self, input: crate::types::StepTargetTaskRunStatus) -> Self {
-        self.target_task_run_status = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The task status to update the step's tasks to.</p>
-    pub fn set_target_task_run_status(mut self, input: ::std::option::Option<crate::types::StepTargetTaskRunStatus>) -> Self {
-        self.target_task_run_status = input;
-        self
-    }
-    /// <p>The task status to update the step's tasks to.</p>
-    pub fn get_target_task_run_status(&self) -> &::std::option::Option<crate::types::StepTargetTaskRunStatus> {
-        &self.target_task_run_status
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.client_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.client_token
-    }
     /// <p>The farm ID to update.</p>
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -150,15 +121,44 @@ impl UpdateStepInputBuilder {
     pub fn get_step_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.step_id
     }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
+    /// <p>The task status to update the step's tasks to.</p>
+    /// This field is required.
+    pub fn target_task_run_status(mut self, input: crate::types::StepTargetTaskRunStatus) -> Self {
+        self.target_task_run_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The task status to update the step's tasks to.</p>
+    pub fn set_target_task_run_status(mut self, input: ::std::option::Option<crate::types::StepTargetTaskRunStatus>) -> Self {
+        self.target_task_run_status = input;
+        self
+    }
+    /// <p>The task status to update the step's tasks to.</p>
+    pub fn get_target_task_run_status(&self) -> &::std::option::Option<crate::types::StepTargetTaskRunStatus> {
+        &self.target_task_run_status
+    }
     /// Consumes the builder and constructs a [`UpdateStepInput`](crate::operation::update_step::UpdateStepInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_step::UpdateStepInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_step::UpdateStepInput {
-            target_task_run_status: self.target_task_run_status,
-            client_token: self.client_token,
             farm_id: self.farm_id,
             queue_id: self.queue_id,
             job_id: self.job_id,
             step_id: self.step_id,
+            client_token: self.client_token,
+            target_task_run_status: self.target_task_run_status,
         })
     }
 }

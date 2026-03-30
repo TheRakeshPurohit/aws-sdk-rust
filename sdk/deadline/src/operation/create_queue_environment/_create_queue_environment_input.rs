@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateQueueEnvironmentInput {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The farm ID of the farm to connect to the environment.</p>
     pub farm_id: ::std::option::Option<::std::string::String>,
     /// <p>The queue ID to connect the queue and environment.</p>
     pub queue_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.</p>
     pub priority: ::std::option::Option<i32>,
     /// <p>The template's file type, <code>JSON</code> or <code>YAML</code>.</p>
@@ -17,10 +17,6 @@ pub struct CreateQueueEnvironmentInput {
     pub template: ::std::option::Option<::std::string::String>,
 }
 impl CreateQueueEnvironmentInput {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn client_token(&self) -> ::std::option::Option<&str> {
-        self.client_token.as_deref()
-    }
     /// <p>The farm ID of the farm to connect to the environment.</p>
     pub fn farm_id(&self) -> ::std::option::Option<&str> {
         self.farm_id.as_deref()
@@ -28,6 +24,10 @@ impl CreateQueueEnvironmentInput {
     /// <p>The queue ID to connect the queue and environment.</p>
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
     /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
@@ -45,9 +45,9 @@ impl CreateQueueEnvironmentInput {
 impl ::std::fmt::Debug for CreateQueueEnvironmentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateQueueEnvironmentInput");
-        formatter.field("client_token", &self.client_token);
         formatter.field("farm_id", &self.farm_id);
         formatter.field("queue_id", &self.queue_id);
+        formatter.field("client_token", &self.client_token);
         formatter.field("priority", &self.priority);
         formatter.field("template_type", &self.template_type);
         formatter.field("template", &"*** Sensitive Data Redacted ***");
@@ -65,28 +65,14 @@ impl CreateQueueEnvironmentInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CreateQueueEnvironmentInputBuilder {
-    pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) queue_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) template_type: ::std::option::Option<crate::types::EnvironmentTemplateType>,
     pub(crate) template: ::std::option::Option<::std::string::String>,
 }
 impl CreateQueueEnvironmentInputBuilder {
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.client_token = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.client_token = input;
-        self
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
-        &self.client_token
-    }
     /// <p>The farm ID of the farm to connect to the environment.</p>
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -116,6 +102,20 @@ impl CreateQueueEnvironmentInputBuilder {
     /// <p>The queue ID to connect the queue and environment.</p>
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
     }
     /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.</p>
     /// This field is required.
@@ -170,9 +170,9 @@ impl CreateQueueEnvironmentInputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_queue_environment::CreateQueueEnvironmentInput {
-            client_token: self.client_token,
             farm_id: self.farm_id,
             queue_id: self.queue_id,
+            client_token: self.client_token,
             priority: self.priority,
             template_type: self.template_type,
             template: self.template,
@@ -182,9 +182,9 @@ impl CreateQueueEnvironmentInputBuilder {
 impl ::std::fmt::Debug for CreateQueueEnvironmentInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateQueueEnvironmentInputBuilder");
-        formatter.field("client_token", &self.client_token);
         formatter.field("farm_id", &self.farm_id);
         formatter.field("queue_id", &self.queue_id);
+        formatter.field("client_token", &self.client_token);
         formatter.field("priority", &self.priority);
         formatter.field("template_type", &self.template_type);
         formatter.field("template", &"*** Sensitive Data Redacted ***");

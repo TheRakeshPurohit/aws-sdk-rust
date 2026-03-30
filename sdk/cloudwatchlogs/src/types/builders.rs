@@ -55,6 +55,8 @@ pub use crate::types::_log_group::LogGroupBuilder;
 
 pub use crate::types::_log_stream::LogStreamBuilder;
 
+pub use crate::types::_lookup_table::LookupTableBuilder;
+
 pub use crate::types::_metric_filter::MetricFilterBuilder;
 
 pub use crate::types::_query_info::QueryInfoBuilder;

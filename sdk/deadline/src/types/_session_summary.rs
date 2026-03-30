@@ -16,12 +16,12 @@ pub struct SessionSummary {
     pub lifecycle_status: crate::types::SessionLifecycleStatus,
     /// <p>The date and time the resource ended running.</p>
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The target life cycle status for the session.</p>
+    pub target_lifecycle_status: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>,
     /// <p>The date and time the resource was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The user or system that updated this resource.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
-    /// <p>The target life cycle status for the session.</p>
-    pub target_lifecycle_status: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>,
 }
 impl SessionSummary {
     /// <p>The session ID.</p>
@@ -51,6 +51,10 @@ impl SessionSummary {
     pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
+    /// <p>The target life cycle status for the session.</p>
+    pub fn target_lifecycle_status(&self) -> ::std::option::Option<&crate::types::SessionLifecycleTargetStatus> {
+        self.target_lifecycle_status.as_ref()
+    }
     /// <p>The date and time the resource was updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
@@ -58,10 +62,6 @@ impl SessionSummary {
     /// <p>The user or system that updated this resource.</p>
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
-    }
-    /// <p>The target life cycle status for the session.</p>
-    pub fn target_lifecycle_status(&self) -> ::std::option::Option<&crate::types::SessionLifecycleTargetStatus> {
-        self.target_lifecycle_status.as_ref()
     }
 }
 impl SessionSummary {
@@ -81,9 +81,9 @@ pub struct SessionSummaryBuilder {
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) lifecycle_status: ::std::option::Option<crate::types::SessionLifecycleStatus>,
     pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) target_lifecycle_status: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,
-    pub(crate) target_lifecycle_status: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>,
 }
 impl SessionSummaryBuilder {
     /// <p>The session ID.</p>
@@ -175,6 +175,20 @@ impl SessionSummaryBuilder {
     pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.ended_at
     }
+    /// <p>The target life cycle status for the session.</p>
+    pub fn target_lifecycle_status(mut self, input: crate::types::SessionLifecycleTargetStatus) -> Self {
+        self.target_lifecycle_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The target life cycle status for the session.</p>
+    pub fn set_target_lifecycle_status(mut self, input: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>) -> Self {
+        self.target_lifecycle_status = input;
+        self
+    }
+    /// <p>The target life cycle status for the session.</p>
+    pub fn get_target_lifecycle_status(&self) -> &::std::option::Option<crate::types::SessionLifecycleTargetStatus> {
+        &self.target_lifecycle_status
+    }
     /// <p>The date and time the resource was updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -202,20 +216,6 @@ impl SessionSummaryBuilder {
     /// <p>The user or system that updated this resource.</p>
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
-    }
-    /// <p>The target life cycle status for the session.</p>
-    pub fn target_lifecycle_status(mut self, input: crate::types::SessionLifecycleTargetStatus) -> Self {
-        self.target_lifecycle_status = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The target life cycle status for the session.</p>
-    pub fn set_target_lifecycle_status(mut self, input: ::std::option::Option<crate::types::SessionLifecycleTargetStatus>) -> Self {
-        self.target_lifecycle_status = input;
-        self
-    }
-    /// <p>The target life cycle status for the session.</p>
-    pub fn get_target_lifecycle_status(&self) -> &::std::option::Option<crate::types::SessionLifecycleTargetStatus> {
-        &self.target_lifecycle_status
     }
     /// Consumes the builder and constructs a [`SessionSummary`](crate::types::SessionSummary).
     /// This method will fail if any of the following fields are not set:
@@ -257,9 +257,9 @@ impl SessionSummaryBuilder {
                 )
             })?,
             ended_at: self.ended_at,
+            target_lifecycle_status: self.target_lifecycle_status,
             updated_at: self.updated_at,
             updated_by: self.updated_by,
-            target_lifecycle_status: self.target_lifecycle_status,
         })
     }
 }

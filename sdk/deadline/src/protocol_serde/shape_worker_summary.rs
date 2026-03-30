@@ -15,13 +15,6 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "workerId" => {
-                            builder = builder.set_worker_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
                         "farmId" => {
                             builder = builder.set_farm_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -36,16 +29,23 @@ where
                                     .transpose()?,
                             );
                         }
-                        "status" => {
-                            builder = builder.set_status(
+                        "workerId" => {
+                            builder = builder.set_worker_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::WorkerStatus::from(u.as_ref())))
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
                         "hostProperties" => {
                             builder = builder.set_host_properties(
                                 crate::protocol_serde::shape_host_properties_response::de_host_properties_response(tokens, _value)?,
+                            );
+                        }
+                        "status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::WorkerStatus::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         "log" => {

@@ -2677,6 +2677,8 @@ pub(crate) mod shape_inference_component_data_cache_config_summary;
 
 pub(crate) mod shape_inference_component_rolling_update_policy;
 
+pub(crate) mod shape_inference_component_scheduling_config;
+
 pub(crate) mod shape_inference_component_startup_parameters;
 
 pub(crate) mod shape_inference_component_summary;
@@ -3245,6 +3247,8 @@ pub(crate) mod shape_identity_provider_o_auth_setting;
 
 pub(crate) mod shape_identity_provider_o_auth_settings;
 
+pub(crate) mod shape_inference_component_availability_zone_balance;
+
 pub(crate) mod shape_inference_component_capacity_size;
 
 pub(crate) mod shape_inference_metrics;
@@ -3336,6 +3340,8 @@ pub(crate) mod shape_processing_feature_store_output;
 pub(crate) mod shape_processing_s3_output;
 
 pub(crate) mod shape_production_variant_capacity_reservation_summary;
+
+pub(crate) mod shape_production_variant_managed_instance_scaling_scale_in_policy;
 
 pub(crate) mod shape_production_variant_status_list;
 

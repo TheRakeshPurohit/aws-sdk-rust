@@ -52,15 +52,15 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()),
                             );
                         }
-                        "definition" => {
-                            builder = builder.set_definition(
-                                crate::protocol_serde::shape_session_action_definition_summary::de_session_action_definition_summary(tokens, _value)?,
-                            );
-                        }
                         "manifests" => {
                             builder = builder.set_manifests(
                                     crate::protocol_serde::shape_task_run_manifest_properties_list_response::de_task_run_manifest_properties_list_response(tokens, _value)?
                                 );
+                        }
+                        "definition" => {
+                            builder = builder.set_definition(
+                                crate::protocol_serde::shape_session_action_definition_summary::de_session_action_definition_summary(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

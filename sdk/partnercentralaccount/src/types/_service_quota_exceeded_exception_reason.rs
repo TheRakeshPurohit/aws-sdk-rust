@@ -12,8 +12,11 @@
 /// ```text
 /// # let servicequotaexceededexceptionreason = unimplemented!();
 /// match servicequotaexceededexceptionreason {
+///     ServiceQuotaExceededExceptionReason::LimitExceededNumberOfActiveConnection => { /* ... */ },
+///     ServiceQuotaExceededExceptionReason::LimitExceededNumberOfConnectionInvitationPerDay => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::LimitExceededNumberOfDomain => { /* ... */ },
 ///     ServiceQuotaExceededExceptionReason::LimitExceededNumberOfEmail => { /* ... */ },
+///     ServiceQuotaExceededExceptionReason::LimitExceededNumberOfOpenConnectionInvitation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,9 +46,15 @@
 )]
 pub enum ServiceQuotaExceededExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
+    LimitExceededNumberOfActiveConnection,
+    #[allow(missing_docs)] // documentation missing in model
+    LimitExceededNumberOfConnectionInvitationPerDay,
+    #[allow(missing_docs)] // documentation missing in model
     LimitExceededNumberOfDomain,
     #[allow(missing_docs)] // documentation missing in model
     LimitExceededNumberOfEmail,
+    #[allow(missing_docs)] // documentation missing in model
+    LimitExceededNumberOfOpenConnectionInvitation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -53,8 +62,15 @@ pub enum ServiceQuotaExceededExceptionReason {
 impl ::std::convert::From<&str> for ServiceQuotaExceededExceptionReason {
     fn from(s: &str) -> Self {
         match s {
+            "LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION" => ServiceQuotaExceededExceptionReason::LimitExceededNumberOfActiveConnection,
+            "LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY" => {
+                ServiceQuotaExceededExceptionReason::LimitExceededNumberOfConnectionInvitationPerDay
+            }
             "LIMIT_EXCEEDED_NUMBER_OF_DOMAIN" => ServiceQuotaExceededExceptionReason::LimitExceededNumberOfDomain,
             "LIMIT_EXCEEDED_NUMBER_OF_EMAIL" => ServiceQuotaExceededExceptionReason::LimitExceededNumberOfEmail,
+            "LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION" => {
+                ServiceQuotaExceededExceptionReason::LimitExceededNumberOfOpenConnectionInvitation
+            }
             other => ServiceQuotaExceededExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -70,14 +86,27 @@ impl ServiceQuotaExceededExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ServiceQuotaExceededExceptionReason::LimitExceededNumberOfActiveConnection => "LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION",
+            ServiceQuotaExceededExceptionReason::LimitExceededNumberOfConnectionInvitationPerDay => {
+                "LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY"
+            }
             ServiceQuotaExceededExceptionReason::LimitExceededNumberOfDomain => "LIMIT_EXCEEDED_NUMBER_OF_DOMAIN",
             ServiceQuotaExceededExceptionReason::LimitExceededNumberOfEmail => "LIMIT_EXCEEDED_NUMBER_OF_EMAIL",
+            ServiceQuotaExceededExceptionReason::LimitExceededNumberOfOpenConnectionInvitation => {
+                "LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION"
+            }
             ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LIMIT_EXCEEDED_NUMBER_OF_DOMAIN", "LIMIT_EXCEEDED_NUMBER_OF_EMAIL"]
+        &[
+            "LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION",
+            "LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY",
+            "LIMIT_EXCEEDED_NUMBER_OF_DOMAIN",
+            "LIMIT_EXCEEDED_NUMBER_OF_EMAIL",
+            "LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ServiceQuotaExceededExceptionReason {
@@ -100,8 +129,15 @@ impl ServiceQuotaExceededExceptionReason {
 impl ::std::fmt::Display for ServiceQuotaExceededExceptionReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ServiceQuotaExceededExceptionReason::LimitExceededNumberOfActiveConnection => write!(f, "LIMIT_EXCEEDED_NUMBER_OF_ACTIVE_CONNECTION"),
+            ServiceQuotaExceededExceptionReason::LimitExceededNumberOfConnectionInvitationPerDay => {
+                write!(f, "LIMIT_EXCEEDED_NUMBER_OF_CONNECTION_INVITATION_PER_DAY")
+            }
             ServiceQuotaExceededExceptionReason::LimitExceededNumberOfDomain => write!(f, "LIMIT_EXCEEDED_NUMBER_OF_DOMAIN"),
             ServiceQuotaExceededExceptionReason::LimitExceededNumberOfEmail => write!(f, "LIMIT_EXCEEDED_NUMBER_OF_EMAIL"),
+            ServiceQuotaExceededExceptionReason::LimitExceededNumberOfOpenConnectionInvitation => {
+                write!(f, "LIMIT_EXCEEDED_NUMBER_OF_OPEN_CONNECTION_INVITATION")
+            }
             ServiceQuotaExceededExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }

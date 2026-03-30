@@ -10,6 +10,8 @@ pub struct ProductionVariantManagedInstanceScaling {
     pub min_instance_count: ::std::option::Option<i32>,
     /// <p>The maximum number of instances that the endpoint can provision when it scales up to accommodate an increase in traffic.</p>
     pub max_instance_count: ::std::option::Option<i32>,
+    /// <p>Configures the scale-in behavior for managed instance scaling.</p>
+    pub scale_in_policy: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScalingScaleInPolicy>,
 }
 impl ProductionVariantManagedInstanceScaling {
     /// <p>Indicates whether managed instance scaling is enabled.</p>
@@ -23,6 +25,10 @@ impl ProductionVariantManagedInstanceScaling {
     /// <p>The maximum number of instances that the endpoint can provision when it scales up to accommodate an increase in traffic.</p>
     pub fn max_instance_count(&self) -> ::std::option::Option<i32> {
         self.max_instance_count
+    }
+    /// <p>Configures the scale-in behavior for managed instance scaling.</p>
+    pub fn scale_in_policy(&self) -> ::std::option::Option<&crate::types::ProductionVariantManagedInstanceScalingScaleInPolicy> {
+        self.scale_in_policy.as_ref()
     }
 }
 impl ProductionVariantManagedInstanceScaling {
@@ -39,6 +45,7 @@ pub struct ProductionVariantManagedInstanceScalingBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ManagedInstanceScalingStatus>,
     pub(crate) min_instance_count: ::std::option::Option<i32>,
     pub(crate) max_instance_count: ::std::option::Option<i32>,
+    pub(crate) scale_in_policy: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScalingScaleInPolicy>,
 }
 impl ProductionVariantManagedInstanceScalingBuilder {
     /// <p>Indicates whether managed instance scaling is enabled.</p>
@@ -83,12 +90,27 @@ impl ProductionVariantManagedInstanceScalingBuilder {
     pub fn get_max_instance_count(&self) -> &::std::option::Option<i32> {
         &self.max_instance_count
     }
+    /// <p>Configures the scale-in behavior for managed instance scaling.</p>
+    pub fn scale_in_policy(mut self, input: crate::types::ProductionVariantManagedInstanceScalingScaleInPolicy) -> Self {
+        self.scale_in_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures the scale-in behavior for managed instance scaling.</p>
+    pub fn set_scale_in_policy(mut self, input: ::std::option::Option<crate::types::ProductionVariantManagedInstanceScalingScaleInPolicy>) -> Self {
+        self.scale_in_policy = input;
+        self
+    }
+    /// <p>Configures the scale-in behavior for managed instance scaling.</p>
+    pub fn get_scale_in_policy(&self) -> &::std::option::Option<crate::types::ProductionVariantManagedInstanceScalingScaleInPolicy> {
+        &self.scale_in_policy
+    }
     /// Consumes the builder and constructs a [`ProductionVariantManagedInstanceScaling`](crate::types::ProductionVariantManagedInstanceScaling).
     pub fn build(self) -> crate::types::ProductionVariantManagedInstanceScaling {
         crate::types::ProductionVariantManagedInstanceScaling {
             status: self.status,
             min_instance_count: self.min_instance_count,
             max_instance_count: self.max_instance_count,
+            scale_in_policy: self.scale_in_policy,
         }
     }
 }

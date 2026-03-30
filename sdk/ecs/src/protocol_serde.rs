@@ -665,6 +665,8 @@ pub(crate) mod shape_instance_requirements_request;
 
 pub(crate) mod shape_kernel_capabilities;
 
+pub(crate) mod shape_managed_instances_local_storage_configuration;
+
 pub(crate) mod shape_managed_instances_network_configuration;
 
 pub(crate) mod shape_managed_instances_storage_configuration;

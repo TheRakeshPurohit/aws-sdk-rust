@@ -4,16 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkerSummary {
-    /// <p>The worker ID.</p>
-    pub worker_id: ::std::string::String,
     /// <p>The farm ID.</p>
     pub farm_id: ::std::string::String,
     /// <p>The fleet ID.</p>
     pub fleet_id: ::std::string::String,
-    /// <p>The status of the worker.</p>
-    pub status: crate::types::WorkerStatus,
+    /// <p>The worker ID.</p>
+    pub worker_id: ::std::string::String,
     /// <p>The host properties of the worker.</p>
     pub host_properties: ::std::option::Option<crate::types::HostPropertiesResponse>,
+    /// <p>The status of the worker.</p>
+    pub status: crate::types::WorkerStatus,
     /// <p>The log configuration for the worker.</p>
     pub log: ::std::option::Option<crate::types::LogConfiguration>,
     /// <p>The date and time the resource was created.</p>
@@ -26,11 +26,6 @@ pub struct WorkerSummary {
     pub updated_by: ::std::option::Option<::std::string::String>,
 }
 impl WorkerSummary {
-    /// <p>The worker ID.</p>
-    pub fn worker_id(&self) -> &str {
-        use std::ops::Deref;
-        self.worker_id.deref()
-    }
     /// <p>The farm ID.</p>
     pub fn farm_id(&self) -> &str {
         use std::ops::Deref;
@@ -41,13 +36,18 @@ impl WorkerSummary {
         use std::ops::Deref;
         self.fleet_id.deref()
     }
-    /// <p>The status of the worker.</p>
-    pub fn status(&self) -> &crate::types::WorkerStatus {
-        &self.status
+    /// <p>The worker ID.</p>
+    pub fn worker_id(&self) -> &str {
+        use std::ops::Deref;
+        self.worker_id.deref()
     }
     /// <p>The host properties of the worker.</p>
     pub fn host_properties(&self) -> ::std::option::Option<&crate::types::HostPropertiesResponse> {
         self.host_properties.as_ref()
+    }
+    /// <p>The status of the worker.</p>
+    pub fn status(&self) -> &crate::types::WorkerStatus {
+        &self.status
     }
     /// <p>The log configuration for the worker.</p>
     pub fn log(&self) -> ::std::option::Option<&crate::types::LogConfiguration> {
@@ -82,11 +82,11 @@ impl WorkerSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct WorkerSummaryBuilder {
-    pub(crate) worker_id: ::std::option::Option<::std::string::String>,
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
-    pub(crate) status: ::std::option::Option<crate::types::WorkerStatus>,
+    pub(crate) worker_id: ::std::option::Option<::std::string::String>,
     pub(crate) host_properties: ::std::option::Option<crate::types::HostPropertiesResponse>,
+    pub(crate) status: ::std::option::Option<crate::types::WorkerStatus>,
     pub(crate) log: ::std::option::Option<crate::types::LogConfiguration>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
@@ -94,21 +94,6 @@ pub struct WorkerSummaryBuilder {
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,
 }
 impl WorkerSummaryBuilder {
-    /// <p>The worker ID.</p>
-    /// This field is required.
-    pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.worker_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The worker ID.</p>
-    pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.worker_id = input;
-        self
-    }
-    /// <p>The worker ID.</p>
-    pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.worker_id
-    }
     /// <p>The farm ID.</p>
     /// This field is required.
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -139,20 +124,20 @@ impl WorkerSummaryBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fleet_id
     }
-    /// <p>The status of the worker.</p>
+    /// <p>The worker ID.</p>
     /// This field is required.
-    pub fn status(mut self, input: crate::types::WorkerStatus) -> Self {
-        self.status = ::std::option::Option::Some(input);
+    pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.worker_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The status of the worker.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkerStatus>) -> Self {
-        self.status = input;
+    /// <p>The worker ID.</p>
+    pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.worker_id = input;
         self
     }
-    /// <p>The status of the worker.</p>
-    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkerStatus> {
-        &self.status
+    /// <p>The worker ID.</p>
+    pub fn get_worker_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.worker_id
     }
     /// <p>The host properties of the worker.</p>
     pub fn host_properties(mut self, input: crate::types::HostPropertiesResponse) -> Self {
@@ -167,6 +152,21 @@ impl WorkerSummaryBuilder {
     /// <p>The host properties of the worker.</p>
     pub fn get_host_properties(&self) -> &::std::option::Option<crate::types::HostPropertiesResponse> {
         &self.host_properties
+    }
+    /// <p>The status of the worker.</p>
+    /// This field is required.
+    pub fn status(mut self, input: crate::types::WorkerStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the worker.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkerStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The status of the worker.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkerStatus> {
+        &self.status
     }
     /// <p>The log configuration for the worker.</p>
     pub fn log(mut self, input: crate::types::LogConfiguration) -> Self {
@@ -242,20 +242,14 @@ impl WorkerSummaryBuilder {
     }
     /// Consumes the builder and constructs a [`WorkerSummary`](crate::types::WorkerSummary).
     /// This method will fail if any of the following fields are not set:
-    /// - [`worker_id`](crate::types::builders::WorkerSummaryBuilder::worker_id)
     /// - [`farm_id`](crate::types::builders::WorkerSummaryBuilder::farm_id)
     /// - [`fleet_id`](crate::types::builders::WorkerSummaryBuilder::fleet_id)
+    /// - [`worker_id`](crate::types::builders::WorkerSummaryBuilder::worker_id)
     /// - [`status`](crate::types::builders::WorkerSummaryBuilder::status)
     /// - [`created_at`](crate::types::builders::WorkerSummaryBuilder::created_at)
     /// - [`created_by`](crate::types::builders::WorkerSummaryBuilder::created_by)
     pub fn build(self) -> ::std::result::Result<crate::types::WorkerSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WorkerSummary {
-            worker_id: self.worker_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "worker_id",
-                    "worker_id was not specified but it is required when building WorkerSummary",
-                )
-            })?,
             farm_id: self.farm_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "farm_id",
@@ -268,13 +262,19 @@ impl WorkerSummaryBuilder {
                     "fleet_id was not specified but it is required when building WorkerSummary",
                 )
             })?,
+            worker_id: self.worker_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "worker_id",
+                    "worker_id was not specified but it is required when building WorkerSummary",
+                )
+            })?,
+            host_properties: self.host_properties,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
                     "status was not specified but it is required when building WorkerSummary",
                 )
             })?,
-            host_properties: self.host_properties,
             log: self.log,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

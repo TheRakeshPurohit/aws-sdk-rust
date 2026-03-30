@@ -100,6 +100,9 @@ pub mod describe_dry_run_progress;
 /// Types for the `DescribeInboundConnections` operation.
 pub mod describe_inbound_connections;
 
+/// Types for the `DescribeInsightDetails` operation.
+pub mod describe_insight_details;
+
 /// Types for the `DescribeInstanceTypeLimits` operation.
 pub mod describe_instance_type_limits;
 
@@ -171,6 +174,9 @@ pub mod list_domain_names;
 
 /// Types for the `ListDomainsForPackage` operation.
 pub mod list_domains_for_package;
+
+/// Types for the `ListInsights` operation.
+pub mod list_insights;
 
 /// Types for the `ListInstanceTypeDetails` operation.
 pub mod list_instance_type_details;

@@ -1113,6 +1113,41 @@ impl From<crate::operation::describe_inbound_connections::DescribeInboundConnect
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_insight_details::DescribeInsightDetailsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_insight_details::DescribeInsightDetailsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_insight_details::DescribeInsightDetailsError> for Error {
+    fn from(err: crate::operation::describe_insight_details::DescribeInsightDetailsError) -> Self {
+        match err {
+            crate::operation::describe_insight_details::DescribeInsightDetailsError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::describe_insight_details::DescribeInsightDetailsError::DisabledOperationException(inner) => {
+                Error::DisabledOperationException(inner)
+            }
+            crate::operation::describe_insight_details::DescribeInsightDetailsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::describe_insight_details::DescribeInsightDetailsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::describe_insight_details::DescribeInsightDetailsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_insight_details::DescribeInsightDetailsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_insight_details::DescribeInsightDetailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsError, R>>
     for Error
 where
@@ -1872,6 +1907,33 @@ impl From<crate::operation::list_domains_for_package::ListDomainsForPackageError
             }
             crate::operation::list_domains_for_package::ListDomainsForPackageError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_domains_for_package::ListDomainsForPackageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_insights::ListInsightsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_insights::ListInsightsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_insights::ListInsightsError> for Error {
+    fn from(err: crate::operation::list_insights::ListInsightsError) -> Self {
+        match err {
+            crate::operation::list_insights::ListInsightsError::BaseException(inner) => Error::BaseException(inner),
+            crate::operation::list_insights::ListInsightsError::DisabledOperationException(inner) => Error::DisabledOperationException(inner),
+            crate::operation::list_insights::ListInsightsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::list_insights::ListInsightsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_insights::ListInsightsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_insights::ListInsightsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_insights::ListInsightsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

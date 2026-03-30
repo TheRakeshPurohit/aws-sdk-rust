@@ -3,6 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateJobInput {
+    /// <p>The farm ID of the job to update.</p>
+    pub farm_id: ::std::option::Option<::std::string::String>,
+    /// <p>The queue ID of the job to update.</p>
+    pub queue_id: ::std::option::Option<::std::string::String>,
+    /// <p>The job ID to update.</p>
+    pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The task status to update the job's tasks to.</p>
@@ -26,14 +32,20 @@ pub struct UpdateJobInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated job description.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The farm ID of the job to update.</p>
-    pub farm_id: ::std::option::Option<::std::string::String>,
-    /// <p>The queue ID of the job to update.</p>
-    pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>The job ID to update.</p>
-    pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateJobInput {
+    /// <p>The farm ID of the job to update.</p>
+    pub fn farm_id(&self) -> ::std::option::Option<&str> {
+        self.farm_id.as_deref()
+    }
+    /// <p>The queue ID of the job to update.</p>
+    pub fn queue_id(&self) -> ::std::option::Option<&str> {
+        self.queue_id.as_deref()
+    }
+    /// <p>The job ID to update.</p>
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
+        self.job_id.as_deref()
+    }
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -75,22 +87,13 @@ impl UpdateJobInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The farm ID of the job to update.</p>
-    pub fn farm_id(&self) -> ::std::option::Option<&str> {
-        self.farm_id.as_deref()
-    }
-    /// <p>The queue ID of the job to update.</p>
-    pub fn queue_id(&self) -> ::std::option::Option<&str> {
-        self.queue_id.as_deref()
-    }
-    /// <p>The job ID to update.</p>
-    pub fn job_id(&self) -> ::std::option::Option<&str> {
-        self.job_id.as_deref()
-    }
 }
 impl ::std::fmt::Debug for UpdateJobInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateJobInput");
+        formatter.field("farm_id", &self.farm_id);
+        formatter.field("queue_id", &self.queue_id);
+        formatter.field("job_id", &self.job_id);
         formatter.field("client_token", &self.client_token);
         formatter.field("target_task_run_status", &self.target_task_run_status);
         formatter.field("priority", &self.priority);
@@ -100,9 +103,6 @@ impl ::std::fmt::Debug for UpdateJobInput {
         formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
-        formatter.field("farm_id", &self.farm_id);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("job_id", &self.job_id);
         formatter.finish()
     }
 }
@@ -117,6 +117,9 @@ impl UpdateJobInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct UpdateJobInputBuilder {
+    pub(crate) farm_id: ::std::option::Option<::std::string::String>,
+    pub(crate) queue_id: ::std::option::Option<::std::string::String>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) target_task_run_status: ::std::option::Option<crate::types::JobTargetTaskRunStatus>,
     pub(crate) priority: ::std::option::Option<i32>,
@@ -126,11 +129,53 @@ pub struct UpdateJobInputBuilder {
     pub(crate) max_worker_count: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) farm_id: ::std::option::Option<::std::string::String>,
-    pub(crate) queue_id: ::std::option::Option<::std::string::String>,
-    pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateJobInputBuilder {
+    /// <p>The farm ID of the job to update.</p>
+    /// This field is required.
+    pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.farm_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The farm ID of the job to update.</p>
+    pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.farm_id = input;
+        self
+    }
+    /// <p>The farm ID of the job to update.</p>
+    pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.farm_id
+    }
+    /// <p>The queue ID of the job to update.</p>
+    /// This field is required.
+    pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The queue ID of the job to update.</p>
+    pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.queue_id = input;
+        self
+    }
+    /// <p>The queue ID of the job to update.</p>
+    pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.queue_id
+    }
+    /// <p>The job ID to update.</p>
+    /// This field is required.
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The job ID to update.</p>
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.job_id = input;
+        self
+    }
+    /// <p>The job ID to update.</p>
+    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.job_id
+    }
     /// <p>The unique token which the server uses to recognize retries of the same request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -272,54 +317,12 @@ impl UpdateJobInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The farm ID of the job to update.</p>
-    /// This field is required.
-    pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.farm_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The farm ID of the job to update.</p>
-    pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.farm_id = input;
-        self
-    }
-    /// <p>The farm ID of the job to update.</p>
-    pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.farm_id
-    }
-    /// <p>The queue ID of the job to update.</p>
-    /// This field is required.
-    pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.queue_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The queue ID of the job to update.</p>
-    pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.queue_id = input;
-        self
-    }
-    /// <p>The queue ID of the job to update.</p>
-    pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.queue_id
-    }
-    /// <p>The job ID to update.</p>
-    /// This field is required.
-    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.job_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The job ID to update.</p>
-    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.job_id = input;
-        self
-    }
-    /// <p>The job ID to update.</p>
-    pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.job_id
-    }
     /// Consumes the builder and constructs a [`UpdateJobInput`](crate::operation::update_job::UpdateJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_job::UpdateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_job::UpdateJobInput {
+            farm_id: self.farm_id,
+            queue_id: self.queue_id,
+            job_id: self.job_id,
             client_token: self.client_token,
             target_task_run_status: self.target_task_run_status,
             priority: self.priority,
@@ -329,15 +332,15 @@ impl UpdateJobInputBuilder {
             max_worker_count: self.max_worker_count,
             name: self.name,
             description: self.description,
-            farm_id: self.farm_id,
-            queue_id: self.queue_id,
-            job_id: self.job_id,
         })
     }
 }
 impl ::std::fmt::Debug for UpdateJobInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateJobInputBuilder");
+        formatter.field("farm_id", &self.farm_id);
+        formatter.field("queue_id", &self.queue_id);
+        formatter.field("job_id", &self.job_id);
         formatter.field("client_token", &self.client_token);
         formatter.field("target_task_run_status", &self.target_task_run_status);
         formatter.field("priority", &self.priority);
@@ -347,9 +350,6 @@ impl ::std::fmt::Debug for UpdateJobInputBuilder {
         formatter.field("max_worker_count", &self.max_worker_count);
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
-        formatter.field("farm_id", &self.farm_id);
-        formatter.field("queue_id", &self.queue_id);
-        formatter.field("job_id", &self.job_id);
         formatter.finish()
     }
 }

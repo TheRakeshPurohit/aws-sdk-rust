@@ -253,6 +253,8 @@ pub use crate::types::_managed_instances_network_configuration::ManagedInstances
 
 pub use crate::types::_managed_instances_storage_configuration::ManagedInstancesStorageConfiguration;
 
+pub use crate::types::_managed_instances_local_storage_configuration::ManagedInstancesLocalStorageConfiguration;
+
 pub use crate::types::_managed_instances_monitoring_options::ManagedInstancesMonitoringOptions;
 
 pub use crate::types::_capacity_option_type::CapacityOptionType;
@@ -776,6 +778,8 @@ mod _managed_certificate;
 mod _managed_draining;
 
 mod _managed_ingress_path;
+
+mod _managed_instances_local_storage_configuration;
 
 mod _managed_instances_monitoring_options;
 

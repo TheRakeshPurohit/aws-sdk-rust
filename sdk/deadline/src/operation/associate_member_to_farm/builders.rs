@@ -122,20 +122,6 @@ impl AssociateMemberToFarmFluentBuilder {
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The member's principal ID to associate with the farm.</p>
-    pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.principal_id(input.into());
-        self
-    }
-    /// <p>The member's principal ID to associate with the farm.</p>
-    pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_principal_id(input);
-        self
-    }
-    /// <p>The member's principal ID to associate with the farm.</p>
-    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_principal_id()
-    }
     /// <p>The principal type of the member to associate with the farm.</p>
     pub fn principal_type(mut self, input: crate::types::DeadlinePrincipalType) -> Self {
         self.inner = self.inner.principal_type(input);
@@ -177,5 +163,19 @@ impl AssociateMemberToFarmFluentBuilder {
     /// <p>The principal's membership level for the associated farm.</p>
     pub fn get_membership_level(&self) -> &::std::option::Option<crate::types::MembershipLevel> {
         self.inner.get_membership_level()
+    }
+    /// <p>The member's principal ID to associate with the farm.</p>
+    pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.principal_id(input.into());
+        self
+    }
+    /// <p>The member's principal ID to associate with the farm.</p>
+    pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_principal_id(input);
+        self
+    }
+    /// <p>The member's principal ID to associate with the farm.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal_id()
     }
 }

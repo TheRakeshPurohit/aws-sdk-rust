@@ -4,6 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LimitSummary {
+    /// <p>The unique identifier of the farm that contains the limit.</p>
+    pub farm_id: ::std::string::String,
+    /// <p>The unique identifier of the limit.</p>
+    pub limit_id: ::std::string::String,
+    /// <p>The number of resources from the limit that are being used by jobs. The result is delayed and may not be the count at the time that you called the operation.</p>
+    pub current_count: i32,
+    /// <p>The Unix timestamp of the date and time that the limit was created.</p>
+    pub created_at: ::aws_smithy_types::DateTime,
+    /// <p>The user identifier of the person that created the limit.</p>
+    pub created_by: ::std::string::String,
+    /// <p>The Unix timestamp of the date and time that the limit was last updated.</p>
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The user identifier of the person that last updated the limit.</p>
+    pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The name of the limit used in lists to identify the limit.</p><important>
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
@@ -13,38 +27,21 @@ pub struct LimitSummary {
     /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
     /// <p>The <code>maxValue</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
     pub max_count: i32,
-    /// <p>The Unix timestamp of the date and time that the limit was created.</p>
-    pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>The user identifier of the person that created the limit.</p>
-    pub created_by: ::std::string::String,
-    /// <p>The Unix timestamp of the date and time that the limit was last updated.</p>
-    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The user identifier of the person that last updated the limit.</p>
-    pub updated_by: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of the farm that contains the limit.</p>
-    pub farm_id: ::std::string::String,
-    /// <p>The unique identifier of the limit.</p>
-    pub limit_id: ::std::string::String,
-    /// <p>The number of resources from the limit that are being used by jobs. The result is delayed and may not be the count at the time that you called the operation.</p>
-    pub current_count: i32,
 }
 impl LimitSummary {
-    /// <p>The name of the limit used in lists to identify the limit.</p><important>
-    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
-    /// </important>
-    pub fn display_name(&self) -> &str {
+    /// <p>The unique identifier of the farm that contains the limit.</p>
+    pub fn farm_id(&self) -> &str {
         use std::ops::Deref;
-        self.display_name.deref()
+        self.farm_id.deref()
     }
-    /// <p>The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.</p>
-    pub fn amount_requirement_name(&self) -> &str {
+    /// <p>The unique identifier of the limit.</p>
+    pub fn limit_id(&self) -> &str {
         use std::ops::Deref;
-        self.amount_requirement_name.deref()
+        self.limit_id.deref()
     }
-    /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
-    /// <p>The <code>maxValue</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
-    pub fn max_count(&self) -> i32 {
-        self.max_count
+    /// <p>The number of resources from the limit that are being used by jobs. The result is delayed and may not be the count at the time that you called the operation.</p>
+    pub fn current_count(&self) -> i32 {
+        self.current_count
     }
     /// <p>The Unix timestamp of the date and time that the limit was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
@@ -63,19 +60,22 @@ impl LimitSummary {
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
-    /// <p>The unique identifier of the farm that contains the limit.</p>
-    pub fn farm_id(&self) -> &str {
+    /// <p>The name of the limit used in lists to identify the limit.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
+    pub fn display_name(&self) -> &str {
         use std::ops::Deref;
-        self.farm_id.deref()
+        self.display_name.deref()
     }
-    /// <p>The unique identifier of the limit.</p>
-    pub fn limit_id(&self) -> &str {
+    /// <p>The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.</p>
+    pub fn amount_requirement_name(&self) -> &str {
         use std::ops::Deref;
-        self.limit_id.deref()
+        self.amount_requirement_name.deref()
     }
-    /// <p>The number of resources from the limit that are being used by jobs. The result is delayed and may not be the count at the time that you called the operation.</p>
-    pub fn current_count(&self) -> i32 {
-        self.current_count
+    /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
+    /// <p>The <code>maxValue</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
+    pub fn max_count(&self) -> i32 {
+        self.max_count
     }
 }
 impl LimitSummary {
@@ -89,71 +89,62 @@ impl LimitSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct LimitSummaryBuilder {
-    pub(crate) display_name: ::std::option::Option<::std::string::String>,
-    pub(crate) amount_requirement_name: ::std::option::Option<::std::string::String>,
-    pub(crate) max_count: ::std::option::Option<i32>,
+    pub(crate) farm_id: ::std::option::Option<::std::string::String>,
+    pub(crate) limit_id: ::std::option::Option<::std::string::String>,
+    pub(crate) current_count: ::std::option::Option<i32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,
-    pub(crate) farm_id: ::std::option::Option<::std::string::String>,
-    pub(crate) limit_id: ::std::option::Option<::std::string::String>,
-    pub(crate) current_count: ::std::option::Option<i32>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) amount_requirement_name: ::std::option::Option<::std::string::String>,
+    pub(crate) max_count: ::std::option::Option<i32>,
 }
 impl LimitSummaryBuilder {
-    /// <p>The name of the limit used in lists to identify the limit.</p><important>
-    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
-    /// </important>
+    /// <p>The unique identifier of the farm that contains the limit.</p>
     /// This field is required.
-    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.display_name = ::std::option::Option::Some(input.into());
+    pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.farm_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the limit used in lists to identify the limit.</p><important>
-    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
-    /// </important>
-    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.display_name = input;
+    /// <p>The unique identifier of the farm that contains the limit.</p>
+    pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.farm_id = input;
         self
     }
-    /// <p>The name of the limit used in lists to identify the limit.</p><important>
-    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
-    /// </important>
-    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.display_name
+    /// <p>The unique identifier of the farm that contains the limit.</p>
+    pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.farm_id
     }
-    /// <p>The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.</p>
+    /// <p>The unique identifier of the limit.</p>
     /// This field is required.
-    pub fn amount_requirement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.amount_requirement_name = ::std::option::Option::Some(input.into());
+    pub fn limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.limit_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.</p>
-    pub fn set_amount_requirement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.amount_requirement_name = input;
+    /// <p>The unique identifier of the limit.</p>
+    pub fn set_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.limit_id = input;
         self
     }
-    /// <p>The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.</p>
-    pub fn get_amount_requirement_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.amount_requirement_name
+    /// <p>The unique identifier of the limit.</p>
+    pub fn get_limit_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.limit_id
     }
-    /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
-    /// <p>The <code>maxValue</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
+    /// <p>The number of resources from the limit that are being used by jobs. The result is delayed and may not be the count at the time that you called the operation.</p>
     /// This field is required.
-    pub fn max_count(mut self, input: i32) -> Self {
-        self.max_count = ::std::option::Option::Some(input);
+    pub fn current_count(mut self, input: i32) -> Self {
+        self.current_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
-    /// <p>The <code>maxValue</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
-    pub fn set_max_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.max_count = input;
+    /// <p>The number of resources from the limit that are being used by jobs. The result is delayed and may not be the count at the time that you called the operation.</p>
+    pub fn set_current_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.current_count = input;
         self
     }
-    /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
-    /// <p>The <code>maxValue</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
-    pub fn get_max_count(&self) -> &::std::option::Option<i32> {
-        &self.max_count
+    /// <p>The number of resources from the limit that are being used by jobs. The result is delayed and may not be the count at the time that you called the operation.</p>
+    pub fn get_current_count(&self) -> &::std::option::Option<i32> {
+        &self.current_count
     }
     /// <p>The Unix timestamp of the date and time that the limit was created.</p>
     /// This field is required.
@@ -213,95 +204,72 @@ impl LimitSummaryBuilder {
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
     }
-    /// <p>The unique identifier of the farm that contains the limit.</p>
+    /// <p>The name of the limit used in lists to identify the limit.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
     /// This field is required.
-    pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.farm_id = ::std::option::Option::Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the farm that contains the limit.</p>
-    pub fn set_farm_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.farm_id = input;
+    /// <p>The name of the limit used in lists to identify the limit.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.display_name = input;
         self
     }
-    /// <p>The unique identifier of the farm that contains the limit.</p>
-    pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.farm_id
+    /// <p>The name of the limit used in lists to identify the limit.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.display_name
     }
-    /// <p>The unique identifier of the limit.</p>
+    /// <p>The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.</p>
     /// This field is required.
-    pub fn limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.limit_id = ::std::option::Option::Some(input.into());
+    pub fn amount_requirement_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.amount_requirement_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the limit.</p>
-    pub fn set_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.limit_id = input;
+    /// <p>The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.</p>
+    pub fn set_amount_requirement_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.amount_requirement_name = input;
         self
     }
-    /// <p>The unique identifier of the limit.</p>
-    pub fn get_limit_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.limit_id
+    /// <p>The value that you specify as the <code>name</code> in the <code>amounts</code> field of the <code>hostRequirements</code> in a step of a job template to declare the limit requirement.</p>
+    pub fn get_amount_requirement_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.amount_requirement_name
     }
-    /// <p>The number of resources from the limit that are being used by jobs. The result is delayed and may not be the count at the time that you called the operation.</p>
+    /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
+    /// <p>The <code>maxValue</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
     /// This field is required.
-    pub fn current_count(mut self, input: i32) -> Self {
-        self.current_count = ::std::option::Option::Some(input);
+    pub fn max_count(mut self, input: i32) -> Self {
+        self.max_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of resources from the limit that are being used by jobs. The result is delayed and may not be the count at the time that you called the operation.</p>
-    pub fn set_current_count(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.current_count = input;
+    /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
+    /// <p>The <code>maxValue</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
+    pub fn set_max_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_count = input;
         self
     }
-    /// <p>The number of resources from the limit that are being used by jobs. The result is delayed and may not be the count at the time that you called the operation.</p>
-    pub fn get_current_count(&self) -> &::std::option::Option<i32> {
-        &self.current_count
+    /// <p>The maximum number of resources constrained by this limit. When all of the resources are in use, steps that require the limit won't be scheduled until the resource is available.</p>
+    /// <p>The <code>maxValue</code> must not be 0. If the value is -1, there is no restriction on the number of resources that can be acquired for this limit.</p>
+    pub fn get_max_count(&self) -> &::std::option::Option<i32> {
+        &self.max_count
     }
     /// Consumes the builder and constructs a [`LimitSummary`](crate::types::LimitSummary).
     /// This method will fail if any of the following fields are not set:
-    /// - [`display_name`](crate::types::builders::LimitSummaryBuilder::display_name)
-    /// - [`amount_requirement_name`](crate::types::builders::LimitSummaryBuilder::amount_requirement_name)
-    /// - [`max_count`](crate::types::builders::LimitSummaryBuilder::max_count)
-    /// - [`created_at`](crate::types::builders::LimitSummaryBuilder::created_at)
-    /// - [`created_by`](crate::types::builders::LimitSummaryBuilder::created_by)
     /// - [`farm_id`](crate::types::builders::LimitSummaryBuilder::farm_id)
     /// - [`limit_id`](crate::types::builders::LimitSummaryBuilder::limit_id)
     /// - [`current_count`](crate::types::builders::LimitSummaryBuilder::current_count)
+    /// - [`created_at`](crate::types::builders::LimitSummaryBuilder::created_at)
+    /// - [`created_by`](crate::types::builders::LimitSummaryBuilder::created_by)
+    /// - [`display_name`](crate::types::builders::LimitSummaryBuilder::display_name)
+    /// - [`amount_requirement_name`](crate::types::builders::LimitSummaryBuilder::amount_requirement_name)
+    /// - [`max_count`](crate::types::builders::LimitSummaryBuilder::max_count)
     pub fn build(self) -> ::std::result::Result<crate::types::LimitSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LimitSummary {
-            display_name: self.display_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "display_name",
-                    "display_name was not specified but it is required when building LimitSummary",
-                )
-            })?,
-            amount_requirement_name: self.amount_requirement_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "amount_requirement_name",
-                    "amount_requirement_name was not specified but it is required when building LimitSummary",
-                )
-            })?,
-            max_count: self.max_count.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "max_count",
-                    "max_count was not specified but it is required when building LimitSummary",
-                )
-            })?,
-            created_at: self.created_at.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_at",
-                    "created_at was not specified but it is required when building LimitSummary",
-                )
-            })?,
-            created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_by",
-                    "created_by was not specified but it is required when building LimitSummary",
-                )
-            })?,
-            updated_at: self.updated_at,
-            updated_by: self.updated_by,
             farm_id: self.farm_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "farm_id",
@@ -318,6 +286,38 @@ impl LimitSummaryBuilder {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "current_count",
                     "current_count was not specified but it is required when building LimitSummary",
+                )
+            })?,
+            created_at: self.created_at.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_at",
+                    "created_at was not specified but it is required when building LimitSummary",
+                )
+            })?,
+            created_by: self.created_by.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "created_by",
+                    "created_by was not specified but it is required when building LimitSummary",
+                )
+            })?,
+            updated_at: self.updated_at,
+            updated_by: self.updated_by,
+            display_name: self.display_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "display_name",
+                    "display_name was not specified but it is required when building LimitSummary",
+                )
+            })?,
+            amount_requirement_name: self.amount_requirement_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "amount_requirement_name",
+                    "amount_requirement_name was not specified but it is required when building LimitSummary",
+                )
+            })?,
+            max_count: self.max_count.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "max_count",
+                    "max_count was not specified but it is required when building LimitSummary",
                 )
             })?,
         })

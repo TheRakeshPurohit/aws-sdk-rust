@@ -12,6 +12,8 @@ pub struct ServiceManagedEc2FleetConfiguration {
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p>The storage profile ID for the service managed EC2 fleet.</p>
     pub storage_profile_id: ::std::option::Option<::std::string::String>,
+    /// <p>The auto scaling configuration options for the service managed EC2 fleet.</p>
+    pub auto_scaling_configuration: ::std::option::Option<crate::types::ServiceManagedEc2AutoScalingConfiguration>,
 }
 impl ServiceManagedEc2FleetConfiguration {
     /// <p>The instance capabilities for the service managed EC2 fleet.</p>
@@ -30,6 +32,10 @@ impl ServiceManagedEc2FleetConfiguration {
     pub fn storage_profile_id(&self) -> ::std::option::Option<&str> {
         self.storage_profile_id.as_deref()
     }
+    /// <p>The auto scaling configuration options for the service managed EC2 fleet.</p>
+    pub fn auto_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServiceManagedEc2AutoScalingConfiguration> {
+        self.auto_scaling_configuration.as_ref()
+    }
 }
 impl ServiceManagedEc2FleetConfiguration {
     /// Creates a new builder-style object to manufacture [`ServiceManagedEc2FleetConfiguration`](crate::types::ServiceManagedEc2FleetConfiguration).
@@ -46,6 +52,7 @@ pub struct ServiceManagedEc2FleetConfigurationBuilder {
     pub(crate) instance_market_options: ::std::option::Option<crate::types::ServiceManagedEc2InstanceMarketOptions>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     pub(crate) storage_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_scaling_configuration: ::std::option::Option<crate::types::ServiceManagedEc2AutoScalingConfiguration>,
 }
 impl ServiceManagedEc2FleetConfigurationBuilder {
     /// <p>The instance capabilities for the service managed EC2 fleet.</p>
@@ -106,6 +113,20 @@ impl ServiceManagedEc2FleetConfigurationBuilder {
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_profile_id
     }
+    /// <p>The auto scaling configuration options for the service managed EC2 fleet.</p>
+    pub fn auto_scaling_configuration(mut self, input: crate::types::ServiceManagedEc2AutoScalingConfiguration) -> Self {
+        self.auto_scaling_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The auto scaling configuration options for the service managed EC2 fleet.</p>
+    pub fn set_auto_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServiceManagedEc2AutoScalingConfiguration>) -> Self {
+        self.auto_scaling_configuration = input;
+        self
+    }
+    /// <p>The auto scaling configuration options for the service managed EC2 fleet.</p>
+    pub fn get_auto_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServiceManagedEc2AutoScalingConfiguration> {
+        &self.auto_scaling_configuration
+    }
     /// Consumes the builder and constructs a [`ServiceManagedEc2FleetConfiguration`](crate::types::ServiceManagedEc2FleetConfiguration).
     pub fn build(self) -> crate::types::ServiceManagedEc2FleetConfiguration {
         crate::types::ServiceManagedEc2FleetConfiguration {
@@ -113,6 +134,7 @@ impl ServiceManagedEc2FleetConfigurationBuilder {
             instance_market_options: self.instance_market_options,
             vpc_configuration: self.vpc_configuration,
             storage_profile_id: self.storage_profile_id,
+            auto_scaling_configuration: self.auto_scaling_configuration,
         }
     }
 }

@@ -229,6 +229,8 @@ mod describe_dry_run_progress;
 
 mod describe_inbound_connections;
 
+mod describe_insight_details;
+
 mod describe_instance_type_limits;
 
 mod describe_outbound_connections;
@@ -276,6 +278,8 @@ mod list_domain_maintenances;
 mod list_domain_names;
 
 mod list_domains_for_package;
+
+mod list_insights;
 
 mod list_instance_type_details;
 

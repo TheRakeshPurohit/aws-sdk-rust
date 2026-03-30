@@ -215,6 +215,10 @@ pub use crate::types::_job_parameter::JobParameter;
 
 pub use crate::types::_job_attachments_file_system::JobAttachmentsFileSystem;
 
+pub use crate::types::_task_run_manifest_properties_response::TaskRunManifestPropertiesResponse;
+
+pub use crate::types::_acquired_limit::AcquiredLimit;
+
 pub use crate::types::_environment_enter_session_action_definition::EnvironmentEnterSessionActionDefinition;
 
 pub use crate::types::_environment_exit_session_action_definition::EnvironmentExitSessionActionDefinition;
@@ -222,10 +226,6 @@ pub use crate::types::_environment_exit_session_action_definition::EnvironmentEx
 pub use crate::types::_task_run_session_action_definition::TaskRunSessionActionDefinition;
 
 pub use crate::types::_sync_input_job_attachments_session_action_definition::SyncInputJobAttachmentsSessionActionDefinition;
-
-pub use crate::types::_acquired_limit::AcquiredLimit;
-
-pub use crate::types::_task_run_manifest_properties_response::TaskRunManifestPropertiesResponse;
 
 pub use crate::types::_task_parameter_value::TaskParameterValue;
 
@@ -261,6 +261,8 @@ pub use crate::types::_budget_action_type::BudgetActionType;
 
 pub use crate::types::_auto_scaling_mode::AutoScalingMode;
 
+pub use crate::types::_customer_managed_auto_scaling_configuration::CustomerManagedAutoScalingConfiguration;
+
 pub use crate::types::_customer_managed_worker_capabilities::CustomerManagedWorkerCapabilities;
 
 pub use crate::types::_tag_propagation_mode::TagPropagationMode;
@@ -270,6 +272,8 @@ pub use crate::types::_service_managed_ec2_instance_capabilities::ServiceManaged
 pub use crate::types::_service_managed_ec2_instance_market_options::ServiceManagedEc2InstanceMarketOptions;
 
 pub use crate::types::_vpc_configuration::VpcConfiguration;
+
+pub use crate::types::_service_managed_ec2_auto_scaling_configuration::ServiceManagedEc2AutoScalingConfiguration;
 
 pub use crate::types::_fleet_amount_capability::FleetAmountCapability;
 
@@ -440,6 +444,8 @@ mod _consumed_usages;
 mod _cpu_architecture_type;
 
 mod _create_job_target_task_run_status;
+
+mod _customer_managed_auto_scaling_configuration;
 
 mod _customer_managed_fleet_configuration;
 
@@ -622,6 +628,8 @@ mod _search_sort_expression;
 mod _search_term_filter_expression;
 
 mod _search_term_matching_type;
+
+mod _service_managed_ec2_auto_scaling_configuration;
 
 mod _service_managed_ec2_fleet_configuration;
 

@@ -56,9 +56,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "parameters" => {
-                            builder = builder.set_parameters(crate::protocol_serde::shape_task_parameters::de_task_parameters(tokens, _value)?);
-                        }
                         "startedAt" => {
                             builder = builder.set_started_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
@@ -90,6 +87,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "parameters" => {
+                            builder = builder.set_parameters(crate::protocol_serde::shape_task_parameters::de_task_parameters(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

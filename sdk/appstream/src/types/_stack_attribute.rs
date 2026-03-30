@@ -13,6 +13,7 @@
 /// # let stackattribute = unimplemented!();
 /// match stackattribute {
 ///     StackAttribute::AccessEndpoints => { /* ... */ },
+///     StackAttribute::ContentRedirection => { /* ... */ },
 ///     StackAttribute::EmbedHostDomains => { /* ... */ },
 ///     StackAttribute::FeedbackUrl => { /* ... */ },
 ///     StackAttribute::IamRoleArn => { /* ... */ },
@@ -55,6 +56,8 @@ pub enum StackAttribute {
     #[allow(missing_docs)] // documentation missing in model
     AccessEndpoints,
     #[allow(missing_docs)] // documentation missing in model
+    ContentRedirection,
+    #[allow(missing_docs)] // documentation missing in model
     EmbedHostDomains,
     #[allow(missing_docs)] // documentation missing in model
     FeedbackUrl,
@@ -84,6 +87,7 @@ impl ::std::convert::From<&str> for StackAttribute {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_ENDPOINTS" => StackAttribute::AccessEndpoints,
+            "CONTENT_REDIRECTION" => StackAttribute::ContentRedirection,
             "EMBED_HOST_DOMAINS" => StackAttribute::EmbedHostDomains,
             "FEEDBACK_URL" => StackAttribute::FeedbackUrl,
             "IAM_ROLE_ARN" => StackAttribute::IamRoleArn,
@@ -111,6 +115,7 @@ impl StackAttribute {
     pub fn as_str(&self) -> &str {
         match self {
             StackAttribute::AccessEndpoints => "ACCESS_ENDPOINTS",
+            StackAttribute::ContentRedirection => "CONTENT_REDIRECTION",
             StackAttribute::EmbedHostDomains => "EMBED_HOST_DOMAINS",
             StackAttribute::FeedbackUrl => "FEEDBACK_URL",
             StackAttribute::IamRoleArn => "IAM_ROLE_ARN",
@@ -129,6 +134,7 @@ impl StackAttribute {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACCESS_ENDPOINTS",
+            "CONTENT_REDIRECTION",
             "EMBED_HOST_DOMAINS",
             "FEEDBACK_URL",
             "IAM_ROLE_ARN",
@@ -164,6 +170,7 @@ impl ::std::fmt::Display for StackAttribute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             StackAttribute::AccessEndpoints => write!(f, "ACCESS_ENDPOINTS"),
+            StackAttribute::ContentRedirection => write!(f, "CONTENT_REDIRECTION"),
             StackAttribute::EmbedHostDomains => write!(f, "EMBED_HOST_DOMAINS"),
             StackAttribute::FeedbackUrl => write!(f, "FEEDBACK_URL"),
             StackAttribute::IamRoleArn => write!(f, "IAM_ROLE_ARN"),

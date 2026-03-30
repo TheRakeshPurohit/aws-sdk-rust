@@ -214,6 +214,13 @@ impl DescribeScalingActivitiesFluentBuilder {
     /// <li>
     /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
     /// </ul>
+    /// <p><code>StartTimeLowerBound</code> and <code>StartTimeUpperBound</code> accept ISO 8601 formatted timestamps. Timestamps without a timezone offset are assumed to be UTC.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>2000-01-18T08:15:00Z</code></p></li>
+    /// <li>
+    /// <p><code>2000-01-18T16:15:00+08:00</code></p></li>
+    /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
@@ -227,6 +234,13 @@ impl DescribeScalingActivitiesFluentBuilder {
     /// <li>
     /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
     /// </ul>
+    /// <p><code>StartTimeLowerBound</code> and <code>StartTimeUpperBound</code> accept ISO 8601 formatted timestamps. Timestamps without a timezone offset are assumed to be UTC.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>2000-01-18T08:15:00Z</code></p></li>
+    /// <li>
+    /// <p><code>2000-01-18T16:15:00+08:00</code></p></li>
+    /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -239,6 +253,13 @@ impl DescribeScalingActivitiesFluentBuilder {
     /// <p><code>StartTimeUpperBound</code> - The latest scaling activities to return based on the activity start time. Scaling activities with a start time later than this value are not included in the results. Only activities started within the last six weeks can be returned regardless of the value specified.</p></li>
     /// <li>
     /// <p><code>Status</code> - The <code>StatusCode</code> value of the scaling activity. This filter can only be used in combination with the <code>AutoScalingGroupName</code> parameter. For valid <code>StatusCode</code> values, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_Activity.html">Activity</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p></li>
+    /// </ul>
+    /// <p><code>StartTimeLowerBound</code> and <code>StartTimeUpperBound</code> accept ISO 8601 formatted timestamps. Timestamps without a timezone offset are assumed to be UTC.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>2000-01-18T08:15:00Z</code></p></li>
+    /// <li>
+    /// <p><code>2000-01-18T16:15:00+08:00</code></p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()

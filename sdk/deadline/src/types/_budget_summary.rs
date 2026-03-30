@@ -20,11 +20,6 @@ pub struct BudgetSummary {
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub display_name: ::std::string::String,
-    /// <p>The description of the budget summary.</p><important>
-    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
-    /// </important>
-    #[deprecated(note = "ListBudgets no longer supports description. Use GetBudget if description is needed.")]
-    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The approximate dollar limit of the budget.</p>
     pub approximate_dollar_limit: f32,
     /// <p>The consumed usage for the budget.</p>
@@ -37,6 +32,11 @@ pub struct BudgetSummary {
     pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the resource was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The description of the budget summary.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
+    #[deprecated(note = "ListBudgets no longer supports description. Use GetBudget if description is needed.")]
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl BudgetSummary {
     /// <p>The budget ID.</p>
@@ -65,13 +65,6 @@ impl BudgetSummary {
         use std::ops::Deref;
         self.display_name.deref()
     }
-    /// <p>The description of the budget summary.</p><important>
-    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
-    /// </important>
-    #[deprecated(note = "ListBudgets no longer supports description. Use GetBudget if description is needed.")]
-    pub fn description(&self) -> ::std::option::Option<&str> {
-        self.description.as_deref()
-    }
     /// <p>The approximate dollar limit of the budget.</p>
     pub fn approximate_dollar_limit(&self) -> f32 {
         self.approximate_dollar_limit
@@ -97,6 +90,13 @@ impl BudgetSummary {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>The description of the budget summary.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
+    #[deprecated(note = "ListBudgets no longer supports description. Use GetBudget if description is needed.")]
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
 }
 impl ::std::fmt::Debug for BudgetSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -105,13 +105,13 @@ impl ::std::fmt::Debug for BudgetSummary {
         formatter.field("usage_tracking_resource", &self.usage_tracking_resource);
         formatter.field("status", &self.status);
         formatter.field("display_name", &self.display_name);
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("approximate_dollar_limit", &self.approximate_dollar_limit);
         formatter.field("usages", &self.usages);
         formatter.field("created_by", &self.created_by);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_by", &self.updated_by);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -130,13 +130,13 @@ pub struct BudgetSummaryBuilder {
     pub(crate) usage_tracking_resource: ::std::option::Option<crate::types::UsageTrackingResource>,
     pub(crate) status: ::std::option::Option<crate::types::BudgetStatus>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
-    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) approximate_dollar_limit: ::std::option::Option<f32>,
     pub(crate) usages: ::std::option::Option<crate::types::ConsumedUsages>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl BudgetSummaryBuilder {
     /// <p>The budget ID.</p>
@@ -222,29 +222,6 @@ impl BudgetSummaryBuilder {
     /// </important>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
-    }
-    /// <p>The description of the budget summary.</p><important>
-    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
-    /// </important>
-    #[deprecated(note = "ListBudgets no longer supports description. Use GetBudget if description is needed.")]
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.description = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The description of the budget summary.</p><important>
-    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
-    /// </important>
-    #[deprecated(note = "ListBudgets no longer supports description. Use GetBudget if description is needed.")]
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.description = input;
-        self
-    }
-    /// <p>The description of the budget summary.</p><important>
-    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
-    /// </important>
-    #[deprecated(note = "ListBudgets no longer supports description. Use GetBudget if description is needed.")]
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
-        &self.description
     }
     /// <p>The approximate dollar limit of the budget.</p>
     /// This field is required.
@@ -334,6 +311,29 @@ impl BudgetSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The description of the budget summary.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
+    #[deprecated(note = "ListBudgets no longer supports description. Use GetBudget if description is needed.")]
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The description of the budget summary.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
+    #[deprecated(note = "ListBudgets no longer supports description. Use GetBudget if description is needed.")]
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
+        self
+    }
+    /// <p>The description of the budget summary.</p><important>
+    /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
+    /// </important>
+    #[deprecated(note = "ListBudgets no longer supports description. Use GetBudget if description is needed.")]
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
     /// Consumes the builder and constructs a [`BudgetSummary`](crate::types::BudgetSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`budget_id`](crate::types::builders::BudgetSummaryBuilder::budget_id)
@@ -363,7 +363,6 @@ impl BudgetSummaryBuilder {
                     "display_name was not specified but it is required when building BudgetSummary",
                 )
             })?,
-            description: self.description,
             approximate_dollar_limit: self.approximate_dollar_limit.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "approximate_dollar_limit",
@@ -385,6 +384,7 @@ impl BudgetSummaryBuilder {
             })?,
             updated_by: self.updated_by,
             updated_at: self.updated_at,
+            description: self.description,
         })
     }
 }
@@ -395,13 +395,13 @@ impl ::std::fmt::Debug for BudgetSummaryBuilder {
         formatter.field("usage_tracking_resource", &self.usage_tracking_resource);
         formatter.field("status", &self.status);
         formatter.field("display_name", &self.display_name);
-        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("approximate_dollar_limit", &self.approximate_dollar_limit);
         formatter.field("usages", &self.usages);
         formatter.field("created_by", &self.created_by);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_by", &self.updated_by);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

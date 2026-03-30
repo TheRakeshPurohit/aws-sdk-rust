@@ -119,20 +119,6 @@ impl ListJobsFluentBuilder {
     pub fn get_farm_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_farm_id()
     }
-    /// <p>The principal ID of the members on the jobs.</p>
-    pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.principal_id(input.into());
-        self
-    }
-    /// <p>The principal ID of the members on the jobs.</p>
-    pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_principal_id(input);
-        self
-    }
-    /// <p>The principal ID of the members on the jobs.</p>
-    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_principal_id()
-    }
     /// <p>The queue ID for the job.</p>
     pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_id(input.into());
@@ -174,5 +160,19 @@ impl ListJobsFluentBuilder {
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>The principal ID of the members on the jobs.</p>
+    pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.principal_id(input.into());
+        self
+    }
+    /// <p>The principal ID of the members on the jobs.</p>
+    pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_principal_id(input);
+        self
+    }
+    /// <p>The principal ID of the members on the jobs.</p>
+    pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_principal_id()
     }
 }

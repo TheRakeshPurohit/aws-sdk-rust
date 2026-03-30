@@ -63,6 +63,7 @@ pub struct CreateAutoScalingGroupInput {
     /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
     /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
     /// <p>Default: <code>none</code></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/resource-deletion-protection.html"> Configure deletion protection for your Amazon EC2 Auto Scaling resources</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
     /// <p>One or more tags. You can tag your Auto Scaling group and propagate the tags to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS volumes. To add tags to Amazon EBS volumes, specify the tags in a launch template but use caution. If the launch template specifies an instance tag with a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling overrides the value of that instance tag with the value specified by the Auto Scaling group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -211,6 +212,7 @@ impl CreateAutoScalingGroupInput {
     /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
     /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
     /// <p>Default: <code>none</code></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/resource-deletion-protection.html"> Configure deletion protection for your Amazon EC2 Auto Scaling resources</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
         self.deletion_protection.as_ref()
     }
@@ -697,6 +699,7 @@ impl CreateAutoScalingGroupInputBuilder {
     /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
     /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
     /// <p>Default: <code>none</code></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/resource-deletion-protection.html"> Configure deletion protection for your Amazon EC2 Auto Scaling resources</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
         self
@@ -704,6 +707,7 @@ impl CreateAutoScalingGroupInputBuilder {
     /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
     /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
     /// <p>Default: <code>none</code></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/resource-deletion-protection.html"> Configure deletion protection for your Amazon EC2 Auto Scaling resources</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
         self.deletion_protection = input;
         self
@@ -711,6 +715,7 @@ impl CreateAutoScalingGroupInputBuilder {
     /// <p>The deletion protection setting for the Auto Scaling group. This setting helps safeguard your Auto Scaling group and its instances by controlling whether the <code>DeleteAutoScalingGroup</code> operation is allowed. When deletion protection is enabled, users cannot delete the Auto Scaling group according to the specified protection level until the setting is changed back to a less restrictive level.</p>
     /// <p>The valid values are <code>none</code>, <code>prevent-force-deletion</code>, and <code>prevent-all-deletion</code>.</p>
     /// <p>Default: <code>none</code></p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/resource-deletion-protection.html"> Configure deletion protection for your Amazon EC2 Auto Scaling resources</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
         &self.deletion_protection
     }

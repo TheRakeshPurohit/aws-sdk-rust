@@ -194,14 +194,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListFarmsReq
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
-                if let ::std::option::Option::Some(inner_2) = &_input.principal_id {
+                if let ::std::option::Option::Some(inner_2) = &_input.max_results {
                     {
-                        query.push_kv("principalId", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }
-                if let ::std::option::Option::Some(inner_3) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_3) = &_input.principal_id {
                     {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
+                        query.push_kv("principalId", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -213,19 +213,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListJobsRequ
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_3) = &_input.principal_id {
+                if let ::std::option::Option::Some(inner_3) = &_input.next_token {
                     {
-                        query.push_kv("principalId", &::aws_smithy_http::query::fmt_string(inner_3));
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
-                if let ::std::option::Option::Some(inner_4) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_4) = &_input.max_results {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
-                if let ::std::option::Option::Some(inner_5) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_5) = &_input.principal_id {
                     {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
+                        query.push_kv("principalId", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

@@ -108,34 +108,6 @@ impl UpdateTaskFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.client_token(input.into());
-        self
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_client_token(input);
-        self
-    }
-    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
-    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_client_token()
-    }
-    /// <p>The run status with which to start the task.</p>
-    pub fn target_run_status(mut self, input: crate::types::TaskTargetRunStatus) -> Self {
-        self.inner = self.inner.target_run_status(input);
-        self
-    }
-    /// <p>The run status with which to start the task.</p>
-    pub fn set_target_run_status(mut self, input: ::std::option::Option<crate::types::TaskTargetRunStatus>) -> Self {
-        self.inner = self.inner.set_target_run_status(input);
-        self
-    }
-    /// <p>The run status with which to start the task.</p>
-    pub fn get_target_run_status(&self) -> &::std::option::Option<crate::types::TaskTargetRunStatus> {
-        self.inner.get_target_run_status()
-    }
     /// <p>The farm ID to update.</p>
     pub fn farm_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.farm_id(input.into());
@@ -205,5 +177,33 @@ impl UpdateTaskFluentBuilder {
     /// <p>The task ID to update.</p>
     pub fn get_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task_id()
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_token(input.into());
+        self
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_token(input);
+        self
+    }
+    /// <p>The unique token which the server uses to recognize retries of the same request.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
+    /// <p>The run status with which to start the task.</p>
+    pub fn target_run_status(mut self, input: crate::types::TaskTargetRunStatus) -> Self {
+        self.inner = self.inner.target_run_status(input);
+        self
+    }
+    /// <p>The run status with which to start the task.</p>
+    pub fn set_target_run_status(mut self, input: ::std::option::Option<crate::types::TaskTargetRunStatus>) -> Self {
+        self.inner = self.inner.set_target_run_status(input);
+        self
+    }
+    /// <p>The run status with which to start the task.</p>
+    pub fn get_target_run_status(&self) -> &::std::option::Option<crate::types::TaskTargetRunStatus> {
+        self.inner.get_target_run_status()
     }
 }

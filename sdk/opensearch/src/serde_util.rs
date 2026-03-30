@@ -86,6 +86,15 @@ pub(crate) fn describe_domains_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_insight_details_output_output_correct_errors(
+    mut builder: crate::operation::describe_insight_details::builders::DescribeInsightDetailsOutputBuilder,
+) -> crate::operation::describe_insight_details::builders::DescribeInsightDetailsOutputBuilder {
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn describe_vpc_endpoints_output_output_correct_errors(
     mut builder: crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsOutputBuilder,
 ) -> crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsOutputBuilder {
@@ -428,6 +437,19 @@ pub(crate) fn identity_center_options_status_correct_errors(
             let builder = crate::types::builders::OptionStatusBuilder::default();
             crate::serde_util::option_status_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn insight_field_correct_errors(mut builder: crate::types::builders::InsightFieldBuilder) -> crate::types::builders::InsightFieldBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::InsightFieldType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

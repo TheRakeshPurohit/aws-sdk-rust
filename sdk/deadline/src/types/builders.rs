@@ -111,6 +111,10 @@ pub use crate::types::_assigned_session::AssignedSessionBuilder;
 
 pub use crate::types::_job_summary::JobSummaryBuilder;
 
+pub use crate::types::_task_run_manifest_properties_response::TaskRunManifestPropertiesResponseBuilder;
+
+pub use crate::types::_acquired_limit::AcquiredLimitBuilder;
+
 pub use crate::types::_environment_enter_session_action_definition::EnvironmentEnterSessionActionDefinitionBuilder;
 
 pub use crate::types::_environment_exit_session_action_definition::EnvironmentExitSessionActionDefinitionBuilder;
@@ -118,10 +122,6 @@ pub use crate::types::_environment_exit_session_action_definition::EnvironmentEx
 pub use crate::types::_task_run_session_action_definition::TaskRunSessionActionDefinitionBuilder;
 
 pub use crate::types::_sync_input_job_attachments_session_action_definition::SyncInputJobAttachmentsSessionActionDefinitionBuilder;
-
-pub use crate::types::_acquired_limit::AcquiredLimitBuilder;
-
-pub use crate::types::_task_run_manifest_properties_response::TaskRunManifestPropertiesResponseBuilder;
 
 pub use crate::types::_job_member::JobMemberBuilder;
 
@@ -147,6 +147,8 @@ pub use crate::types::_string_filter_expression::StringFilterExpressionBuilder;
 
 pub use crate::types::_string_list_filter_expression::StringListFilterExpressionBuilder;
 
+pub use crate::types::_customer_managed_auto_scaling_configuration::CustomerManagedAutoScalingConfigurationBuilder;
+
 pub use crate::types::_customer_managed_worker_capabilities::CustomerManagedWorkerCapabilitiesBuilder;
 
 pub use crate::types::_service_managed_ec2_instance_capabilities::ServiceManagedEc2InstanceCapabilitiesBuilder;
@@ -154,6 +156,8 @@ pub use crate::types::_service_managed_ec2_instance_capabilities::ServiceManaged
 pub use crate::types::_service_managed_ec2_instance_market_options::ServiceManagedEc2InstanceMarketOptionsBuilder;
 
 pub use crate::types::_vpc_configuration::VpcConfigurationBuilder;
+
+pub use crate::types::_service_managed_ec2_auto_scaling_configuration::ServiceManagedEc2AutoScalingConfigurationBuilder;
 
 pub use crate::types::_fleet_amount_capability::FleetAmountCapabilityBuilder;
 

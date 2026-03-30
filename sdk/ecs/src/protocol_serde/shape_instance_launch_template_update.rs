@@ -21,20 +21,29 @@ pub fn ser_instance_launch_template_update(
     if let Some(var_6) = &input.instance_metadata_tags_propagation {
         object.key("instanceMetadataTagsPropagation").boolean(*var_6);
     }
-    if let Some(var_7) = &input.monitoring {
-        object.key("monitoring").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.instance_requirements {
+    if let Some(var_7) = &input.local_storage_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("instanceRequirements").start_object();
-        crate::protocol_serde::shape_instance_requirements_request::ser_instance_requirements_request(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("localStorageConfiguration").start_object();
+        crate::protocol_serde::shape_managed_instances_local_storage_configuration::ser_managed_instances_local_storage_configuration(
+            &mut object_8,
+            var_7,
+        )?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.capacity_reservations {
+    if let Some(var_9) = &input.monitoring {
+        object.key("monitoring").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.instance_requirements {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("capacityReservations").start_object();
-        crate::protocol_serde::shape_capacity_reservation_request::ser_capacity_reservation_request(&mut object_11, var_10)?;
+        let mut object_11 = object.key("instanceRequirements").start_object();
+        crate::protocol_serde::shape_instance_requirements_request::ser_instance_requirements_request(&mut object_11, var_10)?;
         object_11.finish();
+    }
+    if let Some(var_12) = &input.capacity_reservations {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("capacityReservations").start_object();
+        crate::protocol_serde::shape_capacity_reservation_request::ser_capacity_reservation_request(&mut object_13, var_12)?;
+        object_13.finish();
     }
     Ok(())
 }

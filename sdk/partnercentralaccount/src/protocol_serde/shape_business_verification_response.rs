@@ -20,6 +20,19 @@ where
                                 crate::protocol_serde::shape_business_verification_details::de_business_verification_details(tokens, _value)?,
                             );
                         }
+                        "CompletionUrl" => {
+                            builder = builder.set_completion_url(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "CompletionUrlExpiresAt" => {
+                            builder = builder.set_completion_url_expires_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

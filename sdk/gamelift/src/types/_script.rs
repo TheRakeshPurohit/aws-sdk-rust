@@ -20,7 +20,9 @@ pub struct Script {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon GameLift Servers to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to create a new script. By default, Amazon GameLift Servers uploads the latest version of the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version.</p>
     pub storage_location: ::std::option::Option<crate::types::S3Location>,
-    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p><note>
+    /// <p>Node.js 10 will reach end of support on September 30, 2026. See more details in the <a href="http://aws.amazon.com/gamelift/faq/nodejs10/">Node.js 10 FAQs</a>. For migration guidance, see <a href="https://docs.aws.amazon.com/gamelift/latest/realtimeguide/realtime-script.html#realtime-script-nodejs-migration"> Migrating from Node.js 10 to 24</a>.</p>
+    /// </note>
     pub node_js_version: ::std::option::Option<::std::string::String>,
 }
 impl Script {
@@ -52,7 +54,9 @@ impl Script {
     pub fn storage_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.storage_location.as_ref()
     }
-    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p><note>
+    /// <p>Node.js 10 will reach end of support on September 30, 2026. See more details in the <a href="http://aws.amazon.com/gamelift/faq/nodejs10/">Node.js 10 FAQs</a>. For migration guidance, see <a href="https://docs.aws.amazon.com/gamelift/latest/realtimeguide/realtime-script.html#realtime-script-nodejs-migration"> Migrating from Node.js 10 to 24</a>.</p>
+    /// </note>
     pub fn node_js_version(&self) -> ::std::option::Option<&str> {
         self.node_js_version.as_deref()
     }
@@ -176,17 +180,23 @@ impl ScriptBuilder {
     pub fn get_storage_location(&self) -> &::std::option::Option<crate::types::S3Location> {
         &self.storage_location
     }
-    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p><note>
+    /// <p>Node.js 10 will reach end of support on September 30, 2026. See more details in the <a href="http://aws.amazon.com/gamelift/faq/nodejs10/">Node.js 10 FAQs</a>. For migration guidance, see <a href="https://docs.aws.amazon.com/gamelift/latest/realtimeguide/realtime-script.html#realtime-script-nodejs-migration"> Migrating from Node.js 10 to 24</a>.</p>
+    /// </note>
     pub fn node_js_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.node_js_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p><note>
+    /// <p>Node.js 10 will reach end of support on September 30, 2026. See more details in the <a href="http://aws.amazon.com/gamelift/faq/nodejs10/">Node.js 10 FAQs</a>. For migration guidance, see <a href="https://docs.aws.amazon.com/gamelift/latest/realtimeguide/realtime-script.html#realtime-script-nodejs-migration"> Migrating from Node.js 10 to 24</a>.</p>
+    /// </note>
     pub fn set_node_js_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_js_version = input;
         self
     }
-    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p>
+    /// <p>The Node.js version used for execution of your Realtime script. The valid values are <code>10.x | 24.x</code>. By default, <code>NodeJsVersion</code> is <code>10.x</code>. This value cannot be updated later.</p><note>
+    /// <p>Node.js 10 will reach end of support on September 30, 2026. See more details in the <a href="http://aws.amazon.com/gamelift/faq/nodejs10/">Node.js 10 FAQs</a>. For migration guidance, see <a href="https://docs.aws.amazon.com/gamelift/latest/realtimeguide/realtime-script.html#realtime-script-nodejs-migration"> Migrating from Node.js 10 to 24</a>.</p>
+    /// </note>
     pub fn get_node_js_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_js_version
     }
