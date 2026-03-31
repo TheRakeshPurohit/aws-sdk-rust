@@ -16,7 +16,7 @@ pub struct GetStaticMapInput {
     /// </note>
     /// <p>Example: 49.295,-123.108</p>
     pub center: ::std::option::Option<::std::string::String>,
-    /// <p>Sets color tone for map, such as dark and light for specific map styles. It only applies to vector map styles, such as Standard.</p>
+    /// <p>Sets the color tone for the map, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for <code>ColorScheme</code> are case sensitive.</p>
@@ -263,7 +263,7 @@ impl GetStaticMapInput {
     pub fn center(&self) -> ::std::option::Option<&str> {
         self.center.as_deref()
     }
-    /// <p>Sets color tone for map, such as dark and light for specific map styles. It only applies to vector map styles, such as Standard.</p>
+    /// <p>Sets the color tone for the map, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for <code>ColorScheme</code> are case sensitive.</p>
@@ -646,7 +646,7 @@ impl GetStaticMapInputBuilder {
     pub fn get_center(&self) -> &::std::option::Option<::std::string::String> {
         &self.center
     }
-    /// <p>Sets color tone for map, such as dark and light for specific map styles. It only applies to vector map styles, such as Standard.</p>
+    /// <p>Sets the color tone for the map, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for <code>ColorScheme</code> are case sensitive.</p>
@@ -655,7 +655,7 @@ impl GetStaticMapInputBuilder {
         self.color_scheme = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Sets color tone for map, such as dark and light for specific map styles. It only applies to vector map styles, such as Standard.</p>
+    /// <p>Sets the color tone for the map, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for <code>ColorScheme</code> are case sensitive.</p>
@@ -664,7 +664,7 @@ impl GetStaticMapInputBuilder {
         self.color_scheme = input;
         self
     }
-    /// <p>Sets color tone for map, such as dark and light for specific map styles. It only applies to vector map styles, such as Standard.</p>
+    /// <p>Sets the color tone for the map, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for <code>ColorScheme</code> are case sensitive.</p>

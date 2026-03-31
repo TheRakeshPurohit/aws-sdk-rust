@@ -15,7 +15,9 @@
 ///     ValidationExceptionReason::AttachmentTypeNotSupported => { /* ... */ },
 ///     ValidationExceptionReason::CannotAddOptedOutNumber => { /* ... */ },
 ///     ValidationExceptionReason::CannotParse => { /* ... */ },
+///     ValidationExceptionReason::ChannelNotEnabled => { /* ... */ },
 ///     ValidationExceptionReason::CountryCodeMismatch => { /* ... */ },
+///     ValidationExceptionReason::CountryNotEnabled => { /* ... */ },
 ///     ValidationExceptionReason::DestinationCountryBlocked => { /* ... */ },
 ///     ValidationExceptionReason::FieldValidationFailed => { /* ... */ },
 ///     ValidationExceptionReason::InternationalSendingNotSupported => { /* ... */ },
@@ -88,7 +90,11 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
     #[allow(missing_docs)] // documentation missing in model
+    ChannelNotEnabled,
+    #[allow(missing_docs)] // documentation missing in model
     CountryCodeMismatch,
+    #[allow(missing_docs)] // documentation missing in model
+    CountryNotEnabled,
     #[allow(missing_docs)] // documentation missing in model
     DestinationCountryBlocked,
     #[allow(missing_docs)] // documentation missing in model
@@ -173,7 +179,9 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "ATTACHMENT_TYPE_NOT_SUPPORTED" => ValidationExceptionReason::AttachmentTypeNotSupported,
             "CANNOT_ADD_OPTED_OUT_NUMBER" => ValidationExceptionReason::CannotAddOptedOutNumber,
             "CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
+            "CHANNEL_NOT_ENABLED" => ValidationExceptionReason::ChannelNotEnabled,
             "COUNTRY_CODE_MISMATCH" => ValidationExceptionReason::CountryCodeMismatch,
+            "COUNTRY_NOT_ENABLED" => ValidationExceptionReason::CountryNotEnabled,
             "DESTINATION_COUNTRY_BLOCKED" => ValidationExceptionReason::DestinationCountryBlocked,
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "INTERNATIONAL_SENDING_NOT_SUPPORTED" => ValidationExceptionReason::InternationalSendingNotSupported,
@@ -229,7 +237,9 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::AttachmentTypeNotSupported => "ATTACHMENT_TYPE_NOT_SUPPORTED",
             ValidationExceptionReason::CannotAddOptedOutNumber => "CANNOT_ADD_OPTED_OUT_NUMBER",
             ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
+            ValidationExceptionReason::ChannelNotEnabled => "CHANNEL_NOT_ENABLED",
             ValidationExceptionReason::CountryCodeMismatch => "COUNTRY_CODE_MISMATCH",
+            ValidationExceptionReason::CountryNotEnabled => "COUNTRY_NOT_ENABLED",
             ValidationExceptionReason::DestinationCountryBlocked => "DESTINATION_COUNTRY_BLOCKED",
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::InternationalSendingNotSupported => "INTERNATIONAL_SENDING_NOT_SUPPORTED",
@@ -276,7 +286,9 @@ impl ValidationExceptionReason {
             "ATTACHMENT_TYPE_NOT_SUPPORTED",
             "CANNOT_ADD_OPTED_OUT_NUMBER",
             "CANNOT_PARSE",
+            "CHANNEL_NOT_ENABLED",
             "COUNTRY_CODE_MISMATCH",
+            "COUNTRY_NOT_ENABLED",
             "DESTINATION_COUNTRY_BLOCKED",
             "FIELD_VALIDATION_FAILED",
             "INTERNATIONAL_SENDING_NOT_SUPPORTED",
@@ -340,7 +352,9 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::AttachmentTypeNotSupported => write!(f, "ATTACHMENT_TYPE_NOT_SUPPORTED"),
             ValidationExceptionReason::CannotAddOptedOutNumber => write!(f, "CANNOT_ADD_OPTED_OUT_NUMBER"),
             ValidationExceptionReason::CannotParse => write!(f, "CANNOT_PARSE"),
+            ValidationExceptionReason::ChannelNotEnabled => write!(f, "CHANNEL_NOT_ENABLED"),
             ValidationExceptionReason::CountryCodeMismatch => write!(f, "COUNTRY_CODE_MISMATCH"),
+            ValidationExceptionReason::CountryNotEnabled => write!(f, "COUNTRY_NOT_ENABLED"),
             ValidationExceptionReason::DestinationCountryBlocked => write!(f, "DESTINATION_COUNTRY_BLOCKED"),
             ValidationExceptionReason::FieldValidationFailed => write!(f, "FIELD_VALIDATION_FAILED"),
             ValidationExceptionReason::InternationalSendingNotSupported => write!(f, "INTERNATIONAL_SENDING_NOT_SUPPORTED"),

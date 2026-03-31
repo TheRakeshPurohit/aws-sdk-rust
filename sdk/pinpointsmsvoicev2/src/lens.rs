@@ -39,6 +39,26 @@ pub(crate) fn reflens_describe_keywords_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_notify_configurations_output_output_next_token(
+    input: &crate::operation::describe_notify_configurations::DescribeNotifyConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_notify_templates_output_output_next_token(
+    input: &crate::operation::describe_notify_templates::DescribeNotifyTemplatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_opt_out_lists_output_output_next_token(
     input: &crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -81,6 +101,26 @@ pub(crate) fn reflens_describe_pools_output_output_next_token(
 
 pub(crate) fn reflens_describe_protect_configurations_output_output_next_token(
     input: &crate::operation::describe_protect_configurations::DescribeProtectConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_rcs_agent_country_launch_status_output_output_next_token(
+    input: &crate::operation::describe_rcs_agent_country_launch_status::DescribeRcsAgentCountryLaunchStatusOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_rcs_agents_output_output_next_token(
+    input: &crate::operation::describe_rcs_agents::DescribeRcsAgentsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -189,6 +229,16 @@ pub(crate) fn reflens_describe_verified_destination_numbers_output_output_next_t
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_notify_countries_output_output_next_token(
+    input: &crate::operation::list_notify_countries::ListNotifyCountriesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_pool_origination_identities_output_output_next_token(
     input: &crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -247,6 +297,20 @@ pub(crate) fn lens_describe_keywords_output_output_keywords(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_describe_notify_configurations_output_output_notify_configurations(
+    input: crate::operation::describe_notify_configurations::DescribeNotifyConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NotifyConfigurationInformation>> {
+    let input = input.notify_configurations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_notify_templates_output_output_notify_templates(
+    input: crate::operation::describe_notify_templates::DescribeNotifyTemplatesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NotifyTemplateInformation>> {
+    let input = input.notify_templates?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_opt_out_lists_output_output_opt_out_lists(
     input: crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::OptOutListInformation>> {
@@ -279,6 +343,20 @@ pub(crate) fn lens_describe_protect_configurations_output_output_protect_configu
     input: crate::operation::describe_protect_configurations::DescribeProtectConfigurationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProtectConfigurationInformation>> {
     let input = input.protect_configurations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_rcs_agent_country_launch_status_output_output_country_launch_status(
+    input: crate::operation::describe_rcs_agent_country_launch_status::DescribeRcsAgentCountryLaunchStatusOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CountryLaunchStatusInformation>> {
+    let input = input.country_launch_status?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_rcs_agents_output_output_rcs_agents(
+    input: crate::operation::describe_rcs_agents::DescribeRcsAgentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RcsAgentInformation>> {
+    let input = input.rcs_agents?;
     ::std::option::Option::Some(input)
 }
 
@@ -349,6 +427,13 @@ pub(crate) fn lens_describe_verified_destination_numbers_output_output_verified_
     input: crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VerifiedDestinationNumberInformation>> {
     let input = input.verified_destination_numbers;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_notify_countries_output_output_notify_countries(
+    input: crate::operation::list_notify_countries::ListNotifyCountriesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NotifyCountryInformation>> {
+    let input = input.notify_countries?;
     ::std::option::Option::Some(input)
 }
 

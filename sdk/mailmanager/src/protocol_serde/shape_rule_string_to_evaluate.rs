@@ -16,6 +16,9 @@ pub fn ser_rule_string_to_evaluate(
             crate::protocol_serde::shape_analysis::ser_analysis(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::RuleStringToEvaluate::ClientCertificateAttribute(inner) => {
+            object_2.key("ClientCertificateAttribute").string(inner.as_str());
+        }
         crate::types::RuleStringToEvaluate::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "RuleStringToEvaluate",
@@ -76,6 +79,16 @@ where
                             crate::protocol_serde::shape_analysis::de_analysis(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Analysis' cannot be null")
                             })?,
+                        )),
+                        "ClientCertificateAttribute" => Some(crate::types::RuleStringToEvaluate::ClientCertificateAttribute(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| crate::types::RuleClientCertificateAttribute::from(u.as_ref())))
+                                .transpose()?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'ClientCertificateAttribute' cannot be null",
+                                    )
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

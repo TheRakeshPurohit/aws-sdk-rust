@@ -43,15 +43,11 @@ pub(crate) mod shape_deregister_service;
 
 pub(crate) mod shape_describe_private_connection;
 
-pub(crate) mod shape_describe_support_level;
-
 pub(crate) mod shape_disable_operator_app;
 
 pub(crate) mod shape_disassociate_service;
 
 pub(crate) mod shape_enable_operator_app;
-
-pub(crate) mod shape_end_chat_for_case;
 
 pub(crate) mod shape_get_account_usage;
 
@@ -66,8 +62,6 @@ pub(crate) mod shape_get_operator_app;
 pub(crate) mod shape_get_recommendation;
 
 pub(crate) mod shape_get_service;
-
-pub(crate) mod shape_initiate_chat_for_case;
 
 pub(crate) mod shape_list_agent_spaces;
 
@@ -145,11 +139,7 @@ pub(crate) mod shape_create_private_connection_input;
 
 pub(crate) mod shape_enable_operator_app_input;
 
-pub(crate) mod shape_end_chat_for_case_input;
-
 pub(crate) mod shape_identity_center_service_exception;
-
-pub(crate) mod shape_initiate_chat_for_case_input;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -215,8 +205,6 @@ pub(crate) mod shape_associations_list;
 
 pub(crate) mod shape_chat_execution_list;
 
-pub(crate) mod shape_chat_participant_connection;
-
 pub(crate) mod shape_execution_list;
 
 pub(crate) mod shape_generic_webhook;
@@ -256,8 +244,6 @@ pub(crate) mod shape_send_message_context;
 pub(crate) mod shape_service_configuration;
 
 pub(crate) mod shape_service_details;
-
-pub(crate) mod shape_support_level;
 
 pub(crate) mod shape_tags;
 
@@ -317,10 +303,6 @@ pub(crate) mod shape_mcp_server_grafana_configuration;
 
 pub(crate) mod shape_mcp_server_new_relic_configuration;
 
-pub(crate) mod shape_mcp_server_sigv4_service_details;
-
-pub(crate) mod shape_ms_teams_configuration;
-
 pub(crate) mod shape_new_relic_service_details;
 
 pub(crate) mod shape_o_auth_additional_step_details;
@@ -377,11 +359,7 @@ pub(crate) mod shape_dynatrace_service_authorization_config;
 
 pub(crate) mod shape_mcp_server_authorization_config;
 
-pub(crate) mod shape_mcp_server_sigv4_authorization_config;
-
 pub(crate) mod shape_message;
-
-pub(crate) mod shape_ms_teams_transmission_target;
 
 pub(crate) mod shape_new_relic_service_authorization_config;
 
@@ -396,8 +374,6 @@ pub(crate) mod shape_registered_github_service_details;
 pub(crate) mod shape_registered_grafana_server_details;
 
 pub(crate) mod shape_registered_mcp_server_details;
-
-pub(crate) mod shape_registered_mcp_server_sigv4_details;
 
 pub(crate) mod shape_registered_new_relic_details;
 
@@ -430,8 +406,6 @@ pub(crate) mod shape_mcp_server_o_auth3_lo_config;
 pub(crate) mod shape_mcp_server_o_auth_client_credentials_config;
 
 pub(crate) mod shape_mcp_tools_list;
-
-pub(crate) mod shape_ms_teams_channel;
 
 pub(crate) mod shape_new_relic_api_key_config;
 

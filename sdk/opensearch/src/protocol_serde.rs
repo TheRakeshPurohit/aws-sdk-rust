@@ -71,6 +71,8 @@ pub(crate) mod shape_delete_package;
 
 pub(crate) mod shape_delete_vpc_endpoint;
 
+pub(crate) mod shape_deregister_capability;
+
 pub(crate) mod shape_describe_domain;
 
 pub(crate) mod shape_describe_domain_auto_tunes;
@@ -108,6 +110,8 @@ pub(crate) mod shape_dissociate_package;
 pub(crate) mod shape_dissociate_packages;
 
 pub(crate) mod shape_get_application;
+
+pub(crate) mod shape_get_capability;
 
 pub(crate) mod shape_get_compatible_versions;
 
@@ -160,6 +164,8 @@ pub(crate) mod shape_list_vpc_endpoints_for_domain;
 pub(crate) mod shape_purchase_reserved_instance_offering;
 
 pub(crate) mod shape_put_default_application_setting;
+
+pub(crate) mod shape_register_capability;
 
 pub(crate) mod shape_reject_inbound_connection;
 
@@ -265,6 +271,8 @@ pub(crate) mod shape_purchase_reserved_instance_offering_input;
 
 pub(crate) mod shape_put_default_application_setting_input;
 
+pub(crate) mod shape_register_capability_input;
+
 pub(crate) mod shape_remove_tags_input;
 
 pub(crate) mod shape_resource_already_exists_exception;
@@ -272,6 +280,8 @@ pub(crate) mod shape_resource_already_exists_exception;
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_revoke_vpc_endpoint_access_input;
+
+pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_slot_not_available_exception;
 
@@ -326,6 +336,14 @@ pub(crate) mod shape_auto_tune_options;
 pub(crate) mod shape_auto_tune_options_input;
 
 pub(crate) mod shape_cancelled_change_property_list;
+
+pub(crate) mod shape_capability_base_request_config;
+
+pub(crate) mod shape_capability_base_response_config;
+
+pub(crate) mod shape_capability_extended_response_config;
+
+pub(crate) mod shape_capability_failures;
 
 pub(crate) mod shape_change_progress_details;
 
@@ -489,6 +507,8 @@ pub(crate) mod shape_advanced_security_options;
 
 pub(crate) mod shape_advanced_security_options_status;
 
+pub(crate) mod shape_ai_config;
+
 pub(crate) mod shape_aiml_options_output;
 
 pub(crate) mod shape_aiml_options_status;
@@ -506,6 +526,8 @@ pub(crate) mod shape_auto_tune_options_status;
 pub(crate) mod shape_aws_domain_information;
 
 pub(crate) mod shape_cancelled_change_property;
+
+pub(crate) mod shape_capability_failure;
 
 pub(crate) mod shape_change_progress_stage_list;
 

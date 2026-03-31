@@ -24,35 +24,38 @@ pub fn ser_create_environment_input_input(
     if let Some(var_6) = &input.environment_configuration_id {
         object.key("environmentConfigurationId").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.environment_profile_identifier {
-        object.key("environmentProfileIdentifier").string(var_7.as_str());
+    if let Some(var_7) = &input.environment_configuration_name {
+        object.key("environmentConfigurationName").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.glossary_terms {
-        let mut array_9 = object.key("glossaryTerms").start_array();
-        for item_10 in var_8 {
+    if let Some(var_8) = &input.environment_profile_identifier {
+        object.key("environmentProfileIdentifier").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.glossary_terms {
+        let mut array_10 = object.key("glossaryTerms").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().string(item_10.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.name {
-        object.key("name").string(var_11.as_str());
+    if let Some(var_12) = &input.name {
+        object.key("name").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.project_identifier {
-        object.key("projectIdentifier").string(var_12.as_str());
+    if let Some(var_13) = &input.project_identifier {
+        object.key("projectIdentifier").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.user_parameters {
-        let mut array_14 = object.key("userParameters").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.user_parameters {
+        let mut array_15 = object.key("userParameters").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_environment_parameter::ser_environment_parameter(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_environment_parameter::ser_environment_parameter(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
     Ok(())
 }

@@ -21,11 +21,23 @@ pub fn ser_ibm_db2_luw_data_provider_settings(
     if let Some(var_5) = &input.certificate_arn {
         object.key("CertificateArn").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.s3_path {
-        object.key("S3Path").string(var_6.as_str());
+    if let Some(var_6) = &input.encryption_algorithm {
+        object.key("EncryptionAlgorithm").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
     }
-    if let Some(var_7) = &input.s3_access_role_arn {
-        object.key("S3AccessRoleArn").string(var_7.as_str());
+    if let Some(var_7) = &input.security_mechanism {
+        object.key("SecurityMechanism").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+        );
+    }
+    if let Some(var_8) = &input.s3_path {
+        object.key("S3Path").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.s3_access_role_arn {
+        object.key("S3AccessRoleArn").string(var_9.as_str());
     }
     Ok(())
 }
@@ -78,6 +90,20 @@ where
                             builder = builder.set_certificate_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "EncryptionAlgorithm" => {
+                            builder = builder.set_encryption_algorithm(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "SecurityMechanism" => {
+                            builder = builder.set_security_mechanism(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

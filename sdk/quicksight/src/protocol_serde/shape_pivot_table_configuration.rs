@@ -39,17 +39,23 @@ pub fn ser_pivot_table_configuration(
         crate::protocol_serde::shape_pivot_table_paginated_report_options::ser_pivot_table_paginated_report_options(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.dashboard_customization_visual_options {
+    if let Some(var_13) = &input.tooltip {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("DashboardCustomizationVisualOptions").start_object();
-        crate::protocol_serde::shape_dashboard_customization_visual_options::ser_dashboard_customization_visual_options(&mut object_14, var_13)?;
+        let mut object_14 = object.key("Tooltip").start_object();
+        crate::protocol_serde::shape_tooltip_options::ser_tooltip_options(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.interactions {
+    if let Some(var_15) = &input.dashboard_customization_visual_options {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("Interactions").start_object();
-        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_16, var_15)?;
+        let mut object_16 = object.key("DashboardCustomizationVisualOptions").start_object();
+        crate::protocol_serde::shape_dashboard_customization_visual_options::ser_dashboard_customization_visual_options(&mut object_16, var_15)?;
         object_16.finish();
+    }
+    if let Some(var_17) = &input.interactions {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("Interactions").start_object();
+        crate::protocol_serde::shape_visual_interaction_options::ser_visual_interaction_options(&mut object_18, var_17)?;
+        object_18.finish();
     }
     Ok(())
 }
@@ -100,6 +106,9 @@ where
                                     tokens, _value,
                                 )?,
                             );
+                        }
+                        "Tooltip" => {
+                            builder = builder.set_tooltip(crate::protocol_serde::shape_tooltip_options::de_tooltip_options(tokens, _value)?);
                         }
                         "DashboardCustomizationVisualOptions" => {
                             builder = builder.set_dashboard_customization_visual_options(

@@ -13,6 +13,7 @@
 /// # let ingresspointtype = unimplemented!();
 /// match ingresspointtype {
 ///     IngressPointType::Auth => { /* ... */ },
+///     IngressPointType::Mtls => { /* ... */ },
 ///     IngressPointType::Open => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum IngressPointType {
     #[allow(missing_docs)] // documentation missing in model
     Auth,
     #[allow(missing_docs)] // documentation missing in model
+    Mtls,
+    #[allow(missing_docs)] // documentation missing in model
     Open,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for IngressPointType {
     fn from(s: &str) -> Self {
         match s {
             "AUTH" => IngressPointType::Auth,
+            "MTLS" => IngressPointType::Mtls,
             "OPEN" => IngressPointType::Open,
             other => IngressPointType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl IngressPointType {
     pub fn as_str(&self) -> &str {
         match self {
             IngressPointType::Auth => "AUTH",
+            IngressPointType::Mtls => "MTLS",
             IngressPointType::Open => "OPEN",
             IngressPointType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTH", "OPEN"]
+        &["AUTH", "MTLS", "OPEN"]
     }
 }
 impl ::std::convert::AsRef<str> for IngressPointType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for IngressPointType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IngressPointType::Auth => write!(f, "AUTH"),
+            IngressPointType::Mtls => write!(f, "MTLS"),
             IngressPointType::Open => write!(f, "OPEN"),
             IngressPointType::Unknown(value) => write!(f, "{value}"),
         }

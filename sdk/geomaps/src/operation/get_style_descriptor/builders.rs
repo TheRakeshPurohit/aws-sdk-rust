@@ -123,7 +123,7 @@ impl GetStyleDescriptorFluentBuilder {
     pub fn get_style(&self) -> &::std::option::Option<crate::types::MapStyle> {
         self.inner.get_style()
     }
-    /// <p>Sets color tone for map such as dark and light for specific map styles. It applies to only vector map styles such as Standard and Monochrome.</p>
+    /// <p>Sets the color tone for the map, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for ColorScheme are case sensitive.</p>
@@ -132,7 +132,7 @@ impl GetStyleDescriptorFluentBuilder {
         self.inner = self.inner.color_scheme(input);
         self
     }
-    /// <p>Sets color tone for map such as dark and light for specific map styles. It applies to only vector map styles such as Standard and Monochrome.</p>
+    /// <p>Sets the color tone for the map, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for ColorScheme are case sensitive.</p>
@@ -141,7 +141,7 @@ impl GetStyleDescriptorFluentBuilder {
         self.inner = self.inner.set_color_scheme(input);
         self
     }
-    /// <p>Sets color tone for map such as dark and light for specific map styles. It applies to only vector map styles such as Standard and Monochrome.</p>
+    /// <p>Sets the color tone for the map, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for ColorScheme are case sensitive.</p>
@@ -295,36 +295,36 @@ impl GetStyleDescriptorFluentBuilder {
         self.inner.get_terrain()
     }
     /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code>, <code>Monochrome</code>, and <code>Hybrid</code> map styles.</p>
+    /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn contour_density(mut self, input: crate::types::ContourDensity) -> Self {
         self.inner = self.inner.contour_density(input);
         self
     }
     /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code>, <code>Monochrome</code>, and <code>Hybrid</code> map styles.</p>
+    /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn set_contour_density(mut self, input: ::std::option::Option<crate::types::ContourDensity>) -> Self {
         self.inner = self.inner.set_contour_density(input);
         self
     }
     /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code>, <code>Monochrome</code>, and <code>Hybrid</code> map styles.</p>
+    /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn get_contour_density(&self) -> &::std::option::Option<crate::types::ContourDensity> {
         self.inner.get_contour_density()
     }
     /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn traffic(mut self, input: crate::types::Traffic) -> Self {
         self.inner = self.inner.traffic(input);
         self
     }
     /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn set_traffic(mut self, input: ::std::option::Option<crate::types::Traffic>) -> Self {
         self.inner = self.inner.set_traffic(input);
         self
     }
     /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn get_traffic(&self) -> &::std::option::Option<crate::types::Traffic> {
         self.inner.get_traffic()
     }
@@ -334,19 +334,19 @@ impl GetStyleDescriptorFluentBuilder {
     /// To override the contents of this collection use [`set_travel_modes`](Self::set_travel_modes).
     ///
     /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn travel_modes(mut self, input: crate::types::TravelMode) -> Self {
         self.inner = self.inner.travel_modes(input);
         self
     }
     /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn set_travel_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TravelMode>>) -> Self {
         self.inner = self.inner.set_travel_modes(input);
         self
     }
     /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
-    /// <p>This parameter is valid only for the <code>Standard</code> map style.</p>
+    /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn get_travel_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TravelMode>> {
         self.inner.get_travel_modes()
     }

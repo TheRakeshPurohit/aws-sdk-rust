@@ -15,6 +15,8 @@ pub struct UpdateIngressPointInput {
     pub traffic_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>If you choose an Authenticated ingress endpoint, you must configure either an SMTP password or a secret ARN.</p>
     pub ingress_point_configuration: ::std::option::Option<crate::types::IngressPointConfiguration>,
+    /// <p>The Transport Layer Security (TLS) policy for the ingress point. Valid values are REQUIRED, OPTIONAL. Only ingress endpoints using REQUIRED or OPTIONAL as TlsPolicy can be updated.</p>
+    pub tls_policy: ::std::option::Option<crate::types::TlsPolicy>,
 }
 impl UpdateIngressPointInput {
     /// <p>The identifier for the ingress endpoint you want to update.</p>
@@ -41,6 +43,10 @@ impl UpdateIngressPointInput {
     pub fn ingress_point_configuration(&self) -> ::std::option::Option<&crate::types::IngressPointConfiguration> {
         self.ingress_point_configuration.as_ref()
     }
+    /// <p>The Transport Layer Security (TLS) policy for the ingress point. Valid values are REQUIRED, OPTIONAL. Only ingress endpoints using REQUIRED or OPTIONAL as TlsPolicy can be updated.</p>
+    pub fn tls_policy(&self) -> ::std::option::Option<&crate::types::TlsPolicy> {
+        self.tls_policy.as_ref()
+    }
 }
 impl UpdateIngressPointInput {
     /// Creates a new builder-style object to manufacture [`UpdateIngressPointInput`](crate::operation::update_ingress_point::UpdateIngressPointInput).
@@ -59,6 +65,7 @@ pub struct UpdateIngressPointInputBuilder {
     pub(crate) rule_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) ingress_point_configuration: ::std::option::Option<crate::types::IngressPointConfiguration>,
+    pub(crate) tls_policy: ::std::option::Option<crate::types::TlsPolicy>,
 }
 impl UpdateIngressPointInputBuilder {
     /// <p>The identifier for the ingress endpoint you want to update.</p>
@@ -146,6 +153,20 @@ impl UpdateIngressPointInputBuilder {
     pub fn get_ingress_point_configuration(&self) -> &::std::option::Option<crate::types::IngressPointConfiguration> {
         &self.ingress_point_configuration
     }
+    /// <p>The Transport Layer Security (TLS) policy for the ingress point. Valid values are REQUIRED, OPTIONAL. Only ingress endpoints using REQUIRED or OPTIONAL as TlsPolicy can be updated.</p>
+    pub fn tls_policy(mut self, input: crate::types::TlsPolicy) -> Self {
+        self.tls_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Transport Layer Security (TLS) policy for the ingress point. Valid values are REQUIRED, OPTIONAL. Only ingress endpoints using REQUIRED or OPTIONAL as TlsPolicy can be updated.</p>
+    pub fn set_tls_policy(mut self, input: ::std::option::Option<crate::types::TlsPolicy>) -> Self {
+        self.tls_policy = input;
+        self
+    }
+    /// <p>The Transport Layer Security (TLS) policy for the ingress point. Valid values are REQUIRED, OPTIONAL. Only ingress endpoints using REQUIRED or OPTIONAL as TlsPolicy can be updated.</p>
+    pub fn get_tls_policy(&self) -> &::std::option::Option<crate::types::TlsPolicy> {
+        &self.tls_policy
+    }
     /// Consumes the builder and constructs a [`UpdateIngressPointInput`](crate::operation::update_ingress_point::UpdateIngressPointInput).
     pub fn build(
         self,
@@ -158,6 +179,7 @@ impl UpdateIngressPointInputBuilder {
             rule_set_id: self.rule_set_id,
             traffic_policy_id: self.traffic_policy_id,
             ingress_point_configuration: self.ingress_point_configuration,
+            tls_policy: self.tls_policy,
         })
     }
 }

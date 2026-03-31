@@ -102,6 +102,20 @@ impl CreateJobFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>The configuration for the asset, including tags to be applied to assets created by the job.</p>
+    pub fn asset_configuration(mut self, input: crate::types::AssetConfiguration) -> Self {
+        self.inner = self.inner.asset_configuration(input);
+        self
+    }
+    /// <p>The configuration for the asset, including tags to be applied to assets created by the job.</p>
+    pub fn set_asset_configuration(mut self, input: ::std::option::Option<crate::types::AssetConfiguration>) -> Self {
+        self.inner = self.inner.set_asset_configuration(input);
+        self
+    }
+    /// <p>The configuration for the asset, including tags to be applied to assets created by the job.</p>
+    pub fn get_asset_configuration(&self) -> &::std::option::Option<crate::types::AssetConfiguration> {
+        self.inner.get_asset_configuration()
+    }
     /// <p>The details for the CreateJob request.</p>
     pub fn details(mut self, input: crate::types::RequestDetails) -> Self {
         self.inner = self.inner.details(input);

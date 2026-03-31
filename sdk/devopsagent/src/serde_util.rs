@@ -170,18 +170,6 @@ pub(crate) fn describe_private_connection_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn describe_support_level_output_output_correct_errors(
-    mut builder: crate::operation::describe_support_level::builders::DescribeSupportLevelOutputBuilder,
-) -> crate::operation::describe_support_level::builders::DescribeSupportLevelOutputBuilder {
-    if builder.support_level.is_none() {
-        builder.support_level = {
-            let builder = crate::types::builders::SupportLevelBuilder::default();
-            crate::serde_util::support_level_correct_errors(builder).build().ok()
-        }
-    }
-    builder
-}
-
 pub(crate) fn identity_center_service_exception_correct_errors(
     mut builder: crate::types::error::builders::IdentityCenterServiceExceptionBuilder,
 ) -> crate::types::error::builders::IdentityCenterServiceExceptionBuilder {
@@ -196,15 +184,6 @@ pub(crate) fn enable_operator_app_output_output_correct_errors(
 ) -> crate::operation::enable_operator_app::builders::EnableOperatorAppOutputBuilder {
     if builder.agent_space_id.is_none() {
         builder.agent_space_id = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn end_chat_for_case_output_output_correct_errors(
-    mut builder: crate::operation::end_chat_for_case::builders::EndChatForCaseOutputBuilder,
-) -> crate::operation::end_chat_for_case::builders::EndChatForCaseOutputBuilder {
-    if builder.is_disconnected.is_none() {
-        builder.is_disconnected = Some(Default::default())
     }
     builder
 }
@@ -276,18 +255,6 @@ pub(crate) fn get_service_output_output_correct_errors(
         builder.service = {
             let builder = crate::types::builders::RegisteredServiceBuilder::default();
             crate::serde_util::registered_service_correct_errors(builder).build().ok()
-        }
-    }
-    builder
-}
-
-pub(crate) fn initiate_chat_for_case_output_output_correct_errors(
-    mut builder: crate::operation::initiate_chat_for_case::builders::InitiateChatForCaseOutputBuilder,
-) -> crate::operation::initiate_chat_for_case::builders::InitiateChatForCaseOutputBuilder {
-    if builder.chat_participant_connection.is_none() {
-        builder.chat_participant_connection = {
-            let builder = crate::types::builders::ChatParticipantConnectionBuilder::default();
-            crate::serde_util::chat_participant_connection_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -578,16 +545,6 @@ pub(crate) fn task_correct_errors(mut builder: crate::types::builders::TaskBuild
     builder
 }
 
-pub(crate) fn support_level_correct_errors(mut builder: crate::types::builders::SupportLevelBuilder) -> crate::types::builders::SupportLevelBuilder {
-    if builder.code.is_none() {
-        builder.code = Some(Default::default())
-    }
-    if builder.name.is_none() {
-        builder.name = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn recommendation_correct_errors(
     mut builder: crate::types::builders::RecommendationBuilder,
 ) -> crate::types::builders::RecommendationBuilder {
@@ -635,21 +592,6 @@ pub(crate) fn registered_service_correct_errors(
     }
     if builder.service_type.is_none() {
         builder.service_type = "no value was set".parse::<crate::types::Service>().ok()
-    }
-    builder
-}
-
-pub(crate) fn chat_participant_connection_correct_errors(
-    mut builder: crate::types::builders::ChatParticipantConnectionBuilder,
-) -> crate::types::builders::ChatParticipantConnectionBuilder {
-    if builder.initial_contact_id.is_none() {
-        builder.initial_contact_id = Some(Default::default())
-    }
-    if builder.participant_id.is_none() {
-        builder.participant_id = Some(Default::default())
-    }
-    if builder.participant_token.is_none() {
-        builder.participant_token = Some(Default::default())
     }
     builder
 }
@@ -1005,24 +947,6 @@ pub(crate) fn mcp_server_new_relic_configuration_correct_errors(
     builder
 }
 
-pub(crate) fn ms_teams_configuration_correct_errors(
-    mut builder: crate::types::builders::MsTeamsConfigurationBuilder,
-) -> crate::types::builders::MsTeamsConfigurationBuilder {
-    if builder.team_id.is_none() {
-        builder.team_id = Some(Default::default())
-    }
-    if builder.team_name.is_none() {
-        builder.team_name = Some(Default::default())
-    }
-    if builder.transmission_target.is_none() {
-        builder.transmission_target = {
-            let builder = crate::types::builders::MsTeamsTransmissionTargetBuilder::default();
-            Some(builder.build())
-        }
-    }
-    builder
-}
-
 pub(crate) fn pager_duty_configuration_correct_errors(
     mut builder: crate::types::builders::PagerDutyConfigurationBuilder,
 ) -> crate::types::builders::PagerDutyConfigurationBuilder {
@@ -1113,27 +1037,6 @@ pub(crate) fn registered_mcp_server_details_correct_errors(
     builder
 }
 
-pub(crate) fn registered_mcp_server_sigv4_details_correct_errors(
-    mut builder: crate::types::builders::RegisteredMcpServerSigV4DetailsBuilder,
-) -> crate::types::builders::RegisteredMcpServerSigV4DetailsBuilder {
-    if builder.name.is_none() {
-        builder.name = Some(Default::default())
-    }
-    if builder.endpoint.is_none() {
-        builder.endpoint = Some(Default::default())
-    }
-    if builder.region.is_none() {
-        builder.region = Some(Default::default())
-    }
-    if builder.service.is_none() {
-        builder.service = Some(Default::default())
-    }
-    if builder.role_arn.is_none() {
-        builder.role_arn = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn registered_new_relic_details_correct_errors(
     mut builder: crate::types::builders::RegisteredNewRelicDetailsBuilder,
 ) -> crate::types::builders::RegisteredNewRelicDetailsBuilder {
@@ -1220,18 +1123,6 @@ pub(crate) fn slack_transmission_target_correct_errors(
             let builder = crate::types::builders::SlackChannelBuilder::default();
             crate::serde_util::slack_channel_correct_errors(builder).build().ok()
         }
-    }
-    builder
-}
-
-pub(crate) fn ms_teams_channel_correct_errors(
-    mut builder: crate::types::builders::MsTeamsChannelBuilder,
-) -> crate::types::builders::MsTeamsChannelBuilder {
-    if builder.channel_name.is_none() {
-        builder.channel_name = Some(Default::default())
-    }
-    if builder.channel_id.is_none() {
-        builder.channel_id = Some(Default::default())
     }
     builder
 }

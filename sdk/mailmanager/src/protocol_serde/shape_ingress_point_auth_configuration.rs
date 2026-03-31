@@ -29,6 +29,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "TlsAuthConfiguration" => {
+                            builder = builder.set_tls_auth_configuration(
+                                crate::protocol_serde::shape_tls_auth_configuration::de_tls_auth_configuration(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

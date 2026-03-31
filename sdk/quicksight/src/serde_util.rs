@@ -8,6 +8,18 @@ pub(crate) fn internal_server_exception_correct_errors(
     builder
 }
 
+pub(crate) fn describe_automation_job_output_output_correct_errors(
+    mut builder: crate::operation::describe_automation_job::builders::DescribeAutomationJobOutputBuilder,
+) -> crate::operation::describe_automation_job::builders::DescribeAutomationJobOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.job_status.is_none() {
+        builder.job_status = "no value was set".parse::<crate::types::AutomationJobStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn generate_embed_url_for_anonymous_user_output_output_correct_errors(
     mut builder: crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserOutputBuilder,
 ) -> crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserOutputBuilder {
@@ -115,6 +127,18 @@ pub(crate) fn search_flows_output_output_correct_errors(
 ) -> crate::operation::search_flows::builders::SearchFlowsOutputBuilder {
     if builder.flow_summary_list.is_none() {
         builder.flow_summary_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_automation_job_output_output_correct_errors(
+    mut builder: crate::operation::start_automation_job::builders::StartAutomationJobOutputBuilder,
+) -> crate::operation::start_automation_job::builders::StartAutomationJobOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
     }
     builder
 }
@@ -1284,6 +1308,15 @@ pub(crate) fn teradata_parameters_correct_errors(
     }
     if builder.database.is_none() {
         builder.database = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn tooltip_sheet_definition_correct_errors(
+    mut builder: crate::types::builders::TooltipSheetDefinitionBuilder,
+) -> crate::types::builders::TooltipSheetDefinitionBuilder {
+    if builder.sheet_id.is_none() {
+        builder.sheet_id = Some(Default::default())
     }
     builder
 }
@@ -3894,6 +3927,21 @@ pub(crate) fn section_layout_configuration_correct_errors(
             crate::serde_util::free_form_section_layout_configuration_correct_errors(builder)
                 .build()
                 .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn sparklines_options_correct_errors(
+    mut builder: crate::types::builders::SparklinesOptionsBuilder,
+) -> crate::types::builders::SparklinesOptionsBuilder {
+    if builder.field_id.is_none() {
+        builder.field_id = Some(Default::default())
+    }
+    if builder.x_axis_field.is_none() {
+        builder.x_axis_field = {
+            let builder = crate::types::builders::DimensionFieldBuilder::default();
+            Some(builder.build())
         }
     }
     builder

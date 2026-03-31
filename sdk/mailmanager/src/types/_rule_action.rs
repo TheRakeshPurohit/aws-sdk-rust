@@ -8,12 +8,16 @@ pub enum RuleAction {
     AddHeader(crate::types::AddHeaderAction),
     /// <p>This action archives the email. This can be used to deliver an email to an archive.</p>
     Archive(crate::types::ArchiveAction),
+    /// <p>This action sends a bounce response for the email.</p>
+    Bounce(crate::types::BounceAction),
     /// <p>This action delivers an email to a WorkMail mailbox.</p>
     DeliverToMailbox(crate::types::DeliverToMailboxAction),
     /// <p>This action delivers an email to an Amazon Q Business application for ingestion into its knowledge base.</p>
     DeliverToQBusiness(crate::types::DeliverToQBusinessAction),
     /// <p>This action terminates the evaluation of rules in the rule set.</p>
     Drop(crate::types::DropAction),
+    /// <p>This action invokes an Amazon Web Services Lambda function to process the email.</p>
+    InvokeLambda(crate::types::InvokeLambdaAction),
     /// <p>This action publishes the email content to an Amazon SNS topic.</p>
     PublishToSns(crate::types::SnsAction),
     /// <p>This action relays the email to another SMTP server.</p>
@@ -61,6 +65,19 @@ impl RuleAction {
     pub fn is_archive(&self) -> bool {
         self.as_archive().is_ok()
     }
+    /// Tries to convert the enum instance into [`Bounce`](crate::types::RuleAction::Bounce), extracting the inner [`BounceAction`](crate::types::BounceAction).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_bounce(&self) -> ::std::result::Result<&crate::types::BounceAction, &Self> {
+        if let RuleAction::Bounce(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Bounce`](crate::types::RuleAction::Bounce).
+    pub fn is_bounce(&self) -> bool {
+        self.as_bounce().is_ok()
+    }
     /// Tries to convert the enum instance into [`DeliverToMailbox`](crate::types::RuleAction::DeliverToMailbox), extracting the inner [`DeliverToMailboxAction`](crate::types::DeliverToMailboxAction).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_deliver_to_mailbox(&self) -> ::std::result::Result<&crate::types::DeliverToMailboxAction, &Self> {
@@ -99,6 +116,19 @@ impl RuleAction {
     /// Returns true if this is a [`Drop`](crate::types::RuleAction::Drop).
     pub fn is_drop(&self) -> bool {
         self.as_drop().is_ok()
+    }
+    /// Tries to convert the enum instance into [`InvokeLambda`](crate::types::RuleAction::InvokeLambda), extracting the inner [`InvokeLambdaAction`](crate::types::InvokeLambdaAction).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_invoke_lambda(&self) -> ::std::result::Result<&crate::types::InvokeLambdaAction, &Self> {
+        if let RuleAction::InvokeLambda(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`InvokeLambda`](crate::types::RuleAction::InvokeLambda).
+    pub fn is_invoke_lambda(&self) -> bool {
+        self.as_invoke_lambda().is_ok()
     }
     /// Tries to convert the enum instance into [`PublishToSns`](crate::types::RuleAction::PublishToSns), extracting the inner [`SnsAction`](crate::types::SnsAction).
     /// Returns `Err(&Self)` if it can't be converted.

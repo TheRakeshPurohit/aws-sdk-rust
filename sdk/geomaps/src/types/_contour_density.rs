@@ -12,6 +12,8 @@
 /// ```text
 /// # let contourdensity = unimplemented!();
 /// match contourdensity {
+///     ContourDensity::High => { /* ... */ },
+///     ContourDensity::Low => { /* ... */ },
 ///     ContourDensity::Medium => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +44,10 @@
 )]
 pub enum ContourDensity {
     #[allow(missing_docs)] // documentation missing in model
+    High,
+    #[allow(missing_docs)] // documentation missing in model
+    Low,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +56,8 @@ pub enum ContourDensity {
 impl ::std::convert::From<&str> for ContourDensity {
     fn from(s: &str) -> Self {
         match s {
+            "High" => ContourDensity::High,
+            "Low" => ContourDensity::Low,
             "Medium" => ContourDensity::Medium,
             other => ContourDensity::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +74,15 @@ impl ContourDensity {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ContourDensity::High => "High",
+            ContourDensity::Low => "Low",
             ContourDensity::Medium => "Medium",
             ContourDensity::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Medium"]
+        &["High", "Low", "Medium"]
     }
 }
 impl ::std::convert::AsRef<str> for ContourDensity {
@@ -95,6 +105,8 @@ impl ContourDensity {
 impl ::std::fmt::Display for ContourDensity {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ContourDensity::High => write!(f, "High"),
+            ContourDensity::Low => write!(f, "Low"),
             ContourDensity::Medium => write!(f, "Medium"),
             ContourDensity::Unknown(value) => write!(f, "{value}"),
         }

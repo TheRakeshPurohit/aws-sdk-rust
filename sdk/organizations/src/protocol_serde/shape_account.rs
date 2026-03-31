@@ -57,6 +57,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Paths" => {
+                            builder = builder.set_paths(crate::protocol_serde::shape_paths::de_paths(tokens, _value)?);
+                        }
                         "JoinedMethod" => {
                             builder = builder.set_joined_method(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -29,6 +29,42 @@ pub(crate) fn carrier_lookup_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_notify_configuration_output_output_correct_errors(
+    mut builder: crate::operation::create_notify_configuration::builders::CreateNotifyConfigurationOutputBuilder,
+) -> crate::operation::create_notify_configuration::builders::CreateNotifyConfigurationOutputBuilder {
+    if builder.notify_configuration_arn.is_none() {
+        builder.notify_configuration_arn = Some(Default::default())
+    }
+    if builder.notify_configuration_id.is_none() {
+        builder.notify_configuration_id = Some(Default::default())
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.use_case.is_none() {
+        builder.use_case = "no value was set".parse::<crate::types::NotifyConfigurationUseCase>().ok()
+    }
+    if builder.enabled_channels.is_none() {
+        builder.enabled_channels = Some(Default::default())
+    }
+    if builder.tier.is_none() {
+        builder.tier = "no value was set".parse::<crate::types::NotifyConfigurationTier>().ok()
+    }
+    if builder.tier_upgrade_status.is_none() {
+        builder.tier_upgrade_status = "no value was set".parse::<crate::types::TierUpgradeStatus>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotifyConfigurationStatus>().ok()
+    }
+    if builder.deletion_protection_enabled.is_none() {
+        builder.deletion_protection_enabled = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn create_protect_configuration_output_output_correct_errors(
     mut builder: crate::operation::create_protect_configuration::builders::CreateProtectConfigurationOutputBuilder,
 ) -> crate::operation::create_protect_configuration::builders::CreateProtectConfigurationOutputBuilder {
@@ -46,6 +82,33 @@ pub(crate) fn create_protect_configuration_output_output_correct_errors(
     }
     if builder.deletion_protection_enabled.is_none() {
         builder.deletion_protection_enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_rcs_agent_output_output_correct_errors(
+    mut builder: crate::operation::create_rcs_agent::builders::CreateRcsAgentOutputBuilder,
+) -> crate::operation::create_rcs_agent::builders::CreateRcsAgentOutputBuilder {
+    if builder.rcs_agent_arn.is_none() {
+        builder.rcs_agent_arn = Some(Default::default())
+    }
+    if builder.rcs_agent_id.is_none() {
+        builder.rcs_agent_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RcsAgentStatus>().ok()
+    }
+    if builder.deletion_protection_enabled.is_none() {
+        builder.deletion_protection_enabled = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.self_managed_opt_outs_enabled.is_none() {
+        builder.self_managed_opt_outs_enabled = Some(Default::default())
+    }
+    if builder.two_way_enabled.is_none() {
+        builder.two_way_enabled = Some(Default::default())
     }
     builder
 }
@@ -175,6 +238,42 @@ pub(crate) fn delete_account_default_protect_configuration_output_output_correct
     builder
 }
 
+pub(crate) fn delete_notify_configuration_output_output_correct_errors(
+    mut builder: crate::operation::delete_notify_configuration::builders::DeleteNotifyConfigurationOutputBuilder,
+) -> crate::operation::delete_notify_configuration::builders::DeleteNotifyConfigurationOutputBuilder {
+    if builder.notify_configuration_arn.is_none() {
+        builder.notify_configuration_arn = Some(Default::default())
+    }
+    if builder.notify_configuration_id.is_none() {
+        builder.notify_configuration_id = Some(Default::default())
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.use_case.is_none() {
+        builder.use_case = "no value was set".parse::<crate::types::NotifyConfigurationUseCase>().ok()
+    }
+    if builder.enabled_channels.is_none() {
+        builder.enabled_channels = Some(Default::default())
+    }
+    if builder.tier.is_none() {
+        builder.tier = "no value was set".parse::<crate::types::NotifyConfigurationTier>().ok()
+    }
+    if builder.tier_upgrade_status.is_none() {
+        builder.tier_upgrade_status = "no value was set".parse::<crate::types::TierUpgradeStatus>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotifyConfigurationStatus>().ok()
+    }
+    if builder.deletion_protection_enabled.is_none() {
+        builder.deletion_protection_enabled = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn delete_protect_configuration_output_output_correct_errors(
     mut builder: crate::operation::delete_protect_configuration::builders::DeleteProtectConfigurationOutputBuilder,
 ) -> crate::operation::delete_protect_configuration::builders::DeleteProtectConfigurationOutputBuilder {
@@ -213,6 +312,33 @@ pub(crate) fn delete_protect_configuration_rule_set_number_override_output_outpu
     }
     if builder.action.is_none() {
         builder.action = "no value was set".parse::<crate::types::ProtectConfigurationRuleOverrideAction>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delete_rcs_agent_output_output_correct_errors(
+    mut builder: crate::operation::delete_rcs_agent::builders::DeleteRcsAgentOutputBuilder,
+) -> crate::operation::delete_rcs_agent::builders::DeleteRcsAgentOutputBuilder {
+    if builder.rcs_agent_arn.is_none() {
+        builder.rcs_agent_arn = Some(Default::default())
+    }
+    if builder.rcs_agent_id.is_none() {
+        builder.rcs_agent_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RcsAgentStatus>().ok()
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.deletion_protection_enabled.is_none() {
+        builder.deletion_protection_enabled = Some(Default::default())
+    }
+    if builder.self_managed_opt_outs_enabled.is_none() {
+        builder.self_managed_opt_outs_enabled = Some(Default::default())
+    }
+    if builder.two_way_enabled.is_none() {
+        builder.two_way_enabled = Some(Default::default())
     }
     builder
 }
@@ -291,6 +417,18 @@ pub(crate) fn delete_verified_destination_number_output_output_correct_errors(
     }
     if builder.created_timestamp.is_none() {
         builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn describe_rcs_agent_country_launch_status_output_output_correct_errors(
+    mut builder: crate::operation::describe_rcs_agent_country_launch_status::builders::DescribeRcsAgentCountryLaunchStatusOutputBuilder,
+) -> crate::operation::describe_rcs_agent_country_launch_status::builders::DescribeRcsAgentCountryLaunchStatusOutputBuilder {
+    if builder.rcs_agent_id.is_none() {
+        builder.rcs_agent_id = Some(Default::default())
+    }
+    if builder.rcs_agent_arn.is_none() {
+        builder.rcs_agent_arn = Some(Default::default())
     }
     builder
 }
@@ -632,6 +770,42 @@ pub(crate) fn submit_registration_version_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_notify_configuration_output_output_correct_errors(
+    mut builder: crate::operation::update_notify_configuration::builders::UpdateNotifyConfigurationOutputBuilder,
+) -> crate::operation::update_notify_configuration::builders::UpdateNotifyConfigurationOutputBuilder {
+    if builder.notify_configuration_arn.is_none() {
+        builder.notify_configuration_arn = Some(Default::default())
+    }
+    if builder.notify_configuration_id.is_none() {
+        builder.notify_configuration_id = Some(Default::default())
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.use_case.is_none() {
+        builder.use_case = "no value was set".parse::<crate::types::NotifyConfigurationUseCase>().ok()
+    }
+    if builder.enabled_channels.is_none() {
+        builder.enabled_channels = Some(Default::default())
+    }
+    if builder.tier.is_none() {
+        builder.tier = "no value was set".parse::<crate::types::NotifyConfigurationTier>().ok()
+    }
+    if builder.tier_upgrade_status.is_none() {
+        builder.tier_upgrade_status = "no value was set".parse::<crate::types::TierUpgradeStatus>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotifyConfigurationStatus>().ok()
+    }
+    if builder.deletion_protection_enabled.is_none() {
+        builder.deletion_protection_enabled = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn update_protect_configuration_output_output_correct_errors(
     mut builder: crate::operation::update_protect_configuration::builders::UpdateProtectConfigurationOutputBuilder,
 ) -> crate::operation::update_protect_configuration::builders::UpdateProtectConfigurationOutputBuilder {
@@ -667,6 +841,33 @@ pub(crate) fn update_protect_configuration_country_rule_set_output_output_correc
     }
     if builder.country_rule_set.is_none() {
         builder.country_rule_set = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_rcs_agent_output_output_correct_errors(
+    mut builder: crate::operation::update_rcs_agent::builders::UpdateRcsAgentOutputBuilder,
+) -> crate::operation::update_rcs_agent::builders::UpdateRcsAgentOutputBuilder {
+    if builder.rcs_agent_arn.is_none() {
+        builder.rcs_agent_arn = Some(Default::default())
+    }
+    if builder.rcs_agent_id.is_none() {
+        builder.rcs_agent_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RcsAgentStatus>().ok()
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.deletion_protection_enabled.is_none() {
+        builder.deletion_protection_enabled = Some(Default::default())
+    }
+    if builder.self_managed_opt_outs_enabled.is_none() {
+        builder.self_managed_opt_outs_enabled = Some(Default::default())
+    }
+    if builder.two_way_enabled.is_none() {
+        builder.two_way_enabled = Some(Default::default())
     }
     builder
 }
@@ -798,6 +999,24 @@ pub(crate) fn configuration_set_information_correct_errors(
     builder
 }
 
+pub(crate) fn country_launch_status_information_correct_errors(
+    mut builder: crate::types::builders::CountryLaunchStatusInformationBuilder,
+) -> crate::types::builders::CountryLaunchStatusInformationBuilder {
+    if builder.iso_country_code.is_none() {
+        builder.iso_country_code = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CountryLaunchStatus>().ok()
+    }
+    if builder.registration_id.is_none() {
+        builder.registration_id = Some(Default::default())
+    }
+    if builder.carrier_status.is_none() {
+        builder.carrier_status = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn keyword_information_correct_errors(
     mut builder: crate::types::builders::KeywordInformationBuilder,
 ) -> crate::types::builders::KeywordInformationBuilder {
@@ -821,6 +1040,87 @@ pub(crate) fn kinesis_firehose_destination_correct_errors(
     }
     if builder.delivery_stream_arn.is_none() {
         builder.delivery_stream_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn notify_configuration_information_correct_errors(
+    mut builder: crate::types::builders::NotifyConfigurationInformationBuilder,
+) -> crate::types::builders::NotifyConfigurationInformationBuilder {
+    if builder.notify_configuration_arn.is_none() {
+        builder.notify_configuration_arn = Some(Default::default())
+    }
+    if builder.notify_configuration_id.is_none() {
+        builder.notify_configuration_id = Some(Default::default())
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.use_case.is_none() {
+        builder.use_case = "no value was set".parse::<crate::types::NotifyConfigurationUseCase>().ok()
+    }
+    if builder.enabled_channels.is_none() {
+        builder.enabled_channels = Some(Default::default())
+    }
+    if builder.tier.is_none() {
+        builder.tier = "no value was set".parse::<crate::types::NotifyConfigurationTier>().ok()
+    }
+    if builder.tier_upgrade_status.is_none() {
+        builder.tier_upgrade_status = "no value was set".parse::<crate::types::TierUpgradeStatus>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NotifyConfigurationStatus>().ok()
+    }
+    if builder.deletion_protection_enabled.is_none() {
+        builder.deletion_protection_enabled = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn notify_country_information_correct_errors(
+    mut builder: crate::types::builders::NotifyCountryInformationBuilder,
+) -> crate::types::builders::NotifyCountryInformationBuilder {
+    if builder.iso_country_code.is_none() {
+        builder.iso_country_code = Some(Default::default())
+    }
+    if builder.country_name.is_none() {
+        builder.country_name = Some(Default::default())
+    }
+    if builder.supported_channels.is_none() {
+        builder.supported_channels = Some(Default::default())
+    }
+    if builder.supported_use_cases.is_none() {
+        builder.supported_use_cases = Some(Default::default())
+    }
+    if builder.supported_tiers.is_none() {
+        builder.supported_tiers = Some(Default::default())
+    }
+    if builder.customer_owned_identity_required.is_none() {
+        builder.customer_owned_identity_required = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn notify_template_information_correct_errors(
+    mut builder: crate::types::builders::NotifyTemplateInformationBuilder,
+) -> crate::types::builders::NotifyTemplateInformationBuilder {
+    if builder.template_id.is_none() {
+        builder.template_id = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.template_type.is_none() {
+        builder.template_type = "no value was set".parse::<crate::types::NotifyTemplateType>().ok()
+    }
+    if builder.channels.is_none() {
+        builder.channels = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -995,6 +1295,33 @@ pub(crate) fn protect_configuration_rule_set_number_override_correct_errors(
     }
     if builder.action.is_none() {
         builder.action = "no value was set".parse::<crate::types::ProtectConfigurationRuleOverrideAction>().ok()
+    }
+    builder
+}
+
+pub(crate) fn rcs_agent_information_correct_errors(
+    mut builder: crate::types::builders::RcsAgentInformationBuilder,
+) -> crate::types::builders::RcsAgentInformationBuilder {
+    if builder.rcs_agent_arn.is_none() {
+        builder.rcs_agent_arn = Some(Default::default())
+    }
+    if builder.rcs_agent_id.is_none() {
+        builder.rcs_agent_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RcsAgentStatus>().ok()
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.deletion_protection_enabled.is_none() {
+        builder.deletion_protection_enabled = Some(Default::default())
+    }
+    if builder.self_managed_opt_outs_enabled.is_none() {
+        builder.self_managed_opt_outs_enabled = Some(Default::default())
+    }
+    if builder.two_way_enabled.is_none() {
+        builder.two_way_enabled = Some(Default::default())
     }
     builder
 }
@@ -1282,6 +1609,18 @@ pub(crate) fn select_validation_correct_errors(
     builder
 }
 
+pub(crate) fn testing_agent_information_correct_errors(
+    mut builder: crate::types::builders::TestingAgentInformationBuilder,
+) -> crate::types::builders::TestingAgentInformationBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TestingAgentStatus>().ok()
+    }
+    if builder.registration_id.is_none() {
+        builder.registration_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn text_validation_correct_errors(
     mut builder: crate::types::builders::TextValidationBuilder,
 ) -> crate::types::builders::TextValidationBuilder {
@@ -1293,6 +1632,18 @@ pub(crate) fn text_validation_correct_errors(
     }
     if builder.pattern.is_none() {
         builder.pattern = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn carrier_status_information_correct_errors(
+    mut builder: crate::types::builders::CarrierStatusInformationBuilder,
+) -> crate::types::builders::CarrierStatusInformationBuilder {
+    if builder.carrier_name.is_none() {
+        builder.carrier_name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CarrierStatus>().ok()
     }
     builder
 }
@@ -1320,6 +1671,18 @@ pub(crate) fn supported_association_correct_errors(
     }
     if builder.disassociation_behavior.is_none() {
         builder.disassociation_behavior = "no value was set".parse::<crate::types::RegistrationDisassociationBehavior>().ok()
+    }
+    builder
+}
+
+pub(crate) fn template_variable_metadata_correct_errors(
+    mut builder: crate::types::builders::TemplateVariableMetadataBuilder,
+) -> crate::types::builders::TemplateVariableMetadataBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::TemplateVariableType>().ok()
+    }
+    if builder.required.is_none() {
+        builder.required = Some(Default::default())
     }
     builder
 }

@@ -5,6 +5,8 @@ pub use crate::types::_action::ActionBuilder;
 
 pub use crate::types::_event::EventBuilder;
 
+pub use crate::types::_asset_configuration::AssetConfigurationBuilder;
+
 pub use crate::types::_request_details::RequestDetailsBuilder;
 
 pub use crate::types::_response_details::ResponseDetailsBuilder;
@@ -90,6 +92,8 @@ pub use crate::types::_schema_change_request_details::SchemaChangeRequestDetails
 pub use crate::types::_export_server_side_encryption::ExportServerSideEncryptionBuilder;
 
 pub use crate::types::_auto_export_revision_destination_entry::AutoExportRevisionDestinationEntryBuilder;
+
+pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_s3_data_access_asset_source_entry::S3DataAccessAssetSourceEntryBuilder;
 

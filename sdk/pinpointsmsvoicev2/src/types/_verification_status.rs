@@ -13,6 +13,7 @@
 /// # let verificationstatus = unimplemented!();
 /// match verificationstatus {
 ///     VerificationStatus::Pending => { /* ... */ },
+///     VerificationStatus::Unsupported => { /* ... */ },
 ///     VerificationStatus::Verified => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum VerificationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
+    Unsupported,
+    #[allow(missing_docs)] // documentation missing in model
     Verified,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for VerificationStatus {
     fn from(s: &str) -> Self {
         match s {
             "PENDING" => VerificationStatus::Pending,
+            "UNSUPPORTED" => VerificationStatus::Unsupported,
             "VERIFIED" => VerificationStatus::Verified,
             other => VerificationStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl VerificationStatus {
     pub fn as_str(&self) -> &str {
         match self {
             VerificationStatus::Pending => "PENDING",
+            VerificationStatus::Unsupported => "UNSUPPORTED",
             VerificationStatus::Verified => "VERIFIED",
             VerificationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PENDING", "VERIFIED"]
+        &["PENDING", "UNSUPPORTED", "VERIFIED"]
     }
 }
 impl ::std::convert::AsRef<str> for VerificationStatus {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for VerificationStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VerificationStatus::Pending => write!(f, "PENDING"),
+            VerificationStatus::Unsupported => write!(f, "UNSUPPORTED"),
             VerificationStatus::Verified => write!(f, "VERIFIED"),
             VerificationStatus::Unknown(value) => write!(f, "{value}"),
         }

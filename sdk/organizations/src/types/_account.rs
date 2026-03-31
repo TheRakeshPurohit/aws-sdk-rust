@@ -23,6 +23,8 @@ pub struct Account {
     /// <p>Each state represents a specific phase in the account lifecycle. Use this information to manage account access, automate workflows, or trigger actions based on account state changes.</p>
     /// <p>For more information about account states and their implications, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_account_state.html">Monitor the state of your Amazon Web Services accounts </a> in the <i>Organizations User Guide</i>.</p>
     pub state: ::std::option::Option<crate::types::AccountState>,
+    /// <p>The paths in the organization where the account exists.</p>
+    pub paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The method by which the account joined the organization.</p>
     pub joined_method: ::std::option::Option<crate::types::AccountJoinedMethod>,
     /// <p>The date the account became a part of the organization.</p>
@@ -60,6 +62,12 @@ impl Account {
     pub fn state(&self) -> ::std::option::Option<&crate::types::AccountState> {
         self.state.as_ref()
     }
+    /// <p>The paths in the organization where the account exists.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.paths.is_none()`.
+    pub fn paths(&self) -> &[::std::string::String] {
+        self.paths.as_deref().unwrap_or_default()
+    }
     /// <p>The method by which the account joined the organization.</p>
     pub fn joined_method(&self) -> ::std::option::Option<&crate::types::AccountJoinedMethod> {
         self.joined_method.as_ref()
@@ -78,6 +86,7 @@ impl ::std::fmt::Debug for Account {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
         formatter.field("state", &self.state);
+        formatter.field("paths", &self.paths);
         formatter.field("joined_method", &self.joined_method);
         formatter.field("joined_timestamp", &self.joined_timestamp);
         formatter.finish()
@@ -100,6 +109,7 @@ pub struct AccountBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AccountStatus>,
     pub(crate) state: ::std::option::Option<crate::types::AccountState>,
+    pub(crate) paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) joined_method: ::std::option::Option<crate::types::AccountJoinedMethod>,
     pub(crate) joined_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -209,6 +219,26 @@ impl AccountBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AccountState> {
         &self.state
     }
+    /// Appends an item to `paths`.
+    ///
+    /// To override the contents of this collection use [`set_paths`](Self::set_paths).
+    ///
+    /// <p>The paths in the organization where the account exists.</p>
+    pub fn paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.paths.unwrap_or_default();
+        v.push(input.into());
+        self.paths = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The paths in the organization where the account exists.</p>
+    pub fn set_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.paths = input;
+        self
+    }
+    /// <p>The paths in the organization where the account exists.</p>
+    pub fn get_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.paths
+    }
     /// <p>The method by which the account joined the organization.</p>
     pub fn joined_method(mut self, input: crate::types::AccountJoinedMethod) -> Self {
         self.joined_method = ::std::option::Option::Some(input);
@@ -246,6 +276,7 @@ impl AccountBuilder {
             name: self.name,
             status: self.status,
             state: self.state,
+            paths: self.paths,
             joined_method: self.joined_method,
             joined_timestamp: self.joined_timestamp,
         }
@@ -260,6 +291,7 @@ impl ::std::fmt::Debug for AccountBuilder {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
         formatter.field("state", &self.state);
+        formatter.field("paths", &self.paths);
         formatter.field("joined_method", &self.joined_method);
         formatter.field("joined_timestamp", &self.joined_timestamp);
         formatter.finish()

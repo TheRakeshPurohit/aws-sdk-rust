@@ -3,12 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobInput {
+    /// <p>The configuration for the asset, including tags to be applied to assets created by the job.</p>
+    pub asset_configuration: ::std::option::Option<crate::types::AssetConfiguration>,
     /// <p>The details for the CreateJob request.</p>
     pub details: ::std::option::Option<crate::types::RequestDetails>,
     /// <p>The type of job to be created.</p>
     pub r#type: ::std::option::Option<crate::types::Type>,
 }
 impl CreateJobInput {
+    /// <p>The configuration for the asset, including tags to be applied to assets created by the job.</p>
+    pub fn asset_configuration(&self) -> ::std::option::Option<&crate::types::AssetConfiguration> {
+        self.asset_configuration.as_ref()
+    }
     /// <p>The details for the CreateJob request.</p>
     pub fn details(&self) -> ::std::option::Option<&crate::types::RequestDetails> {
         self.details.as_ref()
@@ -29,10 +35,25 @@ impl CreateJobInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CreateJobInputBuilder {
+    pub(crate) asset_configuration: ::std::option::Option<crate::types::AssetConfiguration>,
     pub(crate) details: ::std::option::Option<crate::types::RequestDetails>,
     pub(crate) r#type: ::std::option::Option<crate::types::Type>,
 }
 impl CreateJobInputBuilder {
+    /// <p>The configuration for the asset, including tags to be applied to assets created by the job.</p>
+    pub fn asset_configuration(mut self, input: crate::types::AssetConfiguration) -> Self {
+        self.asset_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the asset, including tags to be applied to assets created by the job.</p>
+    pub fn set_asset_configuration(mut self, input: ::std::option::Option<crate::types::AssetConfiguration>) -> Self {
+        self.asset_configuration = input;
+        self
+    }
+    /// <p>The configuration for the asset, including tags to be applied to assets created by the job.</p>
+    pub fn get_asset_configuration(&self) -> &::std::option::Option<crate::types::AssetConfiguration> {
+        &self.asset_configuration
+    }
     /// <p>The details for the CreateJob request.</p>
     /// This field is required.
     pub fn details(mut self, input: crate::types::RequestDetails) -> Self {
@@ -66,6 +87,7 @@ impl CreateJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
+            asset_configuration: self.asset_configuration,
             details: self.details,
             r#type: self.r#type,
         })

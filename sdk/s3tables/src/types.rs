@@ -73,6 +73,8 @@ pub use crate::types::_last_successful_replicated_update::LastSuccessfulReplicat
 
 pub use crate::types::_iceberg_schema::IcebergSchema;
 
+pub use crate::types::_iceberg_schema_v2::IcebergSchemaV2;
+
 pub use crate::types::_iceberg_partition_spec::IcebergPartitionSpec;
 
 pub use crate::types::_iceberg_sort_order::IcebergSortOrder;
@@ -83,11 +85,15 @@ pub use crate::types::_iceberg_compaction_settings::IcebergCompactionSettings;
 
 pub use crate::types::_iceberg_snapshot_management_settings::IcebergSnapshotManagementSettings;
 
+pub use crate::types::_schema_v2_field_type::SchemaV2FieldType;
+
 pub use crate::types::_iceberg_compaction_strategy::IcebergCompactionStrategy;
 
 pub use crate::types::_replication_destination::ReplicationDestination;
 
 pub use crate::types::_schema_field::SchemaField;
+
+pub use crate::types::_schema_v2_field::SchemaV2Field;
 
 pub use crate::types::_iceberg_partition_field::IcebergPartitionField;
 
@@ -112,6 +118,8 @@ mod _iceberg_partition_field;
 mod _iceberg_partition_spec;
 
 mod _iceberg_schema;
+
+mod _iceberg_schema_v2;
 
 mod _iceberg_snapshot_management_settings;
 
@@ -144,6 +152,10 @@ mod _replication_information;
 mod _replication_status;
 
 mod _schema_field;
+
+mod _schema_v2_field;
+
+mod _schema_v2_field_type;
 
 mod _sse_algorithm;
 

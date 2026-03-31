@@ -211,6 +211,8 @@ mod delete_package;
 
 mod delete_vpc_endpoint;
 
+mod deregister_capability;
+
 mod describe_domain;
 
 mod describe_domain_auto_tunes;
@@ -248,6 +250,8 @@ mod dissociate_package;
 mod dissociate_packages;
 
 mod get_application;
+
+mod get_capability;
 
 mod get_compatible_versions;
 
@@ -300,6 +304,8 @@ mod list_vpc_endpoints_for_domain;
 mod purchase_reserved_instance_offering;
 
 mod put_default_application_setting;
+
+mod register_capability;
 
 mod reject_inbound_connection;
 

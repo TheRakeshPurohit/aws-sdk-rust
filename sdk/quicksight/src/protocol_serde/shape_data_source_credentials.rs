@@ -27,5 +27,11 @@ pub fn ser_data_source_credentials(
         crate::protocol_serde::shape_web_proxy_credentials::ser_web_proxy_credentials(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.o_auth_client_credentials {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("OAuthClientCredentials").start_object();
+        crate::protocol_serde::shape_o_auth_client_credentials::ser_o_auth_client_credentials(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

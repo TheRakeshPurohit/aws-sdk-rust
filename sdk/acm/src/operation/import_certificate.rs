@@ -257,6 +257,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ImportCertifi
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ImportCertificateError {
+    /// <p>You are trying to update a resource or configuration that is already being created or updated. Wait for the previous operation to finish and try again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::types::error::InvalidArnException),
     /// <p>An input parameter was invalid.</p>
@@ -304,6 +306,7 @@ impl ImportCertificateError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArnException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidTagException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -313,6 +316,10 @@ impl ImportCertificateError {
             Self::TooManyTagsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `ImportCertificateError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `ImportCertificateError::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -346,6 +353,7 @@ impl ImportCertificateError {
 impl ::std::error::Error for ImportCertificateError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArnException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTagException(_inner) => ::std::option::Option::Some(_inner),
@@ -360,6 +368,7 @@ impl ::std::error::Error for ImportCertificateError {
 impl ::std::fmt::Display for ImportCertificateError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InvalidArnException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::InvalidTagException(_inner) => _inner.fmt(f),
@@ -388,6 +397,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ImportCertificateError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ImportCertificateError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArnException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidTagException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

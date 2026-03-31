@@ -12,6 +12,7 @@
 /// ```text
 /// # let verifieddestinationnumberfiltername = unimplemented!();
 /// match verifieddestinationnumberfiltername {
+///     VerifiedDestinationNumberFilterName::RcsAgentId => { /* ... */ },
 ///     VerifiedDestinationNumberFilterName::Status => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -35,12 +36,14 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The filter name for filtering verified destination numbers. The available filter names are:</p> <ul> <li> <p> <code>status</code>: Filter by verification status.</p> </li> <li> <p> <code>rcs-agent-id</code>: Filter by the RCS agent identifier.</p> </li> </ul>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum VerifiedDestinationNumberFilterName {
+    #[allow(missing_docs)] // documentation missing in model
+    RcsAgentId,
     #[allow(missing_docs)] // documentation missing in model
     Status,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -50,6 +53,7 @@ pub enum VerifiedDestinationNumberFilterName {
 impl ::std::convert::From<&str> for VerifiedDestinationNumberFilterName {
     fn from(s: &str) -> Self {
         match s {
+            "rcs-agent-id" => VerifiedDestinationNumberFilterName::RcsAgentId,
             "status" => VerifiedDestinationNumberFilterName::Status,
             other => VerifiedDestinationNumberFilterName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl VerifiedDestinationNumberFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            VerifiedDestinationNumberFilterName::RcsAgentId => "rcs-agent-id",
             VerifiedDestinationNumberFilterName::Status => "status",
             VerifiedDestinationNumberFilterName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["status"]
+        &["rcs-agent-id", "status"]
     }
 }
 impl ::std::convert::AsRef<str> for VerifiedDestinationNumberFilterName {
@@ -95,6 +100,7 @@ impl VerifiedDestinationNumberFilterName {
 impl ::std::fmt::Display for VerifiedDestinationNumberFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            VerifiedDestinationNumberFilterName::RcsAgentId => write!(f, "rcs-agent-id"),
             VerifiedDestinationNumberFilterName::Status => write!(f, "status"),
             VerifiedDestinationNumberFilterName::Unknown(value) => write!(f, "{value}"),
         }

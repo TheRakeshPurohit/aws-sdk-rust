@@ -27,77 +27,89 @@ pub fn ser_dashboard_version_definition(
         }
         array_5.finish();
     }
-    if let Some(var_8) = &input.calculated_fields {
-        let mut array_9 = object.key("CalculatedFields").start_array();
+    if let Some(var_8) = &input.tooltip_sheets {
+        let mut array_9 = object.key("TooltipSheets").start_array();
         for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_calculated_field::ser_calculated_field(&mut object_11, item_10)?;
+                crate::protocol_serde::shape_tooltip_sheet_definition::ser_tooltip_sheet_definition(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }
         array_9.finish();
     }
-    if let Some(var_12) = &input.parameter_declarations {
-        let mut array_13 = object.key("ParameterDeclarations").start_array();
+    if let Some(var_12) = &input.calculated_fields {
+        let mut array_13 = object.key("CalculatedFields").start_array();
         for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_parameter_declaration::ser_parameter_declaration(&mut object_15, item_14)?;
+                crate::protocol_serde::shape_calculated_field::ser_calculated_field(&mut object_15, item_14)?;
                 object_15.finish();
             }
         }
         array_13.finish();
     }
-    if let Some(var_16) = &input.filter_groups {
-        let mut array_17 = object.key("FilterGroups").start_array();
+    if let Some(var_16) = &input.parameter_declarations {
+        let mut array_17 = object.key("ParameterDeclarations").start_array();
         for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
                 let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_filter_group::ser_filter_group(&mut object_19, item_18)?;
+                crate::protocol_serde::shape_parameter_declaration::ser_parameter_declaration(&mut object_19, item_18)?;
                 object_19.finish();
             }
         }
         array_17.finish();
     }
-    if let Some(var_20) = &input.column_configurations {
-        let mut array_21 = object.key("ColumnConfigurations").start_array();
+    if let Some(var_20) = &input.filter_groups {
+        let mut array_21 = object.key("FilterGroups").start_array();
         for item_22 in var_20 {
             {
                 #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_column_configuration::ser_column_configuration(&mut object_23, item_22)?;
+                crate::protocol_serde::shape_filter_group::ser_filter_group(&mut object_23, item_22)?;
                 object_23.finish();
             }
         }
         array_21.finish();
     }
-    if let Some(var_24) = &input.analysis_defaults {
-        #[allow(unused_mut)]
-        let mut object_25 = object.key("AnalysisDefaults").start_object();
-        crate::protocol_serde::shape_analysis_defaults::ser_analysis_defaults(&mut object_25, var_24)?;
-        object_25.finish();
-    }
-    if let Some(var_26) = &input.options {
-        #[allow(unused_mut)]
-        let mut object_27 = object.key("Options").start_object();
-        crate::protocol_serde::shape_asset_options::ser_asset_options(&mut object_27, var_26)?;
-        object_27.finish();
-    }
-    if let Some(var_28) = &input.static_files {
-        let mut array_29 = object.key("StaticFiles").start_array();
-        for item_30 in var_28 {
+    if let Some(var_24) = &input.column_configurations {
+        let mut array_25 = object.key("ColumnConfigurations").start_array();
+        for item_26 in var_24 {
             {
                 #[allow(unused_mut)]
-                let mut object_31 = array_29.value().start_object();
-                crate::protocol_serde::shape_static_file::ser_static_file(&mut object_31, item_30)?;
-                object_31.finish();
+                let mut object_27 = array_25.value().start_object();
+                crate::protocol_serde::shape_column_configuration::ser_column_configuration(&mut object_27, item_26)?;
+                object_27.finish();
             }
         }
-        array_29.finish();
+        array_25.finish();
+    }
+    if let Some(var_28) = &input.analysis_defaults {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("AnalysisDefaults").start_object();
+        crate::protocol_serde::shape_analysis_defaults::ser_analysis_defaults(&mut object_29, var_28)?;
+        object_29.finish();
+    }
+    if let Some(var_30) = &input.options {
+        #[allow(unused_mut)]
+        let mut object_31 = object.key("Options").start_object();
+        crate::protocol_serde::shape_asset_options::ser_asset_options(&mut object_31, var_30)?;
+        object_31.finish();
+    }
+    if let Some(var_32) = &input.static_files {
+        let mut array_33 = object.key("StaticFiles").start_array();
+        for item_34 in var_32 {
+            {
+                #[allow(unused_mut)]
+                let mut object_35 = array_33.value().start_object();
+                crate::protocol_serde::shape_static_file::ser_static_file(&mut object_35, item_34)?;
+                object_35.finish();
+            }
+        }
+        array_33.finish();
     }
     Ok(())
 }
@@ -129,6 +141,11 @@ where
                             builder = builder.set_sheets(crate::protocol_serde::shape_sheet_definition_list::de_sheet_definition_list(
                                 tokens, _value,
                             )?);
+                        }
+                        "TooltipSheets" => {
+                            builder = builder.set_tooltip_sheets(
+                                crate::protocol_serde::shape_tooltip_sheet_definition_list::de_tooltip_sheet_definition_list(tokens, _value)?,
+                            );
                         }
                         "CalculatedFields" => {
                             builder =

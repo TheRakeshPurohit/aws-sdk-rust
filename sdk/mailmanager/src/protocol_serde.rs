@@ -395,6 +395,8 @@ pub(crate) mod shape_search_summary;
 
 pub(crate) mod shape_string_list;
 
+pub(crate) mod shape_tls_auth_configuration;
+
 pub(crate) mod shape_traffic_policy;
 
 pub(crate) mod shape_add_header_action;
@@ -404,6 +406,8 @@ pub(crate) mod shape_archive_action;
 pub(crate) mod shape_archive_boolean_expression;
 
 pub(crate) mod shape_archive_string_expression;
+
+pub(crate) mod shape_bounce_action;
 
 pub(crate) mod shape_deliver_to_mailbox_action;
 
@@ -422,6 +426,8 @@ pub(crate) mod shape_ingress_ipv6_expression;
 pub(crate) mod shape_ingress_string_expression;
 
 pub(crate) mod shape_ingress_tls_protocol_expression;
+
+pub(crate) mod shape_invoke_lambda_action;
 
 pub(crate) mod shape_policy_conditions;
 
@@ -450,6 +456,8 @@ pub(crate) mod shape_s3_action;
 pub(crate) mod shape_send_action;
 
 pub(crate) mod shape_sns_action;
+
+pub(crate) mod shape_trust_store;
 
 pub(crate) mod shape_archive_boolean_to_evaluate;
 

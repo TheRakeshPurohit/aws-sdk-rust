@@ -160,6 +160,25 @@ impl UpdateAnycastIpListFluentBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         self.inner.get_ip_address_type()
     }
+    ///
+    /// Appends an item to `IpamCidrConfigs`.
+    ///
+    /// To override the contents of this collection use [`set_ipam_cidr_configs`](Self::set_ipam_cidr_configs).
+    ///
+    /// <p>A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for updating the Anycast static IP list.</p>
+    pub fn ipam_cidr_configs(mut self, input: crate::types::IpamCidrConfig) -> Self {
+        self.inner = self.inner.ipam_cidr_configs(input);
+        self
+    }
+    /// <p>A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for updating the Anycast static IP list.</p>
+    pub fn set_ipam_cidr_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamCidrConfig>>) -> Self {
+        self.inner = self.inner.set_ipam_cidr_configs(input);
+        self
+    }
+    /// <p>A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for updating the Anycast static IP list.</p>
+    pub fn get_ipam_cidr_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamCidrConfig>> {
+        self.inner.get_ipam_cidr_configs()
+    }
     /// <p>The current version (ETag value) of the Anycast static IP list that you are updating.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());

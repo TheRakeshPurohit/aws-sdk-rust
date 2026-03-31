@@ -14,7 +14,7 @@ pub struct RegistrationFieldValueInformation {
     pub registration_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of why the registration was denied.</p>
     pub denied_reason: ::std::option::Option<::std::string::String>,
-    /// <p>Feedback provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
+    /// <p>Generative AI feedback information provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
     pub feedback: ::std::option::Option<::std::string::String>,
 }
 impl RegistrationFieldValueInformation {
@@ -41,7 +41,7 @@ impl RegistrationFieldValueInformation {
     pub fn denied_reason(&self) -> ::std::option::Option<&str> {
         self.denied_reason.as_deref()
     }
-    /// <p>Feedback provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
+    /// <p>Generative AI feedback information provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
     pub fn feedback(&self) -> ::std::option::Option<&str> {
         self.feedback.as_deref()
     }
@@ -142,17 +142,17 @@ impl RegistrationFieldValueInformationBuilder {
     pub fn get_denied_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.denied_reason
     }
-    /// <p>Feedback provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
+    /// <p>Generative AI feedback information provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
     pub fn feedback(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.feedback = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Feedback provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
+    /// <p>Generative AI feedback information provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
     pub fn set_feedback(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feedback = input;
         self
     }
-    /// <p>Feedback provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
+    /// <p>Generative AI feedback information provided for this specific field during the registration review process. This may include validation errors, suggestions for improvement, or additional requirements.</p>
     pub fn get_feedback(&self) -> &::std::option::Option<::std::string::String> {
         &self.feedback
     }

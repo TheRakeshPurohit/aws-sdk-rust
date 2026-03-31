@@ -8,6 +8,8 @@ pub enum RuleStringToEvaluate {
     Analysis(crate::types::Analysis),
     /// <p>The email attribute to evaluate in a string condition expression.</p>
     Attribute(crate::types::RuleStringEmailAttribute),
+    /// <p>The client certificate attribute to evaluate in a string condition expression.</p>
+    ClientCertificateAttribute(crate::types::RuleClientCertificateAttribute),
     /// <p>The email MIME X-Header attribute to evaluate in a string condition expression.</p>
     MimeHeaderAttribute(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -46,6 +48,19 @@ impl RuleStringToEvaluate {
     /// Returns true if this is a [`Attribute`](crate::types::RuleStringToEvaluate::Attribute).
     pub fn is_attribute(&self) -> bool {
         self.as_attribute().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ClientCertificateAttribute`](crate::types::RuleStringToEvaluate::ClientCertificateAttribute), extracting the inner [`RuleClientCertificateAttribute`](crate::types::RuleClientCertificateAttribute).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_client_certificate_attribute(&self) -> ::std::result::Result<&crate::types::RuleClientCertificateAttribute, &Self> {
+        if let RuleStringToEvaluate::ClientCertificateAttribute(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ClientCertificateAttribute`](crate::types::RuleStringToEvaluate::ClientCertificateAttribute).
+    pub fn is_client_certificate_attribute(&self) -> bool {
+        self.as_client_certificate_attribute().is_ok()
     }
     /// Tries to convert the enum instance into [`MimeHeaderAttribute`](crate::types::RuleStringToEvaluate::MimeHeaderAttribute), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.

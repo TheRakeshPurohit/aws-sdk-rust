@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`ingress_point_id(impl Into<String>)`](crate::operation::get_ingress_point::builders::GetIngressPointFluentBuilder::ingress_point_id) / [`set_ingress_point_id(Option<String>)`](crate::operation::get_ingress_point::builders::GetIngressPointFluentBuilder::set_ingress_point_id):<br>required: **true**<br><p>The identifier of an ingress endpoint.</p><br>
+    ///   - [`include_trust_store_contents(TrustStoreResponseOption)`](crate::operation::get_ingress_point::builders::GetIngressPointFluentBuilder::include_trust_store_contents) / [`set_include_trust_store_contents(Option<TrustStoreResponseOption>)`](crate::operation::get_ingress_point::builders::GetIngressPointFluentBuilder::set_include_trust_store_contents):<br>required: **false**<br><p>Whether to include the trust store contents in the response. Use INCLUDE to retrieve trust store certificate and CRL contents.</p><br>
     /// - On success, responds with [`GetIngressPointOutput`](crate::operation::get_ingress_point::GetIngressPointOutput) with field(s):
     ///   - [`ingress_point_id(String)`](crate::operation::get_ingress_point::GetIngressPointOutput::ingress_point_id): <p>The identifier of an ingress endpoint resource.</p>
     ///   - [`ingress_point_name(String)`](crate::operation::get_ingress_point::GetIngressPointOutput::ingress_point_name): <p>A user friendly name for the ingress endpoint.</p>
@@ -15,6 +16,7 @@ impl super::Client {
     ///   - [`traffic_policy_id(Option<String>)`](crate::operation::get_ingress_point::GetIngressPointOutput::traffic_policy_id): <p>The identifier of the traffic policy resource associated with the ingress endpoint.</p>
     ///   - [`ingress_point_auth_configuration(Option<IngressPointAuthConfiguration>)`](crate::operation::get_ingress_point::GetIngressPointOutput::ingress_point_auth_configuration): <p>The authentication configuration of the ingress endpoint resource.</p>
     ///   - [`network_configuration(Option<NetworkConfiguration>)`](crate::operation::get_ingress_point::GetIngressPointOutput::network_configuration): <p>The network configuration for the ingress point.</p>
+    ///   - [`tls_policy(Option<TlsPolicy>)`](crate::operation::get_ingress_point::GetIngressPointOutput::tls_policy): <p>The selected Transport Layer Security (TLS) policy of the ingress point.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::get_ingress_point::GetIngressPointOutput::created_timestamp): <p>The timestamp of when the ingress endpoint was created.</p>
     ///   - [`last_updated_timestamp(Option<DateTime>)`](crate::operation::get_ingress_point::GetIngressPointOutput::last_updated_timestamp): <p>The timestamp of when the ingress endpoint was last updated.</p>
     /// - On failure, responds with [`SdkError<GetIngressPointError>`](crate::operation::get_ingress_point::GetIngressPointError)

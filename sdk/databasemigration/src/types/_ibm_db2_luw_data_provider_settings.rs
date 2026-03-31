@@ -14,6 +14,10 @@ pub struct IbmDb2LuwDataProviderSettings {
     pub ssl_mode: ::std::option::Option<crate::types::DmsSslModeValue>,
     /// <p>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The encryption algorithm used for securing the connection to the IBM DB2 LUW database server. You can provide an integer value corresponding to a specific encryption algorithm, or leave this parameter empty to use the default behavior.</p>
+    pub encryption_algorithm: ::std::option::Option<i32>,
+    /// <p>The security mechanism used for authenticating the connection to the IBM DB2 LUW database server. You can provide an integer value corresponding to a specific security mechanism, or leave this parameter empty to use the default behavior.</p>
+    pub security_mechanism: ::std::option::Option<i32>,
     /// <p>The path for the Amazon S3 bucket that the application uses for accessing the user-defined schema.</p>
     pub s3_path: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the role the application uses to access its Amazon S3 bucket.</p>
@@ -40,6 +44,14 @@ impl IbmDb2LuwDataProviderSettings {
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
+    /// <p>The encryption algorithm used for securing the connection to the IBM DB2 LUW database server. You can provide an integer value corresponding to a specific encryption algorithm, or leave this parameter empty to use the default behavior.</p>
+    pub fn encryption_algorithm(&self) -> ::std::option::Option<i32> {
+        self.encryption_algorithm
+    }
+    /// <p>The security mechanism used for authenticating the connection to the IBM DB2 LUW database server. You can provide an integer value corresponding to a specific security mechanism, or leave this parameter empty to use the default behavior.</p>
+    pub fn security_mechanism(&self) -> ::std::option::Option<i32> {
+        self.security_mechanism
+    }
     /// <p>The path for the Amazon S3 bucket that the application uses for accessing the user-defined schema.</p>
     pub fn s3_path(&self) -> ::std::option::Option<&str> {
         self.s3_path.as_deref()
@@ -65,6 +77,8 @@ pub struct IbmDb2LuwDataProviderSettingsBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) ssl_mode: ::std::option::Option<crate::types::DmsSslModeValue>,
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_algorithm: ::std::option::Option<i32>,
+    pub(crate) security_mechanism: ::std::option::Option<i32>,
     pub(crate) s3_path: ::std::option::Option<::std::string::String>,
     pub(crate) s3_access_role_arn: ::std::option::Option<::std::string::String>,
 }
@@ -139,6 +153,34 @@ impl IbmDb2LuwDataProviderSettingsBuilder {
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
+    /// <p>The encryption algorithm used for securing the connection to the IBM DB2 LUW database server. You can provide an integer value corresponding to a specific encryption algorithm, or leave this parameter empty to use the default behavior.</p>
+    pub fn encryption_algorithm(mut self, input: i32) -> Self {
+        self.encryption_algorithm = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The encryption algorithm used for securing the connection to the IBM DB2 LUW database server. You can provide an integer value corresponding to a specific encryption algorithm, or leave this parameter empty to use the default behavior.</p>
+    pub fn set_encryption_algorithm(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.encryption_algorithm = input;
+        self
+    }
+    /// <p>The encryption algorithm used for securing the connection to the IBM DB2 LUW database server. You can provide an integer value corresponding to a specific encryption algorithm, or leave this parameter empty to use the default behavior.</p>
+    pub fn get_encryption_algorithm(&self) -> &::std::option::Option<i32> {
+        &self.encryption_algorithm
+    }
+    /// <p>The security mechanism used for authenticating the connection to the IBM DB2 LUW database server. You can provide an integer value corresponding to a specific security mechanism, or leave this parameter empty to use the default behavior.</p>
+    pub fn security_mechanism(mut self, input: i32) -> Self {
+        self.security_mechanism = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The security mechanism used for authenticating the connection to the IBM DB2 LUW database server. You can provide an integer value corresponding to a specific security mechanism, or leave this parameter empty to use the default behavior.</p>
+    pub fn set_security_mechanism(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.security_mechanism = input;
+        self
+    }
+    /// <p>The security mechanism used for authenticating the connection to the IBM DB2 LUW database server. You can provide an integer value corresponding to a specific security mechanism, or leave this parameter empty to use the default behavior.</p>
+    pub fn get_security_mechanism(&self) -> &::std::option::Option<i32> {
+        &self.security_mechanism
+    }
     /// <p>The path for the Amazon S3 bucket that the application uses for accessing the user-defined schema.</p>
     pub fn s3_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_path = ::std::option::Option::Some(input.into());
@@ -175,6 +217,8 @@ impl IbmDb2LuwDataProviderSettingsBuilder {
             database_name: self.database_name,
             ssl_mode: self.ssl_mode,
             certificate_arn: self.certificate_arn,
+            encryption_algorithm: self.encryption_algorithm,
+            security_mechanism: self.security_mechanism,
             s3_path: self.s3_path,
             s3_access_role_arn: self.s3_access_role_arn,
         }

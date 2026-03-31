@@ -279,6 +279,8 @@ pub use crate::types::_key_pair_credentials::KeyPairCredentialsBuilder;
 
 pub use crate::types::_web_proxy_credentials::WebProxyCredentialsBuilder;
 
+pub use crate::types::_o_auth_client_credentials::OAuthClientCredentialsBuilder;
+
 pub use crate::types::_refresh_frequency::RefreshFrequencyBuilder;
 
 pub use crate::types::_template_source_analysis::TemplateSourceAnalysisBuilder;
@@ -466,6 +468,8 @@ pub use crate::types::_date_time_parameter::DateTimeParameterBuilder;
 pub use crate::types::_data_set_identifier_declaration::DataSetIdentifierDeclarationBuilder;
 
 pub use crate::types::_sheet_definition::SheetDefinitionBuilder;
+
+pub use crate::types::_tooltip_sheet_definition::TooltipSheetDefinitionBuilder;
 
 pub use crate::types::_calculated_field::CalculatedFieldBuilder;
 
@@ -1293,6 +1297,8 @@ pub use crate::types::_table_field_options::TableFieldOptionsBuilder;
 
 pub use crate::types::_table_paginated_report_options::TablePaginatedReportOptionsBuilder;
 
+pub use crate::types::_tooltip_options::TooltipOptionsBuilder;
+
 pub use crate::types::_dashboard_customization_visual_options::DashboardCustomizationVisualOptionsBuilder;
 
 pub use crate::types::_visual_interaction_options::VisualInteractionOptionsBuilder;
@@ -1328,8 +1334,6 @@ pub use crate::types::_bar_chart_default_series_settings::BarChartDefaultSeriesS
 pub use crate::types::_legend_options::LegendOptionsBuilder;
 
 pub use crate::types::_data_label_options::DataLabelOptionsBuilder;
-
-pub use crate::types::_tooltip_options::TooltipOptionsBuilder;
 
 pub use crate::types::_column_hierarchy::ColumnHierarchyBuilder;
 
@@ -1503,6 +1507,10 @@ pub use crate::types::_table_pinned_field_options::TablePinnedFieldOptionsBuilde
 
 pub use crate::types::_table_inline_visualization::TableInlineVisualizationBuilder;
 
+pub use crate::types::_field_based_tooltip::FieldBasedTooltipBuilder;
+
+pub use crate::types::_sheet_tooltip::SheetTooltipBuilder;
+
 pub use crate::types::_visual_customization_fields_configuration::VisualCustomizationFieldsConfigurationBuilder;
 
 pub use crate::types::_context_menu_option::ContextMenuOptionBuilder;
@@ -1536,8 +1544,6 @@ pub use crate::types::_scroll_bar_options::ScrollBarOptionsBuilder;
 pub use crate::types::_border_settings::BorderSettingsBuilder;
 
 pub use crate::types::_bar_series_item::BarSeriesItemBuilder;
-
-pub use crate::types::_field_based_tooltip::FieldBasedTooltipBuilder;
 
 pub use crate::types::_reference_line::ReferenceLineBuilder;
 
@@ -1690,6 +1696,8 @@ pub use crate::types::_table_field_option::TableFieldOptionBuilder;
 pub use crate::types::_transposed_table_option::TransposedTableOptionBuilder;
 
 pub use crate::types::_data_bars_options::DataBarsOptionsBuilder;
+
+pub use crate::types::_sparklines_options::SparklinesOptionsBuilder;
 
 pub use crate::types::_table_cell_conditional_formatting::TableCellConditionalFormattingBuilder;
 
@@ -1845,6 +1853,8 @@ pub use crate::types::_total_aggregation_function::TotalAggregationFunctionBuild
 
 pub use crate::types::_table_field_url_configuration::TableFieldUrlConfigurationBuilder;
 
+pub use crate::types::_tooltip_item::TooltipItemBuilder;
+
 pub use crate::types::_text_conditional_format::TextConditionalFormatBuilder;
 
 pub use crate::types::_conditional_formatting_color::ConditionalFormattingColorBuilder;
@@ -1882,8 +1892,6 @@ pub use crate::types::_range_ends_label_type::RangeEndsLabelTypeBuilder;
 pub use crate::types::_minimum_label_type::MinimumLabelTypeBuilder;
 
 pub use crate::types::_maximum_label_type::MaximumLabelTypeBuilder;
-
-pub use crate::types::_tooltip_item::TooltipItemBuilder;
 
 pub use crate::types::_reference_line_static_data_configuration::ReferenceLineStaticDataConfigurationBuilder;
 
@@ -1951,6 +1959,10 @@ pub use crate::types::_table_field_link_configuration::TableFieldLinkConfigurati
 
 pub use crate::types::_table_field_image_configuration::TableFieldImageConfigurationBuilder;
 
+pub use crate::types::_field_tooltip_item::FieldTooltipItemBuilder;
+
+pub use crate::types::_column_tooltip_item::ColumnTooltipItemBuilder;
+
 pub use crate::types::_conditional_formatting_solid_color::ConditionalFormattingSolidColorBuilder;
 
 pub use crate::types::_conditional_formatting_gradient_color::ConditionalFormattingGradientColorBuilder;
@@ -1970,10 +1982,6 @@ pub use crate::types::_axis_logarithmic_scale::AxisLogarithmicScaleBuilder;
 pub use crate::types::_axis_display_min_max_range::AxisDisplayMinMaxRangeBuilder;
 
 pub use crate::types::_axis_display_data_driven_range::AxisDisplayDataDrivenRangeBuilder;
-
-pub use crate::types::_field_tooltip_item::FieldTooltipItemBuilder;
-
-pub use crate::types::_column_tooltip_item::ColumnTooltipItemBuilder;
 
 pub use crate::types::_numeric_equality_drill_down_filter::NumericEqualityDrillDownFilterBuilder;
 

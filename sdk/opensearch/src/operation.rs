@@ -73,6 +73,9 @@ pub mod delete_package;
 /// Types for the `DeleteVpcEndpoint` operation.
 pub mod delete_vpc_endpoint;
 
+/// Types for the `DeregisterCapability` operation.
+pub mod deregister_capability;
+
 /// Types for the `DescribeDomain` operation.
 pub mod describe_domain;
 
@@ -129,6 +132,9 @@ pub mod dissociate_packages;
 
 /// Types for the `GetApplication` operation.
 pub mod get_application;
+
+/// Types for the `GetCapability` operation.
+pub mod get_capability;
 
 /// Types for the `GetCompatibleVersions` operation.
 pub mod get_compatible_versions;
@@ -207,6 +213,9 @@ pub mod purchase_reserved_instance_offering;
 
 /// Types for the `PutDefaultApplicationSetting` operation.
 pub mod put_default_application_setting;
+
+/// Types for the `RegisterCapability` operation.
+pub mod register_capability;
 
 /// Types for the `RejectInboundConnection` operation.
 pub mod reject_inbound_connection;

@@ -43,6 +43,8 @@ pub use crate::types::_last_successful_replicated_update::LastSuccessfulReplicat
 
 pub use crate::types::_iceberg_schema::IcebergSchemaBuilder;
 
+pub use crate::types::_iceberg_schema_v2::IcebergSchemaV2Builder;
+
 pub use crate::types::_iceberg_partition_spec::IcebergPartitionSpecBuilder;
 
 pub use crate::types::_iceberg_sort_order::IcebergSortOrderBuilder;
@@ -54,6 +56,8 @@ pub use crate::types::_iceberg_snapshot_management_settings::IcebergSnapshotMana
 pub use crate::types::_replication_destination::ReplicationDestinationBuilder;
 
 pub use crate::types::_schema_field::SchemaFieldBuilder;
+
+pub use crate::types::_schema_v2_field::SchemaV2FieldBuilder;
 
 pub use crate::types::_iceberg_partition_field::IcebergPartitionFieldBuilder;
 

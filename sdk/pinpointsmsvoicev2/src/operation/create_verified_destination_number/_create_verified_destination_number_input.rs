@@ -5,6 +5,8 @@
 pub struct CreateVerifiedDestinationNumberInput {
     /// <p>The verified destination phone number, in E.164 format.</p>
     pub destination_phone_number: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the RCS agent to associate with the verified destination number. You can use either the RcsAgentId or RcsAgentArn.</p>
+    pub rcs_agent_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of tags (key and value pairs) to associate with the destination number.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
@@ -14,6 +16,10 @@ impl CreateVerifiedDestinationNumberInput {
     /// <p>The verified destination phone number, in E.164 format.</p>
     pub fn destination_phone_number(&self) -> ::std::option::Option<&str> {
         self.destination_phone_number.as_deref()
+    }
+    /// <p>The unique identifier of the RCS agent to associate with the verified destination number. You can use either the RcsAgentId or RcsAgentArn.</p>
+    pub fn rcs_agent_id(&self) -> ::std::option::Option<&str> {
+        self.rcs_agent_id.as_deref()
     }
     /// <p>An array of tags (key and value pairs) to associate with the destination number.</p>
     ///
@@ -38,6 +44,7 @@ impl CreateVerifiedDestinationNumberInput {
 #[non_exhaustive]
 pub struct CreateVerifiedDestinationNumberInputBuilder {
     pub(crate) destination_phone_number: ::std::option::Option<::std::string::String>,
+    pub(crate) rcs_agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -56,6 +63,20 @@ impl CreateVerifiedDestinationNumberInputBuilder {
     /// <p>The verified destination phone number, in E.164 format.</p>
     pub fn get_destination_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_phone_number
+    }
+    /// <p>The unique identifier of the RCS agent to associate with the verified destination number. You can use either the RcsAgentId or RcsAgentArn.</p>
+    pub fn rcs_agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rcs_agent_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the RCS agent to associate with the verified destination number. You can use either the RcsAgentId or RcsAgentArn.</p>
+    pub fn set_rcs_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rcs_agent_id = input;
+        self
+    }
+    /// <p>The unique identifier of the RCS agent to associate with the verified destination number. You can use either the RcsAgentId or RcsAgentArn.</p>
+    pub fn get_rcs_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rcs_agent_id
     }
     /// Appends an item to `tags`.
     ///
@@ -101,6 +122,7 @@ impl CreateVerifiedDestinationNumberInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberInput {
                 destination_phone_number: self.destination_phone_number,
+                rcs_agent_id: self.rcs_agent_id,
                 tags: self.tags,
                 client_token: self.client_token,
             },

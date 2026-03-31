@@ -191,6 +191,10 @@ pub(crate) fn de_get_account_usage(
                     builder =
                         builder.set_monthly_account_investigation_hours(crate::protocol_serde::shape_usage_metric::de_usage_metric(tokens, _value)?);
                 }
+                "monthlyAccountOnDemandHours" => {
+                    builder =
+                        builder.set_monthly_account_on_demand_hours(crate::protocol_serde::shape_usage_metric::de_usage_metric(tokens, _value)?);
+                }
                 "monthlyAccountSystemLearningHours" => {
                     builder = builder
                         .set_monthly_account_system_learning_hours(crate::protocol_serde::shape_usage_metric::de_usage_metric(tokens, _value)?);

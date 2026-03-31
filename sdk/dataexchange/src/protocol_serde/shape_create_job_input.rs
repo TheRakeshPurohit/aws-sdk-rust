@@ -3,14 +3,20 @@ pub fn ser_create_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_job::CreateJobInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.details {
+    if let Some(var_1) = &input.asset_configuration {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("Details").start_object();
-        crate::protocol_serde::shape_request_details::ser_request_details(&mut object_2, var_1)?;
+        let mut object_2 = object.key("AssetConfiguration").start_object();
+        crate::protocol_serde::shape_asset_configuration::ser_asset_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.r#type {
-        object.key("Type").string(var_3.as_str());
+    if let Some(var_3) = &input.details {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("Details").start_object();
+        crate::protocol_serde::shape_request_details::ser_request_details(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.r#type {
+        object.key("Type").string(var_5.as_str());
     }
     Ok(())
 }

@@ -82,12 +82,6 @@ pub fn ser_service_configuration(
             crate::protocol_serde::shape_pager_duty_configuration::ser_pager_duty_configuration(&mut object_13, inner)?;
             object_13.finish();
         }
-        crate::types::ServiceConfiguration::Msteams(inner) => {
-            #[allow(unused_mut)]
-            let mut object_14 = object_2.key("msteams").start_object();
-            crate::protocol_serde::shape_ms_teams_configuration::ser_ms_teams_configuration(&mut object_14, inner)?;
-            object_14.finish();
-        }
         crate::types::ServiceConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ServiceConfiguration",
@@ -190,11 +184,6 @@ where
                         "pagerduty" => Some(crate::types::ServiceConfiguration::Pagerduty(
                             crate::protocol_serde::shape_pager_duty_configuration::de_pager_duty_configuration(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'pagerduty' cannot be null")
-                            })?,
-                        )),
-                        "msteams" => Some(crate::types::ServiceConfiguration::Msteams(
-                            crate::protocol_serde::shape_ms_teams_configuration::de_ms_teams_configuration(tokens, _value)?.ok_or_else(|| {
-                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'msteams' cannot be null")
                             })?,
                         )),
                         _ => {

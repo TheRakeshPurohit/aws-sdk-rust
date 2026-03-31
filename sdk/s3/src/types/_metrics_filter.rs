@@ -10,7 +10,9 @@ pub enum MetricsFilter {
     And(crate::types::MetricsAndOperator),
     /// <p>The prefix used when evaluating a metrics filter.</p>
     Prefix(::std::string::String),
-    /// <p>The tag used when evaluating a metrics filter.</p>
+    /// <p>The tag used when evaluating a metrics filter.</p><note>
+    /// <p><code>Tag</code> filters are not supported for directory buckets.</p>
+    /// </note>
     Tag(crate::types::Tag),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

@@ -305,6 +305,8 @@ pub(crate) mod shape_odb_peering_connection_summary;
 
 pub(crate) mod shape_peered_cidr_list;
 
+pub(crate) mod shape_resource_id_list;
+
 pub(crate) mod shape_sensitive_string_list;
 
 pub(crate) mod shape_string_list;

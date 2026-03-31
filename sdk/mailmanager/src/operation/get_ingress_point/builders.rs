@@ -122,4 +122,18 @@ impl GetIngressPointFluentBuilder {
     pub fn get_ingress_point_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ingress_point_id()
     }
+    /// <p>Whether to include the trust store contents in the response. Use INCLUDE to retrieve trust store certificate and CRL contents.</p>
+    pub fn include_trust_store_contents(mut self, input: crate::types::TrustStoreResponseOption) -> Self {
+        self.inner = self.inner.include_trust_store_contents(input);
+        self
+    }
+    /// <p>Whether to include the trust store contents in the response. Use INCLUDE to retrieve trust store certificate and CRL contents.</p>
+    pub fn set_include_trust_store_contents(mut self, input: ::std::option::Option<crate::types::TrustStoreResponseOption>) -> Self {
+        self.inner = self.inner.set_include_trust_store_contents(input);
+        self
+    }
+    /// <p>Whether to include the trust store contents in the response. Use INCLUDE to retrieve trust store certificate and CRL contents.</p>
+    pub fn get_include_trust_store_contents(&self) -> &::std::option::Option<crate::types::TrustStoreResponseOption> {
+        self.inner.get_include_trust_store_contents()
+    }
 }

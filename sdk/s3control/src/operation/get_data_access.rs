@@ -226,6 +226,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDataAcces
                         query.push_kv("targetType", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
+                if let ::std::option::Option::Some(inner_6) = &_input.audit_context {
+                    {
+                        query.push_kv("auditContext", &::aws_smithy_http::query::fmt_string(inner_6));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

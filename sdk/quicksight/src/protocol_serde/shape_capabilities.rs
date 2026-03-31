@@ -636,23 +636,32 @@ pub fn ser_capabilities(
     if let Some(var_211) = &input.space {
         object.key("Space").string(var_211.as_str());
     }
-    if let Some(var_212) = &input.chat_agent {
-        object.key("ChatAgent").string(var_212.as_str());
+    if let Some(var_212) = &input.create_spaces {
+        object.key("CreateSpaces").string(var_212.as_str());
     }
-    if let Some(var_213) = &input.create_chat_agents {
-        object.key("CreateChatAgents").string(var_213.as_str());
+    if let Some(var_213) = &input.share_spaces {
+        object.key("ShareSpaces").string(var_213.as_str());
     }
-    if let Some(var_214) = &input.research {
-        object.key("Research").string(var_214.as_str());
+    if let Some(var_214) = &input.chat_agent {
+        object.key("ChatAgent").string(var_214.as_str());
     }
-    if let Some(var_215) = &input.self_upgrade_user_role {
-        object.key("SelfUpgradeUserRole").string(var_215.as_str());
+    if let Some(var_215) = &input.create_chat_agents {
+        object.key("CreateChatAgents").string(var_215.as_str());
     }
-    if let Some(var_216) = &input.extension {
-        object.key("Extension").string(var_216.as_str());
+    if let Some(var_216) = &input.share_chat_agents {
+        object.key("ShareChatAgents").string(var_216.as_str());
     }
-    if let Some(var_217) = &input.manage_shared_folders {
-        object.key("ManageSharedFolders").string(var_217.as_str());
+    if let Some(var_217) = &input.research {
+        object.key("Research").string(var_217.as_str());
+    }
+    if let Some(var_218) = &input.self_upgrade_user_role {
+        object.key("SelfUpgradeUserRole").string(var_218.as_str());
+    }
+    if let Some(var_219) = &input.extension {
+        object.key("Extension").string(var_219.as_str());
+    }
+    if let Some(var_220) = &input.manage_shared_folders {
+        object.key("ManageSharedFolders").string(var_220.as_str());
     }
     Ok(())
 }
@@ -2150,6 +2159,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CreateSpaces" => {
+                            builder = builder.set_create_spaces(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareSpaces" => {
+                            builder = builder.set_share_spaces(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "ChatAgent" => {
                             builder = builder.set_chat_agent(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -2159,6 +2182,13 @@ where
                         }
                         "CreateChatAgents" => {
                             builder = builder.set_create_chat_agents(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareChatAgents" => {
+                            builder = builder.set_share_chat_agents(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
                                     .transpose()?,

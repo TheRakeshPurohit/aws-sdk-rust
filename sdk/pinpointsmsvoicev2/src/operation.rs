@@ -16,6 +16,9 @@ pub mod create_configuration_set;
 /// Types for the `CreateEventDestination` operation.
 pub mod create_event_destination;
 
+/// Types for the `CreateNotifyConfiguration` operation.
+pub mod create_notify_configuration;
+
 /// Types for the `CreateOptOutList` operation.
 pub mod create_opt_out_list;
 
@@ -24,6 +27,9 @@ pub mod create_pool;
 
 /// Types for the `CreateProtectConfiguration` operation.
 pub mod create_protect_configuration;
+
+/// Types for the `CreateRcsAgent` operation.
+pub mod create_rcs_agent;
 
 /// Types for the `CreateRegistration` operation.
 pub mod create_registration;
@@ -61,6 +67,12 @@ pub mod delete_keyword;
 /// Types for the `DeleteMediaMessageSpendLimitOverride` operation.
 pub mod delete_media_message_spend_limit_override;
 
+/// Types for the `DeleteNotifyConfiguration` operation.
+pub mod delete_notify_configuration;
+
+/// Types for the `DeleteNotifyMessageSpendLimitOverride` operation.
+pub mod delete_notify_message_spend_limit_override;
+
 /// Types for the `DeleteOptOutList` operation.
 pub mod delete_opt_out_list;
 
@@ -75,6 +87,9 @@ pub mod delete_protect_configuration;
 
 /// Types for the `DeleteProtectConfigurationRuleSetNumberOverride` operation.
 pub mod delete_protect_configuration_rule_set_number_override;
+
+/// Types for the `DeleteRcsAgent` operation.
+pub mod delete_rcs_agent;
 
 /// Types for the `DeleteRegistration` operation.
 pub mod delete_registration;
@@ -109,6 +124,12 @@ pub mod describe_configuration_sets;
 /// Types for the `DescribeKeywords` operation.
 pub mod describe_keywords;
 
+/// Types for the `DescribeNotifyConfigurations` operation.
+pub mod describe_notify_configurations;
+
+/// Types for the `DescribeNotifyTemplates` operation.
+pub mod describe_notify_templates;
+
 /// Types for the `DescribeOptOutLists` operation.
 pub mod describe_opt_out_lists;
 
@@ -123,6 +144,12 @@ pub mod describe_pools;
 
 /// Types for the `DescribeProtectConfigurations` operation.
 pub mod describe_protect_configurations;
+
+/// Types for the `DescribeRcsAgentCountryLaunchStatus` operation.
+pub mod describe_rcs_agent_country_launch_status;
+
+/// Types for the `DescribeRcsAgents` operation.
+pub mod describe_rcs_agents;
 
 /// Types for the `DescribeRegistrationAttachments` operation.
 pub mod describe_registration_attachments;
@@ -168,6 +195,9 @@ pub mod get_protect_configuration_country_rule_set;
 
 /// Types for the `GetResourcePolicy` operation.
 pub mod get_resource_policy;
+
+/// Types for the `ListNotifyCountries` operation.
+pub mod list_notify_countries;
 
 /// Types for the `ListPoolOriginationIdentities` operation.
 pub mod list_pool_origination_identities;
@@ -217,6 +247,12 @@ pub mod send_destination_number_verification_code;
 /// Types for the `SendMediaMessage` operation.
 pub mod send_media_message;
 
+/// Types for the `SendNotifyTextMessage` operation.
+pub mod send_notify_text_message;
+
+/// Types for the `SendNotifyVoiceMessage` operation.
+pub mod send_notify_voice_message;
+
 /// Types for the `SendTextMessage` operation.
 pub mod send_text_message;
 
@@ -238,6 +274,9 @@ pub mod set_default_sender_id;
 /// Types for the `SetMediaMessageSpendLimitOverride` operation.
 pub mod set_media_message_spend_limit_override;
 
+/// Types for the `SetNotifyMessageSpendLimitOverride` operation.
+pub mod set_notify_message_spend_limit_override;
+
 /// Types for the `SetTextMessageSpendLimitOverride` operation.
 pub mod set_text_message_spend_limit_override;
 
@@ -256,6 +295,9 @@ pub mod untag_resource;
 /// Types for the `UpdateEventDestination` operation.
 pub mod update_event_destination;
 
+/// Types for the `UpdateNotifyConfiguration` operation.
+pub mod update_notify_configuration;
+
 /// Types for the `UpdatePhoneNumber` operation.
 pub mod update_phone_number;
 
@@ -267,6 +309,9 @@ pub mod update_protect_configuration;
 
 /// Types for the `UpdateProtectConfigurationCountryRuleSet` operation.
 pub mod update_protect_configuration_country_rule_set;
+
+/// Types for the `UpdateRcsAgent` operation.
+pub mod update_rcs_agent;
 
 /// Types for the `UpdateSenderId` operation.
 pub mod update_sender_id;

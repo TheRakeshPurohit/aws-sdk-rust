@@ -25,6 +25,14 @@ pub use crate::types::_keyword_filter::KeywordFilterBuilder;
 
 pub use crate::types::_keyword_information::KeywordInformationBuilder;
 
+pub use crate::types::_notify_configuration_filter::NotifyConfigurationFilterBuilder;
+
+pub use crate::types::_notify_configuration_information::NotifyConfigurationInformationBuilder;
+
+pub use crate::types::_notify_template_filter::NotifyTemplateFilterBuilder;
+
+pub use crate::types::_notify_template_information::NotifyTemplateInformationBuilder;
+
 pub use crate::types::_opted_out_filter::OptedOutFilterBuilder;
 
 pub use crate::types::_opted_out_number_information::OptedOutNumberInformationBuilder;
@@ -42,6 +50,14 @@ pub use crate::types::_pool_information::PoolInformationBuilder;
 pub use crate::types::_protect_configuration_filter::ProtectConfigurationFilterBuilder;
 
 pub use crate::types::_protect_configuration_information::ProtectConfigurationInformationBuilder;
+
+pub use crate::types::_country_launch_status_filter::CountryLaunchStatusFilterBuilder;
+
+pub use crate::types::_country_launch_status_information::CountryLaunchStatusInformationBuilder;
+
+pub use crate::types::_rcs_agent_filter::RcsAgentFilterBuilder;
+
+pub use crate::types::_rcs_agent_information::RcsAgentInformationBuilder;
 
 pub use crate::types::_registration_attachment_filter::RegistrationAttachmentFilterBuilder;
 
@@ -79,6 +95,8 @@ pub use crate::types::_verified_destination_number_information::VerifiedDestinat
 
 pub use crate::types::_protect_configuration_country_rule_set_information::ProtectConfigurationCountryRuleSetInformationBuilder;
 
+pub use crate::types::_notify_country_information::NotifyCountryInformationBuilder;
+
 pub use crate::types::_pool_origination_identities_filter::PoolOriginationIdentitiesFilterBuilder;
 
 pub use crate::types::_origination_identity_metadata::OriginationIdentityMetadataBuilder;
@@ -91,6 +109,8 @@ pub use crate::types::_registration_association_filter::RegistrationAssociationF
 
 pub use crate::types::_registration_association_metadata::RegistrationAssociationMetadataBuilder;
 
+pub use crate::types::_testing_agent_information::TestingAgentInformationBuilder;
+
 pub use crate::types::_select_validation::SelectValidationBuilder;
 
 pub use crate::types::_text_validation::TextValidationBuilder;
@@ -100,6 +120,10 @@ pub use crate::types::_registration_field_display_hints::RegistrationFieldDispla
 pub use crate::types::_registration_section_display_hints::RegistrationSectionDisplayHintsBuilder;
 
 pub use crate::types::_registration_type_display_hints::RegistrationTypeDisplayHintsBuilder;
+
+pub use crate::types::_template_variable_metadata::TemplateVariableMetadataBuilder;
+
+pub use crate::types::_carrier_status_information::CarrierStatusInformationBuilder;
 
 pub use crate::types::_supported_association::SupportedAssociationBuilder;
 

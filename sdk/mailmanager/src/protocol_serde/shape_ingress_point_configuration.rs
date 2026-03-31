@@ -10,6 +10,12 @@ pub fn ser_ingress_point_configuration(
         crate::types::IngressPointConfiguration::SecretArn(inner) => {
             object_7.key("SecretArn").string(inner.as_str());
         }
+        crate::types::IngressPointConfiguration::TlsAuthConfiguration(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_7.key("TlsAuthConfiguration").start_object();
+            crate::protocol_serde::shape_tls_auth_configuration::ser_tls_auth_configuration(&mut object_1, inner)?;
+            object_1.finish();
+        }
         crate::types::IngressPointConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "IngressPointConfiguration",

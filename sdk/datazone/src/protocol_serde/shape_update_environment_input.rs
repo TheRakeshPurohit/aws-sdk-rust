@@ -9,29 +9,32 @@ pub fn ser_update_environment_input_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.glossary_terms {
-        let mut array_4 = object.key("glossaryTerms").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.environment_configuration_name {
+        object.key("environmentConfigurationName").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.glossary_terms {
+        let mut array_5 = object.key("glossaryTerms").start_array();
+        for item_6 in var_4 {
             {
-                array_4.value().string(item_5.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    if let Some(var_7) = &input.name {
+        object.key("name").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.user_parameters {
-        let mut array_8 = object.key("userParameters").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.user_parameters {
+        let mut array_9 = object.key("userParameters").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_environment_parameter::ser_environment_parameter(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_environment_parameter::ser_environment_parameter(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
     Ok(())
 }

@@ -25,6 +25,8 @@ pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginationTokenException;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
 pub use crate::types::error::_slot_not_available_exception::SlotNotAvailableException;
 
 mod _access_denied_exception;
@@ -48,6 +50,8 @@ mod _limit_exceeded_exception;
 mod _resource_already_exists_exception;
 
 mod _resource_not_found_exception;
+
+mod _service_quota_exceeded_exception;
 
 mod _slot_not_available_exception;
 

@@ -4,8 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IcebergMetadata {
-    /// <p>The schema for an Iceberg table.</p>
+    /// <p>The schema for an Iceberg table. Use this property to define table schemas with primitive types only. For schemas that include nested or complex types such as <code>struct</code>, <code>list</code>, or <code>map</code>, use <code>schemaV2</code> instead.</p>
     pub schema: ::std::option::Option<crate::types::IcebergSchema>,
+    /// <p>The schema for an Iceberg table using the V2 format. Use this property to define table schemas that include nested or complex data types such as <code>struct</code>, <code>list</code>, or <code>map</code>, in addition to primitive types. For schemas with only primitive types, you can use either <code>schema</code> or <code>schemaV2</code>.</p>
+    pub schema_v2: ::std::option::Option<crate::types::IcebergSchemaV2>,
     /// <p>The partition specification for the Iceberg table. Partitioning organizes data into separate files based on the values of one or more fields, which can improve query performance by reducing the amount of data scanned. Each partition field applies a transform (such as identity, year, month, or bucket) to a single field.</p>
     pub partition_spec: ::std::option::Option<crate::types::IcebergPartitionSpec>,
     /// <p>The sort order for the Iceberg table. Sort order defines how data is sorted within data files, which can improve query performance by enabling more efficient data skipping and filtering.</p>
@@ -14,9 +16,13 @@ pub struct IcebergMetadata {
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IcebergMetadata {
-    /// <p>The schema for an Iceberg table.</p>
+    /// <p>The schema for an Iceberg table. Use this property to define table schemas with primitive types only. For schemas that include nested or complex types such as <code>struct</code>, <code>list</code>, or <code>map</code>, use <code>schemaV2</code> instead.</p>
     pub fn schema(&self) -> ::std::option::Option<&crate::types::IcebergSchema> {
         self.schema.as_ref()
+    }
+    /// <p>The schema for an Iceberg table using the V2 format. Use this property to define table schemas that include nested or complex data types such as <code>struct</code>, <code>list</code>, or <code>map</code>, in addition to primitive types. For schemas with only primitive types, you can use either <code>schema</code> or <code>schemaV2</code>.</p>
+    pub fn schema_v2(&self) -> ::std::option::Option<&crate::types::IcebergSchemaV2> {
+        self.schema_v2.as_ref()
     }
     /// <p>The partition specification for the Iceberg table. Partitioning organizes data into separate files based on the values of one or more fields, which can improve query performance by reducing the amount of data scanned. Each partition field applies a transform (such as identity, year, month, or bucket) to a single field.</p>
     pub fn partition_spec(&self) -> ::std::option::Option<&crate::types::IcebergPartitionSpec> {
@@ -43,25 +49,39 @@ impl IcebergMetadata {
 #[non_exhaustive]
 pub struct IcebergMetadataBuilder {
     pub(crate) schema: ::std::option::Option<crate::types::IcebergSchema>,
+    pub(crate) schema_v2: ::std::option::Option<crate::types::IcebergSchemaV2>,
     pub(crate) partition_spec: ::std::option::Option<crate::types::IcebergPartitionSpec>,
     pub(crate) write_order: ::std::option::Option<crate::types::IcebergSortOrder>,
     pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl IcebergMetadataBuilder {
-    /// <p>The schema for an Iceberg table.</p>
-    /// This field is required.
+    /// <p>The schema for an Iceberg table. Use this property to define table schemas with primitive types only. For schemas that include nested or complex types such as <code>struct</code>, <code>list</code>, or <code>map</code>, use <code>schemaV2</code> instead.</p>
     pub fn schema(mut self, input: crate::types::IcebergSchema) -> Self {
         self.schema = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The schema for an Iceberg table.</p>
+    /// <p>The schema for an Iceberg table. Use this property to define table schemas with primitive types only. For schemas that include nested or complex types such as <code>struct</code>, <code>list</code>, or <code>map</code>, use <code>schemaV2</code> instead.</p>
     pub fn set_schema(mut self, input: ::std::option::Option<crate::types::IcebergSchema>) -> Self {
         self.schema = input;
         self
     }
-    /// <p>The schema for an Iceberg table.</p>
+    /// <p>The schema for an Iceberg table. Use this property to define table schemas with primitive types only. For schemas that include nested or complex types such as <code>struct</code>, <code>list</code>, or <code>map</code>, use <code>schemaV2</code> instead.</p>
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::IcebergSchema> {
         &self.schema
+    }
+    /// <p>The schema for an Iceberg table using the V2 format. Use this property to define table schemas that include nested or complex data types such as <code>struct</code>, <code>list</code>, or <code>map</code>, in addition to primitive types. For schemas with only primitive types, you can use either <code>schema</code> or <code>schemaV2</code>.</p>
+    pub fn schema_v2(mut self, input: crate::types::IcebergSchemaV2) -> Self {
+        self.schema_v2 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The schema for an Iceberg table using the V2 format. Use this property to define table schemas that include nested or complex data types such as <code>struct</code>, <code>list</code>, or <code>map</code>, in addition to primitive types. For schemas with only primitive types, you can use either <code>schema</code> or <code>schemaV2</code>.</p>
+    pub fn set_schema_v2(mut self, input: ::std::option::Option<crate::types::IcebergSchemaV2>) -> Self {
+        self.schema_v2 = input;
+        self
+    }
+    /// <p>The schema for an Iceberg table using the V2 format. Use this property to define table schemas that include nested or complex data types such as <code>struct</code>, <code>list</code>, or <code>map</code>, in addition to primitive types. For schemas with only primitive types, you can use either <code>schema</code> or <code>schemaV2</code>.</p>
+    pub fn get_schema_v2(&self) -> &::std::option::Option<crate::types::IcebergSchemaV2> {
+        &self.schema_v2
     }
     /// <p>The partition specification for the Iceberg table. Partitioning organizes data into separate files based on the values of one or more fields, which can improve query performance by reducing the amount of data scanned. Each partition field applies a transform (such as identity, year, month, or bucket) to a single field.</p>
     pub fn partition_spec(mut self, input: crate::types::IcebergPartitionSpec) -> Self {
@@ -115,6 +135,7 @@ impl IcebergMetadataBuilder {
     pub fn build(self) -> crate::types::IcebergMetadata {
         crate::types::IcebergMetadata {
             schema: self.schema,
+            schema_v2: self.schema_v2,
             partition_spec: self.partition_spec,
             write_order: self.write_order,
             properties: self.properties,

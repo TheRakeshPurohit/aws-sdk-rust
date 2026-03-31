@@ -701,6 +701,16 @@ pub(crate) fn table_lf_tag_policy_and_permissions_correct_errors(
     builder
 }
 
+pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn asset_destination_entry_correct_errors(
     mut builder: crate::types::builders::AssetDestinationEntryBuilder,
 ) -> crate::types::builders::AssetDestinationEntryBuilder {

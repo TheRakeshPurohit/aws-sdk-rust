@@ -22,8 +22,6 @@ pub enum ServiceConfiguration {
     Mcpservergrafana(crate::types::McpServerGrafanaConfiguration),
     /// NewRelic instance integration configuration.
     Mcpservernewrelic(crate::types::McpServerNewRelicConfiguration),
-    /// MS Teams integration configuration
-    Msteams(crate::types::MsTeamsConfiguration),
     /// PagerDuty integration configuration
     Pagerduty(crate::types::PagerDutyConfiguration),
     /// ServiceNow instance integration configuration.
@@ -159,19 +157,6 @@ impl ServiceConfiguration {
     /// Returns true if this is a [`Mcpservernewrelic`](crate::types::ServiceConfiguration::Mcpservernewrelic).
     pub fn is_mcpservernewrelic(&self) -> bool {
         self.as_mcpservernewrelic().is_ok()
-    }
-    /// Tries to convert the enum instance into [`Msteams`](crate::types::ServiceConfiguration::Msteams), extracting the inner [`MsTeamsConfiguration`](crate::types::MsTeamsConfiguration).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_msteams(&self) -> ::std::result::Result<&crate::types::MsTeamsConfiguration, &Self> {
-        if let ServiceConfiguration::Msteams(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
-    }
-    /// Returns true if this is a [`Msteams`](crate::types::ServiceConfiguration::Msteams).
-    pub fn is_msteams(&self) -> bool {
-        self.as_msteams().is_ok()
     }
     /// Tries to convert the enum instance into [`Pagerduty`](crate::types::ServiceConfiguration::Pagerduty), extracting the inner [`PagerDutyConfiguration`](crate::types::PagerDutyConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

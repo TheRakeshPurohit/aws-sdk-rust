@@ -167,6 +167,8 @@ pub(crate) mod shape_describe_asset_bundle_export_job;
 
 pub(crate) mod shape_describe_asset_bundle_import_job;
 
+pub(crate) mod shape_describe_automation_job;
+
 pub(crate) mod shape_describe_brand;
 
 pub(crate) mod shape_describe_brand_assignment;
@@ -374,6 +376,8 @@ pub(crate) mod shape_search_topics;
 pub(crate) mod shape_start_asset_bundle_export_job;
 
 pub(crate) mod shape_start_asset_bundle_import_job;
+
+pub(crate) mod shape_start_automation_job;
 
 pub(crate) mod shape_start_dashboard_snapshot_job;
 
@@ -614,6 +618,8 @@ pub(crate) mod shape_session_lifetime_in_minutes_invalid_exception;
 pub(crate) mod shape_start_asset_bundle_export_job_input;
 
 pub(crate) mod shape_start_asset_bundle_import_job_input;
+
+pub(crate) mod shape_start_automation_job_input;
 
 pub(crate) mod shape_start_dashboard_snapshot_job_input;
 
@@ -1359,6 +1365,8 @@ pub(crate) mod shape_namespace_error;
 
 pub(crate) mod shape_network_interface_list;
 
+pub(crate) mod shape_o_auth_client_credentials;
+
 pub(crate) mod shape_oracle_parameters;
 
 pub(crate) mod shape_output_column_list;
@@ -1494,6 +1502,10 @@ pub(crate) mod shape_theme_summary;
 pub(crate) mod shape_theme_version;
 
 pub(crate) mod shape_theme_version_summary;
+
+pub(crate) mod shape_tooltip_sheet_definition;
+
+pub(crate) mod shape_tooltip_sheet_definition_list;
 
 pub(crate) mod shape_topic_config_options;
 
@@ -2096,6 +2108,12 @@ pub(crate) mod shape_threshold_alerts_configurations;
 pub(crate) mod shape_time_equality_filter;
 
 pub(crate) mod shape_time_range_filter;
+
+pub(crate) mod shape_tooltip_sheet_image_list;
+
+pub(crate) mod shape_tooltip_sheet_text_box_list;
+
+pub(crate) mod shape_tooltip_sheet_visual_list;
 
 pub(crate) mod shape_top_bottom_filter;
 
@@ -2979,9 +2997,13 @@ pub(crate) mod shape_sheet_element_rendering_rule;
 
 pub(crate) mod shape_sheet_layout_group_member;
 
+pub(crate) mod shape_sheet_tooltip;
+
 pub(crate) mod shape_small_multiples_axis_properties;
 
 pub(crate) mod shape_snapshot_job_s3_result;
+
+pub(crate) mod shape_sparklines_options;
 
 pub(crate) mod shape_subtotal_options;
 

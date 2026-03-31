@@ -206,6 +206,20 @@ impl CreateIngressPointFluentBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         self.inner.get_network_configuration()
     }
+    /// <p>The Transport Layer Security (TLS) policy for the ingress point. The FIPS value is only valid in US and Canada regions.</p>
+    pub fn tls_policy(mut self, input: crate::types::TlsPolicy) -> Self {
+        self.inner = self.inner.tls_policy(input);
+        self
+    }
+    /// <p>The Transport Layer Security (TLS) policy for the ingress point. The FIPS value is only valid in US and Canada regions.</p>
+    pub fn set_tls_policy(mut self, input: ::std::option::Option<crate::types::TlsPolicy>) -> Self {
+        self.inner = self.inner.set_tls_policy(input);
+        self
+    }
+    /// <p>The Transport Layer Security (TLS) policy for the ingress point. The FIPS value is only valid in US and Canada regions.</p>
+    pub fn get_tls_policy(&self) -> &::std::option::Option<crate::types::TlsPolicy> {
+        self.inner.get_tls_policy()
+    }
     ///
     /// Appends an item to `Tags`.
     ///

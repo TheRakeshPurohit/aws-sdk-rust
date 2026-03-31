@@ -37,6 +37,21 @@ pub fn de_deregister_member_from_address_list_http_error(
                 tmp
             })
         }
+        "ConflictException" => crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => {
             crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError::ResourceNotFoundException({
                 #[allow(unused_mut)]

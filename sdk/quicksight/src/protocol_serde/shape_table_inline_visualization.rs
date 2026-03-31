@@ -9,6 +9,12 @@ pub fn ser_table_inline_visualization(
         crate::protocol_serde::shape_data_bars_options::ser_data_bars_options(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.sparklines {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("Sparklines").start_object();
+        crate::protocol_serde::shape_sparklines_options::ser_sparklines_options(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +36,9 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DataBars" => {
                             builder = builder.set_data_bars(crate::protocol_serde::shape_data_bars_options::de_data_bars_options(tokens, _value)?);
+                        }
+                        "Sparklines" => {
+                            builder = builder.set_sparklines(crate::protocol_serde::shape_sparklines_options::de_sparklines_options(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

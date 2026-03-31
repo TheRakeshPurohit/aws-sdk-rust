@@ -14,7 +14,10 @@
 /// match resourcetype {
 ///     ResourceType::AwsBedrockAgentcoreBrowser => { /* ... */ },
 ///     ResourceType::AwsBedrockAgentcoreCodeInterpreter => { /* ... */ },
+///     ResourceType::AwsBedrockAgentcoreGateway => { /* ... */ },
+///     ResourceType::AwsBedrockAgentcoreMemory => { /* ... */ },
 ///     ResourceType::AwsBedrockAgentcoreRuntime => { /* ... */ },
+///     ResourceType::AwsCloudfrontDistribution => { /* ... */ },
 ///     ResourceType::AwsCloudtrail => { /* ... */ },
 ///     ResourceType::AwsEc2Instance => { /* ... */ },
 ///     ResourceType::AwsEc2Vpc => { /* ... */ },
@@ -22,6 +25,7 @@
 ///     ResourceType::AwsElbLoadbalancer => { /* ... */ },
 ///     ResourceType::AwsLamdbaFunction => { /* ... */ },
 ///     ResourceType::AwsRoute53ResolverResolverEndpoint => { /* ... */ },
+///     ResourceType::AwsSecurityHub => { /* ... */ },
 ///     ResourceType::AwsWafV2WebAcl => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -56,7 +60,13 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsBedrockAgentcoreCodeInterpreter,
     #[allow(missing_docs)] // documentation missing in model
+    AwsBedrockAgentcoreGateway,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsBedrockAgentcoreMemory,
+    #[allow(missing_docs)] // documentation missing in model
     AwsBedrockAgentcoreRuntime,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsCloudfrontDistribution,
     #[allow(missing_docs)] // documentation missing in model
     AwsCloudtrail,
     #[allow(missing_docs)] // documentation missing in model
@@ -72,6 +82,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsRoute53ResolverResolverEndpoint,
     #[allow(missing_docs)] // documentation missing in model
+    AwsSecurityHub,
+    #[allow(missing_docs)] // documentation missing in model
     AwsWafV2WebAcl,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -82,7 +94,10 @@ impl ::std::convert::From<&str> for ResourceType {
         match s {
             "AWS::BedrockAgentCore::Browser" => ResourceType::AwsBedrockAgentcoreBrowser,
             "AWS::BedrockAgentCore::CodeInterpreter" => ResourceType::AwsBedrockAgentcoreCodeInterpreter,
+            "AWS::BedrockAgentCore::Gateway" => ResourceType::AwsBedrockAgentcoreGateway,
+            "AWS::BedrockAgentCore::Memory" => ResourceType::AwsBedrockAgentcoreMemory,
             "AWS::BedrockAgentCore::Runtime" => ResourceType::AwsBedrockAgentcoreRuntime,
+            "AWS::CloudFront::Distribution" => ResourceType::AwsCloudfrontDistribution,
             "AWS::CloudTrail" => ResourceType::AwsCloudtrail,
             "AWS::EC2::Instance" => ResourceType::AwsEc2Instance,
             "AWS::EC2::VPC" => ResourceType::AwsEc2Vpc,
@@ -90,6 +105,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::ElasticLoadBalancingV2::LoadBalancer" => ResourceType::AwsElbLoadbalancer,
             "AWS::Lambda::Function" => ResourceType::AwsLamdbaFunction,
             "AWS::Route53Resolver::ResolverEndpoint" => ResourceType::AwsRoute53ResolverResolverEndpoint,
+            "AWS::SecurityHub::Hub" => ResourceType::AwsSecurityHub,
             "AWS::WAFv2::WebACL" => ResourceType::AwsWafV2WebAcl,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -108,7 +124,10 @@ impl ResourceType {
         match self {
             ResourceType::AwsBedrockAgentcoreBrowser => "AWS::BedrockAgentCore::Browser",
             ResourceType::AwsBedrockAgentcoreCodeInterpreter => "AWS::BedrockAgentCore::CodeInterpreter",
+            ResourceType::AwsBedrockAgentcoreGateway => "AWS::BedrockAgentCore::Gateway",
+            ResourceType::AwsBedrockAgentcoreMemory => "AWS::BedrockAgentCore::Memory",
             ResourceType::AwsBedrockAgentcoreRuntime => "AWS::BedrockAgentCore::Runtime",
+            ResourceType::AwsCloudfrontDistribution => "AWS::CloudFront::Distribution",
             ResourceType::AwsCloudtrail => "AWS::CloudTrail",
             ResourceType::AwsEc2Instance => "AWS::EC2::Instance",
             ResourceType::AwsEc2Vpc => "AWS::EC2::VPC",
@@ -116,6 +135,7 @@ impl ResourceType {
             ResourceType::AwsElbLoadbalancer => "AWS::ElasticLoadBalancingV2::LoadBalancer",
             ResourceType::AwsLamdbaFunction => "AWS::Lambda::Function",
             ResourceType::AwsRoute53ResolverResolverEndpoint => "AWS::Route53Resolver::ResolverEndpoint",
+            ResourceType::AwsSecurityHub => "AWS::SecurityHub::Hub",
             ResourceType::AwsWafV2WebAcl => "AWS::WAFv2::WebACL",
             ResourceType::Unknown(value) => value.as_str(),
         }
@@ -125,7 +145,10 @@ impl ResourceType {
         &[
             "AWS::BedrockAgentCore::Browser",
             "AWS::BedrockAgentCore::CodeInterpreter",
+            "AWS::BedrockAgentCore::Gateway",
+            "AWS::BedrockAgentCore::Memory",
             "AWS::BedrockAgentCore::Runtime",
+            "AWS::CloudFront::Distribution",
             "AWS::CloudTrail",
             "AWS::EC2::Instance",
             "AWS::EC2::VPC",
@@ -133,6 +156,7 @@ impl ResourceType {
             "AWS::ElasticLoadBalancingV2::LoadBalancer",
             "AWS::Lambda::Function",
             "AWS::Route53Resolver::ResolverEndpoint",
+            "AWS::SecurityHub::Hub",
             "AWS::WAFv2::WebACL",
         ]
     }
@@ -159,7 +183,10 @@ impl ::std::fmt::Display for ResourceType {
         match self {
             ResourceType::AwsBedrockAgentcoreBrowser => write!(f, "AWS::BedrockAgentCore::Browser"),
             ResourceType::AwsBedrockAgentcoreCodeInterpreter => write!(f, "AWS::BedrockAgentCore::CodeInterpreter"),
+            ResourceType::AwsBedrockAgentcoreGateway => write!(f, "AWS::BedrockAgentCore::Gateway"),
+            ResourceType::AwsBedrockAgentcoreMemory => write!(f, "AWS::BedrockAgentCore::Memory"),
             ResourceType::AwsBedrockAgentcoreRuntime => write!(f, "AWS::BedrockAgentCore::Runtime"),
+            ResourceType::AwsCloudfrontDistribution => write!(f, "AWS::CloudFront::Distribution"),
             ResourceType::AwsCloudtrail => write!(f, "AWS::CloudTrail"),
             ResourceType::AwsEc2Instance => write!(f, "AWS::EC2::Instance"),
             ResourceType::AwsEc2Vpc => write!(f, "AWS::EC2::VPC"),
@@ -167,6 +194,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::AwsElbLoadbalancer => write!(f, "AWS::ElasticLoadBalancingV2::LoadBalancer"),
             ResourceType::AwsLamdbaFunction => write!(f, "AWS::Lambda::Function"),
             ResourceType::AwsRoute53ResolverResolverEndpoint => write!(f, "AWS::Route53Resolver::ResolverEndpoint"),
+            ResourceType::AwsSecurityHub => write!(f, "AWS::SecurityHub::Hub"),
             ResourceType::AwsWafV2WebAcl => write!(f, "AWS::WAFv2::WebACL"),
             ResourceType::Unknown(value) => write!(f, "{value}"),
         }

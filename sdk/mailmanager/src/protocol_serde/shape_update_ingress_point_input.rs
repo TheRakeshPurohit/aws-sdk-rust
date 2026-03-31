@@ -24,5 +24,8 @@ pub fn ser_update_ingress_point_input_input(
         crate::protocol_serde::shape_ingress_point_configuration::ser_ingress_point_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.tls_policy {
+        object.key("TlsPolicy").string(var_8.as_str());
+    }
     Ok(())
 }

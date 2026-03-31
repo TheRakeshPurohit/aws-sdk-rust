@@ -18,6 +18,8 @@ pub struct VerifiedDestinationNumberInformation {
     /// <p><code>VERIFIED</code>: The phone number is verified and can receive messages.</p></li>
     /// </ul>
     pub status: crate::types::VerificationStatus,
+    /// <p>The unique identifier of the RCS agent associated with the verified destination number.</p>
+    pub rcs_agent_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the destination phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub created_timestamp: ::aws_smithy_types::DateTime,
 }
@@ -47,6 +49,10 @@ impl VerifiedDestinationNumberInformation {
     pub fn status(&self) -> &crate::types::VerificationStatus {
         &self.status
     }
+    /// <p>The unique identifier of the RCS agent associated with the verified destination number.</p>
+    pub fn rcs_agent_id(&self) -> ::std::option::Option<&str> {
+        self.rcs_agent_id.as_deref()
+    }
     /// <p>The time when the destination phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.created_timestamp
@@ -67,6 +73,7 @@ pub struct VerifiedDestinationNumberInformationBuilder {
     pub(crate) verified_destination_number_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::VerificationStatus>,
+    pub(crate) rcs_agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VerifiedDestinationNumberInformationBuilder {
@@ -148,6 +155,20 @@ impl VerifiedDestinationNumberInformationBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VerificationStatus> {
         &self.status
     }
+    /// <p>The unique identifier of the RCS agent associated with the verified destination number.</p>
+    pub fn rcs_agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rcs_agent_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the RCS agent associated with the verified destination number.</p>
+    pub fn set_rcs_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rcs_agent_id = input;
+        self
+    }
+    /// <p>The unique identifier of the RCS agent associated with the verified destination number.</p>
+    pub fn get_rcs_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rcs_agent_id
+    }
     /// <p>The time when the destination phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     /// This field is required.
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -198,6 +219,7 @@ impl VerifiedDestinationNumberInformationBuilder {
                     "status was not specified but it is required when building VerifiedDestinationNumberInformation",
                 )
             })?,
+            rcs_agent_id: self.rcs_agent_id,
             created_timestamp: self.created_timestamp.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_timestamp",

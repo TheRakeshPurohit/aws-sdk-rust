@@ -8,7 +8,7 @@
 pub struct CertificateOptions {
     /// <p>You can opt out of certificate transparency logging by specifying the <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>.</p>
     pub certificate_transparency_logging_preference: ::std::option::Option<crate::types::CertificateTransparencyLoggingPreference>,
-    /// <p>You can opt in to allow the export of your certificates by specifying <code>ENABLED</code>.</p>
+    /// <p>You can opt in to allow the export of your certificates by specifying <code>ENABLED</code>. You cannot update the value of <code>Export</code> after the the certificate is created.</p>
     pub export: ::std::option::Option<crate::types::CertificateExport>,
 }
 impl CertificateOptions {
@@ -16,7 +16,7 @@ impl CertificateOptions {
     pub fn certificate_transparency_logging_preference(&self) -> ::std::option::Option<&crate::types::CertificateTransparencyLoggingPreference> {
         self.certificate_transparency_logging_preference.as_ref()
     }
-    /// <p>You can opt in to allow the export of your certificates by specifying <code>ENABLED</code>.</p>
+    /// <p>You can opt in to allow the export of your certificates by specifying <code>ENABLED</code>. You cannot update the value of <code>Export</code> after the the certificate is created.</p>
     pub fn export(&self) -> ::std::option::Option<&crate::types::CertificateExport> {
         self.export.as_ref()
     }
@@ -53,17 +53,17 @@ impl CertificateOptionsBuilder {
     pub fn get_certificate_transparency_logging_preference(&self) -> &::std::option::Option<crate::types::CertificateTransparencyLoggingPreference> {
         &self.certificate_transparency_logging_preference
     }
-    /// <p>You can opt in to allow the export of your certificates by specifying <code>ENABLED</code>.</p>
+    /// <p>You can opt in to allow the export of your certificates by specifying <code>ENABLED</code>. You cannot update the value of <code>Export</code> after the the certificate is created.</p>
     pub fn export(mut self, input: crate::types::CertificateExport) -> Self {
         self.export = ::std::option::Option::Some(input);
         self
     }
-    /// <p>You can opt in to allow the export of your certificates by specifying <code>ENABLED</code>.</p>
+    /// <p>You can opt in to allow the export of your certificates by specifying <code>ENABLED</code>. You cannot update the value of <code>Export</code> after the the certificate is created.</p>
     pub fn set_export(mut self, input: ::std::option::Option<crate::types::CertificateExport>) -> Self {
         self.export = input;
         self
     }
-    /// <p>You can opt in to allow the export of your certificates by specifying <code>ENABLED</code>.</p>
+    /// <p>You can opt in to allow the export of your certificates by specifying <code>ENABLED</code>. You cannot update the value of <code>Export</code> after the the certificate is created.</p>
     pub fn get_export(&self) -> &::std::option::Option<crate::types::CertificateExport> {
         &self.export
     }

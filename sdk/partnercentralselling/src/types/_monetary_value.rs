@@ -6,7 +6,7 @@
 pub struct MonetaryValue {
     /// <p>Specifies the payment amount.</p>
     pub amount: ::std::string::String,
-    /// <p>Specifies the payment currency.</p>
+    /// <p>Specifies the payment currency. Accepted values are <code>USD</code> (US Dollars) and <code>EUR</code> (Euros). If the AWS Partition is <code>aws-eusc</code> (AWS European Sovereign Cloud), the currency code must be <code>EUR</code>.</p>
     pub currency_code: crate::types::CurrencyCode,
 }
 impl MonetaryValue {
@@ -15,7 +15,7 @@ impl MonetaryValue {
         use std::ops::Deref;
         self.amount.deref()
     }
-    /// <p>Specifies the payment currency.</p>
+    /// <p>Specifies the payment currency. Accepted values are <code>USD</code> (US Dollars) and <code>EUR</code> (Euros). If the AWS Partition is <code>aws-eusc</code> (AWS European Sovereign Cloud), the currency code must be <code>EUR</code>.</p>
     pub fn currency_code(&self) -> &crate::types::CurrencyCode {
         &self.currency_code
     }
@@ -58,18 +58,18 @@ impl MonetaryValueBuilder {
     pub fn get_amount(&self) -> &::std::option::Option<::std::string::String> {
         &self.amount
     }
-    /// <p>Specifies the payment currency.</p>
+    /// <p>Specifies the payment currency. Accepted values are <code>USD</code> (US Dollars) and <code>EUR</code> (Euros). If the AWS Partition is <code>aws-eusc</code> (AWS European Sovereign Cloud), the currency code must be <code>EUR</code>.</p>
     /// This field is required.
     pub fn currency_code(mut self, input: crate::types::CurrencyCode) -> Self {
         self.currency_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the payment currency.</p>
+    /// <p>Specifies the payment currency. Accepted values are <code>USD</code> (US Dollars) and <code>EUR</code> (Euros). If the AWS Partition is <code>aws-eusc</code> (AWS European Sovereign Cloud), the currency code must be <code>EUR</code>.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCode>) -> Self {
         self.currency_code = input;
         self
     }
-    /// <p>Specifies the payment currency.</p>
+    /// <p>Specifies the payment currency. Accepted values are <code>USD</code> (US Dollars) and <code>EUR</code> (Euros). If the AWS Partition is <code>aws-eusc</code> (AWS European Sovereign Cloud), the currency code must be <code>EUR</code>.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCode> {
         &self.currency_code
     }

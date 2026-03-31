@@ -22,7 +22,7 @@ impl crate::operation::allow_vended_log_delivery_for_resource::builders::AllowVe
 }
 /// Fluent builder constructing a request to `AllowVendedLogDeliveryForResource`.
 ///
-/// Authorize Ingestion Hub subscription operation. Looks to see if the derived accountId from FAS has an AgentSpace.
+/// Authorize Ingestion Hub subscription operation.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AllowVendedLogDeliveryForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

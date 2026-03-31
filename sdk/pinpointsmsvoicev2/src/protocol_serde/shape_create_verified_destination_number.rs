@@ -69,6 +69,24 @@ pub fn de_create_verified_destination_number_http_error(
                 tmp
             })
         }
+        "ResourceNotFoundException" => {
+            crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ServiceQuotaExceededException" => {
             crate::operation::create_verified_destination_number::CreateVerifiedDestinationNumberError::ServiceQuotaExceededException({
                 #[allow(unused_mut)]
@@ -193,6 +211,13 @@ pub(crate) fn de_create_verified_destination_number(
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::VerificationStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "RcsAgentId" => {
+                    builder = builder.set_rcs_agent_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

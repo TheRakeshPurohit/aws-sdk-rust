@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`monthly_account_investigation_hours(Option<UsageMetric>)`](crate::operation::get_account_usage::GetAccountUsageOutput::monthly_account_investigation_hours): Monthly investigation hours usage and limit for an account
     ///   - [`monthly_account_evaluation_hours(Option<UsageMetric>)`](crate::operation::get_account_usage::GetAccountUsageOutput::monthly_account_evaluation_hours): Monthly evaluation hours usage and limit for an account
     ///   - [`monthly_account_system_learning_hours(Option<UsageMetric>)`](crate::operation::get_account_usage::GetAccountUsageOutput::monthly_account_system_learning_hours): Monthly system learning hours usage and limit for an account
+    ///   - [`monthly_account_on_demand_hours(Option<UsageMetric>)`](crate::operation::get_account_usage::GetAccountUsageOutput::monthly_account_on_demand_hours): Monthly on-demand hours usage and limit for an account
     ///   - [`usage_period_start_time(DateTime)`](crate::operation::get_account_usage::GetAccountUsageOutput::usage_period_start_time): The start time of the usage tracking period
     ///   - [`usage_period_end_time(DateTime)`](crate::operation::get_account_usage::GetAccountUsageOutput::usage_period_end_time): The end time of the usage tracking period
     /// - On failure, responds with [`SdkError<GetAccountUsageError>`](crate::operation::get_account_usage::GetAccountUsageError)

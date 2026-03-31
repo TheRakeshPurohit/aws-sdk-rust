@@ -8,7 +8,7 @@ pub struct GetSpritesInput {
     pub file_name: ::std::option::Option<::std::string::String>,
     /// <p>Style specifies the desired map style for the <code>Sprites</code> APIs.</p>
     pub style: ::std::option::Option<crate::types::MapStyle>,
-    /// <p>Sets color tone for map such as dark and light for specific map styles. It applies to only vector map styles such as Standard and Monochrome.</p>
+    /// <p>Sets the color tone for the map sprites, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for ColorScheme are case sensitive.</p>
@@ -30,7 +30,7 @@ impl GetSpritesInput {
     pub fn style(&self) -> ::std::option::Option<&crate::types::MapStyle> {
         self.style.as_ref()
     }
-    /// <p>Sets color tone for map such as dark and light for specific map styles. It applies to only vector map styles such as Standard and Monochrome.</p>
+    /// <p>Sets the color tone for the map sprites, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for ColorScheme are case sensitive.</p>
@@ -96,7 +96,7 @@ impl GetSpritesInputBuilder {
     pub fn get_style(&self) -> &::std::option::Option<crate::types::MapStyle> {
         &self.style
     }
-    /// <p>Sets color tone for map such as dark and light for specific map styles. It applies to only vector map styles such as Standard and Monochrome.</p>
+    /// <p>Sets the color tone for the map sprites, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for ColorScheme are case sensitive.</p>
@@ -106,7 +106,7 @@ impl GetSpritesInputBuilder {
         self.color_scheme = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Sets color tone for map such as dark and light for specific map styles. It applies to only vector map styles such as Standard and Monochrome.</p>
+    /// <p>Sets the color tone for the map sprites, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for ColorScheme are case sensitive.</p>
@@ -115,7 +115,7 @@ impl GetSpritesInputBuilder {
         self.color_scheme = input;
         self
     }
-    /// <p>Sets color tone for map such as dark and light for specific map styles. It applies to only vector map styles such as Standard and Monochrome.</p>
+    /// <p>Sets the color tone for the map sprites, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for ColorScheme are case sensitive.</p>

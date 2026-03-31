@@ -217,6 +217,9 @@ pub mod describe_asset_bundle_export_job;
 /// Types for the `DescribeAssetBundleImportJob` operation.
 pub mod describe_asset_bundle_import_job;
 
+/// Types for the `DescribeAutomationJob` operation.
+pub mod describe_automation_job;
+
 /// Types for the `DescribeBrand` operation.
 pub mod describe_brand;
 
@@ -528,6 +531,9 @@ pub mod start_asset_bundle_export_job;
 
 /// Types for the `StartAssetBundleImportJob` operation.
 pub mod start_asset_bundle_import_job;
+
+/// Types for the `StartAutomationJob` operation.
+pub mod start_automation_job;
 
 /// Types for the `StartDashboardSnapshotJob` operation.
 pub mod start_dashboard_snapshot_job;

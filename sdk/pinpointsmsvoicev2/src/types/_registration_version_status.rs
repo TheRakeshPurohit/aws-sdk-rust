@@ -19,6 +19,7 @@
 ///     RegistrationVersionStatus::Discarded => { /* ... */ },
 ///     RegistrationVersionStatus::Draft => { /* ... */ },
 ///     RegistrationVersionStatus::RequiresAuthentication => { /* ... */ },
+///     RegistrationVersionStatus::RequiresOfflineReview => { /* ... */ },
 ///     RegistrationVersionStatus::Reviewing => { /* ... */ },
 ///     RegistrationVersionStatus::Revoked => { /* ... */ },
 ///     RegistrationVersionStatus::Submitted => { /* ... */ },
@@ -65,6 +66,8 @@ pub enum RegistrationVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
     RequiresAuthentication,
     #[allow(missing_docs)] // documentation missing in model
+    RequiresOfflineReview,
+    #[allow(missing_docs)] // documentation missing in model
     Reviewing,
     #[allow(missing_docs)] // documentation missing in model
     Revoked,
@@ -84,6 +87,7 @@ impl ::std::convert::From<&str> for RegistrationVersionStatus {
             "DISCARDED" => RegistrationVersionStatus::Discarded,
             "DRAFT" => RegistrationVersionStatus::Draft,
             "REQUIRES_AUTHENTICATION" => RegistrationVersionStatus::RequiresAuthentication,
+            "REQUIRES_OFFLINE_REVIEW" => RegistrationVersionStatus::RequiresOfflineReview,
             "REVIEWING" => RegistrationVersionStatus::Reviewing,
             "REVOKED" => RegistrationVersionStatus::Revoked,
             "SUBMITTED" => RegistrationVersionStatus::Submitted,
@@ -109,6 +113,7 @@ impl RegistrationVersionStatus {
             RegistrationVersionStatus::Discarded => "DISCARDED",
             RegistrationVersionStatus::Draft => "DRAFT",
             RegistrationVersionStatus::RequiresAuthentication => "REQUIRES_AUTHENTICATION",
+            RegistrationVersionStatus::RequiresOfflineReview => "REQUIRES_OFFLINE_REVIEW",
             RegistrationVersionStatus::Reviewing => "REVIEWING",
             RegistrationVersionStatus::Revoked => "REVOKED",
             RegistrationVersionStatus::Submitted => "SUBMITTED",
@@ -125,6 +130,7 @@ impl RegistrationVersionStatus {
             "DISCARDED",
             "DRAFT",
             "REQUIRES_AUTHENTICATION",
+            "REQUIRES_OFFLINE_REVIEW",
             "REVIEWING",
             "REVOKED",
             "SUBMITTED",
@@ -158,6 +164,7 @@ impl ::std::fmt::Display for RegistrationVersionStatus {
             RegistrationVersionStatus::Discarded => write!(f, "DISCARDED"),
             RegistrationVersionStatus::Draft => write!(f, "DRAFT"),
             RegistrationVersionStatus::RequiresAuthentication => write!(f, "REQUIRES_AUTHENTICATION"),
+            RegistrationVersionStatus::RequiresOfflineReview => write!(f, "REQUIRES_OFFLINE_REVIEW"),
             RegistrationVersionStatus::Reviewing => write!(f, "REVIEWING"),
             RegistrationVersionStatus::Revoked => write!(f, "REVOKED"),
             RegistrationVersionStatus::Submitted => write!(f, "SUBMITTED"),

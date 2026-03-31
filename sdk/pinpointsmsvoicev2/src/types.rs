@@ -19,9 +19,19 @@ pub use crate::types::_sns_destination::SnsDestination;
 
 pub use crate::types::_event_destination::EventDestination;
 
+pub use crate::types::_notify_configuration_use_case::NotifyConfigurationUseCase;
+
+pub use crate::types::_notify_configuration_tier::NotifyConfigurationTier;
+
+pub use crate::types::_tier_upgrade_status::TierUpgradeStatus;
+
+pub use crate::types::_notify_configuration_status::NotifyConfigurationStatus;
+
 pub use crate::types::_message_type::MessageType;
 
 pub use crate::types::_pool_status::PoolStatus;
+
+pub use crate::types::_rcs_agent_status::RcsAgentStatus;
 
 pub use crate::types::_registration_status::RegistrationStatus;
 
@@ -55,9 +65,9 @@ pub use crate::types::_verification_channel::VerificationChannel;
 
 pub use crate::types::_language_code::LanguageCode;
 
-pub use crate::types::_voice_message_body_text_type::VoiceMessageBodyTextType;
-
 pub use crate::types::_voice_id::VoiceId;
+
+pub use crate::types::_voice_message_body_text_type::VoiceMessageBodyTextType;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
@@ -77,6 +87,14 @@ pub use crate::types::_keyword_filter::KeywordFilter;
 
 pub use crate::types::_keyword_information::KeywordInformation;
 
+pub use crate::types::_notify_configuration_filter::NotifyConfigurationFilter;
+
+pub use crate::types::_notify_configuration_information::NotifyConfigurationInformation;
+
+pub use crate::types::_notify_template_filter::NotifyTemplateFilter;
+
+pub use crate::types::_notify_template_information::NotifyTemplateInformation;
+
 pub use crate::types::_opted_out_filter::OptedOutFilter;
 
 pub use crate::types::_opted_out_number_information::OptedOutNumberInformation;
@@ -94,6 +112,14 @@ pub use crate::types::_pool_information::PoolInformation;
 pub use crate::types::_protect_configuration_filter::ProtectConfigurationFilter;
 
 pub use crate::types::_protect_configuration_information::ProtectConfigurationInformation;
+
+pub use crate::types::_country_launch_status_filter::CountryLaunchStatusFilter;
+
+pub use crate::types::_country_launch_status_information::CountryLaunchStatusInformation;
+
+pub use crate::types::_rcs_agent_filter::RcsAgentFilter;
+
+pub use crate::types::_rcs_agent_information::RcsAgentInformation;
 
 pub use crate::types::_registration_attachment_filter::RegistrationAttachmentFilter;
 
@@ -131,6 +157,8 @@ pub use crate::types::_verified_destination_number_information::VerifiedDestinat
 
 pub use crate::types::_protect_configuration_country_rule_set_information::ProtectConfigurationCountryRuleSetInformation;
 
+pub use crate::types::_notify_country_information::NotifyCountryInformation;
+
 pub use crate::types::_pool_origination_identities_filter::PoolOriginationIdentitiesFilter;
 
 pub use crate::types::_origination_identity_metadata::OriginationIdentityMetadata;
@@ -153,6 +181,14 @@ pub use crate::types::_configuration_set_filter_name::ConfigurationSetFilterName
 
 pub use crate::types::_keyword_filter_name::KeywordFilterName;
 
+pub use crate::types::_notify_configuration_filter_name::NotifyConfigurationFilterName;
+
+pub use crate::types::_notify_template_filter_name::NotifyTemplateFilterName;
+
+pub use crate::types::_notify_template_type::NotifyTemplateType;
+
+pub use crate::types::_notify_template_status::NotifyTemplateStatus;
+
 pub use crate::types::_opted_out_filter_name::OptedOutFilterName;
 
 pub use crate::types::_phone_number_filter_name::PhoneNumberFilterName;
@@ -160,6 +196,14 @@ pub use crate::types::_phone_number_filter_name::PhoneNumberFilterName;
 pub use crate::types::_pool_filter_name::PoolFilterName;
 
 pub use crate::types::_protect_configuration_filter_name::ProtectConfigurationFilterName;
+
+pub use crate::types::_country_launch_status_filter_name::CountryLaunchStatusFilterName;
+
+pub use crate::types::_country_launch_status::CountryLaunchStatus;
+
+pub use crate::types::_rcs_agent_filter_name::RcsAgentFilterName;
+
+pub use crate::types::_testing_agent_information::TestingAgentInformation;
 
 pub use crate::types::_registration_attachment_filter_name::RegistrationAttachmentFilterName;
 
@@ -197,9 +241,21 @@ pub use crate::types::_protect_configuration_rule_set_number_override_filter_nam
 
 pub use crate::types::_registration_association_filter_name::RegistrationAssociationFilterName;
 
+pub use crate::types::_template_variable_metadata::TemplateVariableMetadata;
+
+pub use crate::types::_carrier_status_information::CarrierStatusInformation;
+
+pub use crate::types::_testing_agent_status::TestingAgentStatus;
+
 pub use crate::types::_supported_association::SupportedAssociation;
 
 pub use crate::types::_registration_denied_reason_information::RegistrationDeniedReasonInformation;
+
+pub use crate::types::_template_variable_type::TemplateVariableType;
+
+pub use crate::types::_template_variable_source::TemplateVariableSource;
+
+pub use crate::types::_carrier_status::CarrierStatus;
 
 pub use crate::types::_select_option_description::SelectOptionDescription;
 
@@ -221,6 +277,10 @@ mod _attachment_status;
 
 mod _attachment_upload_error_reason;
 
+mod _carrier_status;
+
+mod _carrier_status_information;
+
 mod _cloud_watch_logs_destination;
 
 mod _configuration_set_filter;
@@ -230,6 +290,14 @@ mod _configuration_set_filter_name;
 mod _configuration_set_information;
 
 mod _conflict_exception_reason;
+
+mod _country_launch_status;
+
+mod _country_launch_status_filter;
+
+mod _country_launch_status_filter_name;
+
+mod _country_launch_status_information;
 
 mod _destination_country_parameter_key;
 
@@ -256,6 +324,30 @@ mod _language_code;
 mod _message_feedback_status;
 
 mod _message_type;
+
+mod _notify_configuration_filter;
+
+mod _notify_configuration_filter_name;
+
+mod _notify_configuration_information;
+
+mod _notify_configuration_status;
+
+mod _notify_configuration_tier;
+
+mod _notify_configuration_use_case;
+
+mod _notify_country_information;
+
+mod _notify_template_filter;
+
+mod _notify_template_filter_name;
+
+mod _notify_template_information;
+
+mod _notify_template_status;
+
+mod _notify_template_type;
 
 mod _number_capability;
 
@@ -312,6 +404,14 @@ mod _protect_configuration_rule_set_number_override_filter_item;
 mod _protect_configuration_rule_set_number_override_filter_name;
 
 mod _protect_status;
+
+mod _rcs_agent_filter;
+
+mod _rcs_agent_filter_name;
+
+mod _rcs_agent_information;
+
+mod _rcs_agent_status;
 
 mod _registration_association_behavior;
 
@@ -395,7 +495,19 @@ mod _supported_association;
 
 mod _tag;
 
+mod _template_variable_metadata;
+
+mod _template_variable_source;
+
+mod _template_variable_type;
+
+mod _testing_agent_information;
+
+mod _testing_agent_status;
+
 mod _text_validation;
+
+mod _tier_upgrade_status;
 
 mod _validation_exception_field;
 

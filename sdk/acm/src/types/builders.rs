@@ -9,11 +9,15 @@ pub use crate::types::_certificate_options::CertificateOptionsBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_throttling_reason::ThrottlingReasonBuilder;
+
 pub use crate::types::_renewal_summary::RenewalSummaryBuilder;
 
 pub use crate::types::_certificate_summary::CertificateSummaryBuilder;
 
 pub use crate::types::_domain_validation_option::DomainValidationOptionBuilder;
+
+pub use crate::types::_certificate_search_result::CertificateSearchResultBuilder;
 
 pub use crate::types::_domain_validation::DomainValidationBuilder;
 
@@ -21,6 +25,22 @@ pub use crate::types::_key_usage::KeyUsageBuilder;
 
 pub use crate::types::_extended_key_usage::ExtendedKeyUsageBuilder;
 
+pub use crate::types::_x509_attributes::X509AttributesBuilder;
+
 pub use crate::types::_resource_record::ResourceRecordBuilder;
 
 pub use crate::types::_http_redirect::HttpRedirectBuilder;
+
+pub use crate::types::_timestamp_range::TimestampRangeBuilder;
+
+pub use crate::types::_distinguished_name::DistinguishedNameBuilder;
+
+pub use crate::types::_acm_certificate_metadata::AcmCertificateMetadataBuilder;
+
+pub use crate::types::_common_name_filter::CommonNameFilterBuilder;
+
+pub use crate::types::_dns_name_filter::DnsNameFilterBuilder;
+
+pub use crate::types::_custom_attribute::CustomAttributeBuilder;
+
+pub use crate::types::_other_name::OtherNameBuilder;

@@ -150,6 +150,10 @@ where
                             builder =
                                 builder.set_managed_services(crate::protocol_serde::shape_managed_services::de_managed_services(tokens, _value)?);
                         }
+                        "ec2PlacementGroupIds" => {
+                            builder = builder
+                                .set_ec2_placement_group_ids(crate::protocol_serde::shape_resource_id_list::de_resource_id_list(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

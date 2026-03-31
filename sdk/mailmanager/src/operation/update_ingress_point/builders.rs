@@ -192,4 +192,18 @@ impl UpdateIngressPointFluentBuilder {
     pub fn get_ingress_point_configuration(&self) -> &::std::option::Option<crate::types::IngressPointConfiguration> {
         self.inner.get_ingress_point_configuration()
     }
+    /// <p>The Transport Layer Security (TLS) policy for the ingress point. Valid values are REQUIRED, OPTIONAL. Only ingress endpoints using REQUIRED or OPTIONAL as TlsPolicy can be updated.</p>
+    pub fn tls_policy(mut self, input: crate::types::TlsPolicy) -> Self {
+        self.inner = self.inner.tls_policy(input);
+        self
+    }
+    /// <p>The Transport Layer Security (TLS) policy for the ingress point. Valid values are REQUIRED, OPTIONAL. Only ingress endpoints using REQUIRED or OPTIONAL as TlsPolicy can be updated.</p>
+    pub fn set_tls_policy(mut self, input: ::std::option::Option<crate::types::TlsPolicy>) -> Self {
+        self.inner = self.inner.set_tls_policy(input);
+        self
+    }
+    /// <p>The Transport Layer Security (TLS) policy for the ingress point. Valid values are REQUIRED, OPTIONAL. Only ingress endpoints using REQUIRED or OPTIONAL as TlsPolicy can be updated.</p>
+    pub fn get_tls_policy(&self) -> &::std::option::Option<crate::types::TlsPolicy> {
+        self.inner.get_tls_policy()
+    }
 }

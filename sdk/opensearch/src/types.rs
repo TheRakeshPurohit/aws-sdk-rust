@@ -81,6 +81,8 @@ pub use crate::types::_outbound_connection::OutboundConnection;
 
 pub use crate::types::_vpc_endpoint_summary::VpcEndpointSummary;
 
+pub use crate::types::_capability_status::CapabilityStatus;
+
 pub use crate::types::_change_progress_status_details::ChangeProgressStatusDetails;
 
 pub use crate::types::_domain_config::DomainConfig;
@@ -101,6 +103,8 @@ pub use crate::types::_open_search_partition_instance_type::OpenSearchPartitionI
 
 pub use crate::types::_application_status::ApplicationStatus;
 
+pub use crate::types::_capability_extended_response_config::CapabilityExtendedResponseConfig;
+
 pub use crate::types::_data_source_status::DataSourceStatus;
 
 pub use crate::types::_maintenance_status::MaintenanceStatus;
@@ -116,6 +120,10 @@ pub use crate::types::_engine_type::EngineType;
 pub use crate::types::_insight_time_range::InsightTimeRange;
 
 pub use crate::types::_insight_sort_order::InsightSortOrder;
+
+pub use crate::types::_capability_base_request_config::CapabilityBaseRequestConfig;
+
+pub use crate::types::_capability_base_response_config::CapabilityBaseResponseConfig;
 
 pub use crate::types::_schedule_at::ScheduleAt;
 
@@ -293,6 +301,10 @@ pub use crate::types::_reserved_instance::ReservedInstance;
 
 pub use crate::types::_vpc_endpoint_error::VpcEndpointError;
 
+pub use crate::types::_ai_config::AiConfig;
+
+pub use crate::types::_capability_failure::CapabilityFailure;
+
 pub use crate::types::_compatible_versions_map::CompatibleVersionsMap;
 
 pub use crate::types::_package_version_history::PackageVersionHistory;
@@ -375,6 +387,8 @@ pub use crate::types::_reserved_instance_payment_option::ReservedInstancePayment
 
 pub use crate::types::_vpc_endpoint_error_code::VpcEndpointErrorCode;
 
+pub use crate::types::_capability_failure_reason::CapabilityFailureReason;
+
 pub use crate::types::_insight_type::InsightType;
 
 pub use crate::types::_insight_priority_level::InsightPriorityLevel;
@@ -435,6 +449,8 @@ mod _advanced_security_options_input;
 
 mod _advanced_security_options_status;
 
+mod _ai_config;
+
 mod _aiml_options_input;
 
 mod _aiml_options_output;
@@ -480,6 +496,18 @@ mod _aws_domain_information;
 mod _aws_service_principal;
 
 mod _cancelled_change_property;
+
+mod _capability_base_request_config;
+
+mod _capability_base_response_config;
+
+mod _capability_extended_response_config;
+
+mod _capability_failure;
+
+mod _capability_failure_reason;
+
+mod _capability_status;
 
 mod _change_progress_details;
 

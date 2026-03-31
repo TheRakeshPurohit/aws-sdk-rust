@@ -426,10 +426,16 @@ pub struct Capabilities {
     pub create_dashboard_executive_summary_with_q: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform space-related actions.</p>
     pub space: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create spaces.</p>
+    pub create_spaces: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share spaces with other users and groups.</p>
+    pub share_spaces: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform chat-related actions.</p>
     pub chat_agent: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to create chat agents.</p>
     pub create_chat_agents: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share chat agents with other users and groups.</p>
+    pub share_chat_agents: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform research-related actions.</p>
     pub research: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to enable users to upgrade their user role.</p>
@@ -1285,6 +1291,14 @@ impl Capabilities {
     pub fn space(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.space.as_ref()
     }
+    /// <p>The ability to create spaces.</p>
+    pub fn create_spaces(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_spaces.as_ref()
+    }
+    /// <p>The ability to share spaces with other users and groups.</p>
+    pub fn share_spaces(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_spaces.as_ref()
+    }
     /// <p>The ability to perform chat-related actions.</p>
     pub fn chat_agent(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.chat_agent.as_ref()
@@ -1292,6 +1306,10 @@ impl Capabilities {
     /// <p>The ability to create chat agents.</p>
     pub fn create_chat_agents(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.create_chat_agents.as_ref()
+    }
+    /// <p>The ability to share chat agents with other users and groups.</p>
+    pub fn share_chat_agents(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_chat_agents.as_ref()
     }
     /// <p>The ability to perform research-related actions.</p>
     pub fn research(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
@@ -1533,8 +1551,11 @@ pub struct CapabilitiesBuilder {
     pub(crate) build_calculated_field_with_q: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) create_dashboard_executive_summary_with_q: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) space: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_spaces: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_spaces: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) chat_agent: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) create_chat_agents: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_chat_agents: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) research: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) self_upgrade_user_role: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) extension: ::std::option::Option<crate::types::CapabilityState>,
@@ -4495,6 +4516,34 @@ impl CapabilitiesBuilder {
     pub fn get_space(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.space
     }
+    /// <p>The ability to create spaces.</p>
+    pub fn create_spaces(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_spaces = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create spaces.</p>
+    pub fn set_create_spaces(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_spaces = input;
+        self
+    }
+    /// <p>The ability to create spaces.</p>
+    pub fn get_create_spaces(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_spaces
+    }
+    /// <p>The ability to share spaces with other users and groups.</p>
+    pub fn share_spaces(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_spaces = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share spaces with other users and groups.</p>
+    pub fn set_share_spaces(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_spaces = input;
+        self
+    }
+    /// <p>The ability to share spaces with other users and groups.</p>
+    pub fn get_share_spaces(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_spaces
+    }
     /// <p>The ability to perform chat-related actions.</p>
     pub fn chat_agent(mut self, input: crate::types::CapabilityState) -> Self {
         self.chat_agent = ::std::option::Option::Some(input);
@@ -4522,6 +4571,20 @@ impl CapabilitiesBuilder {
     /// <p>The ability to create chat agents.</p>
     pub fn get_create_chat_agents(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.create_chat_agents
+    }
+    /// <p>The ability to share chat agents with other users and groups.</p>
+    pub fn share_chat_agents(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_chat_agents = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share chat agents with other users and groups.</p>
+    pub fn set_share_chat_agents(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_chat_agents = input;
+        self
+    }
+    /// <p>The ability to share chat agents with other users and groups.</p>
+    pub fn get_share_chat_agents(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_chat_agents
     }
     /// <p>The ability to perform research-related actions.</p>
     pub fn research(mut self, input: crate::types::CapabilityState) -> Self {
@@ -4796,8 +4859,11 @@ impl CapabilitiesBuilder {
             build_calculated_field_with_q: self.build_calculated_field_with_q,
             create_dashboard_executive_summary_with_q: self.create_dashboard_executive_summary_with_q,
             space: self.space,
+            create_spaces: self.create_spaces,
+            share_spaces: self.share_spaces,
             chat_agent: self.chat_agent,
             create_chat_agents: self.create_chat_agents,
+            share_chat_agents: self.share_chat_agents,
             research: self.research,
             self_upgrade_user_role: self.self_upgrade_user_role,
             extension: self.extension,

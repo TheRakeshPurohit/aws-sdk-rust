@@ -248,4 +248,18 @@ impl GetDataAccessFluentBuilder {
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::S3PrefixType> {
         self.inner.get_target_type()
     }
+    /// <p>The context to identify the job or query associated with the credential request. This information will be displayed in CloudTrail log in your account.</p>
+    pub fn audit_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.audit_context(input.into());
+        self
+    }
+    /// <p>The context to identify the job or query associated with the credential request. This information will be displayed in CloudTrail log in your account.</p>
+    pub fn set_audit_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_audit_context(input);
+        self
+    }
+    /// <p>The context to identify the job or query associated with the credential request. This information will be displayed in CloudTrail log in your account.</p>
+    pub fn get_audit_context(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_audit_context()
+    }
 }

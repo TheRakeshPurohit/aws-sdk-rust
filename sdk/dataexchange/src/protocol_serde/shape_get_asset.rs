@@ -162,6 +162,9 @@ pub(crate) fn de_get_asset(
                             .transpose()?,
                     );
                 }
+                "Tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
+                }
                 "UpdatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

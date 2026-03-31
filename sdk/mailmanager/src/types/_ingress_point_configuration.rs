@@ -8,6 +8,8 @@ pub enum IngressPointConfiguration {
     SecretArn(::std::string::String),
     /// <p>The password of the ingress endpoint resource.</p>
     SmtpPassword(::std::string::String),
+    /// <p>The mutual TLS authentication configuration of the ingress endpoint resource.</p>
+    TlsAuthConfiguration(crate::types::TlsAuthConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -45,6 +47,19 @@ impl IngressPointConfiguration {
     pub fn is_smtp_password(&self) -> bool {
         self.as_smtp_password().is_ok()
     }
+    /// Tries to convert the enum instance into [`TlsAuthConfiguration`](crate::types::IngressPointConfiguration::TlsAuthConfiguration), extracting the inner [`TlsAuthConfiguration`](crate::types::TlsAuthConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_tls_auth_configuration(&self) -> ::std::result::Result<&crate::types::TlsAuthConfiguration, &Self> {
+        if let IngressPointConfiguration::TlsAuthConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`TlsAuthConfiguration`](crate::types::IngressPointConfiguration::TlsAuthConfiguration).
+    pub fn is_tls_auth_configuration(&self) -> bool {
+        self.as_tls_auth_configuration().is_ok()
+    }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
@@ -55,6 +70,7 @@ impl ::std::fmt::Debug for IngressPointConfiguration {
         match self {
             IngressPointConfiguration::SecretArn(val) => f.debug_tuple("SecretArn").field(&val).finish(),
             IngressPointConfiguration::SmtpPassword(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            IngressPointConfiguration::TlsAuthConfiguration(val) => f.debug_tuple("TlsAuthConfiguration").field(&val).finish(),
             IngressPointConfiguration::Unknown => f.debug_tuple("Unknown").finish(),
         }
     }

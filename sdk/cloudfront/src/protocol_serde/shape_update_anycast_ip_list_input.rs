@@ -9,6 +9,15 @@ pub fn ser_update_anycast_ip_list_input_input_input(
         let mut inner_writer = scope.start_el("IpAddressType").finish();
         inner_writer.data(var_1.as_str());
     }
+    if let Some(var_2) = &input.ipam_cidr_configs {
+        let mut inner_writer = scope.start_el("IpamCidrConfigs").finish();
+        for list_item_3 in var_2 {
+            {
+                let inner_writer = inner_writer.start_el("IpamCidrConfig");
+                crate::protocol_serde::shape_ipam_cidr_config::ser_ipam_cidr_config(list_item_3, inner_writer)?
+            }
+        }
+    }
     scope.finish();
     Ok(())
 }

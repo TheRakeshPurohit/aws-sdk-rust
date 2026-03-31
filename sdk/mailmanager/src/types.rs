@@ -39,6 +39,10 @@ pub use crate::types::_ingress_point_configuration::IngressPointConfiguration;
 
 pub use crate::types::_network_configuration::NetworkConfiguration;
 
+pub use crate::types::_tls_policy::TlsPolicy;
+
+pub use crate::types::_trust_store_response_option::TrustStoreResponseOption;
+
 pub use crate::types::_ingress_point_status::IngressPointStatus;
 
 pub use crate::types::_ingress_point_auth_configuration::IngressPointAuthConfiguration;
@@ -75,6 +79,8 @@ pub use crate::types::_archive::Archive;
 
 pub use crate::types::_ingress_point::IngressPoint;
 
+pub use crate::types::_tls_auth_configuration::TlsAuthConfiguration;
+
 pub use crate::types::_public_network_configuration::PublicNetworkConfiguration;
 
 pub use crate::types::_private_network_configuration::PrivateNetworkConfiguration;
@@ -94,6 +100,8 @@ pub use crate::types::_archive_filter_condition::ArchiveFilterCondition;
 pub use crate::types::_rule_condition::RuleCondition;
 
 pub use crate::types::_rule_action::RuleAction;
+
+pub use crate::types::_trust_store::TrustStore;
 
 pub use crate::types::_ip_type::IpType;
 
@@ -132,6 +140,10 @@ pub use crate::types::_deliver_to_mailbox_action::DeliverToMailboxAction;
 pub use crate::types::_deliver_to_q_business_action::DeliverToQBusinessAction;
 
 pub use crate::types::_sns_action::SnsAction;
+
+pub use crate::types::_bounce_action::BounceAction;
+
+pub use crate::types::_invoke_lambda_action::InvokeLambdaAction;
 
 pub use crate::types::_policy_condition::PolicyCondition;
 
@@ -173,6 +185,8 @@ pub use crate::types::_sns_notification_encoding::SnsNotificationEncoding;
 
 pub use crate::types::_sns_notification_payload_type::SnsNotificationPayloadType;
 
+pub use crate::types::_lambda_invocation_type::LambdaInvocationType;
+
 pub use crate::types::_ingress_string_expression::IngressStringExpression;
 
 pub use crate::types::_ingress_ipv4_expression::IngressIpv4Expression;
@@ -194,6 +208,8 @@ pub use crate::types::_analysis::Analysis;
 pub use crate::types::_rule_is_in_address_list::RuleIsInAddressList;
 
 pub use crate::types::_rule_string_email_attribute::RuleStringEmailAttribute;
+
+pub use crate::types::_rule_client_certificate_attribute::RuleClientCertificateAttribute;
 
 pub use crate::types::_rule_number_email_attribute::RuleNumberEmailAttribute;
 
@@ -285,6 +301,8 @@ mod _archive_string_operator;
 
 mod _archive_string_to_evaluate;
 
+mod _bounce_action;
+
 mod _deliver_to_mailbox_action;
 
 mod _deliver_to_q_business_action;
@@ -367,7 +385,11 @@ mod _ingress_tls_protocol_operator;
 
 mod _ingress_tls_protocol_to_evaluate;
 
+mod _invoke_lambda_action;
+
 mod _ip_type;
+
+mod _lambda_invocation_type;
 
 mod _mail_from;
 
@@ -412,6 +434,8 @@ mod _rule_boolean_expression;
 mod _rule_boolean_operator;
 
 mod _rule_boolean_to_evaluate;
+
+mod _rule_client_certificate_attribute;
 
 mod _rule_condition;
 
@@ -481,7 +505,15 @@ mod _sns_notification_payload_type;
 
 mod _tag;
 
+mod _tls_auth_configuration;
+
+mod _tls_policy;
+
 mod _traffic_policy;
+
+mod _trust_store;
+
+mod _trust_store_response_option;
 
 /// Builders
 pub mod builders;

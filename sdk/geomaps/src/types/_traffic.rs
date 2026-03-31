@@ -13,6 +13,7 @@
 /// # let traffic = unimplemented!();
 /// match traffic {
 ///     Traffic::All => { /* ... */ },
+///     Traffic::Congestion => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum Traffic {
     #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
+    Congestion,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for Traffic {
     fn from(s: &str) -> Self {
         match s {
             "All" => Traffic::All,
+            "Congestion" => Traffic::Congestion,
             other => Traffic::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl Traffic {
     pub fn as_str(&self) -> &str {
         match self {
             Traffic::All => "All",
+            Traffic::Congestion => "Congestion",
             Traffic::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["All"]
+        &["All", "Congestion"]
     }
 }
 impl ::std::convert::AsRef<str> for Traffic {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for Traffic {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Traffic::All => write!(f, "All"),
+            Traffic::Congestion => write!(f, "Congestion"),
             Traffic::Unknown(value) => write!(f, "{value}"),
         }
     }

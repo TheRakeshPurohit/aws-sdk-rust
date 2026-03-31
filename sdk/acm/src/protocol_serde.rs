@@ -53,6 +53,8 @@ pub(crate) mod shape_resend_validation_email;
 
 pub(crate) mod shape_revoke_certificate;
 
+pub(crate) mod shape_search_certificates;
+
 pub(crate) mod shape_update_certificate_options;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -115,6 +117,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_revoke_certificate_input;
 
+pub(crate) mod shape_search_certificates_input;
+
 pub(crate) mod shape_tag_policy_exception;
 
 pub(crate) mod shape_throttling_exception;
@@ -127,7 +131,11 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_certificate_detail;
 
+pub(crate) mod shape_certificate_filter_statement;
+
 pub(crate) mod shape_certificate_options;
+
+pub(crate) mod shape_certificate_search_result_list;
 
 pub(crate) mod shape_certificate_summary_list;
 
@@ -140,6 +148,12 @@ pub(crate) mod shape_filters;
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
+
+pub(crate) mod shape_throttling_reason_list;
+
+pub(crate) mod shape_certificate_filter;
+
+pub(crate) mod shape_certificate_search_result;
 
 pub(crate) mod shape_certificate_summary;
 
@@ -155,6 +169,12 @@ pub(crate) mod shape_key_usage_list;
 
 pub(crate) mod shape_renewal_summary;
 
+pub(crate) mod shape_throttling_reason;
+
+pub(crate) mod shape_acm_certificate_metadata_filter;
+
+pub(crate) mod shape_certificate_metadata;
+
 pub(crate) mod shape_domain_validation;
 
 pub(crate) mod shape_extended_key_usage;
@@ -165,8 +185,38 @@ pub(crate) mod shape_key_usage;
 
 pub(crate) mod shape_key_usage_names;
 
+pub(crate) mod shape_x509_attribute_filter;
+
+pub(crate) mod shape_x509_attributes;
+
+pub(crate) mod shape_acm_certificate_metadata;
+
+pub(crate) mod shape_distinguished_name;
+
+pub(crate) mod shape_general_name_list;
+
 pub(crate) mod shape_http_redirect;
 
 pub(crate) mod shape_resource_record;
 
+pub(crate) mod shape_subject_alternative_name_filter;
+
+pub(crate) mod shape_subject_filter;
+
+pub(crate) mod shape_timestamp_range;
+
 pub(crate) mod shape_validation_email_list;
+
+pub(crate) mod shape_common_name_filter;
+
+pub(crate) mod shape_custom_attribute_list;
+
+pub(crate) mod shape_dns_name_filter;
+
+pub(crate) mod shape_domain_component_list;
+
+pub(crate) mod shape_general_name;
+
+pub(crate) mod shape_custom_attribute;
+
+pub(crate) mod shape_other_name;

@@ -5,6 +5,8 @@
 pub struct CreateJobOutput {
     /// <p>The ARN for the job.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration for the asset, including tags applied to assets created by the job.</p>
+    pub asset_configuration: ::std::option::Option<crate::types::AssetConfiguration>,
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about the job.</p>
@@ -25,6 +27,10 @@ impl CreateJobOutput {
     /// <p>The ARN for the job.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>The configuration for the asset, including tags applied to assets created by the job.</p>
+    pub fn asset_configuration(&self) -> ::std::option::Option<&crate::types::AssetConfiguration> {
+        self.asset_configuration.as_ref()
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -74,6 +80,7 @@ impl CreateJobOutput {
 #[non_exhaustive]
 pub struct CreateJobOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_configuration: ::std::option::Option<crate::types::AssetConfiguration>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) details: ::std::option::Option<crate::types::ResponseDetails>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::JobError>>,
@@ -97,6 +104,20 @@ impl CreateJobOutputBuilder {
     /// <p>The ARN for the job.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
+    }
+    /// <p>The configuration for the asset, including tags applied to assets created by the job.</p>
+    pub fn asset_configuration(mut self, input: crate::types::AssetConfiguration) -> Self {
+        self.asset_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the asset, including tags applied to assets created by the job.</p>
+    pub fn set_asset_configuration(mut self, input: ::std::option::Option<crate::types::AssetConfiguration>) -> Self {
+        self.asset_configuration = input;
+        self
+    }
+    /// <p>The configuration for the asset, including tags applied to assets created by the job.</p>
+    pub fn get_asset_configuration(&self) -> &::std::option::Option<crate::types::AssetConfiguration> {
+        &self.asset_configuration
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -215,6 +236,7 @@ impl CreateJobOutputBuilder {
     pub fn build(self) -> crate::operation::create_job::CreateJobOutput {
         crate::operation::create_job::CreateJobOutput {
             arn: self.arn,
+            asset_configuration: self.asset_configuration,
             created_at: self.created_at,
             details: self.details,
             errors: self.errors,

@@ -22,7 +22,9 @@ impl crate::operation::revoke_certificate::builders::RevokeCertificateInputBuild
 }
 /// Fluent builder constructing a request to `RevokeCertificate`.
 ///
-/// <p>Revokes a public ACM certificate. You can only revoke certificates that have been previously exported.</p>
+/// <p>Revokes a public ACM certificate. You can only revoke certificates that have been previously exported.</p><important>
+/// <p>Once a certificate is revoked, you cannot reuse the certificate. Revoking a certificate is permanent.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

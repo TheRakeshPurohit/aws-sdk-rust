@@ -3,10 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateJob`](crate::operation::create_job::builders::CreateJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
+    ///   - [`asset_configuration(AssetConfiguration)`](crate::operation::create_job::builders::CreateJobFluentBuilder::asset_configuration) / [`set_asset_configuration(Option<AssetConfiguration>)`](crate::operation::create_job::builders::CreateJobFluentBuilder::set_asset_configuration):<br>required: **false**<br><p>The configuration for the asset, including tags to be applied to assets created by the job.</p><br>
     ///   - [`details(RequestDetails)`](crate::operation::create_job::builders::CreateJobFluentBuilder::details) / [`set_details(Option<RequestDetails>)`](crate::operation::create_job::builders::CreateJobFluentBuilder::set_details):<br>required: **true**<br><p>The details for the CreateJob request.</p><br>
     ///   - [`r#type(Type)`](crate::operation::create_job::builders::CreateJobFluentBuilder::type) / [`set_type(Option<Type>)`](crate::operation::create_job::builders::CreateJobFluentBuilder::set_type):<br>required: **true**<br><p>The type of job to be created.</p><br>
     /// - On success, responds with [`CreateJobOutput`](crate::operation::create_job::CreateJobOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_job::CreateJobOutput::arn): <p>The ARN for the job.</p>
+    ///   - [`asset_configuration(Option<AssetConfiguration>)`](crate::operation::create_job::CreateJobOutput::asset_configuration): <p>The configuration for the asset, including tags applied to assets created by the job.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::create_job::CreateJobOutput::created_at): <p>The date and time that the job was created, in ISO 8601 format.</p>
     ///   - [`details(Option<ResponseDetails>)`](crate::operation::create_job::CreateJobOutput::details): <p>Details about the job.</p>
     ///   - [`errors(Option<Vec::<JobError>>)`](crate::operation::create_job::CreateJobOutput::errors): <p>The errors associated with jobs.</p>

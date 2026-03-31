@@ -117,6 +117,9 @@ impl From<crate::operation::create_addon_subscription::CreateAddonSubscriptionEr
             crate::operation::create_addon_subscription::CreateAddonSubscriptionError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::create_addon_subscription::CreateAddonSubscriptionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::create_addon_subscription::CreateAddonSubscriptionError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -387,6 +390,7 @@ impl From<crate::operation::delete_address_list::DeleteAddressListError> for Err
             crate::operation::delete_address_list::DeleteAddressListError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_address_list::DeleteAddressListError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_address_list::DeleteAddressListError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_address_list::DeleteAddressListError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_address_list::DeleteAddressListError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -545,6 +549,9 @@ impl From<crate::operation::deregister_member_from_address_list::DeregisterMembe
         match err {
             crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError::ConflictException(inner) => {
+                Error::ConflictException(inner)
             }
             crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1319,6 +1326,9 @@ impl From<crate::operation::register_member_to_address_list::RegisterMemberToAdd
         match err {
             crate::operation::register_member_to_address_list::RegisterMemberToAddressListError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::register_member_to_address_list::RegisterMemberToAddressListError::ConflictException(inner) => {
+                Error::ConflictException(inner)
             }
             crate::operation::register_member_to_address_list::RegisterMemberToAddressListError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)

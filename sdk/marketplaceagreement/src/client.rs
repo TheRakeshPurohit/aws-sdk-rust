@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelAgreementPaymentRequest`](crate::operation::cancel_agreement_payment_request) operation has
-/// a [`Client::cancel_agreement_payment_request`], function which returns a builder for that operation.
+/// For example, the [`CancelAgreementCancellationRequest`](crate::operation::cancel_agreement_cancellation_request) operation has
+/// a [`Client::cancel_agreement_cancellation_request`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_agreement_payment_request()
-///     .payment_request_id("example")
+/// let result = client.cancel_agreement_cancellation_request()
+///     .agreement_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,10 @@ impl Client {
     }
 }
 
+mod batch_create_billing_adjustment_request;
+
+mod cancel_agreement_cancellation_request;
+
 mod cancel_agreement_payment_request;
 
 /// Operation customization and supporting types.
@@ -149,7 +153,7 @@ mod cancel_agreement_payment_request;
 /// # let client: aws_sdk_marketplaceagreement::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.cancel_agreement_payment_request()
+/// let result = client.batch_create_billing_adjustment_request()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -167,12 +171,24 @@ pub mod customize;
 
 mod describe_agreement;
 
+mod get_agreement_cancellation_request;
+
 mod get_agreement_payment_request;
 
 mod get_agreement_terms;
 
+mod get_billing_adjustment_request;
+
+mod list_agreement_cancellation_requests;
+
+mod list_agreement_invoice_line_items;
+
 mod list_agreement_payment_requests;
 
+mod list_billing_adjustment_requests;
+
 mod search_agreements;
+
+mod send_agreement_cancellation_request;
 
 mod send_agreement_payment_request;

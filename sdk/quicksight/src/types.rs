@@ -143,6 +143,8 @@ pub use crate::types::_asset_bundle_import_job_override_tags::AssetBundleImportJ
 
 pub use crate::types::_asset_bundle_import_job_override_validation_strategy::AssetBundleImportJobOverrideValidationStrategy;
 
+pub use crate::types::_automation_job_status::AutomationJobStatus;
+
 pub use crate::types::_custom_permissions::CustomPermissions;
 
 pub use crate::types::_dashboard::Dashboard;
@@ -381,6 +383,8 @@ pub use crate::types::_key_pair_credentials::KeyPairCredentials;
 
 pub use crate::types::_web_proxy_credentials::WebProxyCredentials;
 
+pub use crate::types::_o_auth_client_credentials::OAuthClientCredentials;
+
 pub use crate::types::_refresh_frequency::RefreshFrequency;
 
 pub use crate::types::_template_source_analysis::TemplateSourceAnalysis;
@@ -586,6 +590,8 @@ pub use crate::types::_date_time_parameter::DateTimeParameter;
 pub use crate::types::_data_set_identifier_declaration::DataSetIdentifierDeclaration;
 
 pub use crate::types::_sheet_definition::SheetDefinition;
+
+pub use crate::types::_tooltip_sheet_definition::TooltipSheetDefinition;
 
 pub use crate::types::_calculated_field::CalculatedField;
 
@@ -1651,6 +1657,8 @@ pub use crate::types::_table_field_options::TableFieldOptions;
 
 pub use crate::types::_table_paginated_report_options::TablePaginatedReportOptions;
 
+pub use crate::types::_tooltip_options::TooltipOptions;
+
 pub use crate::types::_dashboard_customization_visual_options::DashboardCustomizationVisualOptions;
 
 pub use crate::types::_visual_interaction_options::VisualInteractionOptions;
@@ -1690,8 +1698,6 @@ pub use crate::types::_bar_chart_default_series_settings::BarChartDefaultSeriesS
 pub use crate::types::_legend_options::LegendOptions;
 
 pub use crate::types::_data_label_options::DataLabelOptions;
-
-pub use crate::types::_tooltip_options::TooltipOptions;
 
 pub use crate::types::_column_hierarchy::ColumnHierarchy;
 
@@ -1915,6 +1921,12 @@ pub use crate::types::_table_pinned_field_options::TablePinnedFieldOptions;
 
 pub use crate::types::_table_inline_visualization::TableInlineVisualization;
 
+pub use crate::types::_selected_tooltip_type::SelectedTooltipType;
+
+pub use crate::types::_field_based_tooltip::FieldBasedTooltip;
+
+pub use crate::types::_sheet_tooltip::SheetTooltip;
+
 pub use crate::types::_visual_customization_fields_configuration::VisualCustomizationFieldsConfiguration;
 
 pub use crate::types::_context_menu_option::ContextMenuOption;
@@ -1962,10 +1974,6 @@ pub use crate::types::_data_label_position::DataLabelPosition;
 pub use crate::types::_data_label_content::DataLabelContent;
 
 pub use crate::types::_data_label_overlap::DataLabelOverlap;
-
-pub use crate::types::_selected_tooltip_type::SelectedTooltipType;
-
-pub use crate::types::_field_based_tooltip::FieldBasedTooltip;
 
 pub use crate::types::_reference_line::ReferenceLine;
 
@@ -2169,6 +2177,10 @@ pub use crate::types::_transposed_table_option::TransposedTableOption;
 
 pub use crate::types::_data_bars_options::DataBarsOptions;
 
+pub use crate::types::_sparklines_options::SparklinesOptions;
+
+pub use crate::types::_tooltip_title_type::TooltipTitleType;
+
 pub use crate::types::_dashboard_customization_status::DashboardCustomizationStatus;
 
 pub use crate::types::_table_cell_conditional_formatting::TableCellConditionalFormatting;
@@ -2214,8 +2226,6 @@ pub use crate::types::_field_bar_series_item::FieldBarSeriesItem;
 pub use crate::types::_data_field_bar_series_item::DataFieldBarSeriesItem;
 
 pub use crate::types::_data_label_type::DataLabelType;
-
-pub use crate::types::_tooltip_title_type::TooltipTitleType;
 
 pub use crate::types::_reference_line_data_configuration::ReferenceLineDataConfiguration;
 
@@ -2365,6 +2375,12 @@ pub use crate::types::_table_field_url_configuration::TableFieldUrlConfiguration
 
 pub use crate::types::_transposed_column_type::TransposedColumnType;
 
+pub use crate::types::_sparkline_axis_behavior::SparklineAxisBehavior;
+
+pub use crate::types::_sparkline_visual_type::SparklineVisualType;
+
+pub use crate::types::_tooltip_item::TooltipItem;
+
 pub use crate::types::_text_conditional_format::TextConditionalFormat;
 
 pub use crate::types::_conditional_formatting_color::ConditionalFormattingColor;
@@ -2404,8 +2420,6 @@ pub use crate::types::_range_ends_label_type::RangeEndsLabelType;
 pub use crate::types::_minimum_label_type::MinimumLabelType;
 
 pub use crate::types::_maximum_label_type::MaximumLabelType;
-
-pub use crate::types::_tooltip_item::TooltipItem;
 
 pub use crate::types::_reference_line_static_data_configuration::ReferenceLineStaticDataConfiguration;
 
@@ -2499,6 +2513,10 @@ pub use crate::types::_table_field_link_configuration::TableFieldLinkConfigurati
 
 pub use crate::types::_table_field_image_configuration::TableFieldImageConfiguration;
 
+pub use crate::types::_field_tooltip_item::FieldTooltipItem;
+
+pub use crate::types::_column_tooltip_item::ColumnTooltipItem;
+
 pub use crate::types::_conditional_formatting_solid_color::ConditionalFormattingSolidColor;
 
 pub use crate::types::_conditional_formatting_gradient_color::ConditionalFormattingGradientColor;
@@ -2522,10 +2540,6 @@ pub use crate::types::_axis_logarithmic_scale::AxisLogarithmicScale;
 pub use crate::types::_axis_display_min_max_range::AxisDisplayMinMaxRange;
 
 pub use crate::types::_axis_display_data_driven_range::AxisDisplayDataDrivenRange;
-
-pub use crate::types::_field_tooltip_item::FieldTooltipItem;
-
-pub use crate::types::_column_tooltip_item::ColumnTooltipItem;
 
 pub use crate::types::_reference_line_value_label_relative_position::ReferenceLineValueLabelRelativePosition;
 
@@ -2563,6 +2577,8 @@ pub use crate::types::_table_field_link_content_configuration::TableFieldLinkCon
 
 pub use crate::types::_table_cell_image_sizing_configuration::TableCellImageSizingConfiguration;
 
+pub use crate::types::_tooltip_target::TooltipTarget;
+
 pub use crate::types::_gradient_color::GradientColor;
 
 pub use crate::types::_selected_field_options::SelectedFieldOptions;
@@ -2570,8 +2586,6 @@ pub use crate::types::_selected_field_options::SelectedFieldOptions;
 pub use crate::types::_same_sheet_target_visual_configuration::SameSheetTargetVisualConfiguration;
 
 pub use crate::types::_pivot_table_data_path_type::PivotTableDataPathType;
-
-pub use crate::types::_tooltip_target::TooltipTarget;
 
 pub use crate::types::_conditional_formatting_icon_set_type::ConditionalFormattingIconSetType;
 
@@ -2904,6 +2918,8 @@ mod _authorization_code_grant_details;
 mod _authorization_code_grant_metadata;
 
 mod _authorized_targets_by_service;
+
+mod _automation_job_status;
 
 mod _aws_iot_analytics_parameters;
 
@@ -4213,6 +4229,8 @@ mod _numerical_dimension_field;
 
 mod _numerical_measure_field;
 
+mod _o_auth_client_credentials;
+
 mod _o_auth_parameters;
 
 mod _oracle_parameters;
@@ -4725,6 +4743,8 @@ mod _sheet_style;
 
 mod _sheet_text_box;
 
+mod _sheet_tooltip;
+
 mod _sheet_visual_scoping_configuration;
 
 mod _short_format_text;
@@ -4800,6 +4820,12 @@ mod _source_table;
 mod _spacing;
 
 mod _spark_parameters;
+
+mod _sparkline_axis_behavior;
+
+mod _sparkline_visual_type;
+
+mod _sparklines_options;
 
 mod _spatial_static_file;
 
@@ -5004,6 +5030,8 @@ mod _time_range_filter_value;
 mod _tooltip_item;
 
 mod _tooltip_options;
+
+mod _tooltip_sheet_definition;
 
 mod _tooltip_target;
 

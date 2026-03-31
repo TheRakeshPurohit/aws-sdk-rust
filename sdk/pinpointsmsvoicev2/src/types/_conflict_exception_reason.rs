@@ -25,6 +25,7 @@
 ///     ConflictExceptionReason::KeywordMismatch => { /* ... */ },
 ///     ConflictExceptionReason::LastPhoneNumber => { /* ... */ },
 ///     ConflictExceptionReason::MessageTypeMismatch => { /* ... */ },
+///     ConflictExceptionReason::NotifyConfigurationNotActive => { /* ... */ },
 ///     ConflictExceptionReason::NoOriginationIdentitiesFound => { /* ... */ },
 ///     ConflictExceptionReason::NumberCapabilitiesMismatch => { /* ... */ },
 ///     ConflictExceptionReason::OptOutListMismatch => { /* ... */ },
@@ -32,11 +33,15 @@
 ///     ConflictExceptionReason::PhoneNumberAssociatedToRegistration => { /* ... */ },
 ///     ConflictExceptionReason::PhoneNumberNotAssociatedToPool => { /* ... */ },
 ///     ConflictExceptionReason::PhoneNumberNotInRegistrationRegion => { /* ... */ },
+///     ConflictExceptionReason::PoolAssociatedToNotifyConfiguration => { /* ... */ },
 ///     ConflictExceptionReason::ProtectConfigurationAssociatedWithConfigurationSet => { /* ... */ },
 ///     ConflictExceptionReason::ProtectConfigurationIsAccountDefault => { /* ... */ },
 ///     ConflictExceptionReason::ProtectConfigurationNotAssociatedWithConfigurationSet => { /* ... */ },
+///     ConflictExceptionReason::RcsAgentAlreadyAssociatedToRegistrationType => { /* ... */ },
+///     ConflictExceptionReason::RcsAgentAssociatedToPool => { /* ... */ },
 ///     ConflictExceptionReason::RegistrationAlreadySubmitted => { /* ... */ },
 ///     ConflictExceptionReason::RegistrationNotComplete => { /* ... */ },
+///     ConflictExceptionReason::ResourceAlreadyAssociated => { /* ... */ },
 ///     ConflictExceptionReason::ResourceAlreadyExists => { /* ... */ },
 ///     ConflictExceptionReason::ResourceDeletionNotAllowed => { /* ... */ },
 ///     ConflictExceptionReason::ResourceModificationNotAllowed => { /* ... */ },
@@ -103,6 +108,8 @@ pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     MessageTypeMismatch,
     #[allow(missing_docs)] // documentation missing in model
+    NotifyConfigurationNotActive,
+    #[allow(missing_docs)] // documentation missing in model
     NoOriginationIdentitiesFound,
     #[allow(missing_docs)] // documentation missing in model
     NumberCapabilitiesMismatch,
@@ -117,15 +124,23 @@ pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     PhoneNumberNotInRegistrationRegion,
     #[allow(missing_docs)] // documentation missing in model
+    PoolAssociatedToNotifyConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     ProtectConfigurationAssociatedWithConfigurationSet,
     #[allow(missing_docs)] // documentation missing in model
     ProtectConfigurationIsAccountDefault,
     #[allow(missing_docs)] // documentation missing in model
     ProtectConfigurationNotAssociatedWithConfigurationSet,
     #[allow(missing_docs)] // documentation missing in model
+    RcsAgentAlreadyAssociatedToRegistrationType,
+    #[allow(missing_docs)] // documentation missing in model
+    RcsAgentAssociatedToPool,
+    #[allow(missing_docs)] // documentation missing in model
     RegistrationAlreadySubmitted,
     #[allow(missing_docs)] // documentation missing in model
     RegistrationNotComplete,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceAlreadyAssociated,
     #[allow(missing_docs)] // documentation missing in model
     ResourceAlreadyExists,
     #[allow(missing_docs)] // documentation missing in model
@@ -170,6 +185,7 @@ impl ::std::convert::From<&str> for ConflictExceptionReason {
             "KEYWORD_MISMATCH" => ConflictExceptionReason::KeywordMismatch,
             "LAST_PHONE_NUMBER" => ConflictExceptionReason::LastPhoneNumber,
             "MESSAGE_TYPE_MISMATCH" => ConflictExceptionReason::MessageTypeMismatch,
+            "NOTIFY_CONFIGURATION_NOT_ACTIVE" => ConflictExceptionReason::NotifyConfigurationNotActive,
             "NO_ORIGINATION_IDENTITIES_FOUND" => ConflictExceptionReason::NoOriginationIdentitiesFound,
             "NUMBER_CAPABILITIES_MISMATCH" => ConflictExceptionReason::NumberCapabilitiesMismatch,
             "OPT_OUT_LIST_MISMATCH" => ConflictExceptionReason::OptOutListMismatch,
@@ -177,13 +193,17 @@ impl ::std::convert::From<&str> for ConflictExceptionReason {
             "PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION" => ConflictExceptionReason::PhoneNumberAssociatedToRegistration,
             "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL" => ConflictExceptionReason::PhoneNumberNotAssociatedToPool,
             "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION" => ConflictExceptionReason::PhoneNumberNotInRegistrationRegion,
+            "POOL_ASSOCIATED_TO_NOTIFY_CONFIGURATION" => ConflictExceptionReason::PoolAssociatedToNotifyConfiguration,
             "PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET" => ConflictExceptionReason::ProtectConfigurationAssociatedWithConfigurationSet,
             "PROTECT_CONFIGURATION_IS_ACCOUNT_DEFAULT" => ConflictExceptionReason::ProtectConfigurationIsAccountDefault,
             "PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET" => {
                 ConflictExceptionReason::ProtectConfigurationNotAssociatedWithConfigurationSet
             }
+            "RCS_AGENT_ALREADY_ASSOCIATED_TO_REGISTRATION_TYPE" => ConflictExceptionReason::RcsAgentAlreadyAssociatedToRegistrationType,
+            "RCS_AGENT_ASSOCIATED_TO_POOL" => ConflictExceptionReason::RcsAgentAssociatedToPool,
             "REGISTRATION_ALREADY_SUBMITTED" => ConflictExceptionReason::RegistrationAlreadySubmitted,
             "REGISTRATION_NOT_COMPLETE" => ConflictExceptionReason::RegistrationNotComplete,
+            "RESOURCE_ALREADY_ASSOCIATED" => ConflictExceptionReason::ResourceAlreadyAssociated,
             "RESOURCE_ALREADY_EXISTS" => ConflictExceptionReason::ResourceAlreadyExists,
             "RESOURCE_DELETION_NOT_ALLOWED" => ConflictExceptionReason::ResourceDeletionNotAllowed,
             "RESOURCE_MODIFICATION_NOT_ALLOWED" => ConflictExceptionReason::ResourceModificationNotAllowed,
@@ -225,6 +245,7 @@ impl ConflictExceptionReason {
             ConflictExceptionReason::KeywordMismatch => "KEYWORD_MISMATCH",
             ConflictExceptionReason::LastPhoneNumber => "LAST_PHONE_NUMBER",
             ConflictExceptionReason::MessageTypeMismatch => "MESSAGE_TYPE_MISMATCH",
+            ConflictExceptionReason::NotifyConfigurationNotActive => "NOTIFY_CONFIGURATION_NOT_ACTIVE",
             ConflictExceptionReason::NoOriginationIdentitiesFound => "NO_ORIGINATION_IDENTITIES_FOUND",
             ConflictExceptionReason::NumberCapabilitiesMismatch => "NUMBER_CAPABILITIES_MISMATCH",
             ConflictExceptionReason::OptOutListMismatch => "OPT_OUT_LIST_MISMATCH",
@@ -232,13 +253,17 @@ impl ConflictExceptionReason {
             ConflictExceptionReason::PhoneNumberAssociatedToRegistration => "PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION",
             ConflictExceptionReason::PhoneNumberNotAssociatedToPool => "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL",
             ConflictExceptionReason::PhoneNumberNotInRegistrationRegion => "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION",
+            ConflictExceptionReason::PoolAssociatedToNotifyConfiguration => "POOL_ASSOCIATED_TO_NOTIFY_CONFIGURATION",
             ConflictExceptionReason::ProtectConfigurationAssociatedWithConfigurationSet => "PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET",
             ConflictExceptionReason::ProtectConfigurationIsAccountDefault => "PROTECT_CONFIGURATION_IS_ACCOUNT_DEFAULT",
             ConflictExceptionReason::ProtectConfigurationNotAssociatedWithConfigurationSet => {
                 "PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET"
             }
+            ConflictExceptionReason::RcsAgentAlreadyAssociatedToRegistrationType => "RCS_AGENT_ALREADY_ASSOCIATED_TO_REGISTRATION_TYPE",
+            ConflictExceptionReason::RcsAgentAssociatedToPool => "RCS_AGENT_ASSOCIATED_TO_POOL",
             ConflictExceptionReason::RegistrationAlreadySubmitted => "REGISTRATION_ALREADY_SUBMITTED",
             ConflictExceptionReason::RegistrationNotComplete => "REGISTRATION_NOT_COMPLETE",
+            ConflictExceptionReason::ResourceAlreadyAssociated => "RESOURCE_ALREADY_ASSOCIATED",
             ConflictExceptionReason::ResourceAlreadyExists => "RESOURCE_ALREADY_EXISTS",
             ConflictExceptionReason::ResourceDeletionNotAllowed => "RESOURCE_DELETION_NOT_ALLOWED",
             ConflictExceptionReason::ResourceModificationNotAllowed => "RESOURCE_MODIFICATION_NOT_ALLOWED",
@@ -269,6 +294,7 @@ impl ConflictExceptionReason {
             "KEYWORD_MISMATCH",
             "LAST_PHONE_NUMBER",
             "MESSAGE_TYPE_MISMATCH",
+            "NOTIFY_CONFIGURATION_NOT_ACTIVE",
             "NO_ORIGINATION_IDENTITIES_FOUND",
             "NUMBER_CAPABILITIES_MISMATCH",
             "OPT_OUT_LIST_MISMATCH",
@@ -276,11 +302,15 @@ impl ConflictExceptionReason {
             "PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION",
             "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL",
             "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION",
+            "POOL_ASSOCIATED_TO_NOTIFY_CONFIGURATION",
             "PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET",
             "PROTECT_CONFIGURATION_IS_ACCOUNT_DEFAULT",
             "PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET",
+            "RCS_AGENT_ALREADY_ASSOCIATED_TO_REGISTRATION_TYPE",
+            "RCS_AGENT_ASSOCIATED_TO_POOL",
             "REGISTRATION_ALREADY_SUBMITTED",
             "REGISTRATION_NOT_COMPLETE",
+            "RESOURCE_ALREADY_ASSOCIATED",
             "RESOURCE_ALREADY_EXISTS",
             "RESOURCE_DELETION_NOT_ALLOWED",
             "RESOURCE_MODIFICATION_NOT_ALLOWED",
@@ -332,6 +362,7 @@ impl ::std::fmt::Display for ConflictExceptionReason {
             ConflictExceptionReason::KeywordMismatch => write!(f, "KEYWORD_MISMATCH"),
             ConflictExceptionReason::LastPhoneNumber => write!(f, "LAST_PHONE_NUMBER"),
             ConflictExceptionReason::MessageTypeMismatch => write!(f, "MESSAGE_TYPE_MISMATCH"),
+            ConflictExceptionReason::NotifyConfigurationNotActive => write!(f, "NOTIFY_CONFIGURATION_NOT_ACTIVE"),
             ConflictExceptionReason::NoOriginationIdentitiesFound => write!(f, "NO_ORIGINATION_IDENTITIES_FOUND"),
             ConflictExceptionReason::NumberCapabilitiesMismatch => write!(f, "NUMBER_CAPABILITIES_MISMATCH"),
             ConflictExceptionReason::OptOutListMismatch => write!(f, "OPT_OUT_LIST_MISMATCH"),
@@ -339,6 +370,7 @@ impl ::std::fmt::Display for ConflictExceptionReason {
             ConflictExceptionReason::PhoneNumberAssociatedToRegistration => write!(f, "PHONE_NUMBER_ASSOCIATED_TO_REGISTRATION"),
             ConflictExceptionReason::PhoneNumberNotAssociatedToPool => write!(f, "PHONE_NUMBER_NOT_ASSOCIATED_TO_POOL"),
             ConflictExceptionReason::PhoneNumberNotInRegistrationRegion => write!(f, "PHONE_NUMBER_NOT_IN_REGISTRATION_REGION"),
+            ConflictExceptionReason::PoolAssociatedToNotifyConfiguration => write!(f, "POOL_ASSOCIATED_TO_NOTIFY_CONFIGURATION"),
             ConflictExceptionReason::ProtectConfigurationAssociatedWithConfigurationSet => {
                 write!(f, "PROTECT_CONFIGURATION_ASSOCIATED_WITH_CONFIGURATION_SET")
             }
@@ -346,8 +378,11 @@ impl ::std::fmt::Display for ConflictExceptionReason {
             ConflictExceptionReason::ProtectConfigurationNotAssociatedWithConfigurationSet => {
                 write!(f, "PROTECT_CONFIGURATION_NOT_ASSOCIATED_WITH_CONFIGURATION_SET")
             }
+            ConflictExceptionReason::RcsAgentAlreadyAssociatedToRegistrationType => write!(f, "RCS_AGENT_ALREADY_ASSOCIATED_TO_REGISTRATION_TYPE"),
+            ConflictExceptionReason::RcsAgentAssociatedToPool => write!(f, "RCS_AGENT_ASSOCIATED_TO_POOL"),
             ConflictExceptionReason::RegistrationAlreadySubmitted => write!(f, "REGISTRATION_ALREADY_SUBMITTED"),
             ConflictExceptionReason::RegistrationNotComplete => write!(f, "REGISTRATION_NOT_COMPLETE"),
+            ConflictExceptionReason::ResourceAlreadyAssociated => write!(f, "RESOURCE_ALREADY_ASSOCIATED"),
             ConflictExceptionReason::ResourceAlreadyExists => write!(f, "RESOURCE_ALREADY_EXISTS"),
             ConflictExceptionReason::ResourceDeletionNotAllowed => write!(f, "RESOURCE_DELETION_NOT_ALLOWED"),
             ConflictExceptionReason::ResourceModificationNotAllowed => write!(f, "RESOURCE_MODIFICATION_NOT_ALLOWED"),

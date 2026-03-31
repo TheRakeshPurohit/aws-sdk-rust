@@ -286,4 +286,18 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_environment_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_configuration_id()
     }
+    /// <p>The configuration name of the environment.</p>
+    pub fn environment_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.environment_configuration_name(input.into());
+        self
+    }
+    /// <p>The configuration name of the environment.</p>
+    pub fn set_environment_configuration_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_environment_configuration_name(input);
+        self
+    }
+    /// <p>The configuration name of the environment.</p>
+    pub fn get_environment_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_environment_configuration_name()
+    }
 }

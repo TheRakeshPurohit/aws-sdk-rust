@@ -6,20 +6,23 @@ pub fn ser_create_verified_destination_number_input_input(
     if let Some(var_1) = &input.destination_phone_number {
         object.key("DestinationPhoneNumber").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.tags {
-        let mut array_3 = object.key("Tags").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.rcs_agent_id {
+        object.key("RcsAgentId").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.tags {
+        let mut array_4 = object.key("Tags").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_6) = &input.client_token {
-        object.key("ClientToken").string(var_6.as_str());
+    if let Some(var_7) = &input.client_token {
+        object.key("ClientToken").string(var_7.as_str());
     }
     Ok(())
 }

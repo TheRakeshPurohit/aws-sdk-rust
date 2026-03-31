@@ -8,6 +8,8 @@ pub struct DashboardVersionDefinition {
     pub data_set_identifier_declarations: ::std::vec::Vec<crate::types::DataSetIdentifierDeclaration>,
     /// <p>An array of sheet definitions for a dashboard.</p>
     pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>>,
+    /// <p>An array of tooltip sheet definitions for a dashboard.</p>
+    pub tooltip_sheets: ::std::option::Option<::std::vec::Vec<crate::types::TooltipSheetDefinition>>,
     /// <p>An array of calculated field definitions for the dashboard.</p>
     pub calculated_fields: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedField>>,
     /// <p>The parameter declarations for a dashboard. Parameters are named variables that can transfer a value for use by an action or an object.</p>
@@ -36,6 +38,12 @@ impl DashboardVersionDefinition {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sheets.is_none()`.
     pub fn sheets(&self) -> &[crate::types::SheetDefinition] {
         self.sheets.as_deref().unwrap_or_default()
+    }
+    /// <p>An array of tooltip sheet definitions for a dashboard.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tooltip_sheets.is_none()`.
+    pub fn tooltip_sheets(&self) -> &[crate::types::TooltipSheetDefinition] {
+        self.tooltip_sheets.as_deref().unwrap_or_default()
     }
     /// <p>An array of calculated field definitions for the dashboard.</p>
     ///
@@ -91,6 +99,7 @@ impl DashboardVersionDefinition {
 pub struct DashboardVersionDefinitionBuilder {
     pub(crate) data_set_identifier_declarations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetIdentifierDeclaration>>,
     pub(crate) sheets: ::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>>,
+    pub(crate) tooltip_sheets: ::std::option::Option<::std::vec::Vec<crate::types::TooltipSheetDefinition>>,
     pub(crate) calculated_fields: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedField>>,
     pub(crate) parameter_declarations: ::std::option::Option<::std::vec::Vec<crate::types::ParameterDeclaration>>,
     pub(crate) filter_groups: ::std::option::Option<::std::vec::Vec<crate::types::FilterGroup>>,
@@ -142,6 +151,26 @@ impl DashboardVersionDefinitionBuilder {
     /// <p>An array of sheet definitions for a dashboard.</p>
     pub fn get_sheets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>> {
         &self.sheets
+    }
+    /// Appends an item to `tooltip_sheets`.
+    ///
+    /// To override the contents of this collection use [`set_tooltip_sheets`](Self::set_tooltip_sheets).
+    ///
+    /// <p>An array of tooltip sheet definitions for a dashboard.</p>
+    pub fn tooltip_sheets(mut self, input: crate::types::TooltipSheetDefinition) -> Self {
+        let mut v = self.tooltip_sheets.unwrap_or_default();
+        v.push(input);
+        self.tooltip_sheets = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of tooltip sheet definitions for a dashboard.</p>
+    pub fn set_tooltip_sheets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TooltipSheetDefinition>>) -> Self {
+        self.tooltip_sheets = input;
+        self
+    }
+    /// <p>An array of tooltip sheet definitions for a dashboard.</p>
+    pub fn get_tooltip_sheets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TooltipSheetDefinition>> {
+        &self.tooltip_sheets
     }
     /// Appends an item to `calculated_fields`.
     ///
@@ -289,6 +318,7 @@ impl DashboardVersionDefinitionBuilder {
                 )
             })?,
             sheets: self.sheets,
+            tooltip_sheets: self.tooltip_sheets,
             calculated_fields: self.calculated_fields,
             parameter_declarations: self.parameter_declarations,
             filter_groups: self.filter_groups,

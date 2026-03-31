@@ -6,5 +6,8 @@ pub fn ser_get_ingress_point_input_input(
     if let Some(var_1) = &input.ingress_point_id {
         object.key("IngressPointId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.include_trust_store_contents {
+        object.key("IncludeTrustStoreContents").string(var_2.as_str());
+    }
     Ok(())
 }

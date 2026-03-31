@@ -15,6 +15,12 @@ pub fn ser_tooltip_options(
         crate::protocol_serde::shape_field_based_tooltip::ser_field_based_tooltip(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.sheet_tooltip {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("SheetTooltip").start_object();
+        crate::protocol_serde::shape_sheet_tooltip::ser_sheet_tooltip(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -51,6 +57,9 @@ where
                         "FieldBasedTooltip" => {
                             builder = builder
                                 .set_field_based_tooltip(crate::protocol_serde::shape_field_based_tooltip::de_field_based_tooltip(tokens, _value)?);
+                        }
+                        "SheetTooltip" => {
+                            builder = builder.set_sheet_tooltip(crate::protocol_serde::shape_sheet_tooltip::de_sheet_tooltip(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

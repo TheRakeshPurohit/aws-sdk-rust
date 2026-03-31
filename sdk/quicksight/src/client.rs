@@ -307,6 +307,8 @@ mod describe_asset_bundle_export_job;
 
 mod describe_asset_bundle_import_job;
 
+mod describe_automation_job;
+
 mod describe_brand;
 
 mod describe_brand_assignment;
@@ -514,6 +516,8 @@ mod search_topics;
 mod start_asset_bundle_export_job;
 
 mod start_asset_bundle_import_job;
+
+mod start_automation_job;
 
 mod start_dashboard_snapshot_job;
 

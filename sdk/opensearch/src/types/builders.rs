@@ -207,6 +207,10 @@ pub use crate::types::_reserved_instance::ReservedInstanceBuilder;
 
 pub use crate::types::_vpc_endpoint_error::VpcEndpointErrorBuilder;
 
+pub use crate::types::_ai_config::AiConfigBuilder;
+
+pub use crate::types::_capability_failure::CapabilityFailureBuilder;
+
 pub use crate::types::_compatible_versions_map::CompatibleVersionsMapBuilder;
 
 pub use crate::types::_package_version_history::PackageVersionHistoryBuilder;

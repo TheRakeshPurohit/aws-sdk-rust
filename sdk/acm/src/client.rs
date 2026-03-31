@@ -222,4 +222,6 @@ mod resend_validation_email;
 
 mod revoke_certificate;
 
+mod search_certificates;
+
 mod update_certificate_options;

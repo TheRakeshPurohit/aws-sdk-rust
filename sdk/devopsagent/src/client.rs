@@ -183,15 +183,11 @@ mod deregister_service;
 
 mod describe_private_connection;
 
-mod describe_support_level;
-
 mod disable_operator_app;
 
 mod disassociate_service;
 
 mod enable_operator_app;
-
-mod end_chat_for_case;
 
 mod get_account_usage;
 
@@ -206,8 +202,6 @@ mod get_operator_app;
 mod get_recommendation;
 
 mod get_service;
-
-mod initiate_chat_for_case;
 
 mod list_agent_spaces;
 

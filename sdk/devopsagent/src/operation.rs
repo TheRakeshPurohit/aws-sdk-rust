@@ -31,9 +31,6 @@ pub mod deregister_service;
 /// Types for the `DescribePrivateConnection` operation.
 pub mod describe_private_connection;
 
-/// Types for the `DescribeSupportLevel` operation.
-pub mod describe_support_level;
-
 /// Types for the `DisableOperatorApp` operation.
 pub mod disable_operator_app;
 
@@ -42,9 +39,6 @@ pub mod disassociate_service;
 
 /// Types for the `EnableOperatorApp` operation.
 pub mod enable_operator_app;
-
-/// Types for the `EndChatForCase` operation.
-pub mod end_chat_for_case;
 
 /// Types for the `GetAccountUsage` operation.
 pub mod get_account_usage;
@@ -66,9 +60,6 @@ pub mod get_recommendation;
 
 /// Types for the `GetService` operation.
 pub mod get_service;
-
-/// Types for the `InitiateChatForCase` operation.
-pub mod initiate_chat_for_case;
 
 /// Types for the `ListAgentSpaces` operation.
 pub mod list_agent_spaces;

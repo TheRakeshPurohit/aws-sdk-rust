@@ -9,13 +9,9 @@ pub use crate::types::_task::Task;
 
 pub use crate::types::_user_type::UserType;
 
-pub use crate::types::_support_level::SupportLevel;
-
 pub use crate::types::_usage_metric::UsageMetric;
 
 pub use crate::types::_recommendation::Recommendation;
-
-pub use crate::types::_chat_participant_connection::ChatParticipantConnection;
 
 pub use crate::types::_task_filter::TaskFilter;
 
@@ -139,8 +135,6 @@ pub use crate::types::_pager_duty_details::PagerDutyDetails;
 
 pub use crate::types::_registered_azure_identity_details::RegisteredAzureIdentityDetails;
 
-pub use crate::types::_mcp_server_sigv4_service_details::McpServerSigV4ServiceDetails;
-
 pub use crate::types::_o_auth_additional_step_details::OAuthAdditionalStepDetails;
 
 pub use crate::types::_additional_service_details::AdditionalServiceDetails;
@@ -181,8 +175,6 @@ pub use crate::types::_mcp_server_grafana_configuration::McpServerGrafanaConfigu
 
 pub use crate::types::_pager_duty_configuration::PagerDutyConfiguration;
 
-pub use crate::types::_ms_teams_configuration::MsTeamsConfiguration;
-
 pub use crate::types::_validation_status::ValidationStatus;
 
 pub use crate::types::_webhook_type::WebhookType;
@@ -207,8 +199,6 @@ pub use crate::types::_event_channel_type::EventChannelType;
 
 pub use crate::types::_pager_duty_authorization_config::PagerDutyAuthorizationConfig;
 
-pub use crate::types::_mcp_server_sigv4_authorization_config::McpServerSigV4AuthorizationConfig;
-
 pub use crate::types::_registered_github_service_details::RegisteredGithubServiceDetails;
 
 pub use crate::types::_registered_slack_service_details::RegisteredSlackServiceDetails;
@@ -227,8 +217,6 @@ pub use crate::types::_registered_grafana_server_details::RegisteredGrafanaServe
 
 pub use crate::types::_registered_pager_duty_details::RegisteredPagerDutyDetails;
 
-pub use crate::types::_registered_mcp_server_sigv4_details::RegisteredMcpServerSigV4Details;
-
 pub use crate::types::_send_message_text_delta::SendMessageTextDelta;
 
 pub use crate::types::_send_message_json_delta::SendMessageJsonDelta;
@@ -240,8 +228,6 @@ pub use crate::types::_monitor_account_type::MonitorAccountType;
 pub use crate::types::_github_repo_owner_type::GithubRepoOwnerType;
 
 pub use crate::types::_slack_transmission_target::SlackTransmissionTarget;
-
-pub use crate::types::_ms_teams_transmission_target::MsTeamsTransmissionTarget;
 
 pub use crate::types::_dynatrace_o_auth_client_credentials_config::DynatraceOAuthClientCredentialsConfig;
 
@@ -271,8 +257,6 @@ pub use crate::types::_assistant_message_block::AssistantMessageBlock;
 
 pub use crate::types::_slack_channel::SlackChannel;
 
-pub use crate::types::_ms_teams_channel::MsTeamsChannel;
-
 mod _additional_service_details;
 
 mod _additional_service_registration_step;
@@ -292,8 +276,6 @@ mod _azure_configuration;
 mod _azure_dev_ops_configuration;
 
 mod _chat_execution;
-
-mod _chat_participant_connection;
 
 mod _datadog_authorization_config;
 
@@ -373,19 +355,9 @@ mod _mcp_server_o_auth3_lo_config;
 
 mod _mcp_server_o_auth_client_credentials_config;
 
-mod _mcp_server_sigv4_authorization_config;
-
-mod _mcp_server_sigv4_service_details;
-
 mod _message;
 
 mod _monitor_account_type;
-
-mod _ms_teams_channel;
-
-mod _ms_teams_configuration;
-
-mod _ms_teams_transmission_target;
 
 mod _new_relic_api_key_config;
 
@@ -444,8 +416,6 @@ mod _registered_github_service_details;
 mod _registered_grafana_server_details;
 
 mod _registered_mcp_server_details;
-
-mod _registered_mcp_server_sigv4_details;
 
 mod _registered_new_relic_details;
 
@@ -516,8 +486,6 @@ mod _slack_transmission_target;
 mod _source_account_type;
 
 mod _source_aws_configuration;
-
-mod _support_level;
 
 mod _task;
 

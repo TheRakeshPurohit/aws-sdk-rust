@@ -25,4 +25,6 @@ pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 
 pub use crate::types::error::_invalid_pagination_token_exception::InvalidPaginationTokenExceptionBuilder;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
+
 pub use crate::types::error::_slot_not_available_exception::SlotNotAvailableExceptionBuilder;

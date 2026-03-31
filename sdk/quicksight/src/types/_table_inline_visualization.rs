@@ -6,11 +6,17 @@
 pub struct TableInlineVisualization {
     /// <p>The configuration of the inline visualization of the data bars within a chart.</p>
     pub data_bars: ::std::option::Option<crate::types::DataBarsOptions>,
+    /// <p>The configuration of the inline visualization of the sparklines within a chart.</p>
+    pub sparklines: ::std::option::Option<crate::types::SparklinesOptions>,
 }
 impl TableInlineVisualization {
     /// <p>The configuration of the inline visualization of the data bars within a chart.</p>
     pub fn data_bars(&self) -> ::std::option::Option<&crate::types::DataBarsOptions> {
         self.data_bars.as_ref()
+    }
+    /// <p>The configuration of the inline visualization of the sparklines within a chart.</p>
+    pub fn sparklines(&self) -> ::std::option::Option<&crate::types::SparklinesOptions> {
+        self.sparklines.as_ref()
     }
 }
 impl TableInlineVisualization {
@@ -25,6 +31,7 @@ impl TableInlineVisualization {
 #[non_exhaustive]
 pub struct TableInlineVisualizationBuilder {
     pub(crate) data_bars: ::std::option::Option<crate::types::DataBarsOptions>,
+    pub(crate) sparklines: ::std::option::Option<crate::types::SparklinesOptions>,
 }
 impl TableInlineVisualizationBuilder {
     /// <p>The configuration of the inline visualization of the data bars within a chart.</p>
@@ -41,8 +48,25 @@ impl TableInlineVisualizationBuilder {
     pub fn get_data_bars(&self) -> &::std::option::Option<crate::types::DataBarsOptions> {
         &self.data_bars
     }
+    /// <p>The configuration of the inline visualization of the sparklines within a chart.</p>
+    pub fn sparklines(mut self, input: crate::types::SparklinesOptions) -> Self {
+        self.sparklines = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the inline visualization of the sparklines within a chart.</p>
+    pub fn set_sparklines(mut self, input: ::std::option::Option<crate::types::SparklinesOptions>) -> Self {
+        self.sparklines = input;
+        self
+    }
+    /// <p>The configuration of the inline visualization of the sparklines within a chart.</p>
+    pub fn get_sparklines(&self) -> &::std::option::Option<crate::types::SparklinesOptions> {
+        &self.sparklines
+    }
     /// Consumes the builder and constructs a [`TableInlineVisualization`](crate::types::TableInlineVisualization).
     pub fn build(self) -> crate::types::TableInlineVisualization {
-        crate::types::TableInlineVisualization { data_bars: self.data_bars }
+        crate::types::TableInlineVisualization {
+            data_bars: self.data_bars,
+            sparklines: self.sparklines,
+        }
     }
 }

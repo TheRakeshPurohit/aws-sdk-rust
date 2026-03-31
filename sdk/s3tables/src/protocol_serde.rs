@@ -247,6 +247,8 @@ pub(crate) mod shape_iceberg_partition_spec;
 
 pub(crate) mod shape_iceberg_schema;
 
+pub(crate) mod shape_iceberg_schema_v2;
+
 pub(crate) mod shape_iceberg_snapshot_management_settings;
 
 pub(crate) mod shape_iceberg_sort_order;
@@ -264,3 +266,5 @@ pub(crate) mod shape_iceberg_sort_field;
 pub(crate) mod shape_replication_destinations;
 
 pub(crate) mod shape_schema_field;
+
+pub(crate) mod shape_schema_v2_field;

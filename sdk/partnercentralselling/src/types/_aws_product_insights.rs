@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AwsProductInsights {
-    /// <p>ISO 4217 currency code.</p>
+    /// <p>ISO 4217 currency code. Supported values are <code>USD</code> and <code>EUR</code>. Returns <code>EUR</code> when the opportunity is in the <code>aws-eusc</code> (AWS European Sovereign Cloud) partition.</p>
     pub currency_code: crate::types::CurrencyCode,
     /// <p>Time period for spend amounts.</p>
     pub frequency: crate::types::PaymentFrequency,
@@ -20,7 +20,7 @@ pub struct AwsProductInsights {
     pub aws_products: ::std::vec::Vec<crate::types::AwsProductDetails>,
 }
 impl AwsProductInsights {
-    /// <p>ISO 4217 currency code.</p>
+    /// <p>ISO 4217 currency code. Supported values are <code>USD</code> and <code>EUR</code>. Returns <code>EUR</code> when the opportunity is in the <code>aws-eusc</code> (AWS European Sovereign Cloud) partition.</p>
     pub fn currency_code(&self) -> &crate::types::CurrencyCode {
         &self.currency_code
     }
@@ -83,18 +83,18 @@ pub struct AwsProductInsightsBuilder {
     pub(crate) aws_products: ::std::option::Option<::std::vec::Vec<crate::types::AwsProductDetails>>,
 }
 impl AwsProductInsightsBuilder {
-    /// <p>ISO 4217 currency code.</p>
+    /// <p>ISO 4217 currency code. Supported values are <code>USD</code> and <code>EUR</code>. Returns <code>EUR</code> when the opportunity is in the <code>aws-eusc</code> (AWS European Sovereign Cloud) partition.</p>
     /// This field is required.
     pub fn currency_code(mut self, input: crate::types::CurrencyCode) -> Self {
         self.currency_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>ISO 4217 currency code.</p>
+    /// <p>ISO 4217 currency code. Supported values are <code>USD</code> and <code>EUR</code>. Returns <code>EUR</code> when the opportunity is in the <code>aws-eusc</code> (AWS European Sovereign Cloud) partition.</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCode>) -> Self {
         self.currency_code = input;
         self
     }
-    /// <p>ISO 4217 currency code.</p>
+    /// <p>ISO 4217 currency code. Supported values are <code>USD</code> and <code>EUR</code>. Returns <code>EUR</code> when the opportunity is in the <code>aws-eusc</code> (AWS European Sovereign Cloud) partition.</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCode> {
         &self.currency_code
     }

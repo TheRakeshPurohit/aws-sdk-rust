@@ -12,7 +12,7 @@ pub struct AgreementViewSummary {
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The type of agreement. Value is <code>PurchaseAgreement</code>.</p>
+    /// <p>The type of agreement.</p>
     pub agreement_type: ::std::option::Option<::std::string::String>,
     /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code></p>
     pub acceptor: ::std::option::Option<crate::types::Acceptor>,
@@ -40,7 +40,7 @@ impl AgreementViewSummary {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The type of agreement. Value is <code>PurchaseAgreement</code>.</p>
+    /// <p>The type of agreement.</p>
     pub fn agreement_type(&self) -> ::std::option::Option<&str> {
         self.agreement_type.as_deref()
     }
@@ -139,17 +139,17 @@ impl AgreementViewSummaryBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>The type of agreement. Value is <code>PurchaseAgreement</code>.</p>
+    /// <p>The type of agreement.</p>
     pub fn agreement_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agreement_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of agreement. Value is <code>PurchaseAgreement</code>.</p>
+    /// <p>The type of agreement.</p>
     pub fn set_agreement_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agreement_type = input;
         self
     }
-    /// <p>The type of agreement. Value is <code>PurchaseAgreement</code>.</p>
+    /// <p>The type of agreement.</p>
     pub fn get_agreement_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.agreement_type
     }

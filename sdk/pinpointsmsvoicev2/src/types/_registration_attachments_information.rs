@@ -24,6 +24,8 @@ pub struct RegistrationAttachmentsInformation {
     pub attachment_upload_error_reason: ::std::option::Option<crate::types::AttachmentUploadErrorReason>,
     /// <p>The time when the registration attachment was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub created_timestamp: ::aws_smithy_types::DateTime,
+    /// <p>The URL to the document that's associated with the registration attachment.</p>
+    pub attachment_url: ::std::option::Option<::std::string::String>,
 }
 impl RegistrationAttachmentsInformation {
     /// <p>The Amazon Resource Name (ARN) for the registration attachment.</p>
@@ -58,6 +60,10 @@ impl RegistrationAttachmentsInformation {
     pub fn created_timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.created_timestamp
     }
+    /// <p>The URL to the document that's associated with the registration attachment.</p>
+    pub fn attachment_url(&self) -> ::std::option::Option<&str> {
+        self.attachment_url.as_deref()
+    }
 }
 impl RegistrationAttachmentsInformation {
     /// Creates a new builder-style object to manufacture [`RegistrationAttachmentsInformation`](crate::types::RegistrationAttachmentsInformation).
@@ -75,6 +81,7 @@ pub struct RegistrationAttachmentsInformationBuilder {
     pub(crate) attachment_status: ::std::option::Option<crate::types::AttachmentStatus>,
     pub(crate) attachment_upload_error_reason: ::std::option::Option<crate::types::AttachmentUploadErrorReason>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) attachment_url: ::std::option::Option<::std::string::String>,
 }
 impl RegistrationAttachmentsInformationBuilder {
     /// <p>The Amazon Resource Name (ARN) for the registration attachment.</p>
@@ -181,6 +188,20 @@ impl RegistrationAttachmentsInformationBuilder {
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_timestamp
     }
+    /// <p>The URL to the document that's associated with the registration attachment.</p>
+    pub fn attachment_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.attachment_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URL to the document that's associated with the registration attachment.</p>
+    pub fn set_attachment_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.attachment_url = input;
+        self
+    }
+    /// <p>The URL to the document that's associated with the registration attachment.</p>
+    pub fn get_attachment_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.attachment_url
+    }
     /// Consumes the builder and constructs a [`RegistrationAttachmentsInformation`](crate::types::RegistrationAttachmentsInformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`registration_attachment_arn`](crate::types::builders::RegistrationAttachmentsInformationBuilder::registration_attachment_arn)
@@ -214,6 +235,7 @@ impl RegistrationAttachmentsInformationBuilder {
                     "created_timestamp was not specified but it is required when building RegistrationAttachmentsInformation",
                 )
             })?,
+            attachment_url: self.attachment_url,
         })
     }
 }

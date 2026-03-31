@@ -146,11 +146,15 @@ mod create_configuration_set;
 
 mod create_event_destination;
 
+mod create_notify_configuration;
+
 mod create_opt_out_list;
 
 mod create_pool;
 
 mod create_protect_configuration;
+
+mod create_rcs_agent;
 
 mod create_registration;
 
@@ -203,6 +207,10 @@ mod delete_keyword;
 
 mod delete_media_message_spend_limit_override;
 
+mod delete_notify_configuration;
+
+mod delete_notify_message_spend_limit_override;
+
 mod delete_opt_out_list;
 
 mod delete_opted_out_number;
@@ -212,6 +220,8 @@ mod delete_pool;
 mod delete_protect_configuration;
 
 mod delete_protect_configuration_rule_set_number_override;
+
+mod delete_rcs_agent;
 
 mod delete_registration;
 
@@ -235,6 +245,10 @@ mod describe_configuration_sets;
 
 mod describe_keywords;
 
+mod describe_notify_configurations;
+
+mod describe_notify_templates;
+
 mod describe_opt_out_lists;
 
 mod describe_opted_out_numbers;
@@ -244,6 +258,10 @@ mod describe_phone_numbers;
 mod describe_pools;
 
 mod describe_protect_configurations;
+
+mod describe_rcs_agent_country_launch_status;
+
+mod describe_rcs_agents;
 
 mod describe_registration_attachments;
 
@@ -274,6 +292,8 @@ mod discard_registration_version;
 mod get_protect_configuration_country_rule_set;
 
 mod get_resource_policy;
+
+mod list_notify_countries;
 
 mod list_pool_origination_identities;
 
@@ -307,6 +327,10 @@ mod send_destination_number_verification_code;
 
 mod send_media_message;
 
+mod send_notify_text_message;
+
+mod send_notify_voice_message;
+
 mod send_text_message;
 
 mod send_voice_message;
@@ -321,6 +345,8 @@ mod set_default_sender_id;
 
 mod set_media_message_spend_limit_override;
 
+mod set_notify_message_spend_limit_override;
+
 mod set_text_message_spend_limit_override;
 
 mod set_voice_message_spend_limit_override;
@@ -333,6 +359,8 @@ mod untag_resource;
 
 mod update_event_destination;
 
+mod update_notify_configuration;
+
 mod update_phone_number;
 
 mod update_pool;
@@ -340,6 +368,8 @@ mod update_pool;
 mod update_protect_configuration;
 
 mod update_protect_configuration_country_rule_set;
+
+mod update_rcs_agent;
 
 mod update_sender_id;
 

@@ -149,6 +149,8 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_action;
 
+pub(crate) mod shape_asset_configuration;
+
 pub(crate) mod shape_asset_details;
 
 pub(crate) mod shape_event;
@@ -241,6 +243,8 @@ pub(crate) mod shape_lake_formation_data_permission_asset;
 
 pub(crate) mod shape_lake_formation_tag_policy_details;
 
+pub(crate) mod shape_list_of_tag;
+
 pub(crate) mod shape_received_data_grant_summaries_entry;
 
 pub(crate) mod shape_redshift_data_share_asset;
@@ -258,6 +262,8 @@ pub(crate) mod shape_s3_data_access_details;
 pub(crate) mod shape_s3_snapshot_asset;
 
 pub(crate) mod shape_schema_change_request_details;
+
+pub(crate) mod shape_tag;
 
 pub(crate) mod shape_asset_destination_entry;
 

@@ -23,9 +23,7 @@
 ///     Service::McpServerDatadog => { /* ... */ },
 ///     Service::McpServerGrafana => { /* ... */ },
 ///     Service::McpServerNewrelic => { /* ... */ },
-///     Service::McpServerSigv4 => { /* ... */ },
 ///     Service::McpServerSplunk => { /* ... */ },
-///     Service::MsTeams => { /* ... */ },
 ///     Service::Pagerduty => { /* ... */ },
 ///     Service::Servicenow => { /* ... */ },
 ///     Service::Slack => { /* ... */ },
@@ -79,12 +77,8 @@ pub enum Service {
     McpServerGrafana,
     /// NewRelic MCP server.
     McpServerNewrelic,
-    /// SigV4-authenticated MCP server.
-    McpServerSigv4,
     /// Splunk MCP server.
     McpServerSplunk,
-    #[allow(missing_docs)] // documentation missing in model
-    MsTeams,
     #[allow(missing_docs)] // documentation missing in model
     Pagerduty,
     #[allow(missing_docs)] // documentation missing in model
@@ -109,9 +103,7 @@ impl ::std::convert::From<&str> for Service {
             "mcpserverdatadog" => Service::McpServerDatadog,
             "mcpservergrafana" => Service::McpServerGrafana,
             "mcpservernewrelic" => Service::McpServerNewrelic,
-            "mcpserversigv4" => Service::McpServerSigv4,
             "mcpserversplunk" => Service::McpServerSplunk,
-            "msteams" => Service::MsTeams,
             "pagerduty" => Service::Pagerduty,
             "servicenow" => Service::Servicenow,
             "slack" => Service::Slack,
@@ -141,9 +133,7 @@ impl Service {
             Service::McpServerDatadog => "mcpserverdatadog",
             Service::McpServerGrafana => "mcpservergrafana",
             Service::McpServerNewrelic => "mcpservernewrelic",
-            Service::McpServerSigv4 => "mcpserversigv4",
             Service::McpServerSplunk => "mcpserversplunk",
-            Service::MsTeams => "msteams",
             Service::Pagerduty => "pagerduty",
             Service::Servicenow => "servicenow",
             Service::Slack => "slack",
@@ -164,9 +154,7 @@ impl Service {
             "mcpserverdatadog",
             "mcpservergrafana",
             "mcpservernewrelic",
-            "mcpserversigv4",
             "mcpserversplunk",
-            "msteams",
             "pagerduty",
             "servicenow",
             "slack",
@@ -204,9 +192,7 @@ impl ::std::fmt::Display for Service {
             Service::McpServerDatadog => write!(f, "mcpserverdatadog"),
             Service::McpServerGrafana => write!(f, "mcpservergrafana"),
             Service::McpServerNewrelic => write!(f, "mcpservernewrelic"),
-            Service::McpServerSigv4 => write!(f, "mcpserversigv4"),
             Service::McpServerSplunk => write!(f, "mcpserversplunk"),
-            Service::MsTeams => write!(f, "msteams"),
             Service::Pagerduty => write!(f, "pagerduty"),
             Service::Servicenow => write!(f, "servicenow"),
             Service::Slack => write!(f, "slack"),

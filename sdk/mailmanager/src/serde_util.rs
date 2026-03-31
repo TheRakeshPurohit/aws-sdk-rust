@@ -438,6 +438,13 @@ pub(crate) fn traffic_policy_correct_errors(
     builder
 }
 
+pub(crate) fn trust_store_correct_errors(mut builder: crate::types::builders::TrustStoreBuilder) -> crate::types::builders::TrustStoreBuilder {
+    if builder.ca_content.is_none() {
+        builder.ca_content = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn archive_boolean_expression_correct_errors(
     mut builder: crate::types::builders::ArchiveBooleanExpressionBuilder,
 ) -> crate::types::builders::ArchiveBooleanExpressionBuilder {
@@ -482,6 +489,25 @@ pub(crate) fn archive_action_correct_errors(
 ) -> crate::types::builders::ArchiveActionBuilder {
     if builder.target_archive.is_none() {
         builder.target_archive = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn bounce_action_correct_errors(mut builder: crate::types::builders::BounceActionBuilder) -> crate::types::builders::BounceActionBuilder {
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.sender.is_none() {
+        builder.sender = Some(Default::default())
+    }
+    if builder.status_code.is_none() {
+        builder.status_code = Some(Default::default())
+    }
+    if builder.smtp_reply_code.is_none() {
+        builder.smtp_reply_code = Some(Default::default())
+    }
+    if builder.diagnostic_message.is_none() {
+        builder.diagnostic_message = Some(Default::default())
     }
     builder
 }
@@ -581,6 +607,21 @@ pub(crate) fn ingress_tls_protocol_expression_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = "no value was set".parse::<crate::types::IngressTlsProtocolAttribute>().ok()
+    }
+    builder
+}
+
+pub(crate) fn invoke_lambda_action_correct_errors(
+    mut builder: crate::types::builders::InvokeLambdaActionBuilder,
+) -> crate::types::builders::InvokeLambdaActionBuilder {
+    if builder.function_arn.is_none() {
+        builder.function_arn = Some(Default::default())
+    }
+    if builder.invocation_type.is_none() {
+        builder.invocation_type = "no value was set".parse::<crate::types::LambdaInvocationType>().ok()
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
     }
     builder
 }

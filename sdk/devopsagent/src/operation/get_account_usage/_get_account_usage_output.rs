@@ -9,6 +9,8 @@ pub struct GetAccountUsageOutput {
     pub monthly_account_evaluation_hours: ::std::option::Option<crate::types::UsageMetric>,
     /// Monthly system learning hours usage and limit for an account
     pub monthly_account_system_learning_hours: ::std::option::Option<crate::types::UsageMetric>,
+    /// Monthly on-demand hours usage and limit for an account
+    pub monthly_account_on_demand_hours: ::std::option::Option<crate::types::UsageMetric>,
     /// The start time of the usage tracking period
     pub usage_period_start_time: ::aws_smithy_types::DateTime,
     /// The end time of the usage tracking period
@@ -27,6 +29,10 @@ impl GetAccountUsageOutput {
     /// Monthly system learning hours usage and limit for an account
     pub fn monthly_account_system_learning_hours(&self) -> ::std::option::Option<&crate::types::UsageMetric> {
         self.monthly_account_system_learning_hours.as_ref()
+    }
+    /// Monthly on-demand hours usage and limit for an account
+    pub fn monthly_account_on_demand_hours(&self) -> ::std::option::Option<&crate::types::UsageMetric> {
+        self.monthly_account_on_demand_hours.as_ref()
     }
     /// The start time of the usage tracking period
     pub fn usage_period_start_time(&self) -> &::aws_smithy_types::DateTime {
@@ -56,6 +62,7 @@ pub struct GetAccountUsageOutputBuilder {
     pub(crate) monthly_account_investigation_hours: ::std::option::Option<crate::types::UsageMetric>,
     pub(crate) monthly_account_evaluation_hours: ::std::option::Option<crate::types::UsageMetric>,
     pub(crate) monthly_account_system_learning_hours: ::std::option::Option<crate::types::UsageMetric>,
+    pub(crate) monthly_account_on_demand_hours: ::std::option::Option<crate::types::UsageMetric>,
     pub(crate) usage_period_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) usage_period_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -102,6 +109,20 @@ impl GetAccountUsageOutputBuilder {
     /// Monthly system learning hours usage and limit for an account
     pub fn get_monthly_account_system_learning_hours(&self) -> &::std::option::Option<crate::types::UsageMetric> {
         &self.monthly_account_system_learning_hours
+    }
+    /// Monthly on-demand hours usage and limit for an account
+    pub fn monthly_account_on_demand_hours(mut self, input: crate::types::UsageMetric) -> Self {
+        self.monthly_account_on_demand_hours = ::std::option::Option::Some(input);
+        self
+    }
+    /// Monthly on-demand hours usage and limit for an account
+    pub fn set_monthly_account_on_demand_hours(mut self, input: ::std::option::Option<crate::types::UsageMetric>) -> Self {
+        self.monthly_account_on_demand_hours = input;
+        self
+    }
+    /// Monthly on-demand hours usage and limit for an account
+    pub fn get_monthly_account_on_demand_hours(&self) -> &::std::option::Option<crate::types::UsageMetric> {
+        &self.monthly_account_on_demand_hours
     }
     /// The start time of the usage tracking period
     /// This field is required.
@@ -153,6 +174,7 @@ impl GetAccountUsageOutputBuilder {
             monthly_account_investigation_hours: self.monthly_account_investigation_hours,
             monthly_account_evaluation_hours: self.monthly_account_evaluation_hours,
             monthly_account_system_learning_hours: self.monthly_account_system_learning_hours,
+            monthly_account_on_demand_hours: self.monthly_account_on_demand_hours,
             usage_period_start_time: self.usage_period_start_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "usage_period_start_time",

@@ -491,46 +491,6 @@ impl From<crate::operation::describe_private_connection::DescribePrivateConnecti
         }
     }
 }
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_support_level::DescribeSupportLevelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_support_level::DescribeSupportLevelError, R>) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::describe_support_level::DescribeSupportLevelError> for Error {
-    fn from(err: crate::operation::describe_support_level::DescribeSupportLevelError) -> Self {
-        match err {
-            crate::operation::describe_support_level::DescribeSupportLevelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::describe_support_level::DescribeSupportLevelError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::describe_support_level::DescribeSupportLevelError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::describe_support_level::DescribeSupportLevelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::describe_support_level::DescribeSupportLevelError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::describe_support_level::DescribeSupportLevelError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::describe_support_level::DescribeSupportLevelError::ContentSizeExceededException(inner) => {
-                Error::ContentSizeExceededException(inner)
-            }
-            crate::operation::describe_support_level::DescribeSupportLevelError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::describe_support_level::DescribeSupportLevelError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::operation::describe_support_level::DescribeSupportLevelError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_operator_app::DisableOperatorAppError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -648,40 +608,6 @@ impl From<crate::operation::enable_operator_app::EnableOperatorAppError> for Err
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::enable_operator_app::EnableOperatorAppError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::end_chat_for_case::EndChatForCaseError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::end_chat_for_case::EndChatForCaseError, R>) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::end_chat_for_case::EndChatForCaseError> for Error {
-    fn from(err: crate::operation::end_chat_for_case::EndChatForCaseError) -> Self {
-        match err {
-            crate::operation::end_chat_for_case::EndChatForCaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::end_chat_for_case::EndChatForCaseError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::end_chat_for_case::EndChatForCaseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::end_chat_for_case::EndChatForCaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::end_chat_for_case::EndChatForCaseError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::end_chat_for_case::EndChatForCaseError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::end_chat_for_case::EndChatForCaseError::ContentSizeExceededException(inner) => {
-                Error::ContentSizeExceededException(inner)
-            }
-            crate::operation::end_chat_for_case::EndChatForCaseError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::end_chat_for_case::EndChatForCaseError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::operation::end_chat_for_case::EndChatForCaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -912,46 +838,6 @@ impl From<crate::operation::get_service::GetServiceError> for Error {
             crate::operation::get_service::GetServiceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::get_service::GetServiceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::get_service::GetServiceError::Unhandled(inner) => Error::Unhandled(inner),
-        }
-    }
-}
-impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::initiate_chat_for_case::InitiateChatForCaseError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::initiate_chat_for_case::InitiateChatForCaseError, R>) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::initiate_chat_for_case::InitiateChatForCaseError> for Error {
-    fn from(err: crate::operation::initiate_chat_for_case::InitiateChatForCaseError) -> Self {
-        match err {
-            crate::operation::initiate_chat_for_case::InitiateChatForCaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::initiate_chat_for_case::InitiateChatForCaseError::ConflictException(inner) => Error::ConflictException(inner),
-            crate::operation::initiate_chat_for_case::InitiateChatForCaseError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::initiate_chat_for_case::InitiateChatForCaseError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::initiate_chat_for_case::InitiateChatForCaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::initiate_chat_for_case::InitiateChatForCaseError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::initiate_chat_for_case::InitiateChatForCaseError::ContentSizeExceededException(inner) => {
-                Error::ContentSizeExceededException(inner)
-            }
-            crate::operation::initiate_chat_for_case::InitiateChatForCaseError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::initiate_chat_for_case::InitiateChatForCaseError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
-            crate::operation::initiate_chat_for_case::InitiateChatForCaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

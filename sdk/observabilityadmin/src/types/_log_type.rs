@@ -12,7 +12,10 @@
 /// ```text
 /// # let logtype = unimplemented!();
 /// match logtype {
+///     LogType::Access => { /* ... */ },
 ///     LogType::Application => { /* ... */ },
+///     LogType::Connection => { /* ... */ },
+///     LogType::SecurityFinding => { /* ... */ },
 ///     LogType::Usage => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -43,7 +46,13 @@
 )]
 pub enum LogType {
     #[allow(missing_docs)] // documentation missing in model
+    Access,
+    #[allow(missing_docs)] // documentation missing in model
     Application,
+    #[allow(missing_docs)] // documentation missing in model
+    Connection,
+    #[allow(missing_docs)] // documentation missing in model
+    SecurityFinding,
     #[allow(missing_docs)] // documentation missing in model
     Usage,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -53,7 +62,10 @@ pub enum LogType {
 impl ::std::convert::From<&str> for LogType {
     fn from(s: &str) -> Self {
         match s {
+            "ACCESS_LOGS" => LogType::Access,
             "APPLICATION_LOGS" => LogType::Application,
+            "CONNECTION_LOGS" => LogType::Connection,
+            "SECURITY_FINDING_LOGS" => LogType::SecurityFinding,
             "USAGE_LOGS" => LogType::Usage,
             other => LogType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,14 +82,23 @@ impl LogType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            LogType::Access => "ACCESS_LOGS",
             LogType::Application => "APPLICATION_LOGS",
+            LogType::Connection => "CONNECTION_LOGS",
+            LogType::SecurityFinding => "SECURITY_FINDING_LOGS",
             LogType::Usage => "USAGE_LOGS",
             LogType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APPLICATION_LOGS", "USAGE_LOGS"]
+        &[
+            "ACCESS_LOGS",
+            "APPLICATION_LOGS",
+            "CONNECTION_LOGS",
+            "SECURITY_FINDING_LOGS",
+            "USAGE_LOGS",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for LogType {
@@ -100,7 +121,10 @@ impl LogType {
 impl ::std::fmt::Display for LogType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            LogType::Access => write!(f, "ACCESS_LOGS"),
             LogType::Application => write!(f, "APPLICATION_LOGS"),
+            LogType::Connection => write!(f, "CONNECTION_LOGS"),
+            LogType::SecurityFinding => write!(f, "SECURITY_FINDING_LOGS"),
             LogType::Usage => write!(f, "USAGE_LOGS"),
             LogType::Unknown(value) => write!(f, "{value}"),
         }

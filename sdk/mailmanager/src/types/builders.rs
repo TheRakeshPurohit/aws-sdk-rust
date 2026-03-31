@@ -45,6 +45,8 @@ pub use crate::types::_archive::ArchiveBuilder;
 
 pub use crate::types::_ingress_point::IngressPointBuilder;
 
+pub use crate::types::_tls_auth_configuration::TlsAuthConfigurationBuilder;
+
 pub use crate::types::_public_network_configuration::PublicNetworkConfigurationBuilder;
 
 pub use crate::types::_private_network_configuration::PrivateNetworkConfigurationBuilder;
@@ -58,6 +60,8 @@ pub use crate::types::_rule_set::RuleSetBuilder;
 pub use crate::types::_traffic_policy::TrafficPolicyBuilder;
 
 pub use crate::types::_policy_statement::PolicyStatementBuilder;
+
+pub use crate::types::_trust_store::TrustStoreBuilder;
 
 pub use crate::types::_archive_string_expression::ArchiveStringExpressionBuilder;
 
@@ -94,6 +98,10 @@ pub use crate::types::_deliver_to_mailbox_action::DeliverToMailboxActionBuilder;
 pub use crate::types::_deliver_to_q_business_action::DeliverToQBusinessActionBuilder;
 
 pub use crate::types::_sns_action::SnsActionBuilder;
+
+pub use crate::types::_bounce_action::BounceActionBuilder;
+
+pub use crate::types::_invoke_lambda_action::InvokeLambdaActionBuilder;
 
 pub use crate::types::_ingress_string_expression::IngressStringExpressionBuilder;
 

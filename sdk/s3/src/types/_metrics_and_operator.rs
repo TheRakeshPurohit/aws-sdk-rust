@@ -6,7 +6,9 @@
 pub struct MetricsAndOperator {
     /// <p>The prefix used when evaluating an AND predicate.</p>
     pub prefix: ::std::option::Option<::std::string::String>,
-    /// <p>The list of tags used when evaluating an AND predicate.</p>
+    /// <p>The list of tags used when evaluating an AND predicate.</p><note>
+    /// <p><code>Tag</code> filters are not supported for directory buckets.</p>
+    /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
     pub access_point_arn: ::std::option::Option<::std::string::String>,
@@ -16,7 +18,9 @@ impl MetricsAndOperator {
     pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
-    /// <p>The list of tags used when evaluating an AND predicate.</p>
+    /// <p>The list of tags used when evaluating an AND predicate.</p><note>
+    /// <p><code>Tag</code> filters are not supported for directory buckets.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -61,19 +65,25 @@ impl MetricsAndOperatorBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The list of tags used when evaluating an AND predicate.</p>
+    /// <p>The list of tags used when evaluating an AND predicate.</p><note>
+    /// <p><code>Tag</code> filters are not supported for directory buckets.</p>
+    /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of tags used when evaluating an AND predicate.</p>
+    /// <p>The list of tags used when evaluating an AND predicate.</p><note>
+    /// <p><code>Tag</code> filters are not supported for directory buckets.</p>
+    /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The list of tags used when evaluating an AND predicate.</p>
+    /// <p>The list of tags used when evaluating an AND predicate.</p><note>
+    /// <p><code>Tag</code> filters are not supported for directory buckets.</p>
+    /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

@@ -15,6 +15,8 @@ pub struct UpdateAnycastIpListInput {
     /// <p><code>dualstack</code> - Allocate a list of both IPv4 and IPv6 addresses</p></li>
     /// </ul>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    /// <p>A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for updating the Anycast static IP list.</p>
+    pub ipam_cidr_configs: ::std::option::Option<::std::vec::Vec<crate::types::IpamCidrConfig>>,
     /// <p>The current version (ETag value) of the Anycast static IP list that you are updating.</p>
     pub if_match: ::std::option::Option<::std::string::String>,
 }
@@ -35,6 +37,12 @@ impl UpdateAnycastIpListInput {
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
+    /// <p>A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for updating the Anycast static IP list.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipam_cidr_configs.is_none()`.
+    pub fn ipam_cidr_configs(&self) -> &[crate::types::IpamCidrConfig] {
+        self.ipam_cidr_configs.as_deref().unwrap_or_default()
+    }
     /// <p>The current version (ETag value) of the Anycast static IP list that you are updating.</p>
     pub fn if_match(&self) -> ::std::option::Option<&str> {
         self.if_match.as_deref()
@@ -53,6 +61,7 @@ impl UpdateAnycastIpListInput {
 pub struct UpdateAnycastIpListInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    pub(crate) ipam_cidr_configs: ::std::option::Option<::std::vec::Vec<crate::types::IpamCidrConfig>>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAnycastIpListInputBuilder {
@@ -109,6 +118,26 @@ impl UpdateAnycastIpListInputBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
     }
+    /// Appends an item to `ipam_cidr_configs`.
+    ///
+    /// To override the contents of this collection use [`set_ipam_cidr_configs`](Self::set_ipam_cidr_configs).
+    ///
+    /// <p>A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for updating the Anycast static IP list.</p>
+    pub fn ipam_cidr_configs(mut self, input: crate::types::IpamCidrConfig) -> Self {
+        let mut v = self.ipam_cidr_configs.unwrap_or_default();
+        v.push(input);
+        self.ipam_cidr_configs = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for updating the Anycast static IP list.</p>
+    pub fn set_ipam_cidr_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpamCidrConfig>>) -> Self {
+        self.ipam_cidr_configs = input;
+        self
+    }
+    /// <p>A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for updating the Anycast static IP list.</p>
+    pub fn get_ipam_cidr_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpamCidrConfig>> {
+        &self.ipam_cidr_configs
+    }
     /// <p>The current version (ETag value) of the Anycast static IP list that you are updating.</p>
     /// This field is required.
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -132,6 +161,7 @@ impl UpdateAnycastIpListInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_anycast_ip_list::UpdateAnycastIpListInput {
             id: self.id,
             ip_address_type: self.ip_address_type,
+            ipam_cidr_configs: self.ipam_cidr_configs,
             if_match: self.if_match,
         })
     }

@@ -23,17 +23,33 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_create_billing_adjustment_request;
+
+pub(crate) mod shape_cancel_agreement_cancellation_request;
+
 pub(crate) mod shape_cancel_agreement_payment_request;
 
 pub(crate) mod shape_describe_agreement;
+
+pub(crate) mod shape_get_agreement_cancellation_request;
 
 pub(crate) mod shape_get_agreement_payment_request;
 
 pub(crate) mod shape_get_agreement_terms;
 
+pub(crate) mod shape_get_billing_adjustment_request;
+
+pub(crate) mod shape_list_agreement_cancellation_requests;
+
+pub(crate) mod shape_list_agreement_invoice_line_items;
+
 pub(crate) mod shape_list_agreement_payment_requests;
 
+pub(crate) mod shape_list_billing_adjustment_requests;
+
 pub(crate) mod shape_search_agreements;
+
+pub(crate) mod shape_send_agreement_cancellation_request;
 
 pub(crate) mod shape_send_agreement_payment_request;
 
@@ -47,23 +63,39 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_batch_create_billing_adjustment_request_input;
+
+pub(crate) mod shape_cancel_agreement_cancellation_request_input;
+
 pub(crate) mod shape_cancel_agreement_payment_request_input;
 
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_describe_agreement_input;
 
+pub(crate) mod shape_get_agreement_cancellation_request_input;
+
 pub(crate) mod shape_get_agreement_payment_request_input;
 
 pub(crate) mod shape_get_agreement_terms_input;
 
+pub(crate) mod shape_get_billing_adjustment_request_input;
+
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_list_agreement_cancellation_requests_input;
+
+pub(crate) mod shape_list_agreement_invoice_line_items_input;
+
 pub(crate) mod shape_list_agreement_payment_requests_input;
+
+pub(crate) mod shape_list_billing_adjustment_requests_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_search_agreements_input;
+
+pub(crate) mod shape_send_agreement_cancellation_request_input;
 
 pub(crate) mod shape_send_agreement_payment_request_input;
 
@@ -75,11 +107,25 @@ pub(crate) mod shape_accepted_term_list;
 
 pub(crate) mod shape_acceptor;
 
+pub(crate) mod shape_agreement_cancellation_request_summary_list;
+
+pub(crate) mod shape_agreement_invoice_line_item_group_summaries;
+
 pub(crate) mod shape_agreement_view_summary_list;
+
+pub(crate) mod shape_batch_create_billing_adjustment_error_list;
+
+pub(crate) mod shape_batch_create_billing_adjustment_item_list;
+
+pub(crate) mod shape_batch_create_billing_adjustment_request_entry;
+
+pub(crate) mod shape_billing_adjustment_summary_list;
 
 pub(crate) mod shape_estimated_charges;
 
 pub(crate) mod shape_filter;
+
+pub(crate) mod shape_invoice_billing_period;
 
 pub(crate) mod shape_payment_request_summary_list;
 
@@ -93,7 +139,17 @@ pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_accepted_term;
 
+pub(crate) mod shape_agreement_cancellation_request_summary;
+
+pub(crate) mod shape_agreement_invoice_line_item_group_summary;
+
 pub(crate) mod shape_agreement_view_summary;
+
+pub(crate) mod shape_batch_create_billing_adjustment_error;
+
+pub(crate) mod shape_batch_create_billing_adjustment_item;
+
+pub(crate) mod shape_billing_adjustment_summary;
 
 pub(crate) mod shape_payment_request_summary;
 
@@ -109,9 +165,13 @@ pub(crate) mod shape_fixed_upfront_pricing_term;
 
 pub(crate) mod shape_free_trial_pricing_term;
 
+pub(crate) mod shape_invoicing_entity;
+
 pub(crate) mod shape_legal_term;
 
 pub(crate) mod shape_payment_schedule_term;
+
+pub(crate) mod shape_pricing_currency_amount;
 
 pub(crate) mod shape_recurring_payment_term;
 

@@ -13,6 +13,8 @@ pub struct OrganizationalUnit {
     /// <p>The friendly name of this OU.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The path in the organization where this OU exists.</p>
+    pub path: ::std::option::Option<::std::string::String>,
 }
 impl OrganizationalUnit {
     /// <p>The unique identifier (ID) associated with this OU. The ID is unique to the organization only.</p>
@@ -30,6 +32,10 @@ impl OrganizationalUnit {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The path in the organization where this OU exists.</p>
+    pub fn path(&self) -> ::std::option::Option<&str> {
+        self.path.as_deref()
+    }
 }
 impl OrganizationalUnit {
     /// Creates a new builder-style object to manufacture [`OrganizationalUnit`](crate::types::OrganizationalUnit).
@@ -45,6 +51,7 @@ pub struct OrganizationalUnitBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
 }
 impl OrganizationalUnitBuilder {
     /// <p>The unique identifier (ID) associated with this OU. The ID is unique to the organization only.</p>
@@ -98,12 +105,27 @@ impl OrganizationalUnitBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The path in the organization where this OU exists.</p>
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The path in the organization where this OU exists.</p>
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.path = input;
+        self
+    }
+    /// <p>The path in the organization where this OU exists.</p>
+    pub fn get_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.path
+    }
     /// Consumes the builder and constructs a [`OrganizationalUnit`](crate::types::OrganizationalUnit).
     pub fn build(self) -> crate::types::OrganizationalUnit {
         crate::types::OrganizationalUnit {
             id: self.id,
             arn: self.arn,
             name: self.name,
+            path: self.path,
         }
     }
 }

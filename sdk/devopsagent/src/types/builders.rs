@@ -3,13 +3,9 @@ pub use crate::types::_reference_input::ReferenceInputBuilder;
 
 pub use crate::types::_task::TaskBuilder;
 
-pub use crate::types::_support_level::SupportLevelBuilder;
-
 pub use crate::types::_usage_metric::UsageMetricBuilder;
 
 pub use crate::types::_recommendation::RecommendationBuilder;
-
-pub use crate::types::_chat_participant_connection::ChatParticipantConnectionBuilder;
 
 pub use crate::types::_task_filter::TaskFilterBuilder;
 
@@ -95,8 +91,6 @@ pub use crate::types::_pager_duty_details::PagerDutyDetailsBuilder;
 
 pub use crate::types::_registered_azure_identity_details::RegisteredAzureIdentityDetailsBuilder;
 
-pub use crate::types::_mcp_server_sigv4_service_details::McpServerSigV4ServiceDetailsBuilder;
-
 pub use crate::types::_o_auth_additional_step_details::OAuthAdditionalStepDetailsBuilder;
 
 pub use crate::types::_user_reference::UserReferenceBuilder;
@@ -129,11 +123,7 @@ pub use crate::types::_mcp_server_grafana_configuration::McpServerGrafanaConfigu
 
 pub use crate::types::_pager_duty_configuration::PagerDutyConfigurationBuilder;
 
-pub use crate::types::_ms_teams_configuration::MsTeamsConfigurationBuilder;
-
 pub use crate::types::_webhook::WebhookBuilder;
-
-pub use crate::types::_mcp_server_sigv4_authorization_config::McpServerSigV4AuthorizationConfigBuilder;
 
 pub use crate::types::_registered_github_service_details::RegisteredGithubServiceDetailsBuilder;
 
@@ -153,15 +143,11 @@ pub use crate::types::_registered_grafana_server_details::RegisteredGrafanaServe
 
 pub use crate::types::_registered_pager_duty_details::RegisteredPagerDutyDetailsBuilder;
 
-pub use crate::types::_registered_mcp_server_sigv4_details::RegisteredMcpServerSigV4DetailsBuilder;
-
 pub use crate::types::_send_message_text_delta::SendMessageTextDeltaBuilder;
 
 pub use crate::types::_send_message_json_delta::SendMessageJsonDeltaBuilder;
 
 pub use crate::types::_slack_transmission_target::SlackTransmissionTargetBuilder;
-
-pub use crate::types::_ms_teams_transmission_target::MsTeamsTransmissionTargetBuilder;
 
 pub use crate::types::_dynatrace_o_auth_client_credentials_config::DynatraceOAuthClientCredentialsConfigBuilder;
 
@@ -182,5 +168,3 @@ pub use crate::types::_new_relic_api_key_config::NewRelicApiKeyConfigBuilder;
 pub use crate::types::_pager_duty_o_auth_client_credentials_config::PagerDutyOAuthClientCredentialsConfigBuilder;
 
 pub use crate::types::_slack_channel::SlackChannelBuilder;
-
-pub use crate::types::_ms_teams_channel::MsTeamsChannelBuilder;

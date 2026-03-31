@@ -140,7 +140,7 @@ impl GetSpritesFluentBuilder {
     pub fn get_style(&self) -> &::std::option::Option<crate::types::MapStyle> {
         self.inner.get_style()
     }
-    /// <p>Sets color tone for map such as dark and light for specific map styles. It applies to only vector map styles such as Standard and Monochrome.</p>
+    /// <p>Sets the color tone for the map sprites, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for ColorScheme are case sensitive.</p>
@@ -149,7 +149,7 @@ impl GetSpritesFluentBuilder {
         self.inner = self.inner.color_scheme(input);
         self
     }
-    /// <p>Sets color tone for map such as dark and light for specific map styles. It applies to only vector map styles such as Standard and Monochrome.</p>
+    /// <p>Sets the color tone for the map sprites, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for ColorScheme are case sensitive.</p>
@@ -158,7 +158,7 @@ impl GetSpritesFluentBuilder {
         self.inner = self.inner.set_color_scheme(input);
         self
     }
-    /// <p>Sets color tone for map such as dark and light for specific map styles. It applies to only vector map styles such as Standard and Monochrome.</p>
+    /// <p>Sets the color tone for the map sprites, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for ColorScheme are case sensitive.</p>

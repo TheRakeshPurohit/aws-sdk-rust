@@ -17,6 +17,8 @@ pub struct CreateVerifiedDestinationNumberOutput {
     /// <p><code>VERIFIED</code>: The phone number is verified and can receive messages.</p></li>
     /// </ul>
     pub status: crate::types::VerificationStatus,
+    /// <p>The unique identifier of the RCS agent associated with the verified destination number.</p>
+    pub rcs_agent_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of tags (key and value pairs) to associate with the destination number.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The time when the verified phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
@@ -49,6 +51,10 @@ impl CreateVerifiedDestinationNumberOutput {
     pub fn status(&self) -> &crate::types::VerificationStatus {
         &self.status
     }
+    /// <p>The unique identifier of the RCS agent associated with the verified destination number.</p>
+    pub fn rcs_agent_id(&self) -> ::std::option::Option<&str> {
+        self.rcs_agent_id.as_deref()
+    }
     /// <p>An array of tags (key and value pairs) to associate with the destination number.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -80,6 +86,7 @@ pub struct CreateVerifiedDestinationNumberOutputBuilder {
     pub(crate) verified_destination_number_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_phone_number: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::VerificationStatus>,
+    pub(crate) rcs_agent_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -162,6 +169,20 @@ impl CreateVerifiedDestinationNumberOutputBuilder {
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VerificationStatus> {
         &self.status
+    }
+    /// <p>The unique identifier of the RCS agent associated with the verified destination number.</p>
+    pub fn rcs_agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rcs_agent_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the RCS agent associated with the verified destination number.</p>
+    pub fn set_rcs_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.rcs_agent_id = input;
+        self
+    }
+    /// <p>The unique identifier of the RCS agent associated with the verified destination number.</p>
+    pub fn get_rcs_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.rcs_agent_id
     }
     /// Appends an item to `tags`.
     ///
@@ -246,6 +267,7 @@ impl CreateVerifiedDestinationNumberOutputBuilder {
                         "status was not specified but it is required when building CreateVerifiedDestinationNumberOutput",
                     )
                 })?,
+                rcs_agent_id: self.rcs_agent_id,
                 tags: self.tags,
                 created_timestamp: self.created_timestamp.ok_or_else(|| {
                     ::aws_smithy_types::error::operation::BuildError::missing_field(

@@ -180,7 +180,7 @@ impl GetStaticMapFluentBuilder {
     pub fn get_center(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_center()
     }
-    /// <p>Sets color tone for map, such as dark and light for specific map styles. It only applies to vector map styles, such as Standard.</p>
+    /// <p>Sets the color tone for the map, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for <code>ColorScheme</code> are case sensitive.</p>
@@ -189,7 +189,7 @@ impl GetStaticMapFluentBuilder {
         self.inner = self.inner.color_scheme(input);
         self
     }
-    /// <p>Sets color tone for map, such as dark and light for specific map styles. It only applies to vector map styles, such as Standard.</p>
+    /// <p>Sets the color tone for the map, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for <code>ColorScheme</code> are case sensitive.</p>
@@ -198,7 +198,7 @@ impl GetStaticMapFluentBuilder {
         self.inner = self.inner.set_color_scheme(input);
         self
     }
-    /// <p>Sets color tone for map, such as dark and light for specific map styles. It only applies to vector map styles, such as Standard.</p>
+    /// <p>Sets the color tone for the map, such as dark and light.</p>
     /// <p>Example: <code>Light</code></p>
     /// <p>Default value: <code>Light</code></p><note>
     /// <p>Valid values for <code>ColorScheme</code> are case sensitive.</p>

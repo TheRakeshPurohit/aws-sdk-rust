@@ -11,7 +11,7 @@ pub struct AssociateOriginationIdentityInput {
     /// <p>If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).</p>
     /// </important>
     pub origination_identity: ::std::option::Option<::std::string::String>,
-    /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
+    /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity. This field is optional and is not required for origination identity types that are not country-specific, such as RCS agents.</p>
     pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl AssociateOriginationIdentityInput {
     pub fn origination_identity(&self) -> ::std::option::Option<&str> {
         self.origination_identity.as_deref()
     }
-    /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
+    /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity. This field is optional and is not required for origination identity types that are not country-specific, such as RCS agents.</p>
     pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
         self.iso_country_code.as_deref()
     }
@@ -97,18 +97,17 @@ impl AssociateOriginationIdentityInputBuilder {
     pub fn get_origination_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.origination_identity
     }
-    /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
-    /// This field is required.
+    /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity. This field is optional and is not required for origination identity types that are not country-specific, such as RCS agents.</p>
     pub fn iso_country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iso_country_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
+    /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity. This field is optional and is not required for origination identity types that are not country-specific, such as RCS agents.</p>
     pub fn set_iso_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iso_country_code = input;
         self
     }
-    /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
+    /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity. This field is optional and is not required for origination identity types that are not country-specific, such as RCS agents.</p>
     pub fn get_iso_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.iso_country_code
     }

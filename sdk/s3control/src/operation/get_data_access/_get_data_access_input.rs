@@ -29,6 +29,8 @@ pub struct GetDataAccessInput {
     pub privilege: ::std::option::Option<crate::types::Privilege>,
     /// <p>The type of <code>Target</code>. The only possible value is <code>Object</code>. Pass this value if the target data that you would like to access is a path to an object. Do not pass this value if the target data is a bucket or a bucket and a prefix.</p>
     pub target_type: ::std::option::Option<crate::types::S3PrefixType>,
+    /// <p>The context to identify the job or query associated with the credential request. This information will be displayed in CloudTrail log in your account.</p>
+    pub audit_context: ::std::option::Option<::std::string::String>,
 }
 impl GetDataAccessInput {
     /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
@@ -69,6 +71,10 @@ impl GetDataAccessInput {
     pub fn target_type(&self) -> ::std::option::Option<&crate::types::S3PrefixType> {
         self.target_type.as_ref()
     }
+    /// <p>The context to identify the job or query associated with the credential request. This information will be displayed in CloudTrail log in your account.</p>
+    pub fn audit_context(&self) -> ::std::option::Option<&str> {
+        self.audit_context.as_deref()
+    }
 }
 impl GetDataAccessInput {
     /// Creates a new builder-style object to manufacture [`GetDataAccessInput`](crate::operation::get_data_access::GetDataAccessInput).
@@ -87,6 +93,7 @@ pub struct GetDataAccessInputBuilder {
     pub(crate) duration_seconds: ::std::option::Option<i32>,
     pub(crate) privilege: ::std::option::Option<crate::types::Privilege>,
     pub(crate) target_type: ::std::option::Option<crate::types::S3PrefixType>,
+    pub(crate) audit_context: ::std::option::Option<::std::string::String>,
 }
 impl GetDataAccessInputBuilder {
     /// <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
@@ -218,6 +225,20 @@ impl GetDataAccessInputBuilder {
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::S3PrefixType> {
         &self.target_type
     }
+    /// <p>The context to identify the job or query associated with the credential request. This information will be displayed in CloudTrail log in your account.</p>
+    pub fn audit_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.audit_context = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The context to identify the job or query associated with the credential request. This information will be displayed in CloudTrail log in your account.</p>
+    pub fn set_audit_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.audit_context = input;
+        self
+    }
+    /// <p>The context to identify the job or query associated with the credential request. This information will be displayed in CloudTrail log in your account.</p>
+    pub fn get_audit_context(&self) -> &::std::option::Option<::std::string::String> {
+        &self.audit_context
+    }
     /// Consumes the builder and constructs a [`GetDataAccessInput`](crate::operation::get_data_access::GetDataAccessInput).
     pub fn build(
         self,
@@ -229,6 +250,7 @@ impl GetDataAccessInputBuilder {
             duration_seconds: self.duration_seconds,
             privilege: self.privilege,
             target_type: self.target_type,
+            audit_context: self.audit_context,
         })
     }
 }

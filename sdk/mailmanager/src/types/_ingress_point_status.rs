@@ -13,6 +13,7 @@
 /// # let ingresspointstatus = unimplemented!();
 /// match ingresspointstatus {
 ///     IngressPointStatus::Active => { /* ... */ },
+///     IngressPointStatus::AssociatedVpcEndpointDoesNotExist => { /* ... */ },
 ///     IngressPointStatus::Closed => { /* ... */ },
 ///     IngressPointStatus::Deprovisioning => { /* ... */ },
 ///     IngressPointStatus::Failed => { /* ... */ },
@@ -49,6 +50,8 @@ pub enum IngressPointStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    AssociatedVpcEndpointDoesNotExist,
+    #[allow(missing_docs)] // documentation missing in model
     Closed,
     #[allow(missing_docs)] // documentation missing in model
     Deprovisioning,
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for IngressPointStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => IngressPointStatus::Active,
+            "ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST" => IngressPointStatus::AssociatedVpcEndpointDoesNotExist,
             "CLOSED" => IngressPointStatus::Closed,
             "DEPROVISIONING" => IngressPointStatus::Deprovisioning,
             "FAILED" => IngressPointStatus::Failed,
@@ -87,6 +91,7 @@ impl IngressPointStatus {
     pub fn as_str(&self) -> &str {
         match self {
             IngressPointStatus::Active => "ACTIVE",
+            IngressPointStatus::AssociatedVpcEndpointDoesNotExist => "ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST",
             IngressPointStatus::Closed => "CLOSED",
             IngressPointStatus::Deprovisioning => "DEPROVISIONING",
             IngressPointStatus::Failed => "FAILED",
@@ -97,7 +102,15 @@ impl IngressPointStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CLOSED", "DEPROVISIONING", "FAILED", "PROVISIONING", "UPDATING"]
+        &[
+            "ACTIVE",
+            "ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST",
+            "CLOSED",
+            "DEPROVISIONING",
+            "FAILED",
+            "PROVISIONING",
+            "UPDATING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for IngressPointStatus {
@@ -121,6 +134,7 @@ impl ::std::fmt::Display for IngressPointStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IngressPointStatus::Active => write!(f, "ACTIVE"),
+            IngressPointStatus::AssociatedVpcEndpointDoesNotExist => write!(f, "ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST"),
             IngressPointStatus::Closed => write!(f, "CLOSED"),
             IngressPointStatus::Deprovisioning => write!(f, "DEPROVISIONING"),
             IngressPointStatus::Failed => write!(f, "FAILED"),

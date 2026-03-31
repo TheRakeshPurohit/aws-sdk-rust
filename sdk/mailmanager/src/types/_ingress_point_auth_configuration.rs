@@ -8,6 +8,8 @@ pub struct IngressPointAuthConfiguration {
     pub ingress_point_password_configuration: ::std::option::Option<crate::types::IngressPointPasswordConfiguration>,
     /// <p>The ingress endpoint SecretsManager::Secret ARN configuration for the ingress endpoint resource.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The mutual TLS authentication configuration for the ingress endpoint resource.</p>
+    pub tls_auth_configuration: ::std::option::Option<crate::types::TlsAuthConfiguration>,
 }
 impl IngressPointAuthConfiguration {
     /// <p>The ingress endpoint password configuration for the ingress endpoint resource.</p>
@@ -17,6 +19,10 @@ impl IngressPointAuthConfiguration {
     /// <p>The ingress endpoint SecretsManager::Secret ARN configuration for the ingress endpoint resource.</p>
     pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
+    }
+    /// <p>The mutual TLS authentication configuration for the ingress endpoint resource.</p>
+    pub fn tls_auth_configuration(&self) -> ::std::option::Option<&crate::types::TlsAuthConfiguration> {
+        self.tls_auth_configuration.as_ref()
     }
 }
 impl IngressPointAuthConfiguration {
@@ -32,6 +38,7 @@ impl IngressPointAuthConfiguration {
 pub struct IngressPointAuthConfigurationBuilder {
     pub(crate) ingress_point_password_configuration: ::std::option::Option<crate::types::IngressPointPasswordConfiguration>,
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tls_auth_configuration: ::std::option::Option<crate::types::TlsAuthConfiguration>,
 }
 impl IngressPointAuthConfigurationBuilder {
     /// <p>The ingress endpoint password configuration for the ingress endpoint resource.</p>
@@ -62,11 +69,26 @@ impl IngressPointAuthConfigurationBuilder {
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }
+    /// <p>The mutual TLS authentication configuration for the ingress endpoint resource.</p>
+    pub fn tls_auth_configuration(mut self, input: crate::types::TlsAuthConfiguration) -> Self {
+        self.tls_auth_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mutual TLS authentication configuration for the ingress endpoint resource.</p>
+    pub fn set_tls_auth_configuration(mut self, input: ::std::option::Option<crate::types::TlsAuthConfiguration>) -> Self {
+        self.tls_auth_configuration = input;
+        self
+    }
+    /// <p>The mutual TLS authentication configuration for the ingress endpoint resource.</p>
+    pub fn get_tls_auth_configuration(&self) -> &::std::option::Option<crate::types::TlsAuthConfiguration> {
+        &self.tls_auth_configuration
+    }
     /// Consumes the builder and constructs a [`IngressPointAuthConfiguration`](crate::types::IngressPointAuthConfiguration).
     pub fn build(self) -> crate::types::IngressPointAuthConfiguration {
         crate::types::IngressPointAuthConfiguration {
             ingress_point_password_configuration: self.ingress_point_password_configuration,
             secret_arn: self.secret_arn,
+            tls_auth_configuration: self.tls_auth_configuration,
         }
     }
 }

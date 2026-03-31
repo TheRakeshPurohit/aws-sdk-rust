@@ -19,6 +19,8 @@ pub use crate::types::_action::Action;
 
 pub use crate::types::_event::Event;
 
+pub use crate::types::_asset_configuration::AssetConfiguration;
+
 pub use crate::types::_request_details::RequestDetails;
 
 pub use crate::types::_type_::Type;
@@ -113,6 +115,8 @@ pub use crate::types::_export_server_side_encryption::ExportServerSideEncryption
 
 pub use crate::types::_auto_export_revision_destination_entry::AutoExportRevisionDestinationEntry;
 
+pub use crate::types::_tag::Tag;
+
 pub use crate::types::_protocol_type::ProtocolType;
 
 pub use crate::types::_s3_data_access_asset_source_entry::S3DataAccessAssetSourceEntry;
@@ -180,6 +184,8 @@ mod _acceptance_state_filter_value;
 mod _action;
 
 mod _api_gateway_api_asset;
+
+mod _asset_configuration;
 
 mod _asset_destination_entry;
 
@@ -348,6 +354,8 @@ mod _table_lf_tag_policy;
 mod _table_lf_tag_policy_and_permissions;
 
 mod _table_tag_policy_lf_permission;
+
+mod _tag;
 
 mod _type_;
 

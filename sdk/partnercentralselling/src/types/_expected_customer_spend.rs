@@ -6,7 +6,7 @@
 pub struct ExpectedCustomerSpend {
     /// <p>Represents the estimated monthly revenue that the partner expects to earn from the opportunity. This helps in forecasting financial returns.</p>
     pub amount: ::std::string::String,
-    /// <p>Indicates the currency in which the revenue estimate is provided. This helps in understanding the financial impact across different markets.</p>
+    /// Currency code for the expected customer spend. Supported currencies: USD, EUR
     pub currency_code: crate::types::CurrencyCode,
     /// <p>Indicates how frequently the customer is expected to spend the projected amount. Only the value <code>Monthly</code> is allowed for the <code>Frequency</code> field, representing recurring monthly spend.</p>
     pub frequency: crate::types::PaymentFrequency,
@@ -21,7 +21,7 @@ impl ExpectedCustomerSpend {
         use std::ops::Deref;
         self.amount.deref()
     }
-    /// <p>Indicates the currency in which the revenue estimate is provided. This helps in understanding the financial impact across different markets.</p>
+    /// Currency code for the expected customer spend. Supported currencies: USD, EUR
     pub fn currency_code(&self) -> &crate::types::CurrencyCode {
         &self.currency_code
     }
@@ -82,18 +82,18 @@ impl ExpectedCustomerSpendBuilder {
     pub fn get_amount(&self) -> &::std::option::Option<::std::string::String> {
         &self.amount
     }
-    /// <p>Indicates the currency in which the revenue estimate is provided. This helps in understanding the financial impact across different markets.</p>
+    /// Currency code for the expected customer spend. Supported currencies: USD, EUR
     /// This field is required.
     pub fn currency_code(mut self, input: crate::types::CurrencyCode) -> Self {
         self.currency_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the currency in which the revenue estimate is provided. This helps in understanding the financial impact across different markets.</p>
+    /// Currency code for the expected customer spend. Supported currencies: USD, EUR
     pub fn set_currency_code(mut self, input: ::std::option::Option<crate::types::CurrencyCode>) -> Self {
         self.currency_code = input;
         self
     }
-    /// <p>Indicates the currency in which the revenue estimate is provided. This helps in understanding the financial impact across different markets.</p>
+    /// Currency code for the expected customer spend. Supported currencies: USD, EUR
     pub fn get_currency_code(&self) -> &::std::option::Option<crate::types::CurrencyCode> {
         &self.currency_code
     }

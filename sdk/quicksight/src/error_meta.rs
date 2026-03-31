@@ -2906,6 +2906,42 @@ impl From<crate::operation::describe_asset_bundle_import_job::DescribeAssetBundl
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_automation_job::DescribeAutomationJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_automation_job::DescribeAutomationJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_automation_job::DescribeAutomationJobError> for Error {
+    fn from(err: crate::operation::describe_automation_job::DescribeAutomationJobError) -> Self {
+        match err {
+            crate::operation::describe_automation_job::DescribeAutomationJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_automation_job::DescribeAutomationJobError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_automation_job::DescribeAutomationJobError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_automation_job::DescribeAutomationJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_automation_job::DescribeAutomationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_automation_job::DescribeAutomationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_brand::DescribeBrandError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6769,6 +6805,39 @@ impl From<crate::operation::start_asset_bundle_import_job::StartAssetBundleImpor
                 Error::UnsupportedUserEditionException(inner)
             }
             crate::operation::start_asset_bundle_import_job::StartAssetBundleImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_automation_job::StartAutomationJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_automation_job::StartAutomationJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_automation_job::StartAutomationJobError> for Error {
+    fn from(err: crate::operation::start_automation_job::StartAutomationJobError) -> Self {
+        match err {
+            crate::operation::start_automation_job::StartAutomationJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_automation_job::StartAutomationJobError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::start_automation_job::StartAutomationJobError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::start_automation_job::StartAutomationJobError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_automation_job::StartAutomationJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_automation_job::StartAutomationJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_automation_job::StartAutomationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

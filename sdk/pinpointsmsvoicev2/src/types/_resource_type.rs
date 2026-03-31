@@ -18,12 +18,15 @@
 ///     ResourceType::Keyword => { /* ... */ },
 ///     ResourceType::Message => { /* ... */ },
 ///     ResourceType::MessageTemplate => { /* ... */ },
+///     ResourceType::NotifyConfiguration => { /* ... */ },
+///     ResourceType::NotifyTemplate => { /* ... */ },
 ///     ResourceType::OptOutList => { /* ... */ },
 ///     ResourceType::OptedOutNumber => { /* ... */ },
 ///     ResourceType::PhoneNumber => { /* ... */ },
 ///     ResourceType::Policy => { /* ... */ },
 ///     ResourceType::Pool => { /* ... */ },
 ///     ResourceType::ProtectConfiguration => { /* ... */ },
+///     ResourceType::RcsAgent => { /* ... */ },
 ///     ResourceType::Registration => { /* ... */ },
 ///     ResourceType::RegistrationAttachment => { /* ... */ },
 ///     ResourceType::SenderId => { /* ... */ },
@@ -50,7 +53,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The type of resource.</p> <ul> <li> <p> <code>phone-number</code>: A phone number resource.</p> </li> <li> <p> <code>sender-id</code>: A sender ID resource.</p> </li> <li> <p> <code>rcs-agent</code>: An RCS agent resource.</p> </li> </ul>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -69,6 +72,10 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     MessageTemplate,
     #[allow(missing_docs)] // documentation missing in model
+    NotifyConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
+    NotifyTemplate,
+    #[allow(missing_docs)] // documentation missing in model
     OptOutList,
     #[allow(missing_docs)] // documentation missing in model
     OptedOutNumber,
@@ -80,6 +87,8 @@ pub enum ResourceType {
     Pool,
     #[allow(missing_docs)] // documentation missing in model
     ProtectConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
+    RcsAgent,
     #[allow(missing_docs)] // documentation missing in model
     Registration,
     #[allow(missing_docs)] // documentation missing in model
@@ -101,12 +110,15 @@ impl ::std::convert::From<&str> for ResourceType {
             "keyword" => ResourceType::Keyword,
             "message" => ResourceType::Message,
             "message-template" => ResourceType::MessageTemplate,
+            "notify-configuration" => ResourceType::NotifyConfiguration,
+            "notify-template" => ResourceType::NotifyTemplate,
             "opt-out-list" => ResourceType::OptOutList,
             "opted-out-number" => ResourceType::OptedOutNumber,
             "phone-number" => ResourceType::PhoneNumber,
             "policy" => ResourceType::Policy,
             "pool" => ResourceType::Pool,
             "protect-configuration" => ResourceType::ProtectConfiguration,
+            "rcs-agent" => ResourceType::RcsAgent,
             "registration" => ResourceType::Registration,
             "registration-attachment" => ResourceType::RegistrationAttachment,
             "sender-id" => ResourceType::SenderId,
@@ -132,12 +144,15 @@ impl ResourceType {
             ResourceType::Keyword => "keyword",
             ResourceType::Message => "message",
             ResourceType::MessageTemplate => "message-template",
+            ResourceType::NotifyConfiguration => "notify-configuration",
+            ResourceType::NotifyTemplate => "notify-template",
             ResourceType::OptOutList => "opt-out-list",
             ResourceType::OptedOutNumber => "opted-out-number",
             ResourceType::PhoneNumber => "phone-number",
             ResourceType::Policy => "policy",
             ResourceType::Pool => "pool",
             ResourceType::ProtectConfiguration => "protect-configuration",
+            ResourceType::RcsAgent => "rcs-agent",
             ResourceType::Registration => "registration",
             ResourceType::RegistrationAttachment => "registration-attachment",
             ResourceType::SenderId => "sender-id",
@@ -154,12 +169,15 @@ impl ResourceType {
             "keyword",
             "message",
             "message-template",
+            "notify-configuration",
+            "notify-template",
             "opt-out-list",
             "opted-out-number",
             "phone-number",
             "policy",
             "pool",
             "protect-configuration",
+            "rcs-agent",
             "registration",
             "registration-attachment",
             "sender-id",
@@ -193,12 +211,15 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Keyword => write!(f, "keyword"),
             ResourceType::Message => write!(f, "message"),
             ResourceType::MessageTemplate => write!(f, "message-template"),
+            ResourceType::NotifyConfiguration => write!(f, "notify-configuration"),
+            ResourceType::NotifyTemplate => write!(f, "notify-template"),
             ResourceType::OptOutList => write!(f, "opt-out-list"),
             ResourceType::OptedOutNumber => write!(f, "opted-out-number"),
             ResourceType::PhoneNumber => write!(f, "phone-number"),
             ResourceType::Policy => write!(f, "policy"),
             ResourceType::Pool => write!(f, "pool"),
             ResourceType::ProtectConfiguration => write!(f, "protect-configuration"),
+            ResourceType::RcsAgent => write!(f, "rcs-agent"),
             ResourceType::Registration => write!(f, "registration"),
             ResourceType::RegistrationAttachment => write!(f, "registration-attachment"),
             ResourceType::SenderId => write!(f, "sender-id"),

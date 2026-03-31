@@ -7,11 +7,25 @@ pub use crate::types::_estimated_charges::EstimatedChargesBuilder;
 
 pub use crate::types::_proposal_summary::ProposalSummaryBuilder;
 
+pub use crate::types::_invoice_billing_period::InvoiceBillingPeriodBuilder;
+
 pub use crate::types::_sort::SortBuilder;
+
+pub use crate::types::_batch_create_billing_adjustment_request_entry::BatchCreateBillingAdjustmentRequestEntryBuilder;
+
+pub use crate::types::_batch_create_billing_adjustment_item::BatchCreateBillingAdjustmentItemBuilder;
+
+pub use crate::types::_batch_create_billing_adjustment_error::BatchCreateBillingAdjustmentErrorBuilder;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
+pub use crate::types::_agreement_cancellation_request_summary::AgreementCancellationRequestSummaryBuilder;
+
+pub use crate::types::_agreement_invoice_line_item_group_summary::AgreementInvoiceLineItemGroupSummaryBuilder;
+
 pub use crate::types::_payment_request_summary::PaymentRequestSummaryBuilder;
+
+pub use crate::types::_billing_adjustment_summary::BillingAdjustmentSummaryBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
 
@@ -42,6 +56,10 @@ pub use crate::types::_free_trial_pricing_term::FreeTrialPricingTermBuilder;
 pub use crate::types::_fixed_upfront_pricing_term::FixedUpfrontPricingTermBuilder;
 
 pub use crate::types::_variable_payment_term::VariablePaymentTermBuilder;
+
+pub use crate::types::_pricing_currency_amount::PricingCurrencyAmountBuilder;
+
+pub use crate::types::_invoicing_entity::InvoicingEntityBuilder;
 
 pub use crate::types::_renewal_term_configuration::RenewalTermConfigurationBuilder;
 

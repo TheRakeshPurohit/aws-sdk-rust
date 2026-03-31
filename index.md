@@ -144,6 +144,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS SSO OIDC | [aws-sdk-ssooidc](https://crates.io/crates/aws-sdk-ssooidc) ([docs](https://docs.rs/aws-sdk-ssooidc)) |
 | AWS Savings Plans | [aws-sdk-savingsplans](https://crates.io/crates/aws-sdk-savingsplans) ([docs](https://docs.rs/aws-sdk-savingsplans)) |
 | AWS Secrets Manager | [aws-sdk-secretsmanager](https://crates.io/crates/aws-sdk-secretsmanager) ([docs](https://docs.rs/aws-sdk-secretsmanager)) |
+| AWS Security Agent | [aws-sdk-securityagent](https://crates.io/crates/aws-sdk-securityagent) ([docs](https://docs.rs/aws-sdk-securityagent)) |
 | AWS Security Token Service | [aws-sdk-sts](https://crates.io/crates/aws-sdk-sts) ([docs](https://docs.rs/aws-sdk-sts)) |
 | AWS SecurityHub | [aws-sdk-securityhub](https://crates.io/crates/aws-sdk-securityhub) ([docs](https://docs.rs/aws-sdk-securityhub)) |
 | AWS Service Catalog | [aws-sdk-servicecatalog](https://crates.io/crates/aws-sdk-servicecatalog) ([docs](https://docs.rs/aws-sdk-servicecatalog)) |
@@ -161,6 +162,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Supply Chain | [aws-sdk-supplychain](https://crates.io/crates/aws-sdk-supplychain) ([docs](https://docs.rs/aws-sdk-supplychain)) |
 | AWS Support | [aws-sdk-support](https://crates.io/crates/aws-sdk-support) ([docs](https://docs.rs/aws-sdk-support)) |
 | AWS Support App | [aws-sdk-supportapp](https://crates.io/crates/aws-sdk-supportapp) ([docs](https://docs.rs/aws-sdk-supportapp)) |
+| AWS Sustainability | [aws-sdk-sustainability](https://crates.io/crates/aws-sdk-sustainability) ([docs](https://docs.rs/aws-sdk-sustainability)) |
 | AWS Systems Manager Incident Manager | [aws-sdk-ssmincidents](https://crates.io/crates/aws-sdk-ssmincidents) ([docs](https://docs.rs/aws-sdk-ssmincidents)) |
 | AWS Systems Manager Incident Manager Contacts | [aws-sdk-ssmcontacts](https://crates.io/crates/aws-sdk-ssmcontacts) ([docs](https://docs.rs/aws-sdk-ssmcontacts)) |
 | AWS Systems Manager QuickSetup | [aws-sdk-ssmquicksetup](https://crates.io/crates/aws-sdk-ssmquicksetup) ([docs](https://docs.rs/aws-sdk-ssmquicksetup)) |

@@ -21,6 +21,8 @@ pub struct GetAssetOutput {
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
     pub source_id: ::std::option::Option<::std::string::String>,
+    /// <p>The tags for the asset.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -62,6 +64,10 @@ impl GetAssetOutput {
     pub fn source_id(&self) -> ::std::option::Option<&str> {
         self.source_id.as_deref()
     }
+    /// <p>The tags for the asset.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
@@ -92,6 +98,7 @@ pub struct GetAssetOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) revision_id: ::std::option::Option<::std::string::String>,
     pub(crate) source_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
@@ -222,6 +229,26 @@ impl GetAssetOutputBuilder {
     pub fn get_source_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_id
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags for the asset.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags for the asset.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags for the asset.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
@@ -257,6 +284,7 @@ impl GetAssetOutputBuilder {
             name: self.name,
             revision_id: self.revision_id,
             source_id: self.source_id,
+            tags: self.tags,
             updated_at: self.updated_at,
             _request_id: self._request_id,
         }

@@ -5,11 +5,17 @@
 pub struct GetIngressPointInput {
     /// <p>The identifier of an ingress endpoint.</p>
     pub ingress_point_id: ::std::option::Option<::std::string::String>,
+    /// <p>Whether to include the trust store contents in the response. Use INCLUDE to retrieve trust store certificate and CRL contents.</p>
+    pub include_trust_store_contents: ::std::option::Option<crate::types::TrustStoreResponseOption>,
 }
 impl GetIngressPointInput {
     /// <p>The identifier of an ingress endpoint.</p>
     pub fn ingress_point_id(&self) -> ::std::option::Option<&str> {
         self.ingress_point_id.as_deref()
+    }
+    /// <p>Whether to include the trust store contents in the response. Use INCLUDE to retrieve trust store certificate and CRL contents.</p>
+    pub fn include_trust_store_contents(&self) -> ::std::option::Option<&crate::types::TrustStoreResponseOption> {
+        self.include_trust_store_contents.as_ref()
     }
 }
 impl GetIngressPointInput {
@@ -24,6 +30,7 @@ impl GetIngressPointInput {
 #[non_exhaustive]
 pub struct GetIngressPointInputBuilder {
     pub(crate) ingress_point_id: ::std::option::Option<::std::string::String>,
+    pub(crate) include_trust_store_contents: ::std::option::Option<crate::types::TrustStoreResponseOption>,
 }
 impl GetIngressPointInputBuilder {
     /// <p>The identifier of an ingress endpoint.</p>
@@ -41,12 +48,27 @@ impl GetIngressPointInputBuilder {
     pub fn get_ingress_point_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ingress_point_id
     }
+    /// <p>Whether to include the trust store contents in the response. Use INCLUDE to retrieve trust store certificate and CRL contents.</p>
+    pub fn include_trust_store_contents(mut self, input: crate::types::TrustStoreResponseOption) -> Self {
+        self.include_trust_store_contents = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to include the trust store contents in the response. Use INCLUDE to retrieve trust store certificate and CRL contents.</p>
+    pub fn set_include_trust_store_contents(mut self, input: ::std::option::Option<crate::types::TrustStoreResponseOption>) -> Self {
+        self.include_trust_store_contents = input;
+        self
+    }
+    /// <p>Whether to include the trust store contents in the response. Use INCLUDE to retrieve trust store certificate and CRL contents.</p>
+    pub fn get_include_trust_store_contents(&self) -> &::std::option::Option<crate::types::TrustStoreResponseOption> {
+        &self.include_trust_store_contents
+    }
     /// Consumes the builder and constructs a [`GetIngressPointInput`](crate::operation::get_ingress_point::GetIngressPointInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_ingress_point::GetIngressPointInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_ingress_point::GetIngressPointInput {
             ingress_point_id: self.ingress_point_id,
+            include_trust_store_contents: self.include_trust_store_contents,
         })
     }
 }

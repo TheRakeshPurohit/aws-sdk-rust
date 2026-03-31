@@ -443,6 +443,8 @@ pub(crate) mod shape_handshake_resources;
 
 pub(crate) mod shape_parent;
 
+pub(crate) mod shape_paths;
+
 pub(crate) mod shape_policy_summary;
 
 pub(crate) mod shape_policy_target_summary;

@@ -23,6 +23,8 @@ pub struct GetIngressPointOutput {
     pub ingress_point_auth_configuration: ::std::option::Option<crate::types::IngressPointAuthConfiguration>,
     /// <p>The network configuration for the ingress point.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
+    /// <p>The selected Transport Layer Security (TLS) policy of the ingress point.</p>
+    pub tls_policy: ::std::option::Option<crate::types::TlsPolicy>,
     /// <p>The timestamp of when the ingress endpoint was created.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the ingress endpoint was last updated.</p>
@@ -72,6 +74,10 @@ impl GetIngressPointOutput {
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
+    /// <p>The selected Transport Layer Security (TLS) policy of the ingress point.</p>
+    pub fn tls_policy(&self) -> ::std::option::Option<&crate::types::TlsPolicy> {
+        self.tls_policy.as_ref()
+    }
     /// <p>The timestamp of when the ingress endpoint was created.</p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
@@ -107,6 +113,7 @@ pub struct GetIngressPointOutputBuilder {
     pub(crate) traffic_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) ingress_point_auth_configuration: ::std::option::Option<crate::types::IngressPointAuthConfiguration>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
+    pub(crate) tls_policy: ::std::option::Option<crate::types::TlsPolicy>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -254,6 +261,20 @@ impl GetIngressPointOutputBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
+    /// <p>The selected Transport Layer Security (TLS) policy of the ingress point.</p>
+    pub fn tls_policy(mut self, input: crate::types::TlsPolicy) -> Self {
+        self.tls_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The selected Transport Layer Security (TLS) policy of the ingress point.</p>
+    pub fn set_tls_policy(mut self, input: ::std::option::Option<crate::types::TlsPolicy>) -> Self {
+        self.tls_policy = input;
+        self
+    }
+    /// <p>The selected Transport Layer Security (TLS) policy of the ingress point.</p>
+    pub fn get_tls_policy(&self) -> &::std::option::Option<crate::types::TlsPolicy> {
+        &self.tls_policy
+    }
     /// <p>The timestamp of when the ingress endpoint was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -319,6 +340,7 @@ impl GetIngressPointOutputBuilder {
             traffic_policy_id: self.traffic_policy_id,
             ingress_point_auth_configuration: self.ingress_point_auth_configuration,
             network_configuration: self.network_configuration,
+            tls_policy: self.tls_policy,
             created_timestamp: self.created_timestamp,
             last_updated_timestamp: self.last_updated_timestamp,
             _request_id: self._request_id,

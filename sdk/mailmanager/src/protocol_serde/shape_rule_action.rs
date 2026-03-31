@@ -64,6 +64,18 @@ pub fn ser_rule_action(
             crate::protocol_serde::shape_sns_action::ser_sns_action(&mut object_10, inner)?;
             object_10.finish();
         }
+        crate::types::RuleAction::Bounce(inner) => {
+            #[allow(unused_mut)]
+            let mut object_11 = object_12.key("Bounce").start_object();
+            crate::protocol_serde::shape_bounce_action::ser_bounce_action(&mut object_11, inner)?;
+            object_11.finish();
+        }
+        crate::types::RuleAction::InvokeLambda(inner) => {
+            #[allow(unused_mut)]
+            let mut object_12 = object_12.key("InvokeLambda").start_object();
+            crate::protocol_serde::shape_invoke_lambda_action::ser_invoke_lambda_action(&mut object_12, inner)?;
+            object_12.finish();
+        }
         crate::types::RuleAction::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("RuleAction")),
     }
     Ok(())
@@ -145,6 +157,16 @@ where
                         "PublishToSns" => Some(crate::types::RuleAction::PublishToSns(
                             crate::protocol_serde::shape_sns_action::de_sns_action(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'PublishToSns' cannot be null")
+                            })?,
+                        )),
+                        "Bounce" => Some(crate::types::RuleAction::Bounce(
+                            crate::protocol_serde::shape_bounce_action::de_bounce_action(tokens, _value)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Bounce' cannot be null")
+                            })?,
+                        )),
+                        "InvokeLambda" => Some(crate::types::RuleAction::InvokeLambda(
+                            crate::protocol_serde::shape_invoke_lambda_action::de_invoke_lambda_action(tokens, _value)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'InvokeLambda' cannot be null")
                             })?,
                         )),
                         _ => {

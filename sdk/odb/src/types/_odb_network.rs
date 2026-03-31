@@ -46,6 +46,8 @@ pub struct OdbNetwork {
     pub percent_progress: ::std::option::Option<f32>,
     /// <p>The managed services configuration for the ODB network.</p>
     pub managed_services: ::std::option::Option<crate::types::ManagedServices>,
+    /// <p>The list of EC2 Placement Group IDs associated with your ODB network.</p>
+    pub ec2_placement_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OdbNetwork {
     /// <p>The unique identifier of the ODB network.</p>
@@ -137,6 +139,12 @@ impl OdbNetwork {
     pub fn managed_services(&self) -> ::std::option::Option<&crate::types::ManagedServices> {
         self.managed_services.as_ref()
     }
+    /// <p>The list of EC2 Placement Group IDs associated with your ODB network.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ec2_placement_group_ids.is_none()`.
+    pub fn ec2_placement_group_ids(&self) -> &[::std::string::String] {
+        self.ec2_placement_group_ids.as_deref().unwrap_or_default()
+    }
 }
 impl OdbNetwork {
     /// Creates a new builder-style object to manufacture [`OdbNetwork`](crate::types::OdbNetwork).
@@ -170,6 +178,7 @@ pub struct OdbNetworkBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) percent_progress: ::std::option::Option<f32>,
     pub(crate) managed_services: ::std::option::Option<crate::types::ManagedServices>,
+    pub(crate) ec2_placement_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OdbNetworkBuilder {
     /// <p>The unique identifier of the ODB network.</p>
@@ -479,6 +488,26 @@ impl OdbNetworkBuilder {
     pub fn get_managed_services(&self) -> &::std::option::Option<crate::types::ManagedServices> {
         &self.managed_services
     }
+    /// Appends an item to `ec2_placement_group_ids`.
+    ///
+    /// To override the contents of this collection use [`set_ec2_placement_group_ids`](Self::set_ec2_placement_group_ids).
+    ///
+    /// <p>The list of EC2 Placement Group IDs associated with your ODB network.</p>
+    pub fn ec2_placement_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ec2_placement_group_ids.unwrap_or_default();
+        v.push(input.into());
+        self.ec2_placement_group_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of EC2 Placement Group IDs associated with your ODB network.</p>
+    pub fn set_ec2_placement_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ec2_placement_group_ids = input;
+        self
+    }
+    /// <p>The list of EC2 Placement Group IDs associated with your ODB network.</p>
+    pub fn get_ec2_placement_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ec2_placement_group_ids
+    }
     /// Consumes the builder and constructs a [`OdbNetwork`](crate::types::OdbNetwork).
     /// This method will fail if any of the following fields are not set:
     /// - [`odb_network_id`](crate::types::builders::OdbNetworkBuilder::odb_network_id)
@@ -510,6 +539,7 @@ impl OdbNetworkBuilder {
             created_at: self.created_at,
             percent_progress: self.percent_progress,
             managed_services: self.managed_services,
+            ec2_placement_group_ids: self.ec2_placement_group_ids,
         })
     }
 }

@@ -16,6 +16,8 @@ pub struct TooltipOptions {
     pub selected_tooltip_type: ::std::option::Option<crate::types::SelectedTooltipType>,
     /// <p>The setup for the detailed tooltip. The tooltip setup is always saved. The display type is decided based on the tooltip type.</p>
     pub field_based_tooltip: ::std::option::Option<crate::types::FieldBasedTooltip>,
+    /// <p>The configuration of the sheet tooltip.</p>
+    pub sheet_tooltip: ::std::option::Option<crate::types::SheetTooltip>,
 }
 impl TooltipOptions {
     /// <p>Determines whether or not the tooltip is visible.</p>
@@ -36,6 +38,10 @@ impl TooltipOptions {
     pub fn field_based_tooltip(&self) -> ::std::option::Option<&crate::types::FieldBasedTooltip> {
         self.field_based_tooltip.as_ref()
     }
+    /// <p>The configuration of the sheet tooltip.</p>
+    pub fn sheet_tooltip(&self) -> ::std::option::Option<&crate::types::SheetTooltip> {
+        self.sheet_tooltip.as_ref()
+    }
 }
 impl TooltipOptions {
     /// Creates a new builder-style object to manufacture [`TooltipOptions`](crate::types::TooltipOptions).
@@ -51,6 +57,7 @@ pub struct TooltipOptionsBuilder {
     pub(crate) tooltip_visibility: ::std::option::Option<crate::types::Visibility>,
     pub(crate) selected_tooltip_type: ::std::option::Option<crate::types::SelectedTooltipType>,
     pub(crate) field_based_tooltip: ::std::option::Option<crate::types::FieldBasedTooltip>,
+    pub(crate) sheet_tooltip: ::std::option::Option<crate::types::SheetTooltip>,
 }
 impl TooltipOptionsBuilder {
     /// <p>Determines whether or not the tooltip is visible.</p>
@@ -113,12 +120,27 @@ impl TooltipOptionsBuilder {
     pub fn get_field_based_tooltip(&self) -> &::std::option::Option<crate::types::FieldBasedTooltip> {
         &self.field_based_tooltip
     }
+    /// <p>The configuration of the sheet tooltip.</p>
+    pub fn sheet_tooltip(mut self, input: crate::types::SheetTooltip) -> Self {
+        self.sheet_tooltip = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the sheet tooltip.</p>
+    pub fn set_sheet_tooltip(mut self, input: ::std::option::Option<crate::types::SheetTooltip>) -> Self {
+        self.sheet_tooltip = input;
+        self
+    }
+    /// <p>The configuration of the sheet tooltip.</p>
+    pub fn get_sheet_tooltip(&self) -> &::std::option::Option<crate::types::SheetTooltip> {
+        &self.sheet_tooltip
+    }
     /// Consumes the builder and constructs a [`TooltipOptions`](crate::types::TooltipOptions).
     pub fn build(self) -> crate::types::TooltipOptions {
         crate::types::TooltipOptions {
             tooltip_visibility: self.tooltip_visibility,
             selected_tooltip_type: self.selected_tooltip_type,
             field_based_tooltip: self.field_based_tooltip,
+            sheet_tooltip: self.sheet_tooltip,
         }
     }
 }

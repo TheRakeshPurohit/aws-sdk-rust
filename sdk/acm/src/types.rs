@@ -19,7 +19,15 @@ pub use crate::types::_certificate_managed_by::CertificateManagedBy;
 
 pub use crate::types::_revocation_reason::RevocationReason;
 
+pub use crate::types::_certificate_filter_statement::CertificateFilterStatement;
+
+pub use crate::types::_search_certificates_sort_by::SearchCertificatesSortBy;
+
+pub use crate::types::_search_certificates_sort_order::SearchCertificatesSortOrder;
+
 pub use crate::types::_tag::Tag;
+
+pub use crate::types::_throttling_reason::ThrottlingReason;
 
 pub use crate::types::_certificate_status::CertificateStatus;
 
@@ -39,6 +47,10 @@ pub use crate::types::_domain_validation_option::DomainValidationOption;
 
 pub use crate::types::_certificate_transparency_logging_preference::CertificateTransparencyLoggingPreference;
 
+pub use crate::types::_certificate_filter::CertificateFilter;
+
+pub use crate::types::_certificate_search_result::CertificateSearchResult;
+
 pub use crate::types::_domain_validation::DomainValidation;
 
 pub use crate::types::_renewal_status::RenewalStatus;
@@ -51,21 +63,63 @@ pub use crate::types::_extended_key_usage_name::ExtendedKeyUsageName;
 
 pub use crate::types::_key_usage_name::KeyUsageName;
 
+pub use crate::types::_x509_attribute_filter::X509AttributeFilter;
+
+pub use crate::types::_acm_certificate_metadata_filter::AcmCertificateMetadataFilter;
+
+pub use crate::types::_x509_attributes::X509Attributes;
+
+pub use crate::types::_certificate_metadata::CertificateMetadata;
+
 pub use crate::types::_domain_status::DomainStatus;
 
 pub use crate::types::_resource_record::ResourceRecord;
 
 pub use crate::types::_http_redirect::HttpRedirect;
 
+pub use crate::types::_subject_filter::SubjectFilter;
+
+pub use crate::types::_subject_alternative_name_filter::SubjectAlternativeNameFilter;
+
+pub use crate::types::_timestamp_range::TimestampRange;
+
+pub use crate::types::_distinguished_name::DistinguishedName;
+
+pub use crate::types::_acm_certificate_metadata::AcmCertificateMetadata;
+
 pub use crate::types::_record_type::RecordType;
+
+pub use crate::types::_common_name_filter::CommonNameFilter;
+
+pub use crate::types::_dns_name_filter::DnsNameFilter;
+
+pub use crate::types::_general_name::GeneralName;
+
+pub use crate::types::_comparison_operator::ComparisonOperator;
+
+pub use crate::types::_custom_attribute::CustomAttribute;
+
+pub use crate::types::_other_name::OtherName;
+
+mod _acm_certificate_metadata;
+
+mod _acm_certificate_metadata_filter;
 
 mod _certificate_detail;
 
 mod _certificate_export;
 
+mod _certificate_filter;
+
+mod _certificate_filter_statement;
+
 mod _certificate_managed_by;
 
+mod _certificate_metadata;
+
 mod _certificate_options;
+
+mod _certificate_search_result;
 
 mod _certificate_status;
 
@@ -74,6 +128,16 @@ mod _certificate_summary;
 mod _certificate_transparency_logging_preference;
 
 mod _certificate_type;
+
+mod _common_name_filter;
+
+mod _comparison_operator;
+
+mod _custom_attribute;
+
+mod _distinguished_name;
+
+mod _dns_name_filter;
 
 mod _domain_status;
 
@@ -91,6 +155,8 @@ mod _failure_reason;
 
 mod _filters;
 
+mod _general_name;
+
 mod _http_redirect;
 
 mod _key_algorithm;
@@ -98,6 +164,8 @@ mod _key_algorithm;
 mod _key_usage;
 
 mod _key_usage_name;
+
+mod _other_name;
 
 mod _record_type;
 
@@ -111,13 +179,29 @@ mod _resource_record;
 
 mod _revocation_reason;
 
+mod _search_certificates_sort_by;
+
+mod _search_certificates_sort_order;
+
 mod _sort_by;
 
 mod _sort_order;
 
+mod _subject_alternative_name_filter;
+
+mod _subject_filter;
+
 mod _tag;
 
+mod _throttling_reason;
+
+mod _timestamp_range;
+
 mod _validation_method;
+
+mod _x509_attribute_filter;
+
+mod _x509_attributes;
 
 /// Builders
 pub mod builders;

@@ -20,8 +20,6 @@ pub enum AdditionalServiceDetails {
     Mcpservergrafana(crate::types::RegisteredGrafanaServerDetails),
     /// New Relic MCP server-specific service details.
     Mcpservernewrelic(crate::types::RegisteredNewRelicDetails),
-    /// SigV4-authenticated MCP server-specific service details.
-    Mcpserversigv4(crate::types::RegisteredMcpServerSigV4Details),
     /// Splunk MCP server-specific service details.
     Mcpserversplunk(crate::types::RegisteredMcpServerDetails),
     /// Pagerduty service details.
@@ -144,19 +142,6 @@ impl AdditionalServiceDetails {
     /// Returns true if this is a [`Mcpservernewrelic`](crate::types::AdditionalServiceDetails::Mcpservernewrelic).
     pub fn is_mcpservernewrelic(&self) -> bool {
         self.as_mcpservernewrelic().is_ok()
-    }
-    /// Tries to convert the enum instance into [`Mcpserversigv4`](crate::types::AdditionalServiceDetails::Mcpserversigv4), extracting the inner [`RegisteredMcpServerSigV4Details`](crate::types::RegisteredMcpServerSigV4Details).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_mcpserversigv4(&self) -> ::std::result::Result<&crate::types::RegisteredMcpServerSigV4Details, &Self> {
-        if let AdditionalServiceDetails::Mcpserversigv4(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
-    }
-    /// Returns true if this is a [`Mcpserversigv4`](crate::types::AdditionalServiceDetails::Mcpserversigv4).
-    pub fn is_mcpserversigv4(&self) -> bool {
-        self.as_mcpserversigv4().is_ok()
     }
     /// Tries to convert the enum instance into [`Mcpserversplunk`](crate::types::AdditionalServiceDetails::Mcpserversplunk), extracting the inner [`RegisteredMcpServerDetails`](crate::types::RegisteredMcpServerDetails).
     /// Returns `Err(&Self)` if it can't be converted.

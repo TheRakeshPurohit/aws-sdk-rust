@@ -20,7 +20,6 @@
 ///     PostRegisterServiceSupportedService::McpServerDatadog => { /* ... */ },
 ///     PostRegisterServiceSupportedService::McpServerGrafana => { /* ... */ },
 ///     PostRegisterServiceSupportedService::McpServerNewrelic => { /* ... */ },
-///     PostRegisterServiceSupportedService::McpServerSigv4 => { /* ... */ },
 ///     PostRegisterServiceSupportedService::McpServerSplunk => { /* ... */ },
 ///     PostRegisterServiceSupportedService::Pagerduty => { /* ... */ },
 ///     PostRegisterServiceSupportedService::Servicenow => { /* ... */ },
@@ -68,8 +67,6 @@ pub enum PostRegisterServiceSupportedService {
     McpServerGrafana,
     /// NewRelic MCP server.
     McpServerNewrelic,
-    /// SigV4-authenticated MCP server.
-    McpServerSigv4,
     /// Splunk MCP server.
     McpServerSplunk,
     #[allow(missing_docs)] // documentation missing in model
@@ -91,7 +88,6 @@ impl ::std::convert::From<&str> for PostRegisterServiceSupportedService {
             "mcpserverdatadog" => PostRegisterServiceSupportedService::McpServerDatadog,
             "mcpservergrafana" => PostRegisterServiceSupportedService::McpServerGrafana,
             "mcpservernewrelic" => PostRegisterServiceSupportedService::McpServerNewrelic,
-            "mcpserversigv4" => PostRegisterServiceSupportedService::McpServerSigv4,
             "mcpserversplunk" => PostRegisterServiceSupportedService::McpServerSplunk,
             "pagerduty" => PostRegisterServiceSupportedService::Pagerduty,
             "servicenow" => PostRegisterServiceSupportedService::Servicenow,
@@ -118,7 +114,6 @@ impl PostRegisterServiceSupportedService {
             PostRegisterServiceSupportedService::McpServerDatadog => "mcpserverdatadog",
             PostRegisterServiceSupportedService::McpServerGrafana => "mcpservergrafana",
             PostRegisterServiceSupportedService::McpServerNewrelic => "mcpservernewrelic",
-            PostRegisterServiceSupportedService::McpServerSigv4 => "mcpserversigv4",
             PostRegisterServiceSupportedService::McpServerSplunk => "mcpserversplunk",
             PostRegisterServiceSupportedService::Pagerduty => "pagerduty",
             PostRegisterServiceSupportedService::Servicenow => "servicenow",
@@ -136,7 +131,6 @@ impl PostRegisterServiceSupportedService {
             "mcpserverdatadog",
             "mcpservergrafana",
             "mcpservernewrelic",
-            "mcpserversigv4",
             "mcpserversplunk",
             "pagerduty",
             "servicenow",
@@ -171,7 +165,6 @@ impl ::std::fmt::Display for PostRegisterServiceSupportedService {
             PostRegisterServiceSupportedService::McpServerDatadog => write!(f, "mcpserverdatadog"),
             PostRegisterServiceSupportedService::McpServerGrafana => write!(f, "mcpservergrafana"),
             PostRegisterServiceSupportedService::McpServerNewrelic => write!(f, "mcpservernewrelic"),
-            PostRegisterServiceSupportedService::McpServerSigv4 => write!(f, "mcpserversigv4"),
             PostRegisterServiceSupportedService::McpServerSplunk => write!(f, "mcpserversplunk"),
             PostRegisterServiceSupportedService::Pagerduty => write!(f, "pagerduty"),
             PostRegisterServiceSupportedService::Servicenow => write!(f, "servicenow"),

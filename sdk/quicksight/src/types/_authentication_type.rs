@@ -12,6 +12,7 @@
 /// ```text
 /// # let authenticationtype = unimplemented!();
 /// match authenticationtype {
+///     AuthenticationType::Keypair => { /* ... */ },
 ///     AuthenticationType::Password => { /* ... */ },
 ///     AuthenticationType::Token => { /* ... */ },
 ///     AuthenticationType::X509 => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum AuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
+    Keypair,
+    #[allow(missing_docs)] // documentation missing in model
     Password,
     #[allow(missing_docs)] // documentation missing in model
     Token,
@@ -56,6 +59,7 @@ pub enum AuthenticationType {
 impl ::std::convert::From<&str> for AuthenticationType {
     fn from(s: &str) -> Self {
         match s {
+            "KEYPAIR" => AuthenticationType::Keypair,
             "PASSWORD" => AuthenticationType::Password,
             "TOKEN" => AuthenticationType::Token,
             "X509" => AuthenticationType::X509,
@@ -74,6 +78,7 @@ impl AuthenticationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AuthenticationType::Keypair => "KEYPAIR",
             AuthenticationType::Password => "PASSWORD",
             AuthenticationType::Token => "TOKEN",
             AuthenticationType::X509 => "X509",
@@ -82,7 +87,7 @@ impl AuthenticationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PASSWORD", "TOKEN", "X509"]
+        &["KEYPAIR", "PASSWORD", "TOKEN", "X509"]
     }
 }
 impl ::std::convert::AsRef<str> for AuthenticationType {
@@ -105,6 +110,7 @@ impl AuthenticationType {
 impl ::std::fmt::Display for AuthenticationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AuthenticationType::Keypair => write!(f, "KEYPAIR"),
             AuthenticationType::Password => write!(f, "PASSWORD"),
             AuthenticationType::Token => write!(f, "TOKEN"),
             AuthenticationType::X509 => write!(f, "X509"),
