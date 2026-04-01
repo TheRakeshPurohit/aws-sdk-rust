@@ -103,6 +103,8 @@ pub struct TaskDefinition {
     pub registered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time when the task definition was deregistered.</p>
     pub deregistered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Unix timestamp for the time when the task definition delete was requested.</p>
+    pub delete_requested_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The principal that registered the task definition.</p>
     pub registered_by: ::std::option::Option<::std::string::String>,
     /// <p>The ephemeral storage settings to use for tasks run with the task definition.</p>
@@ -268,6 +270,10 @@ impl TaskDefinition {
     pub fn deregistered_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.deregistered_at.as_ref()
     }
+    /// <p>The Unix timestamp for the time when the task definition delete was requested.</p>
+    pub fn delete_requested_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.delete_requested_at.as_ref()
+    }
     /// <p>The principal that registered the task definition.</p>
     pub fn registered_by(&self) -> ::std::option::Option<&str> {
         self.registered_by.as_deref()
@@ -314,6 +320,7 @@ pub struct TaskDefinitionBuilder {
     pub(crate) proxy_configuration: ::std::option::Option<crate::types::ProxyConfiguration>,
     pub(crate) registered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) deregistered_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) delete_requested_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) registered_by: ::std::option::Option<::std::string::String>,
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     pub(crate) enable_fault_injection: ::std::option::Option<bool>,
@@ -837,6 +844,20 @@ impl TaskDefinitionBuilder {
     pub fn get_deregistered_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.deregistered_at
     }
+    /// <p>The Unix timestamp for the time when the task definition delete was requested.</p>
+    pub fn delete_requested_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.delete_requested_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Unix timestamp for the time when the task definition delete was requested.</p>
+    pub fn set_delete_requested_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.delete_requested_at = input;
+        self
+    }
+    /// <p>The Unix timestamp for the time when the task definition delete was requested.</p>
+    pub fn get_delete_requested_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.delete_requested_at
+    }
     /// <p>The principal that registered the task definition.</p>
     pub fn registered_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registered_by = ::std::option::Option::Some(input.into());
@@ -904,6 +925,7 @@ impl TaskDefinitionBuilder {
             proxy_configuration: self.proxy_configuration,
             registered_at: self.registered_at,
             deregistered_at: self.deregistered_at,
+            delete_requested_at: self.delete_requested_at,
             registered_by: self.registered_by,
             ephemeral_storage: self.ephemeral_storage,
             enable_fault_injection: self.enable_fault_injection,

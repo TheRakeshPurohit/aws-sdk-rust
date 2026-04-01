@@ -21,6 +21,8 @@ pub use crate::types::_filter_input::FilterInputBuilder;
 
 pub use crate::types::_extraction_job_filter_input::ExtractionJobFilterInputBuilder;
 
+pub use crate::types::_session_filter::SessionFilterBuilder;
+
 pub use crate::types::_search_criteria::SearchCriteriaBuilder;
 
 pub use crate::types::_extraction_job::ExtractionJobBuilder;

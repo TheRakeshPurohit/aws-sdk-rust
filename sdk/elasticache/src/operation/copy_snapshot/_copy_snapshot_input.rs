@@ -6,7 +6,7 @@
 pub struct CopySnapshotInput {
     /// <p>The name of an existing snapshot from which to make a copy.</p>
     pub source_snapshot_name: ::std::option::Option<::std::string::String>,
-    /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting.</p>
+    /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting. This value is stored as a lowercase string.</p>
     pub target_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.</p>
     /// <p>When using this parameter to export a snapshot, be sure Amazon ElastiCache has the needed permissions to this S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
@@ -22,7 +22,7 @@ impl CopySnapshotInput {
     pub fn source_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.source_snapshot_name.as_deref()
     }
-    /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting.</p>
+    /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting. This value is stored as a lowercase string.</p>
     pub fn target_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.target_snapshot_name.as_deref()
     }
@@ -76,18 +76,18 @@ impl CopySnapshotInputBuilder {
     pub fn get_source_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_snapshot_name
     }
-    /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting.</p>
+    /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting. This value is stored as a lowercase string.</p>
     /// This field is required.
     pub fn target_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting.</p>
+    /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting. This value is stored as a lowercase string.</p>
     pub fn set_target_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_snapshot_name = input;
         self
     }
-    /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting.</p>
+    /// <p>A name for the snapshot copy. ElastiCache does not permit overwriting a snapshot, therefore this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting. This value is stored as a lowercase string.</p>
     pub fn get_target_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_snapshot_name
     }

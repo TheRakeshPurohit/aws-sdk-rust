@@ -97,6 +97,10 @@ pub use crate::types::_gateway_summary::GatewaySummaryBuilder;
 
 pub use crate::types::_credential_provider_configuration::CredentialProviderConfigurationBuilder;
 
+pub use crate::types::_managed_lattice_resource::ManagedLatticeResourceBuilder;
+
+pub use crate::types::_managed_resource_details::ManagedResourceDetailsBuilder;
+
 pub use crate::types::_target_summary::TargetSummaryBuilder;
 
 pub use crate::types::_gateway_target::GatewayTargetBuilder;
@@ -194,6 +198,8 @@ pub use crate::types::_api_gateway_tool_configuration::ApiGatewayToolConfigurati
 pub use crate::types::_o_auth_credential_provider::OAuthCredentialProviderBuilder;
 
 pub use crate::types::_gateway_api_key_credential_provider::GatewayApiKeyCredentialProviderBuilder;
+
+pub use crate::types::_iam_credential_provider::IamCredentialProviderBuilder;
 
 pub use crate::types::_episodic_reflection_configuration_input::EpisodicReflectionConfigurationInputBuilder;
 

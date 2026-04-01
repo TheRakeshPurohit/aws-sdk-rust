@@ -7,7 +7,7 @@ pub struct RouteMatrixTrafficOptions {
     /// <p>Duration for which flow traffic is considered valid. For this period, the flow traffic is used over historical traffic data. Flow traffic refers to congestion, which changes very quickly. Duration in seconds for which flow traffic event would be considered valid. While flow traffic event is valid it will be used over the historical traffic data.</p>
     pub flow_event_threshold_override: i64,
     /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Default value: <code>UseTrafficData</code></p>
     pub usage: ::std::option::Option<crate::types::TrafficUsage>,
 }
 impl RouteMatrixTrafficOptions {
@@ -16,7 +16,7 @@ impl RouteMatrixTrafficOptions {
         self.flow_event_threshold_override
     }
     /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Default value: <code>UseTrafficData</code></p>
     pub fn usage(&self) -> ::std::option::Option<&crate::types::TrafficUsage> {
         self.usage.as_ref()
     }
@@ -59,19 +59,19 @@ impl RouteMatrixTrafficOptionsBuilder {
         &self.flow_event_threshold_override
     }
     /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Default value: <code>UseTrafficData</code></p>
     pub fn usage(mut self, input: crate::types::TrafficUsage) -> Self {
         self.usage = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Default value: <code>UseTrafficData</code></p>
     pub fn set_usage(mut self, input: ::std::option::Option<crate::types::TrafficUsage>) -> Self {
         self.usage = input;
         self
     }
     /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Default value: <code>UseTrafficData</code></p>
     pub fn get_usage(&self) -> &::std::option::Option<crate::types::TrafficUsage> {
         &self.usage
     }

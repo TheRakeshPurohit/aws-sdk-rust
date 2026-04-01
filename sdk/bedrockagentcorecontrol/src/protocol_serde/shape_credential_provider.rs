@@ -16,6 +16,12 @@ pub fn ser_credential_provider(
             crate::protocol_serde::shape_gateway_api_key_credential_provider::ser_gateway_api_key_credential_provider(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::CredentialProvider::IamCredentialProvider(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_2.key("iamCredentialProvider").start_object();
+            crate::protocol_serde::shape_iam_credential_provider::ser_iam_credential_provider(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::CredentialProvider::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "CredentialProvider",
@@ -72,6 +78,11 @@ where
                                         "value for 'apiKeyCredentialProvider' cannot be null",
                                     )
                                 })?,
+                        )),
+                        "iamCredentialProvider" => Some(crate::types::CredentialProvider::IamCredentialProvider(
+                            crate::protocol_serde::shape_iam_credential_provider::de_iam_credential_provider(tokens, _value)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'iamCredentialProvider' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

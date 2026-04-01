@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationPedestrianOptions {
     /// <p>Walking speed.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub speed: ::std::option::Option<f64>,
 }
 impl WaypointOptimizationPedestrianOptions {
     /// <p>Walking speed.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn speed(&self) -> ::std::option::Option<f64> {
         self.speed
     }
@@ -37,19 +37,19 @@ pub struct WaypointOptimizationPedestrianOptionsBuilder {
 }
 impl WaypointOptimizationPedestrianOptionsBuilder {
     /// <p>Walking speed.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn speed(mut self, input: f64) -> Self {
         self.speed = ::std::option::Option::Some(input);
         self
     }
     /// <p>Walking speed.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn set_speed(mut self, input: ::std::option::Option<f64>) -> Self {
         self.speed = input;
         self
     }
     /// <p>Walking speed.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn get_speed(&self) -> &::std::option::Option<f64> {
         &self.speed
     }

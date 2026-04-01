@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserInput {
-    /// <p>The ID of the user.</p>
+    /// <p>The ID of the user. This value is stored as a lowercase string.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The username of the user.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ pub struct CreateUserInput {
     pub authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,
 }
 impl CreateUserInput {
-    /// <p>The ID of the user.</p>
+    /// <p>The ID of the user. This value is stored as a lowercase string.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -79,18 +79,18 @@ pub struct CreateUserInputBuilder {
     pub(crate) authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,
 }
 impl CreateUserInputBuilder {
-    /// <p>The ID of the user.</p>
+    /// <p>The ID of the user. This value is stored as a lowercase string.</p>
     /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the user.</p>
+    /// <p>The ID of the user. This value is stored as a lowercase string.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// <p>The ID of the user.</p>
+    /// <p>The ID of the user. This value is stored as a lowercase string.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }

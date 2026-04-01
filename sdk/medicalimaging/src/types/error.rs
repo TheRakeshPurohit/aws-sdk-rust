@@ -13,11 +13,19 @@ pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 pub use crate::types::error::_validation_exception::ValidationException;
 
+pub use crate::types::error::_bad_request_exception::BadRequestException;
+
+pub use crate::types::error::_not_acceptable_exception::NotAcceptableException;
+
 mod _access_denied_exception;
+
+mod _bad_request_exception;
 
 mod _conflict_exception;
 
 mod _internal_server_exception;
+
+mod _not_acceptable_exception;
 
 mod _resource_not_found_exception;
 

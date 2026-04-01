@@ -8,11 +8,11 @@ pub struct RoutePedestrianLegDetails {
     pub arrival: ::std::option::Option<crate::types::RoutePedestrianArrival>,
     /// <p>Details corresponding to the departure for the leg.</p>
     pub departure: ::std::option::Option<crate::types::RoutePedestrianDeparture>,
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub notices: ::std::vec::Vec<crate::types::RoutePedestrianNotice>,
     /// <p>Waypoints that were passed through during the leg. This includes the waypoints that were configured with the PassThrough option.</p>
     pub pass_through_waypoints: ::std::vec::Vec<crate::types::RoutePassThroughWaypoint>,
-    /// <p>Spans that were computed for the requested SpanAdditionalFeatures.</p>
+    /// <p>Spans that were computed for the requested SpanAdditionalFeatures. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub spans: ::std::vec::Vec<crate::types::RoutePedestrianSpan>,
     /// <p>Summarized details of the leg.</p>
     pub summary: ::std::option::Option<crate::types::RoutePedestrianSummary>,
@@ -28,7 +28,7 @@ impl RoutePedestrianLegDetails {
     pub fn departure(&self) -> ::std::option::Option<&crate::types::RoutePedestrianDeparture> {
         self.departure.as_ref()
     }
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn notices(&self) -> &[crate::types::RoutePedestrianNotice] {
         use std::ops::Deref;
         self.notices.deref()
@@ -38,7 +38,7 @@ impl RoutePedestrianLegDetails {
         use std::ops::Deref;
         self.pass_through_waypoints.deref()
     }
-    /// <p>Spans that were computed for the requested SpanAdditionalFeatures.</p>
+    /// <p>Spans that were computed for the requested SpanAdditionalFeatures. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn spans(&self) -> &[crate::types::RoutePedestrianSpan] {
         use std::ops::Deref;
         self.spans.deref()
@@ -107,19 +107,19 @@ impl RoutePedestrianLegDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_notices`](Self::set_notices).
     ///
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn notices(mut self, input: crate::types::RoutePedestrianNotice) -> Self {
         let mut v = self.notices.unwrap_or_default();
         v.push(input);
         self.notices = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_notices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutePedestrianNotice>>) -> Self {
         self.notices = input;
         self
     }
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_notices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutePedestrianNotice>> {
         &self.notices
     }
@@ -147,19 +147,19 @@ impl RoutePedestrianLegDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_spans`](Self::set_spans).
     ///
-    /// <p>Spans that were computed for the requested SpanAdditionalFeatures.</p>
+    /// <p>Spans that were computed for the requested SpanAdditionalFeatures. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn spans(mut self, input: crate::types::RoutePedestrianSpan) -> Self {
         let mut v = self.spans.unwrap_or_default();
         v.push(input);
         self.spans = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Spans that were computed for the requested SpanAdditionalFeatures.</p>
+    /// <p>Spans that were computed for the requested SpanAdditionalFeatures. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_spans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RoutePedestrianSpan>>) -> Self {
         self.spans = input;
         self
     }
-    /// <p>Spans that were computed for the requested SpanAdditionalFeatures.</p>
+    /// <p>Spans that were computed for the requested SpanAdditionalFeatures. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_spans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutePedestrianSpan>> {
         &self.spans
     }

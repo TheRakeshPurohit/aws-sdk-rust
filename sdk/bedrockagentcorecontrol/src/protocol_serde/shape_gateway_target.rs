@@ -88,6 +88,17 @@ where
                                 crate::protocol_serde::shape_metadata_configuration::de_metadata_configuration(tokens, _value)?,
                             );
                         }
+                        "privateEndpoint" => {
+                            builder =
+                                builder.set_private_endpoint(crate::protocol_serde::shape_private_endpoint::de_private_endpoint(tokens, _value)?);
+                        }
+                        "privateEndpointManagedResources" => {
+                            builder = builder.set_private_endpoint_managed_resources(
+                                crate::protocol_serde::shape_private_endpoint_managed_resources::de_private_endpoint_managed_resources(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

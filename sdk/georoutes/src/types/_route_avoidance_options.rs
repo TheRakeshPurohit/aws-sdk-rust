@@ -4,41 +4,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteAvoidanceOptions {
-    /// <p>Areas to be avoided.</p>
+    /// <p>Areas to be avoided. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub areas: ::std::option::Option<::std::vec::Vec<crate::types::RouteAvoidanceArea>>,
-    /// <p>Avoid car-shuttle-trains while calculating the route.</p>
+    /// <p>Avoid car-shuttle-trains while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub car_shuttle_trains: ::std::option::Option<bool>,
     /// <p>Avoid controlled access highways while calculating the route.</p>
     pub controlled_access_highways: ::std::option::Option<bool>,
-    /// <p>Avoid dirt roads while calculating the route.</p>
+    /// <p>Avoid dirt roads while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub dirt_roads: ::std::option::Option<bool>,
     /// <p>Avoid ferries while calculating the route.</p>
     pub ferries: ::std::option::Option<bool>,
-    /// <p>Avoid roads that have seasonal closure while calculating the route.</p>
+    /// <p>Avoid roads that have seasonal closure while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub seasonal_closure: ::std::option::Option<bool>,
     /// <p>Avoids roads where the specified toll transponders are the only mode of payment.</p>
     pub toll_roads: ::std::option::Option<bool>,
-    /// <p>Avoids roads where the specified toll transponders are the only mode of payment.</p>
+    /// <p>Avoids roads where the specified toll transponders are the only mode of payment. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub toll_transponders: ::std::option::Option<bool>,
-    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico.</p><note>
+    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>There are currently no other supported values as of 26th April 2024.</p>
     /// </note>
     pub truck_road_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Avoid tunnels while calculating the route.</p>
+    /// <p>Avoid tunnels while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub tunnels: ::std::option::Option<bool>,
-    /// <p>Avoid U-turns for calculation on highways and motorways.</p>
+    /// <p>Avoid U-turns for calculation on highways and motorways. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub u_turns: ::std::option::Option<bool>,
-    /// <p>Zone categories to be avoided.</p>
+    /// <p>Zone categories to be avoided. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub zone_categories: ::std::option::Option<::std::vec::Vec<crate::types::RouteAvoidanceZoneCategory>>,
 }
 impl RouteAvoidanceOptions {
-    /// <p>Areas to be avoided.</p>
+    /// <p>Areas to be avoided. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.areas.is_none()`.
     pub fn areas(&self) -> &[crate::types::RouteAvoidanceArea] {
         self.areas.as_deref().unwrap_or_default()
     }
-    /// <p>Avoid car-shuttle-trains while calculating the route.</p>
+    /// <p>Avoid car-shuttle-trains while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn car_shuttle_trains(&self) -> ::std::option::Option<bool> {
         self.car_shuttle_trains
     }
@@ -46,7 +46,7 @@ impl RouteAvoidanceOptions {
     pub fn controlled_access_highways(&self) -> ::std::option::Option<bool> {
         self.controlled_access_highways
     }
-    /// <p>Avoid dirt roads while calculating the route.</p>
+    /// <p>Avoid dirt roads while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn dirt_roads(&self) -> ::std::option::Option<bool> {
         self.dirt_roads
     }
@@ -54,7 +54,7 @@ impl RouteAvoidanceOptions {
     pub fn ferries(&self) -> ::std::option::Option<bool> {
         self.ferries
     }
-    /// <p>Avoid roads that have seasonal closure while calculating the route.</p>
+    /// <p>Avoid roads that have seasonal closure while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn seasonal_closure(&self) -> ::std::option::Option<bool> {
         self.seasonal_closure
     }
@@ -62,11 +62,11 @@ impl RouteAvoidanceOptions {
     pub fn toll_roads(&self) -> ::std::option::Option<bool> {
         self.toll_roads
     }
-    /// <p>Avoids roads where the specified toll transponders are the only mode of payment.</p>
+    /// <p>Avoids roads where the specified toll transponders are the only mode of payment. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn toll_transponders(&self) -> ::std::option::Option<bool> {
         self.toll_transponders
     }
-    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico.</p><note>
+    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>There are currently no other supported values as of 26th April 2024.</p>
     /// </note>
     ///
@@ -74,15 +74,15 @@ impl RouteAvoidanceOptions {
     pub fn truck_road_types(&self) -> &[::std::string::String] {
         self.truck_road_types.as_deref().unwrap_or_default()
     }
-    /// <p>Avoid tunnels while calculating the route.</p>
+    /// <p>Avoid tunnels while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn tunnels(&self) -> ::std::option::Option<bool> {
         self.tunnels
     }
-    /// <p>Avoid U-turns for calculation on highways and motorways.</p>
+    /// <p>Avoid U-turns for calculation on highways and motorways. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn u_turns(&self) -> ::std::option::Option<bool> {
         self.u_turns
     }
-    /// <p>Zone categories to be avoided.</p>
+    /// <p>Zone categories to be avoided. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.zone_categories.is_none()`.
     pub fn zone_categories(&self) -> &[crate::types::RouteAvoidanceZoneCategory] {
@@ -136,33 +136,33 @@ impl RouteAvoidanceOptionsBuilder {
     ///
     /// To override the contents of this collection use [`set_areas`](Self::set_areas).
     ///
-    /// <p>Areas to be avoided.</p>
+    /// <p>Areas to be avoided. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn areas(mut self, input: crate::types::RouteAvoidanceArea) -> Self {
         let mut v = self.areas.unwrap_or_default();
         v.push(input);
         self.areas = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Areas to be avoided.</p>
+    /// <p>Areas to be avoided. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_areas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteAvoidanceArea>>) -> Self {
         self.areas = input;
         self
     }
-    /// <p>Areas to be avoided.</p>
+    /// <p>Areas to be avoided. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_areas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteAvoidanceArea>> {
         &self.areas
     }
-    /// <p>Avoid car-shuttle-trains while calculating the route.</p>
+    /// <p>Avoid car-shuttle-trains while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn car_shuttle_trains(mut self, input: bool) -> Self {
         self.car_shuttle_trains = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Avoid car-shuttle-trains while calculating the route.</p>
+    /// <p>Avoid car-shuttle-trains while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_car_shuttle_trains(mut self, input: ::std::option::Option<bool>) -> Self {
         self.car_shuttle_trains = input;
         self
     }
-    /// <p>Avoid car-shuttle-trains while calculating the route.</p>
+    /// <p>Avoid car-shuttle-trains while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_car_shuttle_trains(&self) -> &::std::option::Option<bool> {
         &self.car_shuttle_trains
     }
@@ -180,17 +180,17 @@ impl RouteAvoidanceOptionsBuilder {
     pub fn get_controlled_access_highways(&self) -> &::std::option::Option<bool> {
         &self.controlled_access_highways
     }
-    /// <p>Avoid dirt roads while calculating the route.</p>
+    /// <p>Avoid dirt roads while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn dirt_roads(mut self, input: bool) -> Self {
         self.dirt_roads = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Avoid dirt roads while calculating the route.</p>
+    /// <p>Avoid dirt roads while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_dirt_roads(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dirt_roads = input;
         self
     }
-    /// <p>Avoid dirt roads while calculating the route.</p>
+    /// <p>Avoid dirt roads while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_dirt_roads(&self) -> &::std::option::Option<bool> {
         &self.dirt_roads
     }
@@ -208,17 +208,17 @@ impl RouteAvoidanceOptionsBuilder {
     pub fn get_ferries(&self) -> &::std::option::Option<bool> {
         &self.ferries
     }
-    /// <p>Avoid roads that have seasonal closure while calculating the route.</p>
+    /// <p>Avoid roads that have seasonal closure while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn seasonal_closure(mut self, input: bool) -> Self {
         self.seasonal_closure = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Avoid roads that have seasonal closure while calculating the route.</p>
+    /// <p>Avoid roads that have seasonal closure while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_seasonal_closure(mut self, input: ::std::option::Option<bool>) -> Self {
         self.seasonal_closure = input;
         self
     }
-    /// <p>Avoid roads that have seasonal closure while calculating the route.</p>
+    /// <p>Avoid roads that have seasonal closure while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_seasonal_closure(&self) -> &::std::option::Option<bool> {
         &self.seasonal_closure
     }
@@ -236,17 +236,17 @@ impl RouteAvoidanceOptionsBuilder {
     pub fn get_toll_roads(&self) -> &::std::option::Option<bool> {
         &self.toll_roads
     }
-    /// <p>Avoids roads where the specified toll transponders are the only mode of payment.</p>
+    /// <p>Avoids roads where the specified toll transponders are the only mode of payment. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn toll_transponders(mut self, input: bool) -> Self {
         self.toll_transponders = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Avoids roads where the specified toll transponders are the only mode of payment.</p>
+    /// <p>Avoids roads where the specified toll transponders are the only mode of payment. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_toll_transponders(mut self, input: ::std::option::Option<bool>) -> Self {
         self.toll_transponders = input;
         self
     }
-    /// <p>Avoids roads where the specified toll transponders are the only mode of payment.</p>
+    /// <p>Avoids roads where the specified toll transponders are the only mode of payment. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_toll_transponders(&self) -> &::std::option::Option<bool> {
         &self.toll_transponders
     }
@@ -254,7 +254,7 @@ impl RouteAvoidanceOptionsBuilder {
     ///
     /// To override the contents of this collection use [`set_truck_road_types`](Self::set_truck_road_types).
     ///
-    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico.</p><note>
+    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>There are currently no other supported values as of 26th April 2024.</p>
     /// </note>
     pub fn truck_road_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -263,44 +263,44 @@ impl RouteAvoidanceOptionsBuilder {
         self.truck_road_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico.</p><note>
+    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>There are currently no other supported values as of 26th April 2024.</p>
     /// </note>
     pub fn set_truck_road_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.truck_road_types = input;
         self
     }
-    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico.</p><note>
+    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>There are currently no other supported values as of 26th April 2024.</p>
     /// </note>
     pub fn get_truck_road_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.truck_road_types
     }
-    /// <p>Avoid tunnels while calculating the route.</p>
+    /// <p>Avoid tunnels while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn tunnels(mut self, input: bool) -> Self {
         self.tunnels = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Avoid tunnels while calculating the route.</p>
+    /// <p>Avoid tunnels while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_tunnels(mut self, input: ::std::option::Option<bool>) -> Self {
         self.tunnels = input;
         self
     }
-    /// <p>Avoid tunnels while calculating the route.</p>
+    /// <p>Avoid tunnels while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_tunnels(&self) -> &::std::option::Option<bool> {
         &self.tunnels
     }
-    /// <p>Avoid U-turns for calculation on highways and motorways.</p>
+    /// <p>Avoid U-turns for calculation on highways and motorways. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn u_turns(mut self, input: bool) -> Self {
         self.u_turns = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Avoid U-turns for calculation on highways and motorways.</p>
+    /// <p>Avoid U-turns for calculation on highways and motorways. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_u_turns(mut self, input: ::std::option::Option<bool>) -> Self {
         self.u_turns = input;
         self
     }
-    /// <p>Avoid U-turns for calculation on highways and motorways.</p>
+    /// <p>Avoid U-turns for calculation on highways and motorways. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_u_turns(&self) -> &::std::option::Option<bool> {
         &self.u_turns
     }
@@ -308,19 +308,19 @@ impl RouteAvoidanceOptionsBuilder {
     ///
     /// To override the contents of this collection use [`set_zone_categories`](Self::set_zone_categories).
     ///
-    /// <p>Zone categories to be avoided.</p>
+    /// <p>Zone categories to be avoided. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn zone_categories(mut self, input: crate::types::RouteAvoidanceZoneCategory) -> Self {
         let mut v = self.zone_categories.unwrap_or_default();
         v.push(input);
         self.zone_categories = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Zone categories to be avoided.</p>
+    /// <p>Zone categories to be avoided. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_zone_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteAvoidanceZoneCategory>>) -> Self {
         self.zone_categories = input;
         self
     }
-    /// <p>Zone categories to be avoided.</p>
+    /// <p>Zone categories to be avoided. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_zone_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteAvoidanceZoneCategory>> {
         &self.zone_categories
     }

@@ -27,6 +27,8 @@ pub(crate) mod shape_create_capacity_provider;
 
 pub(crate) mod shape_create_cluster;
 
+pub(crate) mod shape_create_daemon;
+
 pub(crate) mod shape_create_express_gateway_service;
 
 pub(crate) mod shape_create_service;
@@ -40,6 +42,10 @@ pub(crate) mod shape_delete_attributes;
 pub(crate) mod shape_delete_capacity_provider;
 
 pub(crate) mod shape_delete_cluster;
+
+pub(crate) mod shape_delete_daemon;
+
+pub(crate) mod shape_delete_daemon_task_definition;
 
 pub(crate) mod shape_delete_express_gateway_service;
 
@@ -58,6 +64,14 @@ pub(crate) mod shape_describe_capacity_providers;
 pub(crate) mod shape_describe_clusters;
 
 pub(crate) mod shape_describe_container_instances;
+
+pub(crate) mod shape_describe_daemon;
+
+pub(crate) mod shape_describe_daemon_deployments;
+
+pub(crate) mod shape_describe_daemon_revisions;
+
+pub(crate) mod shape_describe_daemon_task_definition;
 
 pub(crate) mod shape_describe_express_gateway_service;
 
@@ -87,6 +101,12 @@ pub(crate) mod shape_list_clusters;
 
 pub(crate) mod shape_list_container_instances;
 
+pub(crate) mod shape_list_daemon_deployments;
+
+pub(crate) mod shape_list_daemon_task_definitions;
+
+pub(crate) mod shape_list_daemons;
+
 pub(crate) mod shape_list_service_deployments;
 
 pub(crate) mod shape_list_services;
@@ -110,6 +130,8 @@ pub(crate) mod shape_put_attributes;
 pub(crate) mod shape_put_cluster_capacity_providers;
 
 pub(crate) mod shape_register_container_instance;
+
+pub(crate) mod shape_register_daemon_task_definition;
 
 pub(crate) mod shape_register_task_definition;
 
@@ -140,6 +162,8 @@ pub(crate) mod shape_update_cluster_settings;
 pub(crate) mod shape_update_container_agent;
 
 pub(crate) mod shape_update_container_instances_state;
+
+pub(crate) mod shape_update_daemon;
 
 pub(crate) mod shape_update_express_gateway_service;
 
@@ -183,11 +207,17 @@ pub(crate) mod shape_create_capacity_provider_input;
 
 pub(crate) mod shape_create_cluster_input;
 
+pub(crate) mod shape_create_daemon_input;
+
 pub(crate) mod shape_create_express_gateway_service_input;
 
 pub(crate) mod shape_create_service_input;
 
 pub(crate) mod shape_create_task_set_input;
+
+pub(crate) mod shape_daemon_not_active_exception;
+
+pub(crate) mod shape_daemon_not_found_exception;
 
 pub(crate) mod shape_delete_account_setting_input;
 
@@ -196,6 +226,10 @@ pub(crate) mod shape_delete_attributes_input;
 pub(crate) mod shape_delete_capacity_provider_input;
 
 pub(crate) mod shape_delete_cluster_input;
+
+pub(crate) mod shape_delete_daemon_input;
+
+pub(crate) mod shape_delete_daemon_task_definition_input;
 
 pub(crate) mod shape_delete_express_gateway_service_input;
 
@@ -214,6 +248,14 @@ pub(crate) mod shape_describe_capacity_providers_input;
 pub(crate) mod shape_describe_clusters_input;
 
 pub(crate) mod shape_describe_container_instances_input;
+
+pub(crate) mod shape_describe_daemon_deployments_input;
+
+pub(crate) mod shape_describe_daemon_input;
+
+pub(crate) mod shape_describe_daemon_revisions_input;
+
+pub(crate) mod shape_describe_daemon_task_definition_input;
 
 pub(crate) mod shape_describe_express_gateway_service_input;
 
@@ -246,6 +288,12 @@ pub(crate) mod shape_list_attributes_input;
 pub(crate) mod shape_list_clusters_input;
 
 pub(crate) mod shape_list_container_instances_input;
+
+pub(crate) mod shape_list_daemon_deployments_input;
+
+pub(crate) mod shape_list_daemon_task_definitions_input;
+
+pub(crate) mod shape_list_daemons_input;
 
 pub(crate) mod shape_list_service_deployments_input;
 
@@ -280,6 +328,8 @@ pub(crate) mod shape_put_attributes_input;
 pub(crate) mod shape_put_cluster_capacity_providers_input;
 
 pub(crate) mod shape_register_container_instance_input;
+
+pub(crate) mod shape_register_daemon_task_definition_input;
 
 pub(crate) mod shape_register_task_definition_input;
 
@@ -331,6 +381,8 @@ pub(crate) mod shape_update_container_agent_input;
 
 pub(crate) mod shape_update_container_instances_state_input;
 
+pub(crate) mod shape_update_daemon_input;
+
 pub(crate) mod shape_update_express_gateway_service_input;
 
 pub(crate) mod shape_update_in_progress_exception;
@@ -380,6 +432,26 @@ pub(crate) mod shape_container_state_change;
 pub(crate) mod shape_create_managed_instances_provider_configuration;
 
 pub(crate) mod shape_created_at;
+
+pub(crate) mod shape_daemon_container_definition;
+
+pub(crate) mod shape_daemon_deployment_configuration;
+
+pub(crate) mod shape_daemon_deployment_list;
+
+pub(crate) mod shape_daemon_deployment_summary_list;
+
+pub(crate) mod shape_daemon_detail;
+
+pub(crate) mod shape_daemon_revisions;
+
+pub(crate) mod shape_daemon_summaries_list;
+
+pub(crate) mod shape_daemon_task_definition;
+
+pub(crate) mod shape_daemon_task_definition_summaries;
+
+pub(crate) mod shape_daemon_volume;
 
 pub(crate) mod shape_deployment_configuration;
 
@@ -508,6 +580,26 @@ pub(crate) mod shape_container_override;
 pub(crate) mod shape_container_restart_policy;
 
 pub(crate) mod shape_containers;
+
+pub(crate) mod shape_daemon_alarm_configuration;
+
+pub(crate) mod shape_daemon_container_definition_list;
+
+pub(crate) mod shape_daemon_deployment;
+
+pub(crate) mod shape_daemon_deployment_summary;
+
+pub(crate) mod shape_daemon_linux_parameters;
+
+pub(crate) mod shape_daemon_revision;
+
+pub(crate) mod shape_daemon_revision_detail_list;
+
+pub(crate) mod shape_daemon_summary;
+
+pub(crate) mod shape_daemon_task_definition_summary;
+
+pub(crate) mod shape_daemon_volume_list;
 
 pub(crate) mod shape_deployment_alarms;
 
@@ -639,6 +731,20 @@ pub(crate) mod shape_container_images;
 
 pub(crate) mod shape_container_overrides;
 
+pub(crate) mod shape_daemon_circuit_breaker;
+
+pub(crate) mod shape_daemon_container_images;
+
+pub(crate) mod shape_daemon_deployment_alarms;
+
+pub(crate) mod shape_daemon_deployment_revision_detail;
+
+pub(crate) mod shape_daemon_deployment_revision_detail_list;
+
+pub(crate) mod shape_daemon_revision_detail;
+
+pub(crate) mod shape_daemon_rollback;
+
 pub(crate) mod shape_deployment;
 
 pub(crate) mod shape_deployment_lifecycle_hook_list;
@@ -715,6 +821,12 @@ pub(crate) mod shape_container_dependencies;
 
 pub(crate) mod shape_container_image;
 
+pub(crate) mod shape_daemon_capacity_provider_list;
+
+pub(crate) mod shape_daemon_container_image;
+
+pub(crate) mod shape_daemon_deployment_capacity_provider_list;
+
 pub(crate) mod shape_docker_labels_map;
 
 pub(crate) mod shape_environment_files;
@@ -790,6 +902,10 @@ pub(crate) mod shape_accelerator_type_set;
 pub(crate) mod shape_allowed_instance_type_set;
 
 pub(crate) mod shape_cpu_manufacturer_set;
+
+pub(crate) mod shape_daemon_capacity_provider;
+
+pub(crate) mod shape_daemon_deployment_capacity_provider;
 
 pub(crate) mod shape_deployment_lifecycle_hook_stage_list;
 

@@ -5,7 +5,7 @@
 pub struct CalculateRoutesOutput {
     /// <p>Specifies the format of the geometry returned for each leg of the route.</p>
     pub leg_geometry_format: crate::types::GeometryFormat,
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub notices: ::std::vec::Vec<crate::types::RouteResponseNotice>,
     /// <p>The pricing bucket for which the query is charged at.</p>
     pub pricing_bucket: ::std::string::String,
@@ -18,7 +18,7 @@ impl CalculateRoutesOutput {
     pub fn leg_geometry_format(&self) -> &crate::types::GeometryFormat {
         &self.leg_geometry_format
     }
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn notices(&self) -> &[crate::types::RouteResponseNotice] {
         use std::ops::Deref;
         self.notices.deref()
@@ -76,19 +76,19 @@ impl CalculateRoutesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_notices`](Self::set_notices).
     ///
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn notices(mut self, input: crate::types::RouteResponseNotice) -> Self {
         let mut v = self.notices.unwrap_or_default();
         v.push(input);
         self.notices = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_notices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteResponseNotice>>) -> Self {
         self.notices = input;
         self
     }
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_notices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteResponseNotice>> {
         &self.notices
     }

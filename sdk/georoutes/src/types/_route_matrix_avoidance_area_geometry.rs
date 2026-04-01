@@ -8,7 +8,7 @@ pub struct RouteMatrixAvoidanceAreaGeometry {
     pub bounding_box: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>Geometry defined as a polygon with only one linear ring.</p>
     pub polygon: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
-    /// <p>A list of Isoline PolylinePolygon, for each isoline PolylinePolygon, it contains PolylinePolygon of the first linear ring (the outer ring) and from second item to the last item (the inner rings). For more information on polyline encoding, see <a href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.</p>
+    /// <p>A list of Isoline PolylinePolygon, for each isoline PolylinePolygon, it contains PolylinePolygon of the first linear ring (the outer ring) and from second item to the last item (the inner rings). For more information on polyline encoding, see <a href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.</p>
     pub polyline_polygon: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RouteMatrixAvoidanceAreaGeometry {
@@ -24,7 +24,7 @@ impl RouteMatrixAvoidanceAreaGeometry {
     pub fn polygon(&self) -> &[::std::vec::Vec<::std::vec::Vec<f64>>] {
         self.polygon.as_deref().unwrap_or_default()
     }
-    /// <p>A list of Isoline PolylinePolygon, for each isoline PolylinePolygon, it contains PolylinePolygon of the first linear ring (the outer ring) and from second item to the last item (the inner rings). For more information on polyline encoding, see <a href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.</p>
+    /// <p>A list of Isoline PolylinePolygon, for each isoline PolylinePolygon, it contains PolylinePolygon of the first linear ring (the outer ring) and from second item to the last item (the inner rings). For more information on polyline encoding, see <a href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.polyline_polygon.is_none()`.
     pub fn polyline_polygon(&self) -> &[::std::string::String] {
@@ -100,19 +100,19 @@ impl RouteMatrixAvoidanceAreaGeometryBuilder {
     ///
     /// To override the contents of this collection use [`set_polyline_polygon`](Self::set_polyline_polygon).
     ///
-    /// <p>A list of Isoline PolylinePolygon, for each isoline PolylinePolygon, it contains PolylinePolygon of the first linear ring (the outer ring) and from second item to the last item (the inner rings). For more information on polyline encoding, see <a href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.</p>
+    /// <p>A list of Isoline PolylinePolygon, for each isoline PolylinePolygon, it contains PolylinePolygon of the first linear ring (the outer ring) and from second item to the last item (the inner rings). For more information on polyline encoding, see <a href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.</p>
     pub fn polyline_polygon(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.polyline_polygon.unwrap_or_default();
         v.push(input.into());
         self.polyline_polygon = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of Isoline PolylinePolygon, for each isoline PolylinePolygon, it contains PolylinePolygon of the first linear ring (the outer ring) and from second item to the last item (the inner rings). For more information on polyline encoding, see <a href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.</p>
+    /// <p>A list of Isoline PolylinePolygon, for each isoline PolylinePolygon, it contains PolylinePolygon of the first linear ring (the outer ring) and from second item to the last item (the inner rings). For more information on polyline encoding, see <a href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.</p>
     pub fn set_polyline_polygon(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.polyline_polygon = input;
         self
     }
-    /// <p>A list of Isoline PolylinePolygon, for each isoline PolylinePolygon, it contains PolylinePolygon of the first linear ring (the outer ring) and from second item to the last item (the inner rings). For more information on polyline encoding, see <a href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.</p>
+    /// <p>A list of Isoline PolylinePolygon, for each isoline PolylinePolygon, it contains PolylinePolygon of the first linear ring (the outer ring) and from second item to the last item (the inner rings). For more information on polyline encoding, see <a href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.</p>
     pub fn get_polyline_polygon(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.polyline_polygon
     }

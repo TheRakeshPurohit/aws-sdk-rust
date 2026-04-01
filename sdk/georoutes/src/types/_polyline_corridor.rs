@@ -9,7 +9,7 @@ pub struct PolylineCorridor {
     /// </note>
     pub polyline: ::std::string::String,
     /// <p>Considers all roads within the provided radius to match the provided destination to. The roads that are considered are determined by the provided Strategy.</p>
-    /// <p><b>Unit</b>: <code>Meters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub radius: i32,
 }
 impl PolylineCorridor {
@@ -21,7 +21,7 @@ impl PolylineCorridor {
         self.polyline.deref()
     }
     /// <p>Considers all roads within the provided radius to match the provided destination to. The roads that are considered are determined by the provided Strategy.</p>
-    /// <p><b>Unit</b>: <code>Meters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn radius(&self) -> i32 {
         self.radius
     }
@@ -71,20 +71,20 @@ impl PolylineCorridorBuilder {
         &self.polyline
     }
     /// <p>Considers all roads within the provided radius to match the provided destination to. The roads that are considered are determined by the provided Strategy.</p>
-    /// <p><b>Unit</b>: <code>Meters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     /// This field is required.
     pub fn radius(mut self, input: i32) -> Self {
         self.radius = ::std::option::Option::Some(input);
         self
     }
     /// <p>Considers all roads within the provided radius to match the provided destination to. The roads that are considered are determined by the provided Strategy.</p>
-    /// <p><b>Unit</b>: <code>Meters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn set_radius(mut self, input: ::std::option::Option<i32>) -> Self {
         self.radius = input;
         self
     }
     /// <p>Considers all roads within the provided radius to match the provided destination to. The roads that are considered are determined by the provided Strategy.</p>
-    /// <p><b>Unit</b>: <code>Meters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn get_radius(&self) -> &::std::option::Option<i32> {
         &self.radius
     }

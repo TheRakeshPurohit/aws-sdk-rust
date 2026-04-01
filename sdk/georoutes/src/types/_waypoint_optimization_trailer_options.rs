@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationTrailerOptions {
     /// <p>Number of trailers attached to the vehicle.</p>
-    /// <p>Default Value: <code>0</code></p>
+    /// <p>Default value: <code>0</code></p>
     pub trailer_count: ::std::option::Option<i32>,
 }
 impl WaypointOptimizationTrailerOptions {
     /// <p>Number of trailers attached to the vehicle.</p>
-    /// <p>Default Value: <code>0</code></p>
+    /// <p>Default value: <code>0</code></p>
     pub fn trailer_count(&self) -> ::std::option::Option<i32> {
         self.trailer_count
     }
@@ -37,19 +37,19 @@ pub struct WaypointOptimizationTrailerOptionsBuilder {
 }
 impl WaypointOptimizationTrailerOptionsBuilder {
     /// <p>Number of trailers attached to the vehicle.</p>
-    /// <p>Default Value: <code>0</code></p>
+    /// <p>Default value: <code>0</code></p>
     pub fn trailer_count(mut self, input: i32) -> Self {
         self.trailer_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of trailers attached to the vehicle.</p>
-    /// <p>Default Value: <code>0</code></p>
+    /// <p>Default value: <code>0</code></p>
     pub fn set_trailer_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.trailer_count = input;
         self
     }
     /// <p>Number of trailers attached to the vehicle.</p>
-    /// <p>Default Value: <code>0</code></p>
+    /// <p>Default value: <code>0</code></p>
     pub fn get_trailer_count(&self) -> &::std::option::Option<i32> {
         &self.trailer_count
     }

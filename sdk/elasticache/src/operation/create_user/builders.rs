@@ -108,17 +108,17 @@ impl CreateUserFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the user.</p>
+    /// <p>The ID of the user. This value is stored as a lowercase string.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// <p>The ID of the user.</p>
+    /// <p>The ID of the user. This value is stored as a lowercase string.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// <p>The ID of the user.</p>
+    /// <p>The ID of the user. This value is stored as a lowercase string.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }

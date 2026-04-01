@@ -147,6 +147,13 @@ pub(crate) fn de_get_model_invocation_job(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "errorRecordCount" => {
+                    builder = builder.set_error_record_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
                 "inputDataConfig" => {
                     builder = builder.set_input_data_config(
                         crate::protocol_serde::shape_model_invocation_job_input_data_config::de_model_invocation_job_input_data_config(
@@ -208,6 +215,13 @@ pub(crate) fn de_get_model_invocation_job(
                         )?,
                     );
                 }
+                "processedRecordCount" => {
+                    builder = builder.set_processed_record_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
                 "roleArn" => {
                     builder = builder.set_role_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -228,10 +242,24 @@ pub(crate) fn de_get_model_invocation_job(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "successRecordCount" => {
+                    builder = builder.set_success_record_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
                 "timeoutDurationInHours" => {
                     builder = builder.set_timeout_duration_in_hours(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "totalRecordCount" => {
+                    builder = builder.set_total_record_count(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
                             .transpose()?,
                     );
                 }

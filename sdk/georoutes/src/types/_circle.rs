@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Circle {
-    /// <p>Center of the Circle defined in longitude and latitude coordinates.</p>
+    /// <p>Center of the Circle in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     /// <p>Example: <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub center: ::std::vec::Vec<f64>,
     /// <p>Radius of the Circle.</p>
@@ -12,7 +12,7 @@ pub struct Circle {
     pub radius: f64,
 }
 impl Circle {
-    /// <p>Center of the Circle defined in longitude and latitude coordinates.</p>
+    /// <p>Center of the Circle in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     /// <p>Example: <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn center(&self) -> &[f64] {
         use std::ops::Deref;
@@ -51,7 +51,7 @@ impl CircleBuilder {
     ///
     /// To override the contents of this collection use [`set_center`](Self::set_center).
     ///
-    /// <p>Center of the Circle defined in longitude and latitude coordinates.</p>
+    /// <p>Center of the Circle in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     /// <p>Example: <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn center(mut self, input: f64) -> Self {
         let mut v = self.center.unwrap_or_default();
@@ -59,13 +59,13 @@ impl CircleBuilder {
         self.center = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Center of the Circle defined in longitude and latitude coordinates.</p>
+    /// <p>Center of the Circle in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     /// <p>Example: <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn set_center(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.center = input;
         self
     }
-    /// <p>Center of the Circle defined in longitude and latitude coordinates.</p>
+    /// <p>Center of the Circle in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     /// <p>Example: <code>\[-123.1174, 49.2847\]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
     pub fn get_center(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.center

@@ -225,17 +225,17 @@ impl ModifyServerlessCacheFluentBuilder {
     pub fn get_daily_snapshot_time(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_daily_snapshot_time()
     }
-    /// <p>Modifies the engine listed in a serverless cache request. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a serverless cache request. The options are valkey, memcached or redis.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>Modifies the engine listed in a serverless cache request. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a serverless cache request. The options are valkey, memcached or redis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>Modifies the engine listed in a serverless cache request. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a serverless cache request. The options are valkey, memcached or redis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }

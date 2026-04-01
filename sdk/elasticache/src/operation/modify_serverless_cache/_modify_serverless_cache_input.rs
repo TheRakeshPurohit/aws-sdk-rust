@@ -19,7 +19,7 @@ pub struct ModifyServerlessCacheInput {
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>The daily time during which Elasticache begins taking a daily snapshot of the serverless cache. Available for Valkey, Redis OSS and Serverless Memcached only. The default is NULL, i.e. the existing snapshot time configured for the cluster is not removed.</p>
     pub daily_snapshot_time: ::std::option::Option<::std::string::String>,
-    /// <p>Modifies the engine listed in a serverless cache request. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a serverless cache request. The options are valkey, memcached or redis.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Modifies the engine vesion listed in a serverless cache request.</p>
     pub major_engine_version: ::std::option::Option<::std::string::String>,
@@ -59,7 +59,7 @@ impl ModifyServerlessCacheInput {
     pub fn daily_snapshot_time(&self) -> ::std::option::Option<&str> {
         self.daily_snapshot_time.as_deref()
     }
-    /// <p>Modifies the engine listed in a serverless cache request. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a serverless cache request. The options are valkey, memcached or redis.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -210,17 +210,17 @@ impl ModifyServerlessCacheInputBuilder {
     pub fn get_daily_snapshot_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.daily_snapshot_time
     }
-    /// <p>Modifies the engine listed in a serverless cache request. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a serverless cache request. The options are valkey, memcached or redis.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Modifies the engine listed in a serverless cache request. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a serverless cache request. The options are valkey, memcached or redis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>Modifies the engine listed in a serverless cache request. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a serverless cache request. The options are valkey, memcached or redis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }

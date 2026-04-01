@@ -7,6 +7,9 @@ pub mod create_capacity_provider;
 /// Types for the `CreateCluster` operation.
 pub mod create_cluster;
 
+/// Types for the `CreateDaemon` operation.
+pub mod create_daemon;
+
 /// Types for the `CreateExpressGatewayService` operation.
 pub mod create_express_gateway_service;
 
@@ -27,6 +30,12 @@ pub mod delete_capacity_provider;
 
 /// Types for the `DeleteCluster` operation.
 pub mod delete_cluster;
+
+/// Types for the `DeleteDaemon` operation.
+pub mod delete_daemon;
+
+/// Types for the `DeleteDaemonTaskDefinition` operation.
+pub mod delete_daemon_task_definition;
 
 /// Types for the `DeleteExpressGatewayService` operation.
 pub mod delete_express_gateway_service;
@@ -54,6 +63,18 @@ pub mod describe_clusters;
 
 /// Types for the `DescribeContainerInstances` operation.
 pub mod describe_container_instances;
+
+/// Types for the `DescribeDaemon` operation.
+pub mod describe_daemon;
+
+/// Types for the `DescribeDaemonDeployments` operation.
+pub mod describe_daemon_deployments;
+
+/// Types for the `DescribeDaemonRevisions` operation.
+pub mod describe_daemon_revisions;
+
+/// Types for the `DescribeDaemonTaskDefinition` operation.
+pub mod describe_daemon_task_definition;
 
 /// Types for the `DescribeExpressGatewayService` operation.
 pub mod describe_express_gateway_service;
@@ -97,6 +118,15 @@ pub mod list_clusters;
 /// Types for the `ListContainerInstances` operation.
 pub mod list_container_instances;
 
+/// Types for the `ListDaemonDeployments` operation.
+pub mod list_daemon_deployments;
+
+/// Types for the `ListDaemonTaskDefinitions` operation.
+pub mod list_daemon_task_definitions;
+
+/// Types for the `ListDaemons` operation.
+pub mod list_daemons;
+
 /// Types for the `ListServiceDeployments` operation.
 pub mod list_service_deployments;
 
@@ -132,6 +162,9 @@ pub mod put_cluster_capacity_providers;
 
 /// Types for the `RegisterContainerInstance` operation.
 pub mod register_container_instance;
+
+/// Types for the `RegisterDaemonTaskDefinition` operation.
+pub mod register_daemon_task_definition;
 
 /// Types for the `RegisterTaskDefinition` operation.
 pub mod register_task_definition;
@@ -177,6 +210,9 @@ pub mod update_container_agent;
 
 /// Types for the `UpdateContainerInstancesState` operation.
 pub mod update_container_instances_state;
+
+/// Types for the `UpdateDaemon` operation.
+pub mod update_daemon;
 
 /// Types for the `UpdateExpressGatewayService` operation.
 pub mod update_express_gateway_service;

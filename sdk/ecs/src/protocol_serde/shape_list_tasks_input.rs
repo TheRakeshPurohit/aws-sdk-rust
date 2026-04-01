@@ -33,5 +33,8 @@ pub fn ser_list_tasks_input_input(
     if let Some(var_9) = &input.launch_type {
         object.key("launchType").string(var_9.as_str());
     }
+    if let Some(var_10) = &input.daemon_name {
+        object.key("daemonName").string(var_10.as_str());
+    }
     Ok(())
 }

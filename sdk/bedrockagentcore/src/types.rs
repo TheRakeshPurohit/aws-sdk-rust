@@ -45,6 +45,8 @@ pub use crate::types::_filter_input::FilterInput;
 
 pub use crate::types::_extraction_job_filter_input::ExtractionJobFilterInput;
 
+pub use crate::types::_session_filter::SessionFilter;
+
 pub use crate::types::_search_criteria::SearchCriteria;
 
 pub use crate::types::_extraction_job::ExtractionJob;
@@ -104,6 +106,8 @@ pub use crate::types::_extraction_job_status::ExtractionJobStatus;
 pub use crate::types::_extraction_job_metadata::ExtractionJobMetadata;
 
 pub use crate::types::_memory_record_summary::MemoryRecordSummary;
+
+pub use crate::types::_event_filter_condition::EventFilterCondition;
 
 pub use crate::types::_session_summary::SessionSummary;
 
@@ -253,6 +257,8 @@ mod _evaluation_target;
 
 mod _event;
 
+mod _event_filter_condition;
+
 mod _event_metadata_filter_expression;
 
 mod _external_proxy;
@@ -336,6 +342,8 @@ mod _s3_location;
 mod _search_criteria;
 
 mod _secrets_manager_location;
+
+mod _session_filter;
 
 mod _session_status;
 

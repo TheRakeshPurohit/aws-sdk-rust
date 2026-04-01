@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoadSnapTravelModeOptions {
-    /// <p>Travel mode options when the provided travel mode is "Truck".</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
     pub truck: ::std::option::Option<crate::types::RoadSnapTruckOptions>,
 }
 impl RoadSnapTravelModeOptions {
-    /// <p>Travel mode options when the provided travel mode is "Truck".</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
     pub fn truck(&self) -> ::std::option::Option<&crate::types::RoadSnapTruckOptions> {
         self.truck.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct RoadSnapTravelModeOptionsBuilder {
     pub(crate) truck: ::std::option::Option<crate::types::RoadSnapTruckOptions>,
 }
 impl RoadSnapTravelModeOptionsBuilder {
-    /// <p>Travel mode options when the provided travel mode is "Truck".</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
     pub fn truck(mut self, input: crate::types::RoadSnapTruckOptions) -> Self {
         self.truck = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Travel mode options when the provided travel mode is "Truck".</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
     pub fn set_truck(mut self, input: ::std::option::Option<crate::types::RoadSnapTruckOptions>) -> Self {
         self.truck = input;
         self
     }
-    /// <p>Travel mode options when the provided travel mode is "Truck".</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
     pub fn get_truck(&self) -> &::std::option::Option<crate::types::RoadSnapTruckOptions> {
         &self.truck
     }

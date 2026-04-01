@@ -12,3 +12,7 @@ pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExce
 pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 
 pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
+
+pub use crate::types::error::_bad_request_exception::BadRequestExceptionBuilder;
+
+pub use crate::types::error::_not_acceptable_exception::NotAcceptableExceptionBuilder;

@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteMatrixDestination {
-    /// <p>Destination related options.</p>
+    /// <p>Destination related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub options: ::std::option::Option<crate::types::RouteMatrixDestinationOptions>,
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub position: ::std::vec::Vec<f64>,
 }
 impl RouteMatrixDestination {
-    /// <p>Destination related options.</p>
+    /// <p>Destination related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::RouteMatrixDestinationOptions> {
         self.options.as_ref()
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(&self) -> &[f64] {
         use std::ops::Deref;
         self.position.deref()
@@ -43,17 +43,17 @@ pub struct RouteMatrixDestinationBuilder {
     pub(crate) position: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl RouteMatrixDestinationBuilder {
-    /// <p>Destination related options.</p>
+    /// <p>Destination related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn options(mut self, input: crate::types::RouteMatrixDestinationOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Destination related options.</p>
+    /// <p>Destination related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::RouteMatrixDestinationOptions>) -> Self {
         self.options = input;
         self
     }
-    /// <p>Destination related options.</p>
+    /// <p>Destination related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::RouteMatrixDestinationOptions> {
         &self.options
     }
@@ -61,19 +61,19 @@ impl RouteMatrixDestinationBuilder {
     ///
     /// To override the contents of this collection use [`set_position`](Self::set_position).
     ///
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
         v.push(input);
         self.position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.position = input;
         self
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.position
     }

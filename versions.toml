@@ -276,9 +276,9 @@ model_hash = 'ba67700f81d07d7e7b621e40d6880550e5d4edde66146caaaea5538273e68d8f'
 
 [crates.aws-sdk-bedrock]
 category = 'AwsSdk'
-version = '1.138.0'
-source_hash = '2ef89019ca3150a978dfbec6e7443ac61e5dabc6c24e216eb9d7a539be69f7a4'
-model_hash = 'ff2a1e206a9d8dd7451ebe89c62cc02e8bdeac5e778a55211a028aeb99145d4d'
+version = '1.139.0'
+source_hash = '694e4bd6b8fa59e04471ac8480655ea654d64eada4d5960931157308c706c648'
+model_hash = '74b148dbf0875250943d95255fb7e7ae26fd47d560d46bf99bf3c2f30f946ee6'
 
 [crates.aws-sdk-bedrockagent]
 category = 'AwsSdk'
@@ -288,15 +288,15 @@ model_hash = '2321d2b766cd78bc8a9b2ce61ab7d7172ffe6eb91d3841b3a4ea9bb99895bc58'
 
 [crates.aws-sdk-bedrockagentcore]
 category = 'AwsSdk'
-version = '1.34.0'
-source_hash = '8e8f7776de389bd79a3b6bb190911c69311143462de361baa2c2cc7c760a3747'
-model_hash = '0efb1814ba701f653e41c69acfe9fec6d48281aefc75d0b1f9f9f4701f309d29'
+version = '1.35.0'
+source_hash = 'f17fc46b81988f0d2bfcb2df21cd04c98d7a7fb3ee4fe10be40e3a04570301f5'
+model_hash = 'cac066f28940e7237c62ff879282f395e1015eeab1f2fc045d892b67a0bdec5a'
 
 [crates.aws-sdk-bedrockagentcorecontrol]
 category = 'AwsSdk'
-version = '1.42.0'
-source_hash = 'a6f9ad7044f58801eeb5ef8a35344d0cb96e6fec186615eae2f58afab6264707'
-model_hash = '8b87aa8230fcc9f64a82f9cee9763cddbaad0b2171aee6f8cd8657223c1fd29c'
+version = '1.43.0'
+source_hash = 'aa05317657f163d3d73c3fab2a4918a0f0fa98d6e54fbf8755bfee6914072045'
+model_hash = 'db0c544dd3c9a4574871bd9963d2b05d2439764b86dc0a2b6f1ccc87faa41bc4'
 
 [crates.aws-sdk-bedrockagentruntime]
 category = 'AwsSdk'
@@ -852,9 +852,9 @@ model_hash = '9908f38e142f4d673b016f3725aa9af554e5c10c035f5594f716513556808e8d'
 
 [crates.aws-sdk-ecs]
 category = 'AwsSdk'
-version = '1.119.0'
-source_hash = '7c78d0a8580b3ad83a8c42001f1da56ec1101d6b46824d6cc17ac272fabd8b2b'
-model_hash = 'd008d434d9d8e20b42ed318736ac8f1284e5c9c8369cceed53c35b39226ba5d2'
+version = '1.120.0'
+source_hash = 'bc1f2e74634d4e0539d2ec7a7147ffabd7dc6c66d90d035a0543979bf728a56c'
+model_hash = '9e9e4bd6ec892225fa4d1b4f2107e30d6b46dc917d480165eb59715491cd20af'
 
 [crates.aws-sdk-efs]
 category = 'AwsSdk'
@@ -876,9 +876,9 @@ model_hash = '0929cd973d75aff16e6243950cf389084f9ef0dc22e0f93ca9a784d1f3e0b371'
 
 [crates.aws-sdk-elasticache]
 category = 'AwsSdk'
-version = '1.103.0'
-source_hash = 'ff3ee5f5a18850fac6b744c79b3f6afe1664050ed7cdd0cb73699b8f84aacc66'
-model_hash = '3cab37419e85db93fc7eb518a299429f6cd675042f4febf1c8da65e5ed270946'
+version = '1.104.0'
+source_hash = '24542ac9e5a6fc0efbec38bf7b16ae4c7b16695cb38829a610a6342aa1773721'
+model_hash = 'ec43e5c31a7fb2a2df2353fc232413465172291c4a7cdd341ab274cdb1c218b0'
 
 [crates.aws-sdk-elasticbeanstalk]
 category = 'AwsSdk'
@@ -900,9 +900,9 @@ model_hash = '808fe379a3bfeed01d2e6ba983a7d574c03531b69cc1981eac1f471c91827286'
 
 [crates.aws-sdk-elasticsearch]
 category = 'AwsSdk'
-version = '1.101.0'
-source_hash = 'e15cc4abe18a9d5f6fa809fedf2d0c6c2577dd43d1d393b08501a5f963cb841c'
-model_hash = '02155459f41f07e373deb8a856420d54f8d292d97cb1f4a07fc24317c98ea83c'
+version = '1.102.0'
+source_hash = 'c9727b65acdef2f80f3a2d2589dd3cb08a9cdf6fa677d47d458ee0e3cde6ce28'
+model_hash = '3d661253a1c2cdcb455dab2f28c78bad3eeb48d09a85b5ffa6493a6b8aef72d8'
 
 [crates.aws-sdk-elastictranscoder]
 category = 'AwsSdk'
@@ -1038,9 +1038,9 @@ model_hash = '2b07ec4241404c18592195adf78a243b610feadf1a35a8bc4fdd0e7d5e107c54'
 
 [crates.aws-sdk-georoutes]
 category = 'AwsSdk'
-version = '1.51.0'
-source_hash = '5d237b4c5d43a95bfa8c8f055cc07163ab4d26cd764fe393004cb9d78022c6cb'
-model_hash = '08c5711afb5ac2101e98880c3568a5c4a34d9bdaa5fa0162dcff8ba0187dcc70'
+version = '1.52.0'
+source_hash = '42319f3d0baa410437924e81a1e0bb53ae280ef7e5d2f44419563bfe78be32e5'
+model_hash = 'ca11125d958206fd110ea544f2898a0168cd1e78c73b2ea8bc389b8a6ed2b43f'
 
 [crates.aws-sdk-glacier]
 category = 'AwsSdk'
@@ -1548,9 +1548,9 @@ model_hash = '16d441cb61ebe27eb428ac80eeafc896207d7d45bb181951751d5471ba5294ed'
 
 [crates.aws-sdk-medicalimaging]
 category = 'AwsSdk'
-version = '1.103.0'
-source_hash = '5c3c1bd45485023a90162ee4a7a28b4a8c91f2d0d7c9c68806ed6ba3fb100eae'
-model_hash = '7c4157346bd4582e66ab4e8e6479bb40308c88fa9242318c986c83e474bd6629'
+version = '1.104.0'
+source_hash = '9e8b535034903c5c71bb2013b6432105e0d1cc723a94c82c686e2a99eb646448'
+model_hash = '47980ca30aa0c77caef6de1e0df7935f15d5bc1b61e8f8ed7334b891f52cbcd3'
 
 [crates.aws-sdk-memorydb]
 category = 'AwsSdk'
@@ -1710,9 +1710,9 @@ model_hash = '05e539c220a8c092e4c4761be79a36ce85bac2b53b920e7db2b9f35b39ad4421'
 
 [crates.aws-sdk-opensearch]
 category = 'AwsSdk'
-version = '1.121.0'
-source_hash = 'a7d2b2e4c00fb1db5f22ce803b597fcf845ca34f29ff34659191905677b925c3'
-model_hash = '771bdf9c4f2dc65dc456e94e06d82933fd6416c9aa021a5c3d114783b9d5ef8e'
+version = '1.122.0'
+source_hash = 'cc8768464af1bf578f57161f6132d01900cc6c0616c408a51f7ec3b7d1ebd3b5'
+model_hash = '0bd44f02d66de93d931d6b7a94a7bb913a9e1ed51a96322b53086779abc85fda'
 
 [crates.aws-sdk-opensearchserverless]
 category = 'AwsSdk'
@@ -2698,31 +2698,13 @@ source_hash = 'f3ac9c811bb96166d445472d93438ea6fab84ad6998bd4c11346cff9cabc148e'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd507c9eecb3d559fd9efaa58d1f6f1a441526cac0cef82c8edfa21eb62cb7d67'
-
-[release]
-tag = 'release-2026-03-31'
-
 [release.crates]
-aws-sdk-acm = '1.101.0'
-aws-sdk-cloudfront = '1.115.0'
-aws-sdk-databasemigration = '1.110.0'
-aws-sdk-dataexchange = '1.101.0'
-aws-sdk-datazone = '1.130.0'
-aws-sdk-devopsagent = '1.1.0'
-aws-sdk-ec2 = '1.220.1'
-aws-sdk-geomaps = '1.53.0'
-aws-sdk-kinesisanalyticsv2 = '1.102.0'
-aws-sdk-mailmanager = '1.82.0'
-aws-sdk-marketplaceagreement = '1.97.0'
-aws-sdk-observabilityadmin = '1.54.0'
-aws-sdk-odb = '1.28.0'
-aws-sdk-opensearch = '1.121.0'
-aws-sdk-organizations = '1.113.0'
-aws-sdk-partnercentralselling = '1.57.0'
-aws-sdk-pinpointsmsvoicev2 = '1.107.0'
-aws-sdk-quicksight = '1.128.0'
-aws-sdk-s3 = '1.128.0'
-aws-sdk-s3control = '1.114.0'
-aws-sdk-s3tables = '1.54.0'
-aws-sdk-securityagent = '1.0.0'
-aws-sdk-sustainability = '1.0.0'
+aws-sdk-bedrock = '1.139.0'
+aws-sdk-bedrockagentcore = '1.35.0'
+aws-sdk-bedrockagentcorecontrol = '1.43.0'
+aws-sdk-ecs = '1.120.0'
+aws-sdk-elasticache = '1.104.0'
+aws-sdk-elasticsearch = '1.102.0'
+aws-sdk-georoutes = '1.52.0'
+aws-sdk-medicalimaging = '1.104.0'
+aws-sdk-opensearch = '1.122.0'

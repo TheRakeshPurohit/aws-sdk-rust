@@ -79,7 +79,7 @@ pub struct ReplicationGroup {
     pub transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
     /// <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Valkey or Redis OSS clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Valkey or Redis OSS clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled.</p>
     pub cluster_mode: ::std::option::Option<crate::types::ClusterMode>,
-    /// <p>The engine used in a replication group. The options are redis, memcached or valkey.</p>
+    /// <p>The engine used in a replication group. The options are valkey, memcached or redis.</p>
     pub engine: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationGroup {
@@ -230,7 +230,7 @@ impl ReplicationGroup {
     pub fn cluster_mode(&self) -> ::std::option::Option<&crate::types::ClusterMode> {
         self.cluster_mode.as_ref()
     }
-    /// <p>The engine used in a replication group. The options are redis, memcached or valkey.</p>
+    /// <p>The engine used in a replication group. The options are valkey, memcached or redis.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -783,17 +783,17 @@ impl ReplicationGroupBuilder {
     pub fn get_cluster_mode(&self) -> &::std::option::Option<crate::types::ClusterMode> {
         &self.cluster_mode
     }
-    /// <p>The engine used in a replication group. The options are redis, memcached or valkey.</p>
+    /// <p>The engine used in a replication group. The options are valkey, memcached or redis.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The engine used in a replication group. The options are redis, memcached or valkey.</p>
+    /// <p>The engine used in a replication group. The options are valkey, memcached or redis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The engine used in a replication group. The options are redis, memcached or valkey.</p>
+    /// <p>The engine used in a replication group. The options are valkey, memcached or redis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }

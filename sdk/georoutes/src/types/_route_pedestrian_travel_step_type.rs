@@ -15,14 +15,11 @@
 ///     RoutePedestrianTravelStepType::Arrive => { /* ... */ },
 ///     RoutePedestrianTravelStepType::Continue => { /* ... */ },
 ///     RoutePedestrianTravelStepType::Depart => { /* ... */ },
-///     RoutePedestrianTravelStepType::Exit => { /* ... */ },
 ///     RoutePedestrianTravelStepType::Keep => { /* ... */ },
-///     RoutePedestrianTravelStepType::Ramp => { /* ... */ },
 ///     RoutePedestrianTravelStepType::RoundaboutEnter => { /* ... */ },
 ///     RoutePedestrianTravelStepType::RoundaboutExit => { /* ... */ },
 ///     RoutePedestrianTravelStepType::RoundaboutPass => { /* ... */ },
 ///     RoutePedestrianTravelStepType::Turn => { /* ... */ },
-///     RoutePedestrianTravelStepType::UTurn => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -47,7 +44,9 @@
 ///
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::hash::Hash)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
+)]
 pub enum RoutePedestrianTravelStepType {
     #[allow(missing_docs)] // documentation missing in model
     Arrive,
@@ -56,11 +55,7 @@ pub enum RoutePedestrianTravelStepType {
     #[allow(missing_docs)] // documentation missing in model
     Depart,
     #[allow(missing_docs)] // documentation missing in model
-    Exit,
-    #[allow(missing_docs)] // documentation missing in model
     Keep,
-    #[allow(missing_docs)] // documentation missing in model
-    Ramp,
     #[allow(missing_docs)] // documentation missing in model
     RoundaboutEnter,
     #[allow(missing_docs)] // documentation missing in model
@@ -69,8 +64,6 @@ pub enum RoutePedestrianTravelStepType {
     RoundaboutPass,
     #[allow(missing_docs)] // documentation missing in model
     Turn,
-    #[allow(missing_docs)] // documentation missing in model
-    UTurn,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -81,14 +74,11 @@ impl ::std::convert::From<&str> for RoutePedestrianTravelStepType {
             "Arrive" => RoutePedestrianTravelStepType::Arrive,
             "Continue" => RoutePedestrianTravelStepType::Continue,
             "Depart" => RoutePedestrianTravelStepType::Depart,
-            "Exit" => RoutePedestrianTravelStepType::Exit,
             "Keep" => RoutePedestrianTravelStepType::Keep,
-            "Ramp" => RoutePedestrianTravelStepType::Ramp,
             "RoundaboutEnter" => RoutePedestrianTravelStepType::RoundaboutEnter,
             "RoundaboutExit" => RoutePedestrianTravelStepType::RoundaboutExit,
             "RoundaboutPass" => RoutePedestrianTravelStepType::RoundaboutPass,
             "Turn" => RoutePedestrianTravelStepType::Turn,
-            "UTurn" => RoutePedestrianTravelStepType::UTurn,
             other => RoutePedestrianTravelStepType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -107,14 +97,11 @@ impl RoutePedestrianTravelStepType {
             RoutePedestrianTravelStepType::Arrive => "Arrive",
             RoutePedestrianTravelStepType::Continue => "Continue",
             RoutePedestrianTravelStepType::Depart => "Depart",
-            RoutePedestrianTravelStepType::Exit => "Exit",
             RoutePedestrianTravelStepType::Keep => "Keep",
-            RoutePedestrianTravelStepType::Ramp => "Ramp",
             RoutePedestrianTravelStepType::RoundaboutEnter => "RoundaboutEnter",
             RoutePedestrianTravelStepType::RoundaboutExit => "RoundaboutExit",
             RoutePedestrianTravelStepType::RoundaboutPass => "RoundaboutPass",
             RoutePedestrianTravelStepType::Turn => "Turn",
-            RoutePedestrianTravelStepType::UTurn => "UTurn",
             RoutePedestrianTravelStepType::Unknown(value) => value.as_str(),
         }
     }
@@ -124,14 +111,11 @@ impl RoutePedestrianTravelStepType {
             "Arrive",
             "Continue",
             "Depart",
-            "Exit",
             "Keep",
-            "Ramp",
             "RoundaboutEnter",
             "RoundaboutExit",
             "RoundaboutPass",
             "Turn",
-            "UTurn",
         ]
     }
 }
@@ -158,20 +142,12 @@ impl ::std::fmt::Display for RoutePedestrianTravelStepType {
             RoutePedestrianTravelStepType::Arrive => write!(f, "Arrive"),
             RoutePedestrianTravelStepType::Continue => write!(f, "Continue"),
             RoutePedestrianTravelStepType::Depart => write!(f, "Depart"),
-            RoutePedestrianTravelStepType::Exit => write!(f, "Exit"),
             RoutePedestrianTravelStepType::Keep => write!(f, "Keep"),
-            RoutePedestrianTravelStepType::Ramp => write!(f, "Ramp"),
             RoutePedestrianTravelStepType::RoundaboutEnter => write!(f, "RoundaboutEnter"),
             RoutePedestrianTravelStepType::RoundaboutExit => write!(f, "RoundaboutExit"),
             RoutePedestrianTravelStepType::RoundaboutPass => write!(f, "RoundaboutPass"),
             RoutePedestrianTravelStepType::Turn => write!(f, "Turn"),
-            RoutePedestrianTravelStepType::UTurn => write!(f, "UTurn"),
             RoutePedestrianTravelStepType::Unknown(value) => write!(f, "{value}"),
         }
-    }
-}
-impl ::std::fmt::Debug for RoutePedestrianTravelStepType {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        ::std::write!(f, "*** Sensitive Data Redacted ***")
     }
 }

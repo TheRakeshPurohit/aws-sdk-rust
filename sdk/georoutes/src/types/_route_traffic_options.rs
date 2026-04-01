@@ -6,8 +6,22 @@
 pub struct RouteTrafficOptions {
     /// <p>Duration for which flow traffic is considered valid. For this period, the flow traffic is used over historical traffic data. Flow traffic refers to congestion, which changes very quickly. Duration in seconds for which flow traffic event would be considered valid. While flow traffic event is valid it will be used over the historical traffic data.</p>
     pub flow_event_threshold_override: i64,
-    /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Specifies how traffic data should be used when calculating routes.</p>
+    /// <p>Default Value: <code>UseTrafficData</code></p><note>
+    /// <p>Traffic data usage depends on the time parameters in your route request:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When <code>Usage</code> is set to <code>UseTrafficData</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>DepartNow</code> is set to <code>true</code>, or if you specify <code>DepartureTime</code> or <code>ArrivalTime</code>, then all traffic data is considered (including live traffic and closures).</p></li>
+    /// <li>
+    /// <p>If <code>DepartNow</code>, <code>DepartureTime</code>, and <code>ArrivalTime</code> are all unspecified, then only long-term closures are considered, regardless of this setting.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>When <code>Usage</code> is set to <code>IgnoreTrafficData</code>, then all traffic data is ignored regardless of the time parameters in your route request.</p></li>
+    /// </ul>
+    /// </note>
     pub usage: ::std::option::Option<crate::types::TrafficUsage>,
 }
 impl RouteTrafficOptions {
@@ -15,8 +29,22 @@ impl RouteTrafficOptions {
     pub fn flow_event_threshold_override(&self) -> i64 {
         self.flow_event_threshold_override
     }
-    /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Specifies how traffic data should be used when calculating routes.</p>
+    /// <p>Default Value: <code>UseTrafficData</code></p><note>
+    /// <p>Traffic data usage depends on the time parameters in your route request:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When <code>Usage</code> is set to <code>UseTrafficData</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>DepartNow</code> is set to <code>true</code>, or if you specify <code>DepartureTime</code> or <code>ArrivalTime</code>, then all traffic data is considered (including live traffic and closures).</p></li>
+    /// <li>
+    /// <p>If <code>DepartNow</code>, <code>DepartureTime</code>, and <code>ArrivalTime</code> are all unspecified, then only long-term closures are considered, regardless of this setting.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>When <code>Usage</code> is set to <code>IgnoreTrafficData</code>, then all traffic data is ignored regardless of the time parameters in your route request.</p></li>
+    /// </ul>
+    /// </note>
     pub fn usage(&self) -> ::std::option::Option<&crate::types::TrafficUsage> {
         self.usage.as_ref()
     }
@@ -58,20 +86,62 @@ impl RouteTrafficOptionsBuilder {
     pub fn get_flow_event_threshold_override(&self) -> &::std::option::Option<i64> {
         &self.flow_event_threshold_override
     }
-    /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Specifies how traffic data should be used when calculating routes.</p>
+    /// <p>Default Value: <code>UseTrafficData</code></p><note>
+    /// <p>Traffic data usage depends on the time parameters in your route request:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When <code>Usage</code> is set to <code>UseTrafficData</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>DepartNow</code> is set to <code>true</code>, or if you specify <code>DepartureTime</code> or <code>ArrivalTime</code>, then all traffic data is considered (including live traffic and closures).</p></li>
+    /// <li>
+    /// <p>If <code>DepartNow</code>, <code>DepartureTime</code>, and <code>ArrivalTime</code> are all unspecified, then only long-term closures are considered, regardless of this setting.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>When <code>Usage</code> is set to <code>IgnoreTrafficData</code>, then all traffic data is ignored regardless of the time parameters in your route request.</p></li>
+    /// </ul>
+    /// </note>
     pub fn usage(mut self, input: crate::types::TrafficUsage) -> Self {
         self.usage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Specifies how traffic data should be used when calculating routes.</p>
+    /// <p>Default Value: <code>UseTrafficData</code></p><note>
+    /// <p>Traffic data usage depends on the time parameters in your route request:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When <code>Usage</code> is set to <code>UseTrafficData</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>DepartNow</code> is set to <code>true</code>, or if you specify <code>DepartureTime</code> or <code>ArrivalTime</code>, then all traffic data is considered (including live traffic and closures).</p></li>
+    /// <li>
+    /// <p>If <code>DepartNow</code>, <code>DepartureTime</code>, and <code>ArrivalTime</code> are all unspecified, then only long-term closures are considered, regardless of this setting.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>When <code>Usage</code> is set to <code>IgnoreTrafficData</code>, then all traffic data is ignored regardless of the time parameters in your route request.</p></li>
+    /// </ul>
+    /// </note>
     pub fn set_usage(mut self, input: ::std::option::Option<crate::types::TrafficUsage>) -> Self {
         self.usage = input;
         self
     }
-    /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Specifies how traffic data should be used when calculating routes.</p>
+    /// <p>Default Value: <code>UseTrafficData</code></p><note>
+    /// <p>Traffic data usage depends on the time parameters in your route request:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When <code>Usage</code> is set to <code>UseTrafficData</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If <code>DepartNow</code> is set to <code>true</code>, or if you specify <code>DepartureTime</code> or <code>ArrivalTime</code>, then all traffic data is considered (including live traffic and closures).</p></li>
+    /// <li>
+    /// <p>If <code>DepartNow</code>, <code>DepartureTime</code>, and <code>ArrivalTime</code> are all unspecified, then only long-term closures are considered, regardless of this setting.</p></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>When <code>Usage</code> is set to <code>IgnoreTrafficData</code>, then all traffic data is ignored regardless of the time parameters in your route request.</p></li>
+    /// </ul>
+    /// </note>
     pub fn get_usage(&self) -> &::std::option::Option<crate::types::TrafficUsage> {
         &self.usage
     }

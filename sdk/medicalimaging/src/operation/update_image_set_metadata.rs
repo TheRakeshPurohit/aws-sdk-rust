@@ -244,6 +244,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateImageS
                         query.push_kv("force", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
+                if let ::std::option::Option::Some(inner_5) = &_input.include_study_image_sets {
+                    {
+                        query.push_kv("includeStudyImageSets", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

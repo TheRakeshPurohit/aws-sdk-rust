@@ -17,6 +17,8 @@ pub struct UpdateImageSetMetadataInput {
     /// <p>Adding, removing, or updating private tags for an individual SOP Instance</p></li>
     /// </ul>
     pub force: ::std::option::Option<bool>,
+    /// <p>Flag to apply the metadata updates to all image sets in the same Study as the requested image set ID.</p>
+    pub include_study_image_sets: ::std::option::Option<bool>,
     /// <p>Update image set metadata updates.</p>
     pub update_image_set_metadata_updates: ::std::option::Option<crate::types::MetadataUpdates>,
 }
@@ -43,6 +45,10 @@ impl UpdateImageSetMetadataInput {
     pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
+    /// <p>Flag to apply the metadata updates to all image sets in the same Study as the requested image set ID.</p>
+    pub fn include_study_image_sets(&self) -> ::std::option::Option<bool> {
+        self.include_study_image_sets
+    }
     /// <p>Update image set metadata updates.</p>
     pub fn update_image_set_metadata_updates(&self) -> ::std::option::Option<&crate::types::MetadataUpdates> {
         self.update_image_set_metadata_updates.as_ref()
@@ -63,6 +69,7 @@ pub struct UpdateImageSetMetadataInputBuilder {
     pub(crate) image_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) latest_version_id: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
+    pub(crate) include_study_image_sets: ::std::option::Option<bool>,
     pub(crate) update_image_set_metadata_updates: ::std::option::Option<crate::types::MetadataUpdates>,
 }
 impl UpdateImageSetMetadataInputBuilder {
@@ -143,6 +150,20 @@ impl UpdateImageSetMetadataInputBuilder {
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         &self.force
     }
+    /// <p>Flag to apply the metadata updates to all image sets in the same Study as the requested image set ID.</p>
+    pub fn include_study_image_sets(mut self, input: bool) -> Self {
+        self.include_study_image_sets = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Flag to apply the metadata updates to all image sets in the same Study as the requested image set ID.</p>
+    pub fn set_include_study_image_sets(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_study_image_sets = input;
+        self
+    }
+    /// <p>Flag to apply the metadata updates to all image sets in the same Study as the requested image set ID.</p>
+    pub fn get_include_study_image_sets(&self) -> &::std::option::Option<bool> {
+        &self.include_study_image_sets
+    }
     /// <p>Update image set metadata updates.</p>
     /// This field is required.
     pub fn update_image_set_metadata_updates(mut self, input: crate::types::MetadataUpdates) -> Self {
@@ -170,6 +191,7 @@ impl UpdateImageSetMetadataInputBuilder {
             image_set_id: self.image_set_id,
             latest_version_id: self.latest_version_id,
             force: self.force,
+            include_study_image_sets: self.include_study_image_sets,
             update_image_set_metadata_updates: self.update_image_set_metadata_updates,
         })
     }

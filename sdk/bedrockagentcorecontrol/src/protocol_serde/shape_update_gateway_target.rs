@@ -219,6 +219,14 @@ pub(crate) fn de_update_gateway_target(
                             .transpose()?,
                     );
                 }
+                "privateEndpoint" => {
+                    builder = builder.set_private_endpoint(crate::protocol_serde::shape_private_endpoint::de_private_endpoint(tokens, _value)?);
+                }
+                "privateEndpointManagedResources" => {
+                    builder = builder.set_private_endpoint_managed_resources(
+                        crate::protocol_serde::shape_private_endpoint_managed_resources::de_private_endpoint_managed_resources(tokens, _value)?,
+                    );
+                }
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

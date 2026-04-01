@@ -423,6 +423,10 @@ pub(crate) mod shape_policy_generations;
 
 pub(crate) mod shape_policy_status_reasons;
 
+pub(crate) mod shape_private_endpoint;
+
+pub(crate) mod shape_private_endpoint_managed_resources;
+
 pub(crate) mod shape_protocol_configuration;
 
 pub(crate) mod shape_recording_config;
@@ -539,6 +543,10 @@ pub(crate) mod shape_linkedin_oauth2_provider_config_output;
 
 pub(crate) mod shape_llm_as_a_judge_evaluator_config;
 
+pub(crate) mod shape_managed_lattice_resource;
+
+pub(crate) mod shape_managed_resource_details;
+
 pub(crate) mod shape_mcp_gateway_configuration;
 
 pub(crate) mod shape_mcp_target_configuration;
@@ -578,6 +586,8 @@ pub(crate) mod shape_salesforce_oauth2_provider_config_input;
 pub(crate) mod shape_salesforce_oauth2_provider_config_output;
 
 pub(crate) mod shape_sampling_config;
+
+pub(crate) mod shape_self_managed_lattice_resource;
 
 pub(crate) mod shape_semantic_memory_strategy_input;
 
@@ -635,6 +645,8 @@ pub(crate) mod shape_gateway_api_key_credential_provider;
 
 pub(crate) mod shape_gateway_interception_points;
 
+pub(crate) mod shape_iam_credential_provider;
+
 pub(crate) mod shape_kinesis_resource;
 
 pub(crate) mod shape_lambda_evaluator_config;
@@ -661,11 +673,15 @@ pub(crate) mod shape_rating_scale;
 
 pub(crate) mod shape_secrets_manager_location;
 
+pub(crate) mod shape_security_group_ids;
+
 pub(crate) mod shape_security_groups;
 
 pub(crate) mod shape_service_names_list;
 
 pub(crate) mod shape_stream_delivery_resources_list;
+
+pub(crate) mod shape_subnet_ids;
 
 pub(crate) mod shape_subnets;
 

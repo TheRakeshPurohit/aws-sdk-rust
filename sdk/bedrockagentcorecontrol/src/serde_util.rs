@@ -2025,6 +2025,21 @@ pub(crate) fn llm_as_a_judge_evaluator_config_correct_errors(
     builder
 }
 
+pub(crate) fn managed_lattice_resource_correct_errors(
+    mut builder: crate::types::builders::ManagedLatticeResourceBuilder,
+) -> crate::types::builders::ManagedLatticeResourceBuilder {
+    if builder.vpc_identifier.is_none() {
+        builder.vpc_identifier = Some(Default::default())
+    }
+    if builder.subnet_ids.is_none() {
+        builder.subnet_ids = Some(Default::default())
+    }
+    if builder.endpoint_ip_address_type.is_none() {
+        builder.endpoint_ip_address_type = "no value was set".parse::<crate::types::EndpointIpAddressType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn memory_summary_correct_errors(
     mut builder: crate::types::builders::MemorySummaryBuilder,
 ) -> crate::types::builders::MemorySummaryBuilder {
@@ -2452,6 +2467,15 @@ pub(crate) fn gateway_api_key_credential_provider_correct_errors(
 ) -> crate::types::builders::GatewayApiKeyCredentialProviderBuilder {
     if builder.provider_arn.is_none() {
         builder.provider_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn iam_credential_provider_correct_errors(
+    mut builder: crate::types::builders::IamCredentialProviderBuilder,
+) -> crate::types::builders::IamCredentialProviderBuilder {
+    if builder.service.is_none() {
+        builder.service = Some(Default::default())
     }
     builder
 }

@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WaypointOptimizationTrafficOptions {
     /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Default value: <code>UseTrafficData</code></p>
     pub usage: ::std::option::Option<crate::types::TrafficUsage>,
 }
 impl WaypointOptimizationTrafficOptions {
     /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Default value: <code>UseTrafficData</code></p>
     pub fn usage(&self) -> ::std::option::Option<&crate::types::TrafficUsage> {
         self.usage.as_ref()
     }
@@ -30,19 +30,19 @@ pub struct WaypointOptimizationTrafficOptionsBuilder {
 }
 impl WaypointOptimizationTrafficOptionsBuilder {
     /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Default value: <code>UseTrafficData</code></p>
     pub fn usage(mut self, input: crate::types::TrafficUsage) -> Self {
         self.usage = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Default value: <code>UseTrafficData</code></p>
     pub fn set_usage(mut self, input: ::std::option::Option<crate::types::TrafficUsage>) -> Self {
         self.usage = input;
         self
     }
     /// <p>Determines if traffic should be used or ignored while calculating the route.</p>
-    /// <p>Default Value: <code>UseTrafficData</code></p>
+    /// <p>Default value: <code>UseTrafficData</code></p>
     pub fn get_usage(&self) -> &::std::option::Option<crate::types::TrafficUsage> {
         &self.usage
     }

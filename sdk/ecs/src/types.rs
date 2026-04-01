@@ -37,6 +37,24 @@ pub use crate::types::_launch_type::LaunchType;
 
 pub use crate::types::_version_info::VersionInfo;
 
+pub use crate::types::_daemon_deployment_configuration::DaemonDeploymentConfiguration;
+
+pub use crate::types::_daemon_propagate_tags::DaemonPropagateTags;
+
+pub use crate::types::_daemon_status::DaemonStatus;
+
+pub use crate::types::_daemon_detail::DaemonDetail;
+
+pub use crate::types::_created_at::CreatedAt;
+
+pub use crate::types::_daemon_task_definition::DaemonTaskDefinition;
+
+pub use crate::types::_daemon_task_definition_revision_filter::DaemonTaskDefinitionRevisionFilter;
+
+pub use crate::types::_daemon_task_definition_status_filter::DaemonTaskDefinitionStatusFilter;
+
+pub use crate::types::_sort_order::SortOrder;
+
 pub use crate::types::_task_set::TaskSet;
 
 pub use crate::types::_express_gateway_container::ExpressGatewayContainer;
@@ -63,8 +81,6 @@ pub use crate::types::_service_connect_configuration::ServiceConnectConfiguratio
 
 pub use crate::types::_service::Service;
 
-pub use crate::types::_created_at::CreatedAt;
-
 pub use crate::types::_resource_management_type::ResourceManagementType;
 
 pub use crate::types::_stop_service_deployment_stop_type::StopServiceDeploymentStopType;
@@ -72,8 +88,6 @@ pub use crate::types::_stop_service_deployment_stop_type::StopServiceDeploymentS
 pub use crate::types::_updated_express_gateway_service::UpdatedExpressGatewayService;
 
 pub use crate::types::_task_definition_status::TaskDefinitionStatus;
-
-pub use crate::types::_sort_order::SortOrder;
 
 pub use crate::types::_network_mode::NetworkMode;
 
@@ -156,6 +170,26 @@ pub use crate::types::_container_instance_field::ContainerInstanceField;
 pub use crate::types::_resource::Resource;
 
 pub use crate::types::_platform_device::PlatformDevice;
+
+pub use crate::types::_daemon_deployment::DaemonDeployment;
+
+pub use crate::types::_daemon_alarm_configuration::DaemonAlarmConfiguration;
+
+pub use crate::types::_daemon_deployment_status::DaemonDeploymentStatus;
+
+pub use crate::types::_daemon_deployment_summary::DaemonDeploymentSummary;
+
+pub use crate::types::_daemon_summary::DaemonSummary;
+
+pub use crate::types::_daemon_revision::DaemonRevision;
+
+pub use crate::types::_daemon_task_definition_status::DaemonTaskDefinitionStatus;
+
+pub use crate::types::_daemon_task_definition_summary::DaemonTaskDefinitionSummary;
+
+pub use crate::types::_daemon_container_definition::DaemonContainerDefinition;
+
+pub use crate::types::_daemon_volume::DaemonVolume;
 
 pub use crate::types::_service_deployment::ServiceDeployment;
 
@@ -281,6 +315,28 @@ pub use crate::types::_managed_agent_name::ManagedAgentName;
 
 pub use crate::types::_platform_device_type::PlatformDeviceType;
 
+pub use crate::types::_daemon_deployment_revision_detail::DaemonDeploymentRevisionDetail;
+
+pub use crate::types::_daemon_circuit_breaker::DaemonCircuitBreaker;
+
+pub use crate::types::_daemon_deployment_alarms::DaemonDeploymentAlarms;
+
+pub use crate::types::_daemon_rollback::DaemonRollback;
+
+pub use crate::types::_daemon_revision_detail::DaemonRevisionDetail;
+
+pub use crate::types::_repository_credentials::RepositoryCredentials;
+
+pub use crate::types::_health_check::HealthCheck;
+
+pub use crate::types::_firelens_configuration::FirelensConfiguration;
+
+pub use crate::types::_daemon_linux_parameters::DaemonLinuxParameters;
+
+pub use crate::types::_container_restart_policy::ContainerRestartPolicy;
+
+pub use crate::types::_host_volume_properties::HostVolumeProperties;
+
 pub use crate::types::_service_revision_summary::ServiceRevisionSummary;
 
 pub use crate::types::_service_deployment_lifecycle_stage::ServiceDeploymentLifecycleStage;
@@ -325,19 +381,9 @@ pub use crate::types::_resolved_configuration::ResolvedConfiguration;
 
 pub use crate::types::_ecs_managed_resources::EcsManagedResources;
 
-pub use crate::types::_repository_credentials::RepositoryCredentials;
-
-pub use crate::types::_container_restart_policy::ContainerRestartPolicy;
-
 pub use crate::types::_linux_parameters::LinuxParameters;
 
 pub use crate::types::_version_consistency::VersionConsistency;
-
-pub use crate::types::_health_check::HealthCheck;
-
-pub use crate::types::_firelens_configuration::FirelensConfiguration;
-
-pub use crate::types::_host_volume_properties::HostVolumeProperties;
 
 pub use crate::types::_docker_volume_configuration::DockerVolumeConfiguration;
 
@@ -383,6 +429,24 @@ pub use crate::types::_capacity_reservation_preference::CapacityReservationPrefe
 
 pub use crate::types::_instance_health_check_result::InstanceHealthCheckResult;
 
+pub use crate::types::_daemon_deployment_rollback_monitors_status::DaemonDeploymentRollbackMonitorsStatus;
+
+pub use crate::types::_daemon_container_image::DaemonContainerImage;
+
+pub use crate::types::_environment_file::EnvironmentFile;
+
+pub use crate::types::_mount_point::MountPoint;
+
+pub use crate::types::_firelens_configuration_type::FirelensConfigurationType;
+
+pub use crate::types::_ulimit::Ulimit;
+
+pub use crate::types::_kernel_capabilities::KernelCapabilities;
+
+pub use crate::types::_container_dependency::ContainerDependency;
+
+pub use crate::types::_system_control::SystemControl;
+
 pub use crate::types::_service_deployment_rollback_monitors_status::ServiceDeploymentRollbackMonitorsStatus;
 
 pub use crate::types::_timeout_configuration::TimeoutConfiguration;
@@ -401,25 +465,11 @@ pub use crate::types::_managed_auto_scaling::ManagedAutoScaling;
 
 pub use crate::types::_port_mapping::PortMapping;
 
-pub use crate::types::_environment_file::EnvironmentFile;
-
-pub use crate::types::_mount_point::MountPoint;
-
 pub use crate::types::_volume_from::VolumeFrom;
-
-pub use crate::types::_kernel_capabilities::KernelCapabilities;
-
-pub use crate::types::_container_dependency::ContainerDependency;
 
 pub use crate::types::_host_entry::HostEntry;
 
-pub use crate::types::_ulimit::Ulimit;
-
-pub use crate::types::_system_control::SystemControl;
-
 pub use crate::types::_resource_requirement::ResourceRequirement;
-
-pub use crate::types::_firelens_configuration_type::FirelensConfigurationType;
 
 pub use crate::types::_scope::Scope;
 
@@ -444,6 +494,20 @@ pub use crate::types::_accelerator_manufacturer::AcceleratorManufacturer;
 pub use crate::types::_accelerator_name::AcceleratorName;
 
 pub use crate::types::_instance_health_check_type::InstanceHealthCheckType;
+
+pub use crate::types::_daemon_deployment_capacity_provider::DaemonDeploymentCapacityProvider;
+
+pub use crate::types::_daemon_capacity_provider::DaemonCapacityProvider;
+
+pub use crate::types::_environment_file_type::EnvironmentFileType;
+
+pub use crate::types::_ulimit_name::UlimitName;
+
+pub use crate::types::_device::Device;
+
+pub use crate::types::_tmpfs::Tmpfs;
+
+pub use crate::types::_container_condition::ContainerCondition;
 
 pub use crate::types::_deployment_lifecycle_hook_stage::DeploymentLifecycleHookStage;
 
@@ -471,16 +535,6 @@ pub use crate::types::_managed_log_group::ManagedLogGroup;
 
 pub use crate::types::_application_protocol::ApplicationProtocol;
 
-pub use crate::types::_environment_file_type::EnvironmentFileType;
-
-pub use crate::types::_device::Device;
-
-pub use crate::types::_tmpfs::Tmpfs;
-
-pub use crate::types::_container_condition::ContainerCondition;
-
-pub use crate::types::_ulimit_name::UlimitName;
-
 pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_efs_authorization_config_iam::EfsAuthorizationConfigIam;
@@ -505,11 +559,11 @@ pub use crate::types::_managed_resource_status::ManagedResourceStatus;
 
 pub use crate::types::_managed_application_auto_scaling_policy::ManagedApplicationAutoScalingPolicy;
 
+pub use crate::types::_device_cgroup_permission::DeviceCgroupPermission;
+
 pub use crate::types::_service_connect_test_traffic_header_rules::ServiceConnectTestTrafficHeaderRules;
 
 pub use crate::types::_managed_target_group::ManagedTargetGroup;
-
-pub use crate::types::_device_cgroup_permission::DeviceCgroupPermission;
 
 pub use crate::types::_service_connect_test_traffic_header_match_rules::ServiceConnectTestTrafficHeaderMatchRules;
 
@@ -622,6 +676,60 @@ mod _cpu_manufacturer;
 mod _create_managed_instances_provider_configuration;
 
 mod _created_at;
+
+mod _daemon_alarm_configuration;
+
+mod _daemon_capacity_provider;
+
+mod _daemon_circuit_breaker;
+
+mod _daemon_container_definition;
+
+mod _daemon_container_image;
+
+mod _daemon_deployment;
+
+mod _daemon_deployment_alarms;
+
+mod _daemon_deployment_capacity_provider;
+
+mod _daemon_deployment_configuration;
+
+mod _daemon_deployment_revision_detail;
+
+mod _daemon_deployment_rollback_monitors_status;
+
+mod _daemon_deployment_status;
+
+mod _daemon_deployment_summary;
+
+mod _daemon_detail;
+
+mod _daemon_linux_parameters;
+
+mod _daemon_propagate_tags;
+
+mod _daemon_revision;
+
+mod _daemon_revision_detail;
+
+mod _daemon_rollback;
+
+mod _daemon_status;
+
+mod _daemon_summary;
+
+mod _daemon_task_definition;
+
+mod _daemon_task_definition_revision_filter;
+
+mod _daemon_task_definition_status;
+
+mod _daemon_task_definition_status_filter;
+
+mod _daemon_task_definition_summary;
+
+mod _daemon_volume;
 
 mod _deployment;
 

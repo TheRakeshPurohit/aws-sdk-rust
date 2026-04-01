@@ -4,16 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteLeg {
-    /// <p>FerryLegDetails is populated when the Leg type is Ferry, and provides additional information that is specific</p>
+    /// <p>FerryLegDetails is populated when the Leg type is Ferry, and provides additional information that is specific to ferry travel. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub ferry_leg_details: ::std::option::Option<crate::types::RouteFerryLegDetails>,
     /// <p>Geometry of the area to be avoided.</p>
     pub geometry: ::std::option::Option<crate::types::RouteLegGeometry>,
-    /// <p>List of languages for instructions within steps in the response.</p>
+    /// <p>List of languages for instructions within steps in the response. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>Details related to the pedestrian leg.</p>
     pub pedestrian_leg_details: ::std::option::Option<crate::types::RoutePedestrianLegDetails>,
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub travel_mode: crate::types::RouteLegTravelMode,
     /// <p>Type of the leg.</p>
     pub r#type: crate::types::RouteLegType,
@@ -21,7 +21,7 @@ pub struct RouteLeg {
     pub vehicle_leg_details: ::std::option::Option<crate::types::RouteVehicleLegDetails>,
 }
 impl RouteLeg {
-    /// <p>FerryLegDetails is populated when the Leg type is Ferry, and provides additional information that is specific</p>
+    /// <p>FerryLegDetails is populated when the Leg type is Ferry, and provides additional information that is specific to ferry travel. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn ferry_leg_details(&self) -> ::std::option::Option<&crate::types::RouteFerryLegDetails> {
         self.ferry_leg_details.as_ref()
     }
@@ -29,7 +29,7 @@ impl RouteLeg {
     pub fn geometry(&self) -> ::std::option::Option<&crate::types::RouteLegGeometry> {
         self.geometry.as_ref()
     }
-    /// <p>List of languages for instructions within steps in the response.</p>
+    /// <p>List of languages for instructions within steps in the response. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
     }
@@ -38,7 +38,7 @@ impl RouteLeg {
         self.pedestrian_leg_details.as_ref()
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn travel_mode(&self) -> &crate::types::RouteLegTravelMode {
         &self.travel_mode
     }
@@ -84,17 +84,17 @@ pub struct RouteLegBuilder {
     pub(crate) vehicle_leg_details: ::std::option::Option<crate::types::RouteVehicleLegDetails>,
 }
 impl RouteLegBuilder {
-    /// <p>FerryLegDetails is populated when the Leg type is Ferry, and provides additional information that is specific</p>
+    /// <p>FerryLegDetails is populated when the Leg type is Ferry, and provides additional information that is specific to ferry travel. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn ferry_leg_details(mut self, input: crate::types::RouteFerryLegDetails) -> Self {
         self.ferry_leg_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>FerryLegDetails is populated when the Leg type is Ferry, and provides additional information that is specific</p>
+    /// <p>FerryLegDetails is populated when the Leg type is Ferry, and provides additional information that is specific to ferry travel. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_ferry_leg_details(mut self, input: ::std::option::Option<crate::types::RouteFerryLegDetails>) -> Self {
         self.ferry_leg_details = input;
         self
     }
-    /// <p>FerryLegDetails is populated when the Leg type is Ferry, and provides additional information that is specific</p>
+    /// <p>FerryLegDetails is populated when the Leg type is Ferry, and provides additional information that is specific to ferry travel. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_ferry_leg_details(&self) -> &::std::option::Option<crate::types::RouteFerryLegDetails> {
         &self.ferry_leg_details
     }
@@ -113,17 +113,17 @@ impl RouteLegBuilder {
     pub fn get_geometry(&self) -> &::std::option::Option<crate::types::RouteLegGeometry> {
         &self.geometry
     }
-    /// <p>List of languages for instructions within steps in the response.</p>
+    /// <p>List of languages for instructions within steps in the response. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>List of languages for instructions within steps in the response.</p>
+    /// <p>List of languages for instructions within steps in the response. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
     }
-    /// <p>List of languages for instructions within steps in the response.</p>
+    /// <p>List of languages for instructions within steps in the response. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.language
     }
@@ -142,20 +142,20 @@ impl RouteLegBuilder {
         &self.pedestrian_leg_details
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     /// This field is required.
     pub fn travel_mode(mut self, input: crate::types::RouteLegTravelMode) -> Self {
         self.travel_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn set_travel_mode(mut self, input: ::std::option::Option<crate::types::RouteLegTravelMode>) -> Self {
         self.travel_mode = input;
         self
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn get_travel_mode(&self) -> &::std::option::Option<crate::types::RouteLegTravelMode> {
         &self.travel_mode
     }

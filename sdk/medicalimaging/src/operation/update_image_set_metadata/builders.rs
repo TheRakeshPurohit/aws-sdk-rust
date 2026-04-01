@@ -182,6 +182,20 @@ impl UpdateImageSetMetadataFluentBuilder {
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         self.inner.get_force()
     }
+    /// <p>Flag to apply the metadata updates to all image sets in the same Study as the requested image set ID.</p>
+    pub fn include_study_image_sets(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_study_image_sets(input);
+        self
+    }
+    /// <p>Flag to apply the metadata updates to all image sets in the same Study as the requested image set ID.</p>
+    pub fn set_include_study_image_sets(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_study_image_sets(input);
+        self
+    }
+    /// <p>Flag to apply the metadata updates to all image sets in the same Study as the requested image set ID.</p>
+    pub fn get_include_study_image_sets(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_study_image_sets()
+    }
     /// <p>Update image set metadata updates.</p>
     pub fn update_image_set_metadata_updates(mut self, input: crate::types::MetadataUpdates) -> Self {
         self.inner = self.inner.update_image_set_metadata_updates(input);

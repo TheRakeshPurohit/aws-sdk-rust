@@ -7,10 +7,10 @@ pub struct RouteMatrixCarOptions {
     /// <p>The vehicle License Plate.</p>
     pub license_plate: ::std::option::Option<crate::types::RouteMatrixVehicleLicensePlate>,
     /// <p>Maximum speed</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub max_speed: ::std::option::Option<f64>,
     /// <p>The number of occupants in the vehicle.</p>
-    /// <p>Default Value: <code>1</code></p>
+    /// <p>Default value: <code>1</code></p>
     pub occupancy: ::std::option::Option<i32>,
 }
 impl RouteMatrixCarOptions {
@@ -19,12 +19,12 @@ impl RouteMatrixCarOptions {
         self.license_plate.as_ref()
     }
     /// <p>Maximum speed</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn max_speed(&self) -> ::std::option::Option<f64> {
         self.max_speed
     }
     /// <p>The number of occupants in the vehicle.</p>
-    /// <p>Default Value: <code>1</code></p>
+    /// <p>Default value: <code>1</code></p>
     pub fn occupancy(&self) -> ::std::option::Option<i32> {
         self.occupancy
     }
@@ -69,36 +69,36 @@ impl RouteMatrixCarOptionsBuilder {
         &self.license_plate
     }
     /// <p>Maximum speed</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn max_speed(mut self, input: f64) -> Self {
         self.max_speed = ::std::option::Option::Some(input);
         self
     }
     /// <p>Maximum speed</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn set_max_speed(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max_speed = input;
         self
     }
     /// <p>Maximum speed</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn get_max_speed(&self) -> &::std::option::Option<f64> {
         &self.max_speed
     }
     /// <p>The number of occupants in the vehicle.</p>
-    /// <p>Default Value: <code>1</code></p>
+    /// <p>Default value: <code>1</code></p>
     pub fn occupancy(mut self, input: i32) -> Self {
         self.occupancy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of occupants in the vehicle.</p>
-    /// <p>Default Value: <code>1</code></p>
+    /// <p>Default value: <code>1</code></p>
     pub fn set_occupancy(mut self, input: ::std::option::Option<i32>) -> Self {
         self.occupancy = input;
         self
     }
     /// <p>The number of occupants in the vehicle.</p>
-    /// <p>Default Value: <code>1</code></p>
+    /// <p>Default value: <code>1</code></p>
     pub fn get_occupancy(&self) -> &::std::option::Option<i32> {
         &self.occupancy
     }

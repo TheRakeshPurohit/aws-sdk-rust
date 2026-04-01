@@ -6,6 +6,8 @@
 pub enum CredentialProvider {
     /// <p>The API key credential provider. This provider uses an API key to authenticate with the target endpoint.</p>
     ApiKeyCredentialProvider(crate::types::GatewayApiKeyCredentialProvider),
+    /// <p>The IAM credential provider. This provider uses IAM authentication with SigV4 signing to access the target endpoint.</p>
+    IamCredentialProvider(crate::types::IamCredentialProvider),
     /// <p>The OAuth credential provider. This provider uses OAuth authentication to access the target endpoint.</p>
     OauthCredentialProvider(crate::types::OAuthCredentialProvider),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -31,6 +33,19 @@ impl CredentialProvider {
     /// Returns true if this is a [`ApiKeyCredentialProvider`](crate::types::CredentialProvider::ApiKeyCredentialProvider).
     pub fn is_api_key_credential_provider(&self) -> bool {
         self.as_api_key_credential_provider().is_ok()
+    }
+    /// Tries to convert the enum instance into [`IamCredentialProvider`](crate::types::CredentialProvider::IamCredentialProvider), extracting the inner [`IamCredentialProvider`](crate::types::IamCredentialProvider).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_iam_credential_provider(&self) -> ::std::result::Result<&crate::types::IamCredentialProvider, &Self> {
+        if let CredentialProvider::IamCredentialProvider(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IamCredentialProvider`](crate::types::CredentialProvider::IamCredentialProvider).
+    pub fn is_iam_credential_provider(&self) -> bool {
+        self.as_iam_credential_provider().is_ok()
     }
     /// Tries to convert the enum instance into [`OauthCredentialProvider`](crate::types::CredentialProvider::OauthCredentialProvider), extracting the inner [`OAuthCredentialProvider`](crate::types::OAuthCredentialProvider).
     /// Returns `Err(&Self)` if it can't be converted.

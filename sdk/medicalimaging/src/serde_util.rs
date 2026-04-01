@@ -151,6 +151,24 @@ pub(crate) fn get_dicom_import_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn bad_request_exception_correct_errors(
+    mut builder: crate::types::error::builders::BadRequestExceptionBuilder,
+) -> crate::types::error::builders::BadRequestExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn not_acceptable_exception_correct_errors(
+    mut builder: crate::types::error::builders::NotAcceptableExceptionBuilder,
+) -> crate::types::error::builders::NotAcceptableExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_image_set_output_output_correct_errors(
     mut builder: crate::operation::get_image_set::builders::GetImageSetOutputBuilder,
 ) -> crate::operation::get_image_set::builders::GetImageSetOutputBuilder {

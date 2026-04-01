@@ -3,64 +3,84 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculateIsolinesInput {
-    /// <p>Features that are allowed while calculating an isoline.</p>
+    /// <p>Enables special road types or features that should be considered for routing even if they might be restricted by default for the selected travel mode. These include high-occupancy vehicle and toll lanes.</p>
     pub allow: ::std::option::Option<crate::types::IsolineAllowOptions>,
-    /// <p>Time of arrival at the destination.</p>
+    /// <p>Determine areas from which <code>Destination</code> can be reached by this time, taking into account predicted traffic conditions and working backward to account for congestion patterns. This attribute cannot be used together with <code>DepartureTime</code> or <code>DepartNow</code>. Specified as an ISO-8601 timestamp with timezone offset.</p>
     /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
     pub arrival_time: ::std::option::Option<::std::string::String>,
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
+    /// <p>Specifies road types, features, or areas to avoid (if possible) when calculating reachable areas. These are treated as preferences rather than strict constraints—if a route cannot be calculated without using an avoided feature, that avoidance preference may be ignored.</p>
     pub avoid: ::std::option::Option<crate::types::IsolineAvoidanceOptions>,
-    /// <p>Uses the current time as the time of departure.</p>
+    /// <p>When true, uses the current time as the departure time and takes current traffic conditions into account. This attribute cannot be used together with <code>DepartureTime</code> or <code>ArrivalTime</code>.</p>
     pub depart_now: ::std::option::Option<bool>,
-    /// <p>Time of departure from thr origin.</p>
+    /// <p>Determine areas that can be reached when departing at this time, taking into account predicted traffic conditions. This attribute cannot be used together with <code>ArrivalTime</code> or <code>DepartNow</code>. Specified as an ISO-8601 timestamp with timezone offset.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
     pub departure_time: ::std::option::Option<::std::string::String>,
-    /// <p>The final position for the route. In the World Geodetic System (WGS 84) format: <code>\[longitude, latitude\]</code>.</p>
+    /// <p>An optional destination point, specified as <code>\[longitude, latitude\]</code> coordinates. When provided, the service calculates areas from which this destination can be reached within the specified thresholds. This reverses the usual isoline calculation to show areas that could reach your location, rather than areas you could reach from your location. Either <code>Origin</code> or <code>Destination</code> must be provided.</p>
     pub destination: ::std::option::Option<::std::vec::Vec<f64>>,
-    /// <p>Destination related options.</p>
+    /// <p>Options that control how the destination point is matched to the road network and how routes can approach it. These options help improve travel time accuracy by accounting for real-world access to the destination.</p>
     pub destination_options: ::std::option::Option<crate::types::IsolineDestinationOptions>,
     /// <p>The format of the returned IsolineGeometry.</p>
-    /// <p>Default Value:<code>FlexiblePolyline</code></p>
+    /// <p>Default value:<code>FlexiblePolyline</code></p>
     pub isoline_geometry_format: ::std::option::Option<crate::types::GeometryFormat>,
-    /// <p>Defines the granularity of the returned Isoline.</p>
+    /// <p>Controls the detail level of the generated isolines. Higher granularity produces smoother shapes but requires more processing time and results in larger responses.</p>
     pub isoline_granularity: ::std::option::Option<crate::types::IsolineGranularityOptions>,
-    /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
+    /// <p>An Amazon Location Service API Key with access to this action. If omitted, the request must be signed using Signature Version 4.</p>
     pub key: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the optimization criteria for when calculating an isoline. AccurateCalculation generates an isoline of higher granularity that is more precise. FastCalculation generates an isoline faster by reducing the granularity, and in turn the quality of the isoline. BalancedCalculation generates an isoline by balancing between quality and performance.</p>
-    /// <p>Default Value: <code>BalancedCalculation</code></p>
+    /// <p>Controls the trade-off between calculation speed and isoline precision. Choose <code> FastCalculation</code> for quicker results with less detail, <code>AccurateCalculation</code> for more precise results, or <code>BalancedCalculation</code> for a middle ground.</p>
+    /// <p>Default value: <code>BalancedCalculation</code></p>
     pub optimize_isoline_for: ::std::option::Option<crate::types::IsolineOptimizationObjective>,
-    /// <p>Specifies the optimization criteria for calculating a route.</p>
-    /// <p>Default Value: <code>FastestRoute</code></p>
+    /// <p>Determines whether routes prioritize shortest travel time (<code>FastestRoute</code>) or shortest physical distance (<code>ShortestRoute</code>) when calculating reachable areas.</p>
+    /// <p>Default value: <code>FastestRoute</code></p>
     pub optimize_routing_for: ::std::option::Option<crate::types::RoutingObjective>,
-    /// <p>The start position for the route.</p>
+    /// <p>The starting point for isoline calculations, specified as <code>\[longitude, latitude\]</code> coordinates. For example, this could be a store location, service center, or any point from which you want to calculate reachable areas. Either <code>Origin</code> or <code>Destination</code> must be provided.</p>
     pub origin: ::std::option::Option<::std::vec::Vec<f64>>,
-    /// <p>Origin related options.</p>
+    /// <p>Options that control how the origin point is matched to the road network and how routes can depart from it. These options help improve travel time accuracy by accounting for real-world access from the origin.</p>
     pub origin_options: ::std::option::Option<crate::types::IsolineOriginOptions>,
-    /// <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per provided type can be requested.</p>
-    /// <p>You incur a calculation charge for each threshold. Using a large amount of thresholds in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>The distance or time thresholds used to determine reachable areas. You can specify up to five thresholds (which all must be the same type) to calculate multiple isolines in a single request. For example, to determine the areas that are reachable within 10 and 20 minutes of the origin, specify time thresholds of 600 and 1200 seconds.</p>
+    /// <p>You incur a calculation charge for each threshold. Using a large number of thresholds in a request can lead to unexpected charges. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     pub thresholds: ::std::option::Option<crate::types::IsolineThresholds>,
-    /// <p>Traffic related options.</p>
+    /// <p>Configures how real-time and historical traffic data affects isoline calculations. Traffic patterns can significantly impact reachable areas, especially during peak hours.</p>
     pub traffic: ::std::option::Option<crate::types::IsolineTrafficOptions>,
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p><note>
-    /// <p>The mode <code>Scooter</code> also applies to motorcycles, set to <code>Scooter</code> when wanted to calculate options for motorcycles.</p>
+    /// <p>The mode of transportation to use for calculations. This affects which road types or features can be used, estimated speed, and the traffic levels that are applied.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Car</code>—Standard passenger vehicle routing using roads accessible to cars</p></li>
+    /// <li>
+    /// <p><code>Pedestrian</code>—Walking routes using pedestrian paths, sidewalks, and crossings</p></li>
+    /// <li>
+    /// <p><code>Scooter</code>—Light two-wheeled vehicle routing using roads and paths accessible to scooters</p></li>
+    /// <li>
+    /// <p><code>Truck</code>—Commercial truck routing considering vehicle dimensions, weight restrictions, and hazardous material regulations</p></li>
+    /// </ul><note>
+    /// <p>The mode <code>Scooter</code> also applies to motorcycles; set this to <code>Scooter</code> when calculating isolines for motorcycles.</p>
     /// </note>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub travel_mode: ::std::option::Option<crate::types::IsolineTravelMode>,
-    /// <p>Travel mode related options for the provided travel mode.</p>
+    /// <p>Additional attributes that refine how reachable areas are calculated based on specific vehicle characteristics. These options help produce more accurate results by accounting for real-world constraints and capabilities.</p>
+    /// <p>For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For trucks (<code>Truck</code>), specify dimensions, weight limits, and hazardous cargo restrictions to ensure isolines only include roads that can physically and legally accommodate the vehicle</p></li>
+    /// <li>
+    /// <p>For cars (<code>Car</code>), set maximum speed capabilities or indicate high-occupancy vehicle eligibility to better estimate reachable areas</p></li>
+    /// <li>
+    /// <p>For scooters (<code>Scooter</code>), specify engine type and speed limitations to more accurately model their travel capabilities</p></li>
+    /// </ul>
+    /// <p>Without these options, calculations use default assumptions that may not match your specific use case.</p>
     pub travel_mode_options: ::std::option::Option<crate::types::IsolineTravelModeOptions>,
 }
 impl CalculateIsolinesInput {
-    /// <p>Features that are allowed while calculating an isoline.</p>
+    /// <p>Enables special road types or features that should be considered for routing even if they might be restricted by default for the selected travel mode. These include high-occupancy vehicle and toll lanes.</p>
     pub fn allow(&self) -> ::std::option::Option<&crate::types::IsolineAllowOptions> {
         self.allow.as_ref()
     }
-    /// <p>Time of arrival at the destination.</p>
+    /// <p>Determine areas from which <code>Destination</code> can be reached by this time, taking into account predicted traffic conditions and working backward to account for congestion patterns. This attribute cannot be used together with <code>DepartureTime</code> or <code>DepartNow</code>. Specified as an ISO-8601 timestamp with timezone offset.</p>
     /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -68,15 +88,15 @@ impl CalculateIsolinesInput {
     pub fn arrival_time(&self) -> ::std::option::Option<&str> {
         self.arrival_time.as_deref()
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
+    /// <p>Specifies road types, features, or areas to avoid (if possible) when calculating reachable areas. These are treated as preferences rather than strict constraints—if a route cannot be calculated without using an avoided feature, that avoidance preference may be ignored.</p>
     pub fn avoid(&self) -> ::std::option::Option<&crate::types::IsolineAvoidanceOptions> {
         self.avoid.as_ref()
     }
-    /// <p>Uses the current time as the time of departure.</p>
+    /// <p>When true, uses the current time as the departure time and takes current traffic conditions into account. This attribute cannot be used together with <code>DepartureTime</code> or <code>ArrivalTime</code>.</p>
     pub fn depart_now(&self) -> ::std::option::Option<bool> {
         self.depart_now
     }
-    /// <p>Time of departure from thr origin.</p>
+    /// <p>Determine areas that can be reached when departing at this time, taking into account predicted traffic conditions. This attribute cannot be used together with <code>ArrivalTime</code> or <code>DepartNow</code>. Specified as an ISO-8601 timestamp with timezone offset.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -84,66 +104,86 @@ impl CalculateIsolinesInput {
     pub fn departure_time(&self) -> ::std::option::Option<&str> {
         self.departure_time.as_deref()
     }
-    /// <p>The final position for the route. In the World Geodetic System (WGS 84) format: <code>\[longitude, latitude\]</code>.</p>
+    /// <p>An optional destination point, specified as <code>\[longitude, latitude\]</code> coordinates. When provided, the service calculates areas from which this destination can be reached within the specified thresholds. This reverses the usual isoline calculation to show areas that could reach your location, rather than areas you could reach from your location. Either <code>Origin</code> or <code>Destination</code> must be provided.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination.is_none()`.
     pub fn destination(&self) -> &[f64] {
         self.destination.as_deref().unwrap_or_default()
     }
-    /// <p>Destination related options.</p>
+    /// <p>Options that control how the destination point is matched to the road network and how routes can approach it. These options help improve travel time accuracy by accounting for real-world access to the destination.</p>
     pub fn destination_options(&self) -> ::std::option::Option<&crate::types::IsolineDestinationOptions> {
         self.destination_options.as_ref()
     }
     /// <p>The format of the returned IsolineGeometry.</p>
-    /// <p>Default Value:<code>FlexiblePolyline</code></p>
+    /// <p>Default value:<code>FlexiblePolyline</code></p>
     pub fn isoline_geometry_format(&self) -> ::std::option::Option<&crate::types::GeometryFormat> {
         self.isoline_geometry_format.as_ref()
     }
-    /// <p>Defines the granularity of the returned Isoline.</p>
+    /// <p>Controls the detail level of the generated isolines. Higher granularity produces smoother shapes but requires more processing time and results in larger responses.</p>
     pub fn isoline_granularity(&self) -> ::std::option::Option<&crate::types::IsolineGranularityOptions> {
         self.isoline_granularity.as_ref()
     }
-    /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
+    /// <p>An Amazon Location Service API Key with access to this action. If omitted, the request must be signed using Signature Version 4.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Specifies the optimization criteria for when calculating an isoline. AccurateCalculation generates an isoline of higher granularity that is more precise. FastCalculation generates an isoline faster by reducing the granularity, and in turn the quality of the isoline. BalancedCalculation generates an isoline by balancing between quality and performance.</p>
-    /// <p>Default Value: <code>BalancedCalculation</code></p>
+    /// <p>Controls the trade-off between calculation speed and isoline precision. Choose <code> FastCalculation</code> for quicker results with less detail, <code>AccurateCalculation</code> for more precise results, or <code>BalancedCalculation</code> for a middle ground.</p>
+    /// <p>Default value: <code>BalancedCalculation</code></p>
     pub fn optimize_isoline_for(&self) -> ::std::option::Option<&crate::types::IsolineOptimizationObjective> {
         self.optimize_isoline_for.as_ref()
     }
-    /// <p>Specifies the optimization criteria for calculating a route.</p>
-    /// <p>Default Value: <code>FastestRoute</code></p>
+    /// <p>Determines whether routes prioritize shortest travel time (<code>FastestRoute</code>) or shortest physical distance (<code>ShortestRoute</code>) when calculating reachable areas.</p>
+    /// <p>Default value: <code>FastestRoute</code></p>
     pub fn optimize_routing_for(&self) -> ::std::option::Option<&crate::types::RoutingObjective> {
         self.optimize_routing_for.as_ref()
     }
-    /// <p>The start position for the route.</p>
+    /// <p>The starting point for isoline calculations, specified as <code>\[longitude, latitude\]</code> coordinates. For example, this could be a store location, service center, or any point from which you want to calculate reachable areas. Either <code>Origin</code> or <code>Destination</code> must be provided.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.origin.is_none()`.
     pub fn origin(&self) -> &[f64] {
         self.origin.as_deref().unwrap_or_default()
     }
-    /// <p>Origin related options.</p>
+    /// <p>Options that control how the origin point is matched to the road network and how routes can depart from it. These options help improve travel time accuracy by accounting for real-world access from the origin.</p>
     pub fn origin_options(&self) -> ::std::option::Option<&crate::types::IsolineOriginOptions> {
         self.origin_options.as_ref()
     }
-    /// <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per provided type can be requested.</p>
-    /// <p>You incur a calculation charge for each threshold. Using a large amount of thresholds in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>The distance or time thresholds used to determine reachable areas. You can specify up to five thresholds (which all must be the same type) to calculate multiple isolines in a single request. For example, to determine the areas that are reachable within 10 and 20 minutes of the origin, specify time thresholds of 600 and 1200 seconds.</p>
+    /// <p>You incur a calculation charge for each threshold. Using a large number of thresholds in a request can lead to unexpected charges. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     pub fn thresholds(&self) -> ::std::option::Option<&crate::types::IsolineThresholds> {
         self.thresholds.as_ref()
     }
-    /// <p>Traffic related options.</p>
+    /// <p>Configures how real-time and historical traffic data affects isoline calculations. Traffic patterns can significantly impact reachable areas, especially during peak hours.</p>
     pub fn traffic(&self) -> ::std::option::Option<&crate::types::IsolineTrafficOptions> {
         self.traffic.as_ref()
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p><note>
-    /// <p>The mode <code>Scooter</code> also applies to motorcycles, set to <code>Scooter</code> when wanted to calculate options for motorcycles.</p>
+    /// <p>The mode of transportation to use for calculations. This affects which road types or features can be used, estimated speed, and the traffic levels that are applied.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Car</code>—Standard passenger vehicle routing using roads accessible to cars</p></li>
+    /// <li>
+    /// <p><code>Pedestrian</code>—Walking routes using pedestrian paths, sidewalks, and crossings</p></li>
+    /// <li>
+    /// <p><code>Scooter</code>—Light two-wheeled vehicle routing using roads and paths accessible to scooters</p></li>
+    /// <li>
+    /// <p><code>Truck</code>—Commercial truck routing considering vehicle dimensions, weight restrictions, and hazardous material regulations</p></li>
+    /// </ul><note>
+    /// <p>The mode <code>Scooter</code> also applies to motorcycles; set this to <code>Scooter</code> when calculating isolines for motorcycles.</p>
     /// </note>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn travel_mode(&self) -> ::std::option::Option<&crate::types::IsolineTravelMode> {
         self.travel_mode.as_ref()
     }
-    /// <p>Travel mode related options for the provided travel mode.</p>
+    /// <p>Additional attributes that refine how reachable areas are calculated based on specific vehicle characteristics. These options help produce more accurate results by accounting for real-world constraints and capabilities.</p>
+    /// <p>For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For trucks (<code>Truck</code>), specify dimensions, weight limits, and hazardous cargo restrictions to ensure isolines only include roads that can physically and legally accommodate the vehicle</p></li>
+    /// <li>
+    /// <p>For cars (<code>Car</code>), set maximum speed capabilities or indicate high-occupancy vehicle eligibility to better estimate reachable areas</p></li>
+    /// <li>
+    /// <p>For scooters (<code>Scooter</code>), specify engine type and speed limitations to more accurately model their travel capabilities</p></li>
+    /// </ul>
+    /// <p>Without these options, calculations use default assumptions that may not match your specific use case.</p>
     pub fn travel_mode_options(&self) -> ::std::option::Option<&crate::types::IsolineTravelModeOptions> {
         self.travel_mode_options.as_ref()
     }
@@ -203,21 +243,21 @@ pub struct CalculateIsolinesInputBuilder {
     pub(crate) travel_mode_options: ::std::option::Option<crate::types::IsolineTravelModeOptions>,
 }
 impl CalculateIsolinesInputBuilder {
-    /// <p>Features that are allowed while calculating an isoline.</p>
+    /// <p>Enables special road types or features that should be considered for routing even if they might be restricted by default for the selected travel mode. These include high-occupancy vehicle and toll lanes.</p>
     pub fn allow(mut self, input: crate::types::IsolineAllowOptions) -> Self {
         self.allow = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Features that are allowed while calculating an isoline.</p>
+    /// <p>Enables special road types or features that should be considered for routing even if they might be restricted by default for the selected travel mode. These include high-occupancy vehicle and toll lanes.</p>
     pub fn set_allow(mut self, input: ::std::option::Option<crate::types::IsolineAllowOptions>) -> Self {
         self.allow = input;
         self
     }
-    /// <p>Features that are allowed while calculating an isoline.</p>
+    /// <p>Enables special road types or features that should be considered for routing even if they might be restricted by default for the selected travel mode. These include high-occupancy vehicle and toll lanes.</p>
     pub fn get_allow(&self) -> &::std::option::Option<crate::types::IsolineAllowOptions> {
         &self.allow
     }
-    /// <p>Time of arrival at the destination.</p>
+    /// <p>Determine areas from which <code>Destination</code> can be reached by this time, taking into account predicted traffic conditions and working backward to account for congestion patterns. This attribute cannot be used together with <code>DepartureTime</code> or <code>DepartNow</code>. Specified as an ISO-8601 timestamp with timezone offset.</p>
     /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -226,7 +266,7 @@ impl CalculateIsolinesInputBuilder {
         self.arrival_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Time of arrival at the destination.</p>
+    /// <p>Determine areas from which <code>Destination</code> can be reached by this time, taking into account predicted traffic conditions and working backward to account for congestion patterns. This attribute cannot be used together with <code>DepartureTime</code> or <code>DepartNow</code>. Specified as an ISO-8601 timestamp with timezone offset.</p>
     /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -235,7 +275,7 @@ impl CalculateIsolinesInputBuilder {
         self.arrival_time = input;
         self
     }
-    /// <p>Time of arrival at the destination.</p>
+    /// <p>Determine areas from which <code>Destination</code> can be reached by this time, taking into account predicted traffic conditions and working backward to account for congestion patterns. This attribute cannot be used together with <code>DepartureTime</code> or <code>DepartNow</code>. Specified as an ISO-8601 timestamp with timezone offset.</p>
     /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -243,35 +283,35 @@ impl CalculateIsolinesInputBuilder {
     pub fn get_arrival_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.arrival_time
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
+    /// <p>Specifies road types, features, or areas to avoid (if possible) when calculating reachable areas. These are treated as preferences rather than strict constraints—if a route cannot be calculated without using an avoided feature, that avoidance preference may be ignored.</p>
     pub fn avoid(mut self, input: crate::types::IsolineAvoidanceOptions) -> Self {
         self.avoid = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
+    /// <p>Specifies road types, features, or areas to avoid (if possible) when calculating reachable areas. These are treated as preferences rather than strict constraints—if a route cannot be calculated without using an avoided feature, that avoidance preference may be ignored.</p>
     pub fn set_avoid(mut self, input: ::std::option::Option<crate::types::IsolineAvoidanceOptions>) -> Self {
         self.avoid = input;
         self
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
+    /// <p>Specifies road types, features, or areas to avoid (if possible) when calculating reachable areas. These are treated as preferences rather than strict constraints—if a route cannot be calculated without using an avoided feature, that avoidance preference may be ignored.</p>
     pub fn get_avoid(&self) -> &::std::option::Option<crate::types::IsolineAvoidanceOptions> {
         &self.avoid
     }
-    /// <p>Uses the current time as the time of departure.</p>
+    /// <p>When true, uses the current time as the departure time and takes current traffic conditions into account. This attribute cannot be used together with <code>DepartureTime</code> or <code>ArrivalTime</code>.</p>
     pub fn depart_now(mut self, input: bool) -> Self {
         self.depart_now = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Uses the current time as the time of departure.</p>
+    /// <p>When true, uses the current time as the departure time and takes current traffic conditions into account. This attribute cannot be used together with <code>DepartureTime</code> or <code>ArrivalTime</code>.</p>
     pub fn set_depart_now(mut self, input: ::std::option::Option<bool>) -> Self {
         self.depart_now = input;
         self
     }
-    /// <p>Uses the current time as the time of departure.</p>
+    /// <p>When true, uses the current time as the departure time and takes current traffic conditions into account. This attribute cannot be used together with <code>DepartureTime</code> or <code>ArrivalTime</code>.</p>
     pub fn get_depart_now(&self) -> &::std::option::Option<bool> {
         &self.depart_now
     }
-    /// <p>Time of departure from thr origin.</p>
+    /// <p>Determine areas that can be reached when departing at this time, taking into account predicted traffic conditions. This attribute cannot be used together with <code>ArrivalTime</code> or <code>DepartNow</code>. Specified as an ISO-8601 timestamp with timezone offset.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -280,7 +320,7 @@ impl CalculateIsolinesInputBuilder {
         self.departure_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Time of departure from thr origin.</p>
+    /// <p>Determine areas that can be reached when departing at this time, taking into account predicted traffic conditions. This attribute cannot be used together with <code>ArrivalTime</code> or <code>DepartNow</code>. Specified as an ISO-8601 timestamp with timezone offset.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -289,7 +329,7 @@ impl CalculateIsolinesInputBuilder {
         self.departure_time = input;
         self
     }
-    /// <p>Time of departure from thr origin.</p>
+    /// <p>Determine areas that can be reached when departing at this time, taking into account predicted traffic conditions. This attribute cannot be used together with <code>ArrivalTime</code> or <code>DepartNow</code>. Specified as an ISO-8601 timestamp with timezone offset.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -301,112 +341,112 @@ impl CalculateIsolinesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_destination`](Self::set_destination).
     ///
-    /// <p>The final position for the route. In the World Geodetic System (WGS 84) format: <code>\[longitude, latitude\]</code>.</p>
+    /// <p>An optional destination point, specified as <code>\[longitude, latitude\]</code> coordinates. When provided, the service calculates areas from which this destination can be reached within the specified thresholds. This reverses the usual isoline calculation to show areas that could reach your location, rather than areas you could reach from your location. Either <code>Origin</code> or <code>Destination</code> must be provided.</p>
     pub fn destination(mut self, input: f64) -> Self {
         let mut v = self.destination.unwrap_or_default();
         v.push(input);
         self.destination = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The final position for the route. In the World Geodetic System (WGS 84) format: <code>\[longitude, latitude\]</code>.</p>
+    /// <p>An optional destination point, specified as <code>\[longitude, latitude\]</code> coordinates. When provided, the service calculates areas from which this destination can be reached within the specified thresholds. This reverses the usual isoline calculation to show areas that could reach your location, rather than areas you could reach from your location. Either <code>Origin</code> or <code>Destination</code> must be provided.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.destination = input;
         self
     }
-    /// <p>The final position for the route. In the World Geodetic System (WGS 84) format: <code>\[longitude, latitude\]</code>.</p>
+    /// <p>An optional destination point, specified as <code>\[longitude, latitude\]</code> coordinates. When provided, the service calculates areas from which this destination can be reached within the specified thresholds. This reverses the usual isoline calculation to show areas that could reach your location, rather than areas you could reach from your location. Either <code>Origin</code> or <code>Destination</code> must be provided.</p>
     pub fn get_destination(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.destination
     }
-    /// <p>Destination related options.</p>
+    /// <p>Options that control how the destination point is matched to the road network and how routes can approach it. These options help improve travel time accuracy by accounting for real-world access to the destination.</p>
     pub fn destination_options(mut self, input: crate::types::IsolineDestinationOptions) -> Self {
         self.destination_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Destination related options.</p>
+    /// <p>Options that control how the destination point is matched to the road network and how routes can approach it. These options help improve travel time accuracy by accounting for real-world access to the destination.</p>
     pub fn set_destination_options(mut self, input: ::std::option::Option<crate::types::IsolineDestinationOptions>) -> Self {
         self.destination_options = input;
         self
     }
-    /// <p>Destination related options.</p>
+    /// <p>Options that control how the destination point is matched to the road network and how routes can approach it. These options help improve travel time accuracy by accounting for real-world access to the destination.</p>
     pub fn get_destination_options(&self) -> &::std::option::Option<crate::types::IsolineDestinationOptions> {
         &self.destination_options
     }
     /// <p>The format of the returned IsolineGeometry.</p>
-    /// <p>Default Value:<code>FlexiblePolyline</code></p>
+    /// <p>Default value:<code>FlexiblePolyline</code></p>
     pub fn isoline_geometry_format(mut self, input: crate::types::GeometryFormat) -> Self {
         self.isoline_geometry_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format of the returned IsolineGeometry.</p>
-    /// <p>Default Value:<code>FlexiblePolyline</code></p>
+    /// <p>Default value:<code>FlexiblePolyline</code></p>
     pub fn set_isoline_geometry_format(mut self, input: ::std::option::Option<crate::types::GeometryFormat>) -> Self {
         self.isoline_geometry_format = input;
         self
     }
     /// <p>The format of the returned IsolineGeometry.</p>
-    /// <p>Default Value:<code>FlexiblePolyline</code></p>
+    /// <p>Default value:<code>FlexiblePolyline</code></p>
     pub fn get_isoline_geometry_format(&self) -> &::std::option::Option<crate::types::GeometryFormat> {
         &self.isoline_geometry_format
     }
-    /// <p>Defines the granularity of the returned Isoline.</p>
+    /// <p>Controls the detail level of the generated isolines. Higher granularity produces smoother shapes but requires more processing time and results in larger responses.</p>
     pub fn isoline_granularity(mut self, input: crate::types::IsolineGranularityOptions) -> Self {
         self.isoline_granularity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines the granularity of the returned Isoline.</p>
+    /// <p>Controls the detail level of the generated isolines. Higher granularity produces smoother shapes but requires more processing time and results in larger responses.</p>
     pub fn set_isoline_granularity(mut self, input: ::std::option::Option<crate::types::IsolineGranularityOptions>) -> Self {
         self.isoline_granularity = input;
         self
     }
-    /// <p>Defines the granularity of the returned Isoline.</p>
+    /// <p>Controls the detail level of the generated isolines. Higher granularity produces smoother shapes but requires more processing time and results in larger responses.</p>
     pub fn get_isoline_granularity(&self) -> &::std::option::Option<crate::types::IsolineGranularityOptions> {
         &self.isoline_granularity
     }
-    /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
+    /// <p>An Amazon Location Service API Key with access to this action. If omitted, the request must be signed using Signature Version 4.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
+    /// <p>An Amazon Location Service API Key with access to this action. If omitted, the request must be signed using Signature Version 4.</p>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
-    /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
+    /// <p>An Amazon Location Service API Key with access to this action. If omitted, the request must be signed using Signature Version 4.</p>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
-    /// <p>Specifies the optimization criteria for when calculating an isoline. AccurateCalculation generates an isoline of higher granularity that is more precise. FastCalculation generates an isoline faster by reducing the granularity, and in turn the quality of the isoline. BalancedCalculation generates an isoline by balancing between quality and performance.</p>
-    /// <p>Default Value: <code>BalancedCalculation</code></p>
+    /// <p>Controls the trade-off between calculation speed and isoline precision. Choose <code> FastCalculation</code> for quicker results with less detail, <code>AccurateCalculation</code> for more precise results, or <code>BalancedCalculation</code> for a middle ground.</p>
+    /// <p>Default value: <code>BalancedCalculation</code></p>
     pub fn optimize_isoline_for(mut self, input: crate::types::IsolineOptimizationObjective) -> Self {
         self.optimize_isoline_for = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the optimization criteria for when calculating an isoline. AccurateCalculation generates an isoline of higher granularity that is more precise. FastCalculation generates an isoline faster by reducing the granularity, and in turn the quality of the isoline. BalancedCalculation generates an isoline by balancing between quality and performance.</p>
-    /// <p>Default Value: <code>BalancedCalculation</code></p>
+    /// <p>Controls the trade-off between calculation speed and isoline precision. Choose <code> FastCalculation</code> for quicker results with less detail, <code>AccurateCalculation</code> for more precise results, or <code>BalancedCalculation</code> for a middle ground.</p>
+    /// <p>Default value: <code>BalancedCalculation</code></p>
     pub fn set_optimize_isoline_for(mut self, input: ::std::option::Option<crate::types::IsolineOptimizationObjective>) -> Self {
         self.optimize_isoline_for = input;
         self
     }
-    /// <p>Specifies the optimization criteria for when calculating an isoline. AccurateCalculation generates an isoline of higher granularity that is more precise. FastCalculation generates an isoline faster by reducing the granularity, and in turn the quality of the isoline. BalancedCalculation generates an isoline by balancing between quality and performance.</p>
-    /// <p>Default Value: <code>BalancedCalculation</code></p>
+    /// <p>Controls the trade-off between calculation speed and isoline precision. Choose <code> FastCalculation</code> for quicker results with less detail, <code>AccurateCalculation</code> for more precise results, or <code>BalancedCalculation</code> for a middle ground.</p>
+    /// <p>Default value: <code>BalancedCalculation</code></p>
     pub fn get_optimize_isoline_for(&self) -> &::std::option::Option<crate::types::IsolineOptimizationObjective> {
         &self.optimize_isoline_for
     }
-    /// <p>Specifies the optimization criteria for calculating a route.</p>
-    /// <p>Default Value: <code>FastestRoute</code></p>
+    /// <p>Determines whether routes prioritize shortest travel time (<code>FastestRoute</code>) or shortest physical distance (<code>ShortestRoute</code>) when calculating reachable areas.</p>
+    /// <p>Default value: <code>FastestRoute</code></p>
     pub fn optimize_routing_for(mut self, input: crate::types::RoutingObjective) -> Self {
         self.optimize_routing_for = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the optimization criteria for calculating a route.</p>
-    /// <p>Default Value: <code>FastestRoute</code></p>
+    /// <p>Determines whether routes prioritize shortest travel time (<code>FastestRoute</code>) or shortest physical distance (<code>ShortestRoute</code>) when calculating reachable areas.</p>
+    /// <p>Default value: <code>FastestRoute</code></p>
     pub fn set_optimize_routing_for(mut self, input: ::std::option::Option<crate::types::RoutingObjective>) -> Self {
         self.optimize_routing_for = input;
         self
     }
-    /// <p>Specifies the optimization criteria for calculating a route.</p>
-    /// <p>Default Value: <code>FastestRoute</code></p>
+    /// <p>Determines whether routes prioritize shortest travel time (<code>FastestRoute</code>) or shortest physical distance (<code>ShortestRoute</code>) when calculating reachable areas.</p>
+    /// <p>Default value: <code>FastestRoute</code></p>
     pub fn get_optimize_routing_for(&self) -> &::std::option::Option<crate::types::RoutingObjective> {
         &self.optimize_routing_for
     }
@@ -414,102 +454,162 @@ impl CalculateIsolinesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_origin`](Self::set_origin).
     ///
-    /// <p>The start position for the route.</p>
+    /// <p>The starting point for isoline calculations, specified as <code>\[longitude, latitude\]</code> coordinates. For example, this could be a store location, service center, or any point from which you want to calculate reachable areas. Either <code>Origin</code> or <code>Destination</code> must be provided.</p>
     pub fn origin(mut self, input: f64) -> Self {
         let mut v = self.origin.unwrap_or_default();
         v.push(input);
         self.origin = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The start position for the route.</p>
+    /// <p>The starting point for isoline calculations, specified as <code>\[longitude, latitude\]</code> coordinates. For example, this could be a store location, service center, or any point from which you want to calculate reachable areas. Either <code>Origin</code> or <code>Destination</code> must be provided.</p>
     pub fn set_origin(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.origin = input;
         self
     }
-    /// <p>The start position for the route.</p>
+    /// <p>The starting point for isoline calculations, specified as <code>\[longitude, latitude\]</code> coordinates. For example, this could be a store location, service center, or any point from which you want to calculate reachable areas. Either <code>Origin</code> or <code>Destination</code> must be provided.</p>
     pub fn get_origin(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.origin
     }
-    /// <p>Origin related options.</p>
+    /// <p>Options that control how the origin point is matched to the road network and how routes can depart from it. These options help improve travel time accuracy by accounting for real-world access from the origin.</p>
     pub fn origin_options(mut self, input: crate::types::IsolineOriginOptions) -> Self {
         self.origin_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Origin related options.</p>
+    /// <p>Options that control how the origin point is matched to the road network and how routes can depart from it. These options help improve travel time accuracy by accounting for real-world access from the origin.</p>
     pub fn set_origin_options(mut self, input: ::std::option::Option<crate::types::IsolineOriginOptions>) -> Self {
         self.origin_options = input;
         self
     }
-    /// <p>Origin related options.</p>
+    /// <p>Options that control how the origin point is matched to the road network and how routes can depart from it. These options help improve travel time accuracy by accounting for real-world access from the origin.</p>
     pub fn get_origin_options(&self) -> &::std::option::Option<crate::types::IsolineOriginOptions> {
         &self.origin_options
     }
-    /// <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per provided type can be requested.</p>
-    /// <p>You incur a calculation charge for each threshold. Using a large amount of thresholds in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>The distance or time thresholds used to determine reachable areas. You can specify up to five thresholds (which all must be the same type) to calculate multiple isolines in a single request. For example, to determine the areas that are reachable within 10 and 20 minutes of the origin, specify time thresholds of 600 and 1200 seconds.</p>
+    /// <p>You incur a calculation charge for each threshold. Using a large number of thresholds in a request can lead to unexpected charges. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// This field is required.
     pub fn thresholds(mut self, input: crate::types::IsolineThresholds) -> Self {
         self.thresholds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per provided type can be requested.</p>
-    /// <p>You incur a calculation charge for each threshold. Using a large amount of thresholds in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>The distance or time thresholds used to determine reachable areas. You can specify up to five thresholds (which all must be the same type) to calculate multiple isolines in a single request. For example, to determine the areas that are reachable within 10 and 20 minutes of the origin, specify time thresholds of 600 and 1200 seconds.</p>
+    /// <p>You incur a calculation charge for each threshold. Using a large number of thresholds in a request can lead to unexpected charges. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     pub fn set_thresholds(mut self, input: ::std::option::Option<crate::types::IsolineThresholds>) -> Self {
         self.thresholds = input;
         self
     }
-    /// <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per provided type can be requested.</p>
-    /// <p>You incur a calculation charge for each threshold. Using a large amount of thresholds in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>The distance or time thresholds used to determine reachable areas. You can specify up to five thresholds (which all must be the same type) to calculate multiple isolines in a single request. For example, to determine the areas that are reachable within 10 and 20 minutes of the origin, specify time thresholds of 600 and 1200 seconds.</p>
+    /// <p>You incur a calculation charge for each threshold. Using a large number of thresholds in a request can lead to unexpected charges. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     pub fn get_thresholds(&self) -> &::std::option::Option<crate::types::IsolineThresholds> {
         &self.thresholds
     }
-    /// <p>Traffic related options.</p>
+    /// <p>Configures how real-time and historical traffic data affects isoline calculations. Traffic patterns can significantly impact reachable areas, especially during peak hours.</p>
     pub fn traffic(mut self, input: crate::types::IsolineTrafficOptions) -> Self {
         self.traffic = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Traffic related options.</p>
+    /// <p>Configures how real-time and historical traffic data affects isoline calculations. Traffic patterns can significantly impact reachable areas, especially during peak hours.</p>
     pub fn set_traffic(mut self, input: ::std::option::Option<crate::types::IsolineTrafficOptions>) -> Self {
         self.traffic = input;
         self
     }
-    /// <p>Traffic related options.</p>
+    /// <p>Configures how real-time and historical traffic data affects isoline calculations. Traffic patterns can significantly impact reachable areas, especially during peak hours.</p>
     pub fn get_traffic(&self) -> &::std::option::Option<crate::types::IsolineTrafficOptions> {
         &self.traffic
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p><note>
-    /// <p>The mode <code>Scooter</code> also applies to motorcycles, set to <code>Scooter</code> when wanted to calculate options for motorcycles.</p>
+    /// <p>The mode of transportation to use for calculations. This affects which road types or features can be used, estimated speed, and the traffic levels that are applied.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Car</code>—Standard passenger vehicle routing using roads accessible to cars</p></li>
+    /// <li>
+    /// <p><code>Pedestrian</code>—Walking routes using pedestrian paths, sidewalks, and crossings</p></li>
+    /// <li>
+    /// <p><code>Scooter</code>—Light two-wheeled vehicle routing using roads and paths accessible to scooters</p></li>
+    /// <li>
+    /// <p><code>Truck</code>—Commercial truck routing considering vehicle dimensions, weight restrictions, and hazardous material regulations</p></li>
+    /// </ul><note>
+    /// <p>The mode <code>Scooter</code> also applies to motorcycles; set this to <code>Scooter</code> when calculating isolines for motorcycles.</p>
     /// </note>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn travel_mode(mut self, input: crate::types::IsolineTravelMode) -> Self {
         self.travel_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p><note>
-    /// <p>The mode <code>Scooter</code> also applies to motorcycles, set to <code>Scooter</code> when wanted to calculate options for motorcycles.</p>
+    /// <p>The mode of transportation to use for calculations. This affects which road types or features can be used, estimated speed, and the traffic levels that are applied.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Car</code>—Standard passenger vehicle routing using roads accessible to cars</p></li>
+    /// <li>
+    /// <p><code>Pedestrian</code>—Walking routes using pedestrian paths, sidewalks, and crossings</p></li>
+    /// <li>
+    /// <p><code>Scooter</code>—Light two-wheeled vehicle routing using roads and paths accessible to scooters</p></li>
+    /// <li>
+    /// <p><code>Truck</code>—Commercial truck routing considering vehicle dimensions, weight restrictions, and hazardous material regulations</p></li>
+    /// </ul><note>
+    /// <p>The mode <code>Scooter</code> also applies to motorcycles; set this to <code>Scooter</code> when calculating isolines for motorcycles.</p>
     /// </note>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn set_travel_mode(mut self, input: ::std::option::Option<crate::types::IsolineTravelMode>) -> Self {
         self.travel_mode = input;
         self
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p><note>
-    /// <p>The mode <code>Scooter</code> also applies to motorcycles, set to <code>Scooter</code> when wanted to calculate options for motorcycles.</p>
+    /// <p>The mode of transportation to use for calculations. This affects which road types or features can be used, estimated speed, and the traffic levels that are applied.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Car</code>—Standard passenger vehicle routing using roads accessible to cars</p></li>
+    /// <li>
+    /// <p><code>Pedestrian</code>—Walking routes using pedestrian paths, sidewalks, and crossings</p></li>
+    /// <li>
+    /// <p><code>Scooter</code>—Light two-wheeled vehicle routing using roads and paths accessible to scooters</p></li>
+    /// <li>
+    /// <p><code>Truck</code>—Commercial truck routing considering vehicle dimensions, weight restrictions, and hazardous material regulations</p></li>
+    /// </ul><note>
+    /// <p>The mode <code>Scooter</code> also applies to motorcycles; set this to <code>Scooter</code> when calculating isolines for motorcycles.</p>
     /// </note>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn get_travel_mode(&self) -> &::std::option::Option<crate::types::IsolineTravelMode> {
         &self.travel_mode
     }
-    /// <p>Travel mode related options for the provided travel mode.</p>
+    /// <p>Additional attributes that refine how reachable areas are calculated based on specific vehicle characteristics. These options help produce more accurate results by accounting for real-world constraints and capabilities.</p>
+    /// <p>For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For trucks (<code>Truck</code>), specify dimensions, weight limits, and hazardous cargo restrictions to ensure isolines only include roads that can physically and legally accommodate the vehicle</p></li>
+    /// <li>
+    /// <p>For cars (<code>Car</code>), set maximum speed capabilities or indicate high-occupancy vehicle eligibility to better estimate reachable areas</p></li>
+    /// <li>
+    /// <p>For scooters (<code>Scooter</code>), specify engine type and speed limitations to more accurately model their travel capabilities</p></li>
+    /// </ul>
+    /// <p>Without these options, calculations use default assumptions that may not match your specific use case.</p>
     pub fn travel_mode_options(mut self, input: crate::types::IsolineTravelModeOptions) -> Self {
         self.travel_mode_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Travel mode related options for the provided travel mode.</p>
+    /// <p>Additional attributes that refine how reachable areas are calculated based on specific vehicle characteristics. These options help produce more accurate results by accounting for real-world constraints and capabilities.</p>
+    /// <p>For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For trucks (<code>Truck</code>), specify dimensions, weight limits, and hazardous cargo restrictions to ensure isolines only include roads that can physically and legally accommodate the vehicle</p></li>
+    /// <li>
+    /// <p>For cars (<code>Car</code>), set maximum speed capabilities or indicate high-occupancy vehicle eligibility to better estimate reachable areas</p></li>
+    /// <li>
+    /// <p>For scooters (<code>Scooter</code>), specify engine type and speed limitations to more accurately model their travel capabilities</p></li>
+    /// </ul>
+    /// <p>Without these options, calculations use default assumptions that may not match your specific use case.</p>
     pub fn set_travel_mode_options(mut self, input: ::std::option::Option<crate::types::IsolineTravelModeOptions>) -> Self {
         self.travel_mode_options = input;
         self
     }
-    /// <p>Travel mode related options for the provided travel mode.</p>
+    /// <p>Additional attributes that refine how reachable areas are calculated based on specific vehicle characteristics. These options help produce more accurate results by accounting for real-world constraints and capabilities.</p>
+    /// <p>For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For trucks (<code>Truck</code>), specify dimensions, weight limits, and hazardous cargo restrictions to ensure isolines only include roads that can physically and legally accommodate the vehicle</p></li>
+    /// <li>
+    /// <p>For cars (<code>Car</code>), set maximum speed capabilities or indicate high-occupancy vehicle eligibility to better estimate reachable areas</p></li>
+    /// <li>
+    /// <p>For scooters (<code>Scooter</code>), specify engine type and speed limitations to more accurately model their travel capabilities</p></li>
+    /// </ul>
+    /// <p>Without these options, calculations use default assumptions that may not match your specific use case.</p>
     pub fn get_travel_mode_options(&self) -> &::std::option::Option<crate::types::IsolineTravelModeOptions> {
         &self.travel_mode_options
     }

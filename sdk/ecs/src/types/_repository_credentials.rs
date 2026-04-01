@@ -2,7 +2,7 @@
 
 /// <p>The repository credentials for private registry authentication.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RepositoryCredentials {
     /// <p>The Amazon Resource Name (ARN) of the secret containing the private repository credentials.</p><note>
     /// <p>When you use the Amazon ECS API, CLI, or Amazon Web Services SDK, if the secret exists in the same Region as the task that you're launching then you can use either the full ARN or the name of the secret. When you use the Amazon Web Services Management Console, you must specify the full ARN of the secret.</p>
@@ -18,6 +18,13 @@ impl RepositoryCredentials {
         self.credentials_parameter.deref()
     }
 }
+impl ::std::fmt::Debug for RepositoryCredentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RepositoryCredentials");
+        formatter.field("credentials_parameter", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RepositoryCredentials {
     /// Creates a new builder-style object to manufacture [`RepositoryCredentials`](crate::types::RepositoryCredentials).
     pub fn builder() -> crate::types::builders::RepositoryCredentialsBuilder {
@@ -26,7 +33,7 @@ impl RepositoryCredentials {
 }
 
 /// A builder for [`RepositoryCredentials`](crate::types::RepositoryCredentials).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RepositoryCredentialsBuilder {
     pub(crate) credentials_parameter: ::std::option::Option<::std::string::String>,
@@ -65,5 +72,12 @@ impl RepositoryCredentialsBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RepositoryCredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RepositoryCredentialsBuilder");
+        formatter.field("credentials_parameter", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

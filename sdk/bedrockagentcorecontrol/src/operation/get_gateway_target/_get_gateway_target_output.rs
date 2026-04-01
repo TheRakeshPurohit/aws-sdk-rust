@@ -27,6 +27,10 @@ pub struct GetGatewayTargetOutput {
     pub last_synchronized_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metadata configuration for HTTP header and query parameter propagation for the retrieved gateway target.</p>
     pub metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
+    /// <p>The private endpoint configuration for the gateway target.</p>
+    pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
+    /// <p>The managed resources created by the gateway for private endpoint connectivity.</p>
+    pub private_endpoint_managed_resources: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>>,
     _request_id: Option<String>,
 }
 impl GetGatewayTargetOutput {
@@ -84,6 +88,16 @@ impl GetGatewayTargetOutput {
     pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::MetadataConfiguration> {
         self.metadata_configuration.as_ref()
     }
+    /// <p>The private endpoint configuration for the gateway target.</p>
+    pub fn private_endpoint(&self) -> ::std::option::Option<&crate::types::PrivateEndpoint> {
+        self.private_endpoint.as_ref()
+    }
+    /// <p>The managed resources created by the gateway for private endpoint connectivity.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_endpoint_managed_resources.is_none()`.
+    pub fn private_endpoint_managed_resources(&self) -> &[crate::types::ManagedResourceDetails] {
+        self.private_endpoint_managed_resources.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GetGatewayTargetOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -100,6 +114,8 @@ impl ::std::fmt::Debug for GetGatewayTargetOutput {
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
         formatter.field("last_synchronized_at", &self.last_synchronized_at);
         formatter.field("metadata_configuration", &self.metadata_configuration);
+        formatter.field("private_endpoint", &self.private_endpoint);
+        formatter.field("private_endpoint_managed_resources", &self.private_endpoint_managed_resources);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -132,6 +148,8 @@ pub struct GetGatewayTargetOutputBuilder {
     pub(crate) credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
     pub(crate) last_synchronized_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
+    pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
+    pub(crate) private_endpoint_managed_resources: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>>,
     _request_id: Option<String>,
 }
 impl GetGatewayTargetOutputBuilder {
@@ -325,6 +343,43 @@ impl GetGatewayTargetOutputBuilder {
     pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::MetadataConfiguration> {
         &self.metadata_configuration
     }
+    /// <p>The private endpoint configuration for the gateway target.</p>
+    pub fn private_endpoint(mut self, input: crate::types::PrivateEndpoint) -> Self {
+        self.private_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The private endpoint configuration for the gateway target.</p>
+    pub fn set_private_endpoint(mut self, input: ::std::option::Option<crate::types::PrivateEndpoint>) -> Self {
+        self.private_endpoint = input;
+        self
+    }
+    /// <p>The private endpoint configuration for the gateway target.</p>
+    pub fn get_private_endpoint(&self) -> &::std::option::Option<crate::types::PrivateEndpoint> {
+        &self.private_endpoint
+    }
+    /// Appends an item to `private_endpoint_managed_resources`.
+    ///
+    /// To override the contents of this collection use [`set_private_endpoint_managed_resources`](Self::set_private_endpoint_managed_resources).
+    ///
+    /// <p>The managed resources created by the gateway for private endpoint connectivity.</p>
+    pub fn private_endpoint_managed_resources(mut self, input: crate::types::ManagedResourceDetails) -> Self {
+        let mut v = self.private_endpoint_managed_resources.unwrap_or_default();
+        v.push(input);
+        self.private_endpoint_managed_resources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The managed resources created by the gateway for private endpoint connectivity.</p>
+    pub fn set_private_endpoint_managed_resources(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>>,
+    ) -> Self {
+        self.private_endpoint_managed_resources = input;
+        self
+    }
+    /// <p>The managed resources created by the gateway for private endpoint connectivity.</p>
+    pub fn get_private_endpoint_managed_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>> {
+        &self.private_endpoint_managed_resources
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -394,6 +449,8 @@ impl GetGatewayTargetOutputBuilder {
             })?,
             last_synchronized_at: self.last_synchronized_at,
             metadata_configuration: self.metadata_configuration,
+            private_endpoint: self.private_endpoint,
+            private_endpoint_managed_resources: self.private_endpoint_managed_resources,
             _request_id: self._request_id,
         })
     }
@@ -413,6 +470,8 @@ impl ::std::fmt::Debug for GetGatewayTargetOutputBuilder {
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
         formatter.field("last_synchronized_at", &self.last_synchronized_at);
         formatter.field("metadata_configuration", &self.metadata_configuration);
+        formatter.field("private_endpoint", &self.private_endpoint);
+        formatter.field("private_endpoint_managed_resources", &self.private_endpoint_managed_resources);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

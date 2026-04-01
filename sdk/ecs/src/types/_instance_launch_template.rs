@@ -43,7 +43,7 @@ pub struct InstanceLaunchTemplate {
     /// <p>Amazon ECS automatically selects the instances that match the specified criteria.</p>
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
     /// <p>Determines whether to enable FIPS 140-2 validated cryptographic modules on EC2 instances launched by the capacity provider. If <code>true</code>, instances use FIPS-compliant cryptographic algorithms and modules for enhanced security compliance. If <code>false</code>, instances use standard cryptographic implementations.</p>
-    /// <p>If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions and FIPS disabled in other regions.</p>
+    /// <p>If not specified, instances are launched with FIPS enabled in Amazon Web Services GovCloud (US) regions and FIPS disabled in other regions.</p>
     pub fips_enabled: ::std::option::Option<bool>,
     /// <p>Capacity reservation specifications. You can specify:</p>
     /// <ul>
@@ -112,7 +112,7 @@ impl InstanceLaunchTemplate {
         self.instance_requirements.as_ref()
     }
     /// <p>Determines whether to enable FIPS 140-2 validated cryptographic modules on EC2 instances launched by the capacity provider. If <code>true</code>, instances use FIPS-compliant cryptographic algorithms and modules for enhanced security compliance. If <code>false</code>, instances use standard cryptographic implementations.</p>
-    /// <p>If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions and FIPS disabled in other regions.</p>
+    /// <p>If not specified, instances are launched with FIPS enabled in Amazon Web Services GovCloud (US) regions and FIPS disabled in other regions.</p>
     pub fn fips_enabled(&self) -> ::std::option::Option<bool> {
         self.fips_enabled
     }
@@ -332,19 +332,19 @@ impl InstanceLaunchTemplateBuilder {
         &self.instance_requirements
     }
     /// <p>Determines whether to enable FIPS 140-2 validated cryptographic modules on EC2 instances launched by the capacity provider. If <code>true</code>, instances use FIPS-compliant cryptographic algorithms and modules for enhanced security compliance. If <code>false</code>, instances use standard cryptographic implementations.</p>
-    /// <p>If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions and FIPS disabled in other regions.</p>
+    /// <p>If not specified, instances are launched with FIPS enabled in Amazon Web Services GovCloud (US) regions and FIPS disabled in other regions.</p>
     pub fn fips_enabled(mut self, input: bool) -> Self {
         self.fips_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether to enable FIPS 140-2 validated cryptographic modules on EC2 instances launched by the capacity provider. If <code>true</code>, instances use FIPS-compliant cryptographic algorithms and modules for enhanced security compliance. If <code>false</code>, instances use standard cryptographic implementations.</p>
-    /// <p>If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions and FIPS disabled in other regions.</p>
+    /// <p>If not specified, instances are launched with FIPS enabled in Amazon Web Services GovCloud (US) regions and FIPS disabled in other regions.</p>
     pub fn set_fips_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.fips_enabled = input;
         self
     }
     /// <p>Determines whether to enable FIPS 140-2 validated cryptographic modules on EC2 instances launched by the capacity provider. If <code>true</code>, instances use FIPS-compliant cryptographic algorithms and modules for enhanced security compliance. If <code>false</code>, instances use standard cryptographic implementations.</p>
-    /// <p>If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions and FIPS disabled in other regions.</p>
+    /// <p>If not specified, instances are launched with FIPS enabled in Amazon Web Services GovCloud (US) regions and FIPS disabled in other regions.</p>
     pub fn get_fips_enabled(&self) -> &::std::option::Option<bool> {
         &self.fips_enabled
     }

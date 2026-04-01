@@ -15,6 +15,7 @@
 ///     TlsSecurityPolicy::PolicyMinTls10201907 => { /* ... */ },
 ///     TlsSecurityPolicy::PolicyMinTls12201907 => { /* ... */ },
 ///     TlsSecurityPolicy::PolicyMinTls12Pfs202310 => { /* ... */ },
+///     TlsSecurityPolicy::PolicyMinTls12Rfc9151Fips202408 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum TlsSecurityPolicy {
     PolicyMinTls12201907,
     #[allow(missing_docs)] // documentation missing in model
     PolicyMinTls12Pfs202310,
+    #[allow(missing_docs)] // documentation missing in model
+    PolicyMinTls12Rfc9151Fips202408,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for TlsSecurityPolicy {
             "Policy-Min-TLS-1-0-2019-07" => TlsSecurityPolicy::PolicyMinTls10201907,
             "Policy-Min-TLS-1-2-2019-07" => TlsSecurityPolicy::PolicyMinTls12201907,
             "Policy-Min-TLS-1-2-PFS-2023-10" => TlsSecurityPolicy::PolicyMinTls12Pfs202310,
+            "Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08" => TlsSecurityPolicy::PolicyMinTls12Rfc9151Fips202408,
             other => TlsSecurityPolicy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,6 +81,7 @@ impl TlsSecurityPolicy {
             TlsSecurityPolicy::PolicyMinTls10201907 => "Policy-Min-TLS-1-0-2019-07",
             TlsSecurityPolicy::PolicyMinTls12201907 => "Policy-Min-TLS-1-2-2019-07",
             TlsSecurityPolicy::PolicyMinTls12Pfs202310 => "Policy-Min-TLS-1-2-PFS-2023-10",
+            TlsSecurityPolicy::PolicyMinTls12Rfc9151Fips202408 => "Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08",
             TlsSecurityPolicy::Unknown(value) => value.as_str(),
         }
     }
@@ -86,6 +91,7 @@ impl TlsSecurityPolicy {
             "Policy-Min-TLS-1-0-2019-07",
             "Policy-Min-TLS-1-2-2019-07",
             "Policy-Min-TLS-1-2-PFS-2023-10",
+            "Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08",
         ]
     }
 }
@@ -112,6 +118,7 @@ impl ::std::fmt::Display for TlsSecurityPolicy {
             TlsSecurityPolicy::PolicyMinTls10201907 => write!(f, "Policy-Min-TLS-1-0-2019-07"),
             TlsSecurityPolicy::PolicyMinTls12201907 => write!(f, "Policy-Min-TLS-1-2-2019-07"),
             TlsSecurityPolicy::PolicyMinTls12Pfs202310 => write!(f, "Policy-Min-TLS-1-2-PFS-2023-10"),
+            TlsSecurityPolicy::PolicyMinTls12Rfc9151Fips202408 => write!(f, "Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08"),
             TlsSecurityPolicy::Unknown(value) => write!(f, "{value}"),
         }
     }

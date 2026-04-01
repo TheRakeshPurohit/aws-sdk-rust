@@ -23,6 +23,7 @@ impl crate::operation::calculate_routes::builders::CalculateRoutesInputBuilder {
 /// Fluent builder constructing a request to `CalculateRoutes`.
 ///
 /// <p><code>CalculateRoutes</code> computes routes given the following required parameters: <code>Origin</code> and <code>Destination</code>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-routes.html">Calculate routes</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CalculateRoutesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,21 +109,21 @@ impl CalculateRoutesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Features that are allowed while calculating a route.</p>
+    /// <p>Features that are allowed while calculating a route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn allow(mut self, input: crate::types::RouteAllowOptions) -> Self {
         self.inner = self.inner.allow(input);
         self
     }
-    /// <p>Features that are allowed while calculating a route.</p>
+    /// <p>Features that are allowed while calculating a route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_allow(mut self, input: ::std::option::Option<crate::types::RouteAllowOptions>) -> Self {
         self.inner = self.inner.set_allow(input);
         self
     }
-    /// <p>Features that are allowed while calculating a route.</p>
+    /// <p>Features that are allowed while calculating a route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_allow(&self) -> &::std::option::Option<crate::types::RouteAllowOptions> {
         self.inner.get_allow()
     }
-    /// <p>Time of arrival at the destination.</p>
+    /// <p>Time of arrival at the destination. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -131,7 +132,7 @@ impl CalculateRoutesFluentBuilder {
         self.inner = self.inner.arrival_time(input.into());
         self
     }
-    /// <p>Time of arrival at the destination.</p>
+    /// <p>Time of arrival at the destination. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -140,7 +141,7 @@ impl CalculateRoutesFluentBuilder {
         self.inner = self.inner.set_arrival_time(input);
         self
     }
-    /// <p>Time of arrival at the destination.</p>
+    /// <p>Time of arrival at the destination. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -148,17 +149,17 @@ impl CalculateRoutesFluentBuilder {
     pub fn get_arrival_time(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arrival_time()
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
+    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>ControlledAccessHighways</code>, <code>Ferries</code>, and <code>TollRoads</code></p>
     pub fn avoid(mut self, input: crate::types::RouteAvoidanceOptions) -> Self {
         self.inner = self.inner.avoid(input);
         self
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
+    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>ControlledAccessHighways</code>, <code>Ferries</code>, and <code>TollRoads</code></p>
     pub fn set_avoid(mut self, input: ::std::option::Option<crate::types::RouteAvoidanceOptions>) -> Self {
         self.inner = self.inner.set_avoid(input);
         self
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
+    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>ControlledAccessHighways</code>, <code>Ferries</code>, and <code>TollRoads</code></p>
     pub fn get_avoid(&self) -> &::std::option::Option<crate::types::RouteAvoidanceOptions> {
         self.inner.get_avoid()
     }
@@ -176,7 +177,7 @@ impl CalculateRoutesFluentBuilder {
     pub fn get_depart_now(&self) -> &::std::option::Option<bool> {
         self.inner.get_depart_now()
     }
-    /// <p>Time of departure from thr origin.</p>
+    /// <p>Time of departure from the origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -185,7 +186,7 @@ impl CalculateRoutesFluentBuilder {
         self.inner = self.inner.departure_time(input.into());
         self
     }
-    /// <p>Time of departure from thr origin.</p>
+    /// <p>Time of departure from the origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -194,7 +195,7 @@ impl CalculateRoutesFluentBuilder {
         self.inner = self.inner.set_departure_time(input);
         self
     }
-    /// <p>Time of departure from thr origin.</p>
+    /// <p>Time of departure from the origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -221,45 +222,45 @@ impl CalculateRoutesFluentBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_destination()
     }
-    /// <p>Destination related options.</p>
+    /// <p>Destination related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn destination_options(mut self, input: crate::types::RouteDestinationOptions) -> Self {
         self.inner = self.inner.destination_options(input);
         self
     }
-    /// <p>Destination related options.</p>
+    /// <p>Destination related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_destination_options(mut self, input: ::std::option::Option<crate::types::RouteDestinationOptions>) -> Self {
         self.inner = self.inner.set_destination_options(input);
         self
     }
-    /// <p>Destination related options.</p>
+    /// <p>Destination related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_destination_options(&self) -> &::std::option::Option<crate::types::RouteDestinationOptions> {
         self.inner.get_destination_options()
     }
-    /// <p>Driver related options.</p>
+    /// <p>Driver related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn driver(mut self, input: crate::types::RouteDriverOptions) -> Self {
         self.inner = self.inner.driver(input);
         self
     }
-    /// <p>Driver related options.</p>
+    /// <p>Driver related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_driver(mut self, input: ::std::option::Option<crate::types::RouteDriverOptions>) -> Self {
         self.inner = self.inner.set_driver(input);
         self
     }
-    /// <p>Driver related options.</p>
+    /// <p>Driver related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_driver(&self) -> &::std::option::Option<crate::types::RouteDriverOptions> {
         self.inner.get_driver()
     }
-    /// <p>Features to be strictly excluded while calculating the route.</p>
+    /// <p>Features to be strictly excluded while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn exclude(mut self, input: crate::types::RouteExclusionOptions) -> Self {
         self.inner = self.inner.exclude(input);
         self
     }
-    /// <p>Features to be strictly excluded while calculating the route.</p>
+    /// <p>Features to be strictly excluded while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_exclude(mut self, input: ::std::option::Option<crate::types::RouteExclusionOptions>) -> Self {
         self.inner = self.inner.set_exclude(input);
         self
     }
-    /// <p>Features to be strictly excluded while calculating the route.</p>
+    /// <p>Features to be strictly excluded while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_exclude(&self) -> &::std::option::Option<crate::types::RouteExclusionOptions> {
         self.inner.get_exclude()
     }
@@ -296,21 +297,21 @@ impl CalculateRoutesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_languages`](Self::set_languages).
     ///
-    /// <p>List of languages for instructions within steps in the response.</p><note>
+    /// <p>List of languages for instructions within steps in the response. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>Instructions in the requested language are returned only if they are available.</p>
     /// </note>
     pub fn languages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.languages(input.into());
         self
     }
-    /// <p>List of languages for instructions within steps in the response.</p><note>
+    /// <p>List of languages for instructions within steps in the response. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>Instructions in the requested language are returned only if they are available.</p>
     /// </note>
     pub fn set_languages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_languages(input);
         self
     }
-    /// <p>List of languages for instructions within steps in the response.</p><note>
+    /// <p>List of languages for instructions within steps in the response. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>Instructions in the requested language are returned only if they are available.</p>
     /// </note>
     pub fn get_languages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -321,7 +322,7 @@ impl CalculateRoutesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_leg_additional_features`](Self::set_leg_additional_features).
     ///
-    /// <p>A list of optional additional parameters such as timezone that can be requested for each result.</p>
+    /// <p>A list of optional additional parameters such as timezone that can be requested for each result. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>PassThroughWaypoints</code>, <code>Summary</code>, and <code>TravelStepInstructions</code></p>
     /// <ul>
     /// <li>
     /// <p><code>Elevation</code>: Retrieves the elevation information for each location.</p></li>
@@ -346,7 +347,7 @@ impl CalculateRoutesFluentBuilder {
         self.inner = self.inner.leg_additional_features(input);
         self
     }
-    /// <p>A list of optional additional parameters such as timezone that can be requested for each result.</p>
+    /// <p>A list of optional additional parameters such as timezone that can be requested for each result. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>PassThroughWaypoints</code>, <code>Summary</code>, and <code>TravelStepInstructions</code></p>
     /// <ul>
     /// <li>
     /// <p><code>Elevation</code>: Retrieves the elevation information for each location.</p></li>
@@ -371,7 +372,7 @@ impl CalculateRoutesFluentBuilder {
         self.inner = self.inner.set_leg_additional_features(input);
         self
     }
-    /// <p>A list of optional additional parameters such as timezone that can be requested for each result.</p>
+    /// <p>A list of optional additional parameters such as timezone that can be requested for each result. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>PassThroughWaypoints</code>, <code>Summary</code>, and <code>TravelStepInstructions</code></p>
     /// <ul>
     /// <li>
     /// <p><code>Elevation</code>: Retrieves the elevation information for each location.</p></li>
@@ -396,53 +397,53 @@ impl CalculateRoutesFluentBuilder {
         self.inner.get_leg_additional_features()
     }
     /// <p>Specifies the format of the geometry returned for each leg of the route. You can choose between two different geometry encoding formats.</p>
-    /// <p><code>FlexiblePolyline</code>: A compact and precise encoding format for the leg geometry. For more information on the format, see the GitHub repository for <a href="https://github.com/heremaps/flexible-polyline"> <code>FlexiblePolyline</code> </a>.</p>
+    /// <p><code>FlexiblePolyline</code>: A compact and precise encoding format for the leg geometry. For more information on the format, see the GitHub repository for <a href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.</p>
     /// <p><code>Simple</code>: A less compact encoding, which is easier to decode but may be less precise and result in larger payloads.</p>
     pub fn leg_geometry_format(mut self, input: crate::types::GeometryFormat) -> Self {
         self.inner = self.inner.leg_geometry_format(input);
         self
     }
     /// <p>Specifies the format of the geometry returned for each leg of the route. You can choose between two different geometry encoding formats.</p>
-    /// <p><code>FlexiblePolyline</code>: A compact and precise encoding format for the leg geometry. For more information on the format, see the GitHub repository for <a href="https://github.com/heremaps/flexible-polyline"> <code>FlexiblePolyline</code> </a>.</p>
+    /// <p><code>FlexiblePolyline</code>: A compact and precise encoding format for the leg geometry. For more information on the format, see the GitHub repository for <a href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.</p>
     /// <p><code>Simple</code>: A less compact encoding, which is easier to decode but may be less precise and result in larger payloads.</p>
     pub fn set_leg_geometry_format(mut self, input: ::std::option::Option<crate::types::GeometryFormat>) -> Self {
         self.inner = self.inner.set_leg_geometry_format(input);
         self
     }
     /// <p>Specifies the format of the geometry returned for each leg of the route. You can choose between two different geometry encoding formats.</p>
-    /// <p><code>FlexiblePolyline</code>: A compact and precise encoding format for the leg geometry. For more information on the format, see the GitHub repository for <a href="https://github.com/heremaps/flexible-polyline"> <code>FlexiblePolyline</code> </a>.</p>
+    /// <p><code>FlexiblePolyline</code>: A compact and precise encoding format for the leg geometry. For more information on the format, see the GitHub repository for <a href="https://github.com/aws-geospatial/polyline">https://github.com/aws-geospatial/polyline</a>.</p>
     /// <p><code>Simple</code>: A less compact encoding, which is easier to decode but may be less precise and result in larger payloads.</p>
     pub fn get_leg_geometry_format(&self) -> &::std::option::Option<crate::types::GeometryFormat> {
         self.inner.get_leg_geometry_format()
     }
-    /// <p>Maximum number of alternative routes to be provided in the response, if available.</p>
+    /// <p>Maximum number of alternative routes to be provided in the response, if available. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only up to 3 alternative routes.</p>
     pub fn max_alternatives(mut self, input: i32) -> Self {
         self.inner = self.inner.max_alternatives(input);
         self
     }
-    /// <p>Maximum number of alternative routes to be provided in the response, if available.</p>
+    /// <p>Maximum number of alternative routes to be provided in the response, if available. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only up to 3 alternative routes.</p>
     pub fn set_max_alternatives(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_alternatives(input);
         self
     }
-    /// <p>Maximum number of alternative routes to be provided in the response, if available.</p>
+    /// <p>Maximum number of alternative routes to be provided in the response, if available. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only up to 3 alternative routes.</p>
     pub fn get_max_alternatives(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_alternatives()
     }
-    /// <p>Specifies the optimization criteria for calculating a route.</p>
-    /// <p>Default Value: <code>FastestRoute</code></p>
+    /// <p>Controls the trade-off between achieving the shortest travel time (<code>FastestRoute</code>) and achieving the shortest physical distance ((<code>ShortestRoute</code>) when calculating each route in the matrix.</p>
+    /// <p>Default value: <code>FastestRoute</code></p>
     pub fn optimize_routing_for(mut self, input: crate::types::RoutingObjective) -> Self {
         self.inner = self.inner.optimize_routing_for(input);
         self
     }
-    /// <p>Specifies the optimization criteria for calculating a route.</p>
-    /// <p>Default Value: <code>FastestRoute</code></p>
+    /// <p>Controls the trade-off between achieving the shortest travel time (<code>FastestRoute</code>) and achieving the shortest physical distance ((<code>ShortestRoute</code>) when calculating each route in the matrix.</p>
+    /// <p>Default value: <code>FastestRoute</code></p>
     pub fn set_optimize_routing_for(mut self, input: ::std::option::Option<crate::types::RoutingObjective>) -> Self {
         self.inner = self.inner.set_optimize_routing_for(input);
         self
     }
-    /// <p>Specifies the optimization criteria for calculating a route.</p>
-    /// <p>Default Value: <code>FastestRoute</code></p>
+    /// <p>Controls the trade-off between achieving the shortest travel time (<code>FastestRoute</code>) and achieving the shortest physical distance ((<code>ShortestRoute</code>) when calculating each route in the matrix.</p>
+    /// <p>Default value: <code>FastestRoute</code></p>
     pub fn get_optimize_routing_for(&self) -> &::std::option::Option<crate::types::RoutingObjective> {
         self.inner.get_optimize_routing_for()
     }
@@ -451,31 +452,31 @@ impl CalculateRoutesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_origin`](Self::set_origin).
     ///
-    /// <p>The start position for the route.</p>
+    /// <p>The start position for the route in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn origin(mut self, input: f64) -> Self {
         self.inner = self.inner.origin(input);
         self
     }
-    /// <p>The start position for the route.</p>
+    /// <p>The start position for the route in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn set_origin(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.inner = self.inner.set_origin(input);
         self
     }
-    /// <p>The start position for the route.</p>
+    /// <p>The start position for the route in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn get_origin(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         self.inner.get_origin()
     }
-    /// <p>Origin related options.</p>
+    /// <p>Specifies how the origin point should be matched to the road network and any routing constraints that apply when the traveler is departing the origin. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn origin_options(mut self, input: crate::types::RouteOriginOptions) -> Self {
         self.inner = self.inner.origin_options(input);
         self
     }
-    /// <p>Origin related options.</p>
+    /// <p>Specifies how the origin point should be matched to the road network and any routing constraints that apply when the traveler is departing the origin. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_origin_options(mut self, input: ::std::option::Option<crate::types::RouteOriginOptions>) -> Self {
         self.inner = self.inner.set_origin_options(input);
         self
     }
-    /// <p>Origin related options.</p>
+    /// <p>Specifies how the origin point should be matched to the road network and any routing constraints that apply when the traveler is departing the origin. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_origin_options(&self) -> &::std::option::Option<crate::types::RouteOriginOptions> {
         self.inner.get_origin_options()
     }
@@ -484,90 +485,90 @@ impl CalculateRoutesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_span_additional_features`](Self::set_span_additional_features).
     ///
-    /// <p>A list of optional features such as SpeedLimit that can be requested for a Span. A span is a section of a Leg for which the requested features have the same values.</p>
+    /// <p>A list of optional features such as <code>SpeedLimit</code> that can be requested for a Span. A span is a section of a Leg for which the requested features have the same values. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn span_additional_features(mut self, input: crate::types::RouteSpanAdditionalFeature) -> Self {
         self.inner = self.inner.span_additional_features(input);
         self
     }
-    /// <p>A list of optional features such as SpeedLimit that can be requested for a Span. A span is a section of a Leg for which the requested features have the same values.</p>
+    /// <p>A list of optional features such as <code>SpeedLimit</code> that can be requested for a Span. A span is a section of a Leg for which the requested features have the same values. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_span_additional_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteSpanAdditionalFeature>>) -> Self {
         self.inner = self.inner.set_span_additional_features(input);
         self
     }
-    /// <p>A list of optional features such as SpeedLimit that can be requested for a Span. A span is a section of a Leg for which the requested features have the same values.</p>
+    /// <p>A list of optional features such as <code>SpeedLimit</code> that can be requested for a Span. A span is a section of a Leg for which the requested features have the same values. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_span_additional_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteSpanAdditionalFeature>> {
         self.inner.get_span_additional_features()
     }
-    /// <p>Toll related options.</p>
+    /// <p>Toll related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn tolls(mut self, input: crate::types::RouteTollOptions) -> Self {
         self.inner = self.inner.tolls(input);
         self
     }
-    /// <p>Toll related options.</p>
+    /// <p>Toll related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_tolls(mut self, input: ::std::option::Option<crate::types::RouteTollOptions>) -> Self {
         self.inner = self.inner.set_tolls(input);
         self
     }
-    /// <p>Toll related options.</p>
+    /// <p>Toll related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_tolls(&self) -> &::std::option::Option<crate::types::RouteTollOptions> {
         self.inner.get_tolls()
     }
-    /// <p>Traffic related options.</p>
+    /// <p>Traffic related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn traffic(mut self, input: crate::types::RouteTrafficOptions) -> Self {
         self.inner = self.inner.traffic(input);
         self
     }
-    /// <p>Traffic related options.</p>
+    /// <p>Traffic related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_traffic(mut self, input: ::std::option::Option<crate::types::RouteTrafficOptions>) -> Self {
         self.inner = self.inner.set_traffic(input);
         self
     }
-    /// <p>Traffic related options.</p>
+    /// <p>Traffic related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_traffic(&self) -> &::std::option::Option<crate::types::RouteTrafficOptions> {
         self.inner.get_traffic()
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Car</code>, <code>Pedestrian</code>, and <code>Scooter</code> values.</p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn travel_mode(mut self, input: crate::types::RouteTravelMode) -> Self {
         self.inner = self.inner.travel_mode(input);
         self
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Car</code>, <code>Pedestrian</code>, and <code>Scooter</code> values.</p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn set_travel_mode(mut self, input: ::std::option::Option<crate::types::RouteTravelMode>) -> Self {
         self.inner = self.inner.set_travel_mode(input);
         self
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Car</code>, <code>Pedestrian</code>, and <code>Scooter</code> values.</p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn get_travel_mode(&self) -> &::std::option::Option<crate::types::RouteTravelMode> {
         self.inner.get_travel_mode()
     }
-    /// <p>Travel mode related options for the provided travel mode.</p>
+    /// <p>Travel mode related options for the provided travel mode. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Car</code> and <code>Pedestrian</code> travel mode options.</p>
     pub fn travel_mode_options(mut self, input: crate::types::RouteTravelModeOptions) -> Self {
         self.inner = self.inner.travel_mode_options(input);
         self
     }
-    /// <p>Travel mode related options for the provided travel mode.</p>
+    /// <p>Travel mode related options for the provided travel mode. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Car</code> and <code>Pedestrian</code> travel mode options.</p>
     pub fn set_travel_mode_options(mut self, input: ::std::option::Option<crate::types::RouteTravelModeOptions>) -> Self {
         self.inner = self.inner.set_travel_mode_options(input);
         self
     }
-    /// <p>Travel mode related options for the provided travel mode.</p>
+    /// <p>Travel mode related options for the provided travel mode. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Car</code> and <code>Pedestrian</code> travel mode options.</p>
     pub fn get_travel_mode_options(&self) -> &::std::option::Option<crate::types::RouteTravelModeOptions> {
         self.inner.get_travel_mode_options()
     }
-    /// <p>Type of step returned by the response. Default provides basic steps intended for web based applications. TurnByTurn provides detailed instructions with more granularity intended for a turn based navigation system.</p>
+    /// <p>Type of step returned by the response. <code>Default</code> provides basic steps intended for web based applications. <code>TurnByTurn</code> provides detailed instructions with more granularity intended for a turn based navigation system. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions <code>Default</code> does not return any steps.</p>
     pub fn travel_step_type(mut self, input: crate::types::RouteTravelStepType) -> Self {
         self.inner = self.inner.travel_step_type(input);
         self
     }
-    /// <p>Type of step returned by the response. Default provides basic steps intended for web based applications. TurnByTurn provides detailed instructions with more granularity intended for a turn based navigation system.</p>
+    /// <p>Type of step returned by the response. <code>Default</code> provides basic steps intended for web based applications. <code>TurnByTurn</code> provides detailed instructions with more granularity intended for a turn based navigation system. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions <code>Default</code> does not return any steps.</p>
     pub fn set_travel_step_type(mut self, input: ::std::option::Option<crate::types::RouteTravelStepType>) -> Self {
         self.inner = self.inner.set_travel_step_type(input);
         self
     }
-    /// <p>Type of step returned by the response. Default provides basic steps intended for web based applications. TurnByTurn provides detailed instructions with more granularity intended for a turn based navigation system.</p>
+    /// <p>Type of step returned by the response. <code>Default</code> provides basic steps intended for web based applications. <code>TurnByTurn</code> provides detailed instructions with more granularity intended for a turn based navigation system. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions <code>Default</code> does not return any steps.</p>
     pub fn get_travel_step_type(&self) -> &::std::option::Option<crate::types::RouteTravelStepType> {
         self.inner.get_travel_step_type()
     }
@@ -576,17 +577,20 @@ impl CalculateRoutesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_waypoints`](Self::set_waypoints).
     ///
-    /// <p>List of waypoints between the Origin and Destination.</p>
+    /// <p>List of waypoints between the Origin and Destination. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions max length is <code>100</code>.</p>
+    /// <p>Max length: <code>23</code></p>
     pub fn waypoints(mut self, input: crate::types::RouteWaypoint) -> Self {
         self.inner = self.inner.waypoints(input);
         self
     }
-    /// <p>List of waypoints between the Origin and Destination.</p>
+    /// <p>List of waypoints between the Origin and Destination. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions max length is <code>100</code>.</p>
+    /// <p>Max length: <code>23</code></p>
     pub fn set_waypoints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteWaypoint>>) -> Self {
         self.inner = self.inner.set_waypoints(input);
         self
     }
-    /// <p>List of waypoints between the Origin and Destination.</p>
+    /// <p>List of waypoints between the Origin and Destination. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions max length is <code>100</code>.</p>
+    /// <p>Max length: <code>23</code></p>
     pub fn get_waypoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteWaypoint>> {
         self.inner.get_waypoints()
     }

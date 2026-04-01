@@ -21,25 +21,25 @@ pub struct RouteViolatedConstraints {
     /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub max_payload_capacity: i64,
     /// <p>The maximum weight of the route.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub max_weight: ::std::option::Option<crate::types::RouteWeightConstraint>,
     /// <p>The maximum weight per axle of the vehicle.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub max_weight_per_axle: i64,
     /// <p>The maximum weight per axle group of the vehicle.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub max_weight_per_axle_group: ::std::option::Option<crate::types::WeightPerAxleGroup>,
     /// <p>The maximum width of the vehicle.</p>
     pub max_width: i64,
     /// <p>The number of occupants in the vehicle.</p>
-    /// <p>Default Value: <code>1</code></p>
+    /// <p>Default value: <code>1</code></p>
     pub occupancy: ::std::option::Option<crate::types::RouteNoticeDetailRange>,
     /// <p>Access radius restrictions based on time.</p>
     pub restricted_times: ::std::option::Option<::std::string::String>,
     /// <p>The time dependent constraint.</p>
     pub time_dependent: ::std::option::Option<bool>,
     /// <p>Number of trailers attached to the vehicle.</p>
-    /// <p>Default Value: <code>0</code></p>
+    /// <p>Default value: <code>0</code></p>
     pub trailer_count: ::std::option::Option<crate::types::RouteNoticeDetailRange>,
     /// <p>Travel mode corresponding to the leg.</p>
     pub travel_mode: ::std::option::Option<bool>,
@@ -47,7 +47,7 @@ pub struct RouteViolatedConstraints {
     /// <p>There are currently no other supported values as of 26th April 2024.</p>
     /// </note>
     pub truck_road_type: ::std::option::Option<::std::string::String>,
-    /// <p>Type of the truck.</p>
+    /// <p>The type of truck: <code>LightTruck</code> for smaller delivery vehicles, <code> StraightTruck</code> for rigid body trucks, or <code>Tractor</code> for tractor-trailer combinations.</p>
     pub truck_type: ::std::option::Option<crate::types::RouteTruckType>,
     /// <p>The tunnel restriction code.</p>
     /// <p>Tunnel categories in this list indicate the restrictions which apply to certain tunnels in Great Britain. They relate to the types of dangerous goods that can be transported through them.</p>
@@ -120,17 +120,17 @@ impl RouteViolatedConstraints {
         self.max_payload_capacity
     }
     /// <p>The maximum weight of the route.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub fn max_weight(&self) -> ::std::option::Option<&crate::types::RouteWeightConstraint> {
         self.max_weight.as_ref()
     }
     /// <p>The maximum weight per axle of the vehicle.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub fn max_weight_per_axle(&self) -> i64 {
         self.max_weight_per_axle
     }
     /// <p>The maximum weight per axle group of the vehicle.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub fn max_weight_per_axle_group(&self) -> ::std::option::Option<&crate::types::WeightPerAxleGroup> {
         self.max_weight_per_axle_group.as_ref()
     }
@@ -139,7 +139,7 @@ impl RouteViolatedConstraints {
         self.max_width
     }
     /// <p>The number of occupants in the vehicle.</p>
-    /// <p>Default Value: <code>1</code></p>
+    /// <p>Default value: <code>1</code></p>
     pub fn occupancy(&self) -> ::std::option::Option<&crate::types::RouteNoticeDetailRange> {
         self.occupancy.as_ref()
     }
@@ -152,7 +152,7 @@ impl RouteViolatedConstraints {
         self.time_dependent
     }
     /// <p>Number of trailers attached to the vehicle.</p>
-    /// <p>Default Value: <code>0</code></p>
+    /// <p>Default value: <code>0</code></p>
     pub fn trailer_count(&self) -> ::std::option::Option<&crate::types::RouteNoticeDetailRange> {
         self.trailer_count.as_ref()
     }
@@ -166,7 +166,7 @@ impl RouteViolatedConstraints {
     pub fn truck_road_type(&self) -> ::std::option::Option<&str> {
         self.truck_road_type.as_deref()
     }
-    /// <p>Type of the truck.</p>
+    /// <p>The type of truck: <code>LightTruck</code> for smaller delivery vehicles, <code> StraightTruck</code> for rigid body trucks, or <code>Tractor</code> for tractor-trailer combinations.</p>
     pub fn truck_type(&self) -> ::std::option::Option<&crate::types::RouteTruckType> {
         self.truck_type.as_ref()
     }
@@ -378,53 +378,53 @@ impl RouteViolatedConstraintsBuilder {
         &self.max_payload_capacity
     }
     /// <p>The maximum weight of the route.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub fn max_weight(mut self, input: crate::types::RouteWeightConstraint) -> Self {
         self.max_weight = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum weight of the route.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub fn set_max_weight(mut self, input: ::std::option::Option<crate::types::RouteWeightConstraint>) -> Self {
         self.max_weight = input;
         self
     }
     /// <p>The maximum weight of the route.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub fn get_max_weight(&self) -> &::std::option::Option<crate::types::RouteWeightConstraint> {
         &self.max_weight
     }
     /// <p>The maximum weight per axle of the vehicle.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub fn max_weight_per_axle(mut self, input: i64) -> Self {
         self.max_weight_per_axle = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum weight per axle of the vehicle.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub fn set_max_weight_per_axle(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_weight_per_axle = input;
         self
     }
     /// <p>The maximum weight per axle of the vehicle.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub fn get_max_weight_per_axle(&self) -> &::std::option::Option<i64> {
         &self.max_weight_per_axle
     }
     /// <p>The maximum weight per axle group of the vehicle.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub fn max_weight_per_axle_group(mut self, input: crate::types::WeightPerAxleGroup) -> Self {
         self.max_weight_per_axle_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum weight per axle group of the vehicle.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub fn set_max_weight_per_axle_group(mut self, input: ::std::option::Option<crate::types::WeightPerAxleGroup>) -> Self {
         self.max_weight_per_axle_group = input;
         self
     }
     /// <p>The maximum weight per axle group of the vehicle.</p>
-    /// <p><b>Unit</b>: <code>Kilograms</code></p>
+    /// <p><b>Unit</b>: <code>kilograms</code></p>
     pub fn get_max_weight_per_axle_group(&self) -> &::std::option::Option<crate::types::WeightPerAxleGroup> {
         &self.max_weight_per_axle_group
     }
@@ -443,19 +443,19 @@ impl RouteViolatedConstraintsBuilder {
         &self.max_width
     }
     /// <p>The number of occupants in the vehicle.</p>
-    /// <p>Default Value: <code>1</code></p>
+    /// <p>Default value: <code>1</code></p>
     pub fn occupancy(mut self, input: crate::types::RouteNoticeDetailRange) -> Self {
         self.occupancy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of occupants in the vehicle.</p>
-    /// <p>Default Value: <code>1</code></p>
+    /// <p>Default value: <code>1</code></p>
     pub fn set_occupancy(mut self, input: ::std::option::Option<crate::types::RouteNoticeDetailRange>) -> Self {
         self.occupancy = input;
         self
     }
     /// <p>The number of occupants in the vehicle.</p>
-    /// <p>Default Value: <code>1</code></p>
+    /// <p>Default value: <code>1</code></p>
     pub fn get_occupancy(&self) -> &::std::option::Option<crate::types::RouteNoticeDetailRange> {
         &self.occupancy
     }
@@ -488,19 +488,19 @@ impl RouteViolatedConstraintsBuilder {
         &self.time_dependent
     }
     /// <p>Number of trailers attached to the vehicle.</p>
-    /// <p>Default Value: <code>0</code></p>
+    /// <p>Default value: <code>0</code></p>
     pub fn trailer_count(mut self, input: crate::types::RouteNoticeDetailRange) -> Self {
         self.trailer_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of trailers attached to the vehicle.</p>
-    /// <p>Default Value: <code>0</code></p>
+    /// <p>Default value: <code>0</code></p>
     pub fn set_trailer_count(mut self, input: ::std::option::Option<crate::types::RouteNoticeDetailRange>) -> Self {
         self.trailer_count = input;
         self
     }
     /// <p>Number of trailers attached to the vehicle.</p>
-    /// <p>Default Value: <code>0</code></p>
+    /// <p>Default value: <code>0</code></p>
     pub fn get_trailer_count(&self) -> &::std::option::Option<crate::types::RouteNoticeDetailRange> {
         &self.trailer_count
     }
@@ -538,17 +538,17 @@ impl RouteViolatedConstraintsBuilder {
     pub fn get_truck_road_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.truck_road_type
     }
-    /// <p>Type of the truck.</p>
+    /// <p>The type of truck: <code>LightTruck</code> for smaller delivery vehicles, <code> StraightTruck</code> for rigid body trucks, or <code>Tractor</code> for tractor-trailer combinations.</p>
     pub fn truck_type(mut self, input: crate::types::RouteTruckType) -> Self {
         self.truck_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Type of the truck.</p>
+    /// <p>The type of truck: <code>LightTruck</code> for smaller delivery vehicles, <code> StraightTruck</code> for rigid body trucks, or <code>Tractor</code> for tractor-trailer combinations.</p>
     pub fn set_truck_type(mut self, input: ::std::option::Option<crate::types::RouteTruckType>) -> Self {
         self.truck_type = input;
         self
     }
-    /// <p>Type of the truck.</p>
+    /// <p>The type of truck: <code>LightTruck</code> for smaller delivery vehicles, <code> StraightTruck</code> for rigid body trucks, or <code>Tractor</code> for tractor-trailer combinations.</p>
     pub fn get_truck_type(&self) -> &::std::option::Option<crate::types::RouteTruckType> {
         &self.truck_type
     }

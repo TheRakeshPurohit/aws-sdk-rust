@@ -2,7 +2,7 @@
 
 /// <p>Container definitions are used in task definitions to describe the different containers that are launched as part of a task.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ContainerDefinition {
     /// <p>The name of a container. If you're linking multiple containers together in a task definition, the <code>name</code> of one container can be entered in the <code>links</code> of another container to connect the containers. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This parameter maps to <code>name</code> in the docker container create command and the <code>--name</code> option to docker run.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -601,6 +601,54 @@ impl ContainerDefinition {
         self.credential_specs.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for ContainerDefinition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ContainerDefinition");
+        formatter.field("name", &self.name);
+        formatter.field("image", &self.image);
+        formatter.field("repository_credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("cpu", &self.cpu);
+        formatter.field("memory", &self.memory);
+        formatter.field("memory_reservation", &self.memory_reservation);
+        formatter.field("links", &self.links);
+        formatter.field("port_mappings", &self.port_mappings);
+        formatter.field("essential", &self.essential);
+        formatter.field("restart_policy", &self.restart_policy);
+        formatter.field("entry_point", &self.entry_point);
+        formatter.field("command", &self.command);
+        formatter.field("environment", &self.environment);
+        formatter.field("environment_files", &self.environment_files);
+        formatter.field("mount_points", &self.mount_points);
+        formatter.field("volumes_from", &self.volumes_from);
+        formatter.field("linux_parameters", &self.linux_parameters);
+        formatter.field("secrets", &self.secrets);
+        formatter.field("depends_on", &self.depends_on);
+        formatter.field("start_timeout", &self.start_timeout);
+        formatter.field("stop_timeout", &self.stop_timeout);
+        formatter.field("version_consistency", &self.version_consistency);
+        formatter.field("hostname", &self.hostname);
+        formatter.field("user", &self.user);
+        formatter.field("working_directory", &self.working_directory);
+        formatter.field("disable_networking", &self.disable_networking);
+        formatter.field("privileged", &self.privileged);
+        formatter.field("readonly_root_filesystem", &self.readonly_root_filesystem);
+        formatter.field("dns_servers", &self.dns_servers);
+        formatter.field("dns_search_domains", &self.dns_search_domains);
+        formatter.field("extra_hosts", &self.extra_hosts);
+        formatter.field("docker_security_options", &self.docker_security_options);
+        formatter.field("interactive", &self.interactive);
+        formatter.field("pseudo_terminal", &self.pseudo_terminal);
+        formatter.field("docker_labels", &self.docker_labels);
+        formatter.field("ulimits", &self.ulimits);
+        formatter.field("log_configuration", &self.log_configuration);
+        formatter.field("health_check", &self.health_check);
+        formatter.field("system_controls", &self.system_controls);
+        formatter.field("resource_requirements", &self.resource_requirements);
+        formatter.field("firelens_configuration", &self.firelens_configuration);
+        formatter.field("credential_specs", &self.credential_specs);
+        formatter.finish()
+    }
+}
 impl ContainerDefinition {
     /// Creates a new builder-style object to manufacture [`ContainerDefinition`](crate::types::ContainerDefinition).
     pub fn builder() -> crate::types::builders::ContainerDefinitionBuilder {
@@ -609,7 +657,7 @@ impl ContainerDefinition {
 }
 
 /// A builder for [`ContainerDefinition`](crate::types::ContainerDefinition).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ContainerDefinitionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -1866,5 +1914,53 @@ impl ContainerDefinitionBuilder {
             firelens_configuration: self.firelens_configuration,
             credential_specs: self.credential_specs,
         }
+    }
+}
+impl ::std::fmt::Debug for ContainerDefinitionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ContainerDefinitionBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("image", &self.image);
+        formatter.field("repository_credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("cpu", &self.cpu);
+        formatter.field("memory", &self.memory);
+        formatter.field("memory_reservation", &self.memory_reservation);
+        formatter.field("links", &self.links);
+        formatter.field("port_mappings", &self.port_mappings);
+        formatter.field("essential", &self.essential);
+        formatter.field("restart_policy", &self.restart_policy);
+        formatter.field("entry_point", &self.entry_point);
+        formatter.field("command", &self.command);
+        formatter.field("environment", &self.environment);
+        formatter.field("environment_files", &self.environment_files);
+        formatter.field("mount_points", &self.mount_points);
+        formatter.field("volumes_from", &self.volumes_from);
+        formatter.field("linux_parameters", &self.linux_parameters);
+        formatter.field("secrets", &self.secrets);
+        formatter.field("depends_on", &self.depends_on);
+        formatter.field("start_timeout", &self.start_timeout);
+        formatter.field("stop_timeout", &self.stop_timeout);
+        formatter.field("version_consistency", &self.version_consistency);
+        formatter.field("hostname", &self.hostname);
+        formatter.field("user", &self.user);
+        formatter.field("working_directory", &self.working_directory);
+        formatter.field("disable_networking", &self.disable_networking);
+        formatter.field("privileged", &self.privileged);
+        formatter.field("readonly_root_filesystem", &self.readonly_root_filesystem);
+        formatter.field("dns_servers", &self.dns_servers);
+        formatter.field("dns_search_domains", &self.dns_search_domains);
+        formatter.field("extra_hosts", &self.extra_hosts);
+        formatter.field("docker_security_options", &self.docker_security_options);
+        formatter.field("interactive", &self.interactive);
+        formatter.field("pseudo_terminal", &self.pseudo_terminal);
+        formatter.field("docker_labels", &self.docker_labels);
+        formatter.field("ulimits", &self.ulimits);
+        formatter.field("log_configuration", &self.log_configuration);
+        formatter.field("health_check", &self.health_check);
+        formatter.field("system_controls", &self.system_controls);
+        formatter.field("resource_requirements", &self.resource_requirements);
+        formatter.field("firelens_configuration", &self.firelens_configuration);
+        formatter.field("credential_specs", &self.credential_specs);
+        formatter.finish()
     }
 }

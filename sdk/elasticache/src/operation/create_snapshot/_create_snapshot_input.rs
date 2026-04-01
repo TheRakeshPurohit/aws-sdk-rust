@@ -8,7 +8,7 @@ pub struct CreateSnapshotInput {
     pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
     pub cache_cluster_id: ::std::option::Option<::std::string::String>,
-    /// <p>A name for the snapshot being created.</p>
+    /// <p>A name for the snapshot being created. This value is stored as a lowercase string.</p>
     pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl CreateSnapshotInput {
     pub fn cache_cluster_id(&self) -> ::std::option::Option<&str> {
         self.cache_cluster_id.as_deref()
     }
-    /// <p>A name for the snapshot being created.</p>
+    /// <p>A name for the snapshot being created. This value is stored as a lowercase string.</p>
     pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
         self.snapshot_name.as_deref()
     }
@@ -85,18 +85,18 @@ impl CreateSnapshotInputBuilder {
     pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_cluster_id
     }
-    /// <p>A name for the snapshot being created.</p>
+    /// <p>A name for the snapshot being created. This value is stored as a lowercase string.</p>
     /// This field is required.
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A name for the snapshot being created.</p>
+    /// <p>A name for the snapshot being created. This value is stored as a lowercase string.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_name = input;
         self
     }
-    /// <p>A name for the snapshot being created.</p>
+    /// <p>A name for the snapshot being created. This value is stored as a lowercase string.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_name
     }

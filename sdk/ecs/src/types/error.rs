@@ -41,13 +41,17 @@ pub use crate::types::error::_missing_version_exception::MissingVersionException
 
 pub use crate::types::error::_no_update_available_exception::NoUpdateAvailableException;
 
+pub use crate::types::error::_platform_unknown_exception::PlatformUnknownException;
+
+pub use crate::types::error::_daemon_not_active_exception::DaemonNotActiveException;
+
+pub use crate::types::error::_daemon_not_found_exception::DaemonNotFoundException;
+
 pub use crate::types::error::_service_not_active_exception::ServiceNotActiveException;
 
 pub use crate::types::error::_task_set_not_found_exception::TaskSetNotFoundException;
 
 pub use crate::types::error::_platform_task_definition_incompatibility_exception::PlatformTaskDefinitionIncompatibilityException;
-
-pub use crate::types::error::_platform_unknown_exception::PlatformUnknownException;
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
@@ -74,6 +78,10 @@ mod _cluster_contains_tasks_exception;
 mod _cluster_not_found_exception;
 
 mod _conflict_exception;
+
+mod _daemon_not_active_exception;
+
+mod _daemon_not_found_exception;
 
 mod _invalid_parameter_exception;
 

@@ -8,7 +8,7 @@ pub struct RouteFerryPlace {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Position provided in the request.</p>
     pub original_position: ::std::option::Option<::std::vec::Vec<f64>>,
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub position: ::std::vec::Vec<f64>,
     /// <p>Index of the waypoint in the request.</p>
     pub waypoint_index: ::std::option::Option<i32>,
@@ -24,7 +24,7 @@ impl RouteFerryPlace {
     pub fn original_position(&self) -> &[f64] {
         self.original_position.as_deref().unwrap_or_default()
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(&self) -> &[f64] {
         use std::ops::Deref;
         self.position.deref()
@@ -99,19 +99,19 @@ impl RouteFerryPlaceBuilder {
     ///
     /// To override the contents of this collection use [`set_position`](Self::set_position).
     ///
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
         v.push(input);
         self.position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.position = input;
         self
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.position
     }

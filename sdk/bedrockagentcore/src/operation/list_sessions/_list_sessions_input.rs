@@ -11,6 +11,8 @@ pub struct ListSessionsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Filter criteria to apply when listing sessions.</p>
+    pub filter: ::std::option::Option<crate::types::SessionFilter>,
 }
 impl ListSessionsInput {
     /// <p>The identifier of the AgentCore Memory resource for which to list sessions.</p>
@@ -29,6 +31,10 @@ impl ListSessionsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>Filter criteria to apply when listing sessions.</p>
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::SessionFilter> {
+        self.filter.as_ref()
+    }
 }
 impl ListSessionsInput {
     /// Creates a new builder-style object to manufacture [`ListSessionsInput`](crate::operation::list_sessions::ListSessionsInput).
@@ -45,6 +51,7 @@ pub struct ListSessionsInputBuilder {
     pub(crate) actor_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) filter: ::std::option::Option<crate::types::SessionFilter>,
 }
 impl ListSessionsInputBuilder {
     /// <p>The identifier of the AgentCore Memory resource for which to list sessions.</p>
@@ -105,6 +112,20 @@ impl ListSessionsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Filter criteria to apply when listing sessions.</p>
+    pub fn filter(mut self, input: crate::types::SessionFilter) -> Self {
+        self.filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filter criteria to apply when listing sessions.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::SessionFilter>) -> Self {
+        self.filter = input;
+        self
+    }
+    /// <p>Filter criteria to apply when listing sessions.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::SessionFilter> {
+        &self.filter
+    }
     /// Consumes the builder and constructs a [`ListSessionsInput`](crate::operation::list_sessions::ListSessionsInput).
     pub fn build(
         self,
@@ -114,6 +135,7 @@ impl ListSessionsInputBuilder {
             actor_id: self.actor_id,
             max_results: self.max_results,
             next_token: self.next_token,
+            filter: self.filter,
         })
     }
 }

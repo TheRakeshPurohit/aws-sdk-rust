@@ -5,7 +5,7 @@
 pub struct CopyServerlessCacheSnapshotInput {
     /// <p>The identifier of the existing serverless cache’s snapshot to be copied. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub source_serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier for the snapshot to be created. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
+    /// <p>The identifier for the snapshot to be created. Available for Valkey, Redis OSS and Serverless Memcached only. This value is stored as a lowercase string.</p>
     pub target_serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the KMS key used to encrypt the target snapshot. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl CopyServerlessCacheSnapshotInput {
     pub fn source_serverless_cache_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.source_serverless_cache_snapshot_name.as_deref()
     }
-    /// <p>The identifier for the snapshot to be created. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
+    /// <p>The identifier for the snapshot to be created. Available for Valkey, Redis OSS and Serverless Memcached only. This value is stored as a lowercase string.</p>
     pub fn target_serverless_cache_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.target_serverless_cache_snapshot_name.as_deref()
     }
@@ -64,18 +64,18 @@ impl CopyServerlessCacheSnapshotInputBuilder {
     pub fn get_source_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_serverless_cache_snapshot_name
     }
-    /// <p>The identifier for the snapshot to be created. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
+    /// <p>The identifier for the snapshot to be created. Available for Valkey, Redis OSS and Serverless Memcached only. This value is stored as a lowercase string.</p>
     /// This field is required.
     pub fn target_serverless_cache_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_serverless_cache_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the snapshot to be created. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
+    /// <p>The identifier for the snapshot to be created. Available for Valkey, Redis OSS and Serverless Memcached only. This value is stored as a lowercase string.</p>
     pub fn set_target_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_serverless_cache_snapshot_name = input;
         self
     }
-    /// <p>The identifier for the snapshot to be created. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
+    /// <p>The identifier for the snapshot to be created. Available for Valkey, Redis OSS and Serverless Memcached only. This value is stored as a lowercase string.</p>
     pub fn get_target_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_serverless_cache_snapshot_name
     }

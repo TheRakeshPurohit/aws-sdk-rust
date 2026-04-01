@@ -4,20 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteMatrixSideOfStreetOptions {
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub position: ::std::vec::Vec<f64>,
     /// <p>Strategy that defines when the side of street position should be used. AnyStreet will always use the provided position.</p>
-    /// <p>Default Value: <code>DividedStreetOnly</code></p>
+    /// <p>Default value: <code>DividedStreetOnly</code></p>
     pub use_with: ::std::option::Option<crate::types::SideOfStreetMatchingStrategy>,
 }
 impl RouteMatrixSideOfStreetOptions {
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(&self) -> &[f64] {
         use std::ops::Deref;
         self.position.deref()
     }
     /// <p>Strategy that defines when the side of street position should be used. AnyStreet will always use the provided position.</p>
-    /// <p>Default Value: <code>DividedStreetOnly</code></p>
+    /// <p>Default value: <code>DividedStreetOnly</code></p>
     pub fn use_with(&self) -> ::std::option::Option<&crate::types::SideOfStreetMatchingStrategy> {
         self.use_with.as_ref()
     }
@@ -49,36 +49,36 @@ impl RouteMatrixSideOfStreetOptionsBuilder {
     ///
     /// To override the contents of this collection use [`set_position`](Self::set_position).
     ///
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
         v.push(input);
         self.position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.position = input;
         self
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.position
     }
     /// <p>Strategy that defines when the side of street position should be used. AnyStreet will always use the provided position.</p>
-    /// <p>Default Value: <code>DividedStreetOnly</code></p>
+    /// <p>Default value: <code>DividedStreetOnly</code></p>
     pub fn use_with(mut self, input: crate::types::SideOfStreetMatchingStrategy) -> Self {
         self.use_with = ::std::option::Option::Some(input);
         self
     }
     /// <p>Strategy that defines when the side of street position should be used. AnyStreet will always use the provided position.</p>
-    /// <p>Default Value: <code>DividedStreetOnly</code></p>
+    /// <p>Default value: <code>DividedStreetOnly</code></p>
     pub fn set_use_with(mut self, input: ::std::option::Option<crate::types::SideOfStreetMatchingStrategy>) -> Self {
         self.use_with = input;
         self
     }
     /// <p>Strategy that defines when the side of street position should be used. AnyStreet will always use the provided position.</p>
-    /// <p>Default Value: <code>DividedStreetOnly</code></p>
+    /// <p>Default value: <code>DividedStreetOnly</code></p>
     pub fn get_use_with(&self) -> &::std::option::Option<crate::types::SideOfStreetMatchingStrategy> {
         &self.use_with
     }

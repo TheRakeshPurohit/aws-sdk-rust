@@ -87,6 +87,8 @@ pub use crate::types::_target_configuration::TargetConfiguration;
 
 pub use crate::types::_metadata_configuration::MetadataConfiguration;
 
+pub use crate::types::_private_endpoint::PrivateEndpoint;
+
 pub use crate::types::_target_status::TargetStatus;
 
 pub use crate::types::_stream_delivery_resources::StreamDeliveryResources;
@@ -187,6 +189,12 @@ pub use crate::types::_mcp_target_configuration::McpTargetConfiguration;
 
 pub use crate::types::_credential_provider_configuration::CredentialProviderConfiguration;
 
+pub use crate::types::_self_managed_lattice_resource::SelfManagedLatticeResource;
+
+pub use crate::types::_managed_lattice_resource::ManagedLatticeResource;
+
+pub use crate::types::_managed_resource_details::ManagedResourceDetails;
+
 pub use crate::types::_target_summary::TargetSummary;
 
 pub use crate::types::_gateway_target::GatewayTarget;
@@ -281,6 +289,8 @@ pub use crate::types::_credential_provider_type::CredentialProviderType;
 
 pub use crate::types::_credential_provider::CredentialProvider;
 
+pub use crate::types::_endpoint_ip_address_type::EndpointIpAddressType;
+
 pub use crate::types::_semantic_memory_strategy_input::SemanticMemoryStrategyInput;
 
 pub use crate::types::_summary_memory_strategy_input::SummaryMemoryStrategyInput;
@@ -320,6 +330,8 @@ pub use crate::types::_api_gateway_tool_configuration::ApiGatewayToolConfigurati
 pub use crate::types::_o_auth_credential_provider::OAuthCredentialProvider;
 
 pub use crate::types::_gateway_api_key_credential_provider::GatewayApiKeyCredentialProvider;
+
+pub use crate::types::_iam_credential_provider::IamCredentialProvider;
 
 pub use crate::types::_custom_configuration_input::CustomConfigurationInput;
 
@@ -611,6 +623,8 @@ mod _data_source_config;
 
 mod _delete_memory_strategy_input;
 
+mod _endpoint_ip_address_type;
+
 mod _episodic_consolidation_override;
 
 mod _episodic_extraction_override;
@@ -689,6 +703,8 @@ mod _google_oauth2_provider_config_input;
 
 mod _google_oauth2_provider_config_output;
 
+mod _iam_credential_provider;
+
 mod _inbound_token_claim_value_type;
 
 mod _included_oauth2_provider_config_input;
@@ -722,6 +738,10 @@ mod _linkedin_oauth2_provider_config_input;
 mod _linkedin_oauth2_provider_config_output;
 
 mod _llm_as_a_judge_evaluator_config;
+
+mod _managed_lattice_resource;
+
+mod _managed_resource_details;
 
 mod _mcp_gateway_configuration;
 
@@ -823,6 +843,8 @@ mod _policy_status;
 
 mod _policy_validation_mode;
 
+mod _private_endpoint;
+
 mod _protocol_configuration;
 
 mod _rating_scale;
@@ -868,6 +890,8 @@ mod _secrets_manager_location;
 mod _self_managed_configuration;
 
 mod _self_managed_configuration_input;
+
+mod _self_managed_lattice_resource;
 
 mod _semantic_consolidation_override;
 

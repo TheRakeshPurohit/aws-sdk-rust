@@ -60,6 +60,15 @@ pub(crate) fn capacity_provider_strategy_item_correct_errors(
     builder
 }
 
+pub(crate) fn daemon_container_definition_correct_errors(
+    mut builder: crate::types::builders::DaemonContainerDefinitionBuilder,
+) -> crate::types::builders::DaemonContainerDefinitionBuilder {
+    if builder.image.is_none() {
+        builder.image = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn deployment_alarms_correct_errors(
     mut builder: crate::types::builders::DeploymentAlarmsBuilder,
 ) -> crate::types::builders::DeploymentAlarmsBuilder {

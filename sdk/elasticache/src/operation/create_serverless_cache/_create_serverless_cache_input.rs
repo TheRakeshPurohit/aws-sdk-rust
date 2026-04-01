@@ -25,10 +25,12 @@ pub struct CreateServerlessCacheInput {
     pub user_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the identifiers of the subnets where the VPC endpoint for the serverless cache will be deployed. All the subnetIds must belong to the same VPC.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
+    /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them. Available for Valkey, Redis OSS and Serverless Memcached only. The maximum value allowed is 35 days.</p>
     pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>The daily time that snapshots will be created from the new serverless cache. By default this number is populated with 0, i.e. no snapshots will be created on an automatic daily basis. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub daily_snapshot_time: ::std::option::Option<::std::string::String>,
+    /// <p>The IP protocol version used by the serverless cache. Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. <code>ipv6</code> is only supported with ipv6-only subnets. If not specified, defaults to <code>ipv4</code>, unless all provided subnets are IPv6-only, in which case it defaults to <code>ipv6</code>.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateServerlessCacheInput {
     /// <p>User-provided identifier for the serverless cache. This parameter is stored as a lowercase string.</p>
@@ -83,13 +85,17 @@ impl CreateServerlessCacheInput {
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
-    /// <p>The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
+    /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them. Available for Valkey, Redis OSS and Serverless Memcached only. The maximum value allowed is 35 days.</p>
     pub fn snapshot_retention_limit(&self) -> ::std::option::Option<i32> {
         self.snapshot_retention_limit
     }
     /// <p>The daily time that snapshots will be created from the new serverless cache. By default this number is populated with 0, i.e. no snapshots will be created on an automatic daily basis. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn daily_snapshot_time(&self) -> ::std::option::Option<&str> {
         self.daily_snapshot_time.as_deref()
+    }
+    /// <p>The IP protocol version used by the serverless cache. Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. <code>ipv6</code> is only supported with ipv6-only subnets. If not specified, defaults to <code>ipv4</code>, unless all provided subnets are IPv6-only, in which case it defaults to <code>ipv6</code>.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
     }
 }
 impl CreateServerlessCacheInput {
@@ -116,6 +122,7 @@ pub struct CreateServerlessCacheInputBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) snapshot_retention_limit: ::std::option::Option<i32>,
     pub(crate) daily_snapshot_time: ::std::option::Option<::std::string::String>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateServerlessCacheInputBuilder {
     /// <p>User-provided identifier for the serverless cache. This parameter is stored as a lowercase string.</p>
@@ -298,17 +305,17 @@ impl CreateServerlessCacheInputBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
-    /// <p>The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
+    /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them. Available for Valkey, Redis OSS and Serverless Memcached only. The maximum value allowed is 35 days.</p>
     pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
         self.snapshot_retention_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
+    /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them. Available for Valkey, Redis OSS and Serverless Memcached only. The maximum value allowed is 35 days.</p>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.snapshot_retention_limit = input;
         self
     }
-    /// <p>The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
+    /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them. Available for Valkey, Redis OSS and Serverless Memcached only. The maximum value allowed is 35 days.</p>
     pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
         &self.snapshot_retention_limit
     }
@@ -325,6 +332,20 @@ impl CreateServerlessCacheInputBuilder {
     /// <p>The daily time that snapshots will be created from the new serverless cache. By default this number is populated with 0, i.e. no snapshots will be created on an automatic daily basis. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn get_daily_snapshot_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.daily_snapshot_time
+    }
+    /// <p>The IP protocol version used by the serverless cache. Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. <code>ipv6</code> is only supported with ipv6-only subnets. If not specified, defaults to <code>ipv4</code>, unless all provided subnets are IPv6-only, in which case it defaults to <code>ipv6</code>.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP protocol version used by the serverless cache. Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. <code>ipv6</code> is only supported with ipv6-only subnets. If not specified, defaults to <code>ipv4</code>, unless all provided subnets are IPv6-only, in which case it defaults to <code>ipv6</code>.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The IP protocol version used by the serverless cache. Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. <code>ipv6</code> is only supported with ipv6-only subnets. If not specified, defaults to <code>ipv4</code>, unless all provided subnets are IPv6-only, in which case it defaults to <code>ipv6</code>.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
     }
     /// Consumes the builder and constructs a [`CreateServerlessCacheInput`](crate::operation::create_serverless_cache::CreateServerlessCacheInput).
     pub fn build(
@@ -345,6 +366,7 @@ impl CreateServerlessCacheInputBuilder {
             subnet_ids: self.subnet_ids,
             snapshot_retention_limit: self.snapshot_retention_limit,
             daily_snapshot_time: self.daily_snapshot_time,
+            network_type: self.network_type,
         })
     }
 }

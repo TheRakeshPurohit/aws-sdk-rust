@@ -3,70 +3,70 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculateIsolinesOutput {
-    /// <p>Time of arrival at the destination. This parameter is returned only if the Destination parameters was provided in the request.</p>
-    /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
+    /// <p>Time of arrival at the destination, used for traffic calculations. This attribute is returned only if the <code>Destination</code> and <code>ArrivalTime</code> attributes were provided in the request.</p>
+    /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
     pub arrival_time: ::std::option::Option<::std::string::String>,
-    /// <p>Time of departure from thr origin.</p>
-    /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
+    /// <p>Time of departure from the origin, used for traffic calculations. This attribute is returned when <code>Origin</code> was provided in the request and either a specific departure time was requested (<code>DepartureTime</code>) or <code>DepartNow</code> was set to true.</p>
+    /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
     pub departure_time: ::std::option::Option<::std::string::String>,
-    /// <p>The format of the returned IsolineGeometry.</p>
-    /// <p>Default Value:<code>FlexiblePolyline</code></p>
+    /// <p>The format of the returned geometries, matching the format specified in the request. Either <code> FlexiblePolyline</code> for compact encoding or <code>Simple</code> for GeoJSON-compatible coordinates.</p>
+    /// <p>Default value:<code>FlexiblePolyline</code></p>
     pub isoline_geometry_format: crate::types::GeometryFormat,
-    /// <p>Calculated isolines and associated properties.</p>
+    /// <p>Reachable areas, or isolines, for each threshold specified in the request.</p>
     pub isolines: ::std::vec::Vec<crate::types::Isoline>,
-    /// <p>The pricing bucket for which the query is charged at.</p>
+    /// <p>The pricing bucket applied to this calculation. Different buckets apply based on the travel mode and thresholds used.</p>
     pub pricing_bucket: ::std::string::String,
-    /// <p>Snapped destination that was used for the Isoline calculation.</p>
+    /// <p>The actual point on the road network used for calculations, which may differ from the requested destination if <code>Destination</code> was not directly on a road.</p>
     pub snapped_destination: ::std::option::Option<::std::vec::Vec<f64>>,
-    /// <p>Snapped origin that was used for the Isoline calculation.</p>
+    /// <p>The actual point on the road network used for calculations, which may differ from the requested origin if <code>Origin</code> was not directly on a road.</p>
     pub snapped_origin: ::std::option::Option<::std::vec::Vec<f64>>,
     _request_id: Option<String>,
 }
 impl CalculateIsolinesOutput {
-    /// <p>Time of arrival at the destination. This parameter is returned only if the Destination parameters was provided in the request.</p>
-    /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
+    /// <p>Time of arrival at the destination, used for traffic calculations. This attribute is returned only if the <code>Destination</code> and <code>ArrivalTime</code> attributes were provided in the request.</p>
+    /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
     pub fn arrival_time(&self) -> ::std::option::Option<&str> {
         self.arrival_time.as_deref()
     }
-    /// <p>Time of departure from thr origin.</p>
-    /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
+    /// <p>Time of departure from the origin, used for traffic calculations. This attribute is returned when <code>Origin</code> was provided in the request and either a specific departure time was requested (<code>DepartureTime</code>) or <code>DepartNow</code> was set to true.</p>
+    /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
     pub fn departure_time(&self) -> ::std::option::Option<&str> {
         self.departure_time.as_deref()
     }
-    /// <p>The format of the returned IsolineGeometry.</p>
-    /// <p>Default Value:<code>FlexiblePolyline</code></p>
+    /// <p>The format of the returned geometries, matching the format specified in the request. Either <code> FlexiblePolyline</code> for compact encoding or <code>Simple</code> for GeoJSON-compatible coordinates.</p>
+    /// <p>Default value:<code>FlexiblePolyline</code></p>
     pub fn isoline_geometry_format(&self) -> &crate::types::GeometryFormat {
         &self.isoline_geometry_format
     }
-    /// <p>Calculated isolines and associated properties.</p>
+    /// <p>Reachable areas, or isolines, for each threshold specified in the request.</p>
     pub fn isolines(&self) -> &[crate::types::Isoline] {
         use std::ops::Deref;
         self.isolines.deref()
     }
-    /// <p>The pricing bucket for which the query is charged at.</p>
+    /// <p>The pricing bucket applied to this calculation. Different buckets apply based on the travel mode and thresholds used.</p>
     pub fn pricing_bucket(&self) -> &str {
         use std::ops::Deref;
         self.pricing_bucket.deref()
     }
-    /// <p>Snapped destination that was used for the Isoline calculation.</p>
+    /// <p>The actual point on the road network used for calculations, which may differ from the requested destination if <code>Destination</code> was not directly on a road.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapped_destination.is_none()`.
     pub fn snapped_destination(&self) -> &[f64] {
         self.snapped_destination.as_deref().unwrap_or_default()
     }
-    /// <p>Snapped origin that was used for the Isoline calculation.</p>
+    /// <p>The actual point on the road network used for calculations, which may differ from the requested origin if <code>Origin</code> was not directly on a road.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.snapped_origin.is_none()`.
     pub fn snapped_origin(&self) -> &[f64] {
@@ -113,8 +113,8 @@ pub struct CalculateIsolinesOutputBuilder {
     _request_id: Option<String>,
 }
 impl CalculateIsolinesOutputBuilder {
-    /// <p>Time of arrival at the destination. This parameter is returned only if the Destination parameters was provided in the request.</p>
-    /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
+    /// <p>Time of arrival at the destination, used for traffic calculations. This attribute is returned only if the <code>Destination</code> and <code>ArrivalTime</code> attributes were provided in the request.</p>
+    /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
@@ -122,8 +122,8 @@ impl CalculateIsolinesOutputBuilder {
         self.arrival_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Time of arrival at the destination. This parameter is returned only if the Destination parameters was provided in the request.</p>
-    /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
+    /// <p>Time of arrival at the destination, used for traffic calculations. This attribute is returned only if the <code>Destination</code> and <code>ArrivalTime</code> attributes were provided in the request.</p>
+    /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
@@ -131,16 +131,16 @@ impl CalculateIsolinesOutputBuilder {
         self.arrival_time = input;
         self
     }
-    /// <p>Time of arrival at the destination. This parameter is returned only if the Destination parameters was provided in the request.</p>
-    /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
+    /// <p>Time of arrival at the destination, used for traffic calculations. This attribute is returned only if the <code>Destination</code> and <code>ArrivalTime</code> attributes were provided in the request.</p>
+    /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
     pub fn get_arrival_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.arrival_time
     }
-    /// <p>Time of departure from thr origin.</p>
-    /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
+    /// <p>Time of departure from the origin, used for traffic calculations. This attribute is returned when <code>Origin</code> was provided in the request and either a specific departure time was requested (<code>DepartureTime</code>) or <code>DepartNow</code> was set to true.</p>
+    /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
@@ -148,8 +148,8 @@ impl CalculateIsolinesOutputBuilder {
         self.departure_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Time of departure from thr origin.</p>
-    /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
+    /// <p>Time of departure from the origin, used for traffic calculations. This attribute is returned when <code>Origin</code> was provided in the request and either a specific departure time was requested (<code>DepartureTime</code>) or <code>DepartNow</code> was set to true.</p>
+    /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
@@ -157,29 +157,29 @@ impl CalculateIsolinesOutputBuilder {
         self.departure_time = input;
         self
     }
-    /// <p>Time of departure from thr origin.</p>
-    /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
+    /// <p>Time of departure from the origin, used for traffic calculations. This attribute is returned when <code>Origin</code> was provided in the request and either a specific departure time was requested (<code>DepartureTime</code>) or <code>DepartNow</code> was set to true.</p>
+    /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
     pub fn get_departure_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.departure_time
     }
-    /// <p>The format of the returned IsolineGeometry.</p>
-    /// <p>Default Value:<code>FlexiblePolyline</code></p>
+    /// <p>The format of the returned geometries, matching the format specified in the request. Either <code> FlexiblePolyline</code> for compact encoding or <code>Simple</code> for GeoJSON-compatible coordinates.</p>
+    /// <p>Default value:<code>FlexiblePolyline</code></p>
     /// This field is required.
     pub fn isoline_geometry_format(mut self, input: crate::types::GeometryFormat) -> Self {
         self.isoline_geometry_format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The format of the returned IsolineGeometry.</p>
-    /// <p>Default Value:<code>FlexiblePolyline</code></p>
+    /// <p>The format of the returned geometries, matching the format specified in the request. Either <code> FlexiblePolyline</code> for compact encoding or <code>Simple</code> for GeoJSON-compatible coordinates.</p>
+    /// <p>Default value:<code>FlexiblePolyline</code></p>
     pub fn set_isoline_geometry_format(mut self, input: ::std::option::Option<crate::types::GeometryFormat>) -> Self {
         self.isoline_geometry_format = input;
         self
     }
-    /// <p>The format of the returned IsolineGeometry.</p>
-    /// <p>Default Value:<code>FlexiblePolyline</code></p>
+    /// <p>The format of the returned geometries, matching the format specified in the request. Either <code> FlexiblePolyline</code> for compact encoding or <code>Simple</code> for GeoJSON-compatible coordinates.</p>
+    /// <p>Default value:<code>FlexiblePolyline</code></p>
     pub fn get_isoline_geometry_format(&self) -> &::std::option::Option<crate::types::GeometryFormat> {
         &self.isoline_geometry_format
     }
@@ -187,34 +187,34 @@ impl CalculateIsolinesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_isolines`](Self::set_isolines).
     ///
-    /// <p>Calculated isolines and associated properties.</p>
+    /// <p>Reachable areas, or isolines, for each threshold specified in the request.</p>
     pub fn isolines(mut self, input: crate::types::Isoline) -> Self {
         let mut v = self.isolines.unwrap_or_default();
         v.push(input);
         self.isolines = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Calculated isolines and associated properties.</p>
+    /// <p>Reachable areas, or isolines, for each threshold specified in the request.</p>
     pub fn set_isolines(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Isoline>>) -> Self {
         self.isolines = input;
         self
     }
-    /// <p>Calculated isolines and associated properties.</p>
+    /// <p>Reachable areas, or isolines, for each threshold specified in the request.</p>
     pub fn get_isolines(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Isoline>> {
         &self.isolines
     }
-    /// <p>The pricing bucket for which the query is charged at.</p>
+    /// <p>The pricing bucket applied to this calculation. Different buckets apply based on the travel mode and thresholds used.</p>
     /// This field is required.
     pub fn pricing_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.pricing_bucket = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pricing bucket for which the query is charged at.</p>
+    /// <p>The pricing bucket applied to this calculation. Different buckets apply based on the travel mode and thresholds used.</p>
     pub fn set_pricing_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pricing_bucket = input;
         self
     }
-    /// <p>The pricing bucket for which the query is charged at.</p>
+    /// <p>The pricing bucket applied to this calculation. Different buckets apply based on the travel mode and thresholds used.</p>
     pub fn get_pricing_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.pricing_bucket
     }
@@ -222,19 +222,19 @@ impl CalculateIsolinesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_snapped_destination`](Self::set_snapped_destination).
     ///
-    /// <p>Snapped destination that was used for the Isoline calculation.</p>
+    /// <p>The actual point on the road network used for calculations, which may differ from the requested destination if <code>Destination</code> was not directly on a road.</p>
     pub fn snapped_destination(mut self, input: f64) -> Self {
         let mut v = self.snapped_destination.unwrap_or_default();
         v.push(input);
         self.snapped_destination = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Snapped destination that was used for the Isoline calculation.</p>
+    /// <p>The actual point on the road network used for calculations, which may differ from the requested destination if <code>Destination</code> was not directly on a road.</p>
     pub fn set_snapped_destination(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.snapped_destination = input;
         self
     }
-    /// <p>Snapped destination that was used for the Isoline calculation.</p>
+    /// <p>The actual point on the road network used for calculations, which may differ from the requested destination if <code>Destination</code> was not directly on a road.</p>
     pub fn get_snapped_destination(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.snapped_destination
     }
@@ -242,19 +242,19 @@ impl CalculateIsolinesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_snapped_origin`](Self::set_snapped_origin).
     ///
-    /// <p>Snapped origin that was used for the Isoline calculation.</p>
+    /// <p>The actual point on the road network used for calculations, which may differ from the requested origin if <code>Origin</code> was not directly on a road.</p>
     pub fn snapped_origin(mut self, input: f64) -> Self {
         let mut v = self.snapped_origin.unwrap_or_default();
         v.push(input);
         self.snapped_origin = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Snapped origin that was used for the Isoline calculation.</p>
+    /// <p>The actual point on the road network used for calculations, which may differ from the requested origin if <code>Origin</code> was not directly on a road.</p>
     pub fn set_snapped_origin(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.snapped_origin = input;
         self
     }
-    /// <p>Snapped origin that was used for the Isoline calculation.</p>
+    /// <p>The actual point on the road network used for calculations, which may differ from the requested origin if <code>Origin</code> was not directly on a road.</p>
     pub fn get_snapped_origin(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.snapped_origin
     }

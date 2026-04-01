@@ -66,6 +66,14 @@ pub struct GetModelInvocationJobOutput {
     pub job_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The invocation endpoint for ModelInvocationJob</p>
     pub model_invocation_type: ::std::option::Option<crate::types::ModelInvocationType>,
+    /// <p>The total number of records in the batch inference job.</p>
+    pub total_record_count: ::std::option::Option<i64>,
+    /// <p>The number of records that have been processed in the batch inference job.</p>
+    pub processed_record_count: ::std::option::Option<i64>,
+    /// <p>The number of records that were successfully processed in the batch inference job.</p>
+    pub success_record_count: ::std::option::Option<i64>,
+    /// <p>The number of records that failed to process in the batch inference job.</p>
+    pub error_record_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetModelInvocationJobOutput {
@@ -167,6 +175,22 @@ impl GetModelInvocationJobOutput {
     pub fn model_invocation_type(&self) -> ::std::option::Option<&crate::types::ModelInvocationType> {
         self.model_invocation_type.as_ref()
     }
+    /// <p>The total number of records in the batch inference job.</p>
+    pub fn total_record_count(&self) -> ::std::option::Option<i64> {
+        self.total_record_count
+    }
+    /// <p>The number of records that have been processed in the batch inference job.</p>
+    pub fn processed_record_count(&self) -> ::std::option::Option<i64> {
+        self.processed_record_count
+    }
+    /// <p>The number of records that were successfully processed in the batch inference job.</p>
+    pub fn success_record_count(&self) -> ::std::option::Option<i64> {
+        self.success_record_count
+    }
+    /// <p>The number of records that failed to process in the batch inference job.</p>
+    pub fn error_record_count(&self) -> ::std::option::Option<i64> {
+        self.error_record_count
+    }
 }
 impl ::std::fmt::Debug for GetModelInvocationJobOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -187,6 +211,10 @@ impl ::std::fmt::Debug for GetModelInvocationJobOutput {
         formatter.field("timeout_duration_in_hours", &self.timeout_duration_in_hours);
         formatter.field("job_expiration_time", &self.job_expiration_time);
         formatter.field("model_invocation_type", &self.model_invocation_type);
+        formatter.field("total_record_count", &self.total_record_count);
+        formatter.field("processed_record_count", &self.processed_record_count);
+        formatter.field("success_record_count", &self.success_record_count);
+        formatter.field("error_record_count", &self.error_record_count);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -223,6 +251,10 @@ pub struct GetModelInvocationJobOutputBuilder {
     pub(crate) timeout_duration_in_hours: ::std::option::Option<i32>,
     pub(crate) job_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) model_invocation_type: ::std::option::Option<crate::types::ModelInvocationType>,
+    pub(crate) total_record_count: ::std::option::Option<i64>,
+    pub(crate) processed_record_count: ::std::option::Option<i64>,
+    pub(crate) success_record_count: ::std::option::Option<i64>,
+    pub(crate) error_record_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetModelInvocationJobOutputBuilder {
@@ -549,6 +581,62 @@ impl GetModelInvocationJobOutputBuilder {
     pub fn get_model_invocation_type(&self) -> &::std::option::Option<crate::types::ModelInvocationType> {
         &self.model_invocation_type
     }
+    /// <p>The total number of records in the batch inference job.</p>
+    pub fn total_record_count(mut self, input: i64) -> Self {
+        self.total_record_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of records in the batch inference job.</p>
+    pub fn set_total_record_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.total_record_count = input;
+        self
+    }
+    /// <p>The total number of records in the batch inference job.</p>
+    pub fn get_total_record_count(&self) -> &::std::option::Option<i64> {
+        &self.total_record_count
+    }
+    /// <p>The number of records that have been processed in the batch inference job.</p>
+    pub fn processed_record_count(mut self, input: i64) -> Self {
+        self.processed_record_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of records that have been processed in the batch inference job.</p>
+    pub fn set_processed_record_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.processed_record_count = input;
+        self
+    }
+    /// <p>The number of records that have been processed in the batch inference job.</p>
+    pub fn get_processed_record_count(&self) -> &::std::option::Option<i64> {
+        &self.processed_record_count
+    }
+    /// <p>The number of records that were successfully processed in the batch inference job.</p>
+    pub fn success_record_count(mut self, input: i64) -> Self {
+        self.success_record_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of records that were successfully processed in the batch inference job.</p>
+    pub fn set_success_record_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.success_record_count = input;
+        self
+    }
+    /// <p>The number of records that were successfully processed in the batch inference job.</p>
+    pub fn get_success_record_count(&self) -> &::std::option::Option<i64> {
+        &self.success_record_count
+    }
+    /// <p>The number of records that failed to process in the batch inference job.</p>
+    pub fn error_record_count(mut self, input: i64) -> Self {
+        self.error_record_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of records that failed to process in the batch inference job.</p>
+    pub fn set_error_record_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.error_record_count = input;
+        self
+    }
+    /// <p>The number of records that failed to process in the batch inference job.</p>
+    pub fn get_error_record_count(&self) -> &::std::option::Option<i64> {
+        &self.error_record_count
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -607,6 +695,10 @@ impl GetModelInvocationJobOutputBuilder {
             timeout_duration_in_hours: self.timeout_duration_in_hours,
             job_expiration_time: self.job_expiration_time,
             model_invocation_type: self.model_invocation_type,
+            total_record_count: self.total_record_count,
+            processed_record_count: self.processed_record_count,
+            success_record_count: self.success_record_count,
+            error_record_count: self.error_record_count,
             _request_id: self._request_id,
         })
     }
@@ -630,6 +722,10 @@ impl ::std::fmt::Debug for GetModelInvocationJobOutputBuilder {
         formatter.field("timeout_duration_in_hours", &self.timeout_duration_in_hours);
         formatter.field("job_expiration_time", &self.job_expiration_time);
         formatter.field("model_invocation_type", &self.model_invocation_type);
+        formatter.field("total_record_count", &self.total_record_count);
+        formatter.field("processed_record_count", &self.processed_record_count);
+        formatter.field("success_record_count", &self.success_record_count);
+        formatter.field("error_record_count", &self.error_record_count);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

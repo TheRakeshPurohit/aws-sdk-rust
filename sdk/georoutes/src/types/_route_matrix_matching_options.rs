@@ -10,7 +10,7 @@ pub struct RouteMatrixMatchingOptions {
     /// <p><b>Unit</b>: <code>meters</code></p>
     pub on_road_threshold: i64,
     /// <p>Considers all roads within the provided radius to match the provided destination to. The roads that are considered are determined by the provided Strategy.</p>
-    /// <p><b>Unit</b>: <code>Meters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub radius: i64,
     /// <p>Strategy that defines matching of the position onto the road network. MatchAny considers all roads possible, whereas MatchMostSignificantRoad matches to the most significant road.</p>
     pub strategy: ::std::option::Option<crate::types::MatchingStrategy>,
@@ -26,7 +26,7 @@ impl RouteMatrixMatchingOptions {
         self.on_road_threshold
     }
     /// <p>Considers all roads within the provided radius to match the provided destination to. The roads that are considered are determined by the provided Strategy.</p>
-    /// <p><b>Unit</b>: <code>Meters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn radius(&self) -> i64 {
         self.radius
     }
@@ -94,19 +94,19 @@ impl RouteMatrixMatchingOptionsBuilder {
         &self.on_road_threshold
     }
     /// <p>Considers all roads within the provided radius to match the provided destination to. The roads that are considered are determined by the provided Strategy.</p>
-    /// <p><b>Unit</b>: <code>Meters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn radius(mut self, input: i64) -> Self {
         self.radius = ::std::option::Option::Some(input);
         self
     }
     /// <p>Considers all roads within the provided radius to match the provided destination to. The roads that are considered are determined by the provided Strategy.</p>
-    /// <p><b>Unit</b>: <code>Meters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn set_radius(mut self, input: ::std::option::Option<i64>) -> Self {
         self.radius = input;
         self
     }
     /// <p>Considers all roads within the provided radius to match the provided destination to. The roads that are considered are determined by the provided Strategy.</p>
-    /// <p><b>Unit</b>: <code>Meters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn get_radius(&self) -> &::std::option::Option<i64> {
         &self.radius
     }

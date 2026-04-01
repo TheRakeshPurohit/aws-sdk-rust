@@ -282,17 +282,17 @@ impl CreateServerlessCacheFluentBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_ids()
     }
-    /// <p>The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
+    /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them. Available for Valkey, Redis OSS and Serverless Memcached only. The maximum value allowed is 35 days.</p>
     pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
         self.inner = self.inner.snapshot_retention_limit(input);
         self
     }
-    /// <p>The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
+    /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them. Available for Valkey, Redis OSS and Serverless Memcached only. The maximum value allowed is 35 days.</p>
     pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_snapshot_retention_limit(input);
         self
     }
-    /// <p>The number of snapshots that will be retained for the serverless cache that is being created. As new snapshots beyond this limit are added, the oldest snapshots will be deleted on a rolling basis. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
+    /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them. Available for Valkey, Redis OSS and Serverless Memcached only. The maximum value allowed is 35 days.</p>
     pub fn get_snapshot_retention_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_snapshot_retention_limit()
     }
@@ -309,5 +309,19 @@ impl CreateServerlessCacheFluentBuilder {
     /// <p>The daily time that snapshots will be created from the new serverless cache. By default this number is populated with 0, i.e. no snapshots will be created on an automatic daily basis. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub fn get_daily_snapshot_time(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_daily_snapshot_time()
+    }
+    /// <p>The IP protocol version used by the serverless cache. Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. <code>ipv6</code> is only supported with ipv6-only subnets. If not specified, defaults to <code>ipv4</code>, unless all provided subnets are IPv6-only, in which case it defaults to <code>ipv6</code>.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.inner = self.inner.network_type(input);
+        self
+    }
+    /// <p>The IP protocol version used by the serverless cache. Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. <code>ipv6</code> is only supported with ipv6-only subnets. If not specified, defaults to <code>ipv4</code>, unless all provided subnets are IPv6-only, in which case it defaults to <code>ipv6</code>.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.inner = self.inner.set_network_type(input);
+        self
+    }
+    /// <p>The IP protocol version used by the serverless cache. Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. <code>ipv6</code> is only supported with ipv6-only subnets. If not specified, defaults to <code>ipv4</code>, unless all provided subnets are IPv6-only, in which case it defaults to <code>ipv6</code>.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        self.inner.get_network_type()
     }
 }

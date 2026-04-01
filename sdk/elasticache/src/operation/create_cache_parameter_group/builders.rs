@@ -115,17 +115,17 @@ impl CreateCacheParameterGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A user-specified name for the cache parameter group.</p>
+    /// <p>A user-specified name for the cache parameter group. This value is stored as a lowercase string.</p>
     pub fn cache_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cache_parameter_group_name(input.into());
         self
     }
-    /// <p>A user-specified name for the cache parameter group.</p>
+    /// <p>A user-specified name for the cache parameter group. This value is stored as a lowercase string.</p>
     pub fn set_cache_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cache_parameter_group_name(input);
         self
     }
-    /// <p>A user-specified name for the cache parameter group.</p>
+    /// <p>A user-specified name for the cache parameter group. This value is stored as a lowercase string.</p>
     pub fn get_cache_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_parameter_group_name()
     }

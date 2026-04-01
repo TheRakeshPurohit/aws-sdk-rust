@@ -281,6 +281,8 @@ pub(crate) mod shape_proxy_configuration;
 
 pub(crate) mod shape_search_criteria;
 
+pub(crate) mod shape_session_filter;
+
 pub(crate) mod shape_session_summary_list;
 
 pub(crate) mod shape_stream_update;

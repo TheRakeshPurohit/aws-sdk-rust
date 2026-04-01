@@ -24,16 +24,16 @@ pub struct OptimizeWaypointsInput {
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the optimization criteria for the calculated sequence.</p>
-    /// <p>Default Value: <code>FastestRoute</code>.</p>
+    /// <p>Default value: <code>FastestRoute</code>.</p>
     pub optimize_sequencing_for: ::std::option::Option<crate::types::WaypointOptimizationSequencingObjective>,
-    /// <p>The start position for the route.</p>
+    /// <p>The start position for the route in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub origin: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>Origin related options.</p>
     pub origin_options: ::std::option::Option<crate::types::WaypointOptimizationOriginOptions>,
     /// <p>Traffic-related options.</p>
     pub traffic: ::std::option::Option<crate::types::WaypointOptimizationTrafficOptions>,
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub travel_mode: ::std::option::Option<crate::types::WaypointOptimizationTravelMode>,
     /// <p>Travel mode related options for the provided travel mode.</p>
     pub travel_mode_options: ::std::option::Option<crate::types::WaypointOptimizationTravelModeOptions>,
@@ -80,11 +80,11 @@ impl OptimizeWaypointsInput {
         self.key.as_deref()
     }
     /// <p>Specifies the optimization criteria for the calculated sequence.</p>
-    /// <p>Default Value: <code>FastestRoute</code>.</p>
+    /// <p>Default value: <code>FastestRoute</code>.</p>
     pub fn optimize_sequencing_for(&self) -> ::std::option::Option<&crate::types::WaypointOptimizationSequencingObjective> {
         self.optimize_sequencing_for.as_ref()
     }
-    /// <p>The start position for the route.</p>
+    /// <p>The start position for the route in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.origin.is_none()`.
     pub fn origin(&self) -> &[f64] {
@@ -99,7 +99,7 @@ impl OptimizeWaypointsInput {
         self.traffic.as_ref()
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn travel_mode(&self) -> ::std::option::Option<&crate::types::WaypointOptimizationTravelMode> {
         self.travel_mode.as_ref()
     }
@@ -294,19 +294,19 @@ impl OptimizeWaypointsInputBuilder {
         &self.key
     }
     /// <p>Specifies the optimization criteria for the calculated sequence.</p>
-    /// <p>Default Value: <code>FastestRoute</code>.</p>
+    /// <p>Default value: <code>FastestRoute</code>.</p>
     pub fn optimize_sequencing_for(mut self, input: crate::types::WaypointOptimizationSequencingObjective) -> Self {
         self.optimize_sequencing_for = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the optimization criteria for the calculated sequence.</p>
-    /// <p>Default Value: <code>FastestRoute</code>.</p>
+    /// <p>Default value: <code>FastestRoute</code>.</p>
     pub fn set_optimize_sequencing_for(mut self, input: ::std::option::Option<crate::types::WaypointOptimizationSequencingObjective>) -> Self {
         self.optimize_sequencing_for = input;
         self
     }
     /// <p>Specifies the optimization criteria for the calculated sequence.</p>
-    /// <p>Default Value: <code>FastestRoute</code>.</p>
+    /// <p>Default value: <code>FastestRoute</code>.</p>
     pub fn get_optimize_sequencing_for(&self) -> &::std::option::Option<crate::types::WaypointOptimizationSequencingObjective> {
         &self.optimize_sequencing_for
     }
@@ -314,19 +314,19 @@ impl OptimizeWaypointsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_origin`](Self::set_origin).
     ///
-    /// <p>The start position for the route.</p>
+    /// <p>The start position for the route in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn origin(mut self, input: f64) -> Self {
         let mut v = self.origin.unwrap_or_default();
         v.push(input);
         self.origin = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The start position for the route.</p>
+    /// <p>The start position for the route in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn set_origin(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.origin = input;
         self
     }
-    /// <p>The start position for the route.</p>
+    /// <p>The start position for the route in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn get_origin(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.origin
     }
@@ -359,19 +359,19 @@ impl OptimizeWaypointsInputBuilder {
         &self.traffic
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn travel_mode(mut self, input: crate::types::WaypointOptimizationTravelMode) -> Self {
         self.travel_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn set_travel_mode(mut self, input: ::std::option::Option<crate::types::WaypointOptimizationTravelMode>) -> Self {
         self.travel_mode = input;
         self
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn get_travel_mode(&self) -> &::std::option::Option<crate::types::WaypointOptimizationTravelMode> {
         &self.travel_mode
     }

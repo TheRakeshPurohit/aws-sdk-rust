@@ -12,6 +12,7 @@ pub struct DomainEndpointOptions {
     /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy that supports TLS version 1.0 to TLS version 1.2</li>
     /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy that supports only TLS version 1.2</li>
     /// <li><b>Policy-Min-TLS-1-2-PFS-2023-10: </b> TLS security policy that supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</li>
+    /// <li><b>Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08: </b> TLS security policy that supports TLS version 1.3 with FIPS</li>
     /// </ul>
     /// <p></p>
     pub tls_security_policy: ::std::option::Option<crate::types::TlsSecurityPolicy>,
@@ -33,6 +34,7 @@ impl DomainEndpointOptions {
     /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy that supports TLS version 1.0 to TLS version 1.2</li>
     /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy that supports only TLS version 1.2</li>
     /// <li><b>Policy-Min-TLS-1-2-PFS-2023-10: </b> TLS security policy that supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</li>
+    /// <li><b>Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08: </b> TLS security policy that supports TLS version 1.3 with FIPS</li>
     /// </ul>
     /// <p></p>
     pub fn tls_security_policy(&self) -> ::std::option::Option<&crate::types::TlsSecurityPolicy> {
@@ -89,6 +91,7 @@ impl DomainEndpointOptionsBuilder {
     /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy that supports TLS version 1.0 to TLS version 1.2</li>
     /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy that supports only TLS version 1.2</li>
     /// <li><b>Policy-Min-TLS-1-2-PFS-2023-10: </b> TLS security policy that supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</li>
+    /// <li><b>Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08: </b> TLS security policy that supports TLS version 1.3 with FIPS</li>
     /// </ul>
     /// <p></p>
     pub fn tls_security_policy(mut self, input: crate::types::TlsSecurityPolicy) -> Self {
@@ -101,6 +104,7 @@ impl DomainEndpointOptionsBuilder {
     /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy that supports TLS version 1.0 to TLS version 1.2</li>
     /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy that supports only TLS version 1.2</li>
     /// <li><b>Policy-Min-TLS-1-2-PFS-2023-10: </b> TLS security policy that supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</li>
+    /// <li><b>Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08: </b> TLS security policy that supports TLS version 1.3 with FIPS</li>
     /// </ul>
     /// <p></p>
     pub fn set_tls_security_policy(mut self, input: ::std::option::Option<crate::types::TlsSecurityPolicy>) -> Self {
@@ -113,6 +117,7 @@ impl DomainEndpointOptionsBuilder {
     /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy that supports TLS version 1.0 to TLS version 1.2</li>
     /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy that supports only TLS version 1.2</li>
     /// <li><b>Policy-Min-TLS-1-2-PFS-2023-10: </b> TLS security policy that supports TLS version 1.2 to TLS version 1.3 with perfect forward secrecy cipher suites</li>
+    /// <li><b>Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08: </b> TLS security policy that supports TLS version 1.3 with FIPS</li>
     /// </ul>
     /// <p></p>
     pub fn get_tls_security_policy(&self) -> &::std::option::Option<crate::types::TlsSecurityPolicy> {

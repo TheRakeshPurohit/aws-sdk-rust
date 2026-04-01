@@ -250,4 +250,18 @@ impl ListTasksFluentBuilder {
     pub fn get_launch_type(&self) -> &::std::option::Option<crate::types::LaunchType> {
         self.inner.get_launch_type()
     }
+    /// <p>The name of the daemon to use when filtering the <code>ListTasks</code> results. Specifying a <code>daemonName</code> limits the results to tasks that belong to that daemon.</p>
+    pub fn daemon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.daemon_name(input.into());
+        self
+    }
+    /// <p>The name of the daemon to use when filtering the <code>ListTasks</code> results. Specifying a <code>daemonName</code> limits the results to tasks that belong to that daemon.</p>
+    pub fn set_daemon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_daemon_name(input);
+        self
+    }
+    /// <p>The name of the daemon to use when filtering the <code>ListTasks</code> results. Specifying a <code>daemonName</code> limits the results to tasks that belong to that daemon.</p>
+    pub fn get_daemon_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_daemon_name()
+    }
 }

@@ -21,6 +21,10 @@ impl super::Client {
     ///   - [`timeout_duration_in_hours(Option<i32>)`](crate::operation::get_model_invocation_job::GetModelInvocationJobOutput::timeout_duration_in_hours): <p>The number of hours after which batch inference job was set to time out.</p>
     ///   - [`job_expiration_time(Option<DateTime>)`](crate::operation::get_model_invocation_job::GetModelInvocationJobOutput::job_expiration_time): <p>The time at which the batch inference job times or timed out.</p>
     ///   - [`model_invocation_type(Option<ModelInvocationType>)`](crate::operation::get_model_invocation_job::GetModelInvocationJobOutput::model_invocation_type): <p>The invocation endpoint for ModelInvocationJob</p>
+    ///   - [`total_record_count(Option<i64>)`](crate::operation::get_model_invocation_job::GetModelInvocationJobOutput::total_record_count): <p>The total number of records in the batch inference job.</p>
+    ///   - [`processed_record_count(Option<i64>)`](crate::operation::get_model_invocation_job::GetModelInvocationJobOutput::processed_record_count): <p>The number of records that have been processed in the batch inference job.</p>
+    ///   - [`success_record_count(Option<i64>)`](crate::operation::get_model_invocation_job::GetModelInvocationJobOutput::success_record_count): <p>The number of records that were successfully processed in the batch inference job.</p>
+    ///   - [`error_record_count(Option<i64>)`](crate::operation::get_model_invocation_job::GetModelInvocationJobOutput::error_record_count): <p>The number of records that failed to process in the batch inference job.</p>
     /// - On failure, responds with [`SdkError<GetModelInvocationJobError>`](crate::operation::get_model_invocation_job::GetModelInvocationJobError)
     pub fn get_model_invocation_job(&self) -> crate::operation::get_model_invocation_job::builders::GetModelInvocationJobFluentBuilder {
         crate::operation::get_model_invocation_job::builders::GetModelInvocationJobFluentBuilder::new(self.handle.clone())

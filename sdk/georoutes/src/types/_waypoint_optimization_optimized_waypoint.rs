@@ -12,7 +12,7 @@ pub struct WaypointOptimizationOptimizedWaypoint {
     pub arrival_time: ::std::option::Option<::std::string::String>,
     /// <p>Index of the cluster the waypoint is associated with. The index is included in the response only if clustering was performed while processing the request.</p>
     pub cluster_index: ::std::option::Option<i32>,
-    /// <p>Estimated time of departure from thr origin.</p>
+    /// <p>Estimated time of departure from the origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -20,7 +20,7 @@ pub struct WaypointOptimizationOptimizedWaypoint {
     pub departure_time: ::std::string::String,
     /// <p>The waypoint Id.</p>
     pub id: ::std::string::String,
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub position: ::std::vec::Vec<f64>,
 }
 impl WaypointOptimizationOptimizedWaypoint {
@@ -36,7 +36,7 @@ impl WaypointOptimizationOptimizedWaypoint {
     pub fn cluster_index(&self) -> ::std::option::Option<i32> {
         self.cluster_index
     }
-    /// <p>Estimated time of departure from thr origin.</p>
+    /// <p>Estimated time of departure from the origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -50,7 +50,7 @@ impl WaypointOptimizationOptimizedWaypoint {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(&self) -> &[f64] {
         use std::ops::Deref;
         self.position.deref()
@@ -125,7 +125,7 @@ impl WaypointOptimizationOptimizedWaypointBuilder {
     pub fn get_cluster_index(&self) -> &::std::option::Option<i32> {
         &self.cluster_index
     }
-    /// <p>Estimated time of departure from thr origin.</p>
+    /// <p>Estimated time of departure from the origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -135,7 +135,7 @@ impl WaypointOptimizationOptimizedWaypointBuilder {
         self.departure_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Estimated time of departure from thr origin.</p>
+    /// <p>Estimated time of departure from the origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -144,7 +144,7 @@ impl WaypointOptimizationOptimizedWaypointBuilder {
         self.departure_time = input;
         self
     }
-    /// <p>Estimated time of departure from thr origin.</p>
+    /// <p>Estimated time of departure from the origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -171,19 +171,19 @@ impl WaypointOptimizationOptimizedWaypointBuilder {
     ///
     /// To override the contents of this collection use [`set_position`](Self::set_position).
     ///
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
         v.push(input);
         self.position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.position = input;
         self
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.position
     }

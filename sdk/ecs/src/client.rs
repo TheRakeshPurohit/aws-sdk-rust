@@ -140,6 +140,16 @@ impl Client {
 /// Import this trait to get `wait_until` methods on the client.
 ///
 pub trait Waiters {
+    /// Wait for `daemon_active`
+    fn wait_until_daemon_active(&self) -> crate::waiters::daemon_active::DaemonActiveFluentBuilder;
+    /// Wait for `daemon_deployment_successful`
+    fn wait_until_daemon_deployment_successful(&self) -> crate::waiters::daemon_deployment_successful::DaemonDeploymentSuccessfulFluentBuilder;
+    /// Wait for `daemon_deployment_stopped`
+    fn wait_until_daemon_deployment_stopped(&self) -> crate::waiters::daemon_deployment_stopped::DaemonDeploymentStoppedFluentBuilder;
+    /// Wait for `daemon_task_definition_active`
+    fn wait_until_daemon_task_definition_active(&self) -> crate::waiters::daemon_task_definition_active::DaemonTaskDefinitionActiveFluentBuilder;
+    /// Wait for `daemon_task_definition_deleted`
+    fn wait_until_daemon_task_definition_deleted(&self) -> crate::waiters::daemon_task_definition_deleted::DaemonTaskDefinitionDeletedFluentBuilder;
     /// Wait for `services_inactive`
     fn wait_until_services_inactive(&self) -> crate::waiters::services_inactive::ServicesInactiveFluentBuilder;
     /// Wait for `services_stable`
@@ -150,6 +160,21 @@ pub trait Waiters {
     fn wait_until_tasks_stopped(&self) -> crate::waiters::tasks_stopped::TasksStoppedFluentBuilder;
 }
 impl Waiters for Client {
+    fn wait_until_daemon_active(&self) -> crate::waiters::daemon_active::DaemonActiveFluentBuilder {
+        crate::waiters::daemon_active::DaemonActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_daemon_deployment_successful(&self) -> crate::waiters::daemon_deployment_successful::DaemonDeploymentSuccessfulFluentBuilder {
+        crate::waiters::daemon_deployment_successful::DaemonDeploymentSuccessfulFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_daemon_deployment_stopped(&self) -> crate::waiters::daemon_deployment_stopped::DaemonDeploymentStoppedFluentBuilder {
+        crate::waiters::daemon_deployment_stopped::DaemonDeploymentStoppedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_daemon_task_definition_active(&self) -> crate::waiters::daemon_task_definition_active::DaemonTaskDefinitionActiveFluentBuilder {
+        crate::waiters::daemon_task_definition_active::DaemonTaskDefinitionActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_daemon_task_definition_deleted(&self) -> crate::waiters::daemon_task_definition_deleted::DaemonTaskDefinitionDeletedFluentBuilder {
+        crate::waiters::daemon_task_definition_deleted::DaemonTaskDefinitionDeletedFluentBuilder::new(self.handle.clone())
+    }
     fn wait_until_services_inactive(&self) -> crate::waiters::services_inactive::ServicesInactiveFluentBuilder {
         crate::waiters::services_inactive::ServicesInactiveFluentBuilder::new(self.handle.clone())
     }
@@ -183,6 +208,8 @@ impl Client {
 mod create_capacity_provider;
 
 mod create_cluster;
+
+mod create_daemon;
 
 mod create_express_gateway_service;
 
@@ -225,6 +252,10 @@ mod delete_capacity_provider;
 
 mod delete_cluster;
 
+mod delete_daemon;
+
+mod delete_daemon_task_definition;
+
 mod delete_express_gateway_service;
 
 mod delete_service;
@@ -242,6 +273,14 @@ mod describe_capacity_providers;
 mod describe_clusters;
 
 mod describe_container_instances;
+
+mod describe_daemon;
+
+mod describe_daemon_deployments;
+
+mod describe_daemon_revisions;
+
+mod describe_daemon_task_definition;
 
 mod describe_express_gateway_service;
 
@@ -271,6 +310,12 @@ mod list_clusters;
 
 mod list_container_instances;
 
+mod list_daemon_deployments;
+
+mod list_daemon_task_definitions;
+
+mod list_daemons;
+
 mod list_service_deployments;
 
 mod list_services;
@@ -294,6 +339,8 @@ mod put_attributes;
 mod put_cluster_capacity_providers;
 
 mod register_container_instance;
+
+mod register_daemon_task_definition;
 
 mod register_task_definition;
 
@@ -324,6 +371,8 @@ mod update_cluster_settings;
 mod update_container_agent;
 
 mod update_container_instances_state;
+
+mod update_daemon;
 
 mod update_express_gateway_service;
 

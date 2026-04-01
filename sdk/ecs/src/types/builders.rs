@@ -25,6 +25,14 @@ pub use crate::types::_session::SessionBuilder;
 
 pub use crate::types::_version_info::VersionInfoBuilder;
 
+pub use crate::types::_daemon_deployment_configuration::DaemonDeploymentConfigurationBuilder;
+
+pub use crate::types::_daemon_detail::DaemonDetailBuilder;
+
+pub use crate::types::_created_at::CreatedAtBuilder;
+
+pub use crate::types::_daemon_task_definition::DaemonTaskDefinitionBuilder;
+
 pub use crate::types::_task_set::TaskSetBuilder;
 
 pub use crate::types::_express_gateway_container::ExpressGatewayContainerBuilder;
@@ -44,8 +52,6 @@ pub use crate::types::_deployment_controller::DeploymentControllerBuilder;
 pub use crate::types::_service_connect_configuration::ServiceConnectConfigurationBuilder;
 
 pub use crate::types::_service::ServiceBuilder;
-
-pub use crate::types::_created_at::CreatedAtBuilder;
 
 pub use crate::types::_updated_express_gateway_service::UpdatedExpressGatewayServiceBuilder;
 
@@ -100,6 +106,22 @@ pub use crate::types::_managed_agent_state_change::ManagedAgentStateChangeBuilde
 pub use crate::types::_resource::ResourceBuilder;
 
 pub use crate::types::_platform_device::PlatformDeviceBuilder;
+
+pub use crate::types::_daemon_deployment::DaemonDeploymentBuilder;
+
+pub use crate::types::_daemon_alarm_configuration::DaemonAlarmConfigurationBuilder;
+
+pub use crate::types::_daemon_deployment_summary::DaemonDeploymentSummaryBuilder;
+
+pub use crate::types::_daemon_summary::DaemonSummaryBuilder;
+
+pub use crate::types::_daemon_revision::DaemonRevisionBuilder;
+
+pub use crate::types::_daemon_task_definition_summary::DaemonTaskDefinitionSummaryBuilder;
+
+pub use crate::types::_daemon_container_definition::DaemonContainerDefinitionBuilder;
+
+pub use crate::types::_daemon_volume::DaemonVolumeBuilder;
 
 pub use crate::types::_service_deployment::ServiceDeploymentBuilder;
 
@@ -173,6 +195,28 @@ pub use crate::types::_key_value_pair::KeyValuePairBuilder;
 
 pub use crate::types::_attachment::AttachmentBuilder;
 
+pub use crate::types::_daemon_deployment_revision_detail::DaemonDeploymentRevisionDetailBuilder;
+
+pub use crate::types::_daemon_circuit_breaker::DaemonCircuitBreakerBuilder;
+
+pub use crate::types::_daemon_deployment_alarms::DaemonDeploymentAlarmsBuilder;
+
+pub use crate::types::_daemon_rollback::DaemonRollbackBuilder;
+
+pub use crate::types::_daemon_revision_detail::DaemonRevisionDetailBuilder;
+
+pub use crate::types::_repository_credentials::RepositoryCredentialsBuilder;
+
+pub use crate::types::_health_check::HealthCheckBuilder;
+
+pub use crate::types::_firelens_configuration::FirelensConfigurationBuilder;
+
+pub use crate::types::_daemon_linux_parameters::DaemonLinuxParametersBuilder;
+
+pub use crate::types::_container_restart_policy::ContainerRestartPolicyBuilder;
+
+pub use crate::types::_host_volume_properties::HostVolumePropertiesBuilder;
+
 pub use crate::types::_service_revision_summary::ServiceRevisionSummaryBuilder;
 
 pub use crate::types::_rollback::RollbackBuilder;
@@ -201,17 +245,7 @@ pub use crate::types::_resolved_configuration::ResolvedConfigurationBuilder;
 
 pub use crate::types::_ecs_managed_resources::EcsManagedResourcesBuilder;
 
-pub use crate::types::_repository_credentials::RepositoryCredentialsBuilder;
-
-pub use crate::types::_container_restart_policy::ContainerRestartPolicyBuilder;
-
 pub use crate::types::_linux_parameters::LinuxParametersBuilder;
-
-pub use crate::types::_health_check::HealthCheckBuilder;
-
-pub use crate::types::_firelens_configuration::FirelensConfigurationBuilder;
-
-pub use crate::types::_host_volume_properties::HostVolumePropertiesBuilder;
 
 pub use crate::types::_docker_volume_configuration::DockerVolumeConfigurationBuilder;
 
@@ -247,6 +281,20 @@ pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsReque
 
 pub use crate::types::_instance_health_check_result::InstanceHealthCheckResultBuilder;
 
+pub use crate::types::_daemon_container_image::DaemonContainerImageBuilder;
+
+pub use crate::types::_environment_file::EnvironmentFileBuilder;
+
+pub use crate::types::_mount_point::MountPointBuilder;
+
+pub use crate::types::_ulimit::UlimitBuilder;
+
+pub use crate::types::_kernel_capabilities::KernelCapabilitiesBuilder;
+
+pub use crate::types::_container_dependency::ContainerDependencyBuilder;
+
+pub use crate::types::_system_control::SystemControlBuilder;
+
 pub use crate::types::_timeout_configuration::TimeoutConfigurationBuilder;
 
 pub use crate::types::_service_connect_tls_configuration::ServiceConnectTlsConfigurationBuilder;
@@ -259,21 +307,9 @@ pub use crate::types::_managed_auto_scaling::ManagedAutoScalingBuilder;
 
 pub use crate::types::_port_mapping::PortMappingBuilder;
 
-pub use crate::types::_environment_file::EnvironmentFileBuilder;
-
-pub use crate::types::_mount_point::MountPointBuilder;
-
 pub use crate::types::_volume_from::VolumeFromBuilder;
 
-pub use crate::types::_kernel_capabilities::KernelCapabilitiesBuilder;
-
-pub use crate::types::_container_dependency::ContainerDependencyBuilder;
-
 pub use crate::types::_host_entry::HostEntryBuilder;
-
-pub use crate::types::_ulimit::UlimitBuilder;
-
-pub use crate::types::_system_control::SystemControlBuilder;
 
 pub use crate::types::_resource_requirement::ResourceRequirementBuilder;
 
@@ -282,6 +318,14 @@ pub use crate::types::_efs_authorization_config::EfsAuthorizationConfigBuilder;
 pub use crate::types::_f_sx_windows_file_server_authorization_config::FSxWindowsFileServerAuthorizationConfigBuilder;
 
 pub use crate::types::_task_managed_ebs_volume_termination_policy::TaskManagedEbsVolumeTerminationPolicyBuilder;
+
+pub use crate::types::_daemon_deployment_capacity_provider::DaemonDeploymentCapacityProviderBuilder;
+
+pub use crate::types::_daemon_capacity_provider::DaemonCapacityProviderBuilder;
+
+pub use crate::types::_device::DeviceBuilder;
+
+pub use crate::types::_tmpfs::TmpfsBuilder;
 
 pub use crate::types::_service_connect_client_alias::ServiceConnectClientAliasBuilder;
 
@@ -302,10 +346,6 @@ pub use crate::types::_managed_metric_alarm::ManagedMetricAlarmBuilder;
 pub use crate::types::_managed_security_group::ManagedSecurityGroupBuilder;
 
 pub use crate::types::_managed_log_group::ManagedLogGroupBuilder;
-
-pub use crate::types::_device::DeviceBuilder;
-
-pub use crate::types::_tmpfs::TmpfsBuilder;
 
 pub use crate::types::_network_interface::NetworkInterfaceBuilder;
 

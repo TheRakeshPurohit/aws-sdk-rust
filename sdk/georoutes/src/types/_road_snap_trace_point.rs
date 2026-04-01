@@ -6,10 +6,10 @@
 pub struct RoadSnapTracePoint {
     /// <p>GPS Heading at the position.</p>
     pub heading: f64,
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub position: ::std::vec::Vec<f64>,
     /// <p>Speed at the specified trace point .</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub speed: f64,
     /// <p>Timestamp of the event.</p>
     pub timestamp: ::std::option::Option<::std::string::String>,
@@ -19,13 +19,13 @@ impl RoadSnapTracePoint {
     pub fn heading(&self) -> f64 {
         self.heading
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(&self) -> &[f64] {
         use std::ops::Deref;
         self.position.deref()
     }
     /// <p>Speed at the specified trace point .</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn speed(&self) -> f64 {
         self.speed
     }
@@ -79,36 +79,36 @@ impl RoadSnapTracePointBuilder {
     ///
     /// To override the contents of this collection use [`set_position`](Self::set_position).
     ///
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
         v.push(input);
         self.position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.position = input;
         self
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.position
     }
     /// <p>Speed at the specified trace point .</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn speed(mut self, input: f64) -> Self {
         self.speed = ::std::option::Option::Some(input);
         self
     }
     /// <p>Speed at the specified trace point .</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn set_speed(mut self, input: ::std::option::Option<f64>) -> Self {
         self.speed = input;
         self
     }
     /// <p>Speed at the specified trace point .</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn get_speed(&self) -> &::std::option::Option<f64> {
         &self.speed
     }

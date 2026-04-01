@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserGroupInput {
-    /// <p>The ID of the user group.</p>
+    /// <p>The ID of the user group. This value is stored as a lowercase string.</p>
     pub user_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Sets the engine listed in a user group. The options are valkey or redis.</p>
     pub engine: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct CreateUserGroupInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateUserGroupInput {
-    /// <p>The ID of the user group.</p>
+    /// <p>The ID of the user group. This value is stored as a lowercase string.</p>
     pub fn user_group_id(&self) -> ::std::option::Option<&str> {
         self.user_group_id.as_deref()
     }
@@ -51,18 +51,18 @@ pub struct CreateUserGroupInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateUserGroupInputBuilder {
-    /// <p>The ID of the user group.</p>
+    /// <p>The ID of the user group. This value is stored as a lowercase string.</p>
     /// This field is required.
     pub fn user_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the user group.</p>
+    /// <p>The ID of the user group. This value is stored as a lowercase string.</p>
     pub fn set_user_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_group_id = input;
         self
     }
-    /// <p>The ID of the user group.</p>
+    /// <p>The ID of the user group. This value is stored as a lowercase string.</p>
     pub fn get_user_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_group_id
     }

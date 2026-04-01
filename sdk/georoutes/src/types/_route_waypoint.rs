@@ -4,55 +4,55 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteWaypoint {
-    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination.</p>
+    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub avoid_actions_for_distance: i64,
-    /// <p>Avoid U-turns for calculation on highways and motorways.</p>
+    /// <p>Avoid U-turns for calculation on highways and motorways. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub avoid_u_turns: ::std::option::Option<bool>,
-    /// <p>GPS Heading at the position.</p>
+    /// <p>GPS Heading at the position. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub heading: f64,
-    /// <p>Options to configure matching the provided position to the road network.</p>
+    /// <p>Options to configure matching the provided position to the road network. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub matching: ::std::option::Option<crate::types::RouteMatchingOptions>,
-    /// <p>If the waypoint should not be treated as a stop. If yes, the waypoint is passed through and doesn't split the route into different legs.</p>
+    /// <p>If the waypoint should not be treated as a stop. If yes, the waypoint is passed through and doesn't split the route into different legs. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub pass_through: ::std::option::Option<bool>,
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub position: ::std::vec::Vec<f64>,
-    /// <p>Options to configure matching the provided position to a side of the street.</p>
+    /// <p>Options to configure matching the provided position to a side of the street. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub side_of_street: ::std::option::Option<crate::types::RouteSideOfStreetOptions>,
-    /// <p>Duration of the stop.</p>
+    /// <p>Duration of the stop. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
     pub stop_duration: i64,
 }
 impl RouteWaypoint {
-    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination.</p>
+    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn avoid_actions_for_distance(&self) -> i64 {
         self.avoid_actions_for_distance
     }
-    /// <p>Avoid U-turns for calculation on highways and motorways.</p>
+    /// <p>Avoid U-turns for calculation on highways and motorways. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn avoid_u_turns(&self) -> ::std::option::Option<bool> {
         self.avoid_u_turns
     }
-    /// <p>GPS Heading at the position.</p>
+    /// <p>GPS Heading at the position. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn heading(&self) -> f64 {
         self.heading
     }
-    /// <p>Options to configure matching the provided position to the road network.</p>
+    /// <p>Options to configure matching the provided position to the road network. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn matching(&self) -> ::std::option::Option<&crate::types::RouteMatchingOptions> {
         self.matching.as_ref()
     }
-    /// <p>If the waypoint should not be treated as a stop. If yes, the waypoint is passed through and doesn't split the route into different legs.</p>
+    /// <p>If the waypoint should not be treated as a stop. If yes, the waypoint is passed through and doesn't split the route into different legs. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn pass_through(&self) -> ::std::option::Option<bool> {
         self.pass_through
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(&self) -> &[f64] {
         use std::ops::Deref;
         self.position.deref()
     }
-    /// <p>Options to configure matching the provided position to a side of the street.</p>
+    /// <p>Options to configure matching the provided position to a side of the street. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn side_of_street(&self) -> ::std::option::Option<&crate::types::RouteSideOfStreetOptions> {
         self.side_of_street.as_ref()
     }
-    /// <p>Duration of the stop.</p>
+    /// <p>Duration of the stop. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
     pub fn stop_duration(&self) -> i64 {
         self.stop_duration
@@ -93,73 +93,73 @@ pub struct RouteWaypointBuilder {
     pub(crate) stop_duration: ::std::option::Option<i64>,
 }
 impl RouteWaypointBuilder {
-    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination.</p>
+    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn avoid_actions_for_distance(mut self, input: i64) -> Self {
         self.avoid_actions_for_distance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination.</p>
+    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_avoid_actions_for_distance(mut self, input: ::std::option::Option<i64>) -> Self {
         self.avoid_actions_for_distance = input;
         self
     }
-    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination.</p>
+    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_avoid_actions_for_distance(&self) -> &::std::option::Option<i64> {
         &self.avoid_actions_for_distance
     }
-    /// <p>Avoid U-turns for calculation on highways and motorways.</p>
+    /// <p>Avoid U-turns for calculation on highways and motorways. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn avoid_u_turns(mut self, input: bool) -> Self {
         self.avoid_u_turns = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Avoid U-turns for calculation on highways and motorways.</p>
+    /// <p>Avoid U-turns for calculation on highways and motorways. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_avoid_u_turns(mut self, input: ::std::option::Option<bool>) -> Self {
         self.avoid_u_turns = input;
         self
     }
-    /// <p>Avoid U-turns for calculation on highways and motorways.</p>
+    /// <p>Avoid U-turns for calculation on highways and motorways. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_avoid_u_turns(&self) -> &::std::option::Option<bool> {
         &self.avoid_u_turns
     }
-    /// <p>GPS Heading at the position.</p>
+    /// <p>GPS Heading at the position. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn heading(mut self, input: f64) -> Self {
         self.heading = ::std::option::Option::Some(input);
         self
     }
-    /// <p>GPS Heading at the position.</p>
+    /// <p>GPS Heading at the position. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_heading(mut self, input: ::std::option::Option<f64>) -> Self {
         self.heading = input;
         self
     }
-    /// <p>GPS Heading at the position.</p>
+    /// <p>GPS Heading at the position. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_heading(&self) -> &::std::option::Option<f64> {
         &self.heading
     }
-    /// <p>Options to configure matching the provided position to the road network.</p>
+    /// <p>Options to configure matching the provided position to the road network. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn matching(mut self, input: crate::types::RouteMatchingOptions) -> Self {
         self.matching = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Options to configure matching the provided position to the road network.</p>
+    /// <p>Options to configure matching the provided position to the road network. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_matching(mut self, input: ::std::option::Option<crate::types::RouteMatchingOptions>) -> Self {
         self.matching = input;
         self
     }
-    /// <p>Options to configure matching the provided position to the road network.</p>
+    /// <p>Options to configure matching the provided position to the road network. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_matching(&self) -> &::std::option::Option<crate::types::RouteMatchingOptions> {
         &self.matching
     }
-    /// <p>If the waypoint should not be treated as a stop. If yes, the waypoint is passed through and doesn't split the route into different legs.</p>
+    /// <p>If the waypoint should not be treated as a stop. If yes, the waypoint is passed through and doesn't split the route into different legs. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn pass_through(mut self, input: bool) -> Self {
         self.pass_through = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the waypoint should not be treated as a stop. If yes, the waypoint is passed through and doesn't split the route into different legs.</p>
+    /// <p>If the waypoint should not be treated as a stop. If yes, the waypoint is passed through and doesn't split the route into different legs. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_pass_through(mut self, input: ::std::option::Option<bool>) -> Self {
         self.pass_through = input;
         self
     }
-    /// <p>If the waypoint should not be treated as a stop. If yes, the waypoint is passed through and doesn't split the route into different legs.</p>
+    /// <p>If the waypoint should not be treated as a stop. If yes, the waypoint is passed through and doesn't split the route into different legs. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_pass_through(&self) -> &::std::option::Option<bool> {
         &self.pass_through
     }
@@ -167,49 +167,49 @@ impl RouteWaypointBuilder {
     ///
     /// To override the contents of this collection use [`set_position`](Self::set_position).
     ///
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn position(mut self, input: f64) -> Self {
         let mut v = self.position.unwrap_or_default();
         v.push(input);
         self.position = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn set_position(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.position = input;
         self
     }
-    /// <p>Position defined as <code>\[longitude, latitude\]</code>.</p>
+    /// <p>Position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub fn get_position(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.position
     }
-    /// <p>Options to configure matching the provided position to a side of the street.</p>
+    /// <p>Options to configure matching the provided position to a side of the street. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn side_of_street(mut self, input: crate::types::RouteSideOfStreetOptions) -> Self {
         self.side_of_street = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Options to configure matching the provided position to a side of the street.</p>
+    /// <p>Options to configure matching the provided position to a side of the street. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_side_of_street(mut self, input: ::std::option::Option<crate::types::RouteSideOfStreetOptions>) -> Self {
         self.side_of_street = input;
         self
     }
-    /// <p>Options to configure matching the provided position to a side of the street.</p>
+    /// <p>Options to configure matching the provided position to a side of the street. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_side_of_street(&self) -> &::std::option::Option<crate::types::RouteSideOfStreetOptions> {
         &self.side_of_street
     }
-    /// <p>Duration of the stop.</p>
+    /// <p>Duration of the stop. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
     pub fn stop_duration(mut self, input: i64) -> Self {
         self.stop_duration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Duration of the stop.</p>
+    /// <p>Duration of the stop. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
     pub fn set_stop_duration(mut self, input: ::std::option::Option<i64>) -> Self {
         self.stop_duration = input;
         self
     }
-    /// <p>Duration of the stop.</p>
+    /// <p>Duration of the stop. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
     pub fn get_stop_duration(&self) -> &::std::option::Option<i64> {
         &self.stop_duration

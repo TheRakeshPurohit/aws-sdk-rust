@@ -197,7 +197,7 @@ pub struct CreateReplicationGroupInput {
     pub transit_encryption_enabled: ::std::option::Option<bool>,
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey 7.2 and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey <code>7.2</code> and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
     /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub at_rest_encryption_enabled: ::std::option::Option<bool>,
     /// <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
@@ -486,7 +486,7 @@ impl CreateReplicationGroupInput {
     }
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey 7.2 and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey <code>7.2</code> and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
     /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn at_rest_encryption_enabled(&self) -> ::std::option::Option<bool> {
         self.at_rest_encryption_enabled
@@ -1432,7 +1432,7 @@ impl CreateReplicationGroupInputBuilder {
     }
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey 7.2 and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey <code>7.2</code> and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
     /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn at_rest_encryption_enabled(mut self, input: bool) -> Self {
         self.at_rest_encryption_enabled = ::std::option::Option::Some(input);
@@ -1440,7 +1440,7 @@ impl CreateReplicationGroupInputBuilder {
     }
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey 7.2 and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey <code>7.2</code> and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
     /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn set_at_rest_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.at_rest_encryption_enabled = input;
@@ -1448,7 +1448,7 @@ impl CreateReplicationGroupInputBuilder {
     }
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey 7.2 and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey <code>7.2</code> and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
     /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn get_at_rest_encryption_enabled(&self) -> &::std::option::Option<bool> {
         &self.at_rest_encryption_enabled

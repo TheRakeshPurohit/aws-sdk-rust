@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateServerlessCacheSnapshotInput {
-    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Valkey, Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters.</p>
+    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Valkey, Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters. This value is stored as a lowercase string.</p>
     pub serverless_cache_snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of an existing serverless cache. The snapshot is created from this cache. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
     pub serverless_cache_name: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct CreateServerlessCacheSnapshotInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateServerlessCacheSnapshotInput {
-    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Valkey, Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters.</p>
+    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Valkey, Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters. This value is stored as a lowercase string.</p>
     pub fn serverless_cache_snapshot_name(&self) -> ::std::option::Option<&str> {
         self.serverless_cache_snapshot_name.as_deref()
     }
@@ -49,18 +49,18 @@ pub struct CreateServerlessCacheSnapshotInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateServerlessCacheSnapshotInputBuilder {
-    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Valkey, Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters.</p>
+    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Valkey, Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters. This value is stored as a lowercase string.</p>
     /// This field is required.
     pub fn serverless_cache_snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.serverless_cache_snapshot_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Valkey, Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters.</p>
+    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Valkey, Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters. This value is stored as a lowercase string.</p>
     pub fn set_serverless_cache_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.serverless_cache_snapshot_name = input;
         self
     }
-    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Valkey, Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters.</p>
+    /// <p>The name for the snapshot being created. Must be unique for the customer account. Available for Valkey, Redis OSS and Serverless Memcached only. Must be between 1 and 255 characters. This value is stored as a lowercase string.</p>
     pub fn get_serverless_cache_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.serverless_cache_snapshot_name
     }

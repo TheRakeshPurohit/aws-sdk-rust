@@ -23,6 +23,10 @@ pub enum Error {
     ClusterNotFoundException(crate::types::error::ClusterNotFoundException),
     /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>The specified daemon isn't active. You can't update a daemon that's inactive. If you have previously deleted a daemon, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateDaemon.html">CreateDaemon</a>.</p>
+    DaemonNotActiveException(crate::types::error::DaemonNotActiveException),
+    /// <p>The specified daemon wasn't found. You can view your available daemons with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListDaemons.html">ListDaemons</a>. Amazon ECS daemons are cluster specific and Region specific.</p>
+    DaemonNotFoundException(crate::types::error::DaemonNotFoundException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     /// <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
@@ -91,6 +95,8 @@ impl ::std::fmt::Display for Error {
             Error::ClusterContainsTasksException(inner) => inner.fmt(f),
             Error::ClusterNotFoundException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::DaemonNotActiveException(inner) => inner.fmt(f),
+            Error::DaemonNotFoundException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::MissingVersionException(inner) => inner.fmt(f),
@@ -140,6 +146,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ClusterContainsTasksException(inner) => inner.meta(),
             Self::ClusterNotFoundException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
+            Self::DaemonNotActiveException(inner) => inner.meta(),
+            Self::DaemonNotFoundException(inner) => inner.meta(),
             Self::InvalidParameterException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
             Self::MissingVersionException(inner) => inner.meta(),
@@ -224,6 +232,34 @@ impl From<crate::operation::create_cluster::CreateClusterError> for Error {
             crate::operation::create_cluster::CreateClusterError::NamespaceNotFoundException(inner) => Error::NamespaceNotFoundException(inner),
             crate::operation::create_cluster::CreateClusterError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::create_cluster::CreateClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_daemon::CreateDaemonError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_daemon::CreateDaemonError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_daemon::CreateDaemonError> for Error {
+    fn from(err: crate::operation::create_daemon::CreateDaemonError) -> Self {
+        match err {
+            crate::operation::create_daemon::CreateDaemonError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_daemon::CreateDaemonError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_daemon::CreateDaemonError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
+            crate::operation::create_daemon::CreateDaemonError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_daemon::CreateDaemonError::PlatformUnknownException(inner) => Error::PlatformUnknownException(inner),
+            crate::operation::create_daemon::CreateDaemonError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::create_daemon::CreateDaemonError::UnsupportedFeatureException(inner) => Error::UnsupportedFeatureException(inner),
+            crate::operation::create_daemon::CreateDaemonError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -462,6 +498,67 @@ impl From<crate::operation::delete_cluster::DeleteClusterError> for Error {
             crate::operation::delete_cluster::DeleteClusterError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::delete_cluster::DeleteClusterError::UpdateInProgressException(inner) => Error::UpdateInProgressException(inner),
             crate::operation::delete_cluster::DeleteClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_daemon::DeleteDaemonError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_daemon::DeleteDaemonError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_daemon::DeleteDaemonError> for Error {
+    fn from(err: crate::operation::delete_daemon::DeleteDaemonError) -> Self {
+        match err {
+            crate::operation::delete_daemon::DeleteDaemonError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_daemon::DeleteDaemonError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::delete_daemon::DeleteDaemonError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
+            crate::operation::delete_daemon::DeleteDaemonError::DaemonNotActiveException(inner) => Error::DaemonNotActiveException(inner),
+            crate::operation::delete_daemon::DeleteDaemonError::DaemonNotFoundException(inner) => Error::DaemonNotFoundException(inner),
+            crate::operation::delete_daemon::DeleteDaemonError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_daemon::DeleteDaemonError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::delete_daemon::DeleteDaemonError::UnsupportedFeatureException(inner) => Error::UnsupportedFeatureException(inner),
+            crate::operation::delete_daemon::DeleteDaemonError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_daemon_task_definition::DeleteDaemonTaskDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_daemon_task_definition::DeleteDaemonTaskDefinitionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_daemon_task_definition::DeleteDaemonTaskDefinitionError> for Error {
+    fn from(err: crate::operation::delete_daemon_task_definition::DeleteDaemonTaskDefinitionError) -> Self {
+        match err {
+            crate::operation::delete_daemon_task_definition::DeleteDaemonTaskDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_daemon_task_definition::DeleteDaemonTaskDefinitionError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::delete_daemon_task_definition::DeleteDaemonTaskDefinitionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_daemon_task_definition::DeleteDaemonTaskDefinitionError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::delete_daemon_task_definition::DeleteDaemonTaskDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -757,6 +854,150 @@ impl From<crate::operation::describe_container_instances::DescribeContainerInsta
             }
             crate::operation::describe_container_instances::DescribeContainerInstancesError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::describe_container_instances::DescribeContainerInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_daemon::DescribeDaemonError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_daemon::DescribeDaemonError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_daemon::DescribeDaemonError> for Error {
+    fn from(err: crate::operation::describe_daemon::DescribeDaemonError) -> Self {
+        match err {
+            crate::operation::describe_daemon::DescribeDaemonError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_daemon::DescribeDaemonError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_daemon::DescribeDaemonError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
+            crate::operation::describe_daemon::DescribeDaemonError::DaemonNotFoundException(inner) => Error::DaemonNotFoundException(inner),
+            crate::operation::describe_daemon::DescribeDaemonError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_daemon::DescribeDaemonError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_daemon::DescribeDaemonError::UnsupportedFeatureException(inner) => Error::UnsupportedFeatureException(inner),
+            crate::operation::describe_daemon::DescribeDaemonError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_daemon_deployments::DescribeDaemonDeploymentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_daemon_deployments::DescribeDaemonDeploymentsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_daemon_deployments::DescribeDaemonDeploymentsError> for Error {
+    fn from(err: crate::operation::describe_daemon_deployments::DescribeDaemonDeploymentsError) -> Self {
+        match err {
+            crate::operation::describe_daemon_deployments::DescribeDaemonDeploymentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_daemon_deployments::DescribeDaemonDeploymentsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_daemon_deployments::DescribeDaemonDeploymentsError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
+            crate::operation::describe_daemon_deployments::DescribeDaemonDeploymentsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_daemon_deployments::DescribeDaemonDeploymentsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_daemon_deployments::DescribeDaemonDeploymentsError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::describe_daemon_deployments::DescribeDaemonDeploymentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_daemon_revisions::DescribeDaemonRevisionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_daemon_revisions::DescribeDaemonRevisionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_daemon_revisions::DescribeDaemonRevisionsError> for Error {
+    fn from(err: crate::operation::describe_daemon_revisions::DescribeDaemonRevisionsError) -> Self {
+        match err {
+            crate::operation::describe_daemon_revisions::DescribeDaemonRevisionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_daemon_revisions::DescribeDaemonRevisionsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_daemon_revisions::DescribeDaemonRevisionsError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
+            crate::operation::describe_daemon_revisions::DescribeDaemonRevisionsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_daemon_revisions::DescribeDaemonRevisionsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_daemon_revisions::DescribeDaemonRevisionsError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::describe_daemon_revisions::DescribeDaemonRevisionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_daemon_task_definition::DescribeDaemonTaskDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_daemon_task_definition::DescribeDaemonTaskDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_daemon_task_definition::DescribeDaemonTaskDefinitionError> for Error {
+    fn from(err: crate::operation::describe_daemon_task_definition::DescribeDaemonTaskDefinitionError) -> Self {
+        match err {
+            crate::operation::describe_daemon_task_definition::DescribeDaemonTaskDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_daemon_task_definition::DescribeDaemonTaskDefinitionError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::describe_daemon_task_definition::DescribeDaemonTaskDefinitionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_daemon_task_definition::DescribeDaemonTaskDefinitionError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::describe_daemon_task_definition::DescribeDaemonTaskDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1189,6 +1430,102 @@ impl From<crate::operation::list_container_instances::ListContainerInstancesErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_daemon_deployments::ListDaemonDeploymentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_daemon_deployments::ListDaemonDeploymentsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_daemon_deployments::ListDaemonDeploymentsError> for Error {
+    fn from(err: crate::operation::list_daemon_deployments::ListDaemonDeploymentsError) -> Self {
+        match err {
+            crate::operation::list_daemon_deployments::ListDaemonDeploymentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_daemon_deployments::ListDaemonDeploymentsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_daemon_deployments::ListDaemonDeploymentsError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
+            crate::operation::list_daemon_deployments::ListDaemonDeploymentsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_daemon_deployments::ListDaemonDeploymentsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_daemon_deployments::ListDaemonDeploymentsError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::list_daemon_deployments::ListDaemonDeploymentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_daemons::ListDaemonsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_daemons::ListDaemonsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_daemons::ListDaemonsError> for Error {
+    fn from(err: crate::operation::list_daemons::ListDaemonsError) -> Self {
+        match err {
+            crate::operation::list_daemons::ListDaemonsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_daemons::ListDaemonsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_daemons::ListDaemonsError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
+            crate::operation::list_daemons::ListDaemonsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_daemons::ListDaemonsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_daemons::ListDaemonsError::UnsupportedFeatureException(inner) => Error::UnsupportedFeatureException(inner),
+            crate::operation::list_daemons::ListDaemonsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_daemon_task_definitions::ListDaemonTaskDefinitionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_daemon_task_definitions::ListDaemonTaskDefinitionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_daemon_task_definitions::ListDaemonTaskDefinitionsError> for Error {
+    fn from(err: crate::operation::list_daemon_task_definitions::ListDaemonTaskDefinitionsError) -> Self {
+        match err {
+            crate::operation::list_daemon_task_definitions::ListDaemonTaskDefinitionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_daemon_task_definitions::ListDaemonTaskDefinitionsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_daemon_task_definitions::ListDaemonTaskDefinitionsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_daemon_task_definitions::ListDaemonTaskDefinitionsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_daemon_task_definitions::ListDaemonTaskDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_service_deployments::ListServiceDeploymentsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1547,6 +1884,49 @@ impl From<crate::operation::register_container_instance::RegisterContainerInstan
             }
             crate::operation::register_container_instance::RegisterContainerInstanceError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::register_container_instance::RegisterContainerInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_daemon_task_definition::RegisterDaemonTaskDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::register_daemon_task_definition::RegisterDaemonTaskDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::register_daemon_task_definition::RegisterDaemonTaskDefinitionError> for Error {
+    fn from(err: crate::operation::register_daemon_task_definition::RegisterDaemonTaskDefinitionError) -> Self {
+        match err {
+            crate::operation::register_daemon_task_definition::RegisterDaemonTaskDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::register_daemon_task_definition::RegisterDaemonTaskDefinitionError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::register_daemon_task_definition::RegisterDaemonTaskDefinitionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::register_daemon_task_definition::RegisterDaemonTaskDefinitionError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::register_daemon_task_definition::RegisterDaemonTaskDefinitionError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::register_daemon_task_definition::RegisterDaemonTaskDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2022,6 +2402,36 @@ impl From<crate::operation::update_container_instances_state::UpdateContainerIns
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_daemon::UpdateDaemonError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_daemon::UpdateDaemonError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_daemon::UpdateDaemonError> for Error {
+    fn from(err: crate::operation::update_daemon::UpdateDaemonError) -> Self {
+        match err {
+            crate::operation::update_daemon::UpdateDaemonError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_daemon::UpdateDaemonError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::update_daemon::UpdateDaemonError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
+            crate::operation::update_daemon::UpdateDaemonError::DaemonNotActiveException(inner) => Error::DaemonNotActiveException(inner),
+            crate::operation::update_daemon::UpdateDaemonError::DaemonNotFoundException(inner) => Error::DaemonNotFoundException(inner),
+            crate::operation::update_daemon::UpdateDaemonError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_daemon::UpdateDaemonError::PlatformUnknownException(inner) => Error::PlatformUnknownException(inner),
+            crate::operation::update_daemon::UpdateDaemonError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::update_daemon::UpdateDaemonError::UnsupportedFeatureException(inner) => Error::UnsupportedFeatureException(inner),
+            crate::operation::update_daemon::UpdateDaemonError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_express_gateway_service::UpdateExpressGatewayServiceError, R>>
     for Error
@@ -2254,6 +2664,8 @@ impl ::std::error::Error for Error {
             Error::ClusterContainsTasksException(inner) => inner.source(),
             Error::ClusterNotFoundException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
+            Error::DaemonNotActiveException(inner) => inner.source(),
+            Error::DaemonNotFoundException(inner) => inner.source(),
             Error::InvalidParameterException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
             Error::MissingVersionException(inner) => inner.source(),
@@ -2289,6 +2701,8 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ClusterContainsTasksException(e) => e.request_id(),
             Self::ClusterNotFoundException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::DaemonNotActiveException(e) => e.request_id(),
+            Self::DaemonNotFoundException(e) => e.request_id(),
             Self::InvalidParameterException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
             Self::MissingVersionException(e) => e.request_id(),

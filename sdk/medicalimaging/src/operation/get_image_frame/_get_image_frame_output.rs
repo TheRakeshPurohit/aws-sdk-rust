@@ -37,6 +37,8 @@ pub struct GetImageFrameOutput {
     /// <ul>
     /// <li>
     /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.203</code>, the returned contentType is <code>image/jphc</code>.</p></li>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.112</code> the returned <code>contentType</code> is <code>image/jxl</code>.</p></li>
     /// </ul>
     /// </note>
     pub content_type: ::std::option::Option<::std::string::String>,
@@ -79,6 +81,8 @@ impl GetImageFrameOutput {
     /// <ul>
     /// <li>
     /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.203</code>, the returned contentType is <code>image/jphc</code>.</p></li>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.112</code> the returned <code>contentType</code> is <code>image/jxl</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn content_type(&self) -> ::std::option::Option<&str> {
@@ -153,6 +157,8 @@ impl GetImageFrameOutputBuilder {
     /// <ul>
     /// <li>
     /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.203</code>, the returned contentType is <code>image/jphc</code>.</p></li>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.112</code> the returned <code>contentType</code> is <code>image/jxl</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -191,6 +197,8 @@ impl GetImageFrameOutputBuilder {
     /// <ul>
     /// <li>
     /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.203</code>, the returned contentType is <code>image/jphc</code>.</p></li>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.112</code> the returned <code>contentType</code> is <code>image/jxl</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -229,6 +237,8 @@ impl GetImageFrameOutputBuilder {
     /// <ul>
     /// <li>
     /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.203</code>, the returned contentType is <code>image/jphc</code>.</p></li>
+    /// <li>
+    /// <p>If the stored transfer syntax is <code>1.2.840.10008.1.2.4.112</code> the returned <code>contentType</code> is <code>image/jxl</code>.</p></li>
     /// </ul>
     /// </note>
     pub fn get_content_type(&self) -> &::std::option::Option<::std::string::String> {

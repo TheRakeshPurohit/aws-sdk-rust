@@ -5,10 +5,14 @@
 pub enum Error {
     /// <p>The user does not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The request is invalid or malformed.</p>
+    BadRequestException(crate::types::error::BadRequestException),
     /// <p>Updating or deleting a resource can cause an inconsistent state.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>An unexpected error occurred during processing of the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The request content type or accept header is not supported.</p>
+    NotAcceptableException(crate::types::error::NotAcceptableException),
     /// <p>The request references a resource which does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request caused a service quota to be exceeded.</p>
@@ -30,8 +34,10 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::BadRequestException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::NotAcceptableException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
@@ -58,8 +64,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::BadRequestException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
+            Self::NotAcceptableException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
@@ -253,8 +261,10 @@ impl From<crate::operation::get_image_frame::GetImageFrameError> for Error {
     fn from(err: crate::operation::get_image_frame::GetImageFrameError) -> Self {
         match err {
             crate::operation::get_image_frame::GetImageFrameError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_image_frame::GetImageFrameError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::get_image_frame::GetImageFrameError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::get_image_frame::GetImageFrameError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_image_frame::GetImageFrameError::NotAcceptableException(inner) => Error::NotAcceptableException(inner),
             crate::operation::get_image_frame::GetImageFrameError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_image_frame::GetImageFrameError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_image_frame::GetImageFrameError::ValidationException(inner) => Error::ValidationException(inner),
@@ -595,8 +605,10 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::BadRequestException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::NotAcceptableException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
@@ -609,8 +621,10 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::BadRequestException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::NotAcceptableException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),

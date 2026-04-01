@@ -97,6 +97,11 @@ pub fn ser_create_serverless_cache_input_input_input(
     if let Some(var_38) = &input.daily_snapshot_time {
         scope_37.string(var_38);
     }
+    #[allow(unused_mut)]
+    let mut scope_39 = writer.prefix("NetworkType");
+    if let Some(var_40) = &input.network_type {
+        scope_39.string(var_40.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

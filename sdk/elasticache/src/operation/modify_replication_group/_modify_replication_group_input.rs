@@ -61,7 +61,7 @@ pub struct ModifyReplicationGroupInput {
     /// <p>Valid values: <code>true</code> | <code>false</code></p>
     /// <p>Default: <code>false</code></p>
     pub apply_immediately: ::std::option::Option<bool>,
-    /// <p>Modifies the engine listed in a replication group message. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a replication group message. The options are valkey, memcached or redis.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
     /// <p><b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing replication group and create it anew with the earlier engine version.</p>
@@ -208,7 +208,7 @@ impl ModifyReplicationGroupInput {
     pub fn apply_immediately(&self) -> ::std::option::Option<bool> {
         self.apply_immediately
     }
-    /// <p>Modifies the engine listed in a replication group message. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a replication group message. The options are valkey, memcached or redis.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -642,17 +642,17 @@ impl ModifyReplicationGroupInputBuilder {
     pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
         &self.apply_immediately
     }
-    /// <p>Modifies the engine listed in a replication group message. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a replication group message. The options are valkey, memcached or redis.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Modifies the engine listed in a replication group message. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a replication group message. The options are valkey, memcached or redis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>Modifies the engine listed in a replication group message. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a replication group message. The options are valkey, memcached or redis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }

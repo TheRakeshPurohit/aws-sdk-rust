@@ -15,9 +15,22 @@ pub struct RoutePedestrianSpan {
     /// <p><b>Unit</b>: <code>seconds</code></p>
     pub duration: i64,
     /// <p>Dynamic speed details corresponding to the span.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub dynamic_speed: ::std::option::Option<crate::types::RouteSpanDynamicSpeedDetails>,
-    /// <p>Functional classification of the road segment corresponding to the span.</p>
+    /// <p>A numerical value indicating the functional classification of the road segment corresponding to the span.</p>
+    /// <p>Classification values are part of the hierarchical network that helps determine a logical and efficient route, and have the following definitions:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Roads that allow for high volume, maximum speed traffic movement between and through major metropolitan areas.</p></li>
+    /// <li>
+    /// <p>Roads that are used to channel traffic to functional class 1 roads for travel between and through cities in the shortest amount of time.</p></li>
+    /// <li>
+    /// <p>Roads that intersect functional class 2 roads and provide a high volume of traffic movement at a lower level of mobility than functional class 2 roads.</p></li>
+    /// <li>
+    /// <p>Roads that provide for a high volume of traffic movement at moderate speeds between neighborhoods.</p></li>
+    /// <li>
+    /// <p>Roads with volume and traffic movement below the level of any other functional class.</p></li>
+    /// </ol>
     pub functional_classification: ::std::option::Option<i32>,
     /// <p>Offset in the leg geometry corresponding to the start of this span.</p>
     pub geometry_offset: ::std::option::Option<i32>,
@@ -34,7 +47,7 @@ pub struct RoutePedestrianSpan {
     /// <p>Designated route name or number corresponding to the span.</p>
     pub route_numbers: ::std::option::Option<::std::vec::Vec<crate::types::RouteNumber>>,
     /// <p>Speed limit details corresponding to the span.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub speed_limit: ::std::option::Option<crate::types::RouteSpanSpeedLimitDetails>,
     /// <p>Duration of the computed span under typical traffic congestion.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
@@ -60,11 +73,24 @@ impl RoutePedestrianSpan {
         self.duration
     }
     /// <p>Dynamic speed details corresponding to the span.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn dynamic_speed(&self) -> ::std::option::Option<&crate::types::RouteSpanDynamicSpeedDetails> {
         self.dynamic_speed.as_ref()
     }
-    /// <p>Functional classification of the road segment corresponding to the span.</p>
+    /// <p>A numerical value indicating the functional classification of the road segment corresponding to the span.</p>
+    /// <p>Classification values are part of the hierarchical network that helps determine a logical and efficient route, and have the following definitions:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Roads that allow for high volume, maximum speed traffic movement between and through major metropolitan areas.</p></li>
+    /// <li>
+    /// <p>Roads that are used to channel traffic to functional class 1 roads for travel between and through cities in the shortest amount of time.</p></li>
+    /// <li>
+    /// <p>Roads that intersect functional class 2 roads and provide a high volume of traffic movement at a lower level of mobility than functional class 2 roads.</p></li>
+    /// <li>
+    /// <p>Roads that provide for a high volume of traffic movement at moderate speeds between neighborhoods.</p></li>
+    /// <li>
+    /// <p>Roads with volume and traffic movement below the level of any other functional class.</p></li>
+    /// </ol>
     pub fn functional_classification(&self) -> ::std::option::Option<i32> {
         self.functional_classification
     }
@@ -107,7 +133,7 @@ impl RoutePedestrianSpan {
         self.route_numbers.as_deref().unwrap_or_default()
     }
     /// <p>Speed limit details corresponding to the span.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn speed_limit(&self) -> ::std::option::Option<&crate::types::RouteSpanSpeedLimitDetails> {
         self.speed_limit.as_ref()
     }
@@ -229,33 +255,72 @@ impl RoutePedestrianSpanBuilder {
         &self.duration
     }
     /// <p>Dynamic speed details corresponding to the span.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn dynamic_speed(mut self, input: crate::types::RouteSpanDynamicSpeedDetails) -> Self {
         self.dynamic_speed = ::std::option::Option::Some(input);
         self
     }
     /// <p>Dynamic speed details corresponding to the span.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn set_dynamic_speed(mut self, input: ::std::option::Option<crate::types::RouteSpanDynamicSpeedDetails>) -> Self {
         self.dynamic_speed = input;
         self
     }
     /// <p>Dynamic speed details corresponding to the span.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn get_dynamic_speed(&self) -> &::std::option::Option<crate::types::RouteSpanDynamicSpeedDetails> {
         &self.dynamic_speed
     }
-    /// <p>Functional classification of the road segment corresponding to the span.</p>
+    /// <p>A numerical value indicating the functional classification of the road segment corresponding to the span.</p>
+    /// <p>Classification values are part of the hierarchical network that helps determine a logical and efficient route, and have the following definitions:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Roads that allow for high volume, maximum speed traffic movement between and through major metropolitan areas.</p></li>
+    /// <li>
+    /// <p>Roads that are used to channel traffic to functional class 1 roads for travel between and through cities in the shortest amount of time.</p></li>
+    /// <li>
+    /// <p>Roads that intersect functional class 2 roads and provide a high volume of traffic movement at a lower level of mobility than functional class 2 roads.</p></li>
+    /// <li>
+    /// <p>Roads that provide for a high volume of traffic movement at moderate speeds between neighborhoods.</p></li>
+    /// <li>
+    /// <p>Roads with volume and traffic movement below the level of any other functional class.</p></li>
+    /// </ol>
     pub fn functional_classification(mut self, input: i32) -> Self {
         self.functional_classification = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Functional classification of the road segment corresponding to the span.</p>
+    /// <p>A numerical value indicating the functional classification of the road segment corresponding to the span.</p>
+    /// <p>Classification values are part of the hierarchical network that helps determine a logical and efficient route, and have the following definitions:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Roads that allow for high volume, maximum speed traffic movement between and through major metropolitan areas.</p></li>
+    /// <li>
+    /// <p>Roads that are used to channel traffic to functional class 1 roads for travel between and through cities in the shortest amount of time.</p></li>
+    /// <li>
+    /// <p>Roads that intersect functional class 2 roads and provide a high volume of traffic movement at a lower level of mobility than functional class 2 roads.</p></li>
+    /// <li>
+    /// <p>Roads that provide for a high volume of traffic movement at moderate speeds between neighborhoods.</p></li>
+    /// <li>
+    /// <p>Roads with volume and traffic movement below the level of any other functional class.</p></li>
+    /// </ol>
     pub fn set_functional_classification(mut self, input: ::std::option::Option<i32>) -> Self {
         self.functional_classification = input;
         self
     }
-    /// <p>Functional classification of the road segment corresponding to the span.</p>
+    /// <p>A numerical value indicating the functional classification of the road segment corresponding to the span.</p>
+    /// <p>Classification values are part of the hierarchical network that helps determine a logical and efficient route, and have the following definitions:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Roads that allow for high volume, maximum speed traffic movement between and through major metropolitan areas.</p></li>
+    /// <li>
+    /// <p>Roads that are used to channel traffic to functional class 1 roads for travel between and through cities in the shortest amount of time.</p></li>
+    /// <li>
+    /// <p>Roads that intersect functional class 2 roads and provide a high volume of traffic movement at a lower level of mobility than functional class 2 roads.</p></li>
+    /// <li>
+    /// <p>Roads that provide for a high volume of traffic movement at moderate speeds between neighborhoods.</p></li>
+    /// <li>
+    /// <p>Roads with volume and traffic movement below the level of any other functional class.</p></li>
+    /// </ol>
     pub fn get_functional_classification(&self) -> &::std::option::Option<i32> {
         &self.functional_classification
     }
@@ -388,19 +453,19 @@ impl RoutePedestrianSpanBuilder {
         &self.route_numbers
     }
     /// <p>Speed limit details corresponding to the span.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn speed_limit(mut self, input: crate::types::RouteSpanSpeedLimitDetails) -> Self {
         self.speed_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Speed limit details corresponding to the span.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn set_speed_limit(mut self, input: ::std::option::Option<crate::types::RouteSpanSpeedLimitDetails>) -> Self {
         self.speed_limit = input;
         self
     }
     /// <p>Speed limit details corresponding to the span.</p>
-    /// <p><b>Unit</b>: <code>KilometersPerHour</code></p>
+    /// <p><b>Unit</b>: <code>kilometers per hour</code></p>
     pub fn get_speed_limit(&self) -> &::std::option::Option<crate::types::RouteSpanSpeedLimitDetails> {
         &self.speed_limit
     }

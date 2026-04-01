@@ -8,27 +8,27 @@ pub struct RouteVehicleLegDetails {
     pub arrival: ::std::option::Option<crate::types::RouteVehicleArrival>,
     /// <p>Details corresponding to the departure for the leg.</p>
     pub departure: ::std::option::Option<crate::types::RouteVehicleDeparture>,
-    /// <p>Incidents corresponding to this leg of the route.</p>
+    /// <p>Incidents corresponding to this leg of the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub incidents: ::std::vec::Vec<crate::types::RouteVehicleIncident>,
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub notices: ::std::vec::Vec<crate::types::RouteVehicleNotice>,
     /// <p>Waypoints that were passed through during the leg. This includes the waypoints that were configured with the PassThrough option.</p>
     pub pass_through_waypoints: ::std::vec::Vec<crate::types::RoutePassThroughWaypoint>,
-    /// <p>Spans that were computed for the requested SpanAdditionalFeatures.</p>
+    /// <p>Spans that were computed for the requested SpanAdditionalFeatures. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub spans: ::std::vec::Vec<crate::types::RouteVehicleSpan>,
     /// <p>Summarized details of the leg.</p>
     pub summary: ::std::option::Option<crate::types::RouteVehicleSummary>,
-    /// <p>Toll related options.</p>
+    /// <p>Toll related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub tolls: ::std::vec::Vec<crate::types::RouteToll>,
-    /// <p>Toll systems are authorities that collect payments for the toll.</p>
+    /// <p>Toll systems are authorities that collect payments for the toll. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub toll_systems: ::std::vec::Vec<crate::types::RouteTollSystem>,
     /// <p>Steps of a leg that must be performed before the travel portion of the leg.</p>
     pub travel_steps: ::std::vec::Vec<crate::types::RouteVehicleTravelStep>,
-    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico.</p><note>
+    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>There are currently no other supported values as of 26th April 2024.</p>
     /// </note>
     pub truck_road_types: ::std::vec::Vec<::std::string::String>,
-    /// <p>Zones corresponding to this leg of the route.</p>
+    /// <p>Zones corresponding to this leg of the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub zones: ::std::vec::Vec<crate::types::RouteZone>,
 }
 impl RouteVehicleLegDetails {
@@ -40,12 +40,12 @@ impl RouteVehicleLegDetails {
     pub fn departure(&self) -> ::std::option::Option<&crate::types::RouteVehicleDeparture> {
         self.departure.as_ref()
     }
-    /// <p>Incidents corresponding to this leg of the route.</p>
+    /// <p>Incidents corresponding to this leg of the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn incidents(&self) -> &[crate::types::RouteVehicleIncident] {
         use std::ops::Deref;
         self.incidents.deref()
     }
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn notices(&self) -> &[crate::types::RouteVehicleNotice] {
         use std::ops::Deref;
         self.notices.deref()
@@ -55,7 +55,7 @@ impl RouteVehicleLegDetails {
         use std::ops::Deref;
         self.pass_through_waypoints.deref()
     }
-    /// <p>Spans that were computed for the requested SpanAdditionalFeatures.</p>
+    /// <p>Spans that were computed for the requested SpanAdditionalFeatures. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn spans(&self) -> &[crate::types::RouteVehicleSpan] {
         use std::ops::Deref;
         self.spans.deref()
@@ -64,12 +64,12 @@ impl RouteVehicleLegDetails {
     pub fn summary(&self) -> ::std::option::Option<&crate::types::RouteVehicleSummary> {
         self.summary.as_ref()
     }
-    /// <p>Toll related options.</p>
+    /// <p>Toll related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn tolls(&self) -> &[crate::types::RouteToll] {
         use std::ops::Deref;
         self.tolls.deref()
     }
-    /// <p>Toll systems are authorities that collect payments for the toll.</p>
+    /// <p>Toll systems are authorities that collect payments for the toll. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn toll_systems(&self) -> &[crate::types::RouteTollSystem] {
         use std::ops::Deref;
         self.toll_systems.deref()
@@ -79,14 +79,14 @@ impl RouteVehicleLegDetails {
         use std::ops::Deref;
         self.travel_steps.deref()
     }
-    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico.</p><note>
+    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>There are currently no other supported values as of 26th April 2024.</p>
     /// </note>
     pub fn truck_road_types(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.truck_road_types.deref()
     }
-    /// <p>Zones corresponding to this leg of the route.</p>
+    /// <p>Zones corresponding to this leg of the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn zones(&self) -> &[crate::types::RouteZone] {
         use std::ops::Deref;
         self.zones.deref()
@@ -151,19 +151,19 @@ impl RouteVehicleLegDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_incidents`](Self::set_incidents).
     ///
-    /// <p>Incidents corresponding to this leg of the route.</p>
+    /// <p>Incidents corresponding to this leg of the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn incidents(mut self, input: crate::types::RouteVehicleIncident) -> Self {
         let mut v = self.incidents.unwrap_or_default();
         v.push(input);
         self.incidents = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Incidents corresponding to this leg of the route.</p>
+    /// <p>Incidents corresponding to this leg of the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_incidents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteVehicleIncident>>) -> Self {
         self.incidents = input;
         self
     }
-    /// <p>Incidents corresponding to this leg of the route.</p>
+    /// <p>Incidents corresponding to this leg of the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_incidents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteVehicleIncident>> {
         &self.incidents
     }
@@ -171,19 +171,19 @@ impl RouteVehicleLegDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_notices`](Self::set_notices).
     ///
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn notices(mut self, input: crate::types::RouteVehicleNotice) -> Self {
         let mut v = self.notices.unwrap_or_default();
         v.push(input);
         self.notices = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_notices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteVehicleNotice>>) -> Self {
         self.notices = input;
         self
     }
-    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation.</p>
+    /// <p>Notices are additional information returned that indicate issues that occurred during route calculation. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_notices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteVehicleNotice>> {
         &self.notices
     }
@@ -211,19 +211,19 @@ impl RouteVehicleLegDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_spans`](Self::set_spans).
     ///
-    /// <p>Spans that were computed for the requested SpanAdditionalFeatures.</p>
+    /// <p>Spans that were computed for the requested SpanAdditionalFeatures. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn spans(mut self, input: crate::types::RouteVehicleSpan) -> Self {
         let mut v = self.spans.unwrap_or_default();
         v.push(input);
         self.spans = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Spans that were computed for the requested SpanAdditionalFeatures.</p>
+    /// <p>Spans that were computed for the requested SpanAdditionalFeatures. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_spans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteVehicleSpan>>) -> Self {
         self.spans = input;
         self
     }
-    /// <p>Spans that were computed for the requested SpanAdditionalFeatures.</p>
+    /// <p>Spans that were computed for the requested SpanAdditionalFeatures. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_spans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteVehicleSpan>> {
         &self.spans
     }
@@ -245,19 +245,19 @@ impl RouteVehicleLegDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_tolls`](Self::set_tolls).
     ///
-    /// <p>Toll related options.</p>
+    /// <p>Toll related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn tolls(mut self, input: crate::types::RouteToll) -> Self {
         let mut v = self.tolls.unwrap_or_default();
         v.push(input);
         self.tolls = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Toll related options.</p>
+    /// <p>Toll related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_tolls(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteToll>>) -> Self {
         self.tolls = input;
         self
     }
-    /// <p>Toll related options.</p>
+    /// <p>Toll related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_tolls(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteToll>> {
         &self.tolls
     }
@@ -265,19 +265,19 @@ impl RouteVehicleLegDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_toll_systems`](Self::set_toll_systems).
     ///
-    /// <p>Toll systems are authorities that collect payments for the toll.</p>
+    /// <p>Toll systems are authorities that collect payments for the toll. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn toll_systems(mut self, input: crate::types::RouteTollSystem) -> Self {
         let mut v = self.toll_systems.unwrap_or_default();
         v.push(input);
         self.toll_systems = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Toll systems are authorities that collect payments for the toll.</p>
+    /// <p>Toll systems are authorities that collect payments for the toll. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_toll_systems(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteTollSystem>>) -> Self {
         self.toll_systems = input;
         self
     }
-    /// <p>Toll systems are authorities that collect payments for the toll.</p>
+    /// <p>Toll systems are authorities that collect payments for the toll. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_toll_systems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteTollSystem>> {
         &self.toll_systems
     }
@@ -305,7 +305,7 @@ impl RouteVehicleLegDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_truck_road_types`](Self::set_truck_road_types).
     ///
-    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico.</p><note>
+    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>There are currently no other supported values as of 26th April 2024.</p>
     /// </note>
     pub fn truck_road_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -314,14 +314,14 @@ impl RouteVehicleLegDetailsBuilder {
         self.truck_road_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico.</p><note>
+    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>There are currently no other supported values as of 26th April 2024.</p>
     /// </note>
     pub fn set_truck_road_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.truck_road_types = input;
         self
     }
-    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico.</p><note>
+    /// <p>Truck road type identifiers. <code>BK1</code> through <code>BK4</code> apply only to Sweden. <code>A2,A4,B2,B4,C,D,ET2,ET4</code> apply only to Mexico. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>There are currently no other supported values as of 26th April 2024.</p>
     /// </note>
     pub fn get_truck_road_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -331,19 +331,19 @@ impl RouteVehicleLegDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_zones`](Self::set_zones).
     ///
-    /// <p>Zones corresponding to this leg of the route.</p>
+    /// <p>Zones corresponding to this leg of the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn zones(mut self, input: crate::types::RouteZone) -> Self {
         let mut v = self.zones.unwrap_or_default();
         v.push(input);
         self.zones = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Zones corresponding to this leg of the route.</p>
+    /// <p>Zones corresponding to this leg of the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_zones(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteZone>>) -> Self {
         self.zones = input;
         self
     }
-    /// <p>Zones corresponding to this leg of the route.</p>
+    /// <p>Zones corresponding to this leg of the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_zones(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteZone>> {
         &self.zones
     }

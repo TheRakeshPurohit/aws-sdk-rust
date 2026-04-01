@@ -5,41 +5,42 @@
 pub struct CalculateRouteMatrixInput {
     /// <p>Features that are allowed while calculating a route.</p>
     pub allow: ::std::option::Option<crate::types::RouteMatrixAllowOptions>,
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
+    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>TollRoads</code>, <code>Ferries</code>, and <code>ControlledAccessHighways</code>.</p>
     pub avoid: ::std::option::Option<crate::types::RouteMatrixAvoidanceOptions>,
     /// <p>Uses the current time as the time of departure.</p>
     pub depart_now: ::std::option::Option<bool>,
-    /// <p>Time of departure from thr origin.</p>
+    /// <p>Time of departure from the origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
     pub departure_time: ::std::option::Option<::std::string::String>,
     /// <p>List of destinations for the route.</p><note>
-    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixDestination>>,
-    /// <p>Features to be strictly excluded while calculating the route.</p>
+    /// <p>Features to be strictly excluded while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub exclude: ::std::option::Option<crate::types::RouteMatrixExclusionOptions>,
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub key: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the optimization criteria for calculating a route.</p>
-    /// <p>Default Value: <code>FastestRoute</code></p>
+    /// <p>Controls the trade-off between finding the shortest travel time (<code>FastestRoute</code>) and the shortest distance (<code>ShortestRoute</code>) when calculating reachable areas.</p>
+    /// <p>Default value: <code>FastestRoute</code></p>
     pub optimize_routing_for: ::std::option::Option<crate::types::RoutingObjective>,
-    /// <p>The position in longitude and latitude for the origin.</p><note>
-    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>The position for the origin in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     pub origins: ::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixOrigin>>,
-    /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid.</p><note>
+    /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Unbounded</code> set to <code>true</code>.</p>
+    /// <p>Default value: <code>Unbounded set to true</code></p><note>
     /// <p>When request routing boundary was set as AutoCircle, the response routing boundary will return Circle derived from the AutoCircle settings.</p>
     /// </note>
     pub routing_boundary: ::std::option::Option<crate::types::RouteMatrixBoundary>,
-    /// <p>Traffic related options.</p>
+    /// <p>Traffic related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub traffic: ::std::option::Option<crate::types::RouteMatrixTrafficOptions>,
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Car</code>, <code>Pedestrian</code>, and <code>Scooter</code>.</p>
+    /// <p>Default value: <code>Car</code></p>
     pub travel_mode: ::std::option::Option<crate::types::RouteMatrixTravelMode>,
-    /// <p>Travel mode related options for the provided travel mode.</p>
+    /// <p>Travel mode related options for the provided travel mode. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub travel_mode_options: ::std::option::Option<crate::types::RouteMatrixTravelModeOptions>,
 }
 impl CalculateRouteMatrixInput {
@@ -47,7 +48,7 @@ impl CalculateRouteMatrixInput {
     pub fn allow(&self) -> ::std::option::Option<&crate::types::RouteMatrixAllowOptions> {
         self.allow.as_ref()
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
+    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>TollRoads</code>, <code>Ferries</code>, and <code>ControlledAccessHighways</code>.</p>
     pub fn avoid(&self) -> ::std::option::Option<&crate::types::RouteMatrixAvoidanceOptions> {
         self.avoid.as_ref()
     }
@@ -55,7 +56,7 @@ impl CalculateRouteMatrixInput {
     pub fn depart_now(&self) -> ::std::option::Option<bool> {
         self.depart_now
     }
-    /// <p>Time of departure from thr origin.</p>
+    /// <p>Time of departure from the origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -64,14 +65,14 @@ impl CalculateRouteMatrixInput {
         self.departure_time.as_deref()
     }
     /// <p>List of destinations for the route.</p><note>
-    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
     pub fn destinations(&self) -> &[crate::types::RouteMatrixDestination] {
         self.destinations.as_deref().unwrap_or_default()
     }
-    /// <p>Features to be strictly excluded while calculating the route.</p>
+    /// <p>Features to be strictly excluded while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn exclude(&self) -> ::std::option::Option<&crate::types::RouteMatrixExclusionOptions> {
         self.exclude.as_ref()
     }
@@ -79,35 +80,36 @@ impl CalculateRouteMatrixInput {
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>Specifies the optimization criteria for calculating a route.</p>
-    /// <p>Default Value: <code>FastestRoute</code></p>
+    /// <p>Controls the trade-off between finding the shortest travel time (<code>FastestRoute</code>) and the shortest distance (<code>ShortestRoute</code>) when calculating reachable areas.</p>
+    /// <p>Default value: <code>FastestRoute</code></p>
     pub fn optimize_routing_for(&self) -> ::std::option::Option<&crate::types::RoutingObjective> {
         self.optimize_routing_for.as_ref()
     }
-    /// <p>The position in longitude and latitude for the origin.</p><note>
-    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>The position for the origin in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.origins.is_none()`.
     pub fn origins(&self) -> &[crate::types::RouteMatrixOrigin] {
         self.origins.as_deref().unwrap_or_default()
     }
-    /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid.</p><note>
+    /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Unbounded</code> set to <code>true</code>.</p>
+    /// <p>Default value: <code>Unbounded set to true</code></p><note>
     /// <p>When request routing boundary was set as AutoCircle, the response routing boundary will return Circle derived from the AutoCircle settings.</p>
     /// </note>
     pub fn routing_boundary(&self) -> ::std::option::Option<&crate::types::RouteMatrixBoundary> {
         self.routing_boundary.as_ref()
     }
-    /// <p>Traffic related options.</p>
+    /// <p>Traffic related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn traffic(&self) -> ::std::option::Option<&crate::types::RouteMatrixTrafficOptions> {
         self.traffic.as_ref()
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Car</code>, <code>Pedestrian</code>, and <code>Scooter</code>.</p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn travel_mode(&self) -> ::std::option::Option<&crate::types::RouteMatrixTravelMode> {
         self.travel_mode.as_ref()
     }
-    /// <p>Travel mode related options for the provided travel mode.</p>
+    /// <p>Travel mode related options for the provided travel mode. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn travel_mode_options(&self) -> ::std::option::Option<&crate::types::RouteMatrixTravelModeOptions> {
         self.travel_mode_options.as_ref()
     }
@@ -171,17 +173,17 @@ impl CalculateRouteMatrixInputBuilder {
     pub fn get_allow(&self) -> &::std::option::Option<crate::types::RouteMatrixAllowOptions> {
         &self.allow
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
+    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>TollRoads</code>, <code>Ferries</code>, and <code>ControlledAccessHighways</code>.</p>
     pub fn avoid(mut self, input: crate::types::RouteMatrixAvoidanceOptions) -> Self {
         self.avoid = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
+    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>TollRoads</code>, <code>Ferries</code>, and <code>ControlledAccessHighways</code>.</p>
     pub fn set_avoid(mut self, input: ::std::option::Option<crate::types::RouteMatrixAvoidanceOptions>) -> Self {
         self.avoid = input;
         self
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
+    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>TollRoads</code>, <code>Ferries</code>, and <code>ControlledAccessHighways</code>.</p>
     pub fn get_avoid(&self) -> &::std::option::Option<crate::types::RouteMatrixAvoidanceOptions> {
         &self.avoid
     }
@@ -199,7 +201,7 @@ impl CalculateRouteMatrixInputBuilder {
     pub fn get_depart_now(&self) -> &::std::option::Option<bool> {
         &self.depart_now
     }
-    /// <p>Time of departure from thr origin.</p>
+    /// <p>Time of departure from the origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -208,7 +210,7 @@ impl CalculateRouteMatrixInputBuilder {
         self.departure_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Time of departure from thr origin.</p>
+    /// <p>Time of departure from the origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -217,7 +219,7 @@ impl CalculateRouteMatrixInputBuilder {
         self.departure_time = input;
         self
     }
-    /// <p>Time of departure from thr origin.</p>
+    /// <p>Time of departure from the origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
     /// <p><code>2020-04-22T17:57:24Z</code></p>
@@ -230,7 +232,7 @@ impl CalculateRouteMatrixInputBuilder {
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
     ///
     /// <p>List of destinations for the route.</p><note>
-    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     pub fn destinations(mut self, input: crate::types::RouteMatrixDestination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
@@ -239,29 +241,29 @@ impl CalculateRouteMatrixInputBuilder {
         self
     }
     /// <p>List of destinations for the route.</p><note>
-    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixDestination>>) -> Self {
         self.destinations = input;
         self
     }
     /// <p>List of destinations for the route.</p><note>
-    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixDestination>> {
         &self.destinations
     }
-    /// <p>Features to be strictly excluded while calculating the route.</p>
+    /// <p>Features to be strictly excluded while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn exclude(mut self, input: crate::types::RouteMatrixExclusionOptions) -> Self {
         self.exclude = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Features to be strictly excluded while calculating the route.</p>
+    /// <p>Features to be strictly excluded while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_exclude(mut self, input: ::std::option::Option<crate::types::RouteMatrixExclusionOptions>) -> Self {
         self.exclude = input;
         self
     }
-    /// <p>Features to be strictly excluded while calculating the route.</p>
+    /// <p>Features to be strictly excluded while calculating the route. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_exclude(&self) -> &::std::option::Option<crate::types::RouteMatrixExclusionOptions> {
         &self.exclude
     }
@@ -279,20 +281,20 @@ impl CalculateRouteMatrixInputBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
-    /// <p>Specifies the optimization criteria for calculating a route.</p>
-    /// <p>Default Value: <code>FastestRoute</code></p>
+    /// <p>Controls the trade-off between finding the shortest travel time (<code>FastestRoute</code>) and the shortest distance (<code>ShortestRoute</code>) when calculating reachable areas.</p>
+    /// <p>Default value: <code>FastestRoute</code></p>
     pub fn optimize_routing_for(mut self, input: crate::types::RoutingObjective) -> Self {
         self.optimize_routing_for = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the optimization criteria for calculating a route.</p>
-    /// <p>Default Value: <code>FastestRoute</code></p>
+    /// <p>Controls the trade-off between finding the shortest travel time (<code>FastestRoute</code>) and the shortest distance (<code>ShortestRoute</code>) when calculating reachable areas.</p>
+    /// <p>Default value: <code>FastestRoute</code></p>
     pub fn set_optimize_routing_for(mut self, input: ::std::option::Option<crate::types::RoutingObjective>) -> Self {
         self.optimize_routing_for = input;
         self
     }
-    /// <p>Specifies the optimization criteria for calculating a route.</p>
-    /// <p>Default Value: <code>FastestRoute</code></p>
+    /// <p>Controls the trade-off between finding the shortest travel time (<code>FastestRoute</code>) and the shortest distance (<code>ShortestRoute</code>) when calculating reachable areas.</p>
+    /// <p>Default value: <code>FastestRoute</code></p>
     pub fn get_optimize_routing_for(&self) -> &::std::option::Option<crate::types::RoutingObjective> {
         &self.optimize_routing_for
     }
@@ -300,8 +302,8 @@ impl CalculateRouteMatrixInputBuilder {
     ///
     /// To override the contents of this collection use [`set_origins`](Self::set_origins).
     ///
-    /// <p>The position in longitude and latitude for the origin.</p><note>
-    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>The position for the origin in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     pub fn origins(mut self, input: crate::types::RouteMatrixOrigin) -> Self {
         let mut v = self.origins.unwrap_or_default();
@@ -309,82 +311,84 @@ impl CalculateRouteMatrixInputBuilder {
         self.origins = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The position in longitude and latitude for the origin.</p><note>
-    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>The position for the origin in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     pub fn set_origins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixOrigin>>) -> Self {
         self.origins = input;
         self
     }
-    /// <p>The position in longitude and latitude for the origin.</p><note>
-    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// <p>The position for the origin in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes pricing</a> in the <i>Amazon Location Service Developer Guide</i>.</p>
     /// </note>
     pub fn get_origins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixOrigin>> {
         &self.origins
     }
-    /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid.</p><note>
+    /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Unbounded</code> set to <code>true</code>.</p>
+    /// <p>Default value: <code>Unbounded set to true</code></p><note>
     /// <p>When request routing boundary was set as AutoCircle, the response routing boundary will return Circle derived from the AutoCircle settings.</p>
     /// </note>
-    /// This field is required.
     pub fn routing_boundary(mut self, input: crate::types::RouteMatrixBoundary) -> Self {
         self.routing_boundary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid.</p><note>
+    /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Unbounded</code> set to <code>true</code>.</p>
+    /// <p>Default value: <code>Unbounded set to true</code></p><note>
     /// <p>When request routing boundary was set as AutoCircle, the response routing boundary will return Circle derived from the AutoCircle settings.</p>
     /// </note>
     pub fn set_routing_boundary(mut self, input: ::std::option::Option<crate::types::RouteMatrixBoundary>) -> Self {
         self.routing_boundary = input;
         self
     }
-    /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid.</p><note>
+    /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Unbounded</code> set to <code>true</code>.</p>
+    /// <p>Default value: <code>Unbounded set to true</code></p><note>
     /// <p>When request routing boundary was set as AutoCircle, the response routing boundary will return Circle derived from the AutoCircle settings.</p>
     /// </note>
     pub fn get_routing_boundary(&self) -> &::std::option::Option<crate::types::RouteMatrixBoundary> {
         &self.routing_boundary
     }
-    /// <p>Traffic related options.</p>
+    /// <p>Traffic related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn traffic(mut self, input: crate::types::RouteMatrixTrafficOptions) -> Self {
         self.traffic = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Traffic related options.</p>
+    /// <p>Traffic related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_traffic(mut self, input: ::std::option::Option<crate::types::RouteMatrixTrafficOptions>) -> Self {
         self.traffic = input;
         self
     }
-    /// <p>Traffic related options.</p>
+    /// <p>Traffic related options. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_traffic(&self) -> &::std::option::Option<crate::types::RouteMatrixTrafficOptions> {
         &self.traffic
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Car</code>, <code>Pedestrian</code>, and <code>Scooter</code>.</p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn travel_mode(mut self, input: crate::types::RouteMatrixTravelMode) -> Self {
         self.travel_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Car</code>, <code>Pedestrian</code>, and <code>Scooter</code>.</p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn set_travel_mode(mut self, input: ::std::option::Option<crate::types::RouteMatrixTravelMode>) -> Self {
         self.travel_mode = input;
         self
     }
-    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Car</code>, <code>Pedestrian</code>, and <code>Scooter</code>.</p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn get_travel_mode(&self) -> &::std::option::Option<crate::types::RouteMatrixTravelMode> {
         &self.travel_mode
     }
-    /// <p>Travel mode related options for the provided travel mode.</p>
+    /// <p>Travel mode related options for the provided travel mode. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn travel_mode_options(mut self, input: crate::types::RouteMatrixTravelModeOptions) -> Self {
         self.travel_mode_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Travel mode related options for the provided travel mode.</p>
+    /// <p>Travel mode related options for the provided travel mode. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_travel_mode_options(mut self, input: ::std::option::Option<crate::types::RouteMatrixTravelModeOptions>) -> Self {
         self.travel_mode_options = input;
         self
     }
-    /// <p>Travel mode related options for the provided travel mode.</p>
+    /// <p>Travel mode related options for the provided travel mode. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_travel_mode_options(&self) -> &::std::option::Option<crate::types::RouteMatrixTravelModeOptions> {
         &self.travel_mode_options
     }

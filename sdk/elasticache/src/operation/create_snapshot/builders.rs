@@ -138,17 +138,17 @@ impl CreateSnapshotFluentBuilder {
     pub fn get_cache_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_cluster_id()
     }
-    /// <p>A name for the snapshot being created.</p>
+    /// <p>A name for the snapshot being created. This value is stored as a lowercase string.</p>
     pub fn snapshot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_name(input.into());
         self
     }
-    /// <p>A name for the snapshot being created.</p>
+    /// <p>A name for the snapshot being created. This value is stored as a lowercase string.</p>
     pub fn set_snapshot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_name(input);
         self
     }
-    /// <p>A name for the snapshot being created.</p>
+    /// <p>A name for the snapshot being created. This value is stored as a lowercase string.</p>
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_snapshot_name()
     }

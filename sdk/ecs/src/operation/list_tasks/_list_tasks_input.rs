@@ -26,6 +26,8 @@ pub struct ListTasksInput {
     pub desired_status: ::std::option::Option<crate::types::DesiredStatus>,
     /// <p>The launch type to use when filtering the <code>ListTasks</code> results.</p>
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
+    /// <p>The name of the daemon to use when filtering the <code>ListTasks</code> results. Specifying a <code>daemonName</code> limits the results to tasks that belong to that daemon.</p>
+    pub daemon_name: ::std::option::Option<::std::string::String>,
 }
 impl ListTasksInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListTasks</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -69,6 +71,10 @@ impl ListTasksInput {
     pub fn launch_type(&self) -> ::std::option::Option<&crate::types::LaunchType> {
         self.launch_type.as_ref()
     }
+    /// <p>The name of the daemon to use when filtering the <code>ListTasks</code> results. Specifying a <code>daemonName</code> limits the results to tasks that belong to that daemon.</p>
+    pub fn daemon_name(&self) -> ::std::option::Option<&str> {
+        self.daemon_name.as_deref()
+    }
 }
 impl ListTasksInput {
     /// Creates a new builder-style object to manufacture [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
@@ -90,6 +96,7 @@ pub struct ListTasksInputBuilder {
     pub(crate) service_name: ::std::option::Option<::std::string::String>,
     pub(crate) desired_status: ::std::option::Option<crate::types::DesiredStatus>,
     pub(crate) launch_type: ::std::option::Option<crate::types::LaunchType>,
+    pub(crate) daemon_name: ::std::option::Option<::std::string::String>,
 }
 impl ListTasksInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListTasks</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
@@ -233,6 +240,20 @@ impl ListTasksInputBuilder {
     pub fn get_launch_type(&self) -> &::std::option::Option<crate::types::LaunchType> {
         &self.launch_type
     }
+    /// <p>The name of the daemon to use when filtering the <code>ListTasks</code> results. Specifying a <code>daemonName</code> limits the results to tasks that belong to that daemon.</p>
+    pub fn daemon_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.daemon_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the daemon to use when filtering the <code>ListTasks</code> results. Specifying a <code>daemonName</code> limits the results to tasks that belong to that daemon.</p>
+    pub fn set_daemon_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.daemon_name = input;
+        self
+    }
+    /// <p>The name of the daemon to use when filtering the <code>ListTasks</code> results. Specifying a <code>daemonName</code> limits the results to tasks that belong to that daemon.</p>
+    pub fn get_daemon_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.daemon_name
+    }
     /// Consumes the builder and constructs a [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_tasks::ListTasksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tasks::ListTasksInput {
@@ -245,6 +266,7 @@ impl ListTasksInputBuilder {
             service_name: self.service_name,
             desired_status: self.desired_status,
             launch_type: self.launch_type,
+            daemon_name: self.daemon_name,
         })
     }
 }

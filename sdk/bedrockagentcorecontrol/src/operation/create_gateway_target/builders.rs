@@ -214,4 +214,18 @@ impl CreateGatewayTargetFluentBuilder {
     pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::MetadataConfiguration> {
         self.inner.get_metadata_configuration()
     }
+    /// <p>The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.</p>
+    pub fn private_endpoint(mut self, input: crate::types::PrivateEndpoint) -> Self {
+        self.inner = self.inner.private_endpoint(input);
+        self
+    }
+    /// <p>The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.</p>
+    pub fn set_private_endpoint(mut self, input: ::std::option::Option<crate::types::PrivateEndpoint>) -> Self {
+        self.inner = self.inner.set_private_endpoint(input);
+        self
+    }
+    /// <p>The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.</p>
+    pub fn get_private_endpoint(&self) -> &::std::option::Option<crate::types::PrivateEndpoint> {
+        self.inner.get_private_endpoint()
+    }
 }

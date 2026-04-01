@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WaypointOptimizationTravelModeOptions {
-    /// <p>Travel mode options when the provided travel mode is "Pedestrian"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Pedestrian</code>.</p>
     pub pedestrian: ::std::option::Option<crate::types::WaypointOptimizationPedestrianOptions>,
-    /// <p>Travel mode options when the provided travel mode is "Truck"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
     pub truck: ::std::option::Option<crate::types::WaypointOptimizationTruckOptions>,
 }
 impl WaypointOptimizationTravelModeOptions {
-    /// <p>Travel mode options when the provided travel mode is "Pedestrian"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Pedestrian</code>.</p>
     pub fn pedestrian(&self) -> ::std::option::Option<&crate::types::WaypointOptimizationPedestrianOptions> {
         self.pedestrian.as_ref()
     }
-    /// <p>Travel mode options when the provided travel mode is "Truck"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
     pub fn truck(&self) -> ::std::option::Option<&crate::types::WaypointOptimizationTruckOptions> {
         self.truck.as_ref()
     }
@@ -34,31 +34,31 @@ pub struct WaypointOptimizationTravelModeOptionsBuilder {
     pub(crate) truck: ::std::option::Option<crate::types::WaypointOptimizationTruckOptions>,
 }
 impl WaypointOptimizationTravelModeOptionsBuilder {
-    /// <p>Travel mode options when the provided travel mode is "Pedestrian"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Pedestrian</code>.</p>
     pub fn pedestrian(mut self, input: crate::types::WaypointOptimizationPedestrianOptions) -> Self {
         self.pedestrian = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Travel mode options when the provided travel mode is "Pedestrian"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Pedestrian</code>.</p>
     pub fn set_pedestrian(mut self, input: ::std::option::Option<crate::types::WaypointOptimizationPedestrianOptions>) -> Self {
         self.pedestrian = input;
         self
     }
-    /// <p>Travel mode options when the provided travel mode is "Pedestrian"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Pedestrian</code>.</p>
     pub fn get_pedestrian(&self) -> &::std::option::Option<crate::types::WaypointOptimizationPedestrianOptions> {
         &self.pedestrian
     }
-    /// <p>Travel mode options when the provided travel mode is "Truck"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
     pub fn truck(mut self, input: crate::types::WaypointOptimizationTruckOptions) -> Self {
         self.truck = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Travel mode options when the provided travel mode is "Truck"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
     pub fn set_truck(mut self, input: ::std::option::Option<crate::types::WaypointOptimizationTruckOptions>) -> Self {
         self.truck = input;
         self
     }
-    /// <p>Travel mode options when the provided travel mode is "Truck"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Truck</code>.</p>
     pub fn get_truck(&self) -> &::std::option::Option<crate::types::WaypointOptimizationTruckOptions> {
         &self.truck
     }

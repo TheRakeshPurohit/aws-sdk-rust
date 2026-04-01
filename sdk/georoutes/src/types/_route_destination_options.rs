@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteDestinationOptions {
-    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination.</p>
+    /// <p>The distance in meters from the destination point within which certain routing actions (such as U-turns or left turns across traffic) are restricted. This helps generate more practical routes by avoiding potentially dangerous maneuvers near the endpoint.</p>
     pub avoid_actions_for_distance: i64,
     /// <p>Avoid U-turns for calculation on highways and motorways.</p>
     pub avoid_u_turns: ::std::option::Option<bool>,
@@ -19,7 +19,7 @@ pub struct RouteDestinationOptions {
     pub stop_duration: i64,
 }
 impl RouteDestinationOptions {
-    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination.</p>
+    /// <p>The distance in meters from the destination point within which certain routing actions (such as U-turns or left turns across traffic) are restricted. This helps generate more practical routes by avoiding potentially dangerous maneuvers near the endpoint.</p>
     pub fn avoid_actions_for_distance(&self) -> i64 {
         self.avoid_actions_for_distance
     }
@@ -76,17 +76,17 @@ pub struct RouteDestinationOptionsBuilder {
     pub(crate) stop_duration: ::std::option::Option<i64>,
 }
 impl RouteDestinationOptionsBuilder {
-    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination.</p>
+    /// <p>The distance in meters from the destination point within which certain routing actions (such as U-turns or left turns across traffic) are restricted. This helps generate more practical routes by avoiding potentially dangerous maneuvers near the endpoint.</p>
     pub fn avoid_actions_for_distance(mut self, input: i64) -> Self {
         self.avoid_actions_for_distance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination.</p>
+    /// <p>The distance in meters from the destination point within which certain routing actions (such as U-turns or left turns across traffic) are restricted. This helps generate more practical routes by avoiding potentially dangerous maneuvers near the endpoint.</p>
     pub fn set_avoid_actions_for_distance(mut self, input: ::std::option::Option<i64>) -> Self {
         self.avoid_actions_for_distance = input;
         self
     }
-    /// <p>Avoids actions for the provided distance. This is typically to consider for users in moving vehicles who may not have sufficient time to make an action at an origin or a destination.</p>
+    /// <p>The distance in meters from the destination point within which certain routing actions (such as U-turns or left turns across traffic) are restricted. This helps generate more practical routes by avoiding potentially dangerous maneuvers near the endpoint.</p>
     pub fn get_avoid_actions_for_distance(&self) -> &::std::option::Option<i64> {
         &self.avoid_actions_for_distance
     }

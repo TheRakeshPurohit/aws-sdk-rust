@@ -57,6 +57,20 @@ pub fn de_get_image_frame_http_error(
             };
             tmp
         }),
+        "BadRequestException" => crate::operation::get_image_frame::GetImageFrameError::BadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                output = crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_image_frame::GetImageFrameError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::bad_request_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_image_frame::GetImageFrameError::unhandled)?
+            };
+            tmp
+        }),
         "ConflictException" => crate::operation::get_image_frame::GetImageFrameError::ConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -80,6 +94,20 @@ pub fn de_get_image_frame_http_error(
                     .map_err(crate::operation::get_image_frame::GetImageFrameError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_image_frame::GetImageFrameError::unhandled)?
+            };
+            tmp
+        }),
+        "NotAcceptableException" => crate::operation::get_image_frame::GetImageFrameError::NotAcceptableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NotAcceptableExceptionBuilder::default();
+                output = crate::protocol_serde::shape_not_acceptable_exception::de_not_acceptable_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_image_frame::GetImageFrameError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::not_acceptable_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::get_image_frame::GetImageFrameError::unhandled)?
             };

@@ -2,8 +2,8 @@
 resolver = "2"
 exclude = [
     "tests/webassembly-wstd",
-    "tests/webassembly-no-os",
     "tests/telemetry",
+    "tests/webassembly-no-os",
     "tests/no-default-features"
 ]
 members = [

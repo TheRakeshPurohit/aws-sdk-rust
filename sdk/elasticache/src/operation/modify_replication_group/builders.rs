@@ -409,17 +409,17 @@ impl ModifyReplicationGroupFluentBuilder {
     pub fn get_apply_immediately(&self) -> &::std::option::Option<bool> {
         self.inner.get_apply_immediately()
     }
-    /// <p>Modifies the engine listed in a replication group message. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a replication group message. The options are valkey, memcached or redis.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>Modifies the engine listed in a replication group message. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a replication group message. The options are valkey, memcached or redis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>Modifies the engine listed in a replication group message. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a replication group message. The options are valkey, memcached or redis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }

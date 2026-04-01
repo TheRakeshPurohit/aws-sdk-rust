@@ -18,6 +18,8 @@ impl super::Client {
     ///   - [`credential_provider_configurations(Vec::<CredentialProviderConfiguration>)`](crate::operation::get_gateway_target::GetGatewayTargetOutput::credential_provider_configurations): <p>The credential provider configurations for the gateway target.</p>
     ///   - [`last_synchronized_at(Option<DateTime>)`](crate::operation::get_gateway_target::GetGatewayTargetOutput::last_synchronized_at): <p>The last synchronization of the target.</p>
     ///   - [`metadata_configuration(Option<MetadataConfiguration>)`](crate::operation::get_gateway_target::GetGatewayTargetOutput::metadata_configuration): <p>The metadata configuration for HTTP header and query parameter propagation for the retrieved gateway target.</p>
+    ///   - [`private_endpoint(Option<PrivateEndpoint>)`](crate::operation::get_gateway_target::GetGatewayTargetOutput::private_endpoint): <p>The private endpoint configuration for the gateway target.</p>
+    ///   - [`private_endpoint_managed_resources(Option<Vec::<ManagedResourceDetails>>)`](crate::operation::get_gateway_target::GetGatewayTargetOutput::private_endpoint_managed_resources): <p>The managed resources created by the gateway for private endpoint connectivity.</p>
     /// - On failure, responds with [`SdkError<GetGatewayTargetError>`](crate::operation::get_gateway_target::GetGatewayTargetError)
     pub fn get_gateway_target(&self) -> crate::operation::get_gateway_target::builders::GetGatewayTargetFluentBuilder {
         crate::operation::get_gateway_target::builders::GetGatewayTargetFluentBuilder::new(self.handle.clone())

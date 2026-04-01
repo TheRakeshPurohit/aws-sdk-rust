@@ -9,7 +9,7 @@ pub struct ModifyGlobalReplicationGroupInput {
     pub apply_immediately: ::std::option::Option<bool>,
     /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
     pub cache_node_type: ::std::option::Option<::std::string::String>,
-    /// <p>Modifies the engine listed in a global replication group message. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a global replication group message. The options are valkey, memcached or redis.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
@@ -33,7 +33,7 @@ impl ModifyGlobalReplicationGroupInput {
     pub fn cache_node_type(&self) -> ::std::option::Option<&str> {
         self.cache_node_type.as_deref()
     }
-    /// <p>Modifies the engine listed in a global replication group message. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a global replication group message. The options are valkey, memcached or redis.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -119,17 +119,17 @@ impl ModifyGlobalReplicationGroupInputBuilder {
     pub fn get_cache_node_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_node_type
     }
-    /// <p>Modifies the engine listed in a global replication group message. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a global replication group message. The options are valkey, memcached or redis.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Modifies the engine listed in a global replication group message. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a global replication group message. The options are valkey, memcached or redis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>Modifies the engine listed in a global replication group message. The options are redis, memcached or valkey.</p>
+    /// <p>Modifies the engine listed in a global replication group message. The options are valkey, memcached or redis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }

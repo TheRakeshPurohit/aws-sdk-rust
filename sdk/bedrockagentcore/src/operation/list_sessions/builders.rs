@@ -171,4 +171,18 @@ impl ListSessionsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>Filter criteria to apply when listing sessions.</p>
+    pub fn filter(mut self, input: crate::types::SessionFilter) -> Self {
+        self.inner = self.inner.filter(input);
+        self
+    }
+    /// <p>Filter criteria to apply when listing sessions.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::SessionFilter>) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>Filter criteria to apply when listing sessions.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::SessionFilter> {
+        self.inner.get_filter()
+    }
 }

@@ -216,6 +216,20 @@ pub fn de_serverless_cache(
                 builder = builder.set_daily_snapshot_time(var_17);
             }
             ,
+            s if s.matches("NetworkType") /* NetworkType com.amazonaws.elasticache#ServerlessCache$NetworkType */ =>  {
+                let var_18 =
+                    Some(
+                        Result::<crate::types::NetworkType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::NetworkType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_network_type(var_18);
+            }
+            ,
             _ => {}
         }
     }

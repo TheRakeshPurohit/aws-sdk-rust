@@ -6,7 +6,7 @@ pub struct SnapToRoadsInput {
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>Chooses what the returned SnappedGeometry format should be.</p>
-    /// <p>Default Value: <code>FlexiblePolyline</code></p>
+    /// <p>Default value: <code>FlexiblePolyline</code></p>
     pub snapped_geometry_format: ::std::option::Option<crate::types::GeometryFormat>,
     /// <p>The radius around the provided tracepoint that is considered for snapping.</p>
     /// <p><b>Unit</b>: <code>meters</code></p>
@@ -15,7 +15,7 @@ pub struct SnapToRoadsInput {
     /// <p>List of trace points to be snapped onto the road network.</p>
     pub trace_points: ::std::option::Option<::std::vec::Vec<crate::types::RoadSnapTracePoint>>,
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub travel_mode: ::std::option::Option<crate::types::RoadSnapTravelMode>,
     /// <p>Travel mode related options for the provided travel mode.</p>
     pub travel_mode_options: ::std::option::Option<crate::types::RoadSnapTravelModeOptions>,
@@ -26,7 +26,7 @@ impl SnapToRoadsInput {
         self.key.as_deref()
     }
     /// <p>Chooses what the returned SnappedGeometry format should be.</p>
-    /// <p>Default Value: <code>FlexiblePolyline</code></p>
+    /// <p>Default value: <code>FlexiblePolyline</code></p>
     pub fn snapped_geometry_format(&self) -> ::std::option::Option<&crate::types::GeometryFormat> {
         self.snapped_geometry_format.as_ref()
     }
@@ -43,7 +43,7 @@ impl SnapToRoadsInput {
         self.trace_points.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn travel_mode(&self) -> ::std::option::Option<&crate::types::RoadSnapTravelMode> {
         self.travel_mode.as_ref()
     }
@@ -98,19 +98,19 @@ impl SnapToRoadsInputBuilder {
         &self.key
     }
     /// <p>Chooses what the returned SnappedGeometry format should be.</p>
-    /// <p>Default Value: <code>FlexiblePolyline</code></p>
+    /// <p>Default value: <code>FlexiblePolyline</code></p>
     pub fn snapped_geometry_format(mut self, input: crate::types::GeometryFormat) -> Self {
         self.snapped_geometry_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>Chooses what the returned SnappedGeometry format should be.</p>
-    /// <p>Default Value: <code>FlexiblePolyline</code></p>
+    /// <p>Default value: <code>FlexiblePolyline</code></p>
     pub fn set_snapped_geometry_format(mut self, input: ::std::option::Option<crate::types::GeometryFormat>) -> Self {
         self.snapped_geometry_format = input;
         self
     }
     /// <p>Chooses what the returned SnappedGeometry format should be.</p>
-    /// <p>Default Value: <code>FlexiblePolyline</code></p>
+    /// <p>Default value: <code>FlexiblePolyline</code></p>
     pub fn get_snapped_geometry_format(&self) -> &::std::option::Option<crate::types::GeometryFormat> {
         &self.snapped_geometry_format
     }
@@ -155,19 +155,19 @@ impl SnapToRoadsInputBuilder {
         &self.trace_points
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn travel_mode(mut self, input: crate::types::RoadSnapTravelMode) -> Self {
         self.travel_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn set_travel_mode(mut self, input: ::std::option::Option<crate::types::RoadSnapTravelMode>) -> Self {
         self.travel_mode = input;
         self
     }
     /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed of travel and road compatibility.</p>
-    /// <p>Default Value: <code>Car</code></p>
+    /// <p>Default value: <code>Car</code></p>
     pub fn get_travel_mode(&self) -> &::std::option::Option<crate::types::RoadSnapTravelMode> {
         &self.travel_mode
     }

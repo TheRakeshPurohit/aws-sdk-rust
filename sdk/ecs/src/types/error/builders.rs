@@ -41,13 +41,17 @@ pub use crate::types::error::_missing_version_exception::MissingVersionException
 
 pub use crate::types::error::_no_update_available_exception::NoUpdateAvailableExceptionBuilder;
 
+pub use crate::types::error::_platform_unknown_exception::PlatformUnknownExceptionBuilder;
+
+pub use crate::types::error::_daemon_not_active_exception::DaemonNotActiveExceptionBuilder;
+
+pub use crate::types::error::_daemon_not_found_exception::DaemonNotFoundExceptionBuilder;
+
 pub use crate::types::error::_service_not_active_exception::ServiceNotActiveExceptionBuilder;
 
 pub use crate::types::error::_task_set_not_found_exception::TaskSetNotFoundExceptionBuilder;
 
 pub use crate::types::error::_platform_task_definition_incompatibility_exception::PlatformTaskDefinitionIncompatibilityExceptionBuilder;
-
-pub use crate::types::error::_platform_unknown_exception::PlatformUnknownExceptionBuilder;
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 

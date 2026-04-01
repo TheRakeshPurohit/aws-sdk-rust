@@ -85,6 +85,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_bad_request_exception;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_datastore_input;
@@ -94,6 +96,8 @@ pub(crate) mod shape_get_image_frame_output;
 pub(crate) mod shape_get_image_set_metadata_output;
 
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_not_acceptable_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 

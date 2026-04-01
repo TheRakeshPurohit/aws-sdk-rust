@@ -8,7 +8,7 @@ pub struct CreateGlobalReplicationGroupInput {
     pub global_replication_group_id_suffix: ::std::option::Option<::std::string::String>,
     /// <p>Provides details of the Global datastore</p>
     pub global_replication_group_description: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
+    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster. This value is stored as a lowercase string.</p>
     pub primary_replication_group_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateGlobalReplicationGroupInput {
@@ -21,7 +21,7 @@ impl CreateGlobalReplicationGroupInput {
     pub fn global_replication_group_description(&self) -> ::std::option::Option<&str> {
         self.global_replication_group_description.as_deref()
     }
-    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
+    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster. This value is stored as a lowercase string.</p>
     pub fn primary_replication_group_id(&self) -> ::std::option::Option<&str> {
         self.primary_replication_group_id.as_deref()
     }
@@ -74,18 +74,18 @@ impl CreateGlobalReplicationGroupInputBuilder {
     pub fn get_global_replication_group_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_replication_group_description
     }
-    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
+    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster. This value is stored as a lowercase string.</p>
     /// This field is required.
     pub fn primary_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.primary_replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
+    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster. This value is stored as a lowercase string.</p>
     pub fn set_primary_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.primary_replication_group_id = input;
         self
     }
-    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
+    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster. This value is stored as a lowercase string.</p>
     pub fn get_primary_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.primary_replication_group_id
     }

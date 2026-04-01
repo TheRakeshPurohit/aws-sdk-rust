@@ -145,17 +145,17 @@ impl CreateGlobalReplicationGroupFluentBuilder {
     pub fn get_global_replication_group_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_global_replication_group_description()
     }
-    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
+    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster. This value is stored as a lowercase string.</p>
     pub fn primary_replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.primary_replication_group_id(input.into());
         self
     }
-    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
+    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster. This value is stored as a lowercase string.</p>
     pub fn set_primary_replication_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_primary_replication_group_id(input);
         self
     }
-    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
+    /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster. This value is stored as a lowercase string.</p>
     pub fn get_primary_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_primary_replication_group_id()
     }

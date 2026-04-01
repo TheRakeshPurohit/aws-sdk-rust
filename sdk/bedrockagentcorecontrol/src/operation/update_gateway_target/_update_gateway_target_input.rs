@@ -17,6 +17,8 @@ pub struct UpdateGatewayTargetInput {
     pub credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
     /// <p>Configuration for HTTP header and query parameter propagation to the gateway target.</p>
     pub metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
+    /// <p>The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.</p>
+    pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
 }
 impl UpdateGatewayTargetInput {
     /// <p>The unique identifier of the gateway associated with the target.</p>
@@ -49,6 +51,10 @@ impl UpdateGatewayTargetInput {
     pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::MetadataConfiguration> {
         self.metadata_configuration.as_ref()
     }
+    /// <p>The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.</p>
+    pub fn private_endpoint(&self) -> ::std::option::Option<&crate::types::PrivateEndpoint> {
+        self.private_endpoint.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateGatewayTargetInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -60,6 +66,7 @@ impl ::std::fmt::Debug for UpdateGatewayTargetInput {
         formatter.field("target_configuration", &self.target_configuration);
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
         formatter.field("metadata_configuration", &self.metadata_configuration);
+        formatter.field("private_endpoint", &self.private_endpoint);
         formatter.finish()
     }
 }
@@ -81,6 +88,7 @@ pub struct UpdateGatewayTargetInputBuilder {
     pub(crate) target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
     pub(crate) credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
+    pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
 }
 impl UpdateGatewayTargetInputBuilder {
     /// <p>The unique identifier of the gateway associated with the target.</p>
@@ -194,6 +202,20 @@ impl UpdateGatewayTargetInputBuilder {
     pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::MetadataConfiguration> {
         &self.metadata_configuration
     }
+    /// <p>The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.</p>
+    pub fn private_endpoint(mut self, input: crate::types::PrivateEndpoint) -> Self {
+        self.private_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.</p>
+    pub fn set_private_endpoint(mut self, input: ::std::option::Option<crate::types::PrivateEndpoint>) -> Self {
+        self.private_endpoint = input;
+        self
+    }
+    /// <p>The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.</p>
+    pub fn get_private_endpoint(&self) -> &::std::option::Option<crate::types::PrivateEndpoint> {
+        &self.private_endpoint
+    }
     /// Consumes the builder and constructs a [`UpdateGatewayTargetInput`](crate::operation::update_gateway_target::UpdateGatewayTargetInput).
     pub fn build(
         self,
@@ -207,6 +229,7 @@ impl UpdateGatewayTargetInputBuilder {
             target_configuration: self.target_configuration,
             credential_provider_configurations: self.credential_provider_configurations,
             metadata_configuration: self.metadata_configuration,
+            private_endpoint: self.private_endpoint,
         })
     }
 }
@@ -220,6 +243,7 @@ impl ::std::fmt::Debug for UpdateGatewayTargetInputBuilder {
         formatter.field("target_configuration", &self.target_configuration);
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
         formatter.field("metadata_configuration", &self.metadata_configuration);
+        formatter.field("private_endpoint", &self.private_endpoint);
         formatter.finish()
     }
 }

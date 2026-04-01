@@ -25,6 +25,7 @@
 ///     ImageSetWorkflowStatus::Updated => { /* ... */ },
 ///     ImageSetWorkflowStatus::UpdateFailed => { /* ... */ },
 ///     ImageSetWorkflowStatus::Updating => { /* ... */ },
+///     ImageSetWorkflowStatus::UpdatingForStudyConsistency => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -79,6 +80,8 @@ pub enum ImageSetWorkflowStatus {
     UpdateFailed,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdatingForStudyConsistency,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -99,6 +102,7 @@ impl ::std::convert::From<&str> for ImageSetWorkflowStatus {
             "UPDATED" => ImageSetWorkflowStatus::Updated,
             "UPDATE_FAILED" => ImageSetWorkflowStatus::UpdateFailed,
             "UPDATING" => ImageSetWorkflowStatus::Updating,
+            "UPDATING_FOR_STUDY_CONSISTENCY" => ImageSetWorkflowStatus::UpdatingForStudyConsistency,
             other => ImageSetWorkflowStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -127,6 +131,7 @@ impl ImageSetWorkflowStatus {
             ImageSetWorkflowStatus::Updated => "UPDATED",
             ImageSetWorkflowStatus::UpdateFailed => "UPDATE_FAILED",
             ImageSetWorkflowStatus::Updating => "UPDATING",
+            ImageSetWorkflowStatus::UpdatingForStudyConsistency => "UPDATING_FOR_STUDY_CONSISTENCY",
             ImageSetWorkflowStatus::Unknown(value) => value.as_str(),
         }
     }
@@ -146,6 +151,7 @@ impl ImageSetWorkflowStatus {
             "UPDATED",
             "UPDATE_FAILED",
             "UPDATING",
+            "UPDATING_FOR_STUDY_CONSISTENCY",
         ]
     }
 }
@@ -182,6 +188,7 @@ impl ::std::fmt::Display for ImageSetWorkflowStatus {
             ImageSetWorkflowStatus::Updated => write!(f, "UPDATED"),
             ImageSetWorkflowStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             ImageSetWorkflowStatus::Updating => write!(f, "UPDATING"),
+            ImageSetWorkflowStatus::UpdatingForStudyConsistency => write!(f, "UPDATING_FOR_STUDY_CONSISTENCY"),
             ImageSetWorkflowStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

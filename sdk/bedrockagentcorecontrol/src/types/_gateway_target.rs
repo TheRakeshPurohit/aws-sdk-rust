@@ -28,6 +28,10 @@ pub struct GatewayTarget {
     pub last_synchronized_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metadata configuration for HTTP header and query parameter propagation to and from this gateway target.</p>
     pub metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
+    /// <p>The private endpoint configuration for a gateway target. Defines how the gateway connects to private resources in your VPC.</p>
+    pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
+    /// <p>A list of managed resources created by the gateway for private endpoint connectivity. These resources are created in your account when you use a managed VPC Lattice resource configuration.</p>
+    pub private_endpoint_managed_resources: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>>,
 }
 impl GatewayTarget {
     /// <p>The Amazon Resource Name (ARN) of the gateway target.</p>
@@ -84,6 +88,16 @@ impl GatewayTarget {
     pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::MetadataConfiguration> {
         self.metadata_configuration.as_ref()
     }
+    /// <p>The private endpoint configuration for a gateway target. Defines how the gateway connects to private resources in your VPC.</p>
+    pub fn private_endpoint(&self) -> ::std::option::Option<&crate::types::PrivateEndpoint> {
+        self.private_endpoint.as_ref()
+    }
+    /// <p>A list of managed resources created by the gateway for private endpoint connectivity. These resources are created in your account when you use a managed VPC Lattice resource configuration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.private_endpoint_managed_resources.is_none()`.
+    pub fn private_endpoint_managed_resources(&self) -> &[crate::types::ManagedResourceDetails] {
+        self.private_endpoint_managed_resources.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for GatewayTarget {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -100,6 +114,8 @@ impl ::std::fmt::Debug for GatewayTarget {
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
         formatter.field("last_synchronized_at", &self.last_synchronized_at);
         formatter.field("metadata_configuration", &self.metadata_configuration);
+        formatter.field("private_endpoint", &self.private_endpoint);
+        formatter.field("private_endpoint_managed_resources", &self.private_endpoint_managed_resources);
         formatter.finish()
     }
 }
@@ -126,6 +142,8 @@ pub struct GatewayTargetBuilder {
     pub(crate) credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
     pub(crate) last_synchronized_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
+    pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
+    pub(crate) private_endpoint_managed_resources: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>>,
 }
 impl GatewayTargetBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway target.</p>
@@ -318,6 +336,43 @@ impl GatewayTargetBuilder {
     pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::MetadataConfiguration> {
         &self.metadata_configuration
     }
+    /// <p>The private endpoint configuration for a gateway target. Defines how the gateway connects to private resources in your VPC.</p>
+    pub fn private_endpoint(mut self, input: crate::types::PrivateEndpoint) -> Self {
+        self.private_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The private endpoint configuration for a gateway target. Defines how the gateway connects to private resources in your VPC.</p>
+    pub fn set_private_endpoint(mut self, input: ::std::option::Option<crate::types::PrivateEndpoint>) -> Self {
+        self.private_endpoint = input;
+        self
+    }
+    /// <p>The private endpoint configuration for a gateway target. Defines how the gateway connects to private resources in your VPC.</p>
+    pub fn get_private_endpoint(&self) -> &::std::option::Option<crate::types::PrivateEndpoint> {
+        &self.private_endpoint
+    }
+    /// Appends an item to `private_endpoint_managed_resources`.
+    ///
+    /// To override the contents of this collection use [`set_private_endpoint_managed_resources`](Self::set_private_endpoint_managed_resources).
+    ///
+    /// <p>A list of managed resources created by the gateway for private endpoint connectivity. These resources are created in your account when you use a managed VPC Lattice resource configuration.</p>
+    pub fn private_endpoint_managed_resources(mut self, input: crate::types::ManagedResourceDetails) -> Self {
+        let mut v = self.private_endpoint_managed_resources.unwrap_or_default();
+        v.push(input);
+        self.private_endpoint_managed_resources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of managed resources created by the gateway for private endpoint connectivity. These resources are created in your account when you use a managed VPC Lattice resource configuration.</p>
+    pub fn set_private_endpoint_managed_resources(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>>,
+    ) -> Self {
+        self.private_endpoint_managed_resources = input;
+        self
+    }
+    /// <p>A list of managed resources created by the gateway for private endpoint connectivity. These resources are created in your account when you use a managed VPC Lattice resource configuration.</p>
+    pub fn get_private_endpoint_managed_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>> {
+        &self.private_endpoint_managed_resources
+    }
     /// Consumes the builder and constructs a [`GatewayTarget`](crate::types::GatewayTarget).
     /// This method will fail if any of the following fields are not set:
     /// - [`gateway_arn`](crate::types::builders::GatewayTargetBuilder::gateway_arn)
@@ -376,6 +431,8 @@ impl GatewayTargetBuilder {
             })?,
             last_synchronized_at: self.last_synchronized_at,
             metadata_configuration: self.metadata_configuration,
+            private_endpoint: self.private_endpoint,
+            private_endpoint_managed_resources: self.private_endpoint_managed_resources,
         })
     }
 }
@@ -394,6 +451,8 @@ impl ::std::fmt::Debug for GatewayTargetBuilder {
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
         formatter.field("last_synchronized_at", &self.last_synchronized_at);
         formatter.field("metadata_configuration", &self.metadata_configuration);
+        formatter.field("private_endpoint", &self.private_endpoint);
+        formatter.field("private_endpoint_managed_resources", &self.private_endpoint_managed_resources);
         formatter.finish()
     }
 }

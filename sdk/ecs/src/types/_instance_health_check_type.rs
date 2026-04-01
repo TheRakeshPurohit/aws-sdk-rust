@@ -12,7 +12,9 @@
 /// ```text
 /// # let instancehealthchecktype = unimplemented!();
 /// match instancehealthchecktype {
+///     InstanceHealthCheckType::AcceleratedCompute => { /* ... */ },
 ///     InstanceHealthCheckType::ContainerRuntime => { /* ... */ },
+///     InstanceHealthCheckType::Daemon => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,7 +44,11 @@
 )]
 pub enum InstanceHealthCheckType {
     #[allow(missing_docs)] // documentation missing in model
+    AcceleratedCompute,
+    #[allow(missing_docs)] // documentation missing in model
     ContainerRuntime,
+    #[allow(missing_docs)] // documentation missing in model
+    Daemon,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,7 +56,9 @@ pub enum InstanceHealthCheckType {
 impl ::std::convert::From<&str> for InstanceHealthCheckType {
     fn from(s: &str) -> Self {
         match s {
+            "ACCELERATED_COMPUTE" => InstanceHealthCheckType::AcceleratedCompute,
             "CONTAINER_RUNTIME" => InstanceHealthCheckType::ContainerRuntime,
+            "DAEMON" => InstanceHealthCheckType::Daemon,
             other => InstanceHealthCheckType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,13 +74,15 @@ impl InstanceHealthCheckType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            InstanceHealthCheckType::AcceleratedCompute => "ACCELERATED_COMPUTE",
             InstanceHealthCheckType::ContainerRuntime => "CONTAINER_RUNTIME",
+            InstanceHealthCheckType::Daemon => "DAEMON",
             InstanceHealthCheckType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONTAINER_RUNTIME"]
+        &["ACCELERATED_COMPUTE", "CONTAINER_RUNTIME", "DAEMON"]
     }
 }
 impl ::std::convert::AsRef<str> for InstanceHealthCheckType {
@@ -95,7 +105,9 @@ impl InstanceHealthCheckType {
 impl ::std::fmt::Display for InstanceHealthCheckType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            InstanceHealthCheckType::AcceleratedCompute => write!(f, "ACCELERATED_COMPUTE"),
             InstanceHealthCheckType::ContainerRuntime => write!(f, "CONTAINER_RUNTIME"),
+            InstanceHealthCheckType::Daemon => write!(f, "DAEMON"),
             InstanceHealthCheckType::Unknown(value) => write!(f, "{value}"),
         }
     }
