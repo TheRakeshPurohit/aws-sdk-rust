@@ -45,15 +45,21 @@ pub fn ser_create_queue_input_input(
     if let Some(var_14) = &input.role_arn {
         object.key("roleArn").string(var_14.as_str());
     }
-    if let Some(var_15) = &input.tags {
+    if let Some(var_15) = &input.scheduling_configuration {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("tags").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_16 = object.key("schedulingConfiguration").start_object();
+        crate::protocol_serde::shape_scheduling_configuration::ser_scheduling_configuration(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("tags").start_object();
+        for (key_19, value_20) in var_17 {
             {
-                object_16.key(key_17.as_str()).string(value_18.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
-        object_16.finish();
+        object_18.finish();
     }
     Ok(())
 }

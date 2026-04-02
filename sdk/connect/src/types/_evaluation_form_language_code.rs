@@ -17,7 +17,10 @@
 ///     EvaluationFormLanguageCode::EsEs => { /* ... */ },
 ///     EvaluationFormLanguageCode::FrFr => { /* ... */ },
 ///     EvaluationFormLanguageCode::ItIt => { /* ... */ },
+///     EvaluationFormLanguageCode::JaJp => { /* ... */ },
+///     EvaluationFormLanguageCode::KoKr => { /* ... */ },
 ///     EvaluationFormLanguageCode::PtBr => { /* ... */ },
+///     EvaluationFormLanguageCode::ZhCn => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -57,7 +60,13 @@ pub enum EvaluationFormLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     ItIt,
     #[allow(missing_docs)] // documentation missing in model
+    JaJp,
+    #[allow(missing_docs)] // documentation missing in model
+    KoKr,
+    #[allow(missing_docs)] // documentation missing in model
     PtBr,
+    #[allow(missing_docs)] // documentation missing in model
+    ZhCn,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -70,7 +79,10 @@ impl ::std::convert::From<&str> for EvaluationFormLanguageCode {
             "es-ES" => EvaluationFormLanguageCode::EsEs,
             "fr-FR" => EvaluationFormLanguageCode::FrFr,
             "it-IT" => EvaluationFormLanguageCode::ItIt,
+            "ja-JP" => EvaluationFormLanguageCode::JaJp,
+            "ko-KR" => EvaluationFormLanguageCode::KoKr,
             "pt-BR" => EvaluationFormLanguageCode::PtBr,
+            "zh-CN" => EvaluationFormLanguageCode::ZhCn,
             other => EvaluationFormLanguageCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -91,13 +103,16 @@ impl EvaluationFormLanguageCode {
             EvaluationFormLanguageCode::EsEs => "es-ES",
             EvaluationFormLanguageCode::FrFr => "fr-FR",
             EvaluationFormLanguageCode::ItIt => "it-IT",
+            EvaluationFormLanguageCode::JaJp => "ja-JP",
+            EvaluationFormLanguageCode::KoKr => "ko-KR",
             EvaluationFormLanguageCode::PtBr => "pt-BR",
+            EvaluationFormLanguageCode::ZhCn => "zh-CN",
             EvaluationFormLanguageCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["de-DE", "en-US", "es-ES", "fr-FR", "it-IT", "pt-BR"]
+        &["de-DE", "en-US", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "pt-BR", "zh-CN"]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluationFormLanguageCode {
@@ -125,7 +140,10 @@ impl ::std::fmt::Display for EvaluationFormLanguageCode {
             EvaluationFormLanguageCode::EsEs => write!(f, "es-ES"),
             EvaluationFormLanguageCode::FrFr => write!(f, "fr-FR"),
             EvaluationFormLanguageCode::ItIt => write!(f, "it-IT"),
+            EvaluationFormLanguageCode::JaJp => write!(f, "ja-JP"),
+            EvaluationFormLanguageCode::KoKr => write!(f, "ko-KR"),
             EvaluationFormLanguageCode::PtBr => write!(f, "pt-BR"),
+            EvaluationFormLanguageCode::ZhCn => write!(f, "zh-CN"),
             EvaluationFormLanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }

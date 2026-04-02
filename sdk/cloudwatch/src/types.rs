@@ -23,6 +23,8 @@ pub use crate::types::_label_options::LabelOptions;
 
 pub use crate::types::_metric_stream_output_format::MetricStreamOutputFormat;
 
+pub use crate::types::_o_tel_enrichment_status::OTelEnrichmentStatus;
+
 pub use crate::types::_recently_active::RecentlyActive;
 
 pub use crate::types::_anomaly_detector_configuration::AnomalyDetectorConfiguration;
@@ -30,6 +32,8 @@ pub use crate::types::_anomaly_detector_configuration::AnomalyDetectorConfigurat
 pub use crate::types::_metric_characteristics::MetricCharacteristics;
 
 pub use crate::types::_comparison_operator::ComparisonOperator;
+
+pub use crate::types::_evaluation_criteria::EvaluationCriteria;
 
 pub use crate::types::_dimension::Dimension;
 
@@ -87,6 +91,8 @@ pub use crate::types::_dashboard_validation_message::DashboardValidationMessage;
 
 pub use crate::types::_managed_rule::ManagedRule;
 
+pub use crate::types::_alarm_prom_ql_criteria::AlarmPromQlCriteria;
+
 pub use crate::types::_metric_datum::MetricDatum;
 
 pub use crate::types::_entity_metric_data::EntityMetricData;
@@ -123,6 +129,8 @@ mod _alarm_mute_rule_status;
 
 mod _alarm_mute_rule_summary;
 
+mod _alarm_prom_ql_criteria;
+
 mod _alarm_type;
 
 mod _anomaly_detector;
@@ -150,6 +158,8 @@ mod _dimension_filter;
 mod _entity;
 
 mod _entity_metric_data;
+
+mod _evaluation_criteria;
 
 mod _evaluation_state;
 
@@ -200,6 +210,8 @@ mod _metric_stream_statistics_configuration;
 mod _metric_stream_statistics_metric;
 
 mod _mute_targets;
+
+mod _o_tel_enrichment_status;
 
 mod _partial_failure;
 

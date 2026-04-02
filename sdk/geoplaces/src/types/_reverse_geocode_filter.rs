@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReverseGeocodeFilter {
-    /// <p>The included place types.</p>
+    /// <p>The included place types. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Street</code> and <code>PointAddress</code> values.</p>
     pub include_place_types: ::std::option::Option<::std::vec::Vec<crate::types::ReverseGeocodeFilterPlaceType>>,
 }
 impl ReverseGeocodeFilter {
-    /// <p>The included place types.</p>
+    /// <p>The included place types. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Street</code> and <code>PointAddress</code> values.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_place_types.is_none()`.
     pub fn include_place_types(&self) -> &[crate::types::ReverseGeocodeFilterPlaceType] {
@@ -33,19 +33,19 @@ impl ReverseGeocodeFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_include_place_types`](Self::set_include_place_types).
     ///
-    /// <p>The included place types.</p>
+    /// <p>The included place types. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Street</code> and <code>PointAddress</code> values.</p>
     pub fn include_place_types(mut self, input: crate::types::ReverseGeocodeFilterPlaceType) -> Self {
         let mut v = self.include_place_types.unwrap_or_default();
         v.push(input);
         self.include_place_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The included place types.</p>
+    /// <p>The included place types. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Street</code> and <code>PointAddress</code> values.</p>
     pub fn set_include_place_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReverseGeocodeFilterPlaceType>>) -> Self {
         self.include_place_types = input;
         self
     }
-    /// <p>The included place types.</p>
+    /// <p>The included place types. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only <code>Street</code> and <code>PointAddress</code> values.</p>
     pub fn get_include_place_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReverseGeocodeFilterPlaceType>> {
         &self.include_place_types
     }

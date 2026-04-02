@@ -192,6 +192,23 @@ impl UpdateDataAutomationProjectFluentBuilder {
     pub fn get_override_configuration(&self) -> &::std::option::Option<crate::types::OverrideConfiguration> {
         self.inner.get_override_configuration()
     }
+    /// DataAutomation Library configuration
+    pub fn data_automation_library_configuration(mut self, input: crate::types::DataAutomationLibraryConfiguration) -> Self {
+        self.inner = self.inner.data_automation_library_configuration(input);
+        self
+    }
+    /// DataAutomation Library configuration
+    pub fn set_data_automation_library_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::DataAutomationLibraryConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_data_automation_library_configuration(input);
+        self
+    }
+    /// DataAutomation Library configuration
+    pub fn get_data_automation_library_configuration(&self) -> &::std::option::Option<crate::types::DataAutomationLibraryConfiguration> {
+        self.inner.get_data_automation_library_configuration()
+    }
     /// KMS Encryption Configuration
     pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.inner = self.inner.encryption_configuration(input);

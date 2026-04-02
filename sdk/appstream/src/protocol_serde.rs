@@ -149,6 +149,8 @@ pub(crate) mod shape_disassociate_fleet;
 
 pub(crate) mod shape_disassociate_software_from_image_builder;
 
+pub(crate) mod shape_drain_session_instance;
+
 pub(crate) mod shape_enable_user;
 
 pub(crate) mod shape_expire_session;
@@ -330,6 +332,8 @@ pub(crate) mod shape_disassociate_application_from_entitlement_input;
 pub(crate) mod shape_disassociate_fleet_input;
 
 pub(crate) mod shape_disassociate_software_from_image_builder_input;
+
+pub(crate) mod shape_drain_session_instance_input;
 
 pub(crate) mod shape_dry_run_operation_exception;
 

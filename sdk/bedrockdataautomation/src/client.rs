@@ -142,6 +142,8 @@ mod create_blueprint;
 
 mod create_blueprint_version;
 
+mod create_data_automation_library;
+
 mod create_data_automation_project;
 
 /// Operation customization and supporting types.
@@ -173,17 +175,33 @@ pub mod customize;
 
 mod delete_blueprint;
 
+mod delete_data_automation_library;
+
 mod delete_data_automation_project;
 
 mod get_blueprint;
 
 mod get_blueprint_optimization_status;
 
+mod get_data_automation_library;
+
+mod get_data_automation_library_entity;
+
+mod get_data_automation_library_ingestion_job;
+
 mod get_data_automation_project;
 
 mod invoke_blueprint_optimization_async;
 
+mod invoke_data_automation_library_ingestion_job;
+
 mod list_blueprints;
+
+mod list_data_automation_libraries;
+
+mod list_data_automation_library_entities;
+
+mod list_data_automation_library_ingestion_jobs;
 
 mod list_data_automation_projects;
 
@@ -194,5 +212,7 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_blueprint;
+
+mod update_data_automation_library;
 
 mod update_data_automation_project;

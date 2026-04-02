@@ -323,6 +323,8 @@ mod disassociate_fleet;
 
 mod disassociate_software_from_image_builder;
 
+mod drain_session_instance;
+
 mod enable_user;
 
 mod expire_session;

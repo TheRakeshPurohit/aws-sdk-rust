@@ -50,7 +50,6 @@ pub(super) fn resolve_endpoint(
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dns_suffix());
-                                out.push_str("/v2");
                                 out
                             })
                             .build());
@@ -69,7 +68,6 @@ pub(super) fn resolve_endpoint(
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dual_stack_dns_suffix());
-                                out.push_str("/v2");
                                 out
                             })
                             .build());
@@ -88,7 +86,6 @@ pub(super) fn resolve_endpoint(
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dns_suffix());
-                                out.push_str("/v2");
                                 out
                             })
                             .build());
@@ -107,7 +104,6 @@ pub(super) fn resolve_endpoint(
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dual_stack_dns_suffix());
-                                out.push_str("/v2");
                                 out
                             })
                             .build());
@@ -126,7 +122,6 @@ pub(super) fn resolve_endpoint(
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dns_suffix());
-                                out.push_str("/v2");
                                 out
                             })
                             .build());
@@ -145,7 +140,6 @@ pub(super) fn resolve_endpoint(
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dual_stack_dns_suffix());
-                                out.push_str("/v2");
                                 out
                             })
                             .build());
@@ -164,7 +158,6 @@ pub(super) fn resolve_endpoint(
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dns_suffix());
-                                out.push_str("/v2");
                                 out
                             })
                             .build());
@@ -183,7 +176,6 @@ pub(super) fn resolve_endpoint(
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dual_stack_dns_suffix());
-                                out.push_str("/v2");
                                 out
                             })
                             .build());

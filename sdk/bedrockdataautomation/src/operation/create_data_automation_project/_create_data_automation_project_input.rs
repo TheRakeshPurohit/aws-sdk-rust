@@ -18,6 +18,8 @@ pub struct CreateDataAutomationProjectInput {
     pub custom_output_configuration: ::std::option::Option<crate::types::CustomOutputConfiguration>,
     /// Override configuration
     pub override_configuration: ::std::option::Option<crate::types::OverrideConfiguration>,
+    /// DataAutomation Library configuration
+    pub data_automation_library_configuration: ::std::option::Option<crate::types::DataAutomationLibraryConfiguration>,
     /// Client specified token used for idempotency checks
     pub client_token: ::std::option::Option<::std::string::String>,
     /// KMS Encryption Configuration
@@ -54,6 +56,10 @@ impl CreateDataAutomationProjectInput {
     pub fn override_configuration(&self) -> ::std::option::Option<&crate::types::OverrideConfiguration> {
         self.override_configuration.as_ref()
     }
+    /// DataAutomation Library configuration
+    pub fn data_automation_library_configuration(&self) -> ::std::option::Option<&crate::types::DataAutomationLibraryConfiguration> {
+        self.data_automation_library_configuration.as_ref()
+    }
     /// Client specified token used for idempotency checks
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -79,6 +85,7 @@ impl ::std::fmt::Debug for CreateDataAutomationProjectInput {
         formatter.field("standard_output_configuration", &self.standard_output_configuration);
         formatter.field("custom_output_configuration", &self.custom_output_configuration);
         formatter.field("override_configuration", &self.override_configuration);
+        formatter.field("data_automation_library_configuration", &self.data_automation_library_configuration);
         formatter.field("client_token", &self.client_token);
         formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.field("tags", &self.tags);
@@ -103,6 +110,7 @@ pub struct CreateDataAutomationProjectInputBuilder {
     pub(crate) standard_output_configuration: ::std::option::Option<crate::types::StandardOutputConfiguration>,
     pub(crate) custom_output_configuration: ::std::option::Option<crate::types::CustomOutputConfiguration>,
     pub(crate) override_configuration: ::std::option::Option<crate::types::OverrideConfiguration>,
+    pub(crate) data_automation_library_configuration: ::std::option::Option<crate::types::DataAutomationLibraryConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -208,6 +216,23 @@ impl CreateDataAutomationProjectInputBuilder {
     pub fn get_override_configuration(&self) -> &::std::option::Option<crate::types::OverrideConfiguration> {
         &self.override_configuration
     }
+    /// DataAutomation Library configuration
+    pub fn data_automation_library_configuration(mut self, input: crate::types::DataAutomationLibraryConfiguration) -> Self {
+        self.data_automation_library_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// DataAutomation Library configuration
+    pub fn set_data_automation_library_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::DataAutomationLibraryConfiguration>,
+    ) -> Self {
+        self.data_automation_library_configuration = input;
+        self
+    }
+    /// DataAutomation Library configuration
+    pub fn get_data_automation_library_configuration(&self) -> &::std::option::Option<crate::types::DataAutomationLibraryConfiguration> {
+        &self.data_automation_library_configuration
+    }
     /// Client specified token used for idempotency checks
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -271,6 +296,7 @@ impl CreateDataAutomationProjectInputBuilder {
             standard_output_configuration: self.standard_output_configuration,
             custom_output_configuration: self.custom_output_configuration,
             override_configuration: self.override_configuration,
+            data_automation_library_configuration: self.data_automation_library_configuration,
             client_token: self.client_token,
             encryption_configuration: self.encryption_configuration,
             tags: self.tags,
@@ -287,6 +313,7 @@ impl ::std::fmt::Debug for CreateDataAutomationProjectInputBuilder {
         formatter.field("standard_output_configuration", &self.standard_output_configuration);
         formatter.field("custom_output_configuration", &self.custom_output_configuration);
         formatter.field("override_configuration", &self.override_configuration);
+        formatter.field("data_automation_library_configuration", &self.data_automation_library_configuration);
         formatter.field("client_token", &self.client_token);
         formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.field("tags", &self.tags);

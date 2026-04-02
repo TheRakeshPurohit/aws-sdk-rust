@@ -9,7 +9,19 @@ pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
 
 pub use crate::types::_data_automation_project_filter::DataAutomationProjectFilterBuilder;
 
+pub use crate::types::_input_configuration::InputConfigurationBuilder;
+
+pub use crate::types::_output_configuration::OutputConfigurationBuilder;
+
+pub use crate::types::_notification_configuration::NotificationConfigurationBuilder;
+
+pub use crate::types::_data_automation_library_ingestion_job::DataAutomationLibraryIngestionJobBuilder;
+
+pub use crate::types::_data_automation_library::DataAutomationLibraryBuilder;
+
 pub use crate::types::_blueprint_filter::BlueprintFilterBuilder;
+
+pub use crate::types::_data_automation_library_filter::DataAutomationLibraryFilterBuilder;
 
 pub use crate::types::_standard_output_configuration::StandardOutputConfigurationBuilder;
 
@@ -17,9 +29,13 @@ pub use crate::types::_custom_output_configuration::CustomOutputConfigurationBui
 
 pub use crate::types::_override_configuration::OverrideConfigurationBuilder;
 
+pub use crate::types::_data_automation_library_configuration::DataAutomationLibraryConfigurationBuilder;
+
 pub use crate::types::_data_automation_project::DataAutomationProjectBuilder;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
+
+pub use crate::types::_vocabulary_entity::VocabularyEntityBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
@@ -28,6 +44,12 @@ pub use crate::types::_blueprint_optimization_sample::BlueprintOptimizationSampl
 pub use crate::types::_s3_object::S3ObjectBuilder;
 
 pub use crate::types::_blueprint_summary::BlueprintSummaryBuilder;
+
+pub use crate::types::_data_automation_library_ingestion_job_summary::DataAutomationLibraryIngestionJobSummaryBuilder;
+
+pub use crate::types::_event_bridge_configuration::EventBridgeConfigurationBuilder;
+
+pub use crate::types::_data_automation_library_summary::DataAutomationLibrarySummaryBuilder;
 
 pub use crate::types::_data_automation_project_summary::DataAutomationProjectSummaryBuilder;
 
@@ -48,6 +70,12 @@ pub use crate::types::_video_override_configuration::VideoOverrideConfigurationB
 pub use crate::types::_audio_override_configuration::AudioOverrideConfigurationBuilder;
 
 pub use crate::types::_modality_routing_configuration::ModalityRoutingConfigurationBuilder;
+
+pub use crate::types::_vocabulary_entity_summary::VocabularyEntitySummaryBuilder;
+
+pub use crate::types::_delete_entities_info::DeleteEntitiesInfoBuilder;
+
+pub use crate::types::_entity_type_info::EntityTypeInfoBuilder;
 
 pub use crate::types::_document_standard_extraction::DocumentStandardExtractionBuilder;
 
@@ -77,6 +105,10 @@ pub use crate::types::_sensitive_data_configuration::SensitiveDataConfigurationB
 
 pub use crate::types::_audio_language_configuration::AudioLanguageConfigurationBuilder;
 
+pub use crate::types::_data_automation_library_item::DataAutomationLibraryItemBuilder;
+
+pub use crate::types::_phrase::PhraseBuilder;
+
 pub use crate::types::_document_extraction_granularity::DocumentExtractionGranularityBuilder;
 
 pub use crate::types::_document_bounding_box::DocumentBoundingBoxBuilder;
@@ -96,6 +128,8 @@ pub use crate::types::_video_bounding_box::VideoBoundingBoxBuilder;
 pub use crate::types::_audio_extraction_category::AudioExtractionCategoryBuilder;
 
 pub use crate::types::_pii_entities_configuration::PiiEntitiesConfigurationBuilder;
+
+pub use crate::types::_vocabulary_entity_info::VocabularyEntityInfoBuilder;
 
 pub use crate::types::_audio_extraction_category_type_configuration::AudioExtractionCategoryTypeConfigurationBuilder;
 

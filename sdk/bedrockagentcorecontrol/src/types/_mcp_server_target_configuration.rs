@@ -6,12 +6,18 @@
 pub struct McpServerTargetConfiguration {
     /// <p>The endpoint for the MCP server target configuration.</p>
     pub endpoint: ::std::string::String,
+    /// <p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>
+    pub mcp_tool_schema: ::std::option::Option<crate::types::McpToolSchemaConfiguration>,
 }
 impl McpServerTargetConfiguration {
     /// <p>The endpoint for the MCP server target configuration.</p>
     pub fn endpoint(&self) -> &str {
         use std::ops::Deref;
         self.endpoint.deref()
+    }
+    /// <p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>
+    pub fn mcp_tool_schema(&self) -> ::std::option::Option<&crate::types::McpToolSchemaConfiguration> {
+        self.mcp_tool_schema.as_ref()
     }
 }
 impl McpServerTargetConfiguration {
@@ -26,6 +32,7 @@ impl McpServerTargetConfiguration {
 #[non_exhaustive]
 pub struct McpServerTargetConfigurationBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) mcp_tool_schema: ::std::option::Option<crate::types::McpToolSchemaConfiguration>,
 }
 impl McpServerTargetConfigurationBuilder {
     /// <p>The endpoint for the MCP server target configuration.</p>
@@ -43,6 +50,20 @@ impl McpServerTargetConfigurationBuilder {
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
     }
+    /// <p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>
+    pub fn mcp_tool_schema(mut self, input: crate::types::McpToolSchemaConfiguration) -> Self {
+        self.mcp_tool_schema = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>
+    pub fn set_mcp_tool_schema(mut self, input: ::std::option::Option<crate::types::McpToolSchemaConfiguration>) -> Self {
+        self.mcp_tool_schema = input;
+        self
+    }
+    /// <p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>
+    pub fn get_mcp_tool_schema(&self) -> &::std::option::Option<crate::types::McpToolSchemaConfiguration> {
+        &self.mcp_tool_schema
+    }
     /// Consumes the builder and constructs a [`McpServerTargetConfiguration`](crate::types::McpServerTargetConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`endpoint`](crate::types::builders::McpServerTargetConfigurationBuilder::endpoint)
@@ -54,6 +75,7 @@ impl McpServerTargetConfigurationBuilder {
                     "endpoint was not specified but it is required when building McpServerTargetConfiguration",
                 )
             })?,
+            mcp_tool_schema: self.mcp_tool_schema,
         })
     }
 }

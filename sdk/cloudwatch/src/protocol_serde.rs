@@ -74,6 +74,8 @@ pub(crate) mod shape_get_metric_stream;
 
 pub(crate) mod shape_get_metric_widget_image;
 
+pub(crate) mod shape_get_o_tel_enrichment;
+
 pub(crate) mod shape_list_alarm_mute_rules;
 
 pub(crate) mod shape_list_dashboards;
@@ -108,7 +110,11 @@ pub(crate) mod shape_set_alarm_state;
 
 pub(crate) mod shape_start_metric_streams;
 
+pub(crate) mod shape_start_o_tel_enrichment;
+
 pub(crate) mod shape_stop_metric_streams;
+
+pub(crate) mod shape_stop_o_tel_enrichment;
 
 pub(crate) mod shape_tag_resource;
 
@@ -168,6 +174,8 @@ pub(crate) mod shape_get_metric_stream_input;
 
 pub(crate) mod shape_get_metric_widget_image_input;
 
+pub(crate) mod shape_get_o_tel_enrichment_input;
+
 pub(crate) mod shape_internal_service_fault;
 
 pub(crate) mod shape_invalid_format_fault;
@@ -222,7 +230,11 @@ pub(crate) mod shape_set_alarm_state_input;
 
 pub(crate) mod shape_start_metric_streams_input;
 
+pub(crate) mod shape_start_o_tel_enrichment_input;
+
 pub(crate) mod shape_stop_metric_streams_input;
+
+pub(crate) mod shape_stop_o_tel_enrichment_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -253,6 +265,8 @@ pub(crate) mod shape_dimension;
 pub(crate) mod shape_dimension_filter;
 
 pub(crate) mod shape_entity_metric_data;
+
+pub(crate) mod shape_evaluation_criteria;
 
 pub(crate) mod shape_insight_rule_contributor_key_labels;
 
@@ -311,6 +325,8 @@ pub(crate) mod shape_alarm_contributor;
 pub(crate) mod shape_alarm_history_item;
 
 pub(crate) mod shape_alarm_mute_rule_summary;
+
+pub(crate) mod shape_alarm_prom_ql_criteria;
 
 pub(crate) mod shape_anomaly_detector;
 

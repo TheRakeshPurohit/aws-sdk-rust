@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`required_file_system_location_names(Option<Vec::<String>>)`](crate::operation::get_queue::GetQueueOutput::required_file_system_location_names): <p>A list of the required file system location names in the queue.</p>
     ///   - [`allowed_storage_profile_ids(Option<Vec::<String>>)`](crate::operation::get_queue::GetQueueOutput::allowed_storage_profile_ids): <p>The storage profile IDs for the queue.</p>
     ///   - [`job_run_as_user(Option<JobRunAsUser>)`](crate::operation::get_queue::GetQueueOutput::job_run_as_user): <p>The jobs in the queue ran as this specified POSIX user.</p>
+    ///   - [`scheduling_configuration(Option<SchedulingConfiguration>)`](crate::operation::get_queue::GetQueueOutput::scheduling_configuration): <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
     /// - On failure, responds with [`SdkError<GetQueueError>`](crate::operation::get_queue::GetQueueError)
     pub fn get_queue(&self) -> crate::operation::get_queue::builders::GetQueueFluentBuilder {
         crate::operation::get_queue::builders::GetQueueFluentBuilder::new(self.handle.clone())

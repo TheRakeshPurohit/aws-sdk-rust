@@ -13,6 +13,7 @@
 /// # let contactparticipantrole = unimplemented!();
 /// match contactparticipantrole {
 ///     ContactParticipantRole::Agent => { /* ... */ },
+///     ContactParticipantRole::Customer => { /* ... */ },
 ///     ContactParticipantRole::CustomBot => { /* ... */ },
 ///     ContactParticipantRole::System => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum ContactParticipantRole {
     #[allow(missing_docs)] // documentation missing in model
     Agent,
     #[allow(missing_docs)] // documentation missing in model
+    Customer,
+    #[allow(missing_docs)] // documentation missing in model
     CustomBot,
     #[allow(missing_docs)] // documentation missing in model
     System,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for ContactParticipantRole {
     fn from(s: &str) -> Self {
         match s {
             "AGENT" => ContactParticipantRole::Agent,
+            "CUSTOMER" => ContactParticipantRole::Customer,
             "CUSTOM_BOT" => ContactParticipantRole::CustomBot,
             "SYSTEM" => ContactParticipantRole::System,
             other => ContactParticipantRole::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl ContactParticipantRole {
     pub fn as_str(&self) -> &str {
         match self {
             ContactParticipantRole::Agent => "AGENT",
+            ContactParticipantRole::Customer => "CUSTOMER",
             ContactParticipantRole::CustomBot => "CUSTOM_BOT",
             ContactParticipantRole::System => "SYSTEM",
             ContactParticipantRole::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl ContactParticipantRole {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGENT", "CUSTOM_BOT", "SYSTEM"]
+        &["AGENT", "CUSTOMER", "CUSTOM_BOT", "SYSTEM"]
     }
 }
 impl ::std::convert::AsRef<str> for ContactParticipantRole {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for ContactParticipantRole {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ContactParticipantRole::Agent => write!(f, "AGENT"),
+            ContactParticipantRole::Customer => write!(f, "CUSTOMER"),
             ContactParticipantRole::CustomBot => write!(f, "CUSTOM_BOT"),
             ContactParticipantRole::System => write!(f, "SYSTEM"),
             ContactParticipantRole::Unknown(value) => write!(f, "{value}"),

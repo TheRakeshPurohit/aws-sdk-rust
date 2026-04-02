@@ -289,4 +289,21 @@ impl CreateQueueFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.</p>
+    pub fn scheduling_configuration(mut self, input: crate::types::SchedulingConfiguration) -> Self {
+        self.inner = self.inner.scheduling_configuration(input);
+        self
+    }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.</p>
+    pub fn set_scheduling_configuration(mut self, input: ::std::option::Option<crate::types::SchedulingConfiguration>) -> Self {
+        self.inner = self.inner.set_scheduling_configuration(input);
+        self
+    }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.</p>
+    pub fn get_scheduling_configuration(&self) -> &::std::option::Option<crate::types::SchedulingConfiguration> {
+        self.inner.get_scheduling_configuration()
+    }
 }

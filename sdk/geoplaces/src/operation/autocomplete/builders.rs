@@ -339,17 +339,17 @@ impl AutocompleteFluentBuilder {
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_political_view()
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the query results will be persisted in customer infrastructure. Defaults to <code>SingleUse</code> (not stored). Currently, <code>Autocomplete</code> does not support storage of results.</p>
     pub fn intended_use(mut self, input: crate::types::AutocompleteIntendedUse) -> Self {
         self.inner = self.inner.intended_use(input);
         self
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the query results will be persisted in customer infrastructure. Defaults to <code>SingleUse</code> (not stored). Currently, <code>Autocomplete</code> does not support storage of results.</p>
     pub fn set_intended_use(mut self, input: ::std::option::Option<crate::types::AutocompleteIntendedUse>) -> Self {
         self.inner = self.inner.set_intended_use(input);
         self
     }
-    /// <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>, if left empty.</p>
+    /// <p>Indicates if the query results will be persisted in customer infrastructure. Defaults to <code>SingleUse</code> (not stored). Currently, <code>Autocomplete</code> does not support storage of results.</p>
     pub fn get_intended_use(&self) -> &::std::option::Option<crate::types::AutocompleteIntendedUse> {
         self.inner.get_intended_use()
     }

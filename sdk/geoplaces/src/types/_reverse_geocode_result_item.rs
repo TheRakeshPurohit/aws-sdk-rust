@@ -12,9 +12,9 @@ pub struct ReverseGeocodeResultItem {
     pub title: ::std::string::String,
     /// <p>The place's address.</p>
     pub address: ::std::option::Option<crate::types::Address>,
-    /// <p>Boolean indicating if the address provided has been corrected.</p>
+    /// <p>Boolean indicating if the address provided has been corrected. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub address_number_corrected: ::std::option::Option<bool>,
-    /// <p>Contains details about the postal code of the place/result.</p>
+    /// <p>Contains details about the postal code of the place/result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub postal_code_details: ::std::option::Option<::std::vec::Vec<crate::types::PostalCodeDetails>>,
     /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub position: ::std::option::Option<::std::vec::Vec<f64>>,
@@ -25,15 +25,15 @@ pub struct ReverseGeocodeResultItem {
     pub map_view: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>Categories of results that results must belong to.</p>
     pub categories: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
-    /// <p>List of food types offered by this result.</p>
+    /// <p>List of food types offered by this result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub food_types: ::std::option::Option<::std::vec::Vec<crate::types::FoodType>>,
-    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\]. Not available in ap-southeast-1 and ap-southeast-5 regions for GrabMaps customers.</p>
     pub access_points: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>,
     /// <p>The time zone in which the place is located.</p>
     pub time_zone: ::std::option::Option<crate::types::TimeZone>,
-    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
+    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub political_view: ::std::option::Option<::std::string::String>,
-    /// <p>All Intersections that are near the provided address.</p>
+    /// <p>All Intersections that are near the provided address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub intersections: ::std::option::Option<::std::vec::Vec<crate::types::Intersection>>,
 }
 impl ReverseGeocodeResultItem {
@@ -55,11 +55,11 @@ impl ReverseGeocodeResultItem {
     pub fn address(&self) -> ::std::option::Option<&crate::types::Address> {
         self.address.as_ref()
     }
-    /// <p>Boolean indicating if the address provided has been corrected.</p>
+    /// <p>Boolean indicating if the address provided has been corrected. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn address_number_corrected(&self) -> ::std::option::Option<bool> {
         self.address_number_corrected
     }
-    /// <p>Contains details about the postal code of the place/result.</p>
+    /// <p>Contains details about the postal code of the place/result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.postal_code_details.is_none()`.
     pub fn postal_code_details(&self) -> &[crate::types::PostalCodeDetails] {
@@ -88,13 +88,13 @@ impl ReverseGeocodeResultItem {
     pub fn categories(&self) -> &[crate::types::Category] {
         self.categories.as_deref().unwrap_or_default()
     }
-    /// <p>List of food types offered by this result.</p>
+    /// <p>List of food types offered by this result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.food_types.is_none()`.
     pub fn food_types(&self) -> &[crate::types::FoodType] {
         self.food_types.as_deref().unwrap_or_default()
     }
-    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\]. Not available in ap-southeast-1 and ap-southeast-5 regions for GrabMaps customers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_points.is_none()`.
     pub fn access_points(&self) -> &[crate::types::AccessPoint] {
@@ -104,11 +104,11 @@ impl ReverseGeocodeResultItem {
     pub fn time_zone(&self) -> ::std::option::Option<&crate::types::TimeZone> {
         self.time_zone.as_ref()
     }
-    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
+    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn political_view(&self) -> ::std::option::Option<&str> {
         self.political_view.as_deref()
     }
-    /// <p>All Intersections that are near the provided address.</p>
+    /// <p>All Intersections that are near the provided address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.intersections.is_none()`.
     pub fn intersections(&self) -> &[crate::types::Intersection] {
@@ -223,17 +223,17 @@ impl ReverseGeocodeResultItemBuilder {
     pub fn get_address(&self) -> &::std::option::Option<crate::types::Address> {
         &self.address
     }
-    /// <p>Boolean indicating if the address provided has been corrected.</p>
+    /// <p>Boolean indicating if the address provided has been corrected. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn address_number_corrected(mut self, input: bool) -> Self {
         self.address_number_corrected = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Boolean indicating if the address provided has been corrected.</p>
+    /// <p>Boolean indicating if the address provided has been corrected. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_address_number_corrected(mut self, input: ::std::option::Option<bool>) -> Self {
         self.address_number_corrected = input;
         self
     }
-    /// <p>Boolean indicating if the address provided has been corrected.</p>
+    /// <p>Boolean indicating if the address provided has been corrected. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_address_number_corrected(&self) -> &::std::option::Option<bool> {
         &self.address_number_corrected
     }
@@ -241,19 +241,19 @@ impl ReverseGeocodeResultItemBuilder {
     ///
     /// To override the contents of this collection use [`set_postal_code_details`](Self::set_postal_code_details).
     ///
-    /// <p>Contains details about the postal code of the place/result.</p>
+    /// <p>Contains details about the postal code of the place/result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn postal_code_details(mut self, input: crate::types::PostalCodeDetails) -> Self {
         let mut v = self.postal_code_details.unwrap_or_default();
         v.push(input);
         self.postal_code_details = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains details about the postal code of the place/result.</p>
+    /// <p>Contains details about the postal code of the place/result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_postal_code_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PostalCodeDetails>>) -> Self {
         self.postal_code_details = input;
         self
     }
-    /// <p>Contains details about the postal code of the place/result.</p>
+    /// <p>Contains details about the postal code of the place/result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_postal_code_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PostalCodeDetails>> {
         &self.postal_code_details
     }
@@ -338,19 +338,19 @@ impl ReverseGeocodeResultItemBuilder {
     ///
     /// To override the contents of this collection use [`set_food_types`](Self::set_food_types).
     ///
-    /// <p>List of food types offered by this result.</p>
+    /// <p>List of food types offered by this result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn food_types(mut self, input: crate::types::FoodType) -> Self {
         let mut v = self.food_types.unwrap_or_default();
         v.push(input);
         self.food_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of food types offered by this result.</p>
+    /// <p>List of food types offered by this result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_food_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FoodType>>) -> Self {
         self.food_types = input;
         self
     }
-    /// <p>List of food types offered by this result.</p>
+    /// <p>List of food types offered by this result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_food_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FoodType>> {
         &self.food_types
     }
@@ -358,19 +358,19 @@ impl ReverseGeocodeResultItemBuilder {
     ///
     /// To override the contents of this collection use [`set_access_points`](Self::set_access_points).
     ///
-    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\]. Not available in ap-southeast-1 and ap-southeast-5 regions for GrabMaps customers.</p>
     pub fn access_points(mut self, input: crate::types::AccessPoint) -> Self {
         let mut v = self.access_points.unwrap_or_default();
         v.push(input);
         self.access_points = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\]. Not available in ap-southeast-1 and ap-southeast-5 regions for GrabMaps customers.</p>
     pub fn set_access_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>) -> Self {
         self.access_points = input;
         self
     }
-    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\]. Not available in ap-southeast-1 and ap-southeast-5 regions for GrabMaps customers.</p>
     pub fn get_access_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>> {
         &self.access_points
     }
@@ -388,17 +388,17 @@ impl ReverseGeocodeResultItemBuilder {
     pub fn get_time_zone(&self) -> &::std::option::Option<crate::types::TimeZone> {
         &self.time_zone
     }
-    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
+    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn political_view(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.political_view = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
+    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_political_view(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.political_view = input;
         self
     }
-    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
+    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         &self.political_view
     }
@@ -406,19 +406,19 @@ impl ReverseGeocodeResultItemBuilder {
     ///
     /// To override the contents of this collection use [`set_intersections`](Self::set_intersections).
     ///
-    /// <p>All Intersections that are near the provided address.</p>
+    /// <p>All Intersections that are near the provided address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn intersections(mut self, input: crate::types::Intersection) -> Self {
         let mut v = self.intersections.unwrap_or_default();
         v.push(input);
         self.intersections = ::std::option::Option::Some(v);
         self
     }
-    /// <p>All Intersections that are near the provided address.</p>
+    /// <p>All Intersections that are near the provided address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_intersections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Intersection>>) -> Self {
         self.intersections = input;
         self
     }
-    /// <p>All Intersections that are near the provided address.</p>
+    /// <p>All Intersections that are near the provided address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_intersections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Intersection>> {
         &self.intersections
     }

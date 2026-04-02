@@ -2152,6 +2152,36 @@ impl From<crate::operation::disassociate_software_from_image_builder::Disassocia
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::drain_session_instance::DrainSessionInstanceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::drain_session_instance::DrainSessionInstanceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::drain_session_instance::DrainSessionInstanceError> for Error {
+    fn from(err: crate::operation::drain_session_instance::DrainSessionInstanceError) -> Self {
+        match err {
+            crate::operation::drain_session_instance::DrainSessionInstanceError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::drain_session_instance::DrainSessionInstanceError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::drain_session_instance::DrainSessionInstanceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::drain_session_instance::DrainSessionInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_user::EnableUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

@@ -163,6 +163,52 @@ impl From<crate::operation::create_blueprint_version::CreateBlueprintVersionErro
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_automation_library::CreateDataAutomationLibraryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_data_automation_library::CreateDataAutomationLibraryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_data_automation_library::CreateDataAutomationLibraryError> for Error {
+    fn from(err: crate::operation::create_data_automation_library::CreateDataAutomationLibraryError) -> Self {
+        match err {
+            crate::operation::create_data_automation_library::CreateDataAutomationLibraryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_data_automation_library::CreateDataAutomationLibraryError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_data_automation_library::CreateDataAutomationLibraryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_data_automation_library::CreateDataAutomationLibraryError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_data_automation_library::CreateDataAutomationLibraryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_data_automation_library::CreateDataAutomationLibraryError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_data_automation_library::CreateDataAutomationLibraryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_automation_project::CreateDataAutomationProjectError, R>>
     for Error
 where
@@ -231,6 +277,52 @@ impl From<crate::operation::delete_blueprint::DeleteBlueprintError> for Error {
             crate::operation::delete_blueprint::DeleteBlueprintError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_blueprint::DeleteBlueprintError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_blueprint::DeleteBlueprintError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_automation_library::DeleteDataAutomationLibraryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_data_automation_library::DeleteDataAutomationLibraryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_data_automation_library::DeleteDataAutomationLibraryError> for Error {
+    fn from(err: crate::operation::delete_data_automation_library::DeleteDataAutomationLibraryError) -> Self {
+        match err {
+            crate::operation::delete_data_automation_library::DeleteDataAutomationLibraryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_data_automation_library::DeleteDataAutomationLibraryError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_data_automation_library::DeleteDataAutomationLibraryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_data_automation_library::DeleteDataAutomationLibraryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_data_automation_library::DeleteDataAutomationLibraryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_data_automation_library::DeleteDataAutomationLibraryError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_data_automation_library::DeleteDataAutomationLibraryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -350,6 +442,141 @@ impl From<crate::operation::get_blueprint_optimization_status::GetBlueprintOptim
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_automation_library::GetDataAutomationLibraryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_automation_library::GetDataAutomationLibraryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_automation_library::GetDataAutomationLibraryError> for Error {
+    fn from(err: crate::operation::get_data_automation_library::GetDataAutomationLibraryError) -> Self {
+        match err {
+            crate::operation::get_data_automation_library::GetDataAutomationLibraryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_data_automation_library::GetDataAutomationLibraryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_data_automation_library::GetDataAutomationLibraryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_data_automation_library::GetDataAutomationLibraryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_data_automation_library::GetDataAutomationLibraryError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_data_automation_library::GetDataAutomationLibraryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_data_automation_library_entity::GetDataAutomationLibraryEntityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_data_automation_library_entity::GetDataAutomationLibraryEntityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_automation_library_entity::GetDataAutomationLibraryEntityError> for Error {
+    fn from(err: crate::operation::get_data_automation_library_entity::GetDataAutomationLibraryEntityError) -> Self {
+        match err {
+            crate::operation::get_data_automation_library_entity::GetDataAutomationLibraryEntityError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_data_automation_library_entity::GetDataAutomationLibraryEntityError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_data_automation_library_entity::GetDataAutomationLibraryEntityError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_data_automation_library_entity::GetDataAutomationLibraryEntityError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_data_automation_library_entity::GetDataAutomationLibraryEntityError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_data_automation_library_entity::GetDataAutomationLibraryEntityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_data_automation_library_ingestion_job::GetDataAutomationLibraryIngestionJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_data_automation_library_ingestion_job::GetDataAutomationLibraryIngestionJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_automation_library_ingestion_job::GetDataAutomationLibraryIngestionJobError> for Error {
+    fn from(err: crate::operation::get_data_automation_library_ingestion_job::GetDataAutomationLibraryIngestionJobError) -> Self {
+        match err {
+            crate::operation::get_data_automation_library_ingestion_job::GetDataAutomationLibraryIngestionJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_data_automation_library_ingestion_job::GetDataAutomationLibraryIngestionJobError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::get_data_automation_library_ingestion_job::GetDataAutomationLibraryIngestionJobError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_data_automation_library_ingestion_job::GetDataAutomationLibraryIngestionJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_data_automation_library_ingestion_job::GetDataAutomationLibraryIngestionJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_data_automation_library_ingestion_job::GetDataAutomationLibraryIngestionJobError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_automation_project::GetDataAutomationProjectError, R>>
     for Error
 where
@@ -439,6 +666,45 @@ impl From<crate::operation::invoke_blueprint_optimization_async::InvokeBlueprint
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::invoke_data_automation_library_ingestion_job::InvokeDataAutomationLibraryIngestionJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::invoke_data_automation_library_ingestion_job::InvokeDataAutomationLibraryIngestionJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::invoke_data_automation_library_ingestion_job::InvokeDataAutomationLibraryIngestionJobError> for Error {
+    fn from(err: crate::operation::invoke_data_automation_library_ingestion_job::InvokeDataAutomationLibraryIngestionJobError) -> Self {
+        match err {
+            crate::operation::invoke_data_automation_library_ingestion_job::InvokeDataAutomationLibraryIngestionJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::invoke_data_automation_library_ingestion_job::InvokeDataAutomationLibraryIngestionJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::invoke_data_automation_library_ingestion_job::InvokeDataAutomationLibraryIngestionJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::invoke_data_automation_library_ingestion_job::InvokeDataAutomationLibraryIngestionJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::invoke_data_automation_library_ingestion_job::InvokeDataAutomationLibraryIngestionJobError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::invoke_data_automation_library_ingestion_job::InvokeDataAutomationLibraryIngestionJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::invoke_data_automation_library_ingestion_job::InvokeDataAutomationLibraryIngestionJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::invoke_data_automation_library_ingestion_job::InvokeDataAutomationLibraryIngestionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_blueprints::ListBlueprintsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -462,6 +728,144 @@ impl From<crate::operation::list_blueprints::ListBlueprintsError> for Error {
             crate::operation::list_blueprints::ListBlueprintsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_blueprints::ListBlueprintsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_blueprints::ListBlueprintsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_automation_libraries::ListDataAutomationLibrariesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_data_automation_libraries::ListDataAutomationLibrariesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_data_automation_libraries::ListDataAutomationLibrariesError> for Error {
+    fn from(err: crate::operation::list_data_automation_libraries::ListDataAutomationLibrariesError) -> Self {
+        match err {
+            crate::operation::list_data_automation_libraries::ListDataAutomationLibrariesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_data_automation_libraries::ListDataAutomationLibrariesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_data_automation_libraries::ListDataAutomationLibrariesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_data_automation_libraries::ListDataAutomationLibrariesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_data_automation_libraries::ListDataAutomationLibrariesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_data_automation_library_entities::ListDataAutomationLibraryEntitiesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_data_automation_library_entities::ListDataAutomationLibraryEntitiesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_data_automation_library_entities::ListDataAutomationLibraryEntitiesError> for Error {
+    fn from(err: crate::operation::list_data_automation_library_entities::ListDataAutomationLibraryEntitiesError) -> Self {
+        match err {
+            crate::operation::list_data_automation_library_entities::ListDataAutomationLibraryEntitiesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_data_automation_library_entities::ListDataAutomationLibraryEntitiesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_data_automation_library_entities::ListDataAutomationLibraryEntitiesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_data_automation_library_entities::ListDataAutomationLibraryEntitiesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_data_automation_library_entities::ListDataAutomationLibraryEntitiesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_data_automation_library_entities::ListDataAutomationLibraryEntitiesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_data_automation_library_ingestion_jobs::ListDataAutomationLibraryIngestionJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_data_automation_library_ingestion_jobs::ListDataAutomationLibraryIngestionJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_data_automation_library_ingestion_jobs::ListDataAutomationLibraryIngestionJobsError> for Error {
+    fn from(err: crate::operation::list_data_automation_library_ingestion_jobs::ListDataAutomationLibraryIngestionJobsError) -> Self {
+        match err {
+            crate::operation::list_data_automation_library_ingestion_jobs::ListDataAutomationLibraryIngestionJobsError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::list_data_automation_library_ingestion_jobs::ListDataAutomationLibraryIngestionJobsError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::list_data_automation_library_ingestion_jobs::ListDataAutomationLibraryIngestionJobsError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_data_automation_library_ingestion_jobs::ListDataAutomationLibraryIngestionJobsError::ThrottlingException(
+                inner,
+            ) => Error::ThrottlingException(inner),
+            crate::operation::list_data_automation_library_ingestion_jobs::ListDataAutomationLibraryIngestionJobsError::ValidationException(
+                inner,
+            ) => Error::ValidationException(inner),
+            crate::operation::list_data_automation_library_ingestion_jobs::ListDataAutomationLibraryIngestionJobsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -611,6 +1015,52 @@ impl From<crate::operation::update_blueprint::UpdateBlueprintError> for Error {
             crate::operation::update_blueprint::UpdateBlueprintError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_blueprint::UpdateBlueprintError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_blueprint::UpdateBlueprintError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_data_automation_library::UpdateDataAutomationLibraryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_data_automation_library::UpdateDataAutomationLibraryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_data_automation_library::UpdateDataAutomationLibraryError> for Error {
+    fn from(err: crate::operation::update_data_automation_library::UpdateDataAutomationLibraryError) -> Self {
+        match err {
+            crate::operation::update_data_automation_library::UpdateDataAutomationLibraryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_data_automation_library::UpdateDataAutomationLibraryError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_data_automation_library::UpdateDataAutomationLibraryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_data_automation_library::UpdateDataAutomationLibraryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_data_automation_library::UpdateDataAutomationLibraryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_data_automation_library::UpdateDataAutomationLibraryError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_data_automation_library::UpdateDataAutomationLibraryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

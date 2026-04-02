@@ -692,6 +692,27 @@ impl From<crate::operation::get_metric_widget_image::GetMetricWidgetImageError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_o_tel_enrichment::GetOTelEnrichmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_o_tel_enrichment::GetOTelEnrichmentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_o_tel_enrichment::GetOTelEnrichmentError> for Error {
+    fn from(err: crate::operation::get_o_tel_enrichment::GetOTelEnrichmentError) -> Self {
+        match err {
+            crate::operation::get_o_tel_enrichment::GetOTelEnrichmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_alarm_mute_rules::ListAlarmMuteRulesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1149,6 +1170,27 @@ impl From<crate::operation::start_metric_streams::StartMetricStreamsError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError> for Error {
+    fn from(err: crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError) -> Self {
+        match err {
+            crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_metric_streams::StopMetricStreamsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1174,6 +1216,27 @@ impl From<crate::operation::stop_metric_streams::StopMetricStreamsError> for Err
                 Error::MissingRequiredParameterException(inner)
             }
             crate::operation::stop_metric_streams::StopMetricStreamsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_o_tel_enrichment::StopOTelEnrichmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_o_tel_enrichment::StopOTelEnrichmentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_o_tel_enrichment::StopOTelEnrichmentError> for Error {
+    fn from(err: crate::operation::stop_o_tel_enrichment::StopOTelEnrichmentError) -> Self {
+        match err {
+            crate::operation::stop_o_tel_enrichment::StopOTelEnrichmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

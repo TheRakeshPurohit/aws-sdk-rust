@@ -33,6 +33,10 @@ pub struct UpdateQueueInput {
     pub allowed_storage_profile_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The storage profile ID to remove.</p>
     pub allowed_storage_profile_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>When updating the scheduling configuration, the entire configuration is replaced.</p>
+    /// <p>In-progress tasks run to completion before the new scheduling configuration takes effect.</p>
+    pub scheduling_configuration: ::std::option::Option<crate::types::SchedulingConfiguration>,
 }
 impl UpdateQueueInput {
     /// <p>The farm ID to update in the queue.</p>
@@ -99,6 +103,12 @@ impl UpdateQueueInput {
     pub fn allowed_storage_profile_ids_to_remove(&self) -> &[::std::string::String] {
         self.allowed_storage_profile_ids_to_remove.as_deref().unwrap_or_default()
     }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>When updating the scheduling configuration, the entire configuration is replaced.</p>
+    /// <p>In-progress tasks run to completion before the new scheduling configuration takes effect.</p>
+    pub fn scheduling_configuration(&self) -> ::std::option::Option<&crate::types::SchedulingConfiguration> {
+        self.scheduling_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateQueueInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -122,6 +132,7 @@ impl ::std::fmt::Debug for UpdateQueueInput {
         );
         formatter.field("allowed_storage_profile_ids_to_add", &self.allowed_storage_profile_ids_to_add);
         formatter.field("allowed_storage_profile_ids_to_remove", &self.allowed_storage_profile_ids_to_remove);
+        formatter.field("scheduling_configuration", &self.scheduling_configuration);
         formatter.finish()
     }
 }
@@ -149,6 +160,7 @@ pub struct UpdateQueueInputBuilder {
     pub(crate) required_file_system_location_names_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_storage_profile_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_storage_profile_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scheduling_configuration: ::std::option::Option<crate::types::SchedulingConfiguration>,
 }
 impl UpdateQueueInputBuilder {
     /// <p>The farm ID to update in the queue.</p>
@@ -371,6 +383,26 @@ impl UpdateQueueInputBuilder {
     pub fn get_allowed_storage_profile_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_storage_profile_ids_to_remove
     }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>When updating the scheduling configuration, the entire configuration is replaced.</p>
+    /// <p>In-progress tasks run to completion before the new scheduling configuration takes effect.</p>
+    pub fn scheduling_configuration(mut self, input: crate::types::SchedulingConfiguration) -> Self {
+        self.scheduling_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>When updating the scheduling configuration, the entire configuration is replaced.</p>
+    /// <p>In-progress tasks run to completion before the new scheduling configuration takes effect.</p>
+    pub fn set_scheduling_configuration(mut self, input: ::std::option::Option<crate::types::SchedulingConfiguration>) -> Self {
+        self.scheduling_configuration = input;
+        self
+    }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>When updating the scheduling configuration, the entire configuration is replaced.</p>
+    /// <p>In-progress tasks run to completion before the new scheduling configuration takes effect.</p>
+    pub fn get_scheduling_configuration(&self) -> &::std::option::Option<crate::types::SchedulingConfiguration> {
+        &self.scheduling_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateQueueInput`](crate::operation::update_queue::UpdateQueueInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_queue::UpdateQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_queue::UpdateQueueInput {
@@ -387,6 +419,7 @@ impl UpdateQueueInputBuilder {
             required_file_system_location_names_to_remove: self.required_file_system_location_names_to_remove,
             allowed_storage_profile_ids_to_add: self.allowed_storage_profile_ids_to_add,
             allowed_storage_profile_ids_to_remove: self.allowed_storage_profile_ids_to_remove,
+            scheduling_configuration: self.scheduling_configuration,
         })
     }
 }
@@ -412,6 +445,7 @@ impl ::std::fmt::Debug for UpdateQueueInputBuilder {
         );
         formatter.field("allowed_storage_profile_ids_to_add", &self.allowed_storage_profile_ids_to_add);
         formatter.field("allowed_storage_profile_ids_to_remove", &self.allowed_storage_profile_ids_to_remove);
+        formatter.field("scheduling_configuration", &self.scheduling_configuration);
         formatter.finish()
     }
 }

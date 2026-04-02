@@ -71,6 +71,27 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Draining" => {
+                            builder = builder.set_draining(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "DrainModeActiveUserSessions" => {
+                            builder = builder.set_drain_mode_active_user_sessions(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "DrainModeUnusedUserSessions" => {
+                            builder = builder.set_drain_mode_unused_user_sessions(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

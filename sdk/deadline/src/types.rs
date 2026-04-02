@@ -83,6 +83,8 @@ pub use crate::types::_job_attachment_settings::JobAttachmentSettings;
 
 pub use crate::types::_job_run_as_user::JobRunAsUser;
 
+pub use crate::types::_scheduling_configuration::SchedulingConfiguration;
+
 pub use crate::types::_queue_blocked_reason::QueueBlockedReason;
 
 pub use crate::types::_environment_template_type::EnvironmentTemplateType;
@@ -189,6 +191,12 @@ pub use crate::types::_windows_user::WindowsUser;
 
 pub use crate::types::_run_as::RunAs;
 
+pub use crate::types::_priority_fifo_scheduling_configuration::PriorityFifoSchedulingConfiguration;
+
+pub use crate::types::_priority_balanced_scheduling_configuration::PriorityBalancedSchedulingConfiguration;
+
+pub use crate::types::_weighted_balanced_scheduling_configuration::WeightedBalancedSchedulingConfiguration;
+
 pub use crate::types::_queue_environment_summary::QueueEnvironmentSummary;
 
 pub use crate::types::_queue_member::QueueMember;
@@ -279,6 +287,10 @@ pub use crate::types::_fleet_amount_capability::FleetAmountCapability;
 
 pub use crate::types::_fleet_attribute_capability::FleetAttributeCapability;
 
+pub use crate::types::_scheduling_max_priority_override::SchedulingMaxPriorityOverride;
+
+pub use crate::types::_scheduling_min_priority_override::SchedulingMinPriorityOverride;
+
 pub use crate::types::_worker_amount_capability::WorkerAmountCapability;
 
 pub use crate::types::_worker_attribute_capability::WorkerAttributeCapability;
@@ -344,6 +356,10 @@ pub use crate::types::_ec2_ebs_volume::Ec2EbsVolume;
 pub use crate::types::_accelerator_capabilities::AcceleratorCapabilities;
 
 pub use crate::types::_ec2_market_type::Ec2MarketType;
+
+pub use crate::types::_scheduling_max_priority_override_always_schedule_first::SchedulingMaxPriorityOverrideAlwaysScheduleFirst;
+
+pub use crate::types::_scheduling_min_priority_override_always_schedule_last::SchedulingMinPriorityOverrideAlwaysScheduleLast;
 
 pub use crate::types::_job_entity_error_code::JobEntityErrorCode;
 
@@ -593,6 +609,10 @@ mod _period;
 
 mod _posix_user;
 
+mod _priority_balanced_scheduling_configuration;
+
+mod _priority_fifo_scheduling_configuration;
+
 mod _queue_blocked_reason;
 
 mod _queue_environment_summary;
@@ -618,6 +638,16 @@ mod _response_budget_action;
 mod _run_as;
 
 mod _s3_location;
+
+mod _scheduling_configuration;
+
+mod _scheduling_max_priority_override;
+
+mod _scheduling_max_priority_override_always_schedule_first;
+
+mod _scheduling_min_priority_override;
+
+mod _scheduling_min_priority_override_always_schedule_last;
 
 mod _search_filter_expression;
 
@@ -754,6 +784,8 @@ mod _validation_exception_field;
 mod _validation_exception_reason;
 
 mod _vpc_configuration;
+
+mod _weighted_balanced_scheduling_configuration;
 
 mod _windows_user;
 

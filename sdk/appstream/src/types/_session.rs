@@ -26,6 +26,8 @@ pub struct Session {
     pub network_access_configuration: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     /// <p>The identifier for the instance hosting the session.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
+    /// <p>The drain status of the instance hosting the streaming session. This only applies to multi-session fleets.</p>
+    pub instance_drain_status: ::std::option::Option<crate::types::InstanceDrainStatus>,
 }
 impl Session {
     /// <p>The identifier of the streaming session.</p>
@@ -72,6 +74,10 @@ impl Session {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
+    /// <p>The drain status of the instance hosting the streaming session. This only applies to multi-session fleets.</p>
+    pub fn instance_drain_status(&self) -> ::std::option::Option<&crate::types::InstanceDrainStatus> {
+        self.instance_drain_status.as_ref()
+    }
 }
 impl Session {
     /// Creates a new builder-style object to manufacture [`Session`](crate::types::Session).
@@ -95,6 +101,7 @@ pub struct SessionBuilder {
     pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     pub(crate) network_access_configuration: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_drain_status: ::std::option::Option<crate::types::InstanceDrainStatus>,
 }
 impl SessionBuilder {
     /// <p>The identifier of the streaming session.</p>
@@ -256,6 +263,20 @@ impl SessionBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
+    /// <p>The drain status of the instance hosting the streaming session. This only applies to multi-session fleets.</p>
+    pub fn instance_drain_status(mut self, input: crate::types::InstanceDrainStatus) -> Self {
+        self.instance_drain_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The drain status of the instance hosting the streaming session. This only applies to multi-session fleets.</p>
+    pub fn set_instance_drain_status(mut self, input: ::std::option::Option<crate::types::InstanceDrainStatus>) -> Self {
+        self.instance_drain_status = input;
+        self
+    }
+    /// <p>The drain status of the instance hosting the streaming session. This only applies to multi-session fleets.</p>
+    pub fn get_instance_drain_status(&self) -> &::std::option::Option<crate::types::InstanceDrainStatus> {
+        &self.instance_drain_status
+    }
     /// Consumes the builder and constructs a [`Session`](crate::types::Session).
     pub fn build(self) -> crate::types::Session {
         crate::types::Session {
@@ -270,6 +291,7 @@ impl SessionBuilder {
             authentication_type: self.authentication_type,
             network_access_configuration: self.network_access_configuration,
             instance_id: self.instance_id,
+            instance_drain_status: self.instance_drain_status,
         }
     }
 }

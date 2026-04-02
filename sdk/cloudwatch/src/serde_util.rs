@@ -8,6 +8,15 @@ pub(crate) fn describe_alarm_contributors_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_o_tel_enrichment_output_output_correct_errors(
+    mut builder: crate::operation::get_o_tel_enrichment::builders::GetOTelEnrichmentOutputBuilder,
+) -> crate::operation::get_o_tel_enrichment::builders::GetOTelEnrichmentOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::OTelEnrichmentStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn mute_targets_correct_errors(mut builder: crate::types::builders::MuteTargetsBuilder) -> crate::types::builders::MuteTargetsBuilder {
     if builder.alarm_names.is_none() {
         builder.alarm_names = Some(Default::default())
@@ -120,6 +129,15 @@ pub(crate) fn managed_rule_state_correct_errors(
     }
     if builder.state.is_none() {
         builder.state = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn alarm_prom_ql_criteria_correct_errors(
+    mut builder: crate::types::builders::AlarmPromQlCriteriaBuilder,
+) -> crate::types::builders::AlarmPromQlCriteriaBuilder {
+    if builder.query.is_none() {
+        builder.query = Some(Default::default())
     }
     builder
 }

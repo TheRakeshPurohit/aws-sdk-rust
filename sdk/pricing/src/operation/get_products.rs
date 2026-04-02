@@ -257,6 +257,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetProductsEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetProductsError {
+    /// <p>General authentication failure. The request wasn't signed correctly.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The pagination token expired. Try again without a pagination token.</p>
     ExpiredNextTokenException(crate::types::error::ExpiredNextTokenException),
     /// <p>An error on the server occurred during the processing of your request. Try again later.</p>
@@ -302,6 +304,7 @@ impl GetProductsError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ExpiredNextTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidNextTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -310,6 +313,10 @@ impl GetProductsError {
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `GetProductsError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetProductsError::ExpiredNextTokenException`.
     pub fn is_expired_next_token_exception(&self) -> bool {
@@ -339,6 +346,7 @@ impl GetProductsError {
 impl ::std::error::Error for GetProductsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ExpiredNextTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidNextTokenException(_inner) => ::std::option::Option::Some(_inner),
@@ -352,6 +360,7 @@ impl ::std::error::Error for GetProductsError {
 impl ::std::fmt::Display for GetProductsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ExpiredNextTokenException(_inner) => _inner.fmt(f),
             Self::InternalErrorException(_inner) => _inner.fmt(f),
             Self::InvalidNextTokenException(_inner) => _inner.fmt(f),
@@ -383,6 +392,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for GetProductsError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetProductsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ExpiredNextTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidNextTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -22,7 +22,9 @@ impl crate::operation::synchronize_gateway_targets::builders::SynchronizeGateway
 }
 /// Fluent builder constructing a request to `SynchronizeGatewayTargets`.
 ///
-/// <p>The gateway targets.</p>
+/// <p>Synchronizes the gateway targets by fetching the latest tool definitions from the target endpoints.</p>
+/// <p>You cannot synchronize a target that is in a pending authorization state (<code>CREATE_PENDING_AUTH</code>, <code>UPDATE_PENDING_AUTH</code>, or <code>SYNCHRONIZE_PENDING_AUTH</code>). Wait for the authorization to complete or fail before synchronizing.</p>
+/// <p>You cannot synchronize a target that has a static tool schema (<code>mcpToolSchema</code>) configured. Remove the static schema through an <code>UpdateGatewayTarget</code> call to enable dynamic tool synchronization.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SynchronizeGatewayTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -9,20 +9,26 @@ pub fn ser_list_data_automation_projects_input_input(
         crate::protocol_serde::shape_blueprint_filter::ser_blueprint_filter(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.max_results {
+    if let Some(var_3) = &input.library_filter {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("libraryFilter").start_object();
+        crate::protocol_serde::shape_data_automation_library_filter::ser_data_automation_library_filter(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("nextToken").string(var_4.as_str());
+    if let Some(var_6) = &input.next_token {
+        object.key("nextToken").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.project_stage_filter {
-        object.key("projectStageFilter").string(var_5.as_str());
+    if let Some(var_7) = &input.project_stage_filter {
+        object.key("projectStageFilter").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.resource_owner {
-        object.key("resourceOwner").string(var_6.as_str());
+    if let Some(var_8) = &input.resource_owner {
+        object.key("resourceOwner").string(var_8.as_str());
     }
     Ok(())
 }

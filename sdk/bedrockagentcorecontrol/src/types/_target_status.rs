@@ -12,12 +12,15 @@
 /// ```text
 /// # let targetstatus = unimplemented!();
 /// match targetstatus {
+///     TargetStatus::CreatePendingAuth => { /* ... */ },
 ///     TargetStatus::Creating => { /* ... */ },
 ///     TargetStatus::Deleting => { /* ... */ },
 ///     TargetStatus::Failed => { /* ... */ },
 ///     TargetStatus::Ready => { /* ... */ },
+///     TargetStatus::SynchronizePendingAuth => { /* ... */ },
 ///     TargetStatus::SynchronizeUnsuccessful => { /* ... */ },
 ///     TargetStatus::Synchronizing => { /* ... */ },
+///     TargetStatus::UpdatePendingAuth => { /* ... */ },
 ///     TargetStatus::UpdateUnsuccessful => { /* ... */ },
 ///     TargetStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +52,8 @@
 )]
 pub enum TargetStatus {
     #[allow(missing_docs)] // documentation missing in model
+    CreatePendingAuth,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
@@ -57,9 +62,13 @@ pub enum TargetStatus {
     #[allow(missing_docs)] // documentation missing in model
     Ready,
     #[allow(missing_docs)] // documentation missing in model
+    SynchronizePendingAuth,
+    #[allow(missing_docs)] // documentation missing in model
     SynchronizeUnsuccessful,
     #[allow(missing_docs)] // documentation missing in model
     Synchronizing,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdatePendingAuth,
     #[allow(missing_docs)] // documentation missing in model
     UpdateUnsuccessful,
     #[allow(missing_docs)] // documentation missing in model
@@ -71,12 +80,15 @@ pub enum TargetStatus {
 impl ::std::convert::From<&str> for TargetStatus {
     fn from(s: &str) -> Self {
         match s {
+            "CREATE_PENDING_AUTH" => TargetStatus::CreatePendingAuth,
             "CREATING" => TargetStatus::Creating,
             "DELETING" => TargetStatus::Deleting,
             "FAILED" => TargetStatus::Failed,
             "READY" => TargetStatus::Ready,
+            "SYNCHRONIZE_PENDING_AUTH" => TargetStatus::SynchronizePendingAuth,
             "SYNCHRONIZE_UNSUCCESSFUL" => TargetStatus::SynchronizeUnsuccessful,
             "SYNCHRONIZING" => TargetStatus::Synchronizing,
+            "UPDATE_PENDING_AUTH" => TargetStatus::UpdatePendingAuth,
             "UPDATE_UNSUCCESSFUL" => TargetStatus::UpdateUnsuccessful,
             "UPDATING" => TargetStatus::Updating,
             other => TargetStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -94,12 +106,15 @@ impl TargetStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TargetStatus::CreatePendingAuth => "CREATE_PENDING_AUTH",
             TargetStatus::Creating => "CREATING",
             TargetStatus::Deleting => "DELETING",
             TargetStatus::Failed => "FAILED",
             TargetStatus::Ready => "READY",
+            TargetStatus::SynchronizePendingAuth => "SYNCHRONIZE_PENDING_AUTH",
             TargetStatus::SynchronizeUnsuccessful => "SYNCHRONIZE_UNSUCCESSFUL",
             TargetStatus::Synchronizing => "SYNCHRONIZING",
+            TargetStatus::UpdatePendingAuth => "UPDATE_PENDING_AUTH",
             TargetStatus::UpdateUnsuccessful => "UPDATE_UNSUCCESSFUL",
             TargetStatus::Updating => "UPDATING",
             TargetStatus::Unknown(value) => value.as_str(),
@@ -108,12 +123,15 @@ impl TargetStatus {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CREATE_PENDING_AUTH",
             "CREATING",
             "DELETING",
             "FAILED",
             "READY",
+            "SYNCHRONIZE_PENDING_AUTH",
             "SYNCHRONIZE_UNSUCCESSFUL",
             "SYNCHRONIZING",
+            "UPDATE_PENDING_AUTH",
             "UPDATE_UNSUCCESSFUL",
             "UPDATING",
         ]
@@ -139,12 +157,15 @@ impl TargetStatus {
 impl ::std::fmt::Display for TargetStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TargetStatus::CreatePendingAuth => write!(f, "CREATE_PENDING_AUTH"),
             TargetStatus::Creating => write!(f, "CREATING"),
             TargetStatus::Deleting => write!(f, "DELETING"),
             TargetStatus::Failed => write!(f, "FAILED"),
             TargetStatus::Ready => write!(f, "READY"),
+            TargetStatus::SynchronizePendingAuth => write!(f, "SYNCHRONIZE_PENDING_AUTH"),
             TargetStatus::SynchronizeUnsuccessful => write!(f, "SYNCHRONIZE_UNSUCCESSFUL"),
             TargetStatus::Synchronizing => write!(f, "SYNCHRONIZING"),
+            TargetStatus::UpdatePendingAuth => write!(f, "UPDATE_PENDING_AUTH"),
             TargetStatus::UpdateUnsuccessful => write!(f, "UPDATE_UNSUCCESSFUL"),
             TargetStatus::Updating => write!(f, "UPDATING"),
             TargetStatus::Unknown(value) => write!(f, "{value}"),

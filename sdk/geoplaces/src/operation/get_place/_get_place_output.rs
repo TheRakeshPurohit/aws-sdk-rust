@@ -14,9 +14,9 @@ pub struct GetPlaceOutput {
     pub pricing_bucket: ::std::string::String,
     /// <p>The place's address.</p>
     pub address: ::std::option::Option<crate::types::Address>,
-    /// <p>Boolean indicating if the address provided has been corrected.</p>
+    /// <p>Boolean indicating if the address provided has been corrected. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub address_number_corrected: ::std::option::Option<bool>,
-    /// <p>Contains details about the postal code of the place/result.</p>
+    /// <p>Contains details about the postal code of the place/result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub postal_code_details: ::std::option::Option<::std::vec::Vec<crate::types::PostalCodeDetails>>,
     /// <p>The position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub position: ::std::option::Option<::std::vec::Vec<f64>>,
@@ -25,27 +25,27 @@ pub struct GetPlaceOutput {
     pub map_view: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>Categories of results that results must belong to.</p>
     pub categories: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
-    /// <p>List of food types offered by this result.</p>
+    /// <p>List of food types offered by this result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub food_types: ::std::option::Option<::std::vec::Vec<crate::types::FoodType>>,
     /// <p>The Business Chains associated with the place.</p>
     pub business_chains: ::std::option::Option<::std::vec::Vec<crate::types::BusinessChain>>,
-    /// <p>List of potential contact methods for the result/place.</p>
+    /// <p>List of potential contact methods for the result/place. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub contacts: ::std::option::Option<crate::types::Contacts>,
-    /// <p>List of opening hours objects.</p>
+    /// <p>List of opening hours objects. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub opening_hours: ::std::option::Option<::std::vec::Vec<crate::types::OpeningHours>>,
-    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\]. Not available in ap-southeast-1 and ap-southeast-5 regions for GrabMaps customers.</p>
     pub access_points: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>,
-    /// <p>Indicates known access restrictions on a vehicle access point. The index correlates to an access point and indicates if access through this point has some form of restriction.</p>
+    /// <p>Indicates known access restrictions on a vehicle access point. The index correlates to an access point and indicates if access through this point has some form of restriction. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub access_restrictions: ::std::option::Option<::std::vec::Vec<crate::types::AccessRestriction>>,
     /// <p>The time zone in which the place is located.</p>
     pub time_zone: ::std::option::Option<crate::types::TimeZone>,
-    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
+    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub political_view: ::std::option::Option<::std::string::String>,
-    /// <p>How the various components of the result's address are pronounced in various languages.</p>
+    /// <p>How the various components of the result's address are pronounced in various languages. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub phonemes: ::std::option::Option<crate::types::PhonemeDetails>,
-    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    /// <p>The main address corresponding to a place of type Secondary Address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub main_address: ::std::option::Option<crate::types::RelatedPlace>,
-    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p><note>
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>Coverage for this functionality is available in the following countries: AUS, CAN, NZL, USA, PRI.</p>
     /// </note>
     pub secondary_addresses: ::std::option::Option<::std::vec::Vec<crate::types::RelatedPlace>>,
@@ -76,11 +76,11 @@ impl GetPlaceOutput {
     pub fn address(&self) -> ::std::option::Option<&crate::types::Address> {
         self.address.as_ref()
     }
-    /// <p>Boolean indicating if the address provided has been corrected.</p>
+    /// <p>Boolean indicating if the address provided has been corrected. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn address_number_corrected(&self) -> ::std::option::Option<bool> {
         self.address_number_corrected
     }
-    /// <p>Contains details about the postal code of the place/result.</p>
+    /// <p>Contains details about the postal code of the place/result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.postal_code_details.is_none()`.
     pub fn postal_code_details(&self) -> &[crate::types::PostalCodeDetails] {
@@ -105,7 +105,7 @@ impl GetPlaceOutput {
     pub fn categories(&self) -> &[crate::types::Category] {
         self.categories.as_deref().unwrap_or_default()
     }
-    /// <p>List of food types offered by this result.</p>
+    /// <p>List of food types offered by this result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.food_types.is_none()`.
     pub fn food_types(&self) -> &[crate::types::FoodType] {
@@ -117,23 +117,23 @@ impl GetPlaceOutput {
     pub fn business_chains(&self) -> &[crate::types::BusinessChain] {
         self.business_chains.as_deref().unwrap_or_default()
     }
-    /// <p>List of potential contact methods for the result/place.</p>
+    /// <p>List of potential contact methods for the result/place. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn contacts(&self) -> ::std::option::Option<&crate::types::Contacts> {
         self.contacts.as_ref()
     }
-    /// <p>List of opening hours objects.</p>
+    /// <p>List of opening hours objects. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.opening_hours.is_none()`.
     pub fn opening_hours(&self) -> &[crate::types::OpeningHours] {
         self.opening_hours.as_deref().unwrap_or_default()
     }
-    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\]. Not available in ap-southeast-1 and ap-southeast-5 regions for GrabMaps customers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_points.is_none()`.
     pub fn access_points(&self) -> &[crate::types::AccessPoint] {
         self.access_points.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates known access restrictions on a vehicle access point. The index correlates to an access point and indicates if access through this point has some form of restriction.</p>
+    /// <p>Indicates known access restrictions on a vehicle access point. The index correlates to an access point and indicates if access through this point has some form of restriction. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.access_restrictions.is_none()`.
     pub fn access_restrictions(&self) -> &[crate::types::AccessRestriction] {
@@ -143,19 +143,19 @@ impl GetPlaceOutput {
     pub fn time_zone(&self) -> ::std::option::Option<&crate::types::TimeZone> {
         self.time_zone.as_ref()
     }
-    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
+    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn political_view(&self) -> ::std::option::Option<&str> {
         self.political_view.as_deref()
     }
-    /// <p>How the various components of the result's address are pronounced in various languages.</p>
+    /// <p>How the various components of the result's address are pronounced in various languages. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn phonemes(&self) -> ::std::option::Option<&crate::types::PhonemeDetails> {
         self.phonemes.as_ref()
     }
-    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    /// <p>The main address corresponding to a place of type Secondary Address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn main_address(&self) -> ::std::option::Option<&crate::types::RelatedPlace> {
         self.main_address.as_ref()
     }
-    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p><note>
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>Coverage for this functionality is available in the following countries: AUS, CAN, NZL, USA, PRI.</p>
     /// </note>
     ///
@@ -309,17 +309,17 @@ impl GetPlaceOutputBuilder {
     pub fn get_address(&self) -> &::std::option::Option<crate::types::Address> {
         &self.address
     }
-    /// <p>Boolean indicating if the address provided has been corrected.</p>
+    /// <p>Boolean indicating if the address provided has been corrected. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn address_number_corrected(mut self, input: bool) -> Self {
         self.address_number_corrected = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Boolean indicating if the address provided has been corrected.</p>
+    /// <p>Boolean indicating if the address provided has been corrected. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_address_number_corrected(mut self, input: ::std::option::Option<bool>) -> Self {
         self.address_number_corrected = input;
         self
     }
-    /// <p>Boolean indicating if the address provided has been corrected.</p>
+    /// <p>Boolean indicating if the address provided has been corrected. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_address_number_corrected(&self) -> &::std::option::Option<bool> {
         &self.address_number_corrected
     }
@@ -327,19 +327,19 @@ impl GetPlaceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_postal_code_details`](Self::set_postal_code_details).
     ///
-    /// <p>Contains details about the postal code of the place/result.</p>
+    /// <p>Contains details about the postal code of the place/result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn postal_code_details(mut self, input: crate::types::PostalCodeDetails) -> Self {
         let mut v = self.postal_code_details.unwrap_or_default();
         v.push(input);
         self.postal_code_details = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains details about the postal code of the place/result.</p>
+    /// <p>Contains details about the postal code of the place/result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_postal_code_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PostalCodeDetails>>) -> Self {
         self.postal_code_details = input;
         self
     }
-    /// <p>Contains details about the postal code of the place/result.</p>
+    /// <p>Contains details about the postal code of the place/result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_postal_code_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PostalCodeDetails>> {
         &self.postal_code_details
     }
@@ -410,19 +410,19 @@ impl GetPlaceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_food_types`](Self::set_food_types).
     ///
-    /// <p>List of food types offered by this result.</p>
+    /// <p>List of food types offered by this result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn food_types(mut self, input: crate::types::FoodType) -> Self {
         let mut v = self.food_types.unwrap_or_default();
         v.push(input);
         self.food_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of food types offered by this result.</p>
+    /// <p>List of food types offered by this result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_food_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FoodType>>) -> Self {
         self.food_types = input;
         self
     }
-    /// <p>List of food types offered by this result.</p>
+    /// <p>List of food types offered by this result. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_food_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FoodType>> {
         &self.food_types
     }
@@ -446,17 +446,17 @@ impl GetPlaceOutputBuilder {
     pub fn get_business_chains(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BusinessChain>> {
         &self.business_chains
     }
-    /// <p>List of potential contact methods for the result/place.</p>
+    /// <p>List of potential contact methods for the result/place. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn contacts(mut self, input: crate::types::Contacts) -> Self {
         self.contacts = ::std::option::Option::Some(input);
         self
     }
-    /// <p>List of potential contact methods for the result/place.</p>
+    /// <p>List of potential contact methods for the result/place. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_contacts(mut self, input: ::std::option::Option<crate::types::Contacts>) -> Self {
         self.contacts = input;
         self
     }
-    /// <p>List of potential contact methods for the result/place.</p>
+    /// <p>List of potential contact methods for the result/place. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_contacts(&self) -> &::std::option::Option<crate::types::Contacts> {
         &self.contacts
     }
@@ -464,19 +464,19 @@ impl GetPlaceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_opening_hours`](Self::set_opening_hours).
     ///
-    /// <p>List of opening hours objects.</p>
+    /// <p>List of opening hours objects. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn opening_hours(mut self, input: crate::types::OpeningHours) -> Self {
         let mut v = self.opening_hours.unwrap_or_default();
         v.push(input);
         self.opening_hours = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of opening hours objects.</p>
+    /// <p>List of opening hours objects. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_opening_hours(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OpeningHours>>) -> Self {
         self.opening_hours = input;
         self
     }
-    /// <p>List of opening hours objects.</p>
+    /// <p>List of opening hours objects. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_opening_hours(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OpeningHours>> {
         &self.opening_hours
     }
@@ -484,19 +484,19 @@ impl GetPlaceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_access_points`](Self::set_access_points).
     ///
-    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\]. Not available in ap-southeast-1 and ap-southeast-5 regions for GrabMaps customers.</p>
     pub fn access_points(mut self, input: crate::types::AccessPoint) -> Self {
         let mut v = self.access_points.unwrap_or_default();
         v.push(input);
         self.access_points = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\]. Not available in ap-southeast-1 and ap-southeast-5 regions for GrabMaps customers.</p>
     pub fn set_access_points(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>>) -> Self {
         self.access_points = input;
         self
     }
-    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
+    /// <p>Position of the access point in World Geodetic System (WGS 84) format: \[longitude, latitude\]. Not available in ap-southeast-1 and ap-southeast-5 regions for GrabMaps customers.</p>
     pub fn get_access_points(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>> {
         &self.access_points
     }
@@ -504,19 +504,19 @@ impl GetPlaceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_access_restrictions`](Self::set_access_restrictions).
     ///
-    /// <p>Indicates known access restrictions on a vehicle access point. The index correlates to an access point and indicates if access through this point has some form of restriction.</p>
+    /// <p>Indicates known access restrictions on a vehicle access point. The index correlates to an access point and indicates if access through this point has some form of restriction. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn access_restrictions(mut self, input: crate::types::AccessRestriction) -> Self {
         let mut v = self.access_restrictions.unwrap_or_default();
         v.push(input);
         self.access_restrictions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Indicates known access restrictions on a vehicle access point. The index correlates to an access point and indicates if access through this point has some form of restriction.</p>
+    /// <p>Indicates known access restrictions on a vehicle access point. The index correlates to an access point and indicates if access through this point has some form of restriction. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_access_restrictions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessRestriction>>) -> Self {
         self.access_restrictions = input;
         self
     }
-    /// <p>Indicates known access restrictions on a vehicle access point. The index correlates to an access point and indicates if access through this point has some form of restriction.</p>
+    /// <p>Indicates known access restrictions on a vehicle access point. The index correlates to an access point and indicates if access through this point has some form of restriction. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_access_restrictions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessRestriction>> {
         &self.access_restrictions
     }
@@ -534,45 +534,45 @@ impl GetPlaceOutputBuilder {
     pub fn get_time_zone(&self) -> &::std::option::Option<crate::types::TimeZone> {
         &self.time_zone
     }
-    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
+    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn political_view(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.political_view = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
+    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_political_view(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.political_view = input;
         self
     }
-    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country.</p>
+    /// <p>The alpha-2 or alpha-3 character code for the political view of a country. The political view applies to the results of the request to represent unresolved territorial claims through the point of view of the specified country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         &self.political_view
     }
-    /// <p>How the various components of the result's address are pronounced in various languages.</p>
+    /// <p>How the various components of the result's address are pronounced in various languages. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn phonemes(mut self, input: crate::types::PhonemeDetails) -> Self {
         self.phonemes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>How the various components of the result's address are pronounced in various languages.</p>
+    /// <p>How the various components of the result's address are pronounced in various languages. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_phonemes(mut self, input: ::std::option::Option<crate::types::PhonemeDetails>) -> Self {
         self.phonemes = input;
         self
     }
-    /// <p>How the various components of the result's address are pronounced in various languages.</p>
+    /// <p>How the various components of the result's address are pronounced in various languages. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_phonemes(&self) -> &::std::option::Option<crate::types::PhonemeDetails> {
         &self.phonemes
     }
-    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    /// <p>The main address corresponding to a place of type Secondary Address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn main_address(mut self, input: crate::types::RelatedPlace) -> Self {
         self.main_address = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    /// <p>The main address corresponding to a place of type Secondary Address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_main_address(mut self, input: ::std::option::Option<crate::types::RelatedPlace>) -> Self {
         self.main_address = input;
         self
     }
-    /// <p>The main address corresponding to a place of type Secondary Address.</p>
+    /// <p>The main address corresponding to a place of type Secondary Address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_main_address(&self) -> &::std::option::Option<crate::types::RelatedPlace> {
         &self.main_address
     }
@@ -580,7 +580,7 @@ impl GetPlaceOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_secondary_addresses`](Self::set_secondary_addresses).
     ///
-    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p><note>
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>Coverage for this functionality is available in the following countries: AUS, CAN, NZL, USA, PRI.</p>
     /// </note>
     pub fn secondary_addresses(mut self, input: crate::types::RelatedPlace) -> Self {
@@ -589,14 +589,14 @@ impl GetPlaceOutputBuilder {
         self.secondary_addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p><note>
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>Coverage for this functionality is available in the following countries: AUS, CAN, NZL, USA, PRI.</p>
     /// </note>
     pub fn set_secondary_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedPlace>>) -> Self {
         self.secondary_addresses = input;
         self
     }
-    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information.</p><note>
+    /// <p>All secondary addresses that are associated with a main address. A secondary address is one that includes secondary designators, such as a Suite or Unit Number, Building, or Floor information. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>Coverage for this functionality is available in the following countries: AUS, CAN, NZL, USA, PRI.</p>
     /// </note>
     pub fn get_secondary_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RelatedPlace>> {

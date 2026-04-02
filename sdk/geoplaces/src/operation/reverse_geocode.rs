@@ -187,7 +187,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ReverseGeoco
                 output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 use ::std::fmt::Write as _;
-                ::std::write!(output, "/reverse-geocode").expect("formatting should succeed");
+                ::std::write!(output, "/v2/reverse-geocode").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             fn uri_query(

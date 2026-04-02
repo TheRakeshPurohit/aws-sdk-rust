@@ -29,9 +29,13 @@ pub(crate) mod shape_create_blueprint;
 
 pub(crate) mod shape_create_blueprint_version;
 
+pub(crate) mod shape_create_data_automation_library;
+
 pub(crate) mod shape_create_data_automation_project;
 
 pub(crate) mod shape_delete_blueprint;
+
+pub(crate) mod shape_delete_data_automation_library;
 
 pub(crate) mod shape_delete_data_automation_project;
 
@@ -39,11 +43,25 @@ pub(crate) mod shape_get_blueprint;
 
 pub(crate) mod shape_get_blueprint_optimization_status;
 
+pub(crate) mod shape_get_data_automation_library;
+
+pub(crate) mod shape_get_data_automation_library_entity;
+
+pub(crate) mod shape_get_data_automation_library_ingestion_job;
+
 pub(crate) mod shape_get_data_automation_project;
 
 pub(crate) mod shape_invoke_blueprint_optimization_async;
 
+pub(crate) mod shape_invoke_data_automation_library_ingestion_job;
+
 pub(crate) mod shape_list_blueprints;
+
+pub(crate) mod shape_list_data_automation_libraries;
+
+pub(crate) mod shape_list_data_automation_library_entities;
+
+pub(crate) mod shape_list_data_automation_library_ingestion_jobs;
 
 pub(crate) mod shape_list_data_automation_projects;
 
@@ -54,6 +72,8 @@ pub(crate) mod shape_tag_resource;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_blueprint;
+
+pub(crate) mod shape_update_data_automation_library;
 
 pub(crate) mod shape_update_data_automation_project;
 
@@ -75,6 +95,8 @@ pub(crate) mod shape_create_blueprint_input;
 
 pub(crate) mod shape_create_blueprint_version_input;
 
+pub(crate) mod shape_create_data_automation_library_input;
+
 pub(crate) mod shape_create_data_automation_project_input;
 
 pub(crate) mod shape_get_blueprint_input;
@@ -85,7 +107,15 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_invoke_blueprint_optimization_async_input;
 
+pub(crate) mod shape_invoke_data_automation_library_ingestion_job_input;
+
 pub(crate) mod shape_list_blueprints_input;
+
+pub(crate) mod shape_list_data_automation_libraries_input;
+
+pub(crate) mod shape_list_data_automation_library_entities_input;
+
+pub(crate) mod shape_list_data_automation_library_ingestion_jobs_input;
 
 pub(crate) mod shape_list_data_automation_projects_input;
 
@@ -102,6 +132,8 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_blueprint_input;
+
+pub(crate) mod shape_update_data_automation_library_input;
 
 pub(crate) mod shape_update_data_automation_project_input;
 
@@ -121,6 +153,20 @@ pub(crate) mod shape_blueprints;
 
 pub(crate) mod shape_custom_output_configuration;
 
+pub(crate) mod shape_data_automation_library;
+
+pub(crate) mod shape_data_automation_library_configuration;
+
+pub(crate) mod shape_data_automation_library_entity_summaries;
+
+pub(crate) mod shape_data_automation_library_filter;
+
+pub(crate) mod shape_data_automation_library_ingestion_job;
+
+pub(crate) mod shape_data_automation_library_ingestion_job_summaries;
+
+pub(crate) mod shape_data_automation_library_summaries;
+
 pub(crate) mod shape_data_automation_project;
 
 pub(crate) mod shape_data_automation_project_filter;
@@ -128,6 +174,14 @@ pub(crate) mod shape_data_automation_project_filter;
 pub(crate) mod shape_data_automation_project_summaries;
 
 pub(crate) mod shape_encryption_configuration;
+
+pub(crate) mod shape_entity_details;
+
+pub(crate) mod shape_input_configuration;
+
+pub(crate) mod shape_notification_configuration;
+
+pub(crate) mod shape_output_configuration;
 
 pub(crate) mod shape_override_configuration;
 
@@ -149,15 +203,29 @@ pub(crate) mod shape_blueprint_optimization_samples;
 
 pub(crate) mod shape_blueprint_summary;
 
+pub(crate) mod shape_data_automation_library_entity_summary;
+
+pub(crate) mod shape_data_automation_library_ingestion_job_summary;
+
+pub(crate) mod shape_data_automation_library_item;
+
+pub(crate) mod shape_data_automation_library_summary;
+
 pub(crate) mod shape_data_automation_project_summary;
 
 pub(crate) mod shape_document_override_configuration;
 
 pub(crate) mod shape_document_standard_output_configuration;
 
+pub(crate) mod shape_entity_type_info_list;
+
+pub(crate) mod shape_event_bridge_configuration;
+
 pub(crate) mod shape_image_override_configuration;
 
 pub(crate) mod shape_image_standard_output_configuration;
+
+pub(crate) mod shape_inline_payload;
 
 pub(crate) mod shape_kms_encryption_context;
 
@@ -171,6 +239,8 @@ pub(crate) mod shape_video_override_configuration;
 
 pub(crate) mod shape_video_standard_output_configuration;
 
+pub(crate) mod shape_vocabulary_entity;
+
 pub(crate) mod shape_audio_language_configuration;
 
 pub(crate) mod shape_audio_standard_extraction;
@@ -179,11 +249,17 @@ pub(crate) mod shape_audio_standard_generative_field;
 
 pub(crate) mod shape_blueprint_items;
 
+pub(crate) mod shape_data_automation_library_items;
+
+pub(crate) mod shape_delete_entities_info;
+
 pub(crate) mod shape_document_output_format;
 
 pub(crate) mod shape_document_standard_extraction;
 
 pub(crate) mod shape_document_standard_generative_field;
+
+pub(crate) mod shape_entity_type_info;
 
 pub(crate) mod shape_image_standard_extraction;
 
@@ -191,13 +267,19 @@ pub(crate) mod shape_image_standard_generative_field;
 
 pub(crate) mod shape_modality_processing_configuration;
 
+pub(crate) mod shape_phrase_list;
+
 pub(crate) mod shape_sensitive_data_configuration;
 
 pub(crate) mod shape_splitter_configuration;
 
+pub(crate) mod shape_upsert_entity_info;
+
 pub(crate) mod shape_video_standard_extraction;
 
 pub(crate) mod shape_video_standard_generative_field;
+
+pub(crate) mod shape_vocabulary_entity_summary;
 
 pub(crate) mod shape_audio_extraction_category;
 
@@ -213,11 +295,15 @@ pub(crate) mod shape_image_bounding_box;
 
 pub(crate) mod shape_image_extraction_category;
 
+pub(crate) mod shape_phrase;
+
 pub(crate) mod shape_pii_entities_configuration;
 
 pub(crate) mod shape_video_bounding_box;
 
 pub(crate) mod shape_video_extraction_category;
+
+pub(crate) mod shape_vocabulary_entity_info;
 
 pub(crate) mod shape_audio_extraction_category_type_configuration;
 

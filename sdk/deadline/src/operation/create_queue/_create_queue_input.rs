@@ -30,6 +30,9 @@ pub struct CreateQueueInput {
     pub allowed_storage_profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.</p>
+    pub scheduling_configuration: ::std::option::Option<crate::types::SchedulingConfiguration>,
 }
 impl CreateQueueInput {
     /// <p>The farm ID of the farm to connect to the queue.</p>
@@ -84,6 +87,11 @@ impl CreateQueueInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.</p>
+    pub fn scheduling_configuration(&self) -> ::std::option::Option<&crate::types::SchedulingConfiguration> {
+        self.scheduling_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateQueueInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -99,6 +107,7 @@ impl ::std::fmt::Debug for CreateQueueInput {
         formatter.field("required_file_system_location_names", &self.required_file_system_location_names);
         formatter.field("allowed_storage_profile_ids", &self.allowed_storage_profile_ids);
         formatter.field("tags", &self.tags);
+        formatter.field("scheduling_configuration", &self.scheduling_configuration);
         formatter.finish()
     }
 }
@@ -124,6 +133,7 @@ pub struct CreateQueueInputBuilder {
     pub(crate) required_file_system_location_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_storage_profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) scheduling_configuration: ::std::option::Option<crate::types::SchedulingConfiguration>,
 }
 impl CreateQueueInputBuilder {
     /// <p>The farm ID of the farm to connect to the queue.</p>
@@ -312,6 +322,23 @@ impl CreateQueueInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.</p>
+    pub fn scheduling_configuration(mut self, input: crate::types::SchedulingConfiguration) -> Self {
+        self.scheduling_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.</p>
+    pub fn set_scheduling_configuration(mut self, input: ::std::option::Option<crate::types::SchedulingConfiguration>) -> Self {
+        self.scheduling_configuration = input;
+        self
+    }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>If not specified, the queue defaults to the <code>priorityFifo</code> scheduling configuration.</p>
+    pub fn get_scheduling_configuration(&self) -> &::std::option::Option<crate::types::SchedulingConfiguration> {
+        &self.scheduling_configuration
+    }
     /// Consumes the builder and constructs a [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_queue::CreateQueueInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_queue::CreateQueueInput {
@@ -326,6 +353,7 @@ impl CreateQueueInputBuilder {
             required_file_system_location_names: self.required_file_system_location_names,
             allowed_storage_profile_ids: self.allowed_storage_profile_ids,
             tags: self.tags,
+            scheduling_configuration: self.scheduling_configuration,
         })
     }
 }
@@ -343,6 +371,7 @@ impl ::std::fmt::Debug for CreateQueueInputBuilder {
         formatter.field("required_file_system_location_names", &self.required_file_system_location_names);
         formatter.field("allowed_storage_profile_ids", &self.allowed_storage_profile_ids);
         formatter.field("tags", &self.tags);
+        formatter.field("scheduling_configuration", &self.scheduling_configuration);
         formatter.finish()
     }
 }

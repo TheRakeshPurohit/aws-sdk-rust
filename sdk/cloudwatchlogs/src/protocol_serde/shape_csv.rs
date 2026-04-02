@@ -21,6 +21,9 @@ pub fn ser_csv(
     if let Some(var_6) = &input.source {
         object.key("source").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.destination {
+        object.key("destination").string(var_7.as_str());
+    }
     Ok(())
 }
 
@@ -59,6 +62,13 @@ where
                         }
                         "source" => {
                             builder = builder.set_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "destination" => {
+                            builder = builder.set_destination(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

@@ -211,6 +211,11 @@ pub(crate) fn de_get_queue(
                             .transpose()?,
                     );
                 }
+                "schedulingConfiguration" => {
+                    builder = builder.set_scheduling_configuration(
+                        crate::protocol_serde::shape_scheduling_configuration::de_scheduling_configuration(tokens, _value)?,
+                    );
+                }
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

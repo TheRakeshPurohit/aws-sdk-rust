@@ -31,6 +31,8 @@ pub struct UpdateGatewayTargetOutput {
     pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     /// <p>The managed resources created by the gateway for private endpoint connectivity.</p>
     pub private_endpoint_managed_resources: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>>,
+    /// <p>OAuth2 authorization data for the updated gateway target. This data is returned when the target requires user authorization through an authorization code grant type.</p>
+    pub authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
     _request_id: Option<String>,
 }
 impl UpdateGatewayTargetOutput {
@@ -98,6 +100,10 @@ impl UpdateGatewayTargetOutput {
     pub fn private_endpoint_managed_resources(&self) -> &[crate::types::ManagedResourceDetails] {
         self.private_endpoint_managed_resources.as_deref().unwrap_or_default()
     }
+    /// <p>OAuth2 authorization data for the updated gateway target. This data is returned when the target requires user authorization through an authorization code grant type.</p>
+    pub fn authorization_data(&self) -> ::std::option::Option<&crate::types::AuthorizationData> {
+        self.authorization_data.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateGatewayTargetOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -116,6 +122,7 @@ impl ::std::fmt::Debug for UpdateGatewayTargetOutput {
         formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("private_endpoint", &self.private_endpoint);
         formatter.field("private_endpoint_managed_resources", &self.private_endpoint_managed_resources);
+        formatter.field("authorization_data", &self.authorization_data);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -150,6 +157,7 @@ pub struct UpdateGatewayTargetOutputBuilder {
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
     pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     pub(crate) private_endpoint_managed_resources: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>>,
+    pub(crate) authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
     _request_id: Option<String>,
 }
 impl UpdateGatewayTargetOutputBuilder {
@@ -380,6 +388,20 @@ impl UpdateGatewayTargetOutputBuilder {
     pub fn get_private_endpoint_managed_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>> {
         &self.private_endpoint_managed_resources
     }
+    /// <p>OAuth2 authorization data for the updated gateway target. This data is returned when the target requires user authorization through an authorization code grant type.</p>
+    pub fn authorization_data(mut self, input: crate::types::AuthorizationData) -> Self {
+        self.authorization_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>OAuth2 authorization data for the updated gateway target. This data is returned when the target requires user authorization through an authorization code grant type.</p>
+    pub fn set_authorization_data(mut self, input: ::std::option::Option<crate::types::AuthorizationData>) -> Self {
+        self.authorization_data = input;
+        self
+    }
+    /// <p>OAuth2 authorization data for the updated gateway target. This data is returned when the target requires user authorization through an authorization code grant type.</p>
+    pub fn get_authorization_data(&self) -> &::std::option::Option<crate::types::AuthorizationData> {
+        &self.authorization_data
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -452,6 +474,7 @@ impl UpdateGatewayTargetOutputBuilder {
             metadata_configuration: self.metadata_configuration,
             private_endpoint: self.private_endpoint,
             private_endpoint_managed_resources: self.private_endpoint_managed_resources,
+            authorization_data: self.authorization_data,
             _request_id: self._request_id,
         })
     }
@@ -473,6 +496,7 @@ impl ::std::fmt::Debug for UpdateGatewayTargetOutputBuilder {
         formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("private_endpoint", &self.private_endpoint);
         formatter.field("private_endpoint_managed_resources", &self.private_endpoint_managed_resources);
+        formatter.field("authorization_data", &self.authorization_data);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

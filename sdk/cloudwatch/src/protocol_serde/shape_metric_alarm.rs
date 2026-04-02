@@ -95,6 +95,12 @@ pub(crate) fn de_metric_alarm(
             "StateTransitionedTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_state_transitioned_timestamp(Some(decoder.timestamp()?)))
             })?,
+            "EvaluationCriteria" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_evaluation_criteria(Some(crate::protocol_serde::shape_evaluation_criteria::de_evaluation_criteria(decoder)?)))
+            })?,
+            "EvaluationInterval" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_evaluation_interval(Some(decoder.integer()?)))
+            })?,
             _ => {
                 decoder.skip()?;
                 builder

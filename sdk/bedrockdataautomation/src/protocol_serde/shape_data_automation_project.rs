@@ -77,6 +77,13 @@ where
                                 crate::protocol_serde::shape_override_configuration::de_override_configuration(tokens, _value)?,
                             );
                         }
+                        "dataAutomationLibraryConfiguration" => {
+                            builder = builder.set_data_automation_library_configuration(
+                                crate::protocol_serde::shape_data_automation_library_configuration::de_data_automation_library_configuration(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
                         "status" => {
                             builder = builder.set_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -22,6 +22,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "mcpToolSchema" => {
+                            builder = builder.set_mcp_tool_schema(
+                                crate::protocol_serde::shape_mcp_tool_schema_configuration::de_mcp_tool_schema_configuration(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -49,6 +54,12 @@ pub fn ser_mcp_server_target_configuration(
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("endpoint").string(input.endpoint.as_str());
+    }
+    if let Some(var_1) = &input.mcp_tool_schema {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("mcpToolSchema").start_object();
+        crate::protocol_serde::shape_mcp_tool_schema_configuration::ser_mcp_tool_schema_configuration(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

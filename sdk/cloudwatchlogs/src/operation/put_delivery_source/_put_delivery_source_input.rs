@@ -26,6 +26,8 @@ pub struct PutDeliverySourceInput {
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
@@ -88,6 +90,8 @@ impl PutDeliverySourceInput {
     /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
@@ -194,6 +198,8 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
@@ -248,6 +254,8 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
@@ -300,6 +308,8 @@ impl PutDeliverySourceInputBuilder {
     /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>

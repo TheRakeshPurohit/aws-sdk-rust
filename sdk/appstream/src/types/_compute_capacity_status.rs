@@ -26,6 +26,12 @@ pub struct ComputeCapacityStatus {
     /// <p>ActualUserSessionCapacity = AvailableUserSessionCapacity + ActiveUserSessions</p>
     /// <p>This only applies to multi-session fleets.</p>
     pub actual_user_sessions: ::std::option::Option<i32>,
+    /// <p>The number of instances in drain mode. This only applies to multi-session fleets.</p>
+    pub draining: ::std::option::Option<i32>,
+    /// <p>The number of active user sessions on instances in drain mode. This only applies to multi-session fleets.</p>
+    pub drain_mode_active_user_sessions: ::std::option::Option<i32>,
+    /// <p>The number of unused session slots on instances in drain mode that cannot be used for user session provisioning. This only applies to multi-session fleets.</p>
+    pub drain_mode_unused_user_sessions: ::std::option::Option<i32>,
 }
 impl ComputeCapacityStatus {
     /// <p>The desired number of streaming instances.</p>
@@ -66,6 +72,18 @@ impl ComputeCapacityStatus {
     pub fn actual_user_sessions(&self) -> ::std::option::Option<i32> {
         self.actual_user_sessions
     }
+    /// <p>The number of instances in drain mode. This only applies to multi-session fleets.</p>
+    pub fn draining(&self) -> ::std::option::Option<i32> {
+        self.draining
+    }
+    /// <p>The number of active user sessions on instances in drain mode. This only applies to multi-session fleets.</p>
+    pub fn drain_mode_active_user_sessions(&self) -> ::std::option::Option<i32> {
+        self.drain_mode_active_user_sessions
+    }
+    /// <p>The number of unused session slots on instances in drain mode that cannot be used for user session provisioning. This only applies to multi-session fleets.</p>
+    pub fn drain_mode_unused_user_sessions(&self) -> ::std::option::Option<i32> {
+        self.drain_mode_unused_user_sessions
+    }
 }
 impl ComputeCapacityStatus {
     /// Creates a new builder-style object to manufacture [`ComputeCapacityStatus`](crate::types::ComputeCapacityStatus).
@@ -86,6 +104,9 @@ pub struct ComputeCapacityStatusBuilder {
     pub(crate) available_user_sessions: ::std::option::Option<i32>,
     pub(crate) active_user_sessions: ::std::option::Option<i32>,
     pub(crate) actual_user_sessions: ::std::option::Option<i32>,
+    pub(crate) draining: ::std::option::Option<i32>,
+    pub(crate) drain_mode_active_user_sessions: ::std::option::Option<i32>,
+    pub(crate) drain_mode_unused_user_sessions: ::std::option::Option<i32>,
 }
 impl ComputeCapacityStatusBuilder {
     /// <p>The desired number of streaming instances.</p>
@@ -219,6 +240,48 @@ impl ComputeCapacityStatusBuilder {
     pub fn get_actual_user_sessions(&self) -> &::std::option::Option<i32> {
         &self.actual_user_sessions
     }
+    /// <p>The number of instances in drain mode. This only applies to multi-session fleets.</p>
+    pub fn draining(mut self, input: i32) -> Self {
+        self.draining = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of instances in drain mode. This only applies to multi-session fleets.</p>
+    pub fn set_draining(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.draining = input;
+        self
+    }
+    /// <p>The number of instances in drain mode. This only applies to multi-session fleets.</p>
+    pub fn get_draining(&self) -> &::std::option::Option<i32> {
+        &self.draining
+    }
+    /// <p>The number of active user sessions on instances in drain mode. This only applies to multi-session fleets.</p>
+    pub fn drain_mode_active_user_sessions(mut self, input: i32) -> Self {
+        self.drain_mode_active_user_sessions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of active user sessions on instances in drain mode. This only applies to multi-session fleets.</p>
+    pub fn set_drain_mode_active_user_sessions(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.drain_mode_active_user_sessions = input;
+        self
+    }
+    /// <p>The number of active user sessions on instances in drain mode. This only applies to multi-session fleets.</p>
+    pub fn get_drain_mode_active_user_sessions(&self) -> &::std::option::Option<i32> {
+        &self.drain_mode_active_user_sessions
+    }
+    /// <p>The number of unused session slots on instances in drain mode that cannot be used for user session provisioning. This only applies to multi-session fleets.</p>
+    pub fn drain_mode_unused_user_sessions(mut self, input: i32) -> Self {
+        self.drain_mode_unused_user_sessions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of unused session slots on instances in drain mode that cannot be used for user session provisioning. This only applies to multi-session fleets.</p>
+    pub fn set_drain_mode_unused_user_sessions(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.drain_mode_unused_user_sessions = input;
+        self
+    }
+    /// <p>The number of unused session slots on instances in drain mode that cannot be used for user session provisioning. This only applies to multi-session fleets.</p>
+    pub fn get_drain_mode_unused_user_sessions(&self) -> &::std::option::Option<i32> {
+        &self.drain_mode_unused_user_sessions
+    }
     /// Consumes the builder and constructs a [`ComputeCapacityStatus`](crate::types::ComputeCapacityStatus).
     pub fn build(self) -> crate::types::ComputeCapacityStatus {
         crate::types::ComputeCapacityStatus {
@@ -230,6 +293,9 @@ impl ComputeCapacityStatusBuilder {
             available_user_sessions: self.available_user_sessions,
             active_user_sessions: self.active_user_sessions,
             actual_user_sessions: self.actual_user_sessions,
+            draining: self.draining,
+            drain_mode_active_user_sessions: self.drain_mode_active_user_sessions,
+            drain_mode_unused_user_sessions: self.drain_mode_unused_user_sessions,
         }
     }
 }

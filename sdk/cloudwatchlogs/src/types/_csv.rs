@@ -14,6 +14,8 @@ pub struct Csv {
     pub columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The path to the field in the log event that has the comma separated values to be parsed. If you omit this value, the whole log message is processed.</p>
     pub source: ::std::option::Option<::std::string::String>,
+    /// <p>The path to the parent field to put transformed key value pairs under. If you omit this value, the key value pairs will be placed under the root node.</p>
+    pub destination: ::std::option::Option<::std::string::String>,
 }
 impl Csv {
     /// <p>The character used used as a text qualifier for a single column of data. If you omit this, the double quotation mark <code>"</code> character is used.</p>
@@ -35,6 +37,10 @@ impl Csv {
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
+    /// <p>The path to the parent field to put transformed key value pairs under. If you omit this value, the key value pairs will be placed under the root node.</p>
+    pub fn destination(&self) -> ::std::option::Option<&str> {
+        self.destination.as_deref()
+    }
 }
 impl Csv {
     /// Creates a new builder-style object to manufacture [`Csv`](crate::types::Csv).
@@ -51,6 +57,7 @@ pub struct CsvBuilder {
     pub(crate) delimiter: ::std::option::Option<::std::string::String>,
     pub(crate) columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) source: ::std::option::Option<::std::string::String>,
+    pub(crate) destination: ::std::option::Option<::std::string::String>,
 }
 impl CsvBuilder {
     /// <p>The character used used as a text qualifier for a single column of data. If you omit this, the double quotation mark <code>"</code> character is used.</p>
@@ -118,6 +125,20 @@ impl CsvBuilder {
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
     }
+    /// <p>The path to the parent field to put transformed key value pairs under. If you omit this value, the key value pairs will be placed under the root node.</p>
+    pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The path to the parent field to put transformed key value pairs under. If you omit this value, the key value pairs will be placed under the root node.</p>
+    pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.destination = input;
+        self
+    }
+    /// <p>The path to the parent field to put transformed key value pairs under. If you omit this value, the key value pairs will be placed under the root node.</p>
+    pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
+        &self.destination
+    }
     /// Consumes the builder and constructs a [`Csv`](crate::types::Csv).
     pub fn build(self) -> crate::types::Csv {
         crate::types::Csv {
@@ -125,6 +146,7 @@ impl CsvBuilder {
             delimiter: self.delimiter,
             columns: self.columns,
             source: self.source,
+            destination: self.destination,
         }
     }
 }

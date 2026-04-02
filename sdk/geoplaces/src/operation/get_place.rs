@@ -189,7 +189,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetPlaceRequ
                         "cannot be empty or unset",
                     ));
                 }
-                ::std::write!(output, "/place/{PlaceId}", PlaceId = place_id).expect("formatting should succeed");
+                ::std::write!(output, "/v2/place/{PlaceId}", PlaceId = place_id).expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             fn uri_query(

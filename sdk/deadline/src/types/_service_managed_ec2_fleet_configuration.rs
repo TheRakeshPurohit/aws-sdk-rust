@@ -12,7 +12,7 @@ pub struct ServiceManagedEc2FleetConfiguration {
     pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     /// <p>The storage profile ID for the service managed EC2 fleet.</p>
     pub storage_profile_id: ::std::option::Option<::std::string::String>,
-    /// <p>The auto scaling configuration options for the service managed EC2 fleet.</p>
+    /// <p>The auto scaling configuration settings for the service managed EC2 fleet.</p>
     pub auto_scaling_configuration: ::std::option::Option<crate::types::ServiceManagedEc2AutoScalingConfiguration>,
 }
 impl ServiceManagedEc2FleetConfiguration {
@@ -32,7 +32,7 @@ impl ServiceManagedEc2FleetConfiguration {
     pub fn storage_profile_id(&self) -> ::std::option::Option<&str> {
         self.storage_profile_id.as_deref()
     }
-    /// <p>The auto scaling configuration options for the service managed EC2 fleet.</p>
+    /// <p>The auto scaling configuration settings for the service managed EC2 fleet.</p>
     pub fn auto_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServiceManagedEc2AutoScalingConfiguration> {
         self.auto_scaling_configuration.as_ref()
     }
@@ -113,17 +113,17 @@ impl ServiceManagedEc2FleetConfigurationBuilder {
     pub fn get_storage_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_profile_id
     }
-    /// <p>The auto scaling configuration options for the service managed EC2 fleet.</p>
+    /// <p>The auto scaling configuration settings for the service managed EC2 fleet.</p>
     pub fn auto_scaling_configuration(mut self, input: crate::types::ServiceManagedEc2AutoScalingConfiguration) -> Self {
         self.auto_scaling_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The auto scaling configuration options for the service managed EC2 fleet.</p>
+    /// <p>The auto scaling configuration settings for the service managed EC2 fleet.</p>
     pub fn set_auto_scaling_configuration(mut self, input: ::std::option::Option<crate::types::ServiceManagedEc2AutoScalingConfiguration>) -> Self {
         self.auto_scaling_configuration = input;
         self
     }
-    /// <p>The auto scaling configuration options for the service managed EC2 fleet.</p>
+    /// <p>The auto scaling configuration settings for the service managed EC2 fleet.</p>
     pub fn get_auto_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServiceManagedEc2AutoScalingConfiguration> {
         &self.auto_scaling_configuration
     }

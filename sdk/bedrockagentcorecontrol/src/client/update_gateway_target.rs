@@ -26,6 +26,7 @@ impl super::Client {
     ///   - [`metadata_configuration(Option<MetadataConfiguration>)`](crate::operation::update_gateway_target::UpdateGatewayTargetOutput::metadata_configuration): <p>The metadata configuration that was applied to the gateway target.</p>
     ///   - [`private_endpoint(Option<PrivateEndpoint>)`](crate::operation::update_gateway_target::UpdateGatewayTargetOutput::private_endpoint): <p>The private endpoint configuration for the gateway target.</p>
     ///   - [`private_endpoint_managed_resources(Option<Vec::<ManagedResourceDetails>>)`](crate::operation::update_gateway_target::UpdateGatewayTargetOutput::private_endpoint_managed_resources): <p>The managed resources created by the gateway for private endpoint connectivity.</p>
+    ///   - [`authorization_data(Option<AuthorizationData>)`](crate::operation::update_gateway_target::UpdateGatewayTargetOutput::authorization_data): <p>OAuth2 authorization data for the updated gateway target. This data is returned when the target requires user authorization through an authorization code grant type.</p>
     /// - On failure, responds with [`SdkError<UpdateGatewayTargetError>`](crate::operation::update_gateway_target::UpdateGatewayTargetError)
     pub fn update_gateway_target(&self) -> crate::operation::update_gateway_target::builders::UpdateGatewayTargetFluentBuilder {
         crate::operation::update_gateway_target::builders::UpdateGatewayTargetFluentBuilder::new(self.handle.clone())

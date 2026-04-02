@@ -184,4 +184,18 @@ impl ListDataAutomationProjectsFluentBuilder {
     pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
         self.inner.get_resource_owner()
     }
+    /// Data Automation Library Filter
+    pub fn library_filter(mut self, input: crate::types::DataAutomationLibraryFilter) -> Self {
+        self.inner = self.inner.library_filter(input);
+        self
+    }
+    /// Data Automation Library Filter
+    pub fn set_library_filter(mut self, input: ::std::option::Option<crate::types::DataAutomationLibraryFilter>) -> Self {
+        self.inner = self.inner.set_library_filter(input);
+        self
+    }
+    /// Data Automation Library Filter
+    pub fn get_library_filter(&self) -> &::std::option::Option<crate::types::DataAutomationLibraryFilter> {
+        self.inner.get_library_filter()
+    }
 }

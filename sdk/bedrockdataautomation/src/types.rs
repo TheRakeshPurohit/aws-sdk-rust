@@ -3,6 +3,10 @@ pub use crate::types::_blueprint_stage::BlueprintStage;
 
 pub use crate::types::_blueprint::Blueprint;
 
+pub use crate::types::_entity_type::EntityType;
+
+pub use crate::types::_entity_details::EntityDetails;
+
 pub use crate::types::_blueprint_optimization_object::BlueprintOptimizationObject;
 
 pub use crate::types::_blueprint_optimization_output_configuration::BlueprintOptimizationOutputConfiguration;
@@ -19,9 +23,25 @@ pub use crate::types::_data_automation_project_filter::DataAutomationProjectFilt
 
 pub use crate::types::_type_::Type;
 
+pub use crate::types::_input_configuration::InputConfiguration;
+
+pub use crate::types::_library_ingestion_job_operation_type::LibraryIngestionJobOperationType;
+
+pub use crate::types::_output_configuration::OutputConfiguration;
+
+pub use crate::types::_notification_configuration::NotificationConfiguration;
+
+pub use crate::types::_data_automation_library_ingestion_job::DataAutomationLibraryIngestionJob;
+
+pub use crate::types::_data_automation_library_status::DataAutomationLibraryStatus;
+
+pub use crate::types::_data_automation_library::DataAutomationLibrary;
+
 pub use crate::types::_data_automation_project_stage_filter::DataAutomationProjectStageFilter;
 
 pub use crate::types::_blueprint_filter::BlueprintFilter;
+
+pub use crate::types::_data_automation_library_filter::DataAutomationLibraryFilter;
 
 pub use crate::types::_data_automation_project_stage::DataAutomationProjectStage;
 
@@ -33,11 +53,17 @@ pub use crate::types::_custom_output_configuration::CustomOutputConfiguration;
 
 pub use crate::types::_override_configuration::OverrideConfiguration;
 
+pub use crate::types::_data_automation_library_configuration::DataAutomationLibraryConfiguration;
+
 pub use crate::types::_data_automation_project_status::DataAutomationProjectStatus;
 
 pub use crate::types::_data_automation_project::DataAutomationProject;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
+
+pub use crate::types::_vocabulary_entity::VocabularyEntity;
+
+pub use crate::types::_data_automation_library_entity_summary::DataAutomationLibraryEntitySummary;
 
 pub use crate::types::_tag::Tag;
 
@@ -46,6 +72,16 @@ pub use crate::types::_blueprint_optimization_sample::BlueprintOptimizationSampl
 pub use crate::types::_s3_object::S3Object;
 
 pub use crate::types::_blueprint_summary::BlueprintSummary;
+
+pub use crate::types::_data_automation_library_ingestion_job_summary::DataAutomationLibraryIngestionJobSummary;
+
+pub use crate::types::_inline_payload::InlinePayload;
+
+pub use crate::types::_event_bridge_configuration::EventBridgeConfiguration;
+
+pub use crate::types::_library_ingestion_job_status::LibraryIngestionJobStatus;
+
+pub use crate::types::_data_automation_library_summary::DataAutomationLibrarySummary;
 
 pub use crate::types::_data_automation_project_summary::DataAutomationProjectSummary;
 
@@ -66,6 +102,14 @@ pub use crate::types::_video_override_configuration::VideoOverrideConfiguration;
 pub use crate::types::_audio_override_configuration::AudioOverrideConfiguration;
 
 pub use crate::types::_modality_routing_configuration::ModalityRoutingConfiguration;
+
+pub use crate::types::_language::Language;
+
+pub use crate::types::_vocabulary_entity_summary::VocabularyEntitySummary;
+
+pub use crate::types::_delete_entities_info::DeleteEntitiesInfo;
+
+pub use crate::types::_entity_type_info::EntityTypeInfo;
 
 pub use crate::types::_document_standard_extraction::DocumentStandardExtraction;
 
@@ -97,6 +141,12 @@ pub use crate::types::_audio_language_configuration::AudioLanguageConfiguration;
 
 pub use crate::types::_desired_modality::DesiredModality;
 
+pub use crate::types::_data_automation_library_item::DataAutomationLibraryItem;
+
+pub use crate::types::_phrase::Phrase;
+
+pub use crate::types::_upsert_entity_info::UpsertEntityInfo;
+
 pub use crate::types::_document_extraction_granularity::DocumentExtractionGranularity;
 
 pub use crate::types::_document_bounding_box::DocumentBoundingBox;
@@ -123,6 +173,8 @@ pub use crate::types::_pii_entities_configuration::PiiEntitiesConfiguration;
 
 pub use crate::types::_audio_generative_output_language::AudioGenerativeOutputLanguage;
 
+pub use crate::types::_vocabulary_entity_info::VocabularyEntityInfo;
+
 pub use crate::types::_image_standard_generative_field_type::ImageStandardGenerativeFieldType;
 
 pub use crate::types::_video_standard_generative_field_type::VideoStandardGenerativeFieldType;
@@ -134,8 +186,6 @@ pub use crate::types::_audio_standard_generative_field_type::AudioStandardGenera
 pub use crate::types::_sensitive_data_detection_scope_type::SensitiveDataDetectionScopeType;
 
 pub use crate::types::_pii_redaction_mask_mode::PiiRedactionMaskMode;
-
-pub use crate::types::_language::Language;
 
 pub use crate::types::_document_extraction_granularity_type::DocumentExtractionGranularityType;
 
@@ -199,6 +249,24 @@ mod _channel_labeling_configuration;
 
 mod _custom_output_configuration;
 
+mod _data_automation_library;
+
+mod _data_automation_library_configuration;
+
+mod _data_automation_library_entity_summary;
+
+mod _data_automation_library_filter;
+
+mod _data_automation_library_ingestion_job;
+
+mod _data_automation_library_ingestion_job_summary;
+
+mod _data_automation_library_item;
+
+mod _data_automation_library_status;
+
+mod _data_automation_library_summary;
+
 mod _data_automation_project;
 
 mod _data_automation_project_filter;
@@ -212,6 +280,8 @@ mod _data_automation_project_status;
 mod _data_automation_project_summary;
 
 mod _data_automation_project_type;
+
+mod _delete_entities_info;
 
 mod _desired_modality;
 
@@ -239,6 +309,14 @@ mod _document_standard_output_configuration;
 
 mod _encryption_configuration;
 
+mod _entity_details;
+
+mod _entity_type;
+
+mod _entity_type_info;
+
+mod _event_bridge_configuration;
+
 mod _image_bounding_box;
 
 mod _image_extraction_category;
@@ -255,13 +333,27 @@ mod _image_standard_generative_field_type;
 
 mod _image_standard_output_configuration;
 
+mod _inline_payload;
+
+mod _input_configuration;
+
 mod _language;
+
+mod _library_ingestion_job_operation_type;
+
+mod _library_ingestion_job_status;
 
 mod _modality_processing_configuration;
 
 mod _modality_routing_configuration;
 
+mod _notification_configuration;
+
+mod _output_configuration;
+
 mod _override_configuration;
+
+mod _phrase;
 
 mod _pii_entities_configuration;
 
@@ -293,6 +385,8 @@ mod _transcript_configuration;
 
 mod _type_;
 
+mod _upsert_entity_info;
+
 mod _validation_exception_field;
 
 mod _video_bounding_box;
@@ -310,6 +404,12 @@ mod _video_standard_generative_field;
 mod _video_standard_generative_field_type;
 
 mod _video_standard_output_configuration;
+
+mod _vocabulary_entity;
+
+mod _vocabulary_entity_info;
+
+mod _vocabulary_entity_summary;
 
 /// Builders
 pub mod builders;

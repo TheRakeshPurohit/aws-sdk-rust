@@ -185,6 +185,8 @@ pub use crate::types::_session_state::SessionState;
 
 pub use crate::types::_session_connection_state::SessionConnectionState;
 
+pub use crate::types::_instance_drain_status::InstanceDrainStatus;
+
 pub use crate::types::_software_deployment_status::SoftwareDeploymentStatus;
 
 pub use crate::types::_fleet_error_code::FleetErrorCode;
@@ -302,6 +304,8 @@ mod _image_state_change_reason;
 mod _image_state_change_reason_code;
 
 mod _image_type;
+
+mod _instance_drain_status;
 
 mod _last_report_generation_execution_error;
 

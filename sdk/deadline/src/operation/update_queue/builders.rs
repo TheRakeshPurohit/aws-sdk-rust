@@ -322,4 +322,24 @@ impl UpdateQueueFluentBuilder {
     pub fn get_allowed_storage_profile_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_allowed_storage_profile_ids_to_remove()
     }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>When updating the scheduling configuration, the entire configuration is replaced.</p>
+    /// <p>In-progress tasks run to completion before the new scheduling configuration takes effect.</p>
+    pub fn scheduling_configuration(mut self, input: crate::types::SchedulingConfiguration) -> Self {
+        self.inner = self.inner.scheduling_configuration(input);
+        self
+    }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>When updating the scheduling configuration, the entire configuration is replaced.</p>
+    /// <p>In-progress tasks run to completion before the new scheduling configuration takes effect.</p>
+    pub fn set_scheduling_configuration(mut self, input: ::std::option::Option<crate::types::SchedulingConfiguration>) -> Self {
+        self.inner = self.inner.set_scheduling_configuration(input);
+        self
+    }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    /// <p>When updating the scheduling configuration, the entire configuration is replaced.</p>
+    /// <p>In-progress tasks run to completion before the new scheduling configuration takes effect.</p>
+    pub fn get_scheduling_configuration(&self) -> &::std::option::Option<crate::types::SchedulingConfiguration> {
+        self.inner.get_scheduling_configuration()
+    }
 }

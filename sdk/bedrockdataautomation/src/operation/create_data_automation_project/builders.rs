@@ -206,6 +206,23 @@ impl CreateDataAutomationProjectFluentBuilder {
     pub fn get_override_configuration(&self) -> &::std::option::Option<crate::types::OverrideConfiguration> {
         self.inner.get_override_configuration()
     }
+    /// DataAutomation Library configuration
+    pub fn data_automation_library_configuration(mut self, input: crate::types::DataAutomationLibraryConfiguration) -> Self {
+        self.inner = self.inner.data_automation_library_configuration(input);
+        self
+    }
+    /// DataAutomation Library configuration
+    pub fn set_data_automation_library_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::DataAutomationLibraryConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_data_automation_library_configuration(input);
+        self
+    }
+    /// DataAutomation Library configuration
+    pub fn get_data_automation_library_configuration(&self) -> &::std::option::Option<crate::types::DataAutomationLibraryConfiguration> {
+        self.inner.get_data_automation_library_configuration()
+    }
     /// Client specified token used for idempotency checks
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

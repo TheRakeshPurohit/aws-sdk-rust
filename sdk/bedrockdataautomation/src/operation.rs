@@ -10,11 +10,17 @@ pub mod create_blueprint;
 /// Types for the `CreateBlueprintVersion` operation.
 pub mod create_blueprint_version;
 
+/// Types for the `CreateDataAutomationLibrary` operation.
+pub mod create_data_automation_library;
+
 /// Types for the `CreateDataAutomationProject` operation.
 pub mod create_data_automation_project;
 
 /// Types for the `DeleteBlueprint` operation.
 pub mod delete_blueprint;
+
+/// Types for the `DeleteDataAutomationLibrary` operation.
+pub mod delete_data_automation_library;
 
 /// Types for the `DeleteDataAutomationProject` operation.
 pub mod delete_data_automation_project;
@@ -25,14 +31,35 @@ pub mod get_blueprint;
 /// Types for the `GetBlueprintOptimizationStatus` operation.
 pub mod get_blueprint_optimization_status;
 
+/// Types for the `GetDataAutomationLibrary` operation.
+pub mod get_data_automation_library;
+
+/// Types for the `GetDataAutomationLibraryEntity` operation.
+pub mod get_data_automation_library_entity;
+
+/// Types for the `GetDataAutomationLibraryIngestionJob` operation.
+pub mod get_data_automation_library_ingestion_job;
+
 /// Types for the `GetDataAutomationProject` operation.
 pub mod get_data_automation_project;
 
 /// Types for the `InvokeBlueprintOptimizationAsync` operation.
 pub mod invoke_blueprint_optimization_async;
 
+/// Types for the `InvokeDataAutomationLibraryIngestionJob` operation.
+pub mod invoke_data_automation_library_ingestion_job;
+
 /// Types for the `ListBlueprints` operation.
 pub mod list_blueprints;
+
+/// Types for the `ListDataAutomationLibraries` operation.
+pub mod list_data_automation_libraries;
+
+/// Types for the `ListDataAutomationLibraryEntities` operation.
+pub mod list_data_automation_library_entities;
+
+/// Types for the `ListDataAutomationLibraryIngestionJobs` operation.
+pub mod list_data_automation_library_ingestion_jobs;
 
 /// Types for the `ListDataAutomationProjects` operation.
 pub mod list_data_automation_projects;
@@ -48,6 +75,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateBlueprint` operation.
 pub mod update_blueprint;
+
+/// Types for the `UpdateDataAutomationLibrary` operation.
+pub mod update_data_automation_library;
 
 /// Types for the `UpdateDataAutomationProject` operation.
 pub mod update_data_automation_project;

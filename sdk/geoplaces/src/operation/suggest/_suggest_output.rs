@@ -8,7 +8,7 @@ pub struct SuggestOutput {
     pub pricing_bucket: ::std::string::String,
     /// <p>List of places or results returned for a query.</p>
     pub result_items: ::std::option::Option<::std::vec::Vec<crate::types::SuggestResultItem>>,
-    /// <p>Maximum number of query terms to be returned for use with a search text query.</p>
+    /// <p>Maximum number of query terms to be returned for use with a search text query. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub query_refinements: ::std::option::Option<::std::vec::Vec<crate::types::QueryRefinement>>,
     _request_id: Option<String>,
 }
@@ -25,7 +25,7 @@ impl SuggestOutput {
     pub fn result_items(&self) -> &[crate::types::SuggestResultItem] {
         self.result_items.as_deref().unwrap_or_default()
     }
-    /// <p>Maximum number of query terms to be returned for use with a search text query.</p>
+    /// <p>Maximum number of query terms to be returned for use with a search text query. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_refinements.is_none()`.
     pub fn query_refinements(&self) -> &[crate::types::QueryRefinement] {
@@ -96,19 +96,19 @@ impl SuggestOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_query_refinements`](Self::set_query_refinements).
     ///
-    /// <p>Maximum number of query terms to be returned for use with a search text query.</p>
+    /// <p>Maximum number of query terms to be returned for use with a search text query. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn query_refinements(mut self, input: crate::types::QueryRefinement) -> Self {
         let mut v = self.query_refinements.unwrap_or_default();
         v.push(input);
         self.query_refinements = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Maximum number of query terms to be returned for use with a search text query.</p>
+    /// <p>Maximum number of query terms to be returned for use with a search text query. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_query_refinements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryRefinement>>) -> Self {
         self.query_refinements = input;
         self
     }
-    /// <p>Maximum number of query terms to be returned for use with a search text query.</p>
+    /// <p>Maximum number of query terms to be returned for use with a search text query. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_query_refinements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryRefinement>> {
         &self.query_refinements
     }

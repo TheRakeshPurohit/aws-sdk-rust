@@ -23,25 +23,25 @@ pub struct Address {
     pub sub_district: ::std::option::Option<::std::string::String>,
     /// <p>An alphanumeric string included in a postal address to facilitate mail sorting, such as post code, postcode, or ZIP code, for which the result should possess.</p>
     pub postal_code: ::std::option::Option<::std::string::String>,
-    /// <p>Name of the block.</p>
+    /// <p>Name of the block. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>Sunny Mansion 203 block: 2 Chome</code></p>
     pub block: ::std::option::Option<::std::string::String>,
-    /// <p>Name of sub-block.</p>
+    /// <p>Name of sub-block. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>Sunny Mansion 203 sub-block: 4</code></p>
     pub sub_block: ::std::option::Option<::std::string::String>,
-    /// <p>Name of the streets in the intersection.</p>
+    /// <p>Name of the streets in the intersection. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>\["Friedrichstraße","Unter den Linden"\]</code></p>
     pub intersection: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the street results should be present in.</p>
     pub street: ::std::option::Option<::std::string::String>,
-    /// <p>Components of the street.</p>
-    /// <p>Example: Younge from the "Younge street".</p>
+    /// <p>Components of the street. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// <p>Example: Yonge from "Yonge street".</p>
     pub street_components: ::std::option::Option<::std::vec::Vec<crate::types::StreetComponents>>,
     /// <p>The number that identifies an address within a street.</p>
     pub address_number: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the building at the address.</p>
+    /// <p>The name of the building at the address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub building: ::std::option::Option<::std::string::String>,
-    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p><note>
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>Coverage for <code>Address.SecondaryAddressComponents</code> is available in the following countries:</p>
     /// <p>AUS, CAN, NZL, USA, PRI</p>
     /// </note>
@@ -83,17 +83,17 @@ impl Address {
     pub fn postal_code(&self) -> ::std::option::Option<&str> {
         self.postal_code.as_deref()
     }
-    /// <p>Name of the block.</p>
+    /// <p>Name of the block. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>Sunny Mansion 203 block: 2 Chome</code></p>
     pub fn block(&self) -> ::std::option::Option<&str> {
         self.block.as_deref()
     }
-    /// <p>Name of sub-block.</p>
+    /// <p>Name of sub-block. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>Sunny Mansion 203 sub-block: 4</code></p>
     pub fn sub_block(&self) -> ::std::option::Option<&str> {
         self.sub_block.as_deref()
     }
-    /// <p>Name of the streets in the intersection.</p>
+    /// <p>Name of the streets in the intersection. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>\["Friedrichstraße","Unter den Linden"\]</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.intersection.is_none()`.
@@ -104,8 +104,8 @@ impl Address {
     pub fn street(&self) -> ::std::option::Option<&str> {
         self.street.as_deref()
     }
-    /// <p>Components of the street.</p>
-    /// <p>Example: Younge from the "Younge street".</p>
+    /// <p>Components of the street. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// <p>Example: Yonge from "Yonge street".</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.street_components.is_none()`.
     pub fn street_components(&self) -> &[crate::types::StreetComponents] {
@@ -115,11 +115,11 @@ impl Address {
     pub fn address_number(&self) -> ::std::option::Option<&str> {
         self.address_number.as_deref()
     }
-    /// <p>The name of the building at the address.</p>
+    /// <p>The name of the building at the address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn building(&self) -> ::std::option::Option<&str> {
         self.building.as_deref()
     }
-    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p><note>
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>Coverage for <code>Address.SecondaryAddressComponents</code> is available in the following countries:</p>
     /// <p>AUS, CAN, NZL, USA, PRI</p>
     /// </note>
@@ -301,36 +301,36 @@ impl AddressBuilder {
     pub fn get_postal_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.postal_code
     }
-    /// <p>Name of the block.</p>
+    /// <p>Name of the block. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>Sunny Mansion 203 block: 2 Chome</code></p>
     pub fn block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.block = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the block.</p>
+    /// <p>Name of the block. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>Sunny Mansion 203 block: 2 Chome</code></p>
     pub fn set_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.block = input;
         self
     }
-    /// <p>Name of the block.</p>
+    /// <p>Name of the block. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>Sunny Mansion 203 block: 2 Chome</code></p>
     pub fn get_block(&self) -> &::std::option::Option<::std::string::String> {
         &self.block
     }
-    /// <p>Name of sub-block.</p>
+    /// <p>Name of sub-block. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>Sunny Mansion 203 sub-block: 4</code></p>
     pub fn sub_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sub_block = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of sub-block.</p>
+    /// <p>Name of sub-block. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>Sunny Mansion 203 sub-block: 4</code></p>
     pub fn set_sub_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sub_block = input;
         self
     }
-    /// <p>Name of sub-block.</p>
+    /// <p>Name of sub-block. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>Sunny Mansion 203 sub-block: 4</code></p>
     pub fn get_sub_block(&self) -> &::std::option::Option<::std::string::String> {
         &self.sub_block
@@ -339,7 +339,7 @@ impl AddressBuilder {
     ///
     /// To override the contents of this collection use [`set_intersection`](Self::set_intersection).
     ///
-    /// <p>Name of the streets in the intersection.</p>
+    /// <p>Name of the streets in the intersection. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>\["Friedrichstraße","Unter den Linden"\]</code></p>
     pub fn intersection(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.intersection.unwrap_or_default();
@@ -347,13 +347,13 @@ impl AddressBuilder {
         self.intersection = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Name of the streets in the intersection.</p>
+    /// <p>Name of the streets in the intersection. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>\["Friedrichstraße","Unter den Linden"\]</code></p>
     pub fn set_intersection(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.intersection = input;
         self
     }
-    /// <p>Name of the streets in the intersection.</p>
+    /// <p>Name of the streets in the intersection. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>\["Friedrichstraße","Unter den Linden"\]</code></p>
     pub fn get_intersection(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.intersection
@@ -376,22 +376,22 @@ impl AddressBuilder {
     ///
     /// To override the contents of this collection use [`set_street_components`](Self::set_street_components).
     ///
-    /// <p>Components of the street.</p>
-    /// <p>Example: Younge from the "Younge street".</p>
+    /// <p>Components of the street. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// <p>Example: Yonge from "Yonge street".</p>
     pub fn street_components(mut self, input: crate::types::StreetComponents) -> Self {
         let mut v = self.street_components.unwrap_or_default();
         v.push(input);
         self.street_components = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Components of the street.</p>
-    /// <p>Example: Younge from the "Younge street".</p>
+    /// <p>Components of the street. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// <p>Example: Yonge from "Yonge street".</p>
     pub fn set_street_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StreetComponents>>) -> Self {
         self.street_components = input;
         self
     }
-    /// <p>Components of the street.</p>
-    /// <p>Example: Younge from the "Younge street".</p>
+    /// <p>Components of the street. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
+    /// <p>Example: Yonge from "Yonge street".</p>
     pub fn get_street_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StreetComponents>> {
         &self.street_components
     }
@@ -409,17 +409,17 @@ impl AddressBuilder {
     pub fn get_address_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.address_number
     }
-    /// <p>The name of the building at the address.</p>
+    /// <p>The name of the building at the address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn building(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.building = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the building at the address.</p>
+    /// <p>The name of the building at the address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_building(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.building = input;
         self
     }
-    /// <p>The name of the building at the address.</p>
+    /// <p>The name of the building at the address. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_building(&self) -> &::std::option::Option<::std::string::String> {
         &self.building
     }
@@ -427,7 +427,7 @@ impl AddressBuilder {
     ///
     /// To override the contents of this collection use [`set_secondary_address_components`](Self::set_secondary_address_components).
     ///
-    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p><note>
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>Coverage for <code>Address.SecondaryAddressComponents</code> is available in the following countries:</p>
     /// <p>AUS, CAN, NZL, USA, PRI</p>
     /// </note>
@@ -437,7 +437,7 @@ impl AddressBuilder {
         self.secondary_address_components = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p><note>
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>Coverage for <code>Address.SecondaryAddressComponents</code> is available in the following countries:</p>
     /// <p>AUS, CAN, NZL, USA, PRI</p>
     /// </note>
@@ -448,7 +448,7 @@ impl AddressBuilder {
         self.secondary_address_components = input;
         self
     }
-    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor.</p><note>
+    /// <p>Components that correspond to secondary identifiers on an Address. Secondary address components include information such as Suite or Unit Number, Building, or Floor. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p><note>
     /// <p>Coverage for <code>Address.SecondaryAddressComponents</code> is available in the following countries:</p>
     /// <p>AUS, CAN, NZL, USA, PRI</p>
     /// </note>

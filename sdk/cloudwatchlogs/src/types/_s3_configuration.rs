@@ -8,9 +8,9 @@ pub struct S3Configuration {
     pub destination_identifier: ::std::string::String,
     /// <p>The ARN of the IAM role that grants permissions to write query results to the specified Amazon S3 destination.</p>
     pub role_arn: ::std::string::String,
-    /// <p>The AWS accountId for the bucket owning account.</p>
+    /// <p>The Amazon Web Services accountId for the bucket owning account.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same AWS Region as the destination Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl S3Configuration {
@@ -24,11 +24,11 @@ impl S3Configuration {
         use std::ops::Deref;
         self.role_arn.deref()
     }
-    /// <p>The AWS accountId for the bucket owning account.</p>
+    /// <p>The Amazon Web Services accountId for the bucket owning account.</p>
     pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same AWS Region as the destination Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -80,31 +80,31 @@ impl S3ConfigurationBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
-    /// <p>The AWS accountId for the bucket owning account.</p>
+    /// <p>The Amazon Web Services accountId for the bucket owning account.</p>
     pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS accountId for the bucket owning account.</p>
+    /// <p>The Amazon Web Services accountId for the bucket owning account.</p>
     pub fn set_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_account_id = input;
         self
     }
-    /// <p>The AWS accountId for the bucket owning account.</p>
+    /// <p>The Amazon Web Services accountId for the bucket owning account.</p>
     pub fn get_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner_account_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same AWS Region as the destination Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same AWS Region as the destination Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same AWS Region as the destination Amazon S3 bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

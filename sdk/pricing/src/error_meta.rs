@@ -89,6 +89,7 @@ where
 impl From<crate::operation::describe_services::DescribeServicesError> for Error {
     fn from(err: crate::operation::describe_services::DescribeServicesError) -> Self {
         match err {
+            crate::operation::describe_services::DescribeServicesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::describe_services::DescribeServicesError::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
             crate::operation::describe_services::DescribeServicesError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::describe_services::DescribeServicesError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
@@ -116,6 +117,7 @@ where
 impl From<crate::operation::get_attribute_values::GetAttributeValuesError> for Error {
     fn from(err: crate::operation::get_attribute_values::GetAttributeValuesError) -> Self {
         match err {
+            crate::operation::get_attribute_values::GetAttributeValuesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_attribute_values::GetAttributeValuesError::ExpiredNextTokenException(inner) => {
                 Error::ExpiredNextTokenException(inner)
             }
@@ -182,6 +184,7 @@ where
 impl From<crate::operation::get_products::GetProductsError> for Error {
     fn from(err: crate::operation::get_products::GetProductsError) -> Self {
         match err {
+            crate::operation::get_products::GetProductsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_products::GetProductsError::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
             crate::operation::get_products::GetProductsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::get_products::GetProductsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),

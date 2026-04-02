@@ -6,7 +6,7 @@
 pub struct FilterCircle {
     /// <p>The center position in World Geodetic System (WGS 84) format: \[longitude, latitude\].</p>
     pub center: ::std::vec::Vec<f64>,
-    /// <p>The radius, in meters, of the <code>FilterCircle</code>.</p>
+    /// <p>The radius, in meters, of the <code>FilterCircle</code>. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers,<code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only up to a maximum value of 300,000.</p>
     pub radius: i64,
 }
 impl FilterCircle {
@@ -15,7 +15,7 @@ impl FilterCircle {
         use std::ops::Deref;
         self.center.deref()
     }
-    /// <p>The radius, in meters, of the <code>FilterCircle</code>.</p>
+    /// <p>The radius, in meters, of the <code>FilterCircle</code>. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers,<code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only up to a maximum value of 300,000.</p>
     pub fn radius(&self) -> i64 {
         self.radius
     }
@@ -63,18 +63,18 @@ impl FilterCircleBuilder {
     pub fn get_center(&self) -> &::std::option::Option<::std::vec::Vec<f64>> {
         &self.center
     }
-    /// <p>The radius, in meters, of the <code>FilterCircle</code>.</p>
+    /// <p>The radius, in meters, of the <code>FilterCircle</code>. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers,<code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only up to a maximum value of 300,000.</p>
     /// This field is required.
     pub fn radius(mut self, input: i64) -> Self {
         self.radius = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The radius, in meters, of the <code>FilterCircle</code>.</p>
+    /// <p>The radius, in meters, of the <code>FilterCircle</code>. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers,<code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only up to a maximum value of 300,000.</p>
     pub fn set_radius(mut self, input: ::std::option::Option<i64>) -> Self {
         self.radius = input;
         self
     }
-    /// <p>The radius, in meters, of the <code>FilterCircle</code>.</p>
+    /// <p>The radius, in meters, of the <code>FilterCircle</code>. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers,<code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only up to a maximum value of 300,000.</p>
     pub fn get_radius(&self) -> &::std::option::Option<i64> {
         &self.radius
     }

@@ -51,7 +51,9 @@ pub struct MetricAlarm {
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
     pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring how CloudWatch alarms treat missing data</a>.</p>
-    /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
+    /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p><note>
+    /// <p>This parameter is not applicable to PromQL alarms.</p>
+    /// </note>
     pub treat_missing_data: ::std::option::Option<::std::string::String>,
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available.</p>
     pub evaluate_low_sample_count_percentile: ::std::option::Option<::std::string::String>,
@@ -65,6 +67,10 @@ pub struct MetricAlarm {
     pub evaluation_state: ::std::option::Option<crate::types::EvaluationState>,
     /// <p>The date and time that the alarm's <code>StateValue</code> most recently changed.</p>
     pub state_transitioned_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The evaluation criteria for the alarm.</p>
+    pub evaluation_criteria: ::std::option::Option<crate::types::EvaluationCriteria>,
+    /// <p>The frequency, in seconds, at which the alarm is evaluated.</p>
+    pub evaluation_interval: ::std::option::Option<i32>,
 }
 impl MetricAlarm {
     /// <p>The name of the alarm.</p>
@@ -168,7 +174,9 @@ impl MetricAlarm {
         self.comparison_operator.as_ref()
     }
     /// <p>Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring how CloudWatch alarms treat missing data</a>.</p>
-    /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
+    /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p><note>
+    /// <p>This parameter is not applicable to PromQL alarms.</p>
+    /// </note>
     pub fn treat_missing_data(&self) -> ::std::option::Option<&str> {
         self.treat_missing_data.as_deref()
     }
@@ -195,6 +203,14 @@ impl MetricAlarm {
     /// <p>The date and time that the alarm's <code>StateValue</code> most recently changed.</p>
     pub fn state_transitioned_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.state_transitioned_timestamp.as_ref()
+    }
+    /// <p>The evaluation criteria for the alarm.</p>
+    pub fn evaluation_criteria(&self) -> ::std::option::Option<&crate::types::EvaluationCriteria> {
+        self.evaluation_criteria.as_ref()
+    }
+    /// <p>The frequency, in seconds, at which the alarm is evaluated.</p>
+    pub fn evaluation_interval(&self) -> ::std::option::Option<i32> {
+        self.evaluation_interval
     }
 }
 impl MetricAlarm {
@@ -237,6 +253,8 @@ pub struct MetricAlarmBuilder {
     pub(crate) threshold_metric_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_state: ::std::option::Option<crate::types::EvaluationState>,
     pub(crate) state_transitioned_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) evaluation_criteria: ::std::option::Option<crate::types::EvaluationCriteria>,
+    pub(crate) evaluation_interval: ::std::option::Option<i32>,
 }
 impl MetricAlarmBuilder {
     /// <p>The name of the alarm.</p>
@@ -586,19 +604,25 @@ impl MetricAlarmBuilder {
         &self.comparison_operator
     }
     /// <p>Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring how CloudWatch alarms treat missing data</a>.</p>
-    /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
+    /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p><note>
+    /// <p>This parameter is not applicable to PromQL alarms.</p>
+    /// </note>
     pub fn treat_missing_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.treat_missing_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring how CloudWatch alarms treat missing data</a>.</p>
-    /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
+    /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p><note>
+    /// <p>This parameter is not applicable to PromQL alarms.</p>
+    /// </note>
     pub fn set_treat_missing_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.treat_missing_data = input;
         self
     }
     /// <p>Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>, <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring how CloudWatch alarms treat missing data</a>.</p>
-    /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
+    /// <p>If this parameter is omitted, the default behavior of <code>missing</code> is used.</p><note>
+    /// <p>This parameter is not applicable to PromQL alarms.</p>
+    /// </note>
     pub fn get_treat_missing_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.treat_missing_data
     }
@@ -684,6 +708,34 @@ impl MetricAlarmBuilder {
     pub fn get_state_transitioned_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.state_transitioned_timestamp
     }
+    /// <p>The evaluation criteria for the alarm.</p>
+    pub fn evaluation_criteria(mut self, input: crate::types::EvaluationCriteria) -> Self {
+        self.evaluation_criteria = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The evaluation criteria for the alarm.</p>
+    pub fn set_evaluation_criteria(mut self, input: ::std::option::Option<crate::types::EvaluationCriteria>) -> Self {
+        self.evaluation_criteria = input;
+        self
+    }
+    /// <p>The evaluation criteria for the alarm.</p>
+    pub fn get_evaluation_criteria(&self) -> &::std::option::Option<crate::types::EvaluationCriteria> {
+        &self.evaluation_criteria
+    }
+    /// <p>The frequency, in seconds, at which the alarm is evaluated.</p>
+    pub fn evaluation_interval(mut self, input: i32) -> Self {
+        self.evaluation_interval = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The frequency, in seconds, at which the alarm is evaluated.</p>
+    pub fn set_evaluation_interval(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.evaluation_interval = input;
+        self
+    }
+    /// <p>The frequency, in seconds, at which the alarm is evaluated.</p>
+    pub fn get_evaluation_interval(&self) -> &::std::option::Option<i32> {
+        &self.evaluation_interval
+    }
     /// Consumes the builder and constructs a [`MetricAlarm`](crate::types::MetricAlarm).
     pub fn build(self) -> crate::types::MetricAlarm {
         crate::types::MetricAlarm {
@@ -716,6 +768,8 @@ impl MetricAlarmBuilder {
             threshold_metric_id: self.threshold_metric_id,
             evaluation_state: self.evaluation_state,
             state_transitioned_timestamp: self.state_transitioned_timestamp,
+            evaluation_criteria: self.evaluation_criteria,
+            evaluation_interval: self.evaluation_interval,
         }
     }
 }

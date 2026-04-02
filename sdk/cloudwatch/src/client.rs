@@ -248,6 +248,8 @@ mod get_metric_stream;
 
 mod get_metric_widget_image;
 
+mod get_o_tel_enrichment;
+
 mod list_alarm_mute_rules;
 
 mod list_dashboards;
@@ -282,7 +284,11 @@ mod set_alarm_state;
 
 mod start_metric_streams;
 
+mod start_o_tel_enrichment;
+
 mod stop_metric_streams;
+
+mod stop_o_tel_enrichment;
 
 mod tag_resource;
 

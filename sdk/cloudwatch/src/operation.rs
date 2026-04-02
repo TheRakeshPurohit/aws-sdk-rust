@@ -70,6 +70,9 @@ pub mod get_metric_stream;
 /// Types for the `GetMetricWidgetImage` operation.
 pub mod get_metric_widget_image;
 
+/// Types for the `GetOTelEnrichment` operation.
+pub mod get_o_tel_enrichment;
+
 /// Types for the `ListAlarmMuteRules` operation.
 pub mod list_alarm_mute_rules;
 
@@ -121,8 +124,14 @@ pub mod set_alarm_state;
 /// Types for the `StartMetricStreams` operation.
 pub mod start_metric_streams;
 
+/// Types for the `StartOTelEnrichment` operation.
+pub mod start_o_tel_enrichment;
+
 /// Types for the `StopMetricStreams` operation.
 pub mod stop_metric_streams;
+
+/// Types for the `StopOTelEnrichment` operation.
+pub mod stop_o_tel_enrichment;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

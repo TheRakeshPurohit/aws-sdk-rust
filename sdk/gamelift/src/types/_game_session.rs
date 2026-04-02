@@ -81,6 +81,8 @@ pub struct GameSession {
     pub matchmaker_data: ::std::option::Option<::std::string::String>,
     /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
     pub location: ::std::option::Option<::std::string::String>,
+    /// <p>A descriptive label for the compute resource. The compute resource that is hosting the game session. For EC2 fleets, this is the EC2 instance ID. For Container fleets, each game server container group on a fleet instance is assigned a compute name. For Anywhere fleets, this is the custom compute name.</p>
+    pub compute_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether player gateway is available for use for this game session. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
     /// <p>Possible values include:</p>
     /// <ul>
@@ -206,6 +208,10 @@ impl GameSession {
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
+    /// <p>A descriptive label for the compute resource. The compute resource that is hosting the game session. For EC2 fleets, this is the EC2 instance ID. For Container fleets, each game server container group on a fleet instance is assigned a compute name. For Anywhere fleets, this is the custom compute name.</p>
+    pub fn compute_name(&self) -> ::std::option::Option<&str> {
+        self.compute_name.as_deref()
+    }
     /// <p>Indicates whether player gateway is available for use for this game session. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
     /// <p>Possible values include:</p>
     /// <ul>
@@ -240,6 +246,7 @@ impl ::std::fmt::Debug for GameSession {
         formatter.field("game_session_data", &self.game_session_data);
         formatter.field("matchmaker_data", &self.matchmaker_data);
         formatter.field("location", &self.location);
+        formatter.field("compute_name", &self.compute_name);
         formatter.field("player_gateway_status", &self.player_gateway_status);
         formatter.finish()
     }
@@ -274,6 +281,7 @@ pub struct GameSessionBuilder {
     pub(crate) game_session_data: ::std::option::Option<::std::string::String>,
     pub(crate) matchmaker_data: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) compute_name: ::std::option::Option<::std::string::String>,
     pub(crate) player_gateway_status: ::std::option::Option<crate::types::PlayerGatewayStatus>,
 }
 impl GameSessionBuilder {
@@ -657,6 +665,20 @@ impl GameSessionBuilder {
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
+    /// <p>A descriptive label for the compute resource. The compute resource that is hosting the game session. For EC2 fleets, this is the EC2 instance ID. For Container fleets, each game server container group on a fleet instance is assigned a compute name. For Anywhere fleets, this is the custom compute name.</p>
+    pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.compute_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A descriptive label for the compute resource. The compute resource that is hosting the game session. For EC2 fleets, this is the EC2 instance ID. For Container fleets, each game server container group on a fleet instance is assigned a compute name. For Anywhere fleets, this is the custom compute name.</p>
+    pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.compute_name = input;
+        self
+    }
+    /// <p>A descriptive label for the compute resource. The compute resource that is hosting the game session. For EC2 fleets, this is the EC2 instance ID. For Container fleets, each game server container group on a fleet instance is assigned a compute name. For Anywhere fleets, this is the custom compute name.</p>
+    pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compute_name
+    }
     /// <p>Indicates whether player gateway is available for use for this game session. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
     /// <p>Possible values include:</p>
     /// <ul>
@@ -714,6 +736,7 @@ impl GameSessionBuilder {
             game_session_data: self.game_session_data,
             matchmaker_data: self.matchmaker_data,
             location: self.location,
+            compute_name: self.compute_name,
             player_gateway_status: self.player_gateway_status,
         }
     }
@@ -740,6 +763,7 @@ impl ::std::fmt::Debug for GameSessionBuilder {
         formatter.field("game_session_data", &self.game_session_data);
         formatter.field("matchmaker_data", &self.matchmaker_data);
         formatter.field("location", &self.location);
+        formatter.field("compute_name", &self.compute_name);
         formatter.field("player_gateway_status", &self.player_gateway_status);
         formatter.finish()
     }

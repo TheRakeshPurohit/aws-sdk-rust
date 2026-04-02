@@ -453,6 +453,8 @@ pub(crate) mod shape_response_budget_action_list;
 
 pub(crate) mod shape_s3_location;
 
+pub(crate) mod shape_scheduling_configuration;
+
 pub(crate) mod shape_search_grouped_filter_expressions;
 
 pub(crate) mod shape_search_sort_expression;
@@ -573,6 +575,10 @@ pub(crate) mod shape_parameter_sort_expression;
 
 pub(crate) mod shape_posix_user;
 
+pub(crate) mod shape_priority_balanced_scheduling_configuration;
+
+pub(crate) mod shape_priority_fifo_scheduling_configuration;
+
 pub(crate) mod shape_queue_environment_summary;
 
 pub(crate) mod shape_queue_fleet_association_summary;
@@ -633,6 +639,8 @@ pub(crate) mod shape_user_jobs_first;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_weighted_balanced_scheduling_configuration;
+
 pub(crate) mod shape_windows_user;
 
 pub(crate) mod shape_worker_amount_capability;
@@ -674,6 +682,10 @@ pub(crate) mod shape_job_details_entity;
 pub(crate) mod shape_job_details_error;
 
 pub(crate) mod shape_parameter_filter_expression;
+
+pub(crate) mod shape_scheduling_max_priority_override;
+
+pub(crate) mod shape_scheduling_min_priority_override;
 
 pub(crate) mod shape_search_term_filter_expression;
 
@@ -736,6 +748,10 @@ pub(crate) mod shape_memory_mib_range;
 pub(crate) mod shape_output_relative_directories_list;
 
 pub(crate) mod shape_path_mapping_rules;
+
+pub(crate) mod shape_scheduling_max_priority_override_always_schedule_first;
+
+pub(crate) mod shape_scheduling_min_priority_override_always_schedule_last;
 
 pub(crate) mod shape_step_parameter_chunks;
 

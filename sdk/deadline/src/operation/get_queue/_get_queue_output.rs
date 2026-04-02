@@ -48,6 +48,8 @@ pub struct GetQueueOutput {
     pub allowed_storage_profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The jobs in the queue ran as this specified POSIX user.</p>
     pub job_run_as_user: ::std::option::Option<crate::types::JobRunAsUser>,
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    pub scheduling_configuration: ::std::option::Option<crate::types::SchedulingConfiguration>,
     _request_id: Option<String>,
 }
 impl GetQueueOutput {
@@ -135,6 +137,10 @@ impl GetQueueOutput {
     pub fn job_run_as_user(&self) -> ::std::option::Option<&crate::types::JobRunAsUser> {
         self.job_run_as_user.as_ref()
     }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    pub fn scheduling_configuration(&self) -> ::std::option::Option<&crate::types::SchedulingConfiguration> {
+        self.scheduling_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetQueueOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -155,6 +161,7 @@ impl ::std::fmt::Debug for GetQueueOutput {
         formatter.field("required_file_system_location_names", &self.required_file_system_location_names);
         formatter.field("allowed_storage_profile_ids", &self.allowed_storage_profile_ids);
         formatter.field("job_run_as_user", &self.job_run_as_user);
+        formatter.field("scheduling_configuration", &self.scheduling_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -191,6 +198,7 @@ pub struct GetQueueOutputBuilder {
     pub(crate) required_file_system_location_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_storage_profile_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) job_run_as_user: ::std::option::Option<crate::types::JobRunAsUser>,
+    pub(crate) scheduling_configuration: ::std::option::Option<crate::types::SchedulingConfiguration>,
     _request_id: Option<String>,
 }
 impl GetQueueOutputBuilder {
@@ -473,6 +481,20 @@ impl GetQueueOutputBuilder {
     pub fn get_job_run_as_user(&self) -> &::std::option::Option<crate::types::JobRunAsUser> {
         &self.job_run_as_user
     }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    pub fn scheduling_configuration(mut self, input: crate::types::SchedulingConfiguration) -> Self {
+        self.scheduling_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    pub fn set_scheduling_configuration(mut self, input: ::std::option::Option<crate::types::SchedulingConfiguration>) -> Self {
+        self.scheduling_configuration = input;
+        self
+    }
+    /// <p>The scheduling configuration for the queue. This configuration determines how workers are assigned to jobs in the queue.</p>
+    pub fn get_scheduling_configuration(&self) -> &::std::option::Option<crate::types::SchedulingConfiguration> {
+        &self.scheduling_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -544,6 +566,7 @@ impl GetQueueOutputBuilder {
             required_file_system_location_names: self.required_file_system_location_names,
             allowed_storage_profile_ids: self.allowed_storage_profile_ids,
             job_run_as_user: self.job_run_as_user,
+            scheduling_configuration: self.scheduling_configuration,
             _request_id: self._request_id,
         })
     }
@@ -567,6 +590,7 @@ impl ::std::fmt::Debug for GetQueueOutputBuilder {
         formatter.field("required_file_system_location_names", &self.required_file_system_location_names);
         formatter.field("allowed_storage_profile_ids", &self.allowed_storage_profile_ids);
         formatter.field("job_run_as_user", &self.job_run_as_user);
+        formatter.field("scheduling_configuration", &self.scheduling_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

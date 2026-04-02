@@ -24,6 +24,8 @@ pub struct DataAutomationProject {
     pub custom_output_configuration: ::std::option::Option<crate::types::CustomOutputConfiguration>,
     /// Override configuration
     pub override_configuration: ::std::option::Option<crate::types::OverrideConfiguration>,
+    /// DataAutomation Library configuration
+    pub data_automation_library_configuration: ::std::option::Option<crate::types::DataAutomationLibraryConfiguration>,
     /// Status of Data Automation Project
     pub status: crate::types::DataAutomationProjectStatus,
     /// KMS Key Identifier
@@ -74,6 +76,10 @@ impl DataAutomationProject {
     pub fn override_configuration(&self) -> ::std::option::Option<&crate::types::OverrideConfiguration> {
         self.override_configuration.as_ref()
     }
+    /// DataAutomation Library configuration
+    pub fn data_automation_library_configuration(&self) -> ::std::option::Option<&crate::types::DataAutomationLibraryConfiguration> {
+        self.data_automation_library_configuration.as_ref()
+    }
     /// Status of Data Automation Project
     pub fn status(&self) -> &crate::types::DataAutomationProjectStatus {
         &self.status
@@ -100,6 +106,7 @@ impl ::std::fmt::Debug for DataAutomationProject {
         formatter.field("standard_output_configuration", &self.standard_output_configuration);
         formatter.field("custom_output_configuration", &self.custom_output_configuration);
         formatter.field("override_configuration", &self.override_configuration);
+        formatter.field("data_automation_library_configuration", &self.data_automation_library_configuration);
         formatter.field("status", &self.status);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("kms_encryption_context", &self.kms_encryption_context);
@@ -127,6 +134,7 @@ pub struct DataAutomationProjectBuilder {
     pub(crate) standard_output_configuration: ::std::option::Option<crate::types::StandardOutputConfiguration>,
     pub(crate) custom_output_configuration: ::std::option::Option<crate::types::CustomOutputConfiguration>,
     pub(crate) override_configuration: ::std::option::Option<crate::types::OverrideConfiguration>,
+    pub(crate) data_automation_library_configuration: ::std::option::Option<crate::types::DataAutomationLibraryConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::DataAutomationProjectStatus>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -276,6 +284,23 @@ impl DataAutomationProjectBuilder {
     pub fn get_override_configuration(&self) -> &::std::option::Option<crate::types::OverrideConfiguration> {
         &self.override_configuration
     }
+    /// DataAutomation Library configuration
+    pub fn data_automation_library_configuration(mut self, input: crate::types::DataAutomationLibraryConfiguration) -> Self {
+        self.data_automation_library_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// DataAutomation Library configuration
+    pub fn set_data_automation_library_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::DataAutomationLibraryConfiguration>,
+    ) -> Self {
+        self.data_automation_library_configuration = input;
+        self
+    }
+    /// DataAutomation Library configuration
+    pub fn get_data_automation_library_configuration(&self) -> &::std::option::Option<crate::types::DataAutomationLibraryConfiguration> {
+        &self.data_automation_library_configuration
+    }
     /// Status of Data Automation Project
     /// This field is required.
     pub fn status(mut self, input: crate::types::DataAutomationProjectStatus) -> Self {
@@ -371,6 +396,7 @@ impl DataAutomationProjectBuilder {
             standard_output_configuration: self.standard_output_configuration,
             custom_output_configuration: self.custom_output_configuration,
             override_configuration: self.override_configuration,
+            data_automation_library_configuration: self.data_automation_library_configuration,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
@@ -395,6 +421,7 @@ impl ::std::fmt::Debug for DataAutomationProjectBuilder {
         formatter.field("standard_output_configuration", &self.standard_output_configuration);
         formatter.field("custom_output_configuration", &self.custom_output_configuration);
         formatter.field("override_configuration", &self.override_configuration);
+        formatter.field("data_automation_library_configuration", &self.data_automation_library_configuration);
         formatter.field("status", &self.status);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("kms_encryption_context", &self.kms_encryption_context);

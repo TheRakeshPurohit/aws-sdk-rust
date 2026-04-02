@@ -23,6 +23,7 @@ impl crate::operation::delete_gateway_target::builders::DeleteGatewayTargetInput
 /// Fluent builder constructing a request to `DeleteGatewayTarget`.
 ///
 /// <p>Deletes a gateway target.</p>
+/// <p>You cannot delete a target that is in a pending authorization state (<code>CREATE_PENDING_AUTH</code>, <code>UPDATE_PENDING_AUTH</code>, or <code>SYNCHRONIZE_PENDING_AUTH</code>). Wait for the authorization to complete or fail before deleting the target.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGatewayTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

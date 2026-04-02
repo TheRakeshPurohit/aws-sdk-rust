@@ -65,6 +65,8 @@ pub use crate::types::_dashboard_validation_message::DashboardValidationMessageB
 
 pub use crate::types::_managed_rule::ManagedRuleBuilder;
 
+pub use crate::types::_alarm_prom_ql_criteria::AlarmPromQlCriteriaBuilder;
+
 pub use crate::types::_metric_datum::MetricDatumBuilder;
 
 pub use crate::types::_entity_metric_data::EntityMetricDataBuilder;

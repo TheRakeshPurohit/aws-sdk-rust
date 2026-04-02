@@ -6,7 +6,7 @@
 pub struct CustomerManagedFleetConfiguration {
     /// <p>The Auto Scaling mode for the customer managed fleet.</p>
     pub mode: crate::types::AutoScalingMode,
-    /// <p>The auto scaling configuration options for the customer managed fleet.</p>
+    /// <p>The auto scaling configuration settings for the customer managed fleet.</p>
     pub auto_scaling_configuration: ::std::option::Option<crate::types::CustomerManagedAutoScalingConfiguration>,
     /// <p>The worker capabilities for the customer managed fleet.</p>
     pub worker_capabilities: ::std::option::Option<crate::types::CustomerManagedWorkerCapabilities>,
@@ -20,7 +20,7 @@ impl CustomerManagedFleetConfiguration {
     pub fn mode(&self) -> &crate::types::AutoScalingMode {
         &self.mode
     }
-    /// <p>The auto scaling configuration options for the customer managed fleet.</p>
+    /// <p>The auto scaling configuration settings for the customer managed fleet.</p>
     pub fn auto_scaling_configuration(&self) -> ::std::option::Option<&crate::types::CustomerManagedAutoScalingConfiguration> {
         self.auto_scaling_configuration.as_ref()
     }
@@ -70,17 +70,17 @@ impl CustomerManagedFleetConfigurationBuilder {
     pub fn get_mode(&self) -> &::std::option::Option<crate::types::AutoScalingMode> {
         &self.mode
     }
-    /// <p>The auto scaling configuration options for the customer managed fleet.</p>
+    /// <p>The auto scaling configuration settings for the customer managed fleet.</p>
     pub fn auto_scaling_configuration(mut self, input: crate::types::CustomerManagedAutoScalingConfiguration) -> Self {
         self.auto_scaling_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The auto scaling configuration options for the customer managed fleet.</p>
+    /// <p>The auto scaling configuration settings for the customer managed fleet.</p>
     pub fn set_auto_scaling_configuration(mut self, input: ::std::option::Option<crate::types::CustomerManagedAutoScalingConfiguration>) -> Self {
         self.auto_scaling_configuration = input;
         self
     }
-    /// <p>The auto scaling configuration options for the customer managed fleet.</p>
+    /// <p>The auto scaling configuration settings for the customer managed fleet.</p>
     pub fn get_auto_scaling_configuration(&self) -> &::std::option::Option<crate::types::CustomerManagedAutoScalingConfiguration> {
         &self.auto_scaling_configuration
     }

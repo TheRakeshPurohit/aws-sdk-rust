@@ -26,6 +26,7 @@ impl super::Client {
     ///   - [`metadata_configuration(Option<MetadataConfiguration>)`](crate::operation::create_gateway_target::CreateGatewayTargetOutput::metadata_configuration): <p>The metadata configuration that was applied to the created gateway target.</p>
     ///   - [`private_endpoint(Option<PrivateEndpoint>)`](crate::operation::create_gateway_target::CreateGatewayTargetOutput::private_endpoint): <p>The private endpoint configuration for the gateway target.</p>
     ///   - [`private_endpoint_managed_resources(Option<Vec::<ManagedResourceDetails>>)`](crate::operation::create_gateway_target::CreateGatewayTargetOutput::private_endpoint_managed_resources): <p>The managed resources created by the gateway for private endpoint connectivity.</p>
+    ///   - [`authorization_data(Option<AuthorizationData>)`](crate::operation::create_gateway_target::CreateGatewayTargetOutput::authorization_data): <p>OAuth2 authorization data for the created gateway target. This data is returned when the target requires user authorization through an authorization code grant type.</p>
     /// - On failure, responds with [`SdkError<CreateGatewayTargetError>`](crate::operation::create_gateway_target::CreateGatewayTargetError)
     pub fn create_gateway_target(&self) -> crate::operation::create_gateway_target::builders::CreateGatewayTargetFluentBuilder {
         crate::operation::create_gateway_target::builders::CreateGatewayTargetFluentBuilder::new(self.handle.clone())

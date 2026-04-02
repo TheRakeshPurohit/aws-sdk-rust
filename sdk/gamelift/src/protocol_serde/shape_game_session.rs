@@ -143,6 +143,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ComputeName" => {
+                            builder = builder.set_compute_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "PlayerGatewayStatus" => {
                             builder = builder.set_player_gateway_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

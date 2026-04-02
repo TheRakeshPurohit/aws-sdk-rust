@@ -91,6 +91,8 @@ pub use crate::types::_private_endpoint::PrivateEndpoint;
 
 pub use crate::types::_target_status::TargetStatus;
 
+pub use crate::types::_authorization_data::AuthorizationData;
+
 pub use crate::types::_stream_delivery_resources::StreamDeliveryResources;
 
 pub use crate::types::_memory::Memory;
@@ -194,6 +196,8 @@ pub use crate::types::_self_managed_lattice_resource::SelfManagedLatticeResource
 pub use crate::types::_managed_lattice_resource::ManagedLatticeResource;
 
 pub use crate::types::_managed_resource_details::ManagedResourceDetails;
+
+pub use crate::types::_o_auth2_authorization_data::OAuth2AuthorizationData;
 
 pub use crate::types::_target_summary::TargetSummary;
 
@@ -324,6 +328,8 @@ pub use crate::types::_gateway_interception_point::GatewayInterceptionPoint;
 pub use crate::types::_s3_configuration::S3Configuration;
 
 pub use crate::types::_tool_schema::ToolSchema;
+
+pub use crate::types::_mcp_tool_schema_configuration::McpToolSchemaConfiguration;
 
 pub use crate::types::_api_gateway_tool_configuration::ApiGatewayToolConfiguration;
 
@@ -516,6 +522,8 @@ mod _api_schema_configuration;
 mod _atlassian_oauth2_provider_config_input;
 
 mod _atlassian_oauth2_provider_config_output;
+
+mod _authorization_data;
 
 mod _authorizer_configuration;
 
@@ -751,6 +759,8 @@ mod _mcp_server_target_configuration;
 
 mod _mcp_target_configuration;
 
+mod _mcp_tool_schema_configuration;
+
 mod _memory;
 
 mod _memory_status;
@@ -798,6 +808,8 @@ mod _network_configuration;
 mod _network_mode;
 
 mod _numerical_scale_definition;
+
+mod _o_auth2_authorization_data;
 
 mod _o_auth_credential_provider;
 

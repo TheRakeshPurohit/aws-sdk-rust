@@ -2061,6 +2061,15 @@ pub(crate) fn microsoft_oauth2_provider_config_output_correct_errors(
     builder
 }
 
+pub(crate) fn o_auth2_authorization_data_correct_errors(
+    mut builder: crate::types::builders::OAuth2AuthorizationDataBuilder,
+) -> crate::types::builders::OAuth2AuthorizationDataBuilder {
+    if builder.authorization_url.is_none() {
+        builder.authorization_url = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn oauth2_credential_provider_item_correct_errors(
     mut builder: crate::types::builders::Oauth2CredentialProviderItemBuilder,
 ) -> crate::types::builders::Oauth2CredentialProviderItemBuilder {

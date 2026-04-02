@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Region {
-    /// <p>Abbreviated code for a the state, province or region of the country.</p>
+    /// <p>Abbreviated code for a the state, province or region of the country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>BC</code>.</p>
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>Name for a the state, province, or region of the country.</p>
@@ -13,7 +13,7 @@ pub struct Region {
     pub name: ::std::option::Option<::std::string::String>,
 }
 impl Region {
-    /// <p>Abbreviated code for a the state, province or region of the country.</p>
+    /// <p>Abbreviated code for a the state, province or region of the country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>BC</code>.</p>
     pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
@@ -47,19 +47,19 @@ pub struct RegionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl RegionBuilder {
-    /// <p>Abbreviated code for a the state, province or region of the country.</p>
+    /// <p>Abbreviated code for a the state, province or region of the country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>BC</code>.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Abbreviated code for a the state, province or region of the country.</p>
+    /// <p>Abbreviated code for a the state, province or region of the country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>BC</code>.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
-    /// <p>Abbreviated code for a the state, province or region of the country.</p>
+    /// <p>Abbreviated code for a the state, province or region of the country. Not available in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>Example: <code>BC</code>.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.code

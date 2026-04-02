@@ -190,6 +190,9 @@ pub mod disassociate_fleet;
 /// Types for the `DisassociateSoftwareFromImageBuilder` operation.
 pub mod disassociate_software_from_image_builder;
 
+/// Types for the `DrainSessionInstance` operation.
+pub mod drain_session_instance;
+
 /// Types for the `EnableUser` operation.
 pub mod enable_user;
 

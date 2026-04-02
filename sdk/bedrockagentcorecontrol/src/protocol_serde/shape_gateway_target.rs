@@ -99,6 +99,10 @@ where
                                 )?,
                             );
                         }
+                        "authorizationData" => {
+                            builder = builder
+                                .set_authorization_data(crate::protocol_serde::shape_authorization_data::de_authorization_data(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

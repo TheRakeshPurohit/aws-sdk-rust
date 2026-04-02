@@ -23,6 +23,7 @@ impl crate::operation::update_gateway_target::builders::UpdateGatewayTargetInput
 /// Fluent builder constructing a request to `UpdateGatewayTarget`.
 ///
 /// <p>Updates an existing gateway target.</p>
+/// <p>You cannot update a target that is in a pending authorization state (<code>CREATE_PENDING_AUTH</code>, <code>UPDATE_PENDING_AUTH</code>, or <code>SYNCHRONIZE_PENDING_AUTH</code>). Wait for the authorization to complete or fail before updating the target.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGatewayTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

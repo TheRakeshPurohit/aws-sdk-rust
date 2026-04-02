@@ -95,6 +95,12 @@ pub use crate::types::_posix_user::PosixUserBuilder;
 
 pub use crate::types::_windows_user::WindowsUserBuilder;
 
+pub use crate::types::_priority_fifo_scheduling_configuration::PriorityFifoSchedulingConfigurationBuilder;
+
+pub use crate::types::_priority_balanced_scheduling_configuration::PriorityBalancedSchedulingConfigurationBuilder;
+
+pub use crate::types::_weighted_balanced_scheduling_configuration::WeightedBalancedSchedulingConfigurationBuilder;
+
 pub use crate::types::_queue_environment_summary::QueueEnvironmentSummaryBuilder;
 
 pub use crate::types::_queue_member::QueueMemberBuilder;
@@ -210,6 +216,10 @@ pub use crate::types::_accelerator_total_memory_mib_range::AcceleratorTotalMemor
 pub use crate::types::_ec2_ebs_volume::Ec2EbsVolumeBuilder;
 
 pub use crate::types::_accelerator_capabilities::AcceleratorCapabilitiesBuilder;
+
+pub use crate::types::_scheduling_max_priority_override_always_schedule_first::SchedulingMaxPriorityOverrideAlwaysScheduleFirstBuilder;
+
+pub use crate::types::_scheduling_min_priority_override_always_schedule_last::SchedulingMinPriorityOverrideAlwaysScheduleLastBuilder;
 
 pub use crate::types::_task_run_manifest_properties_request::TaskRunManifestPropertiesRequestBuilder;
 

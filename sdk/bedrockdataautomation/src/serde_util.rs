@@ -168,11 +168,89 @@ pub(crate) fn blueprint_optimization_output_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn data_automation_library_correct_errors(
+    mut builder: crate::types::builders::DataAutomationLibraryBuilder,
+) -> crate::types::builders::DataAutomationLibraryBuilder {
+    if builder.library_arn.is_none() {
+        builder.library_arn = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.library_name.is_none() {
+        builder.library_name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DataAutomationLibraryStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn data_automation_library_ingestion_job_correct_errors(
+    mut builder: crate::types::builders::DataAutomationLibraryIngestionJobBuilder,
+) -> crate::types::builders::DataAutomationLibraryIngestionJobBuilder {
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.entity_type.is_none() {
+        builder.entity_type = "no value was set".parse::<crate::types::EntityType>().ok()
+    }
+    if builder.operation_type.is_none() {
+        builder.operation_type = "no value was set".parse::<crate::types::LibraryIngestionJobOperationType>().ok()
+    }
+    if builder.job_status.is_none() {
+        builder.job_status = "no value was set".parse::<crate::types::LibraryIngestionJobStatus>().ok()
+    }
+    if builder.output_configuration.is_none() {
+        builder.output_configuration = {
+            let builder = crate::types::builders::OutputConfigurationBuilder::default();
+            crate::serde_util::output_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn blueprint_summary_correct_errors(
     mut builder: crate::types::builders::BlueprintSummaryBuilder,
 ) -> crate::types::builders::BlueprintSummaryBuilder {
     if builder.blueprint_arn.is_none() {
         builder.blueprint_arn = Some(Default::default())
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn data_automation_library_ingestion_job_summary_correct_errors(
+    mut builder: crate::types::builders::DataAutomationLibraryIngestionJobSummaryBuilder,
+) -> crate::types::builders::DataAutomationLibraryIngestionJobSummaryBuilder {
+    if builder.job_arn.is_none() {
+        builder.job_arn = Some(Default::default())
+    }
+    if builder.job_status.is_none() {
+        builder.job_status = "no value was set".parse::<crate::types::LibraryIngestionJobStatus>().ok()
+    }
+    if builder.entity_type.is_none() {
+        builder.entity_type = "no value was set".parse::<crate::types::EntityType>().ok()
+    }
+    if builder.operation_type.is_none() {
+        builder.operation_type = "no value was set".parse::<crate::types::LibraryIngestionJobOperationType>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn data_automation_library_summary_correct_errors(
+    mut builder: crate::types::builders::DataAutomationLibrarySummaryBuilder,
+) -> crate::types::builders::DataAutomationLibrarySummaryBuilder {
+    if builder.library_arn.is_none() {
+        builder.library_arn = Some(Default::default())
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -188,6 +266,15 @@ pub(crate) fn data_automation_project_summary_correct_errors(
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn output_configuration_correct_errors(
+    mut builder: crate::types::builders::OutputConfigurationBuilder,
+) -> crate::types::builders::OutputConfigurationBuilder {
+    if builder.s3_uri.is_none() {
+        builder.s3_uri = Some(Default::default())
     }
     builder
 }
@@ -239,6 +326,15 @@ pub(crate) fn blueprint_optimization_sample_correct_errors(
     builder
 }
 
+pub(crate) fn entity_type_info_correct_errors(
+    mut builder: crate::types::builders::EntityTypeInfoBuilder,
+) -> crate::types::builders::EntityTypeInfoBuilder {
+    if builder.entity_type.is_none() {
+        builder.entity_type = "no value was set".parse::<crate::types::EntityType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn audio_standard_extraction_correct_errors(
     mut builder: crate::types::builders::AudioStandardExtractionBuilder,
 ) -> crate::types::builders::AudioStandardExtractionBuilder {
@@ -265,6 +361,15 @@ pub(crate) fn blueprint_item_correct_errors(
 ) -> crate::types::builders::BlueprintItemBuilder {
     if builder.blueprint_arn.is_none() {
         builder.blueprint_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_automation_library_item_correct_errors(
+    mut builder: crate::types::builders::DataAutomationLibraryItemBuilder,
+) -> crate::types::builders::DataAutomationLibraryItemBuilder {
+    if builder.library_arn.is_none() {
+        builder.library_arn = Some(Default::default())
     }
     builder
 }
@@ -339,6 +444,13 @@ pub(crate) fn image_standard_generative_field_correct_errors(
 ) -> crate::types::builders::ImageStandardGenerativeFieldBuilder {
     if builder.state.is_none() {
         builder.state = "no value was set".parse::<crate::types::State>().ok()
+    }
+    builder
+}
+
+pub(crate) fn phrase_correct_errors(mut builder: crate::types::builders::PhraseBuilder) -> crate::types::builders::PhraseBuilder {
+    if builder.text.is_none() {
+        builder.text = Some(Default::default())
     }
     builder
 }

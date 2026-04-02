@@ -63,5 +63,11 @@ pub fn ser_update_queue_input_input(
     if let Some(var_20) = &input.role_arn {
         object.key("roleArn").string(var_20.as_str());
     }
+    if let Some(var_21) = &input.scheduling_configuration {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("schedulingConfiguration").start_object();
+        crate::protocol_serde::shape_scheduling_configuration::ser_scheduling_configuration(&mut object_22, var_21)?;
+        object_22.finish();
+    }
     Ok(())
 }

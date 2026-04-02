@@ -14,6 +14,8 @@ pub struct ListDataAutomationProjectsInput {
     pub blueprint_filter: ::std::option::Option<crate::types::BlueprintFilter>,
     /// Resource Owner
     pub resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
+    /// Data Automation Library Filter
+    pub library_filter: ::std::option::Option<crate::types::DataAutomationLibraryFilter>,
 }
 impl ListDataAutomationProjectsInput {
     /// Max Results
@@ -36,6 +38,10 @@ impl ListDataAutomationProjectsInput {
     pub fn resource_owner(&self) -> ::std::option::Option<&crate::types::ResourceOwner> {
         self.resource_owner.as_ref()
     }
+    /// Data Automation Library Filter
+    pub fn library_filter(&self) -> ::std::option::Option<&crate::types::DataAutomationLibraryFilter> {
+        self.library_filter.as_ref()
+    }
 }
 impl ListDataAutomationProjectsInput {
     /// Creates a new builder-style object to manufacture [`ListDataAutomationProjectsInput`](crate::operation::list_data_automation_projects::ListDataAutomationProjectsInput).
@@ -53,6 +59,7 @@ pub struct ListDataAutomationProjectsInputBuilder {
     pub(crate) project_stage_filter: ::std::option::Option<crate::types::DataAutomationProjectStageFilter>,
     pub(crate) blueprint_filter: ::std::option::Option<crate::types::BlueprintFilter>,
     pub(crate) resource_owner: ::std::option::Option<crate::types::ResourceOwner>,
+    pub(crate) library_filter: ::std::option::Option<crate::types::DataAutomationLibraryFilter>,
 }
 impl ListDataAutomationProjectsInputBuilder {
     /// Max Results
@@ -125,6 +132,20 @@ impl ListDataAutomationProjectsInputBuilder {
     pub fn get_resource_owner(&self) -> &::std::option::Option<crate::types::ResourceOwner> {
         &self.resource_owner
     }
+    /// Data Automation Library Filter
+    pub fn library_filter(mut self, input: crate::types::DataAutomationLibraryFilter) -> Self {
+        self.library_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// Data Automation Library Filter
+    pub fn set_library_filter(mut self, input: ::std::option::Option<crate::types::DataAutomationLibraryFilter>) -> Self {
+        self.library_filter = input;
+        self
+    }
+    /// Data Automation Library Filter
+    pub fn get_library_filter(&self) -> &::std::option::Option<crate::types::DataAutomationLibraryFilter> {
+        &self.library_filter
+    }
     /// Consumes the builder and constructs a [`ListDataAutomationProjectsInput`](crate::operation::list_data_automation_projects::ListDataAutomationProjectsInput).
     pub fn build(
         self,
@@ -138,6 +159,7 @@ impl ListDataAutomationProjectsInputBuilder {
             project_stage_filter: self.project_stage_filter,
             blueprint_filter: self.blueprint_filter,
             resource_owner: self.resource_owner,
+            library_filter: self.library_filter,
         })
     }
 }

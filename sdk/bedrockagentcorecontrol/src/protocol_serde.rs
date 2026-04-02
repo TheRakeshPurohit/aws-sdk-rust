@@ -327,6 +327,8 @@ pub(crate) mod shape_agent_runtimes;
 
 pub(crate) mod shape_api_key_credential_providers;
 
+pub(crate) mod shape_authorization_data;
+
 pub(crate) mod shape_authorizer_configuration;
 
 pub(crate) mod shape_browser_enterprise_policies;
@@ -561,6 +563,8 @@ pub(crate) mod shape_microsoft_oauth2_provider_config_output;
 
 pub(crate) mod shape_modify_memory_strategy_input;
 
+pub(crate) mod shape_o_auth2_authorization_data;
+
 pub(crate) mod shape_oauth2_credential_provider_item;
 
 pub(crate) mod shape_online_evaluation_config_summary;
@@ -700,6 +704,8 @@ pub(crate) mod shape_content_configuration;
 pub(crate) mod shape_episodic_override_configuration_input;
 
 pub(crate) mod shape_finding;
+
+pub(crate) mod shape_mcp_tool_schema_configuration;
 
 pub(crate) mod shape_modify_consolidation_configuration;
 

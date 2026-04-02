@@ -101,6 +101,8 @@ pub use crate::types::_managed_lattice_resource::ManagedLatticeResourceBuilder;
 
 pub use crate::types::_managed_resource_details::ManagedResourceDetailsBuilder;
 
+pub use crate::types::_o_auth2_authorization_data::OAuth2AuthorizationDataBuilder;
+
 pub use crate::types::_target_summary::TargetSummaryBuilder;
 
 pub use crate::types::_gateway_target::GatewayTargetBuilder;

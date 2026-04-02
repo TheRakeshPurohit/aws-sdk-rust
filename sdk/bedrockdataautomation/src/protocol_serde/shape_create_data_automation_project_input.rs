@@ -12,47 +12,53 @@ pub fn ser_create_data_automation_project_input_input(
         crate::protocol_serde::shape_custom_output_configuration::ser_custom_output_configuration(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.encryption_configuration {
+    if let Some(var_4) = &input.data_automation_library_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("encryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_5, var_4)?;
+        let mut object_5 = object.key("dataAutomationLibraryConfiguration").start_object();
+        crate::protocol_serde::shape_data_automation_library_configuration::ser_data_automation_library_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.override_configuration {
+    if let Some(var_6) = &input.encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("overrideConfiguration").start_object();
-        crate::protocol_serde::shape_override_configuration::ser_override_configuration(&mut object_7, var_6)?;
+        let mut object_7 = object.key("encryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.project_description {
-        object.key("projectDescription").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.project_name {
-        object.key("projectName").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.project_stage {
-        object.key("projectStage").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.project_type {
-        object.key("projectType").string(var_11.as_str());
-    }
-    if let Some(var_12) = &input.standard_output_configuration {
+    if let Some(var_8) = &input.override_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("standardOutputConfiguration").start_object();
-        crate::protocol_serde::shape_standard_output_configuration::ser_standard_output_configuration(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_9 = object.key("overrideConfiguration").start_object();
+        crate::protocol_serde::shape_override_configuration::ser_override_configuration(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_14) = &input.tags {
-        let mut array_15 = object.key("tags").start_array();
-        for item_16 in var_14 {
+    if let Some(var_10) = &input.project_description {
+        object.key("projectDescription").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.project_name {
+        object.key("projectName").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.project_stage {
+        object.key("projectStage").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.project_type {
+        object.key("projectType").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.standard_output_configuration {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("standardOutputConfiguration").start_object();
+        crate::protocol_serde::shape_standard_output_configuration::ser_standard_output_configuration(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.tags {
+        let mut array_17 = object.key("tags").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
-                object_17.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_15.finish();
+        array_17.finish();
     }
     Ok(())
 }
