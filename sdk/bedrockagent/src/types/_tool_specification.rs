@@ -10,6 +10,8 @@ pub struct ToolSpecification {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The input schema for the tool.</p>
     pub input_schema: ::std::option::Option<crate::types::ToolInputSchema>,
+    /// Whether to enforce strict JSON schema adherence for the tool input
+    pub strict: ::std::option::Option<bool>,
 }
 impl ToolSpecification {
     /// <p>The name of the tool.</p>
@@ -24,6 +26,10 @@ impl ToolSpecification {
     /// <p>The input schema for the tool.</p>
     pub fn input_schema(&self) -> ::std::option::Option<&crate::types::ToolInputSchema> {
         self.input_schema.as_ref()
+    }
+    /// Whether to enforce strict JSON schema adherence for the tool input
+    pub fn strict(&self) -> ::std::option::Option<bool> {
+        self.strict
     }
 }
 impl ToolSpecification {
@@ -40,6 +46,7 @@ pub struct ToolSpecificationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) input_schema: ::std::option::Option<crate::types::ToolInputSchema>,
+    pub(crate) strict: ::std::option::Option<bool>,
 }
 impl ToolSpecificationBuilder {
     /// <p>The name of the tool.</p>
@@ -86,6 +93,20 @@ impl ToolSpecificationBuilder {
     pub fn get_input_schema(&self) -> &::std::option::Option<crate::types::ToolInputSchema> {
         &self.input_schema
     }
+    /// Whether to enforce strict JSON schema adherence for the tool input
+    pub fn strict(mut self, input: bool) -> Self {
+        self.strict = ::std::option::Option::Some(input);
+        self
+    }
+    /// Whether to enforce strict JSON schema adherence for the tool input
+    pub fn set_strict(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.strict = input;
+        self
+    }
+    /// Whether to enforce strict JSON schema adherence for the tool input
+    pub fn get_strict(&self) -> &::std::option::Option<bool> {
+        &self.strict
+    }
     /// Consumes the builder and constructs a [`ToolSpecification`](crate::types::ToolSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ToolSpecificationBuilder::name)
@@ -99,6 +120,7 @@ impl ToolSpecificationBuilder {
             })?,
             description: self.description,
             input_schema: self.input_schema,
+            strict: self.strict,
         })
     }
 }

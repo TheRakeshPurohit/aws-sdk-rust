@@ -57,5 +57,17 @@ pub fn ser_put_alarm_input_input(
     if let Some(var_15) = &input.notification_enabled {
         object.key("notificationEnabled").boolean(*var_15);
     }
+    if let Some(var_16) = &input.tags {
+        let mut array_17 = object.key("tags").start_array();
+        for item_18 in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_19, item_18)?;
+                object_19.finish();
+            }
+        }
+        array_17.finish();
+    }
     Ok(())
 }

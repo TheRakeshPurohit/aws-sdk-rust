@@ -15,6 +15,9 @@ pub fn ser_tool_specification(
         crate::protocol_serde::shape_tool_input_schema::ser_tool_input_schema(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.strict {
+        object.key("strict").boolean(*var_4);
+    }
     Ok(())
 }
 
@@ -50,6 +53,9 @@ where
                         }
                         "inputSchema" => {
                             builder = builder.set_input_schema(crate::protocol_serde::shape_tool_input_schema::de_tool_input_schema(tokens, _value)?);
+                        }
+                        "strict" => {
+                            builder = builder.set_strict(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

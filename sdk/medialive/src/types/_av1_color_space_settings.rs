@@ -12,6 +12,8 @@ pub struct Av1ColorSpaceSettings {
     pub rec601_settings: ::std::option::Option<crate::types::Rec601Settings>,
     /// Rec709 Settings
     pub rec709_settings: ::std::option::Option<crate::types::Rec709Settings>,
+    /// Hlg2020 Settings
+    pub hlg2020_settings: ::std::option::Option<crate::types::Hlg2020Settings>,
 }
 impl Av1ColorSpaceSettings {
     /// Passthrough applies no color space conversion to the output
@@ -30,6 +32,10 @@ impl Av1ColorSpaceSettings {
     pub fn rec709_settings(&self) -> ::std::option::Option<&crate::types::Rec709Settings> {
         self.rec709_settings.as_ref()
     }
+    /// Hlg2020 Settings
+    pub fn hlg2020_settings(&self) -> ::std::option::Option<&crate::types::Hlg2020Settings> {
+        self.hlg2020_settings.as_ref()
+    }
 }
 impl Av1ColorSpaceSettings {
     /// Creates a new builder-style object to manufacture [`Av1ColorSpaceSettings`](crate::types::Av1ColorSpaceSettings).
@@ -46,6 +52,7 @@ pub struct Av1ColorSpaceSettingsBuilder {
     pub(crate) hdr10_settings: ::std::option::Option<crate::types::Hdr10Settings>,
     pub(crate) rec601_settings: ::std::option::Option<crate::types::Rec601Settings>,
     pub(crate) rec709_settings: ::std::option::Option<crate::types::Rec709Settings>,
+    pub(crate) hlg2020_settings: ::std::option::Option<crate::types::Hlg2020Settings>,
 }
 impl Av1ColorSpaceSettingsBuilder {
     /// Passthrough applies no color space conversion to the output
@@ -104,6 +111,20 @@ impl Av1ColorSpaceSettingsBuilder {
     pub fn get_rec709_settings(&self) -> &::std::option::Option<crate::types::Rec709Settings> {
         &self.rec709_settings
     }
+    /// Hlg2020 Settings
+    pub fn hlg2020_settings(mut self, input: crate::types::Hlg2020Settings) -> Self {
+        self.hlg2020_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Hlg2020 Settings
+    pub fn set_hlg2020_settings(mut self, input: ::std::option::Option<crate::types::Hlg2020Settings>) -> Self {
+        self.hlg2020_settings = input;
+        self
+    }
+    /// Hlg2020 Settings
+    pub fn get_hlg2020_settings(&self) -> &::std::option::Option<crate::types::Hlg2020Settings> {
+        &self.hlg2020_settings
+    }
     /// Consumes the builder and constructs a [`Av1ColorSpaceSettings`](crate::types::Av1ColorSpaceSettings).
     pub fn build(self) -> crate::types::Av1ColorSpaceSettings {
         crate::types::Av1ColorSpaceSettings {
@@ -111,6 +132,7 @@ impl Av1ColorSpaceSettingsBuilder {
             hdr10_settings: self.hdr10_settings,
             rec601_settings: self.rec601_settings,
             rec709_settings: self.rec709_settings,
+            hlg2020_settings: self.hlg2020_settings,
         }
     }
 }

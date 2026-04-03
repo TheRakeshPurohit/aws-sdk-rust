@@ -100,6 +100,9 @@ pub mod delete_prompt_router;
 /// Types for the `DeleteProvisionedModelThroughput` operation.
 pub mod delete_provisioned_model_throughput;
 
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
+
 /// Types for the `DeregisterMarketplaceModelEndpoint` operation.
 pub mod deregister_marketplace_model_endpoint;
 
@@ -175,6 +178,9 @@ pub mod get_prompt_router;
 /// Types for the `GetProvisionedModelThroughput` operation.
 pub mod get_provisioned_model_throughput;
 
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
+
 /// Types for the `GetUseCaseForModelAccess` operation.
 pub mod get_use_case_for_model_access;
 
@@ -246,6 +252,9 @@ pub mod put_enforced_guardrail_configuration;
 
 /// Types for the `PutModelInvocationLoggingConfiguration` operation.
 pub mod put_model_invocation_logging_configuration;
+
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
 
 /// Types for the `PutUseCaseForModelAccess` operation.
 pub mod put_use_case_for_model_access;

@@ -229,6 +229,8 @@ mod delete_prompt_router;
 
 mod delete_provisioned_model_throughput;
 
+mod delete_resource_policy;
+
 mod deregister_marketplace_model_endpoint;
 
 mod export_automated_reasoning_policy_version;
@@ -279,6 +281,8 @@ mod get_prompt_router;
 
 mod get_provisioned_model_throughput;
 
+mod get_resource_policy;
+
 mod get_use_case_for_model_access;
 
 mod list_automated_reasoning_policies;
@@ -326,6 +330,8 @@ mod list_tags_for_resource;
 mod put_enforced_guardrail_configuration;
 
 mod put_model_invocation_logging_configuration;
+
+mod put_resource_policy;
 
 mod put_use_case_for_model_access;
 

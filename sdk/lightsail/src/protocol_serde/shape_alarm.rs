@@ -138,6 +138,9 @@ where
                         "notificationEnabled" => {
                             builder = builder.set_notification_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "tags" => {
+                            builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

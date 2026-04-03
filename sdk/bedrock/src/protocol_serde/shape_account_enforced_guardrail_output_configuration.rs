@@ -43,6 +43,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "selectiveContentGuarding" => {
+                            builder = builder.set_selective_content_guarding(
+                                crate::protocol_serde::shape_selective_content_guarding::de_selective_content_guarding(tokens, _value)?,
+                            );
+                        }
                         "guardrailVersion" => {
                             builder = builder.set_guardrail_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

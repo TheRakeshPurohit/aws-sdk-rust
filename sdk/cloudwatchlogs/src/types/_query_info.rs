@@ -16,6 +16,12 @@ pub struct QueryInfo {
     pub create_time: ::std::option::Option<i64>,
     /// <p>The name of the log group scanned by this query.</p>
     pub log_group_name: ::std::option::Option<::std::string::String>,
+    /// <p>The duration in milliseconds that the query took to execute.</p>
+    pub query_duration: ::std::option::Option<i64>,
+    /// <p>The total number of bytes scanned by the query. This indicates the cost associated with the query.</p>
+    pub bytes_scanned: ::std::option::Option<f64>,
+    /// <p>The ARN of the user who ran the query.</p>
+    pub user_identity: ::std::option::Option<::std::string::String>,
 }
 impl QueryInfo {
     /// <p>The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
@@ -42,6 +48,18 @@ impl QueryInfo {
     pub fn log_group_name(&self) -> ::std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
+    /// <p>The duration in milliseconds that the query took to execute.</p>
+    pub fn query_duration(&self) -> ::std::option::Option<i64> {
+        self.query_duration
+    }
+    /// <p>The total number of bytes scanned by the query. This indicates the cost associated with the query.</p>
+    pub fn bytes_scanned(&self) -> ::std::option::Option<f64> {
+        self.bytes_scanned
+    }
+    /// <p>The ARN of the user who ran the query.</p>
+    pub fn user_identity(&self) -> ::std::option::Option<&str> {
+        self.user_identity.as_deref()
+    }
 }
 impl QueryInfo {
     /// Creates a new builder-style object to manufacture [`QueryInfo`](crate::types::QueryInfo).
@@ -60,6 +78,9 @@ pub struct QueryInfoBuilder {
     pub(crate) status: ::std::option::Option<crate::types::QueryStatus>,
     pub(crate) create_time: ::std::option::Option<i64>,
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) query_duration: ::std::option::Option<i64>,
+    pub(crate) bytes_scanned: ::std::option::Option<f64>,
+    pub(crate) user_identity: ::std::option::Option<::std::string::String>,
 }
 impl QueryInfoBuilder {
     /// <p>The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported query languages</a>.</p>
@@ -146,6 +167,48 @@ impl QueryInfoBuilder {
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_group_name
     }
+    /// <p>The duration in milliseconds that the query took to execute.</p>
+    pub fn query_duration(mut self, input: i64) -> Self {
+        self.query_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The duration in milliseconds that the query took to execute.</p>
+    pub fn set_query_duration(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.query_duration = input;
+        self
+    }
+    /// <p>The duration in milliseconds that the query took to execute.</p>
+    pub fn get_query_duration(&self) -> &::std::option::Option<i64> {
+        &self.query_duration
+    }
+    /// <p>The total number of bytes scanned by the query. This indicates the cost associated with the query.</p>
+    pub fn bytes_scanned(mut self, input: f64) -> Self {
+        self.bytes_scanned = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of bytes scanned by the query. This indicates the cost associated with the query.</p>
+    pub fn set_bytes_scanned(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.bytes_scanned = input;
+        self
+    }
+    /// <p>The total number of bytes scanned by the query. This indicates the cost associated with the query.</p>
+    pub fn get_bytes_scanned(&self) -> &::std::option::Option<f64> {
+        &self.bytes_scanned
+    }
+    /// <p>The ARN of the user who ran the query.</p>
+    pub fn user_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_identity = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the user who ran the query.</p>
+    pub fn set_user_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_identity = input;
+        self
+    }
+    /// <p>The ARN of the user who ran the query.</p>
+    pub fn get_user_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_identity
+    }
     /// Consumes the builder and constructs a [`QueryInfo`](crate::types::QueryInfo).
     pub fn build(self) -> crate::types::QueryInfo {
         crate::types::QueryInfo {
@@ -155,6 +218,9 @@ impl QueryInfoBuilder {
             status: self.status,
             create_time: self.create_time,
             log_group_name: self.log_group_name,
+            query_duration: self.query_duration,
+            bytes_scanned: self.bytes_scanned,
+            user_identity: self.user_identity,
         }
     }
 }

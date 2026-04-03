@@ -209,7 +209,7 @@ pub use crate::types::_custom_model_summary::CustomModelSummary;
 
 pub use crate::types::_account_enforced_guardrail_output_configuration::AccountEnforcedGuardrailOutputConfiguration;
 
-pub use crate::types::_input_tags::InputTags;
+pub use crate::types::_selective_content_guarding::SelectiveContentGuarding;
 
 pub use crate::types::_model_enforcement::ModelEnforcement;
 
@@ -323,7 +323,11 @@ pub use crate::types::_grader_config::GraderConfig;
 
 pub use crate::types::_rft_hyper_parameters::RftHyperParameters;
 
+pub use crate::types::_input_tags::InputTags;
+
 pub use crate::types::_configuration_owner::ConfigurationOwner;
+
+pub use crate::types::_selective_guarding_mode::SelectiveGuardingMode;
 
 pub use crate::types::_evaluator_model_config::EvaluatorModelConfig;
 
@@ -1218,6 +1222,10 @@ mod _s3_object_doc;
 mod _sage_maker_endpoint;
 
 mod _search_type;
+
+mod _selective_content_guarding;
+
+mod _selective_guarding_mode;
 
 mod _sort_by_provisioned_models;
 

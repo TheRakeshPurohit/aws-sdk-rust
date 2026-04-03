@@ -57,6 +57,25 @@ where
                                     .transpose()?,
                             );
                         }
+                        "queryDuration" => {
+                            builder = builder.set_query_duration(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "bytesScanned" => {
+                            builder = builder.set_bytes_scanned(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "userIdentity" => {
+                            builder = builder.set_user_identity(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

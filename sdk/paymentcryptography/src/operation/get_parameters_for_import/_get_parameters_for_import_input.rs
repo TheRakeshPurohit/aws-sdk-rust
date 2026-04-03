@@ -9,6 +9,8 @@ pub struct GetParametersForImportInput {
     /// <p>The wrapping key algorithm to generate a wrapping key certificate. This certificate wraps the key under import.</p>
     /// <p>At this time, <code>RSA_2048</code> is the allowed algorithm for TR-34 WrappedKeyBlock import. Additionally, <code>RSA_2048</code>, <code>RSA_3072</code>, <code>RSA_4096</code> are the allowed algorithms for RSA WrappedKeyCryptogram import.</p>
     pub wrapping_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
+    /// <p>Specifies whether to reuse the existing import token and wrapping key certificate. If set to <code>true</code> and a valid import token exists for the same key material type and wrapping key algorithm with at least 7 days of remaining validity, the existing token and wrapping key certificate are returned. Otherwise, a new import token and wrapping key certificate are generated. The default value is <code>false</code>, which generates a new import token and wrapping key certificate on every call.</p>
+    pub reuse_last_generated_token: ::std::option::Option<bool>,
 }
 impl GetParametersForImportInput {
     /// <p>The method to use for key material import. Import token is only required for TR-34 WrappedKeyBlock (<code>TR34_KEY_BLOCK</code>) and RSA WrappedKeyCryptogram (<code>KEY_CRYPTOGRAM</code>).</p>
@@ -20,6 +22,10 @@ impl GetParametersForImportInput {
     /// <p>At this time, <code>RSA_2048</code> is the allowed algorithm for TR-34 WrappedKeyBlock import. Additionally, <code>RSA_2048</code>, <code>RSA_3072</code>, <code>RSA_4096</code> are the allowed algorithms for RSA WrappedKeyCryptogram import.</p>
     pub fn wrapping_key_algorithm(&self) -> ::std::option::Option<&crate::types::KeyAlgorithm> {
         self.wrapping_key_algorithm.as_ref()
+    }
+    /// <p>Specifies whether to reuse the existing import token and wrapping key certificate. If set to <code>true</code> and a valid import token exists for the same key material type and wrapping key algorithm with at least 7 days of remaining validity, the existing token and wrapping key certificate are returned. Otherwise, a new import token and wrapping key certificate are generated. The default value is <code>false</code>, which generates a new import token and wrapping key certificate on every call.</p>
+    pub fn reuse_last_generated_token(&self) -> ::std::option::Option<bool> {
+        self.reuse_last_generated_token
     }
 }
 impl GetParametersForImportInput {
@@ -35,6 +41,7 @@ impl GetParametersForImportInput {
 pub struct GetParametersForImportInputBuilder {
     pub(crate) key_material_type: ::std::option::Option<crate::types::KeyMaterialType>,
     pub(crate) wrapping_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
+    pub(crate) reuse_last_generated_token: ::std::option::Option<bool>,
 }
 impl GetParametersForImportInputBuilder {
     /// <p>The method to use for key material import. Import token is only required for TR-34 WrappedKeyBlock (<code>TR34_KEY_BLOCK</code>) and RSA WrappedKeyCryptogram (<code>KEY_CRYPTOGRAM</code>).</p>
@@ -73,6 +80,20 @@ impl GetParametersForImportInputBuilder {
     pub fn get_wrapping_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
         &self.wrapping_key_algorithm
     }
+    /// <p>Specifies whether to reuse the existing import token and wrapping key certificate. If set to <code>true</code> and a valid import token exists for the same key material type and wrapping key algorithm with at least 7 days of remaining validity, the existing token and wrapping key certificate are returned. Otherwise, a new import token and wrapping key certificate are generated. The default value is <code>false</code>, which generates a new import token and wrapping key certificate on every call.</p>
+    pub fn reuse_last_generated_token(mut self, input: bool) -> Self {
+        self.reuse_last_generated_token = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to reuse the existing import token and wrapping key certificate. If set to <code>true</code> and a valid import token exists for the same key material type and wrapping key algorithm with at least 7 days of remaining validity, the existing token and wrapping key certificate are returned. Otherwise, a new import token and wrapping key certificate are generated. The default value is <code>false</code>, which generates a new import token and wrapping key certificate on every call.</p>
+    pub fn set_reuse_last_generated_token(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.reuse_last_generated_token = input;
+        self
+    }
+    /// <p>Specifies whether to reuse the existing import token and wrapping key certificate. If set to <code>true</code> and a valid import token exists for the same key material type and wrapping key algorithm with at least 7 days of remaining validity, the existing token and wrapping key certificate are returned. Otherwise, a new import token and wrapping key certificate are generated. The default value is <code>false</code>, which generates a new import token and wrapping key certificate on every call.</p>
+    pub fn get_reuse_last_generated_token(&self) -> &::std::option::Option<bool> {
+        &self.reuse_last_generated_token
+    }
     /// Consumes the builder and constructs a [`GetParametersForImportInput`](crate::operation::get_parameters_for_import::GetParametersForImportInput).
     pub fn build(
         self,
@@ -83,6 +104,7 @@ impl GetParametersForImportInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_parameters_for_import::GetParametersForImportInput {
             key_material_type: self.key_material_type,
             wrapping_key_algorithm: self.wrapping_key_algorithm,
+            reuse_last_generated_token: self.reuse_last_generated_token,
         })
     }
 }

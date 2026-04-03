@@ -9,5 +9,8 @@ pub fn ser_get_parameters_for_export_input_input(
     if let Some(var_2) = &input.signing_key_algorithm {
         object.key("SigningKeyAlgorithm").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.reuse_last_generated_token {
+        object.key("ReuseLastGeneratedToken").boolean(*var_3);
+    }
     Ok(())
 }

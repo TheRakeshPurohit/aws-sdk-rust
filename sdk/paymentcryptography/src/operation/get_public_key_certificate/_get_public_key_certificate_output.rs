@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPublicKeyCertificateOutput {
-    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate expires in 90 days.</p>
+    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate is valid for 90 days from the time it is issued. The service returns a cached certificate if one exists with at least 30 days of remaining validity. Otherwise, a new 90-day certificate is issued.</p>
     pub key_certificate: ::std::string::String,
     /// <p>The root certificate authority (CA) that signed the public key certificate in PEM format (base64 encoded) of the asymmetric key pair.</p>
     pub key_certificate_chain: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetPublicKeyCertificateOutput {
-    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate expires in 90 days.</p>
+    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate is valid for 90 days from the time it is issued. The service returns a cached certificate if one exists with at least 30 days of remaining validity. Otherwise, a new 90-day certificate is issued.</p>
     pub fn key_certificate(&self) -> &str {
         use std::ops::Deref;
         self.key_certificate.deref()
@@ -42,18 +42,18 @@ pub struct GetPublicKeyCertificateOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetPublicKeyCertificateOutputBuilder {
-    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate expires in 90 days.</p>
+    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate is valid for 90 days from the time it is issued. The service returns a cached certificate if one exists with at least 30 days of remaining validity. Otherwise, a new 90-day certificate is issued.</p>
     /// This field is required.
     pub fn key_certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key_certificate = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate expires in 90 days.</p>
+    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate is valid for 90 days from the time it is issued. The service returns a cached certificate if one exists with at least 30 days of remaining validity. Otherwise, a new 90-day certificate is issued.</p>
     pub fn set_key_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_certificate = input;
         self
     }
-    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate expires in 90 days.</p>
+    /// <p>The public key component of the asymmetric key pair in a certificate PEM format (base64 encoded). It is signed by the root certificate authority (CA). The certificate is valid for 90 days from the time it is issued. The service returns a cached certificate if one exists with at least 30 days of remaining validity. Otherwise, a new 90-day certificate is issued.</p>
     pub fn get_key_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_certificate
     }

@@ -9,14 +9,17 @@ pub fn ser_account_enforced_guardrail_inference_input_configuration(
     {
         object.key("guardrailVersion").string(input.guardrail_version.as_str());
     }
-    {
-        object.key("inputTags").string(input.input_tags.as_str());
-    }
-    if let Some(var_1) = &input.model_enforcement {
+    if let Some(var_1) = &input.selective_content_guarding {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("modelEnforcement").start_object();
-        crate::protocol_serde::shape_model_enforcement::ser_model_enforcement(&mut object_2, var_1)?;
+        let mut object_2 = object.key("selectiveContentGuarding").start_object();
+        crate::protocol_serde::shape_selective_content_guarding::ser_selective_content_guarding(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.model_enforcement {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("modelEnforcement").start_object();
+        crate::protocol_serde::shape_model_enforcement::ser_model_enforcement(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

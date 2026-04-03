@@ -7,6 +7,8 @@ pub struct GetParametersForExportInput {
     pub key_material_type: ::std::option::Option<crate::types::KeyMaterialType>,
     /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub signing_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
+    /// <p>Specifies whether to reuse the existing export token and signing key certificate. If set to <code>true</code> and a valid export token exists for the same key material type and signing key algorithm with at least 7 days of remaining validity, the existing token and signing key certificate are returned. Otherwise, a new export token and signing key certificate are generated. The default value is <code>false</code>, which generates a new export token and signing key certificate on every call.</p>
+    pub reuse_last_generated_token: ::std::option::Option<bool>,
 }
 impl GetParametersForExportInput {
     /// <p>The key block format type (for example, TR-34 or TR-31) to use during key material export. Export token is only required for a TR-34 key export, <code>TR34_KEY_BLOCK</code>. Export token is not required for TR-31 key export.</p>
@@ -16,6 +18,10 @@ impl GetParametersForExportInput {
     /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub fn signing_key_algorithm(&self) -> ::std::option::Option<&crate::types::KeyAlgorithm> {
         self.signing_key_algorithm.as_ref()
+    }
+    /// <p>Specifies whether to reuse the existing export token and signing key certificate. If set to <code>true</code> and a valid export token exists for the same key material type and signing key algorithm with at least 7 days of remaining validity, the existing token and signing key certificate are returned. Otherwise, a new export token and signing key certificate are generated. The default value is <code>false</code>, which generates a new export token and signing key certificate on every call.</p>
+    pub fn reuse_last_generated_token(&self) -> ::std::option::Option<bool> {
+        self.reuse_last_generated_token
     }
 }
 impl GetParametersForExportInput {
@@ -31,6 +37,7 @@ impl GetParametersForExportInput {
 pub struct GetParametersForExportInputBuilder {
     pub(crate) key_material_type: ::std::option::Option<crate::types::KeyMaterialType>,
     pub(crate) signing_key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
+    pub(crate) reuse_last_generated_token: ::std::option::Option<bool>,
 }
 impl GetParametersForExportInputBuilder {
     /// <p>The key block format type (for example, TR-34 or TR-31) to use during key material export. Export token is only required for a TR-34 key export, <code>TR34_KEY_BLOCK</code>. Export token is not required for TR-31 key export.</p>
@@ -63,6 +70,20 @@ impl GetParametersForExportInputBuilder {
     pub fn get_signing_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
         &self.signing_key_algorithm
     }
+    /// <p>Specifies whether to reuse the existing export token and signing key certificate. If set to <code>true</code> and a valid export token exists for the same key material type and signing key algorithm with at least 7 days of remaining validity, the existing token and signing key certificate are returned. Otherwise, a new export token and signing key certificate are generated. The default value is <code>false</code>, which generates a new export token and signing key certificate on every call.</p>
+    pub fn reuse_last_generated_token(mut self, input: bool) -> Self {
+        self.reuse_last_generated_token = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to reuse the existing export token and signing key certificate. If set to <code>true</code> and a valid export token exists for the same key material type and signing key algorithm with at least 7 days of remaining validity, the existing token and signing key certificate are returned. Otherwise, a new export token and signing key certificate are generated. The default value is <code>false</code>, which generates a new export token and signing key certificate on every call.</p>
+    pub fn set_reuse_last_generated_token(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.reuse_last_generated_token = input;
+        self
+    }
+    /// <p>Specifies whether to reuse the existing export token and signing key certificate. If set to <code>true</code> and a valid export token exists for the same key material type and signing key algorithm with at least 7 days of remaining validity, the existing token and signing key certificate are returned. Otherwise, a new export token and signing key certificate are generated. The default value is <code>false</code>, which generates a new export token and signing key certificate on every call.</p>
+    pub fn get_reuse_last_generated_token(&self) -> &::std::option::Option<bool> {
+        &self.reuse_last_generated_token
+    }
     /// Consumes the builder and constructs a [`GetParametersForExportInput`](crate::operation::get_parameters_for_export::GetParametersForExportInput).
     pub fn build(
         self,
@@ -73,6 +94,7 @@ impl GetParametersForExportInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_parameters_for_export::GetParametersForExportInput {
             key_material_type: self.key_material_type,
             signing_key_algorithm: self.signing_key_algorithm,
+            reuse_last_generated_token: self.reuse_last_generated_token,
         })
     }
 }

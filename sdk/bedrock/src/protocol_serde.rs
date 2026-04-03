@@ -89,6 +89,8 @@ pub(crate) mod shape_delete_prompt_router;
 
 pub(crate) mod shape_delete_provisioned_model_throughput;
 
+pub(crate) mod shape_delete_resource_policy;
+
 pub(crate) mod shape_deregister_marketplace_model_endpoint;
 
 pub(crate) mod shape_export_automated_reasoning_policy_version;
@@ -139,6 +141,8 @@ pub(crate) mod shape_get_prompt_router;
 
 pub(crate) mod shape_get_provisioned_model_throughput;
 
+pub(crate) mod shape_get_resource_policy;
+
 pub(crate) mod shape_get_use_case_for_model_access;
 
 pub(crate) mod shape_list_automated_reasoning_policies;
@@ -186,6 +190,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_put_enforced_guardrail_configuration;
 
 pub(crate) mod shape_put_model_invocation_logging_configuration;
+
+pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_put_use_case_for_model_access;
 
@@ -284,6 +290,8 @@ pub(crate) mod shape_list_tags_for_resource_input;
 pub(crate) mod shape_put_enforced_guardrail_configuration_input;
 
 pub(crate) mod shape_put_model_invocation_logging_configuration_input;
+
+pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_put_use_case_for_model_access_input;
 
@@ -652,6 +660,8 @@ pub(crate) mod shape_s3_data_source;
 pub(crate) mod shape_sage_maker_endpoint;
 
 pub(crate) mod shape_security_group_ids;
+
+pub(crate) mod shape_selective_content_guarding;
 
 pub(crate) mod shape_subnet_ids;
 

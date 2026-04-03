@@ -24,6 +24,7 @@ impl crate::operation::get_parameters_for_export::builders::GetParametersForExpo
 ///
 /// <p>Gets the export token and the signing key certificate to initiate a TR-34 key export from Amazon Web Services Payment Cryptography.</p>
 /// <p>The signing key certificate signs the wrapped key under export within the TR-34 key payload. The export token and signing key certificate must be in place and operational before calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>. The export token expires in 30 days. You can use the same export token to export multiple keys from your service account.</p>
+/// <p>To return a previously generated export token and signing key certificate instead of generating new ones, set <code>ReuseLastGeneratedToken</code> to <code>true</code>.</p>
 /// <p><b>Cross-account use:</b> This operation can't be used across different Amazon Web Services accounts.</p>
 /// <p><b>Related operations:</b></p>
 /// <ul>
@@ -144,5 +145,19 @@ impl GetParametersForExportFluentBuilder {
     /// <p>The signing key algorithm to generate a signing key certificate. This certificate signs the wrapped key under export within the TR-34 key block. <code>RSA_2048</code> is the only signing key algorithm allowed.</p>
     pub fn get_signing_key_algorithm(&self) -> &::std::option::Option<crate::types::KeyAlgorithm> {
         self.inner.get_signing_key_algorithm()
+    }
+    /// <p>Specifies whether to reuse the existing export token and signing key certificate. If set to <code>true</code> and a valid export token exists for the same key material type and signing key algorithm with at least 7 days of remaining validity, the existing token and signing key certificate are returned. Otherwise, a new export token and signing key certificate are generated. The default value is <code>false</code>, which generates a new export token and signing key certificate on every call.</p>
+    pub fn reuse_last_generated_token(mut self, input: bool) -> Self {
+        self.inner = self.inner.reuse_last_generated_token(input);
+        self
+    }
+    /// <p>Specifies whether to reuse the existing export token and signing key certificate. If set to <code>true</code> and a valid export token exists for the same key material type and signing key algorithm with at least 7 days of remaining validity, the existing token and signing key certificate are returned. Otherwise, a new export token and signing key certificate are generated. The default value is <code>false</code>, which generates a new export token and signing key certificate on every call.</p>
+    pub fn set_reuse_last_generated_token(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_reuse_last_generated_token(input);
+        self
+    }
+    /// <p>Specifies whether to reuse the existing export token and signing key certificate. If set to <code>true</code> and a valid export token exists for the same key material type and signing key algorithm with at least 7 days of remaining validity, the existing token and signing key certificate are returned. Otherwise, a new export token and signing key certificate are generated. The default value is <code>false</code>, which generates a new export token and signing key certificate on every call.</p>
+    pub fn get_reuse_last_generated_token(&self) -> &::std::option::Option<bool> {
+        self.inner.get_reuse_last_generated_token()
     }
 }

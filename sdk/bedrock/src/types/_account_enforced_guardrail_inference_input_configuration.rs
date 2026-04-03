@@ -8,8 +8,8 @@ pub struct AccountEnforcedGuardrailInferenceInputConfiguration {
     pub guardrail_identifier: ::std::string::String,
     /// <p>Numerical guardrail version.</p>
     pub guardrail_version: ::std::string::String,
-    /// <p>Whether to honor or ignore input tags at runtime.</p>
-    pub input_tags: crate::types::InputTags,
+    /// <p>Selective content guarding controls for enforced guardrails.</p>
+    pub selective_content_guarding: ::std::option::Option<crate::types::SelectiveContentGuarding>,
     /// <p>Model-specific information for the enforced guardrail configuration. If not present, the configuration is enforced on all models</p>
     pub model_enforcement: ::std::option::Option<crate::types::ModelEnforcement>,
 }
@@ -24,9 +24,9 @@ impl AccountEnforcedGuardrailInferenceInputConfiguration {
         use std::ops::Deref;
         self.guardrail_version.deref()
     }
-    /// <p>Whether to honor or ignore input tags at runtime.</p>
-    pub fn input_tags(&self) -> &crate::types::InputTags {
-        &self.input_tags
+    /// <p>Selective content guarding controls for enforced guardrails.</p>
+    pub fn selective_content_guarding(&self) -> ::std::option::Option<&crate::types::SelectiveContentGuarding> {
+        self.selective_content_guarding.as_ref()
     }
     /// <p>Model-specific information for the enforced guardrail configuration. If not present, the configuration is enforced on all models</p>
     pub fn model_enforcement(&self) -> ::std::option::Option<&crate::types::ModelEnforcement> {
@@ -46,7 +46,7 @@ impl AccountEnforcedGuardrailInferenceInputConfiguration {
 pub struct AccountEnforcedGuardrailInferenceInputConfigurationBuilder {
     pub(crate) guardrail_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) guardrail_version: ::std::option::Option<::std::string::String>,
-    pub(crate) input_tags: ::std::option::Option<crate::types::InputTags>,
+    pub(crate) selective_content_guarding: ::std::option::Option<crate::types::SelectiveContentGuarding>,
     pub(crate) model_enforcement: ::std::option::Option<crate::types::ModelEnforcement>,
 }
 impl AccountEnforcedGuardrailInferenceInputConfigurationBuilder {
@@ -80,20 +80,19 @@ impl AccountEnforcedGuardrailInferenceInputConfigurationBuilder {
     pub fn get_guardrail_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.guardrail_version
     }
-    /// <p>Whether to honor or ignore input tags at runtime.</p>
-    /// This field is required.
-    pub fn input_tags(mut self, input: crate::types::InputTags) -> Self {
-        self.input_tags = ::std::option::Option::Some(input);
+    /// <p>Selective content guarding controls for enforced guardrails.</p>
+    pub fn selective_content_guarding(mut self, input: crate::types::SelectiveContentGuarding) -> Self {
+        self.selective_content_guarding = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to honor or ignore input tags at runtime.</p>
-    pub fn set_input_tags(mut self, input: ::std::option::Option<crate::types::InputTags>) -> Self {
-        self.input_tags = input;
+    /// <p>Selective content guarding controls for enforced guardrails.</p>
+    pub fn set_selective_content_guarding(mut self, input: ::std::option::Option<crate::types::SelectiveContentGuarding>) -> Self {
+        self.selective_content_guarding = input;
         self
     }
-    /// <p>Whether to honor or ignore input tags at runtime.</p>
-    pub fn get_input_tags(&self) -> &::std::option::Option<crate::types::InputTags> {
-        &self.input_tags
+    /// <p>Selective content guarding controls for enforced guardrails.</p>
+    pub fn get_selective_content_guarding(&self) -> &::std::option::Option<crate::types::SelectiveContentGuarding> {
+        &self.selective_content_guarding
     }
     /// <p>Model-specific information for the enforced guardrail configuration. If not present, the configuration is enforced on all models</p>
     pub fn model_enforcement(mut self, input: crate::types::ModelEnforcement) -> Self {
@@ -113,7 +112,6 @@ impl AccountEnforcedGuardrailInferenceInputConfigurationBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`guardrail_identifier`](crate::types::builders::AccountEnforcedGuardrailInferenceInputConfigurationBuilder::guardrail_identifier)
     /// - [`guardrail_version`](crate::types::builders::AccountEnforcedGuardrailInferenceInputConfigurationBuilder::guardrail_version)
-    /// - [`input_tags`](crate::types::builders::AccountEnforcedGuardrailInferenceInputConfigurationBuilder::input_tags)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::types::AccountEnforcedGuardrailInferenceInputConfiguration, ::aws_smithy_types::error::operation::BuildError>
@@ -131,12 +129,7 @@ impl AccountEnforcedGuardrailInferenceInputConfigurationBuilder {
                     "guardrail_version was not specified but it is required when building AccountEnforcedGuardrailInferenceInputConfiguration",
                 )
             })?,
-            input_tags: self.input_tags.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "input_tags",
-                    "input_tags was not specified but it is required when building AccountEnforcedGuardrailInferenceInputConfiguration",
-                )
-            })?,
+            selective_content_guarding: self.selective_content_guarding,
             model_enforcement: self.model_enforcement,
         })
     }

@@ -109,6 +109,8 @@ pub use crate::types::_custom_model_summary::CustomModelSummaryBuilder;
 
 pub use crate::types::_account_enforced_guardrail_output_configuration::AccountEnforcedGuardrailOutputConfigurationBuilder;
 
+pub use crate::types::_selective_content_guarding::SelectiveContentGuardingBuilder;
+
 pub use crate::types::_model_enforcement::ModelEnforcementBuilder;
 
 pub use crate::types::_batch_delete_evaluation_job_error::BatchDeleteEvaluationJobErrorBuilder;

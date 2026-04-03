@@ -26,6 +26,7 @@ impl crate::operation::put_alarm::builders::PutAlarmInputBuilder {
 /// <p>An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
 /// <p>When this action creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then executed.</p>
 /// <p>When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous configuration of the alarm. The alarm is then evaluated with the updated configuration.</p>
+/// <p>The <code>put alarm</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAlarmFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -409,5 +410,27 @@ impl PutAlarmFluentBuilder {
     /// <p>Notifications are enabled by default if you don't specify this parameter.</p>
     pub fn get_notification_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_notification_enabled()
+    }
+    ///
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tag keys and optional values to add to the alarm during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// <p>The tag keys and optional values to add to the alarm during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>The tag keys and optional values to add to the alarm during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
     }
 }

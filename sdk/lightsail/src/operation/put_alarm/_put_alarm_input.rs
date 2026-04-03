@@ -73,6 +73,9 @@ pub struct PutAlarmInput {
     /// <p>Indicates whether the alarm is enabled.</p>
     /// <p>Notifications are enabled by default if you don't specify this parameter.</p>
     pub notification_enabled: ::std::option::Option<bool>,
+    /// <p>The tag keys and optional values to add to the alarm during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutAlarmInput {
     /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.</p>
@@ -171,6 +174,13 @@ impl PutAlarmInput {
     pub fn notification_enabled(&self) -> ::std::option::Option<bool> {
         self.notification_enabled
     }
+    /// <p>The tag keys and optional values to add to the alarm during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl PutAlarmInput {
     /// Creates a new builder-style object to manufacture [`PutAlarmInput`](crate::operation::put_alarm::PutAlarmInput).
@@ -194,6 +204,7 @@ pub struct PutAlarmInputBuilder {
     pub(crate) contact_protocols: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
     pub(crate) notification_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>,
     pub(crate) notification_enabled: ::std::option::Option<bool>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PutAlarmInputBuilder {
     /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.</p>
@@ -512,6 +523,29 @@ impl PutAlarmInputBuilder {
     pub fn get_notification_enabled(&self) -> &::std::option::Option<bool> {
         &self.notification_enabled
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tag keys and optional values to add to the alarm during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tag keys and optional values to add to the alarm during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tag keys and optional values to add to the alarm during create.</p>
+    /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`PutAlarmInput`](crate::operation::put_alarm::PutAlarmInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_alarm::PutAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_alarm::PutAlarmInput {
@@ -526,6 +560,7 @@ impl PutAlarmInputBuilder {
             contact_protocols: self.contact_protocols,
             notification_triggers: self.notification_triggers,
             notification_enabled: self.notification_enabled,
+            tags: self.tags,
         })
     }
 }

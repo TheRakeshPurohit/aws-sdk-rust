@@ -137,16 +137,19 @@ impl PutDeliverySourceFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The ARN of the Amazon Web Services resource that is generating and sending logs. For example, <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code></p>
+    /// <p>For the <code>SECURITY_FINDING_LOGS</code> logType, use a wildcard ARN for the hub resource. For example, <code>arn:aws:securityhub:us-east-1:111122223333:hub/*</code></p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
     /// <p>The ARN of the Amazon Web Services resource that is generating and sending logs. For example, <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code></p>
+    /// <p>For the <code>SECURITY_FINDING_LOGS</code> logType, use a wildcard ARN for the hub resource. For example, <code>arn:aws:securityhub:us-east-1:111122223333:hub/*</code></p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
     /// <p>The ARN of the Amazon Web Services resource that is generating and sending logs. For example, <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code></p>
+    /// <p>For the <code>SECURITY_FINDING_LOGS</code> logType, use a wildcard ARN for the hub resource. For example, <code>arn:aws:securityhub:us-east-1:111122223333:hub/*</code></p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
@@ -194,6 +197,8 @@ impl PutDeliverySourceFluentBuilder {
     /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon SES mail manager, the valid values are <code>APPLICATION_LOGS</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p></li>
     /// <li>
@@ -250,6 +255,8 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Amazon SES mail manager, the valid values are <code>APPLICATION_LOGS</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
@@ -304,6 +311,8 @@ impl PutDeliverySourceFluentBuilder {
     /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon SES mail manager, the valid values are <code>APPLICATION_LOGS</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p></li>
     /// <li>

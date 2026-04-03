@@ -11,7 +11,13 @@ pub struct AccountEnforcedGuardrailOutputConfiguration {
     /// <p>Unique ID for the guardrail.</p>
     pub guardrail_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether to honor or ignore input tags at runtime.</p>
+    #[deprecated(
+        note = "This field is being deprecated and will be removed once customers transition their existing policies to the new schema.",
+        since = "2026-04-03"
+    )]
     pub input_tags: ::std::option::Option<crate::types::InputTags>,
+    /// <p>Selective content guarding controls for enforced guardrails.</p>
+    pub selective_content_guarding: ::std::option::Option<crate::types::SelectiveContentGuarding>,
     /// <p>Numerical guardrail version.</p>
     pub guardrail_version: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp.</p>
@@ -41,8 +47,16 @@ impl AccountEnforcedGuardrailOutputConfiguration {
         self.guardrail_id.as_deref()
     }
     /// <p>Whether to honor or ignore input tags at runtime.</p>
+    #[deprecated(
+        note = "This field is being deprecated and will be removed once customers transition their existing policies to the new schema.",
+        since = "2026-04-03"
+    )]
     pub fn input_tags(&self) -> ::std::option::Option<&crate::types::InputTags> {
         self.input_tags.as_ref()
+    }
+    /// <p>Selective content guarding controls for enforced guardrails.</p>
+    pub fn selective_content_guarding(&self) -> ::std::option::Option<&crate::types::SelectiveContentGuarding> {
+        self.selective_content_guarding.as_ref()
     }
     /// <p>Numerical guardrail version.</p>
     pub fn guardrail_version(&self) -> ::std::option::Option<&str> {
@@ -88,6 +102,7 @@ pub struct AccountEnforcedGuardrailOutputConfigurationBuilder {
     pub(crate) guardrail_arn: ::std::option::Option<::std::string::String>,
     pub(crate) guardrail_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_tags: ::std::option::Option<crate::types::InputTags>,
+    pub(crate) selective_content_guarding: ::std::option::Option<crate::types::SelectiveContentGuarding>,
     pub(crate) guardrail_version: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
@@ -140,18 +155,44 @@ impl AccountEnforcedGuardrailOutputConfigurationBuilder {
         &self.guardrail_id
     }
     /// <p>Whether to honor or ignore input tags at runtime.</p>
+    #[deprecated(
+        note = "This field is being deprecated and will be removed once customers transition their existing policies to the new schema.",
+        since = "2026-04-03"
+    )]
     pub fn input_tags(mut self, input: crate::types::InputTags) -> Self {
         self.input_tags = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to honor or ignore input tags at runtime.</p>
+    #[deprecated(
+        note = "This field is being deprecated and will be removed once customers transition their existing policies to the new schema.",
+        since = "2026-04-03"
+    )]
     pub fn set_input_tags(mut self, input: ::std::option::Option<crate::types::InputTags>) -> Self {
         self.input_tags = input;
         self
     }
     /// <p>Whether to honor or ignore input tags at runtime.</p>
+    #[deprecated(
+        note = "This field is being deprecated and will be removed once customers transition their existing policies to the new schema.",
+        since = "2026-04-03"
+    )]
     pub fn get_input_tags(&self) -> &::std::option::Option<crate::types::InputTags> {
         &self.input_tags
+    }
+    /// <p>Selective content guarding controls for enforced guardrails.</p>
+    pub fn selective_content_guarding(mut self, input: crate::types::SelectiveContentGuarding) -> Self {
+        self.selective_content_guarding = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Selective content guarding controls for enforced guardrails.</p>
+    pub fn set_selective_content_guarding(mut self, input: ::std::option::Option<crate::types::SelectiveContentGuarding>) -> Self {
+        self.selective_content_guarding = input;
+        self
+    }
+    /// <p>Selective content guarding controls for enforced guardrails.</p>
+    pub fn get_selective_content_guarding(&self) -> &::std::option::Option<crate::types::SelectiveContentGuarding> {
+        &self.selective_content_guarding
     }
     /// <p>Numerical guardrail version.</p>
     pub fn guardrail_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -258,6 +299,7 @@ impl AccountEnforcedGuardrailOutputConfigurationBuilder {
             guardrail_arn: self.guardrail_arn,
             guardrail_id: self.guardrail_id,
             input_tags: self.input_tags,
+            selective_content_guarding: self.selective_content_guarding,
             guardrail_version: self.guardrail_version,
             created_at: self.created_at,
             created_by: self.created_by,

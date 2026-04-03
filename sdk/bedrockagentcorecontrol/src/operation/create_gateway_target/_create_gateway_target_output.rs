@@ -31,7 +31,7 @@ pub struct CreateGatewayTargetOutput {
     pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     /// <p>The managed resources created by the gateway for private endpoint connectivity.</p>
     pub private_endpoint_managed_resources: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>>,
-    /// <p>OAuth2 authorization data for the created gateway target. This data is returned when the target requires user authorization through an authorization code grant type.</p>
+    /// <p>OAuth2 authorization data for the created gateway target. This data is returned when a target is configured with a credential provider with authorization code grant type and requires user federation.</p>
     pub authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
     _request_id: Option<String>,
 }
@@ -100,7 +100,7 @@ impl CreateGatewayTargetOutput {
     pub fn private_endpoint_managed_resources(&self) -> &[crate::types::ManagedResourceDetails] {
         self.private_endpoint_managed_resources.as_deref().unwrap_or_default()
     }
-    /// <p>OAuth2 authorization data for the created gateway target. This data is returned when the target requires user authorization through an authorization code grant type.</p>
+    /// <p>OAuth2 authorization data for the created gateway target. This data is returned when a target is configured with a credential provider with authorization code grant type and requires user federation.</p>
     pub fn authorization_data(&self) -> ::std::option::Option<&crate::types::AuthorizationData> {
         self.authorization_data.as_ref()
     }
@@ -388,17 +388,17 @@ impl CreateGatewayTargetOutputBuilder {
     pub fn get_private_endpoint_managed_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>> {
         &self.private_endpoint_managed_resources
     }
-    /// <p>OAuth2 authorization data for the created gateway target. This data is returned when the target requires user authorization through an authorization code grant type.</p>
+    /// <p>OAuth2 authorization data for the created gateway target. This data is returned when a target is configured with a credential provider with authorization code grant type and requires user federation.</p>
     pub fn authorization_data(mut self, input: crate::types::AuthorizationData) -> Self {
         self.authorization_data = ::std::option::Option::Some(input);
         self
     }
-    /// <p>OAuth2 authorization data for the created gateway target. This data is returned when the target requires user authorization through an authorization code grant type.</p>
+    /// <p>OAuth2 authorization data for the created gateway target. This data is returned when a target is configured with a credential provider with authorization code grant type and requires user federation.</p>
     pub fn set_authorization_data(mut self, input: ::std::option::Option<crate::types::AuthorizationData>) -> Self {
         self.authorization_data = input;
         self
     }
-    /// <p>OAuth2 authorization data for the created gateway target. This data is returned when the target requires user authorization through an authorization code grant type.</p>
+    /// <p>OAuth2 authorization data for the created gateway target. This data is returned when a target is configured with a credential provider with authorization code grant type and requires user federation.</p>
     pub fn get_authorization_data(&self) -> &::std::option::Option<crate::types::AuthorizationData> {
         &self.authorization_data
     }

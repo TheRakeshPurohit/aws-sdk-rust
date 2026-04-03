@@ -78,6 +78,8 @@ pub struct Alarm {
     pub notification_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>,
     /// <p>Indicates whether the alarm is enabled.</p>
     pub notification_enabled: ::std::option::Option<bool>,
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Alarm {
     /// <p>The name of the alarm.</p>
@@ -197,6 +199,12 @@ impl Alarm {
     pub fn notification_enabled(&self) -> ::std::option::Option<bool> {
         self.notification_enabled
     }
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl Alarm {
     /// Creates a new builder-style object to manufacture [`Alarm`](crate::types::Alarm).
@@ -229,6 +237,7 @@ pub struct AlarmBuilder {
     pub(crate) contact_protocols: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
     pub(crate) notification_triggers: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>,
     pub(crate) notification_enabled: ::std::option::Option<bool>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AlarmBuilder {
     /// <p>The name of the alarm.</p>
@@ -622,6 +631,26 @@ impl AlarmBuilder {
     pub fn get_notification_enabled(&self) -> &::std::option::Option<bool> {
         &self.notification_enabled
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`Alarm`](crate::types::Alarm).
     pub fn build(self) -> crate::types::Alarm {
         crate::types::Alarm {
@@ -645,6 +674,7 @@ impl AlarmBuilder {
             contact_protocols: self.contact_protocols,
             notification_triggers: self.notification_triggers,
             notification_enabled: self.notification_enabled,
+            tags: self.tags,
         }
     }
 }
