@@ -25,6 +25,8 @@ pub struct UpdateConnectorInput {
     pub security_policy_name: ::std::option::Option<::std::string::String>,
     /// <p>Updates the egress configuration for the connector, allowing you to modify how traffic is routed from the connector to the SFTP server. Changes to VPC configuration may require connector restart.</p>
     pub egress_config: ::std::option::Option<crate::types::UpdateConnectorEgressConfig>,
+    /// <p>Specifies the IP address type for the connector's network connections. When set to <code>IPV4</code>, the connector uses IPv4 addresses only. When set to <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses, with IPv6 preferred when available.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::ConnectorsIpAddressType>,
 }
 impl UpdateConnectorInput {
     /// <p>The unique identifier for the connector.</p>
@@ -65,6 +67,10 @@ impl UpdateConnectorInput {
     pub fn egress_config(&self) -> ::std::option::Option<&crate::types::UpdateConnectorEgressConfig> {
         self.egress_config.as_ref()
     }
+    /// <p>Specifies the IP address type for the connector's network connections. When set to <code>IPV4</code>, the connector uses IPv4 addresses only. When set to <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses, with IPv6 preferred when available.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::ConnectorsIpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl UpdateConnectorInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
@@ -85,6 +91,7 @@ pub struct UpdateConnectorInputBuilder {
     pub(crate) sftp_config: ::std::option::Option<crate::types::SftpConnectorConfig>,
     pub(crate) security_policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) egress_config: ::std::option::Option<crate::types::UpdateConnectorEgressConfig>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::ConnectorsIpAddressType>,
 }
 impl UpdateConnectorInputBuilder {
     /// <p>The unique identifier for the connector.</p>
@@ -218,6 +225,20 @@ impl UpdateConnectorInputBuilder {
     pub fn get_egress_config(&self) -> &::std::option::Option<crate::types::UpdateConnectorEgressConfig> {
         &self.egress_config
     }
+    /// <p>Specifies the IP address type for the connector's network connections. When set to <code>IPV4</code>, the connector uses IPv4 addresses only. When set to <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses, with IPv6 preferred when available.</p>
+    pub fn ip_address_type(mut self, input: crate::types::ConnectorsIpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the IP address type for the connector's network connections. When set to <code>IPV4</code>, the connector uses IPv4 addresses only. When set to <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses, with IPv6 preferred when available.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::ConnectorsIpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>Specifies the IP address type for the connector's network connections. When set to <code>IPV4</code>, the connector uses IPv4 addresses only. When set to <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses, with IPv6 preferred when available.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::ConnectorsIpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`UpdateConnectorInput`](crate::operation::update_connector::UpdateConnectorInput).
     pub fn build(
         self,
@@ -231,6 +252,7 @@ impl UpdateConnectorInputBuilder {
             sftp_config: self.sftp_config,
             security_policy_name: self.security_policy_name,
             egress_config: self.egress_config,
+            ip_address_type: self.ip_address_type,
         })
     }
 }

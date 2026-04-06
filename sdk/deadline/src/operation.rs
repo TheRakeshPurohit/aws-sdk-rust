@@ -28,8 +28,32 @@ pub mod assume_queue_role_for_user;
 /// Types for the `AssumeQueueRoleForWorker` operation.
 pub mod assume_queue_role_for_worker;
 
+/// Types for the `BatchGetJob` operation.
+pub mod batch_get_job;
+
 /// Types for the `BatchGetJobEntity` operation.
 pub mod batch_get_job_entity;
+
+/// Types for the `BatchGetSession` operation.
+pub mod batch_get_session;
+
+/// Types for the `BatchGetSessionAction` operation.
+pub mod batch_get_session_action;
+
+/// Types for the `BatchGetStep` operation.
+pub mod batch_get_step;
+
+/// Types for the `BatchGetTask` operation.
+pub mod batch_get_task;
+
+/// Types for the `BatchGetWorker` operation.
+pub mod batch_get_worker;
+
+/// Types for the `BatchUpdateJob` operation.
+pub mod batch_update_job;
+
+/// Types for the `BatchUpdateTask` operation.
+pub mod batch_update_task;
 
 /// Types for the `CopyJobTemplate` operation.
 pub mod copy_job_template;

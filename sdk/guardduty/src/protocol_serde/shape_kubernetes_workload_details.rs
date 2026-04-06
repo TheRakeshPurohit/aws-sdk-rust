@@ -46,18 +46,18 @@ where
                         "hostNetwork" => {
                             builder = builder.set_host_network(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
-                        "containers" => {
-                            builder = builder.set_containers(crate::protocol_serde::shape_containers::de_containers(tokens, _value)?);
-                        }
-                        "volumes" => {
-                            builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens, _value)?);
-                        }
                         "serviceAccountName" => {
                             builder = builder.set_service_account_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "containers" => {
+                            builder = builder.set_containers(crate::protocol_serde::shape_containers::de_containers(tokens, _value)?);
+                        }
+                        "volumes" => {
+                            builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens, _value)?);
                         }
                         "hostIPC" => {
                             builder = builder.set_host_ipc(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

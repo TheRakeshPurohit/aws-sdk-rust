@@ -24,6 +24,8 @@ pub struct Span {
     pub status: crate::types::SpanStatus,
     /// <p>The service request ID that initiated the operation</p>
     pub request_id: ::std::string::String,
+    /// The origin request identifier for end-to-end tracing.
+    pub origin_request_id: ::std::option::Option<::std::string::String>,
     /// <p>Span-specific contextual attributes</p>
     pub attributes: ::std::option::Option<crate::types::SpanAttributes>,
 }
@@ -73,6 +75,10 @@ impl Span {
         use std::ops::Deref;
         self.request_id.deref()
     }
+    /// The origin request identifier for end-to-end tracing.
+    pub fn origin_request_id(&self) -> ::std::option::Option<&str> {
+        self.origin_request_id.as_deref()
+    }
     /// <p>Span-specific contextual attributes</p>
     pub fn attributes(&self) -> ::std::option::Option<&crate::types::SpanAttributes> {
         self.attributes.as_ref()
@@ -99,6 +105,7 @@ pub struct SpanBuilder {
     pub(crate) end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::SpanStatus>,
     pub(crate) request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) origin_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<crate::types::SpanAttributes>,
 }
 impl SpanBuilder {
@@ -251,6 +258,20 @@ impl SpanBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
+    /// The origin request identifier for end-to-end tracing.
+    pub fn origin_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.origin_request_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// The origin request identifier for end-to-end tracing.
+    pub fn set_origin_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.origin_request_id = input;
+        self
+    }
+    /// The origin request identifier for end-to-end tracing.
+    pub fn get_origin_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_request_id
+    }
     /// <p>Span-specific contextual attributes</p>
     /// This field is required.
     pub fn attributes(mut self, input: crate::types::SpanAttributes) -> Self {
@@ -334,6 +355,7 @@ impl SpanBuilder {
                     "request_id was not specified but it is required when building Span",
                 )
             })?,
+            origin_request_id: self.origin_request_id,
             attributes: self.attributes,
         })
     }

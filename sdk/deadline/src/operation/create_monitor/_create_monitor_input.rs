@@ -11,6 +11,8 @@ pub struct CreateMonitorInput {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.</p>
     pub identity_center_instance_arn: ::std::option::Option<::std::string::String>,
+    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    pub identity_center_region: ::std::option::Option<::std::string::String>,
     /// <p>The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
     pub subdomain: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name of the IAM role that the monitor uses to connect to Deadline Cloud. Every user that signs in to the monitor using IAM Identity Center uses this role to access Deadline Cloud resources.</p>
@@ -32,6 +34,10 @@ impl CreateMonitorInput {
     /// <p>The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.</p>
     pub fn identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
         self.identity_center_instance_arn.as_deref()
+    }
+    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    pub fn identity_center_region(&self) -> ::std::option::Option<&str> {
+        self.identity_center_region.as_deref()
     }
     /// <p>The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
     pub fn subdomain(&self) -> ::std::option::Option<&str> {
@@ -60,6 +66,7 @@ pub struct CreateMonitorInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) identity_center_instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_center_region: ::std::option::Option<::std::string::String>,
     pub(crate) subdomain: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -114,6 +121,20 @@ impl CreateMonitorInputBuilder {
     /// <p>The Amazon Resource Name of the IAM Identity Center instance that authenticates monitor users.</p>
     pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_center_instance_arn
+    }
+    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    pub fn identity_center_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_center_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    pub fn set_identity_center_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_center_region = input;
+        self
+    }
+    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    pub fn get_identity_center_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_center_region
     }
     /// <p>The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
     /// This field is required.
@@ -173,6 +194,7 @@ impl CreateMonitorInputBuilder {
             client_token: self.client_token,
             display_name: self.display_name,
             identity_center_instance_arn: self.identity_center_instance_arn,
+            identity_center_region: self.identity_center_region,
             subdomain: self.subdomain,
             role_arn: self.role_arn,
             tags: self.tags,

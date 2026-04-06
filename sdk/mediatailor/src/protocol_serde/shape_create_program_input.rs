@@ -39,8 +39,18 @@ pub fn ser_create_program_input_input(
     if let Some(var_12) = &input.source_location_name {
         object.key("SourceLocationName").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.vod_source_name {
-        object.key("VodSourceName").string(var_13.as_str());
+    if let Some(var_13) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
+            {
+                object_14.key(key_15.as_str()).string(value_16.as_str());
+            }
+        }
+        object_14.finish();
+    }
+    if let Some(var_17) = &input.vod_source_name {
+        object.key("VodSourceName").string(var_17.as_str());
     }
     Ok(())
 }

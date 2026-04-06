@@ -22,14 +22,14 @@ pub struct Resource {
     pub ecs_cluster_details: ::std::option::Option<crate::types::EcsClusterDetails>,
     /// <p>Details of a container.</p>
     pub container_details: ::std::option::Option<crate::types::Container>,
+    /// <p>Contains information about the Lambda function that was involved in a finding.</p>
+    pub lambda_details: ::std::option::Option<crate::types::LambdaDetails>,
     /// <p>Contains information about the database instance to which an anomalous login attempt was made.</p>
     pub rds_db_instance_details: ::std::option::Option<crate::types::RdsDbInstanceDetails>,
     /// <p>Contains information about the RDS Limitless database that was involved in a GuardDuty finding.</p>
     pub rds_limitless_db_details: ::std::option::Option<crate::types::RdsLimitlessDbDetails>,
     /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
     pub rds_db_user_details: ::std::option::Option<crate::types::RdsDbUserDetails>,
-    /// <p>Contains information about the Lambda function that was involved in a finding.</p>
-    pub lambda_details: ::std::option::Option<crate::types::LambdaDetails>,
     /// <p>Contains details about the EBS snapshot that was scanned.</p>
     pub ebs_snapshot_details: ::std::option::Option<crate::types::EbsSnapshotDetails>,
     /// <p>Contains details about the EC2 image that was scanned.</p>
@@ -76,6 +76,10 @@ impl Resource {
     pub fn container_details(&self) -> ::std::option::Option<&crate::types::Container> {
         self.container_details.as_ref()
     }
+    /// <p>Contains information about the Lambda function that was involved in a finding.</p>
+    pub fn lambda_details(&self) -> ::std::option::Option<&crate::types::LambdaDetails> {
+        self.lambda_details.as_ref()
+    }
     /// <p>Contains information about the database instance to which an anomalous login attempt was made.</p>
     pub fn rds_db_instance_details(&self) -> ::std::option::Option<&crate::types::RdsDbInstanceDetails> {
         self.rds_db_instance_details.as_ref()
@@ -87,10 +91,6 @@ impl Resource {
     /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
     pub fn rds_db_user_details(&self) -> ::std::option::Option<&crate::types::RdsDbUserDetails> {
         self.rds_db_user_details.as_ref()
-    }
-    /// <p>Contains information about the Lambda function that was involved in a finding.</p>
-    pub fn lambda_details(&self) -> ::std::option::Option<&crate::types::LambdaDetails> {
-        self.lambda_details.as_ref()
     }
     /// <p>Contains details about the EBS snapshot that was scanned.</p>
     pub fn ebs_snapshot_details(&self) -> ::std::option::Option<&crate::types::EbsSnapshotDetails> {
@@ -125,10 +125,10 @@ pub struct ResourceBuilder {
     pub(crate) ebs_volume_details: ::std::option::Option<crate::types::EbsVolumeDetails>,
     pub(crate) ecs_cluster_details: ::std::option::Option<crate::types::EcsClusterDetails>,
     pub(crate) container_details: ::std::option::Option<crate::types::Container>,
+    pub(crate) lambda_details: ::std::option::Option<crate::types::LambdaDetails>,
     pub(crate) rds_db_instance_details: ::std::option::Option<crate::types::RdsDbInstanceDetails>,
     pub(crate) rds_limitless_db_details: ::std::option::Option<crate::types::RdsLimitlessDbDetails>,
     pub(crate) rds_db_user_details: ::std::option::Option<crate::types::RdsDbUserDetails>,
-    pub(crate) lambda_details: ::std::option::Option<crate::types::LambdaDetails>,
     pub(crate) ebs_snapshot_details: ::std::option::Option<crate::types::EbsSnapshotDetails>,
     pub(crate) ec2_image_details: ::std::option::Option<crate::types::Ec2ImageDetails>,
     pub(crate) recovery_point_details: ::std::option::Option<crate::types::RecoveryPointDetails>,
@@ -266,6 +266,20 @@ impl ResourceBuilder {
     pub fn get_container_details(&self) -> &::std::option::Option<crate::types::Container> {
         &self.container_details
     }
+    /// <p>Contains information about the Lambda function that was involved in a finding.</p>
+    pub fn lambda_details(mut self, input: crate::types::LambdaDetails) -> Self {
+        self.lambda_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the Lambda function that was involved in a finding.</p>
+    pub fn set_lambda_details(mut self, input: ::std::option::Option<crate::types::LambdaDetails>) -> Self {
+        self.lambda_details = input;
+        self
+    }
+    /// <p>Contains information about the Lambda function that was involved in a finding.</p>
+    pub fn get_lambda_details(&self) -> &::std::option::Option<crate::types::LambdaDetails> {
+        &self.lambda_details
+    }
     /// <p>Contains information about the database instance to which an anomalous login attempt was made.</p>
     pub fn rds_db_instance_details(mut self, input: crate::types::RdsDbInstanceDetails) -> Self {
         self.rds_db_instance_details = ::std::option::Option::Some(input);
@@ -307,20 +321,6 @@ impl ResourceBuilder {
     /// <p>Contains information about the user details through which anomalous login attempt was made.</p>
     pub fn get_rds_db_user_details(&self) -> &::std::option::Option<crate::types::RdsDbUserDetails> {
         &self.rds_db_user_details
-    }
-    /// <p>Contains information about the Lambda function that was involved in a finding.</p>
-    pub fn lambda_details(mut self, input: crate::types::LambdaDetails) -> Self {
-        self.lambda_details = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Contains information about the Lambda function that was involved in a finding.</p>
-    pub fn set_lambda_details(mut self, input: ::std::option::Option<crate::types::LambdaDetails>) -> Self {
-        self.lambda_details = input;
-        self
-    }
-    /// <p>Contains information about the Lambda function that was involved in a finding.</p>
-    pub fn get_lambda_details(&self) -> &::std::option::Option<crate::types::LambdaDetails> {
-        &self.lambda_details
     }
     /// <p>Contains details about the EBS snapshot that was scanned.</p>
     pub fn ebs_snapshot_details(mut self, input: crate::types::EbsSnapshotDetails) -> Self {
@@ -376,10 +376,10 @@ impl ResourceBuilder {
             ebs_volume_details: self.ebs_volume_details,
             ecs_cluster_details: self.ecs_cluster_details,
             container_details: self.container_details,
+            lambda_details: self.lambda_details,
             rds_db_instance_details: self.rds_db_instance_details,
             rds_limitless_db_details: self.rds_limitless_db_details,
             rds_db_user_details: self.rds_db_user_details,
-            lambda_details: self.lambda_details,
             ebs_snapshot_details: self.ebs_snapshot_details,
             ec2_image_details: self.ec2_image_details,
             recovery_point_details: self.recovery_point_details,

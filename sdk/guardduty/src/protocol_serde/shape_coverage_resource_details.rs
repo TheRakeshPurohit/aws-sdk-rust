@@ -20,13 +20,6 @@ where
                                 crate::protocol_serde::shape_coverage_eks_cluster_details::de_coverage_eks_cluster_details(tokens, _value)?,
                             );
                         }
-                        "resourceType" => {
-                            builder = builder.set_resource_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResourceType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
                         "ecsClusterDetails" => {
                             builder = builder.set_ecs_cluster_details(
                                 crate::protocol_serde::shape_coverage_ecs_cluster_details::de_coverage_ecs_cluster_details(tokens, _value)?,
@@ -35,6 +28,13 @@ where
                         "ec2InstanceDetails" => {
                             builder = builder.set_ec2_instance_details(
                                 crate::protocol_serde::shape_coverage_ec2_instance_details::de_coverage_ec2_instance_details(tokens, _value)?,
+                            );
+                        }
+                        "resourceType" => {
+                            builder = builder.set_resource_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResourceType::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

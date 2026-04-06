@@ -611,6 +611,12 @@ pub(crate) fn member_data_source_configuration_correct_errors(
     if builder.account_id.is_none() {
         builder.account_id = Some(Default::default())
     }
+    if builder.data_sources.is_none() {
+        builder.data_sources = {
+            let builder = crate::types::builders::DataSourceConfigurationsResultBuilder::default();
+            Some(crate::serde_util::data_source_configurations_result_correct_errors(builder).build())
+        }
+    }
     builder
 }
 

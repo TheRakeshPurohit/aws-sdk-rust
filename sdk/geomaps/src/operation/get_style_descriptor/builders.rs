@@ -109,17 +109,17 @@ impl GetStyleDescriptorFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Style specifies the desired map style.</p>
+    /// <p>Style specifies the desired map style. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only the <code>Standard</code> and <code>Monochrome</code> values.</p>
     pub fn style(mut self, input: crate::types::MapStyle) -> Self {
         self.inner = self.inner.style(input);
         self
     }
-    /// <p>Style specifies the desired map style.</p>
+    /// <p>Style specifies the desired map style. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only the <code>Standard</code> and <code>Monochrome</code> values.</p>
     pub fn set_style(mut self, input: ::std::option::Option<crate::types::MapStyle>) -> Self {
         self.inner = self.inner.set_style(input);
         self
     }
-    /// <p>Style specifies the desired map style.</p>
+    /// <p>Style specifies the desired map style. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only the <code>Standard</code> and <code>Monochrome</code> values.</p>
     pub fn get_style(&self) -> &::std::option::Option<crate::types::MapStyle> {
         self.inner.get_style()
     }
@@ -149,7 +149,7 @@ impl GetStyleDescriptorFluentBuilder {
     pub fn get_color_scheme(&self) -> &::std::option::Option<crate::types::ColorScheme> {
         self.inner.get_color_scheme()
     }
-    /// <p>Specifies the political view using ISO 3166-2 or ISO 3166-3 country code format.</p>
+    /// <p>Specifies the political view using ISO 3166-2 or ISO 3166-3 country code format. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>The following political views are currently supported:</p>
     /// <ul>
     /// <li>
@@ -185,7 +185,7 @@ impl GetStyleDescriptorFluentBuilder {
         self.inner = self.inner.political_view(input.into());
         self
     }
-    /// <p>Specifies the political view using ISO 3166-2 or ISO 3166-3 country code format.</p>
+    /// <p>Specifies the political view using ISO 3166-2 or ISO 3166-3 country code format. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>The following political views are currently supported:</p>
     /// <ul>
     /// <li>
@@ -221,7 +221,7 @@ impl GetStyleDescriptorFluentBuilder {
         self.inner = self.inner.set_political_view(input);
         self
     }
-    /// <p>Specifies the political view using ISO 3166-2 or ISO 3166-3 country code format.</p>
+    /// <p>Specifies the political view using ISO 3166-2 or ISO 3166-3 country code format. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>The following political views are currently supported:</p>
     /// <ul>
     /// <li>
@@ -256,7 +256,7 @@ impl GetStyleDescriptorFluentBuilder {
     pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_political_view()
     }
-    /// <p>Adjusts how physical terrain details are rendered on the map.</p>
+    /// <p>Adjusts how physical terrain details are rendered on the map. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>The following terrain styles are currently supported:</p>
     /// <ul>
     /// <li>
@@ -269,7 +269,7 @@ impl GetStyleDescriptorFluentBuilder {
         self.inner = self.inner.terrain(input);
         self
     }
-    /// <p>Adjusts how physical terrain details are rendered on the map.</p>
+    /// <p>Adjusts how physical terrain details are rendered on the map. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>The following terrain styles are currently supported:</p>
     /// <ul>
     /// <li>
@@ -282,7 +282,7 @@ impl GetStyleDescriptorFluentBuilder {
         self.inner = self.inner.set_terrain(input);
         self
     }
-    /// <p>Adjusts how physical terrain details are rendered on the map.</p>
+    /// <p>Adjusts how physical terrain details are rendered on the map. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>The following terrain styles are currently supported:</p>
     /// <ul>
     /// <li>
@@ -294,36 +294,36 @@ impl GetStyleDescriptorFluentBuilder {
     pub fn get_terrain(&self) -> &::std::option::Option<crate::types::Terrain> {
         self.inner.get_terrain()
     }
-    /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
+    /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn contour_density(mut self, input: crate::types::ContourDensity) -> Self {
         self.inner = self.inner.contour_density(input);
         self
     }
-    /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
+    /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn set_contour_density(mut self, input: ::std::option::Option<crate::types::ContourDensity>) -> Self {
         self.inner = self.inner.set_contour_density(input);
         self
     }
-    /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map.</p>
+    /// <p>Displays the shape and steepness of terrain features using elevation lines. The density value controls how densely the available contour line information is rendered on the map. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn get_contour_density(&self) -> &::std::option::Option<crate::types::ContourDensity> {
         self.inner.get_contour_density()
     }
-    /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
+    /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn traffic(mut self, input: crate::types::Traffic) -> Self {
         self.inner = self.inner.traffic(input);
         self
     }
-    /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
+    /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn set_traffic(mut self, input: ::std::option::Option<crate::types::Traffic>) -> Self {
         self.inner = self.inner.set_traffic(input);
         self
     }
-    /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events.</p>
+    /// <p>Displays real-time traffic information overlay on map, such as incident events and flow events. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn get_traffic(&self) -> &::std::option::Option<crate::types::Traffic> {
         self.inner.get_traffic()
@@ -333,19 +333,19 @@ impl GetStyleDescriptorFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_travel_modes`](Self::set_travel_modes).
     ///
-    /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
+    /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn travel_modes(mut self, input: crate::types::TravelMode) -> Self {
         self.inner = self.inner.travel_modes(input);
         self
     }
-    /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
+    /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn set_travel_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TravelMode>>) -> Self {
         self.inner = self.inner.set_travel_modes(input);
         self
     }
-    /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map.</p>
+    /// <p>Renders additional map information relevant to selected travel modes. Information for multiple travel modes can be displayed simultaneously, although this increases the overall information density rendered on the map. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     /// <p>This parameter is valid for all map styles except <code>Satellite</code>.</p>
     pub fn get_travel_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TravelMode>> {
         self.inner.get_travel_modes()

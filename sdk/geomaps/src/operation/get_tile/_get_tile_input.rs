@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetTileInput {
-    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub additional_features: ::std::option::Option<::std::vec::Vec<crate::types::TileAdditionalFeature>>,
-    /// <p>Specifies the desired tile set.</p>
+    /// <p>Specifies the desired tile set. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only the <code>vector.basemap</code> value.</p>
     /// <p>Valid Values: <code>raster.satellite | vector.basemap | vector.traffic | raster.dem</code></p>
     pub tileset: ::std::option::Option<::std::string::String>,
     /// <p>The zoom value for the map tile.</p>
     pub z: ::std::option::Option<::std::string::String>,
-    /// <p>The X axis value for the map tile. Must be between 0 and 19.</p>
+    /// <p>The X axis value for the map tile.</p>
     pub x: ::std::option::Option<::std::string::String>,
     /// <p>The Y axis value for the map tile.</p>
     pub y: ::std::option::Option<::std::string::String>,
@@ -18,13 +18,13 @@ pub struct GetTileInput {
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl GetTileInput {
-    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_features.is_none()`.
     pub fn additional_features(&self) -> &[crate::types::TileAdditionalFeature] {
         self.additional_features.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies the desired tile set.</p>
+    /// <p>Specifies the desired tile set. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only the <code>vector.basemap</code> value.</p>
     /// <p>Valid Values: <code>raster.satellite | vector.basemap | vector.traffic | raster.dem</code></p>
     pub fn tileset(&self) -> ::std::option::Option<&str> {
         self.tileset.as_deref()
@@ -33,7 +33,7 @@ impl GetTileInput {
     pub fn z(&self) -> ::std::option::Option<&str> {
         self.z.as_deref()
     }
-    /// <p>The X axis value for the map tile. Must be between 0 and 19.</p>
+    /// <p>The X axis value for the map tile.</p>
     pub fn x(&self) -> ::std::option::Option<&str> {
         self.x.as_deref()
     }
@@ -81,36 +81,36 @@ impl GetTileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_additional_features`](Self::set_additional_features).
     ///
-    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn additional_features(mut self, input: crate::types::TileAdditionalFeature) -> Self {
         let mut v = self.additional_features.unwrap_or_default();
         v.push(input);
         self.additional_features = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn set_additional_features(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TileAdditionalFeature>>) -> Self {
         self.additional_features = input;
         self
     }
-    /// <p>A list of optional additional parameters such as map styles that can be requested for each result.</p>
+    /// <p>A list of optional additional parameters such as map styles that can be requested for each result. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
     pub fn get_additional_features(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TileAdditionalFeature>> {
         &self.additional_features
     }
-    /// <p>Specifies the desired tile set.</p>
+    /// <p>Specifies the desired tile set. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only the <code>vector.basemap</code> value.</p>
     /// <p>Valid Values: <code>raster.satellite | vector.basemap | vector.traffic | raster.dem</code></p>
     /// This field is required.
     pub fn tileset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tileset = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the desired tile set.</p>
+    /// <p>Specifies the desired tile set. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only the <code>vector.basemap</code> value.</p>
     /// <p>Valid Values: <code>raster.satellite | vector.basemap | vector.traffic | raster.dem</code></p>
     pub fn set_tileset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tileset = input;
         self
     }
-    /// <p>Specifies the desired tile set.</p>
+    /// <p>Specifies the desired tile set. For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions support only the <code>vector.basemap</code> value.</p>
     /// <p>Valid Values: <code>raster.satellite | vector.basemap | vector.traffic | raster.dem</code></p>
     pub fn get_tileset(&self) -> &::std::option::Option<::std::string::String> {
         &self.tileset
@@ -130,18 +130,18 @@ impl GetTileInputBuilder {
     pub fn get_z(&self) -> &::std::option::Option<::std::string::String> {
         &self.z
     }
-    /// <p>The X axis value for the map tile. Must be between 0 and 19.</p>
+    /// <p>The X axis value for the map tile.</p>
     /// This field is required.
     pub fn x(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.x = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The X axis value for the map tile. Must be between 0 and 19.</p>
+    /// <p>The X axis value for the map tile.</p>
     pub fn set_x(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.x = input;
         self
     }
-    /// <p>The X axis value for the map tile. Must be between 0 and 19.</p>
+    /// <p>The X axis value for the map tile.</p>
     pub fn get_x(&self) -> &::std::option::Option<::std::string::String> {
         &self.x
     }

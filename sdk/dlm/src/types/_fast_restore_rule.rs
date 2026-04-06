@@ -12,6 +12,8 @@ pub struct FastRestoreRule {
     pub interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
     /// <p>The Availability Zones in which to enable fast snapshot restore.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Availability Zone Ids in which to enable fast snapshot restore.</p>
+    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FastRestoreRule {
     /// <p>The number of snapshots to be enabled with fast snapshot restore.</p>
@@ -32,6 +34,12 @@ impl FastRestoreRule {
     pub fn availability_zones(&self) -> &[::std::string::String] {
         self.availability_zones.as_deref().unwrap_or_default()
     }
+    /// <p>The Availability Zone Ids in which to enable fast snapshot restore.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_ids.is_none()`.
+    pub fn availability_zone_ids(&self) -> &[::std::string::String] {
+        self.availability_zone_ids.as_deref().unwrap_or_default()
+    }
 }
 impl FastRestoreRule {
     /// Creates a new builder-style object to manufacture [`FastRestoreRule`](crate::types::FastRestoreRule).
@@ -48,6 +56,7 @@ pub struct FastRestoreRuleBuilder {
     pub(crate) interval: ::std::option::Option<i32>,
     pub(crate) interval_unit: ::std::option::Option<crate::types::RetentionIntervalUnitValues>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FastRestoreRuleBuilder {
     /// <p>The number of snapshots to be enabled with fast snapshot restore.</p>
@@ -112,6 +121,26 @@ impl FastRestoreRuleBuilder {
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
     }
+    /// Appends an item to `availability_zone_ids`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zone_ids`](Self::set_availability_zone_ids).
+    ///
+    /// <p>The Availability Zone Ids in which to enable fast snapshot restore.</p>
+    pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.availability_zone_ids.unwrap_or_default();
+        v.push(input.into());
+        self.availability_zone_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Availability Zone Ids in which to enable fast snapshot restore.</p>
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.availability_zone_ids = input;
+        self
+    }
+    /// <p>The Availability Zone Ids in which to enable fast snapshot restore.</p>
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zone_ids
+    }
     /// Consumes the builder and constructs a [`FastRestoreRule`](crate::types::FastRestoreRule).
     pub fn build(self) -> crate::types::FastRestoreRule {
         crate::types::FastRestoreRule {
@@ -119,6 +148,7 @@ impl FastRestoreRuleBuilder {
             interval: self.interval,
             interval_unit: self.interval_unit,
             availability_zones: self.availability_zones,
+            availability_zone_ids: self.availability_zone_ids,
         }
     }
 }

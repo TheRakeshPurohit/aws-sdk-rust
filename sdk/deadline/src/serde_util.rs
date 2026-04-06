@@ -140,12 +140,102 @@ pub(crate) fn assume_queue_role_for_user_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn batch_get_job_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_job::builders::BatchGetJobOutputBuilder,
+) -> crate::operation::batch_get_job::builders::BatchGetJobOutputBuilder {
+    if builder.jobs.is_none() {
+        builder.jobs = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_get_job_entity_output_output_correct_errors(
     mut builder: crate::operation::batch_get_job_entity::builders::BatchGetJobEntityOutputBuilder,
 ) -> crate::operation::batch_get_job_entity::builders::BatchGetJobEntityOutputBuilder {
     if builder.entities.is_none() {
         builder.entities = Some(Default::default())
     }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_session_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_session::builders::BatchGetSessionOutputBuilder,
+) -> crate::operation::batch_get_session::builders::BatchGetSessionOutputBuilder {
+    if builder.sessions.is_none() {
+        builder.sessions = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_session_action_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_session_action::builders::BatchGetSessionActionOutputBuilder,
+) -> crate::operation::batch_get_session_action::builders::BatchGetSessionActionOutputBuilder {
+    if builder.session_actions.is_none() {
+        builder.session_actions = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_step_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_step::builders::BatchGetStepOutputBuilder,
+) -> crate::operation::batch_get_step::builders::BatchGetStepOutputBuilder {
+    if builder.steps.is_none() {
+        builder.steps = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_task_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_task::builders::BatchGetTaskOutputBuilder,
+) -> crate::operation::batch_get_task::builders::BatchGetTaskOutputBuilder {
+    if builder.tasks.is_none() {
+        builder.tasks = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_worker_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_worker::builders::BatchGetWorkerOutputBuilder,
+) -> crate::operation::batch_get_worker::builders::BatchGetWorkerOutputBuilder {
+    if builder.workers.is_none() {
+        builder.workers = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_update_job_output_output_correct_errors(
+    mut builder: crate::operation::batch_update_job::builders::BatchUpdateJobOutputBuilder,
+) -> crate::operation::batch_update_job::builders::BatchUpdateJobOutputBuilder {
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_update_task_output_output_correct_errors(
+    mut builder: crate::operation::batch_update_task::builders::BatchUpdateTaskOutputBuilder,
+) -> crate::operation::batch_update_task::builders::BatchUpdateTaskOutputBuilder {
     if builder.errors.is_none() {
         builder.errors = Some(Default::default())
     }
@@ -1187,6 +1277,381 @@ pub(crate) fn assigned_session_correct_errors(
             let builder = crate::types::builders::LogConfigurationBuilder::default();
             crate::serde_util::log_configuration_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn batch_get_job_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetJobErrorBuilder,
+) -> crate::types::builders::BatchGetJobErrorBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::BatchGetJobErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_job_item_correct_errors(
+    mut builder: crate::types::builders::BatchGetJobItemBuilder,
+) -> crate::types::builders::BatchGetJobItemBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.lifecycle_status.is_none() {
+        builder.lifecycle_status = "no value was set".parse::<crate::types::JobLifecycleStatus>().ok()
+    }
+    if builder.lifecycle_status_message.is_none() {
+        builder.lifecycle_status_message = Some(Default::default())
+    }
+    if builder.priority.is_none() {
+        builder.priority = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_session_action_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetSessionActionErrorBuilder,
+) -> crate::types::builders::BatchGetSessionActionErrorBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.session_action_id.is_none() {
+        builder.session_action_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::BatchGetSessionActionErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_session_action_item_correct_errors(
+    mut builder: crate::types::builders::BatchGetSessionActionItemBuilder,
+) -> crate::types::builders::BatchGetSessionActionItemBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.session_action_id.is_none() {
+        builder.session_action_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SessionActionStatus>().ok()
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.definition.is_none() {
+        builder.definition = Some(crate::types::SessionActionDefinition::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn batch_get_session_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetSessionErrorBuilder,
+) -> crate::types::builders::BatchGetSessionErrorBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::BatchGetSessionErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_session_item_correct_errors(
+    mut builder: crate::types::builders::BatchGetSessionItemBuilder,
+) -> crate::types::builders::BatchGetSessionItemBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.fleet_id.is_none() {
+        builder.fleet_id = Some(Default::default())
+    }
+    if builder.worker_id.is_none() {
+        builder.worker_id = Some(Default::default())
+    }
+    if builder.started_at.is_none() {
+        builder.started_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.lifecycle_status.is_none() {
+        builder.lifecycle_status = "no value was set".parse::<crate::types::SessionLifecycleStatus>().ok()
+    }
+    if builder.log.is_none() {
+        builder.log = {
+            let builder = crate::types::builders::LogConfigurationBuilder::default();
+            crate::serde_util::log_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn batch_get_step_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetStepErrorBuilder,
+) -> crate::types::builders::BatchGetStepErrorBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.step_id.is_none() {
+        builder.step_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::BatchGetStepErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_step_item_correct_errors(
+    mut builder: crate::types::builders::BatchGetStepItemBuilder,
+) -> crate::types::builders::BatchGetStepItemBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.step_id.is_none() {
+        builder.step_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.lifecycle_status.is_none() {
+        builder.lifecycle_status = "no value was set".parse::<crate::types::StepLifecycleStatus>().ok()
+    }
+    if builder.task_run_status.is_none() {
+        builder.task_run_status = "no value was set".parse::<crate::types::TaskRunStatus>().ok()
+    }
+    if builder.task_run_status_counts.is_none() {
+        builder.task_run_status_counts = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_task_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetTaskErrorBuilder,
+) -> crate::types::builders::BatchGetTaskErrorBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.step_id.is_none() {
+        builder.step_id = Some(Default::default())
+    }
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::BatchGetTaskErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_task_item_correct_errors(
+    mut builder: crate::types::builders::BatchGetTaskItemBuilder,
+) -> crate::types::builders::BatchGetTaskItemBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.step_id.is_none() {
+        builder.step_id = Some(Default::default())
+    }
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.run_status.is_none() {
+        builder.run_status = "no value was set".parse::<crate::types::TaskRunStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn batch_get_worker_error_correct_errors(
+    mut builder: crate::types::builders::BatchGetWorkerErrorBuilder,
+) -> crate::types::builders::BatchGetWorkerErrorBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.fleet_id.is_none() {
+        builder.fleet_id = Some(Default::default())
+    }
+    if builder.worker_id.is_none() {
+        builder.worker_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::BatchGetWorkerErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_get_worker_item_correct_errors(
+    mut builder: crate::types::builders::BatchGetWorkerItemBuilder,
+) -> crate::types::builders::BatchGetWorkerItemBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.fleet_id.is_none() {
+        builder.fleet_id = Some(Default::default())
+    }
+    if builder.worker_id.is_none() {
+        builder.worker_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::WorkerStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_update_job_error_correct_errors(
+    mut builder: crate::types::builders::BatchUpdateJobErrorBuilder,
+) -> crate::types::builders::BatchUpdateJobErrorBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::BatchUpdateJobErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_update_task_error_correct_errors(
+    mut builder: crate::types::builders::BatchUpdateTaskErrorBuilder,
+) -> crate::types::builders::BatchUpdateTaskErrorBuilder {
+    if builder.farm_id.is_none() {
+        builder.farm_id = Some(Default::default())
+    }
+    if builder.queue_id.is_none() {
+        builder.queue_id = Some(Default::default())
+    }
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.step_id.is_none() {
+        builder.step_id = Some(Default::default())
+    }
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::BatchUpdateTaskErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }

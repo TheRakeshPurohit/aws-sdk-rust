@@ -14,12 +14,12 @@ pub struct KubernetesWorkloadDetails {
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
     pub host_network: ::std::option::Option<bool>,
+    /// <p>The service account name that is associated with a Kubernetes workload.</p>
+    pub service_account_name: ::std::option::Option<::std::string::String>,
     /// <p>Containers running as part of the Kubernetes workload.</p>
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
     /// <p>Volumes used by the Kubernetes workload.</p>
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
-    /// <p>The service account name that is associated with a Kubernetes workload.</p>
-    pub service_account_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
     pub host_ipc: ::std::option::Option<bool>,
     /// <p>Whether the host PID flag is enabled for the pods in the workload.</p>
@@ -46,6 +46,10 @@ impl KubernetesWorkloadDetails {
     pub fn host_network(&self) -> ::std::option::Option<bool> {
         self.host_network
     }
+    /// <p>The service account name that is associated with a Kubernetes workload.</p>
+    pub fn service_account_name(&self) -> ::std::option::Option<&str> {
+        self.service_account_name.as_deref()
+    }
     /// <p>Containers running as part of the Kubernetes workload.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
@@ -57,10 +61,6 @@ impl KubernetesWorkloadDetails {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.volumes.is_none()`.
     pub fn volumes(&self) -> &[crate::types::Volume] {
         self.volumes.as_deref().unwrap_or_default()
-    }
-    /// <p>The service account name that is associated with a Kubernetes workload.</p>
-    pub fn service_account_name(&self) -> ::std::option::Option<&str> {
-        self.service_account_name.as_deref()
     }
     /// <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
     pub fn host_ipc(&self) -> ::std::option::Option<bool> {
@@ -87,9 +87,9 @@ pub struct KubernetesWorkloadDetailsBuilder {
     pub(crate) uid: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) host_network: ::std::option::Option<bool>,
+    pub(crate) service_account_name: ::std::option::Option<::std::string::String>,
     pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
     pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
-    pub(crate) service_account_name: ::std::option::Option<::std::string::String>,
     pub(crate) host_ipc: ::std::option::Option<bool>,
     pub(crate) host_pid: ::std::option::Option<bool>,
 }
@@ -164,6 +164,20 @@ impl KubernetesWorkloadDetailsBuilder {
     pub fn get_host_network(&self) -> &::std::option::Option<bool> {
         &self.host_network
     }
+    /// <p>The service account name that is associated with a Kubernetes workload.</p>
+    pub fn service_account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_account_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The service account name that is associated with a Kubernetes workload.</p>
+    pub fn set_service_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_account_name = input;
+        self
+    }
+    /// <p>The service account name that is associated with a Kubernetes workload.</p>
+    pub fn get_service_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_account_name
+    }
     /// Appends an item to `containers`.
     ///
     /// To override the contents of this collection use [`set_containers`](Self::set_containers).
@@ -204,20 +218,6 @@ impl KubernetesWorkloadDetailsBuilder {
     pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
         &self.volumes
     }
-    /// <p>The service account name that is associated with a Kubernetes workload.</p>
-    pub fn service_account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.service_account_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The service account name that is associated with a Kubernetes workload.</p>
-    pub fn set_service_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.service_account_name = input;
-        self
-    }
-    /// <p>The service account name that is associated with a Kubernetes workload.</p>
-    pub fn get_service_account_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.service_account_name
-    }
     /// <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
     pub fn host_ipc(mut self, input: bool) -> Self {
         self.host_ipc = ::std::option::Option::Some(input);
@@ -254,9 +254,9 @@ impl KubernetesWorkloadDetailsBuilder {
             uid: self.uid,
             namespace: self.namespace,
             host_network: self.host_network,
+            service_account_name: self.service_account_name,
             containers: self.containers,
             volumes: self.volumes,
-            service_account_name: self.service_account_name,
             host_ipc: self.host_ipc,
             host_pid: self.host_pid,
         }

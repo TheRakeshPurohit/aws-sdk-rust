@@ -57,6 +57,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "identityCenterRegion" => {
+                            builder = builder.set_identity_center_region(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "identityCenterApplicationArn" => {
                             builder = builder.set_identity_center_application_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

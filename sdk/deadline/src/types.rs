@@ -29,7 +29,51 @@ pub use crate::types::_storage_profile_operating_system_family::StorageProfileOp
 
 pub use crate::types::_license_endpoint_status::LicenseEndpointStatus;
 
+pub use crate::types::_batch_get_job_identifier::BatchGetJobIdentifier;
+
+pub use crate::types::_batch_get_job_item::BatchGetJobItem;
+
+pub use crate::types::_batch_get_job_error::BatchGetJobError;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
+
+pub use crate::types::_batch_get_session_identifier::BatchGetSessionIdentifier;
+
+pub use crate::types::_batch_get_session_item::BatchGetSessionItem;
+
+pub use crate::types::_batch_get_session_error::BatchGetSessionError;
+
+pub use crate::types::_batch_get_session_action_identifier::BatchGetSessionActionIdentifier;
+
+pub use crate::types::_batch_get_session_action_item::BatchGetSessionActionItem;
+
+pub use crate::types::_batch_get_session_action_error::BatchGetSessionActionError;
+
+pub use crate::types::_batch_get_step_identifier::BatchGetStepIdentifier;
+
+pub use crate::types::_batch_get_step_item::BatchGetStepItem;
+
+pub use crate::types::_batch_get_step_error::BatchGetStepError;
+
+pub use crate::types::_batch_get_task_identifier::BatchGetTaskIdentifier;
+
+pub use crate::types::_batch_get_task_item::BatchGetTaskItem;
+
+pub use crate::types::_batch_get_task_error::BatchGetTaskError;
+
+pub use crate::types::_batch_get_worker_identifier::BatchGetWorkerIdentifier;
+
+pub use crate::types::_batch_get_worker_item::BatchGetWorkerItem;
+
+pub use crate::types::_batch_get_worker_error::BatchGetWorkerError;
+
+pub use crate::types::_batch_update_job_item::BatchUpdateJobItem;
+
+pub use crate::types::_batch_update_job_error::BatchUpdateJobError;
+
+pub use crate::types::_batch_update_task_item::BatchUpdateTaskItem;
+
+pub use crate::types::_batch_update_task_error::BatchUpdateTaskError;
 
 pub use crate::types::_statistics::Statistics;
 
@@ -152,6 +196,22 @@ pub use crate::types::_storage_profile_summary::StorageProfileSummary;
 pub use crate::types::_license_endpoint_summary::LicenseEndpointSummary;
 
 pub use crate::types::_monitor_summary::MonitorSummary;
+
+pub use crate::types::_batch_get_job_error_code::BatchGetJobErrorCode;
+
+pub use crate::types::_batch_get_session_error_code::BatchGetSessionErrorCode;
+
+pub use crate::types::_batch_get_session_action_error_code::BatchGetSessionActionErrorCode;
+
+pub use crate::types::_batch_get_step_error_code::BatchGetStepErrorCode;
+
+pub use crate::types::_batch_get_task_error_code::BatchGetTaskErrorCode;
+
+pub use crate::types::_batch_get_worker_error_code::BatchGetWorkerErrorCode;
+
+pub use crate::types::_batch_update_job_error_code::BatchUpdateJobErrorCode;
+
+pub use crate::types::_batch_update_task_error_code::BatchUpdateTaskErrorCode;
 
 pub use crate::types::_usage_type::UsageType;
 
@@ -436,6 +496,66 @@ mod _auto_scaling_mode;
 mod _auto_scaling_status;
 
 mod _aws_credentials;
+
+mod _batch_get_job_error;
+
+mod _batch_get_job_error_code;
+
+mod _batch_get_job_identifier;
+
+mod _batch_get_job_item;
+
+mod _batch_get_session_action_error;
+
+mod _batch_get_session_action_error_code;
+
+mod _batch_get_session_action_identifier;
+
+mod _batch_get_session_action_item;
+
+mod _batch_get_session_error;
+
+mod _batch_get_session_error_code;
+
+mod _batch_get_session_identifier;
+
+mod _batch_get_session_item;
+
+mod _batch_get_step_error;
+
+mod _batch_get_step_error_code;
+
+mod _batch_get_step_identifier;
+
+mod _batch_get_step_item;
+
+mod _batch_get_task_error;
+
+mod _batch_get_task_error_code;
+
+mod _batch_get_task_identifier;
+
+mod _batch_get_task_item;
+
+mod _batch_get_worker_error;
+
+mod _batch_get_worker_error_code;
+
+mod _batch_get_worker_identifier;
+
+mod _batch_get_worker_item;
+
+mod _batch_update_job_error;
+
+mod _batch_update_job_error_code;
+
+mod _batch_update_job_item;
+
+mod _batch_update_task_error;
+
+mod _batch_update_task_error_code;
+
+mod _batch_update_task_item;
 
 mod _budget_action_to_add;
 

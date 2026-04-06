@@ -245,4 +245,18 @@ impl CreateConnectorFluentBuilder {
     pub fn get_egress_config(&self) -> &::std::option::Option<crate::types::ConnectorEgressConfig> {
         self.inner.get_egress_config()
     }
+    /// <p>Specifies the IP address type for the connector's network connections. When set to <code>IPV4</code>, the connector uses IPv4 addresses only. When set to <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses, with IPv6 preferred when available.</p>
+    pub fn ip_address_type(mut self, input: crate::types::ConnectorsIpAddressType) -> Self {
+        self.inner = self.inner.ip_address_type(input);
+        self
+    }
+    /// <p>Specifies the IP address type for the connector's network connections. When set to <code>IPV4</code>, the connector uses IPv4 addresses only. When set to <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses, with IPv6 preferred when available.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::ConnectorsIpAddressType>) -> Self {
+        self.inner = self.inner.set_ip_address_type(input);
+        self
+    }
+    /// <p>Specifies the IP address type for the connector's network connections. When set to <code>IPV4</code>, the connector uses IPv4 addresses only. When set to <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses, with IPv6 preferred when available.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::ConnectorsIpAddressType> {
+        self.inner.get_ip_address_type()
+    }
 }

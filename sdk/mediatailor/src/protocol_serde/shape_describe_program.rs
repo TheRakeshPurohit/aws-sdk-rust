@@ -108,6 +108,9 @@ pub(crate) fn de_describe_program(
                             .transpose()?,
                     );
                 }
+                "tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
+                }
                 "VodSourceName" => {
                     builder = builder.set_vod_source_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

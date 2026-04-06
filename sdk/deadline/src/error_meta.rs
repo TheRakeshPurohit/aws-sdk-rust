@@ -417,6 +417,31 @@ impl From<crate::operation::assume_queue_role_for_worker::AssumeQueueRoleForWork
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_job::BatchGetJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_job::BatchGetJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_job::BatchGetJobError> for Error {
+    fn from(err: crate::operation::batch_get_job::BatchGetJobError) -> Self {
+        match err {
+            crate::operation::batch_get_job::BatchGetJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_job::BatchGetJobError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::batch_get_job::BatchGetJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_get_job::BatchGetJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_get_job::BatchGetJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_job_entity::BatchGetJobEntityError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -444,6 +469,195 @@ impl From<crate::operation::batch_get_job_entity::BatchGetJobEntityError> for Er
             crate::operation::batch_get_job_entity::BatchGetJobEntityError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::batch_get_job_entity::BatchGetJobEntityError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::batch_get_job_entity::BatchGetJobEntityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_session::BatchGetSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_session::BatchGetSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_session::BatchGetSessionError> for Error {
+    fn from(err: crate::operation::batch_get_session::BatchGetSessionError) -> Self {
+        match err {
+            crate::operation::batch_get_session::BatchGetSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_session::BatchGetSessionError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::batch_get_session::BatchGetSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_get_session::BatchGetSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_get_session::BatchGetSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_session_action::BatchGetSessionActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_session_action::BatchGetSessionActionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_session_action::BatchGetSessionActionError> for Error {
+    fn from(err: crate::operation::batch_get_session_action::BatchGetSessionActionError) -> Self {
+        match err {
+            crate::operation::batch_get_session_action::BatchGetSessionActionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_get_session_action::BatchGetSessionActionError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::batch_get_session_action::BatchGetSessionActionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_get_session_action::BatchGetSessionActionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_get_session_action::BatchGetSessionActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_step::BatchGetStepError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_step::BatchGetStepError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_step::BatchGetStepError> for Error {
+    fn from(err: crate::operation::batch_get_step::BatchGetStepError) -> Self {
+        match err {
+            crate::operation::batch_get_step::BatchGetStepError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_step::BatchGetStepError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::batch_get_step::BatchGetStepError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_get_step::BatchGetStepError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_get_step::BatchGetStepError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_task::BatchGetTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_task::BatchGetTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_task::BatchGetTaskError> for Error {
+    fn from(err: crate::operation::batch_get_task::BatchGetTaskError) -> Self {
+        match err {
+            crate::operation::batch_get_task::BatchGetTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_task::BatchGetTaskError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::batch_get_task::BatchGetTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_get_task::BatchGetTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_get_task::BatchGetTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_worker::BatchGetWorkerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_worker::BatchGetWorkerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_worker::BatchGetWorkerError> for Error {
+    fn from(err: crate::operation::batch_get_worker::BatchGetWorkerError) -> Self {
+        match err {
+            crate::operation::batch_get_worker::BatchGetWorkerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_worker::BatchGetWorkerError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::batch_get_worker::BatchGetWorkerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_get_worker::BatchGetWorkerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_get_worker::BatchGetWorkerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_job::BatchUpdateJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_job::BatchUpdateJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_update_job::BatchUpdateJobError> for Error {
+    fn from(err: crate::operation::batch_update_job::BatchUpdateJobError) -> Self {
+        match err {
+            crate::operation::batch_update_job::BatchUpdateJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_update_job::BatchUpdateJobError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::batch_update_job::BatchUpdateJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_update_job::BatchUpdateJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_update_job::BatchUpdateJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_task::BatchUpdateTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_task::BatchUpdateTaskError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_update_task::BatchUpdateTaskError> for Error {
+    fn from(err: crate::operation::batch_update_task::BatchUpdateTaskError) -> Self {
+        match err {
+            crate::operation::batch_update_task::BatchUpdateTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_update_task::BatchUpdateTaskError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::batch_update_task::BatchUpdateTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_update_task::BatchUpdateTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_update_task::BatchUpdateTaskError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

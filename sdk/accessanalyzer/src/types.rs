@@ -11,6 +11,10 @@ pub use crate::types::_access_check_resource_type::AccessCheckResourceType;
 
 pub use crate::types::_check_no_public_access_result::CheckNoPublicAccessResult;
 
+pub use crate::types::_policy_preview_scope::PolicyPreviewScope;
+
+pub use crate::types::_policy_preview_status::PolicyPreviewStatus;
+
 pub use crate::types::_access_preview::AccessPreview;
 
 pub use crate::types::_analyzed_resource::AnalyzedResource;
@@ -32,6 +36,10 @@ pub use crate::types::_finding_type::FindingType;
 pub use crate::types::_job_details::JobDetails;
 
 pub use crate::types::_generated_policy_result::GeneratedPolicyResult;
+
+pub use crate::types::_policy_preview_job_parameters::PolicyPreviewJobParameters;
+
+pub use crate::types::_policy_preview_job_details::PolicyPreviewJobDetails;
 
 pub use crate::types::_sort_criteria::SortCriteria;
 
@@ -79,6 +87,10 @@ pub use crate::types::_job_error::JobError;
 
 pub use crate::types::_generated_policy_properties::GeneratedPolicyProperties;
 
+pub use crate::types::_policy_preview_configuration::PolicyPreviewConfiguration;
+
+pub use crate::types::_impact_analysis_job_status::ImpactAnalysisJobStatus;
+
 pub use crate::types::_criterion::Criterion;
 
 pub use crate::types::_access_preview_finding::AccessPreviewFinding;
@@ -94,6 +106,12 @@ pub use crate::types::_finding_summary::FindingSummary;
 pub use crate::types::_finding_summary_v2::FindingSummaryV2;
 
 pub use crate::types::_policy_generation::PolicyGeneration;
+
+pub use crate::types::_policy_preview_job_filter_name::PolicyPreviewJobFilterName;
+
+pub use crate::types::_policy_preview_analysis_report::PolicyPreviewAnalysisReport;
+
+pub use crate::types::_policy_configuration::PolicyConfiguration;
 
 pub use crate::types::_validate_policy_finding::ValidatePolicyFinding;
 
@@ -170,6 +188,8 @@ pub use crate::types::_generated_policy::GeneratedPolicy;
 pub use crate::types::_finding_change_type::FindingChangeType;
 
 pub use crate::types::_trail::Trail;
+
+pub use crate::types::_impact_analysis_job_type::ImpactAnalysisJobType;
 
 pub use crate::types::_validate_policy_finding_type::ValidatePolicyFindingType;
 
@@ -345,6 +365,10 @@ mod _generated_policy_result;
 
 mod _iam_role_configuration;
 
+mod _impact_analysis_job_status;
+
+mod _impact_analysis_job_type;
+
 mod _inline_archive_rule;
 
 mod _internal_access_analysis_rule;
@@ -389,9 +413,25 @@ mod _order_by;
 
 mod _path_element;
 
+mod _policy_configuration;
+
 mod _policy_generation;
 
 mod _policy_generation_details;
+
+mod _policy_preview_analysis_report;
+
+mod _policy_preview_configuration;
+
+mod _policy_preview_job_details;
+
+mod _policy_preview_job_filter_name;
+
+mod _policy_preview_job_parameters;
+
+mod _policy_preview_scope;
+
+mod _policy_preview_status;
 
 mod _policy_type;
 

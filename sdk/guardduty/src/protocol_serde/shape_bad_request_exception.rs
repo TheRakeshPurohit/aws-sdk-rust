@@ -17,7 +17,7 @@ pub(crate) fn de_bad_request_exception_json_err(
                             .transpose()?,
                     );
                 }
-                "__type" => {
+                "type" => {
                     builder = builder.set_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))

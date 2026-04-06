@@ -6,21 +6,17 @@
 pub struct CoverageResourceDetails {
     /// <p>EKS cluster details involved in the coverage statistics.</p>
     pub eks_cluster_details: ::std::option::Option<crate::types::CoverageEksClusterDetails>,
-    /// <p>The type of Amazon Web Services resource.</p>
-    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Information about the Amazon ECS cluster that is assessed for runtime coverage.</p>
     pub ecs_cluster_details: ::std::option::Option<crate::types::CoverageEcsClusterDetails>,
     /// <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
     pub ec2_instance_details: ::std::option::Option<crate::types::CoverageEc2InstanceDetails>,
+    /// <p>The type of Amazon Web Services resource.</p>
+    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
 impl CoverageResourceDetails {
     /// <p>EKS cluster details involved in the coverage statistics.</p>
     pub fn eks_cluster_details(&self) -> ::std::option::Option<&crate::types::CoverageEksClusterDetails> {
         self.eks_cluster_details.as_ref()
-    }
-    /// <p>The type of Amazon Web Services resource.</p>
-    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
-        self.resource_type.as_ref()
     }
     /// <p>Information about the Amazon ECS cluster that is assessed for runtime coverage.</p>
     pub fn ecs_cluster_details(&self) -> ::std::option::Option<&crate::types::CoverageEcsClusterDetails> {
@@ -29,6 +25,10 @@ impl CoverageResourceDetails {
     /// <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
     pub fn ec2_instance_details(&self) -> ::std::option::Option<&crate::types::CoverageEc2InstanceDetails> {
         self.ec2_instance_details.as_ref()
+    }
+    /// <p>The type of Amazon Web Services resource.</p>
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
+        self.resource_type.as_ref()
     }
 }
 impl CoverageResourceDetails {
@@ -43,9 +43,9 @@ impl CoverageResourceDetails {
 #[non_exhaustive]
 pub struct CoverageResourceDetailsBuilder {
     pub(crate) eks_cluster_details: ::std::option::Option<crate::types::CoverageEksClusterDetails>,
-    pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
     pub(crate) ecs_cluster_details: ::std::option::Option<crate::types::CoverageEcsClusterDetails>,
     pub(crate) ec2_instance_details: ::std::option::Option<crate::types::CoverageEc2InstanceDetails>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
 }
 impl CoverageResourceDetailsBuilder {
     /// <p>EKS cluster details involved in the coverage statistics.</p>
@@ -61,20 +61,6 @@ impl CoverageResourceDetailsBuilder {
     /// <p>EKS cluster details involved in the coverage statistics.</p>
     pub fn get_eks_cluster_details(&self) -> &::std::option::Option<crate::types::CoverageEksClusterDetails> {
         &self.eks_cluster_details
-    }
-    /// <p>The type of Amazon Web Services resource.</p>
-    pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
-        self.resource_type = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The type of Amazon Web Services resource.</p>
-    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input;
-        self
-    }
-    /// <p>The type of Amazon Web Services resource.</p>
-    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
-        &self.resource_type
     }
     /// <p>Information about the Amazon ECS cluster that is assessed for runtime coverage.</p>
     pub fn ecs_cluster_details(mut self, input: crate::types::CoverageEcsClusterDetails) -> Self {
@@ -104,13 +90,27 @@ impl CoverageResourceDetailsBuilder {
     pub fn get_ec2_instance_details(&self) -> &::std::option::Option<crate::types::CoverageEc2InstanceDetails> {
         &self.ec2_instance_details
     }
+    /// <p>The type of Amazon Web Services resource.</p>
+    pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
+        self.resource_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of Amazon Web Services resource.</p>
+    pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input;
+        self
+    }
+    /// <p>The type of Amazon Web Services resource.</p>
+    pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
+        &self.resource_type
+    }
     /// Consumes the builder and constructs a [`CoverageResourceDetails`](crate::types::CoverageResourceDetails).
     pub fn build(self) -> crate::types::CoverageResourceDetails {
         crate::types::CoverageResourceDetails {
             eks_cluster_details: self.eks_cluster_details,
-            resource_type: self.resource_type,
             ecs_cluster_details: self.ecs_cluster_details,
             ec2_instance_details: self.ec2_instance_details,
+            resource_type: self.resource_type,
         }
     }
 }

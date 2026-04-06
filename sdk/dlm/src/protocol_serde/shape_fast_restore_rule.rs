@@ -27,6 +27,15 @@ pub fn ser_fast_restore_rule(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.availability_zone_ids {
+        let mut array_8 = object.key("AvailabilityZoneIds").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }
 
@@ -72,6 +81,11 @@ where
                                 tokens, _value,
                             )?);
                         }
+                        "AvailabilityZoneIds" => {
+                            builder = builder.set_availability_zone_ids(
+                                crate::protocol_serde::shape_availability_zone_id_list::de_availability_zone_id_list(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -81,7 +95,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::fast_restore_rule_correct_errors(builder).build()))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

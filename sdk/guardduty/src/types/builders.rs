@@ -231,13 +231,13 @@ pub use crate::types::_ecs_cluster_details::EcsClusterDetailsBuilder;
 
 pub use crate::types::_container::ContainerBuilder;
 
+pub use crate::types::_lambda_details::LambdaDetailsBuilder;
+
 pub use crate::types::_rds_db_instance_details::RdsDbInstanceDetailsBuilder;
 
 pub use crate::types::_rds_limitless_db_details::RdsLimitlessDbDetailsBuilder;
 
 pub use crate::types::_rds_db_user_details::RdsDbUserDetailsBuilder;
-
-pub use crate::types::_lambda_details::LambdaDetailsBuilder;
 
 pub use crate::types::_ebs_snapshot_details::EbsSnapshotDetailsBuilder;
 
@@ -311,13 +311,13 @@ pub use crate::types::_port_probe_action::PortProbeActionBuilder;
 
 pub use crate::types::_kubernetes_api_call_action::KubernetesApiCallActionBuilder;
 
-pub use crate::types::_rds_login_attempt_action::RdsLoginAttemptActionBuilder;
-
 pub use crate::types::_kubernetes_permission_checked_details::KubernetesPermissionCheckedDetailsBuilder;
 
 pub use crate::types::_kubernetes_role_binding_details::KubernetesRoleBindingDetailsBuilder;
 
 pub use crate::types::_kubernetes_role_details::KubernetesRoleDetailsBuilder;
+
+pub use crate::types::_rds_login_attempt_action::RdsLoginAttemptActionBuilder;
 
 pub use crate::types::_scan_detections::ScanDetectionsBuilder;
 

@@ -97,6 +97,9 @@ pub(crate) fn de_get_prefetch_schedule(
                             .transpose()?,
                     );
                 }
+                "tags" => {
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

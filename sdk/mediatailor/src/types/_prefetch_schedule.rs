@@ -21,6 +21,8 @@ pub struct PrefetchSchedule {
     pub recurring_prefetch_configuration: ::std::option::Option<crate::types::RecurringPrefetchConfiguration>,
     /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
     pub stream_id: ::std::option::Option<::std::string::String>,
+    /// <p>The tags assigned to the prefetch schedule. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PrefetchSchedule {
     /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
@@ -59,6 +61,10 @@ impl PrefetchSchedule {
     pub fn stream_id(&self) -> ::std::option::Option<&str> {
         self.stream_id.as_deref()
     }
+    /// <p>The tags assigned to the prefetch schedule. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl PrefetchSchedule {
     /// Creates a new builder-style object to manufacture [`PrefetchSchedule`](crate::types::PrefetchSchedule).
@@ -79,6 +85,7 @@ pub struct PrefetchScheduleBuilder {
     pub(crate) schedule_type: ::std::option::Option<crate::types::PrefetchScheduleType>,
     pub(crate) recurring_prefetch_configuration: ::std::option::Option<crate::types::RecurringPrefetchConfiguration>,
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PrefetchScheduleBuilder {
     /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
@@ -199,6 +206,26 @@ impl PrefetchScheduleBuilder {
     pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_id
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags assigned to the prefetch schedule. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags assigned to the prefetch schedule. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags assigned to the prefetch schedule. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`PrefetchSchedule`](crate::types::PrefetchSchedule).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::PrefetchScheduleBuilder::arn)
@@ -229,6 +256,7 @@ impl PrefetchScheduleBuilder {
             schedule_type: self.schedule_type,
             recurring_prefetch_configuration: self.recurring_prefetch_configuration,
             stream_id: self.stream_id,
+            tags: self.tags,
         })
     }
 }

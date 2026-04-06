@@ -51,15 +51,6 @@ pub(crate) fn archive_rule_correct_errors(mut builder: crate::types::builders::A
     builder
 }
 
-pub(crate) fn fast_restore_rule_correct_errors(
-    mut builder: crate::types::builders::FastRestoreRuleBuilder,
-) -> crate::types::builders::FastRestoreRuleBuilder {
-    if builder.availability_zones.is_none() {
-        builder.availability_zones = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn archive_retain_rule_correct_errors(
     mut builder: crate::types::builders::ArchiveRetainRuleBuilder,
 ) -> crate::types::builders::ArchiveRetainRuleBuilder {

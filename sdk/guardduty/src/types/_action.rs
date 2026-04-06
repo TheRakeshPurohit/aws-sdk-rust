@@ -16,14 +16,14 @@ pub struct Action {
     pub port_probe_action: ::std::option::Option<crate::types::PortProbeAction>,
     /// <p>Information about the Kubernetes API call action described in this finding.</p>
     pub kubernetes_api_call_action: ::std::option::Option<crate::types::KubernetesApiCallAction>,
-    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
-    pub rds_login_attempt_action: ::std::option::Option<crate::types::RdsLoginAttemptAction>,
     /// <p>Information whether the user has the permission to use a specific Kubernetes API.</p>
     pub kubernetes_permission_checked_details: ::std::option::Option<crate::types::KubernetesPermissionCheckedDetails>,
     /// <p>Information about the role binding that grants the permission defined in a Kubernetes role.</p>
     pub kubernetes_role_binding_details: ::std::option::Option<crate::types::KubernetesRoleBindingDetails>,
     /// <p>Information about the Kubernetes role name and role type.</p>
     pub kubernetes_role_details: ::std::option::Option<crate::types::KubernetesRoleDetails>,
+    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
+    pub rds_login_attempt_action: ::std::option::Option<crate::types::RdsLoginAttemptAction>,
 }
 impl Action {
     /// <p>The GuardDuty finding activity type.</p>
@@ -50,10 +50,6 @@ impl Action {
     pub fn kubernetes_api_call_action(&self) -> ::std::option::Option<&crate::types::KubernetesApiCallAction> {
         self.kubernetes_api_call_action.as_ref()
     }
-    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
-    pub fn rds_login_attempt_action(&self) -> ::std::option::Option<&crate::types::RdsLoginAttemptAction> {
-        self.rds_login_attempt_action.as_ref()
-    }
     /// <p>Information whether the user has the permission to use a specific Kubernetes API.</p>
     pub fn kubernetes_permission_checked_details(&self) -> ::std::option::Option<&crate::types::KubernetesPermissionCheckedDetails> {
         self.kubernetes_permission_checked_details.as_ref()
@@ -65,6 +61,10 @@ impl Action {
     /// <p>Information about the Kubernetes role name and role type.</p>
     pub fn kubernetes_role_details(&self) -> ::std::option::Option<&crate::types::KubernetesRoleDetails> {
         self.kubernetes_role_details.as_ref()
+    }
+    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
+    pub fn rds_login_attempt_action(&self) -> ::std::option::Option<&crate::types::RdsLoginAttemptAction> {
+        self.rds_login_attempt_action.as_ref()
     }
 }
 impl Action {
@@ -84,10 +84,10 @@ pub struct ActionBuilder {
     pub(crate) network_connection_action: ::std::option::Option<crate::types::NetworkConnectionAction>,
     pub(crate) port_probe_action: ::std::option::Option<crate::types::PortProbeAction>,
     pub(crate) kubernetes_api_call_action: ::std::option::Option<crate::types::KubernetesApiCallAction>,
-    pub(crate) rds_login_attempt_action: ::std::option::Option<crate::types::RdsLoginAttemptAction>,
     pub(crate) kubernetes_permission_checked_details: ::std::option::Option<crate::types::KubernetesPermissionCheckedDetails>,
     pub(crate) kubernetes_role_binding_details: ::std::option::Option<crate::types::KubernetesRoleBindingDetails>,
     pub(crate) kubernetes_role_details: ::std::option::Option<crate::types::KubernetesRoleDetails>,
+    pub(crate) rds_login_attempt_action: ::std::option::Option<crate::types::RdsLoginAttemptAction>,
 }
 impl ActionBuilder {
     /// <p>The GuardDuty finding activity type.</p>
@@ -174,20 +174,6 @@ impl ActionBuilder {
     pub fn get_kubernetes_api_call_action(&self) -> &::std::option::Option<crate::types::KubernetesApiCallAction> {
         &self.kubernetes_api_call_action
     }
-    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
-    pub fn rds_login_attempt_action(mut self, input: crate::types::RdsLoginAttemptAction) -> Self {
-        self.rds_login_attempt_action = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
-    pub fn set_rds_login_attempt_action(mut self, input: ::std::option::Option<crate::types::RdsLoginAttemptAction>) -> Self {
-        self.rds_login_attempt_action = input;
-        self
-    }
-    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
-    pub fn get_rds_login_attempt_action(&self) -> &::std::option::Option<crate::types::RdsLoginAttemptAction> {
-        &self.rds_login_attempt_action
-    }
     /// <p>Information whether the user has the permission to use a specific Kubernetes API.</p>
     pub fn kubernetes_permission_checked_details(mut self, input: crate::types::KubernetesPermissionCheckedDetails) -> Self {
         self.kubernetes_permission_checked_details = ::std::option::Option::Some(input);
@@ -233,6 +219,20 @@ impl ActionBuilder {
     pub fn get_kubernetes_role_details(&self) -> &::std::option::Option<crate::types::KubernetesRoleDetails> {
         &self.kubernetes_role_details
     }
+    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
+    pub fn rds_login_attempt_action(mut self, input: crate::types::RdsLoginAttemptAction) -> Self {
+        self.rds_login_attempt_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
+    pub fn set_rds_login_attempt_action(mut self, input: ::std::option::Option<crate::types::RdsLoginAttemptAction>) -> Self {
+        self.rds_login_attempt_action = input;
+        self
+    }
+    /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
+    pub fn get_rds_login_attempt_action(&self) -> &::std::option::Option<crate::types::RdsLoginAttemptAction> {
+        &self.rds_login_attempt_action
+    }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {
         crate::types::Action {
@@ -242,10 +242,10 @@ impl ActionBuilder {
             network_connection_action: self.network_connection_action,
             port_probe_action: self.port_probe_action,
             kubernetes_api_call_action: self.kubernetes_api_call_action,
-            rds_login_attempt_action: self.rds_login_attempt_action,
             kubernetes_permission_checked_details: self.kubernetes_permission_checked_details,
             kubernetes_role_binding_details: self.kubernetes_role_binding_details,
             kubernetes_role_details: self.kubernetes_role_details,
+            rds_login_attempt_action: self.rds_login_attempt_action,
         }
     }
 }

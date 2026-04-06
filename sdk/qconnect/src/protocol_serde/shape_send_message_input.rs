@@ -40,8 +40,11 @@ pub fn ser_send_message_input_input(
     if let Some(var_13) = &input.orchestrator_use_case {
         object.key("orchestratorUseCase").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.r#type {
-        object.key("type").string(var_14.as_str());
+    if let Some(var_14) = &input.origin_request_id {
+        object.key("originRequestId").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.r#type {
+        object.key("type").string(var_15.as_str());
     }
     Ok(())
 }

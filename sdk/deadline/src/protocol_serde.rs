@@ -41,7 +41,23 @@ pub(crate) mod shape_assume_queue_role_for_user;
 
 pub(crate) mod shape_assume_queue_role_for_worker;
 
+pub(crate) mod shape_batch_get_job;
+
 pub(crate) mod shape_batch_get_job_entity;
+
+pub(crate) mod shape_batch_get_session;
+
+pub(crate) mod shape_batch_get_session_action;
+
+pub(crate) mod shape_batch_get_step;
+
+pub(crate) mod shape_batch_get_task;
+
+pub(crate) mod shape_batch_get_worker;
+
+pub(crate) mod shape_batch_update_job;
+
+pub(crate) mod shape_batch_update_task;
 
 pub(crate) mod shape_copy_job_template;
 
@@ -269,6 +285,22 @@ pub(crate) mod shape_associate_member_to_queue_input;
 
 pub(crate) mod shape_batch_get_job_entity_input;
 
+pub(crate) mod shape_batch_get_job_input;
+
+pub(crate) mod shape_batch_get_session_action_input;
+
+pub(crate) mod shape_batch_get_session_input;
+
+pub(crate) mod shape_batch_get_step_input;
+
+pub(crate) mod shape_batch_get_task_input;
+
+pub(crate) mod shape_batch_get_worker_input;
+
+pub(crate) mod shape_batch_update_job_input;
+
+pub(crate) mod shape_batch_update_task_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_copy_job_template_input;
@@ -366,6 +398,50 @@ pub(crate) mod shape_aws_credentials;
 pub(crate) mod shape_batch_get_job_entity_errors;
 
 pub(crate) mod shape_batch_get_job_entity_list;
+
+pub(crate) mod shape_batch_get_job_errors;
+
+pub(crate) mod shape_batch_get_job_identifier;
+
+pub(crate) mod shape_batch_get_job_items;
+
+pub(crate) mod shape_batch_get_session_action_errors;
+
+pub(crate) mod shape_batch_get_session_action_identifier;
+
+pub(crate) mod shape_batch_get_session_action_items;
+
+pub(crate) mod shape_batch_get_session_errors;
+
+pub(crate) mod shape_batch_get_session_identifier;
+
+pub(crate) mod shape_batch_get_session_items;
+
+pub(crate) mod shape_batch_get_step_errors;
+
+pub(crate) mod shape_batch_get_step_identifier;
+
+pub(crate) mod shape_batch_get_step_items;
+
+pub(crate) mod shape_batch_get_task_errors;
+
+pub(crate) mod shape_batch_get_task_identifier;
+
+pub(crate) mod shape_batch_get_task_items;
+
+pub(crate) mod shape_batch_get_worker_errors;
+
+pub(crate) mod shape_batch_get_worker_identifier;
+
+pub(crate) mod shape_batch_get_worker_items;
+
+pub(crate) mod shape_batch_update_job_errors;
+
+pub(crate) mod shape_batch_update_job_item;
+
+pub(crate) mod shape_batch_update_task_errors;
+
+pub(crate) mod shape_batch_update_task_item;
 
 pub(crate) mod shape_budget_action_to_add;
 
@@ -512,6 +588,34 @@ pub(crate) mod shape_worker_summaries;
 pub(crate) mod shape_acquired_limit;
 
 pub(crate) mod shape_assigned_session;
+
+pub(crate) mod shape_batch_get_job_error;
+
+pub(crate) mod shape_batch_get_job_item;
+
+pub(crate) mod shape_batch_get_session_action_error;
+
+pub(crate) mod shape_batch_get_session_action_item;
+
+pub(crate) mod shape_batch_get_session_error;
+
+pub(crate) mod shape_batch_get_session_item;
+
+pub(crate) mod shape_batch_get_step_error;
+
+pub(crate) mod shape_batch_get_step_item;
+
+pub(crate) mod shape_batch_get_task_error;
+
+pub(crate) mod shape_batch_get_task_item;
+
+pub(crate) mod shape_batch_get_worker_error;
+
+pub(crate) mod shape_batch_get_worker_item;
+
+pub(crate) mod shape_batch_update_job_error;
+
+pub(crate) mod shape_batch_update_task_error;
 
 pub(crate) mod shape_budget_summary;
 

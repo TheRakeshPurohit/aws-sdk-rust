@@ -37,6 +37,8 @@ pub use crate::types::_sftp_connector_config::SftpConnectorConfig;
 
 pub use crate::types::_connector_egress_config::ConnectorEgressConfig;
 
+pub use crate::types::_connectors_ip_address_type::ConnectorsIpAddressType;
+
 pub use crate::types::_described_connector::DescribedConnector;
 
 pub use crate::types::_update_connector_egress_config::UpdateConnectorEgressConfig;
@@ -258,6 +260,8 @@ mod _connector_file_transfer_result;
 mod _connector_status;
 
 mod _connector_vpc_lattice_egress_config;
+
+mod _connectors_ip_address_type;
 
 mod _copy_step_details;
 

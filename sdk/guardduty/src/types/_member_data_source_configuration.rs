@@ -61,6 +61,7 @@ impl MemberDataSourceConfigurationBuilder {
         &self.account_id
     }
     /// <p>Contains information on the status of data sources for the account.</p>
+    /// This field is required.
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(mut self, input: crate::types::DataSourceConfigurationsResult) -> Self {
         self.data_sources = ::std::option::Option::Some(input);

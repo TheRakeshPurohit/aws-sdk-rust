@@ -21,6 +21,7 @@ impl super::Client {
     ///   - [`duration_millis(Option<i64>)`](crate::operation::update_program::UpdateProgramOutput::duration_millis): <p>The duration of the live program in milliseconds.</p>
     ///   - [`scheduled_start_time(Option<DateTime>)`](crate::operation::update_program::UpdateProgramOutput::scheduled_start_time): <p>The scheduled start time for this Program.</p>
     ///   - [`audience_media(Option<Vec::<AudienceMedia>>)`](crate::operation::update_program::UpdateProgramOutput::audience_media): <p>The list of AudienceMedia defined in program.</p>
+    ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_program::UpdateProgramOutput::tags): <p>The tags assigned to the program. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     /// - On failure, responds with [`SdkError<UpdateProgramError>`](crate::operation::update_program::UpdateProgramError)
     pub fn update_program(&self) -> crate::operation::update_program::builders::UpdateProgramFluentBuilder {
         crate::operation::update_program::builders::UpdateProgramFluentBuilder::new(self.handle.clone())

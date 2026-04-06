@@ -29,34 +29,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "sourceIPs" => {
-                            builder = builder.set_source_ips(crate::protocol_serde::shape_source_ips::de_source_ips(tokens, _value)?);
-                        }
-                        "userAgent" => {
-                            builder = builder.set_user_agent(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "remoteIpDetails" => {
-                            builder =
-                                builder.set_remote_ip_details(crate::protocol_serde::shape_remote_ip_details::de_remote_ip_details(tokens, _value)?);
-                        }
-                        "statusCode" => {
-                            builder = builder.set_status_code(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "parameters" => {
-                            builder = builder.set_parameters(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
                         "resource" => {
                             builder = builder.set_resource(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -80,6 +52,34 @@ where
                         }
                         "resourceName" => {
                             builder = builder.set_resource_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "sourceIPs" => {
+                            builder = builder.set_source_ips(crate::protocol_serde::shape_source_ips::de_source_ips(tokens, _value)?);
+                        }
+                        "userAgent" => {
+                            builder = builder.set_user_agent(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "remoteIpDetails" => {
+                            builder =
+                                builder.set_remote_ip_details(crate::protocol_serde::shape_remote_ip_details::de_remote_ip_details(tokens, _value)?);
+                        }
+                        "statusCode" => {
+                            builder = builder.set_status_code(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "parameters" => {
+                            builder = builder.set_parameters(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

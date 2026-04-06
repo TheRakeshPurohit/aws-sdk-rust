@@ -156,6 +156,20 @@ impl CreateMonitorFluentBuilder {
     pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_center_instance_arn()
     }
+    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    pub fn identity_center_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.identity_center_region(input.into());
+        self
+    }
+    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    pub fn set_identity_center_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_identity_center_region(input);
+        self
+    }
+    /// The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor.
+    pub fn get_identity_center_region(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_center_region()
+    }
     /// <p>The subdomain to use when creating the monitor URL. The full URL of the monitor is subdomain.Region.deadlinecloud.amazonaws.com.</p>
     pub fn subdomain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdomain(input.into());

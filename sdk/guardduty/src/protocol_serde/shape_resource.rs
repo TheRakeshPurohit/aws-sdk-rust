@@ -53,6 +53,9 @@ where
                         "containerDetails" => {
                             builder = builder.set_container_details(crate::protocol_serde::shape_container::de_container(tokens, _value)?);
                         }
+                        "lambdaDetails" => {
+                            builder = builder.set_lambda_details(crate::protocol_serde::shape_lambda_details::de_lambda_details(tokens, _value)?);
+                        }
                         "rdsDbInstanceDetails" => {
                             builder = builder.set_rds_db_instance_details(
                                 crate::protocol_serde::shape_rds_db_instance_details::de_rds_db_instance_details(tokens, _value)?,
@@ -66,9 +69,6 @@ where
                         "rdsDbUserDetails" => {
                             builder = builder
                                 .set_rds_db_user_details(crate::protocol_serde::shape_rds_db_user_details::de_rds_db_user_details(tokens, _value)?);
-                        }
-                        "lambdaDetails" => {
-                            builder = builder.set_lambda_details(crate::protocol_serde::shape_lambda_details::de_lambda_details(tokens, _value)?);
                         }
                         "ebsSnapshotDetails" => {
                             builder = builder.set_ebs_snapshot_details(crate::protocol_serde::shape_ebs_snapshot_details::de_ebs_snapshot_details(

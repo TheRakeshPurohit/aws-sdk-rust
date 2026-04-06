@@ -7,6 +7,9 @@ pub mod apply_archive_rule;
 /// Types for the `CancelPolicyGeneration` operation.
 pub mod cancel_policy_generation;
 
+/// Types for the `CancelPolicyPreviewJob` operation.
+pub mod cancel_policy_preview_job;
+
 /// Types for the `CheckAccessNotGranted` operation.
 pub mod check_access_not_granted;
 
@@ -25,11 +28,17 @@ pub mod create_analyzer;
 /// Types for the `CreateArchiveRule` operation.
 pub mod create_archive_rule;
 
+/// Types for the `CreatePolicyPreviewConfiguration` operation.
+pub mod create_policy_preview_configuration;
+
 /// Types for the `DeleteAnalyzer` operation.
 pub mod delete_analyzer;
 
 /// Types for the `DeleteArchiveRule` operation.
 pub mod delete_archive_rule;
+
+/// Types for the `DeletePolicyPreviewConfiguration` operation.
+pub mod delete_policy_preview_configuration;
 
 /// Types for the `GenerateFindingRecommendation` operation.
 pub mod generate_finding_recommendation;
@@ -61,6 +70,12 @@ pub mod get_findings_statistics;
 /// Types for the `GetGeneratedPolicy` operation.
 pub mod get_generated_policy;
 
+/// Types for the `GetPolicyPreviewConfiguration` operation.
+pub mod get_policy_preview_configuration;
+
+/// Types for the `GetPolicyPreviewJob` operation.
+pub mod get_policy_preview_job;
+
 /// Types for the `ListAccessPreviewFindings` operation.
 pub mod list_access_preview_findings;
 
@@ -85,11 +100,17 @@ pub mod list_findings_v2;
 /// Types for the `ListPolicyGenerations` operation.
 pub mod list_policy_generations;
 
+/// Types for the `ListPolicyPreviewJobs` operation.
+pub mod list_policy_preview_jobs;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
 /// Types for the `StartPolicyGeneration` operation.
 pub mod start_policy_generation;
+
+/// Types for the `StartPolicyPreviewJob` operation.
+pub mod start_policy_preview_job;
 
 /// Types for the `StartResourceScan` operation.
 pub mod start_resource_scan;

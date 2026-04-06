@@ -236,7 +236,23 @@ mod assume_queue_role_for_user;
 
 mod assume_queue_role_for_worker;
 
+mod batch_get_job;
+
 mod batch_get_job_entity;
+
+mod batch_get_session;
+
+mod batch_get_session_action;
+
+mod batch_get_step;
+
+mod batch_get_task;
+
+mod batch_get_worker;
+
+mod batch_update_job;
+
+mod batch_update_task;
 
 mod copy_job_template;
 

@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -120,6 +134,30 @@ impl Client {
     }
 }
 
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait for `policy_preview_configuration_active`
+    fn wait_until_policy_preview_configuration_active(
+        &self,
+    ) -> crate::waiters::policy_preview_configuration_active::PolicyPreviewConfigurationActiveFluentBuilder;
+    /// Wait for `policy_preview_job_completed`
+    fn wait_until_policy_preview_job_completed(&self) -> crate::waiters::policy_preview_job_completed::PolicyPreviewJobCompletedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_policy_preview_configuration_active(
+        &self,
+    ) -> crate::waiters::policy_preview_configuration_active::PolicyPreviewConfigurationActiveFluentBuilder {
+        crate::waiters::policy_preview_configuration_active::PolicyPreviewConfigurationActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_policy_preview_job_completed(&self) -> crate::waiters::policy_preview_job_completed::PolicyPreviewJobCompletedFluentBuilder {
+        crate::waiters::policy_preview_job_completed::PolicyPreviewJobCompletedFluentBuilder::new(self.handle.clone())
+    }
+}
+
 impl Client {
     /// Creates a new client from an [SDK Config](::aws_types::sdk_config::SdkConfig).
     ///
@@ -140,6 +178,8 @@ mod apply_archive_rule;
 
 mod cancel_policy_generation;
 
+mod cancel_policy_preview_job;
+
 mod check_access_not_granted;
 
 mod check_no_new_access;
@@ -151,6 +191,8 @@ mod create_access_preview;
 mod create_analyzer;
 
 mod create_archive_rule;
+
+mod create_policy_preview_configuration;
 
 /// Operation customization and supporting types.
 ///
@@ -183,6 +225,8 @@ mod delete_analyzer;
 
 mod delete_archive_rule;
 
+mod delete_policy_preview_configuration;
+
 mod generate_finding_recommendation;
 
 mod get_access_preview;
@@ -203,6 +247,10 @@ mod get_findings_statistics;
 
 mod get_generated_policy;
 
+mod get_policy_preview_configuration;
+
+mod get_policy_preview_job;
+
 mod list_access_preview_findings;
 
 mod list_access_previews;
@@ -219,9 +267,13 @@ mod list_findings_v2;
 
 mod list_policy_generations;
 
+mod list_policy_preview_jobs;
+
 mod list_tags_for_resource;
 
 mod start_policy_generation;
+
+mod start_policy_preview_job;
 
 mod start_resource_scan;
 

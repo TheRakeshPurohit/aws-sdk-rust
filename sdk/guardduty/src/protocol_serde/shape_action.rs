@@ -44,11 +44,6 @@ where
                                 crate::protocol_serde::shape_kubernetes_api_call_action::de_kubernetes_api_call_action(tokens, _value)?,
                             );
                         }
-                        "rdsLoginAttemptAction" => {
-                            builder = builder.set_rds_login_attempt_action(
-                                crate::protocol_serde::shape_rds_login_attempt_action::de_rds_login_attempt_action(tokens, _value)?,
-                            );
-                        }
                         "kubernetesPermissionCheckedDetails" => {
                             builder = builder.set_kubernetes_permission_checked_details(
                                 crate::protocol_serde::shape_kubernetes_permission_checked_details::de_kubernetes_permission_checked_details(
@@ -64,6 +59,11 @@ where
                         "kubernetesRoleDetails" => {
                             builder = builder.set_kubernetes_role_details(
                                 crate::protocol_serde::shape_kubernetes_role_details::de_kubernetes_role_details(tokens, _value)?,
+                            );
+                        }
+                        "rdsLoginAttemptAction" => {
+                            builder = builder.set_rds_login_attempt_action(
+                                crate::protocol_serde::shape_rds_login_attempt_action::de_rds_login_attempt_action(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

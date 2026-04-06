@@ -83,6 +83,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "originRequestId" => {
+                            builder = builder.set_origin_request_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "attributes" => {
                             builder = builder.set_attributes(crate::protocol_serde::shape_span_attributes::de_span_attributes(tokens, _value)?);
                         }

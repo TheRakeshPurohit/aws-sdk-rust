@@ -39,6 +39,8 @@ pub struct DescribedConnector {
     pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Current status of the connector. PENDING indicates creation/update in progress, ACTIVE means ready for operations, and ERRORED indicates a failure requiring attention.</p>
     pub status: crate::types::ConnectorStatus,
+    /// <p>IP address type for the connector's network connections. When set to <code>IPV4</code>, the connector uses IPv4 addresses only. When set to <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses, with IPv6 preferred when available.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::ConnectorsIpAddressType>,
 }
 impl DescribedConnector {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
@@ -109,6 +111,10 @@ impl DescribedConnector {
     pub fn status(&self) -> &crate::types::ConnectorStatus {
         &self.status
     }
+    /// <p>IP address type for the connector's network connections. When set to <code>IPV4</code>, the connector uses IPv4 addresses only. When set to <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses, with IPv6 preferred when available.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::ConnectorsIpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl DescribedConnector {
     /// Creates a new builder-style object to manufacture [`DescribedConnector`](crate::types::DescribedConnector).
@@ -135,6 +141,7 @@ pub struct DescribedConnectorBuilder {
     pub(crate) egress_type: ::std::option::Option<crate::types::ConnectorEgressType>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ConnectorStatus>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::ConnectorsIpAddressType>,
 }
 impl DescribedConnectorBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the connector.</p>
@@ -369,6 +376,20 @@ impl DescribedConnectorBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ConnectorStatus> {
         &self.status
     }
+    /// <p>IP address type for the connector's network connections. When set to <code>IPV4</code>, the connector uses IPv4 addresses only. When set to <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses, with IPv6 preferred when available.</p>
+    pub fn ip_address_type(mut self, input: crate::types::ConnectorsIpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>IP address type for the connector's network connections. When set to <code>IPV4</code>, the connector uses IPv4 addresses only. When set to <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses, with IPv6 preferred when available.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::ConnectorsIpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>IP address type for the connector's network connections. When set to <code>IPV4</code>, the connector uses IPv4 addresses only. When set to <code>DUALSTACK</code>, the connector supports both IPv4 and IPv6 addresses, with IPv6 preferred when available.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::ConnectorsIpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`DescribedConnector`](crate::types::DescribedConnector).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedConnectorBuilder::arn)
@@ -401,6 +422,7 @@ impl DescribedConnectorBuilder {
                     .parse::<crate::types::ConnectorStatus>()
                     .expect("static value validated to member"),
             ),
+            ip_address_type: self.ip_address_type,
         })
     }
 }

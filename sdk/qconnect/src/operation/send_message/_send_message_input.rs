@@ -23,6 +23,8 @@ pub struct SendMessageInput {
     pub orchestrator_use_case: ::std::option::Option<::std::string::String>,
     /// <p>Additional metadata for the message.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// Request identifier from the origin system, used for end-to-end tracing across spans.
+    pub origin_request_id: ::std::option::Option<::std::string::String>,
 }
 impl SendMessageInput {
     /// <p>The identifier of the Amazon Q in Connect assistant.</p>
@@ -65,6 +67,10 @@ impl SendMessageInput {
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
     }
+    /// Request identifier from the origin system, used for end-to-end tracing across spans.
+    pub fn origin_request_id(&self) -> ::std::option::Option<&str> {
+        self.origin_request_id.as_deref()
+    }
 }
 impl SendMessageInput {
     /// Creates a new builder-style object to manufacture [`SendMessageInput`](crate::operation::send_message::SendMessageInput).
@@ -87,6 +93,7 @@ pub struct SendMessageInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) orchestrator_use_case: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) origin_request_id: ::std::option::Option<::std::string::String>,
 }
 impl SendMessageInputBuilder {
     /// <p>The identifier of the Amazon Q in Connect assistant.</p>
@@ -239,6 +246,20 @@ impl SendMessageInputBuilder {
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
+    /// Request identifier from the origin system, used for end-to-end tracing across spans.
+    pub fn origin_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.origin_request_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Request identifier from the origin system, used for end-to-end tracing across spans.
+    pub fn set_origin_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.origin_request_id = input;
+        self
+    }
+    /// Request identifier from the origin system, used for end-to-end tracing across spans.
+    pub fn get_origin_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.origin_request_id
+    }
     /// Consumes the builder and constructs a [`SendMessageInput`](crate::operation::send_message::SendMessageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::send_message::SendMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_message::SendMessageInput {
@@ -252,6 +273,7 @@ impl SendMessageInputBuilder {
             client_token: self.client_token,
             orchestrator_use_case: self.orchestrator_use_case,
             metadata: self.metadata,
+            origin_request_id: self.origin_request_id,
         })
     }
 }

@@ -149,6 +149,8 @@ pub(crate) mod shape_tags_to_add_list;
 
 pub(crate) mod shape_variable_tags_list;
 
+pub(crate) mod shape_availability_zone_id_list;
+
 pub(crate) mod shape_availability_zone_list;
 
 pub(crate) mod shape_scripts_list;

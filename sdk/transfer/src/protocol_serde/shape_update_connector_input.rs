@@ -36,5 +36,8 @@ pub fn ser_update_connector_input_input(
         crate::protocol_serde::shape_update_connector_egress_config::ser_update_connector_egress_config(&mut object_11, var_10)?;
         object_11.finish();
     }
+    if let Some(var_12) = &input.ip_address_type {
+        object.key("IpAddressType").string(var_12.as_str());
+    }
     Ok(())
 }

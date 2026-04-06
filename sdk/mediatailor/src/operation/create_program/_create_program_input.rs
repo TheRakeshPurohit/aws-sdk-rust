@@ -19,6 +19,8 @@ pub struct CreateProgramInput {
     pub vod_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The list of AudienceMedia defined in program.</p>
     pub audience_media: ::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>>,
+    /// <p>The tags to assign to the program. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateProgramInput {
     /// <p>The ad break configuration settings.</p>
@@ -57,6 +59,10 @@ impl CreateProgramInput {
     pub fn audience_media(&self) -> &[crate::types::AudienceMedia] {
         self.audience_media.as_deref().unwrap_or_default()
     }
+    /// <p>The tags to assign to the program. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
 }
 impl CreateProgramInput {
     /// Creates a new builder-style object to manufacture [`CreateProgramInput`](crate::operation::create_program::CreateProgramInput).
@@ -77,6 +83,7 @@ pub struct CreateProgramInputBuilder {
     pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
     pub(crate) vod_source_name: ::std::option::Option<::std::string::String>,
     pub(crate) audience_media: ::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateProgramInputBuilder {
     /// Appends an item to `ad_breaks`.
@@ -207,6 +214,26 @@ impl CreateProgramInputBuilder {
     pub fn get_audience_media(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AudienceMedia>> {
         &self.audience_media
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags to assign to the program. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags to assign to the program. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags to assign to the program. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateProgramInput`](crate::operation::create_program::CreateProgramInput).
     pub fn build(
         self,
@@ -220,6 +247,7 @@ impl CreateProgramInputBuilder {
             source_location_name: self.source_location_name,
             vod_source_name: self.vod_source_name,
             audience_media: self.audience_media,
+            tags: self.tags,
         })
     }
 }
