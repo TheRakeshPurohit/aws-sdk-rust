@@ -11,14 +11,22 @@ pub struct GetOutboundExternalLinkOutput {
     pub status: crate::types::LinkStatus,
     /// <p>The public endpoint for the link.</p>
     pub public_endpoint: ::std::string::String,
+    /// <p>The configuration of flow modules.</p>
+    pub flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::ModuleConfiguration>>,
+    /// <p>The configuration of pending flow modules.</p>
+    pub pending_flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::ModuleConfiguration>>,
+    /// <p>Describes the attributes of a link.</p>
+    pub attributes: ::std::option::Option<crate::types::LinkAttributes>,
     /// <p>The timestamp of when the outbound external link was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the outbound external link was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A map of the key-value pairs for the tag or tags assigned to the specified resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Describes the settings for a link log.</p>
+    /// <p>Settings for the application logs.</p>
     pub log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
+    /// <p>The connectivity type of the link.</p>
+    pub connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
     _request_id: Option<String>,
 }
 impl GetOutboundExternalLinkOutput {
@@ -41,6 +49,22 @@ impl GetOutboundExternalLinkOutput {
         use std::ops::Deref;
         self.public_endpoint.deref()
     }
+    /// <p>The configuration of flow modules.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flow_modules.is_none()`.
+    pub fn flow_modules(&self) -> &[crate::types::ModuleConfiguration] {
+        self.flow_modules.as_deref().unwrap_or_default()
+    }
+    /// <p>The configuration of pending flow modules.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pending_flow_modules.is_none()`.
+    pub fn pending_flow_modules(&self) -> &[crate::types::ModuleConfiguration] {
+        self.pending_flow_modules.as_deref().unwrap_or_default()
+    }
+    /// <p>Describes the attributes of a link.</p>
+    pub fn attributes(&self) -> ::std::option::Option<&crate::types::LinkAttributes> {
+        self.attributes.as_ref()
+    }
     /// <p>The timestamp of when the outbound external link was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -53,9 +77,13 @@ impl GetOutboundExternalLinkOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Describes the settings for a link log.</p>
+    /// <p>Settings for the application logs.</p>
     pub fn log_settings(&self) -> ::std::option::Option<&crate::types::LinkLogSettings> {
         self.log_settings.as_ref()
+    }
+    /// <p>The connectivity type of the link.</p>
+    pub fn connectivity_type(&self) -> ::std::option::Option<&crate::types::ConnectivityType> {
+        self.connectivity_type.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetOutboundExternalLinkOutput {
@@ -78,10 +106,14 @@ pub struct GetOutboundExternalLinkOutputBuilder {
     pub(crate) link_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::LinkStatus>,
     pub(crate) public_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::ModuleConfiguration>>,
+    pub(crate) pending_flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::ModuleConfiguration>>,
+    pub(crate) attributes: ::std::option::Option<crate::types::LinkAttributes>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
+    pub(crate) connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
     _request_id: Option<String>,
 }
 impl GetOutboundExternalLinkOutputBuilder {
@@ -145,6 +177,60 @@ impl GetOutboundExternalLinkOutputBuilder {
     pub fn get_public_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_endpoint
     }
+    /// Appends an item to `flow_modules`.
+    ///
+    /// To override the contents of this collection use [`set_flow_modules`](Self::set_flow_modules).
+    ///
+    /// <p>The configuration of flow modules.</p>
+    pub fn flow_modules(mut self, input: crate::types::ModuleConfiguration) -> Self {
+        let mut v = self.flow_modules.unwrap_or_default();
+        v.push(input);
+        self.flow_modules = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configuration of flow modules.</p>
+    pub fn set_flow_modules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModuleConfiguration>>) -> Self {
+        self.flow_modules = input;
+        self
+    }
+    /// <p>The configuration of flow modules.</p>
+    pub fn get_flow_modules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModuleConfiguration>> {
+        &self.flow_modules
+    }
+    /// Appends an item to `pending_flow_modules`.
+    ///
+    /// To override the contents of this collection use [`set_pending_flow_modules`](Self::set_pending_flow_modules).
+    ///
+    /// <p>The configuration of pending flow modules.</p>
+    pub fn pending_flow_modules(mut self, input: crate::types::ModuleConfiguration) -> Self {
+        let mut v = self.pending_flow_modules.unwrap_or_default();
+        v.push(input);
+        self.pending_flow_modules = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configuration of pending flow modules.</p>
+    pub fn set_pending_flow_modules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ModuleConfiguration>>) -> Self {
+        self.pending_flow_modules = input;
+        self
+    }
+    /// <p>The configuration of pending flow modules.</p>
+    pub fn get_pending_flow_modules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModuleConfiguration>> {
+        &self.pending_flow_modules
+    }
+    /// <p>Describes the attributes of a link.</p>
+    pub fn attributes(mut self, input: crate::types::LinkAttributes) -> Self {
+        self.attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the attributes of a link.</p>
+    pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::LinkAttributes>) -> Self {
+        self.attributes = input;
+        self
+    }
+    /// <p>Describes the attributes of a link.</p>
+    pub fn get_attributes(&self) -> &::std::option::Option<crate::types::LinkAttributes> {
+        &self.attributes
+    }
     /// <p>The timestamp of when the outbound external link was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -193,19 +279,33 @@ impl GetOutboundExternalLinkOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>Describes the settings for a link log.</p>
+    /// <p>Settings for the application logs.</p>
     pub fn log_settings(mut self, input: crate::types::LinkLogSettings) -> Self {
         self.log_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the settings for a link log.</p>
+    /// <p>Settings for the application logs.</p>
     pub fn set_log_settings(mut self, input: ::std::option::Option<crate::types::LinkLogSettings>) -> Self {
         self.log_settings = input;
         self
     }
-    /// <p>Describes the settings for a link log.</p>
+    /// <p>Settings for the application logs.</p>
     pub fn get_log_settings(&self) -> &::std::option::Option<crate::types::LinkLogSettings> {
         &self.log_settings
+    }
+    /// <p>The connectivity type of the link.</p>
+    pub fn connectivity_type(mut self, input: crate::types::ConnectivityType) -> Self {
+        self.connectivity_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The connectivity type of the link.</p>
+    pub fn set_connectivity_type(mut self, input: ::std::option::Option<crate::types::ConnectivityType>) -> Self {
+        self.connectivity_type = input;
+        self
+    }
+    /// <p>The connectivity type of the link.</p>
+    pub fn get_connectivity_type(&self) -> &::std::option::Option<crate::types::ConnectivityType> {
+        &self.connectivity_type
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -253,10 +353,14 @@ impl GetOutboundExternalLinkOutputBuilder {
                     "public_endpoint was not specified but it is required when building GetOutboundExternalLinkOutput",
                 )
             })?,
+            flow_modules: self.flow_modules,
+            pending_flow_modules: self.pending_flow_modules,
+            attributes: self.attributes,
             created_at: self.created_at,
             updated_at: self.updated_at,
             tags: self.tags,
             log_settings: self.log_settings,
+            connectivity_type: self.connectivity_type,
             _request_id: self._request_id,
         })
     }

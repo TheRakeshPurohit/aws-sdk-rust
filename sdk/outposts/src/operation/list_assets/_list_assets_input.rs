@@ -13,6 +13,20 @@ pub struct ListAssetsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results by state.</p>
     pub status_filter: ::std::option::Option<::std::vec::Vec<crate::types::AssetState>>,
+    /// <p>Filters the results by asset type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>COMPUTE - Server asset used for customer compute</p></li>
+    /// <li>
+    /// <p>STORAGE - Server asset used by storage services</p></li>
+    /// <li>
+    /// <p>POWERSHELF - Powershelf assets</p></li>
+    /// <li>
+    /// <p>SWITCH - Switch assets</p></li>
+    /// <li>
+    /// <p>NETWORKING - Asset managed by Amazon Web Services for networking purposes</p></li>
+    /// </ul>
+    pub asset_type_filter: ::std::option::Option<::std::vec::Vec<crate::types::AssetType>>,
 }
 impl ListAssetsInput {
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
@@ -39,6 +53,24 @@ impl ListAssetsInput {
     pub fn status_filter(&self) -> &[crate::types::AssetState] {
         self.status_filter.as_deref().unwrap_or_default()
     }
+    /// <p>Filters the results by asset type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>COMPUTE - Server asset used for customer compute</p></li>
+    /// <li>
+    /// <p>STORAGE - Server asset used by storage services</p></li>
+    /// <li>
+    /// <p>POWERSHELF - Powershelf assets</p></li>
+    /// <li>
+    /// <p>SWITCH - Switch assets</p></li>
+    /// <li>
+    /// <p>NETWORKING - Asset managed by Amazon Web Services for networking purposes</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.asset_type_filter.is_none()`.
+    pub fn asset_type_filter(&self) -> &[crate::types::AssetType] {
+        self.asset_type_filter.as_deref().unwrap_or_default()
+    }
 }
 impl ListAssetsInput {
     /// Creates a new builder-style object to manufacture [`ListAssetsInput`](crate::operation::list_assets::ListAssetsInput).
@@ -56,6 +88,7 @@ pub struct ListAssetsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status_filter: ::std::option::Option<::std::vec::Vec<crate::types::AssetState>>,
+    pub(crate) asset_type_filter: ::std::option::Option<::std::vec::Vec<crate::types::AssetType>>,
 }
 impl ListAssetsInputBuilder {
     /// <p>The ID or the Amazon Resource Name (ARN) of the Outpost.</p>
@@ -141,6 +174,62 @@ impl ListAssetsInputBuilder {
     pub fn get_status_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetState>> {
         &self.status_filter
     }
+    /// Appends an item to `asset_type_filter`.
+    ///
+    /// To override the contents of this collection use [`set_asset_type_filter`](Self::set_asset_type_filter).
+    ///
+    /// <p>Filters the results by asset type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>COMPUTE - Server asset used for customer compute</p></li>
+    /// <li>
+    /// <p>STORAGE - Server asset used by storage services</p></li>
+    /// <li>
+    /// <p>POWERSHELF - Powershelf assets</p></li>
+    /// <li>
+    /// <p>SWITCH - Switch assets</p></li>
+    /// <li>
+    /// <p>NETWORKING - Asset managed by Amazon Web Services for networking purposes</p></li>
+    /// </ul>
+    pub fn asset_type_filter(mut self, input: crate::types::AssetType) -> Self {
+        let mut v = self.asset_type_filter.unwrap_or_default();
+        v.push(input);
+        self.asset_type_filter = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filters the results by asset type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>COMPUTE - Server asset used for customer compute</p></li>
+    /// <li>
+    /// <p>STORAGE - Server asset used by storage services</p></li>
+    /// <li>
+    /// <p>POWERSHELF - Powershelf assets</p></li>
+    /// <li>
+    /// <p>SWITCH - Switch assets</p></li>
+    /// <li>
+    /// <p>NETWORKING - Asset managed by Amazon Web Services for networking purposes</p></li>
+    /// </ul>
+    pub fn set_asset_type_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetType>>) -> Self {
+        self.asset_type_filter = input;
+        self
+    }
+    /// <p>Filters the results by asset type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>COMPUTE - Server asset used for customer compute</p></li>
+    /// <li>
+    /// <p>STORAGE - Server asset used by storage services</p></li>
+    /// <li>
+    /// <p>POWERSHELF - Powershelf assets</p></li>
+    /// <li>
+    /// <p>SWITCH - Switch assets</p></li>
+    /// <li>
+    /// <p>NETWORKING - Asset managed by Amazon Web Services for networking purposes</p></li>
+    /// </ul>
+    pub fn get_asset_type_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetType>> {
+        &self.asset_type_filter
+    }
     /// Consumes the builder and constructs a [`ListAssetsInput`](crate::operation::list_assets::ListAssetsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_assets::ListAssetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_assets::ListAssetsInput {
@@ -149,6 +238,7 @@ impl ListAssetsInputBuilder {
             max_results: self.max_results,
             next_token: self.next_token,
             status_filter: self.status_filter,
+            asset_type_filter: self.asset_type_filter,
         })
     }
 }

@@ -349,6 +349,8 @@ pub(crate) mod shape_upgrade_policy_request;
 
 pub(crate) mod shape_vpc_config_request;
 
+pub(crate) mod shape_warm_pool_config;
+
 pub(crate) mod shape_zonal_shift_config_request;
 
 pub(crate) mod shape_access_config_response;

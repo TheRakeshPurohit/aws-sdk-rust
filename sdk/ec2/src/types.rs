@@ -1469,6 +1469,8 @@ pub use crate::types::_metric_data_result::MetricDataResult;
 
 pub use crate::types::_capacity_manager_dimension::CapacityManagerDimension;
 
+pub use crate::types::_capacity_manager_monitored_tag_key::CapacityManagerMonitoredTagKey;
+
 pub use crate::types::_instance_usage::InstanceUsage;
 
 pub use crate::types::_coip_address_usage::CoipAddressUsage;
@@ -2097,6 +2099,8 @@ pub use crate::types::_reservation_end_date_type::ReservationEndDateType;
 
 pub use crate::types::_capacity_tenancy::CapacityTenancy;
 
+pub use crate::types::_capacity_manager_monitored_tag_key_status::CapacityManagerMonitoredTagKeyStatus;
+
 pub use crate::types::_athena_integration::AthenaIntegration;
 
 pub use crate::types::_cpu_manufacturer::CpuManufacturer;
@@ -2448,6 +2452,8 @@ pub use crate::types::_filter_by_dimension::FilterByDimension;
 pub use crate::types::_comparison::Comparison;
 
 pub use crate::types::_metric_value::MetricValue;
+
+pub use crate::types::_capacity_manager_tag_dimension::CapacityManagerTagDimension;
 
 pub use crate::types::_regional_summary::RegionalSummary;
 
@@ -2945,7 +2951,13 @@ mod _capacity_manager_data_export_status;
 
 mod _capacity_manager_dimension;
 
+mod _capacity_manager_monitored_tag_key;
+
+mod _capacity_manager_monitored_tag_key_status;
+
 mod _capacity_manager_status;
+
+mod _capacity_manager_tag_dimension;
 
 mod _capacity_reservation;
 

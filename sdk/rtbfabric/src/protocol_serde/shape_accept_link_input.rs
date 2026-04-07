@@ -15,5 +15,11 @@ pub fn ser_accept_link_input_input(
         crate::protocol_serde::shape_link_log_settings::ser_link_log_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.timeout_in_millis {
+        object.key("timeoutInMillis").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
     Ok(())
 }

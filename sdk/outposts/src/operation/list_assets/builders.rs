@@ -195,4 +195,59 @@ impl ListAssetsFluentBuilder {
     pub fn get_status_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetState>> {
         self.inner.get_status_filter()
     }
+    ///
+    /// Appends an item to `AssetTypeFilter`.
+    ///
+    /// To override the contents of this collection use [`set_asset_type_filter`](Self::set_asset_type_filter).
+    ///
+    /// <p>Filters the results by asset type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>COMPUTE - Server asset used for customer compute</p></li>
+    /// <li>
+    /// <p>STORAGE - Server asset used by storage services</p></li>
+    /// <li>
+    /// <p>POWERSHELF - Powershelf assets</p></li>
+    /// <li>
+    /// <p>SWITCH - Switch assets</p></li>
+    /// <li>
+    /// <p>NETWORKING - Asset managed by Amazon Web Services for networking purposes</p></li>
+    /// </ul>
+    pub fn asset_type_filter(mut self, input: crate::types::AssetType) -> Self {
+        self.inner = self.inner.asset_type_filter(input);
+        self
+    }
+    /// <p>Filters the results by asset type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>COMPUTE - Server asset used for customer compute</p></li>
+    /// <li>
+    /// <p>STORAGE - Server asset used by storage services</p></li>
+    /// <li>
+    /// <p>POWERSHELF - Powershelf assets</p></li>
+    /// <li>
+    /// <p>SWITCH - Switch assets</p></li>
+    /// <li>
+    /// <p>NETWORKING - Asset managed by Amazon Web Services for networking purposes</p></li>
+    /// </ul>
+    pub fn set_asset_type_filter(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetType>>) -> Self {
+        self.inner = self.inner.set_asset_type_filter(input);
+        self
+    }
+    /// <p>Filters the results by asset type.</p>
+    /// <ul>
+    /// <li>
+    /// <p>COMPUTE - Server asset used for customer compute</p></li>
+    /// <li>
+    /// <p>STORAGE - Server asset used by storage services</p></li>
+    /// <li>
+    /// <p>POWERSHELF - Powershelf assets</p></li>
+    /// <li>
+    /// <p>SWITCH - Switch assets</p></li>
+    /// <li>
+    /// <p>NETWORKING - Asset managed by Amazon Web Services for networking purposes</p></li>
+    /// </ul>
+    pub fn get_asset_type_filter(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetType>> {
+        self.inner.get_asset_type_filter()
+    }
 }

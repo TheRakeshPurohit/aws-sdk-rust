@@ -327,6 +327,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Route 53 Domains | [aws-sdk-route53domains](https://crates.io/crates/aws-sdk-route53domains) ([docs](https://docs.rs/aws-sdk-route53domains)) |
 | Amazon Route 53 Global Resolver | [aws-sdk-route53globalresolver](https://crates.io/crates/aws-sdk-route53globalresolver) ([docs](https://docs.rs/aws-sdk-route53globalresolver)) |
 | Amazon Route 53 Resolver | [aws-sdk-route53resolver](https://crates.io/crates/aws-sdk-route53resolver) ([docs](https://docs.rs/aws-sdk-route53resolver)) |
+| Amazon S3 Files | [aws-sdk-s3files](https://crates.io/crates/aws-sdk-s3files) ([docs](https://docs.rs/aws-sdk-s3files)) |
 | Amazon S3 Tables | [aws-sdk-s3tables](https://crates.io/crates/aws-sdk-s3tables) ([docs](https://docs.rs/aws-sdk-s3tables)) |
 | Amazon S3 Vectors | [aws-sdk-s3vectors](https://crates.io/crates/aws-sdk-s3vectors) ([docs](https://docs.rs/aws-sdk-s3vectors)) |
 | Amazon S3 on Outposts | [aws-sdk-s3outposts](https://crates.io/crates/aws-sdk-s3outposts) ([docs](https://docs.rs/aws-sdk-s3outposts)) |

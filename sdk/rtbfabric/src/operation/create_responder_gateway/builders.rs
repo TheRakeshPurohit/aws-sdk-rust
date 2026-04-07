@@ -204,6 +204,20 @@ impl CreateResponderGatewayFluentBuilder {
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
         self.inner.get_protocol()
     }
+    /// <p>Listener configuration for the protocols (HTTP, HTTPS, or both) accepted by the gateway.</p>
+    pub fn listener_config(mut self, input: crate::types::ListenerConfig) -> Self {
+        self.inner = self.inner.listener_config(input);
+        self
+    }
+    /// <p>Listener configuration for the protocols (HTTP, HTTPS, or both) accepted by the gateway.</p>
+    pub fn set_listener_config(mut self, input: ::std::option::Option<crate::types::ListenerConfig>) -> Self {
+        self.inner = self.inner.set_listener_config(input);
+        self
+    }
+    /// <p>Listener configuration for the protocols (HTTP, HTTPS, or both) accepted by the gateway.</p>
+    pub fn get_listener_config(&self) -> &::std::option::Option<crate::types::ListenerConfig> {
+        self.inner.get_listener_config()
+    }
     /// <p>The configuration of the trust store.</p>
     pub fn trust_store_configuration(mut self, input: crate::types::TrustStoreConfiguration) -> Self {
         self.inner = self.inner.trust_store_configuration(input);
@@ -278,5 +292,19 @@ impl CreateResponderGatewayFluentBuilder {
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
+    }
+    /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
+    pub fn gateway_type(mut self, input: crate::types::GatewayType) -> Self {
+        self.inner = self.inner.gateway_type(input);
+        self
+    }
+    /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
+    pub fn set_gateway_type(mut self, input: ::std::option::Option<crate::types::GatewayType>) -> Self {
+        self.inner = self.inner.set_gateway_type(input);
+        self
+    }
+    /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
+    pub fn get_gateway_type(&self) -> &::std::option::Option<crate::types::GatewayType> {
+        self.inner.get_gateway_type()
     }
 }

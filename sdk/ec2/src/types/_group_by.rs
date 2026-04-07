@@ -13,6 +13,7 @@
 /// # let groupby = unimplemented!();
 /// match groupby {
 ///     GroupBy::AccountId => { /* ... */ },
+///     GroupBy::AccountName => { /* ... */ },
 ///     GroupBy::AvailabilityZoneId => { /* ... */ },
 ///     GroupBy::InstanceFamily => { /* ... */ },
 ///     GroupBy::InstancePlatform => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum GroupBy {
     #[allow(missing_docs)] // documentation missing in model
     AccountId,
     #[allow(missing_docs)] // documentation missing in model
+    AccountName,
+    #[allow(missing_docs)] // documentation missing in model
     AvailabilityZoneId,
     #[allow(missing_docs)] // documentation missing in model
     InstanceFamily,
@@ -99,6 +102,7 @@ impl ::std::convert::From<&str> for GroupBy {
     fn from(s: &str) -> Self {
         match s {
             "account-id" => GroupBy::AccountId,
+            "account-name" => GroupBy::AccountName,
             "availability-zone-id" => GroupBy::AvailabilityZoneId,
             "instance-family" => GroupBy::InstanceFamily,
             "instance-platform" => GroupBy::InstancePlatform,
@@ -131,6 +135,7 @@ impl GroupBy {
     pub fn as_str(&self) -> &str {
         match self {
             GroupBy::AccountId => "account-id",
+            GroupBy::AccountName => "account-name",
             GroupBy::AvailabilityZoneId => "availability-zone-id",
             GroupBy::InstanceFamily => "instance-family",
             GroupBy::InstancePlatform => "instance-platform",
@@ -154,6 +159,7 @@ impl GroupBy {
     pub const fn values() -> &'static [&'static str] {
         &[
             "account-id",
+            "account-name",
             "availability-zone-id",
             "instance-family",
             "instance-platform",
@@ -194,6 +200,7 @@ impl ::std::fmt::Display for GroupBy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GroupBy::AccountId => write!(f, "account-id"),
+            GroupBy::AccountName => write!(f, "account-name"),
             GroupBy::AvailabilityZoneId => write!(f, "availability-zone-id"),
             GroupBy::InstanceFamily => write!(f, "instance-family"),
             GroupBy::InstancePlatform => write!(f, "instance-platform"),

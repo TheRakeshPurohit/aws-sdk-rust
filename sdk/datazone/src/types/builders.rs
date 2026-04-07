@@ -135,6 +135,8 @@ pub use crate::types::_column_filter_configuration::ColumnFilterConfigurationBui
 
 pub use crate::types::_row_filter_configuration::RowFilterConfigurationBuilder;
 
+pub use crate::types::_configuration::ConfigurationBuilder;
+
 pub use crate::types::_athena_properties_input::AthenaPropertiesInputBuilder;
 
 pub use crate::types::_glue_properties_input::GluePropertiesInputBuilder;

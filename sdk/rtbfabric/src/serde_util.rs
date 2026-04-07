@@ -428,6 +428,15 @@ pub(crate) fn link_log_settings_correct_errors(
     builder
 }
 
+pub(crate) fn listener_config_correct_errors(
+    mut builder: crate::types::builders::ListenerConfigBuilder,
+) -> crate::types::builders::ListenerConfigBuilder {
+    if builder.protocols.is_none() {
+        builder.protocols = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn trust_store_configuration_correct_errors(
     mut builder: crate::types::builders::TrustStoreConfigurationBuilder,
 ) -> crate::types::builders::TrustStoreConfigurationBuilder {

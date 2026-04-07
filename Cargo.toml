@@ -1,10 +1,10 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "tests/telemetry",
-    "tests/webassembly-wstd",
     "tests/no-default-features",
-    "tests/webassembly-no-os"
+    "tests/webassembly-wstd",
+    "tests/webassembly-no-os",
+    "tests/telemetry"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -373,6 +373,7 @@ members = [
     "sdk/rum",
     "sdk/s3",
     "sdk/s3control",
+    "sdk/s3files",
     "sdk/s3outposts",
     "sdk/s3tables",
     "sdk/s3vectors",

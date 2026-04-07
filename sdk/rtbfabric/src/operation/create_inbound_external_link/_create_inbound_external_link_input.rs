@@ -9,7 +9,7 @@ pub struct CreateInboundExternalLinkInput {
     pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>Attributes of the link.</p>
     pub attributes: ::std::option::Option<crate::types::LinkAttributes>,
-    /// <p>Describes the settings for a link log.</p>
+    /// <p>Settings for the application logs.</p>
     pub log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -27,7 +27,7 @@ impl CreateInboundExternalLinkInput {
     pub fn attributes(&self) -> ::std::option::Option<&crate::types::LinkAttributes> {
         self.attributes.as_ref()
     }
-    /// <p>Describes the settings for a link log.</p>
+    /// <p>Settings for the application logs.</p>
     pub fn log_settings(&self) -> ::std::option::Option<&crate::types::LinkLogSettings> {
         self.log_settings.as_ref()
     }
@@ -98,18 +98,18 @@ impl CreateInboundExternalLinkInputBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<crate::types::LinkAttributes> {
         &self.attributes
     }
-    /// <p>Describes the settings for a link log.</p>
+    /// <p>Settings for the application logs.</p>
     /// This field is required.
     pub fn log_settings(mut self, input: crate::types::LinkLogSettings) -> Self {
         self.log_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the settings for a link log.</p>
+    /// <p>Settings for the application logs.</p>
     pub fn set_log_settings(mut self, input: ::std::option::Option<crate::types::LinkLogSettings>) -> Self {
         self.log_settings = input;
         self
     }
-    /// <p>Describes the settings for a link log.</p>
+    /// <p>Settings for the application logs.</p>
     pub fn get_log_settings(&self) -> &::std::option::Option<crate::types::LinkLogSettings> {
         &self.log_settings
     }

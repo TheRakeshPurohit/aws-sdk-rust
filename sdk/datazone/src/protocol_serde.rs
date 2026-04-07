@@ -599,6 +599,10 @@ pub(crate) mod shape_batch_put_attribute_items;
 
 pub(crate) mod shape_column_name_list;
 
+pub(crate) mod shape_configuration;
+
+pub(crate) mod shape_configurations;
+
 pub(crate) mod shape_connection_credentials;
 
 pub(crate) mod shape_connection_properties_input;
@@ -1199,6 +1203,8 @@ pub(crate) mod shape_glue_connection;
 
 pub(crate) mod shape_glue_connection_input;
 
+pub(crate) mod shape_glue_connection_names;
+
 pub(crate) mod shape_glue_connection_patch;
 
 pub(crate) mod shape_item_glossary_terms;
@@ -1228,6 +1234,8 @@ pub(crate) mod shape_owner_group_properties_output;
 pub(crate) mod shape_owner_user_properties_output;
 
 pub(crate) mod shape_project_grant_filter;
+
+pub(crate) mod shape_property_map;
 
 pub(crate) mod shape_redshift_credential_configuration;
 
@@ -1328,8 +1336,6 @@ pub(crate) mod shape_notification_resource;
 pub(crate) mod shape_open_lineage_run_event_summary;
 
 pub(crate) mod shape_physical_connection_requirements;
-
-pub(crate) mod shape_property_map;
 
 pub(crate) mod shape_redshift_cluster_storage;
 

@@ -405,6 +405,60 @@ pub fn de_invoke_http_error(
             }
             tmp
         }),
+        "S3FilesMountConnectivityException" => crate::operation::invoke::InvokeError::S3FilesMountConnectivityException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::S3FilesMountConnectivityExceptionBuilder::default();
+                output = crate::protocol_serde::shape_s3_files_mount_connectivity_exception::de_s3_files_mount_connectivity_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "S3FilesMountFailureException" => crate::operation::invoke::InvokeError::S3FilesMountFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::S3FilesMountFailureExceptionBuilder::default();
+                output = crate::protocol_serde::shape_s3_files_mount_failure_exception::de_s3_files_mount_failure_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "S3FilesMountTimeoutException" => crate::operation::invoke::InvokeError::S3FilesMountTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::S3FilesMountTimeoutExceptionBuilder::default();
+                output = crate::protocol_serde::shape_s3_files_mount_timeout_exception::de_s3_files_mount_timeout_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::invoke::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "SerializedRequestEntityTooLargeException" => crate::operation::invoke::InvokeError::SerializedRequestEntityTooLargeException({
             #[allow(unused_mut)]
             let mut tmp = {

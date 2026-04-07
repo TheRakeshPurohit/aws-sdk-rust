@@ -45,6 +45,38 @@ pub use crate::types::_proxy_bypass::ProxyBypassBuilder;
 
 pub use crate::types::_certificate::CertificateBuilder;
 
+pub use crate::types::_mouse_click_arguments::MouseClickArgumentsBuilder;
+
+pub use crate::types::_mouse_move_arguments::MouseMoveArgumentsBuilder;
+
+pub use crate::types::_mouse_drag_arguments::MouseDragArgumentsBuilder;
+
+pub use crate::types::_mouse_scroll_arguments::MouseScrollArgumentsBuilder;
+
+pub use crate::types::_key_type_arguments::KeyTypeArgumentsBuilder;
+
+pub use crate::types::_key_press_arguments::KeyPressArgumentsBuilder;
+
+pub use crate::types::_key_shortcut_arguments::KeyShortcutArgumentsBuilder;
+
+pub use crate::types::_screenshot_arguments::ScreenshotArgumentsBuilder;
+
+pub use crate::types::_mouse_click_result::MouseClickResultBuilder;
+
+pub use crate::types::_mouse_move_result::MouseMoveResultBuilder;
+
+pub use crate::types::_mouse_drag_result::MouseDragResultBuilder;
+
+pub use crate::types::_mouse_scroll_result::MouseScrollResultBuilder;
+
+pub use crate::types::_key_type_result::KeyTypeResultBuilder;
+
+pub use crate::types::_key_press_result::KeyPressResultBuilder;
+
+pub use crate::types::_key_shortcut_result::KeyShortcutResultBuilder;
+
+pub use crate::types::_screenshot_result::ScreenshotResultBuilder;
+
 pub use crate::types::_browser_session_summary::BrowserSessionSummaryBuilder;
 
 pub use crate::types::_automation_stream_update::AutomationStreamUpdateBuilder;

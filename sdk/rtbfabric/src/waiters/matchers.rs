@@ -443,6 +443,21 @@ pub(crate) fn match_get_requester_gateway_fee4c6887d4203a96(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"errorType":"ResourceNotFoundException"}
+pub(crate) fn match_get_requester_gateway_1cce2c05524fb92d4(
+    _result: ::std::result::Result<
+        &crate::operation::get_requester_gateway::GetRequesterGatewayOutput,
+        &crate::operation::get_requester_gateway::GetRequesterGatewayError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "ResourceNotFoundException";
+        }
+    }
+    false
+}
+
 /// Matcher union: {"output":{"path":"status","expected":"ACTIVE","comparator":"stringEquals"}}
 pub(crate) fn match_get_responder_gateway_a0b9c099115634691(
     _result: ::std::result::Result<
@@ -519,4 +534,19 @@ pub(crate) fn match_get_responder_gateway_fee4c6887d4203a96(
             _cmp_1
         })
         .unwrap_or_default()
+}
+
+/// Matcher union: {"errorType":"ResourceNotFoundException"}
+pub(crate) fn match_get_responder_gateway_1cce2c05524fb92d4(
+    _result: ::std::result::Result<
+        &crate::operation::get_responder_gateway::GetResponderGatewayOutput,
+        &crate::operation::get_responder_gateway::GetResponderGatewayError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "ResourceNotFoundException";
+        }
+    }
+    false
 }

@@ -1492,6 +1492,8 @@ mod get_capacity_manager_metric_data;
 
 mod get_capacity_manager_metric_dimensions;
 
+mod get_capacity_manager_monitored_tag_keys;
+
 mod get_capacity_reservation_usage;
 
 mod get_coip_pool_usage;
@@ -1931,6 +1933,8 @@ mod unassign_private_nat_gateway_address;
 mod unlock_snapshot;
 
 mod unmonitor_instances;
+
+mod update_capacity_manager_monitored_tag_keys;
 
 mod update_capacity_manager_organizations_access;
 

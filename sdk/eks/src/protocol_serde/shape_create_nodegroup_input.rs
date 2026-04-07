@@ -110,5 +110,11 @@ pub fn ser_create_nodegroup_input_input(
     if let Some(var_36) = &input.version {
         object.key("version").string(var_36.as_str());
     }
+    if let Some(var_37) = &input.warm_pool_config {
+        #[allow(unused_mut)]
+        let mut object_38 = object.key("warmPoolConfig").start_object();
+        crate::protocol_serde::shape_warm_pool_config::ser_warm_pool_config(&mut object_38, var_37)?;
+        object_38.finish();
+    }
     Ok(())
 }

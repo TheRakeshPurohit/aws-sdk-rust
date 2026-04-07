@@ -68,6 +68,16 @@ where
                         "attributes" => {
                             builder = builder.set_attributes(crate::protocol_serde::shape_link_attributes::de_link_attributes(tokens, _value)?);
                         }
+                        "logSettings" => {
+                            builder = builder.set_log_settings(crate::protocol_serde::shape_link_log_settings::de_link_log_settings(tokens, _value)?);
+                        }
+                        "connectivityType" => {
+                            builder = builder.set_connectivity_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ConnectivityType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "linkId" => {
                             builder = builder.set_link_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -77,6 +87,13 @@ where
                         }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
+                        }
+                        "publicEndpoint" => {
+                            builder = builder.set_public_endpoint(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -23,6 +23,7 @@ impl crate::operation::list_sessions::builders::ListSessionsInputBuilder {
 /// Fluent builder constructing a request to `ListSessions`.
 ///
 /// <p>Lists sessions in an AgentCore Memory resource based on specified criteria. We recommend using pagination to ensure that the operation returns quickly and successfully.</p>
+/// <p>Empty sessions are automatically deleted after one day.</p>
 /// <p>To use this operation, you must have the <code>bedrock-agentcore:ListSessions</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSessionsFluentBuilder {

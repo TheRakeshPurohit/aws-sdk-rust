@@ -21,12 +21,18 @@ pub struct GetLinkOutput {
     pub pending_flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::ModuleConfiguration>>,
     /// <p>Attributes of the link.</p>
     pub attributes: ::std::option::Option<crate::types::LinkAttributes>,
+    /// <p>Settings for the application logs.</p>
+    pub log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
+    /// <p>The connectivity type of the link.</p>
+    pub connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
     /// <p>The unique identifier of the link.</p>
     pub link_id: ::std::string::String,
     /// <p>A map of the key-value pairs for the tag or tags assigned to the specified resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Settings for the application logs.</p>
-    pub log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
+    /// <p>Boolean to specify if an HTTP responder is allowed.</p>
+    pub http_responder_allowed: ::std::option::Option<bool>,
+    /// <p>The timeout value in milliseconds.</p>
+    pub timeout_in_millis: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetLinkOutput {
@@ -72,6 +78,14 @@ impl GetLinkOutput {
     pub fn attributes(&self) -> ::std::option::Option<&crate::types::LinkAttributes> {
         self.attributes.as_ref()
     }
+    /// <p>Settings for the application logs.</p>
+    pub fn log_settings(&self) -> ::std::option::Option<&crate::types::LinkLogSettings> {
+        self.log_settings.as_ref()
+    }
+    /// <p>The connectivity type of the link.</p>
+    pub fn connectivity_type(&self) -> ::std::option::Option<&crate::types::ConnectivityType> {
+        self.connectivity_type.as_ref()
+    }
     /// <p>The unique identifier of the link.</p>
     pub fn link_id(&self) -> &str {
         use std::ops::Deref;
@@ -81,9 +95,13 @@ impl GetLinkOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>Settings for the application logs.</p>
-    pub fn log_settings(&self) -> ::std::option::Option<&crate::types::LinkLogSettings> {
-        self.log_settings.as_ref()
+    /// <p>Boolean to specify if an HTTP responder is allowed.</p>
+    pub fn http_responder_allowed(&self) -> ::std::option::Option<bool> {
+        self.http_responder_allowed
+    }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn timeout_in_millis(&self) -> ::std::option::Option<i64> {
+        self.timeout_in_millis
     }
 }
 impl ::aws_types::request_id::RequestId for GetLinkOutput {
@@ -111,9 +129,12 @@ pub struct GetLinkOutputBuilder {
     pub(crate) flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::ModuleConfiguration>>,
     pub(crate) pending_flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::ModuleConfiguration>>,
     pub(crate) attributes: ::std::option::Option<crate::types::LinkAttributes>,
+    pub(crate) log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
+    pub(crate) connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
     pub(crate) link_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
+    pub(crate) http_responder_allowed: ::std::option::Option<bool>,
+    pub(crate) timeout_in_millis: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetLinkOutputBuilder {
@@ -260,6 +281,34 @@ impl GetLinkOutputBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<crate::types::LinkAttributes> {
         &self.attributes
     }
+    /// <p>Settings for the application logs.</p>
+    pub fn log_settings(mut self, input: crate::types::LinkLogSettings) -> Self {
+        self.log_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings for the application logs.</p>
+    pub fn set_log_settings(mut self, input: ::std::option::Option<crate::types::LinkLogSettings>) -> Self {
+        self.log_settings = input;
+        self
+    }
+    /// <p>Settings for the application logs.</p>
+    pub fn get_log_settings(&self) -> &::std::option::Option<crate::types::LinkLogSettings> {
+        &self.log_settings
+    }
+    /// <p>The connectivity type of the link.</p>
+    pub fn connectivity_type(mut self, input: crate::types::ConnectivityType) -> Self {
+        self.connectivity_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The connectivity type of the link.</p>
+    pub fn set_connectivity_type(mut self, input: ::std::option::Option<crate::types::ConnectivityType>) -> Self {
+        self.connectivity_type = input;
+        self
+    }
+    /// <p>The connectivity type of the link.</p>
+    pub fn get_connectivity_type(&self) -> &::std::option::Option<crate::types::ConnectivityType> {
+        &self.connectivity_type
+    }
     /// <p>The unique identifier of the link.</p>
     /// This field is required.
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -295,19 +344,33 @@ impl GetLinkOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>Settings for the application logs.</p>
-    pub fn log_settings(mut self, input: crate::types::LinkLogSettings) -> Self {
-        self.log_settings = ::std::option::Option::Some(input);
+    /// <p>Boolean to specify if an HTTP responder is allowed.</p>
+    pub fn http_responder_allowed(mut self, input: bool) -> Self {
+        self.http_responder_allowed = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Settings for the application logs.</p>
-    pub fn set_log_settings(mut self, input: ::std::option::Option<crate::types::LinkLogSettings>) -> Self {
-        self.log_settings = input;
+    /// <p>Boolean to specify if an HTTP responder is allowed.</p>
+    pub fn set_http_responder_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.http_responder_allowed = input;
         self
     }
-    /// <p>Settings for the application logs.</p>
-    pub fn get_log_settings(&self) -> &::std::option::Option<crate::types::LinkLogSettings> {
-        &self.log_settings
+    /// <p>Boolean to specify if an HTTP responder is allowed.</p>
+    pub fn get_http_responder_allowed(&self) -> &::std::option::Option<bool> {
+        &self.http_responder_allowed
+    }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn timeout_in_millis(mut self, input: i64) -> Self {
+        self.timeout_in_millis = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn set_timeout_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.timeout_in_millis = input;
+        self
+    }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn get_timeout_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.timeout_in_millis
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -362,6 +425,8 @@ impl GetLinkOutputBuilder {
             flow_modules: self.flow_modules,
             pending_flow_modules: self.pending_flow_modules,
             attributes: self.attributes,
+            log_settings: self.log_settings,
+            connectivity_type: self.connectivity_type,
             link_id: self.link_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "link_id",
@@ -369,7 +434,8 @@ impl GetLinkOutputBuilder {
                 )
             })?,
             tags: self.tags,
-            log_settings: self.log_settings,
+            http_responder_allowed: self.http_responder_allowed,
+            timeout_in_millis: self.timeout_in_millis,
             _request_id: self._request_id,
         })
     }

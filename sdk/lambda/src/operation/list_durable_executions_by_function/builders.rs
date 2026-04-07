@@ -142,17 +142,17 @@ impl ListDurableExecutionsByFunctionFluentBuilder {
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qualifier()
     }
-    /// <p>Filter executions by name. Only executions with names that contain this string are returned.</p>
+    /// <p>Filter executions by name. Only executions with names that matches this string are returned.</p>
     pub fn durable_execution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.durable_execution_name(input.into());
         self
     }
-    /// <p>Filter executions by name. Only executions with names that contain this string are returned.</p>
+    /// <p>Filter executions by name. Only executions with names that matches this string are returned.</p>
     pub fn set_durable_execution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_durable_execution_name(input);
         self
     }
-    /// <p>Filter executions by name. Only executions with names that contain this string are returned.</p>
+    /// <p>Filter executions by name. Only executions with names that matches this string are returned.</p>
     pub fn get_durable_execution_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_durable_execution_name()
     }

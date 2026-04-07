@@ -251,6 +251,8 @@ pub use crate::types::_docker_volume_configuration::DockerVolumeConfigurationBui
 
 pub use crate::types::_efs_volume_configuration::EfsVolumeConfigurationBuilder;
 
+pub use crate::types::_s3_files_volume_configuration::S3FilesVolumeConfigurationBuilder;
+
 pub use crate::types::_f_sx_windows_file_server_volume_configuration::FSxWindowsFileServerVolumeConfigurationBuilder;
 
 pub use crate::types::_container_override::ContainerOverrideBuilder;

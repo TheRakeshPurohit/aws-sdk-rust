@@ -15,6 +15,7 @@ impl super::Client {
     ///   - [`domain_name(Option<String>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::domain_name): <p>The domain name of the responder gateway.</p>
     ///   - [`port(i32)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::port): <p>The networking port.</p>
     ///   - [`protocol(Protocol)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::protocol): <p>The networking protocol.</p>
+    ///   - [`listener_config(Option<ListenerConfig>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::listener_config): <p>The listener configuration for the responder gateway.</p>
     ///   - [`trust_store_configuration(Option<TrustStoreConfiguration>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::trust_store_configuration): <p>The configuration of the trust store.</p>
     ///   - [`managed_endpoint_configuration(Option<ManagedEndpointConfiguration>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::managed_endpoint_configuration): <p>The configuration of the managed endpoint.</p>
     ///   - [`gateway_id(String)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::gateway_id): <p>The unique identifier of the gateway.</p>
@@ -22,6 +23,8 @@ impl super::Client {
     ///   - [`active_links_count(Option<i32>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::active_links_count): <p>The count of active links for the responder gateway.</p>
     ///   - [`total_links_count(Option<i32>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::total_links_count): <p>The total count of links for the responder gateway.</p>
     ///   - [`inbound_links_count(Option<i32>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::inbound_links_count): <p>The count of inbound links for the responder gateway.</p>
+    ///   - [`gateway_type(Option<GatewayType>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::gateway_type): <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
+    ///   - [`external_inbound_endpoint(Option<String>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::external_inbound_endpoint): <p>The external inbound endpoint for the responder gateway.</p>
     /// - On failure, responds with [`SdkError<GetResponderGatewayError>`](crate::operation::get_responder_gateway::GetResponderGatewayError)
     pub fn get_responder_gateway(&self) -> crate::operation::get_responder_gateway::builders::GetResponderGatewayFluentBuilder {
         crate::operation::get_responder_gateway::builders::GetResponderGatewayFluentBuilder::new(self.handle.clone())

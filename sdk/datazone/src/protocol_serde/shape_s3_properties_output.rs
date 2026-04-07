@@ -29,6 +29,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "registerS3AccessGrantLocation" => {
+                            builder = builder
+                                .set_register_s3_access_grant_location(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "status" => {
                             builder = builder.set_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

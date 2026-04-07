@@ -62,6 +62,10 @@ impl ResponderGatewayDeletedFluentBuilder {
             if crate::waiters::matchers::match_get_responder_gateway_8edac4c36e2a37f69(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Success;
             }
+            // Matches: {"errorType":"ResourceNotFoundException"}
+            if crate::waiters::matchers::match_get_responder_gateway_1cce2c05524fb92d4(result) {
+                return ::aws_smithy_runtime::client::waiters::AcceptorState::Success;
+            }
             // Matches: {"output":{"path":"status","expected":"ERROR","comparator":"stringEquals"}}
             if crate::waiters::matchers::match_get_responder_gateway_fee4c6887d4203a96(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Failure;

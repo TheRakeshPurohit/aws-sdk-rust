@@ -54,7 +54,7 @@ pub struct UpdateFunctionConfigurationInput {
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
     pub layers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Connection settings for an Amazon EFS file system.</p>
+    /// <p>Connection settings for an Amazon EFS file system or an Amazon S3 Files file system.</p>
     pub file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>,
     /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub image_config: ::std::option::Option<crate::types::ImageConfig>,
@@ -151,7 +151,7 @@ impl UpdateFunctionConfigurationInput {
     pub fn layers(&self) -> &[::std::string::String] {
         self.layers.as_deref().unwrap_or_default()
     }
-    /// <p>Connection settings for an Amazon EFS file system.</p>
+    /// <p>Connection settings for an Amazon EFS file system or an Amazon S3 Files file system.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.file_system_configs.is_none()`.
     pub fn file_system_configs(&self) -> &[crate::types::FileSystemConfig] {
@@ -492,19 +492,19 @@ impl UpdateFunctionConfigurationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).
     ///
-    /// <p>Connection settings for an Amazon EFS file system.</p>
+    /// <p>Connection settings for an Amazon EFS file system or an Amazon S3 Files file system.</p>
     pub fn file_system_configs(mut self, input: crate::types::FileSystemConfig) -> Self {
         let mut v = self.file_system_configs.unwrap_or_default();
         v.push(input);
         self.file_system_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Connection settings for an Amazon EFS file system.</p>
+    /// <p>Connection settings for an Amazon EFS file system or an Amazon S3 Files file system.</p>
     pub fn set_file_system_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>) -> Self {
         self.file_system_configs = input;
         self
     }
-    /// <p>Connection settings for an Amazon EFS file system.</p>
+    /// <p>Connection settings for an Amazon EFS file system or an Amazon S3 Files file system.</p>
     pub fn get_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>> {
         &self.file_system_configs
     }

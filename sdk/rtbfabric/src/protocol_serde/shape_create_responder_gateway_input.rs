@@ -12,32 +12,32 @@ pub fn ser_create_responder_gateway_input_input(
     if let Some(var_3) = &input.domain_name {
         object.key("domainName").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.managed_endpoint_configuration {
-        #[allow(unused_mut)]
-        let mut object_5 = object.key("managedEndpointConfiguration").start_object();
-        crate::protocol_serde::shape_managed_endpoint_configuration::ser_managed_endpoint_configuration(&mut object_5, var_4)?;
-        object_5.finish();
+    if let Some(var_4) = &input.gateway_type {
+        object.key("gatewayType").string(var_4.as_str());
     }
-    if let Some(var_6) = &input.port {
+    if let Some(var_5) = &input.listener_config {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("listenerConfig").start_object();
+        crate::protocol_serde::shape_listener_config::ser_listener_config(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.managed_endpoint_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("managedEndpointConfiguration").start_object();
+        crate::protocol_serde::shape_managed_endpoint_configuration::ser_managed_endpoint_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.port {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_7) = &input.protocol {
-        object.key("protocol").string(var_7.as_str());
+    if let Some(var_10) = &input.protocol {
+        object.key("protocol").string(var_10.as_str());
     }
-    if let Some(var_8) = &input.security_group_ids {
-        let mut array_9 = object.key("securityGroupIds").start_array();
-        for item_10 in var_8 {
-            {
-                array_9.value().string(item_10.as_str());
-            }
-        }
-        array_9.finish();
-    }
-    if let Some(var_11) = &input.subnet_ids {
-        let mut array_12 = object.key("subnetIds").start_array();
+    if let Some(var_11) = &input.security_group_ids {
+        let mut array_12 = object.key("securityGroupIds").start_array();
         for item_13 in var_11 {
             {
                 array_12.value().string(item_13.as_str());
@@ -45,24 +45,33 @@ pub fn ser_create_responder_gateway_input_input(
         }
         array_12.finish();
     }
-    if let Some(var_14) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_15 = object.key("tags").start_object();
-        for (key_16, value_17) in var_14 {
+    if let Some(var_14) = &input.subnet_ids {
+        let mut array_15 = object.key("subnetIds").start_array();
+        for item_16 in var_14 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                array_15.value().string(item_16.as_str());
             }
         }
-        object_15.finish();
+        array_15.finish();
     }
-    if let Some(var_18) = &input.trust_store_configuration {
+    if let Some(var_17) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("trustStoreConfiguration").start_object();
-        crate::protocol_serde::shape_trust_store_configuration::ser_trust_store_configuration(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_18 = object.key("tags").start_object();
+        for (key_19, value_20) in var_17 {
+            {
+                object_18.key(key_19.as_str()).string(value_20.as_str());
+            }
+        }
+        object_18.finish();
     }
-    if let Some(var_20) = &input.vpc_id {
-        object.key("vpcId").string(var_20.as_str());
+    if let Some(var_21) = &input.trust_store_configuration {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("trustStoreConfiguration").start_object();
+        crate::protocol_serde::shape_trust_store_configuration::ser_trust_store_configuration(&mut object_22, var_21)?;
+        object_22.finish();
+    }
+    if let Some(var_23) = &input.vpc_id {
+        object.key("vpcId").string(var_23.as_str());
     }
     Ok(())
 }

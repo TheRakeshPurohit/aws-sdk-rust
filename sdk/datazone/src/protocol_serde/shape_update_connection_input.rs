@@ -9,14 +9,26 @@ pub fn ser_update_connection_input_input(
         crate::protocol_serde::shape_aws_location::ser_aws_location(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.description {
-        object.key("description").string(var_3.as_str());
+    if let Some(var_3) = &input.configurations {
+        let mut array_4 = object.key("configurations").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_configuration::ser_configuration(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
     }
-    if let Some(var_4) = &input.props {
+    if let Some(var_7) = &input.description {
+        object.key("description").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.props {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("props").start_object();
-        crate::protocol_serde::shape_connection_properties_patch::ser_connection_properties_patch(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_9 = object.key("props").start_object();
+        crate::protocol_serde::shape_connection_properties_patch::ser_connection_properties_patch(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }

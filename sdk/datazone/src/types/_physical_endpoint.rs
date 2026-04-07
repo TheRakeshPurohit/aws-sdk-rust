@@ -8,6 +8,8 @@ pub struct PhysicalEndpoint {
     pub aws_location: ::std::option::Option<crate::types::AwsLocation>,
     /// <p>The Amazon Web Services Glue connection name.</p>
     pub glue_connection_name: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services Glue connection names in the physical endpoint.</p>
+    pub glue_connection_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Web Services Glue connection.</p>
     pub glue_connection: ::std::option::Option<crate::types::GlueConnection>,
     /// <p>Specified whether trusted identity propagation for the connection is enabled.</p>
@@ -29,6 +31,12 @@ impl PhysicalEndpoint {
     /// <p>The Amazon Web Services Glue connection name.</p>
     pub fn glue_connection_name(&self) -> ::std::option::Option<&str> {
         self.glue_connection_name.as_deref()
+    }
+    /// <p>The Amazon Web Services Glue connection names in the physical endpoint.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glue_connection_names.is_none()`.
+    pub fn glue_connection_names(&self) -> &[::std::string::String] {
+        self.glue_connection_names.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services Glue connection.</p>
     pub fn glue_connection(&self) -> ::std::option::Option<&crate::types::GlueConnection> {
@@ -68,6 +76,7 @@ impl PhysicalEndpoint {
 pub struct PhysicalEndpointBuilder {
     pub(crate) aws_location: ::std::option::Option<crate::types::AwsLocation>,
     pub(crate) glue_connection_name: ::std::option::Option<::std::string::String>,
+    pub(crate) glue_connection_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) glue_connection: ::std::option::Option<crate::types::GlueConnection>,
     pub(crate) enable_trusted_identity_propagation: ::std::option::Option<bool>,
     pub(crate) host: ::std::option::Option<::std::string::String>,
@@ -103,6 +112,26 @@ impl PhysicalEndpointBuilder {
     /// <p>The Amazon Web Services Glue connection name.</p>
     pub fn get_glue_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.glue_connection_name
+    }
+    /// Appends an item to `glue_connection_names`.
+    ///
+    /// To override the contents of this collection use [`set_glue_connection_names`](Self::set_glue_connection_names).
+    ///
+    /// <p>The Amazon Web Services Glue connection names in the physical endpoint.</p>
+    pub fn glue_connection_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.glue_connection_names.unwrap_or_default();
+        v.push(input.into());
+        self.glue_connection_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Web Services Glue connection names in the physical endpoint.</p>
+    pub fn set_glue_connection_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.glue_connection_names = input;
+        self
+    }
+    /// <p>The Amazon Web Services Glue connection names in the physical endpoint.</p>
+    pub fn get_glue_connection_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.glue_connection_names
     }
     /// <p>The Amazon Web Services Glue connection.</p>
     pub fn glue_connection(mut self, input: crate::types::GlueConnection) -> Self {
@@ -193,6 +222,7 @@ impl PhysicalEndpointBuilder {
         crate::types::PhysicalEndpoint {
             aws_location: self.aws_location,
             glue_connection_name: self.glue_connection_name,
+            glue_connection_names: self.glue_connection_names,
             glue_connection: self.glue_connection,
             enable_trusted_identity_propagation: self.enable_trusted_identity_propagation,
             host: self.host,

@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`with_secret(bool)`](crate::operation::get_connection::builders::GetConnectionFluentBuilder::with_secret) / [`set_with_secret(Option<bool>)`](crate::operation::get_connection::builders::GetConnectionFluentBuilder::set_with_secret):<br>required: **false**<br><p>Specifies whether a connection has a secret.</p><br>
     /// - On success, responds with [`GetConnectionOutput`](crate::operation::get_connection::GetConnectionOutput) with field(s):
     ///   - [`connection_credentials(Option<ConnectionCredentials>)`](crate::operation::get_connection::GetConnectionOutput::connection_credentials): <p>Connection credentials.</p>
+    ///   - [`configurations(Option<Vec::<Configuration>>)`](crate::operation::get_connection::GetConnectionOutput::configurations): <p>The configurations of the connection.</p>
     ///   - [`connection_id(String)`](crate::operation::get_connection::GetConnectionOutput::connection_id): <p>The ID of the connection.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_connection::GetConnectionOutput::description): <p>Connection description.</p>
     ///   - [`domain_id(String)`](crate::operation::get_connection::GetConnectionOutput::domain_id): <p>The domain ID of the connection.</p>

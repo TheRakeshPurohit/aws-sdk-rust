@@ -129,6 +129,8 @@ pub(crate) mod shape_link_list;
 
 pub(crate) mod shape_link_log_settings;
 
+pub(crate) mod shape_listener_config;
+
 pub(crate) mod shape_managed_endpoint_configuration;
 
 pub(crate) mod shape_module_configuration;
@@ -154,6 +156,8 @@ pub(crate) mod shape_link_application_log_configuration;
 pub(crate) mod shape_list_links_response_structure;
 
 pub(crate) mod shape_module_parameters;
+
+pub(crate) mod shape_protocol_list;
 
 pub(crate) mod shape_responder_error_masking;
 

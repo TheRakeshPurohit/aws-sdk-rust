@@ -13,6 +13,7 @@
 /// # let filterbydimension = unimplemented!();
 /// match filterbydimension {
 ///     FilterByDimension::AccountId => { /* ... */ },
+///     FilterByDimension::AccountName => { /* ... */ },
 ///     FilterByDimension::AvailabilityZoneId => { /* ... */ },
 ///     FilterByDimension::InstanceFamily => { /* ... */ },
 ///     FilterByDimension::InstancePlatform => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum FilterByDimension {
     #[allow(missing_docs)] // documentation missing in model
     AccountId,
     #[allow(missing_docs)] // documentation missing in model
+    AccountName,
+    #[allow(missing_docs)] // documentation missing in model
     AvailabilityZoneId,
     #[allow(missing_docs)] // documentation missing in model
     InstanceFamily,
@@ -99,6 +102,7 @@ impl ::std::convert::From<&str> for FilterByDimension {
     fn from(s: &str) -> Self {
         match s {
             "account-id" => FilterByDimension::AccountId,
+            "account-name" => FilterByDimension::AccountName,
             "availability-zone-id" => FilterByDimension::AvailabilityZoneId,
             "instance-family" => FilterByDimension::InstanceFamily,
             "instance-platform" => FilterByDimension::InstancePlatform,
@@ -131,6 +135,7 @@ impl FilterByDimension {
     pub fn as_str(&self) -> &str {
         match self {
             FilterByDimension::AccountId => "account-id",
+            FilterByDimension::AccountName => "account-name",
             FilterByDimension::AvailabilityZoneId => "availability-zone-id",
             FilterByDimension::InstanceFamily => "instance-family",
             FilterByDimension::InstancePlatform => "instance-platform",
@@ -154,6 +159,7 @@ impl FilterByDimension {
     pub const fn values() -> &'static [&'static str] {
         &[
             "account-id",
+            "account-name",
             "availability-zone-id",
             "instance-family",
             "instance-platform",
@@ -194,6 +200,7 @@ impl ::std::fmt::Display for FilterByDimension {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FilterByDimension::AccountId => write!(f, "account-id"),
+            FilterByDimension::AccountName => write!(f, "account-name"),
             FilterByDimension::AvailabilityZoneId => write!(f, "availability-zone-id"),
             FilterByDimension::InstanceFamily => write!(f, "instance-family"),
             FilterByDimension::InstancePlatform => write!(f, "instance-platform"),

@@ -5,6 +5,8 @@
 pub struct CreateConnectionOutput {
     /// <p>The ID of the connection.</p>
     pub connection_id: ::std::string::String,
+    /// <p>The configurations of the connection.</p>
+    pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The connection description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the domain where the connection is created.</p>
@@ -32,6 +34,12 @@ impl CreateConnectionOutput {
     pub fn connection_id(&self) -> &str {
         use std::ops::Deref;
         self.connection_id.deref()
+    }
+    /// <p>The configurations of the connection.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::Configuration] {
+        self.configurations.as_deref().unwrap_or_default()
     }
     /// <p>The connection description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -82,6 +90,7 @@ impl ::std::fmt::Debug for CreateConnectionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectionOutput");
         formatter.field("connection_id", &self.connection_id);
+        formatter.field("configurations", &self.configurations);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("domain_id", &self.domain_id);
         formatter.field("domain_unit_id", &self.domain_unit_id);
@@ -113,6 +122,7 @@ impl CreateConnectionOutput {
 #[non_exhaustive]
 pub struct CreateConnectionOutputBuilder {
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
+    pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_unit_id: ::std::option::Option<::std::string::String>,
@@ -140,6 +150,26 @@ impl CreateConnectionOutputBuilder {
     /// <p>The ID of the connection.</p>
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_id
+    }
+    /// Appends an item to `configurations`.
+    ///
+    /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
+    ///
+    /// <p>The configurations of the connection.</p>
+    pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
+        let mut v = self.configurations.unwrap_or_default();
+        v.push(input);
+        self.configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configurations of the connection.</p>
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
+        self.configurations = input;
+        self
+    }
+    /// <p>The configurations of the connection.</p>
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.configurations
     }
     /// <p>The connection description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -318,6 +348,7 @@ impl CreateConnectionOutputBuilder {
                     "connection_id was not specified but it is required when building CreateConnectionOutput",
                 )
             })?,
+            configurations: self.configurations,
             description: self.description,
             domain_id: self.domain_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -361,6 +392,7 @@ impl ::std::fmt::Debug for CreateConnectionOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateConnectionOutputBuilder");
         formatter.field("connection_id", &self.connection_id);
+        formatter.field("configurations", &self.configurations);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("domain_id", &self.domain_id);
         formatter.field("domain_unit_id", &self.domain_unit_id);

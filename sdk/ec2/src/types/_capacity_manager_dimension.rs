@@ -10,6 +10,8 @@ pub struct CapacityManagerDimension {
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID that owns the capacity resource.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the Amazon Web Services account that owns the capacity resource. This dimension is only available when Organizations access is enabled for Capacity Manager.</p>
+    pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The EC2 instance family of the capacity resource.</p>
     pub instance_family: ::std::option::Option<::std::string::String>,
     /// <p>The specific EC2 instance type of the capacity resource.</p>
@@ -38,6 +40,8 @@ pub struct CapacityManagerDimension {
     pub reservation_instance_match_criteria: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID that is financially responsible for unused capacity reservation costs.</p>
     pub reservation_unused_financial_owner: ::std::option::Option<::std::string::String>,
+    /// <p>The tags associated with the capacity resource, represented as key-value pairs. Only tags that have been activated for monitoring via <code>UpdateCapacityManagerMonitoredTagKeys</code> are included.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::CapacityManagerTagDimension>>,
 }
 impl CapacityManagerDimension {
     /// <p>The Amazon Web Services Region where the capacity resource is located.</p>
@@ -51,6 +55,10 @@ impl CapacityManagerDimension {
     /// <p>The Amazon Web Services account ID that owns the capacity resource.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
+    }
+    /// <p>The name of the Amazon Web Services account that owns the capacity resource. This dimension is only available when Organizations access is enabled for Capacity Manager.</p>
+    pub fn account_name(&self) -> ::std::option::Option<&str> {
+        self.account_name.as_deref()
     }
     /// <p>The EC2 instance family of the capacity resource.</p>
     pub fn instance_family(&self) -> ::std::option::Option<&str> {
@@ -108,6 +116,12 @@ impl CapacityManagerDimension {
     pub fn reservation_unused_financial_owner(&self) -> ::std::option::Option<&str> {
         self.reservation_unused_financial_owner.as_deref()
     }
+    /// <p>The tags associated with the capacity resource, represented as key-value pairs. Only tags that have been activated for monitoring via <code>UpdateCapacityManagerMonitoredTagKeys</code> are included.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::CapacityManagerTagDimension] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl CapacityManagerDimension {
     /// Creates a new builder-style object to manufacture [`CapacityManagerDimension`](crate::types::CapacityManagerDimension).
@@ -123,6 +137,7 @@ pub struct CapacityManagerDimensionBuilder {
     pub(crate) resource_region: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_family: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) instance_platform: ::std::option::Option<::std::string::String>,
@@ -137,6 +152,7 @@ pub struct CapacityManagerDimensionBuilder {
     pub(crate) reservation_state: ::std::option::Option<crate::types::ReservationState>,
     pub(crate) reservation_instance_match_criteria: ::std::option::Option<::std::string::String>,
     pub(crate) reservation_unused_financial_owner: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::CapacityManagerTagDimension>>,
 }
 impl CapacityManagerDimensionBuilder {
     /// <p>The Amazon Web Services Region where the capacity resource is located.</p>
@@ -180,6 +196,20 @@ impl CapacityManagerDimensionBuilder {
     /// <p>The Amazon Web Services account ID that owns the capacity resource.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
+    }
+    /// <p>The name of the Amazon Web Services account that owns the capacity resource. This dimension is only available when Organizations access is enabled for Capacity Manager.</p>
+    pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the Amazon Web Services account that owns the capacity resource. This dimension is only available when Organizations access is enabled for Capacity Manager.</p>
+    pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_name = input;
+        self
+    }
+    /// <p>The name of the Amazon Web Services account that owns the capacity resource. This dimension is only available when Organizations access is enabled for Capacity Manager.</p>
+    pub fn get_account_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_name
     }
     /// <p>The EC2 instance family of the capacity resource.</p>
     pub fn instance_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -377,12 +407,33 @@ impl CapacityManagerDimensionBuilder {
     pub fn get_reservation_unused_financial_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.reservation_unused_financial_owner
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The tags associated with the capacity resource, represented as key-value pairs. Only tags that have been activated for monitoring via <code>UpdateCapacityManagerMonitoredTagKeys</code> are included.</p>
+    pub fn tags(mut self, input: crate::types::CapacityManagerTagDimension) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The tags associated with the capacity resource, represented as key-value pairs. Only tags that have been activated for monitoring via <code>UpdateCapacityManagerMonitoredTagKeys</code> are included.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityManagerTagDimension>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The tags associated with the capacity resource, represented as key-value pairs. Only tags that have been activated for monitoring via <code>UpdateCapacityManagerMonitoredTagKeys</code> are included.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityManagerTagDimension>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CapacityManagerDimension`](crate::types::CapacityManagerDimension).
     pub fn build(self) -> crate::types::CapacityManagerDimension {
         crate::types::CapacityManagerDimension {
             resource_region: self.resource_region,
             availability_zone_id: self.availability_zone_id,
             account_id: self.account_id,
+            account_name: self.account_name,
             instance_family: self.instance_family,
             instance_type: self.instance_type,
             instance_platform: self.instance_platform,
@@ -397,6 +448,7 @@ impl CapacityManagerDimensionBuilder {
             reservation_state: self.reservation_state,
             reservation_instance_match_criteria: self.reservation_instance_match_criteria,
             reservation_unused_financial_owner: self.reservation_unused_financial_owner,
+            tags: self.tags,
         }
     }
 }

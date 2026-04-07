@@ -27,8 +27,6 @@ pub(crate) mod shape_apply_archive_rule;
 
 pub(crate) mod shape_cancel_policy_generation;
 
-pub(crate) mod shape_cancel_policy_preview_job;
-
 pub(crate) mod shape_check_access_not_granted;
 
 pub(crate) mod shape_check_no_new_access;
@@ -41,13 +39,9 @@ pub(crate) mod shape_create_analyzer;
 
 pub(crate) mod shape_create_archive_rule;
 
-pub(crate) mod shape_create_policy_preview_configuration;
-
 pub(crate) mod shape_delete_analyzer;
 
 pub(crate) mod shape_delete_archive_rule;
-
-pub(crate) mod shape_delete_policy_preview_configuration;
 
 pub(crate) mod shape_generate_finding_recommendation;
 
@@ -69,10 +63,6 @@ pub(crate) mod shape_get_findings_statistics;
 
 pub(crate) mod shape_get_generated_policy;
 
-pub(crate) mod shape_get_policy_preview_configuration;
-
-pub(crate) mod shape_get_policy_preview_job;
-
 pub(crate) mod shape_list_access_preview_findings;
 
 pub(crate) mod shape_list_access_previews;
@@ -89,13 +79,9 @@ pub(crate) mod shape_list_findings_v2;
 
 pub(crate) mod shape_list_policy_generations;
 
-pub(crate) mod shape_list_policy_preview_jobs;
-
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_start_policy_generation;
-
-pub(crate) mod shape_start_policy_preview_job;
 
 pub(crate) mod shape_start_resource_scan;
 
@@ -137,8 +123,6 @@ pub(crate) mod shape_create_analyzer_input;
 
 pub(crate) mod shape_create_archive_rule_input;
 
-pub(crate) mod shape_create_policy_preview_configuration_input;
-
 pub(crate) mod shape_get_findings_statistics_input;
 
 pub(crate) mod shape_internal_server_exception;
@@ -158,8 +142,6 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_policy_generation_input;
-
-pub(crate) mod shape_start_policy_preview_job_input;
 
 pub(crate) mod shape_start_resource_scan_input;
 
@@ -223,19 +205,9 @@ pub(crate) mod shape_inline_archive_rule;
 
 pub(crate) mod shape_job_details;
 
-pub(crate) mod shape_policy_configuration;
-
 pub(crate) mod shape_policy_generation_details;
 
 pub(crate) mod shape_policy_generation_list;
-
-pub(crate) mod shape_policy_preview_analysis_reports;
-
-pub(crate) mod shape_policy_preview_configuration_list;
-
-pub(crate) mod shape_policy_preview_job_details;
-
-pub(crate) mod shape_policy_preview_job_parameters;
 
 pub(crate) mod shape_reason_summary_list;
 
@@ -299,13 +271,7 @@ pub(crate) mod shape_job_error;
 
 pub(crate) mod shape_kms_key_configuration;
 
-pub(crate) mod shape_policy_configurations_list;
-
 pub(crate) mod shape_policy_generation;
-
-pub(crate) mod shape_policy_preview_analysis_report;
-
-pub(crate) mod shape_policy_preview_configuration;
 
 pub(crate) mod shape_principal_map;
 
@@ -406,8 +372,6 @@ pub(crate) mod shape_kms_grant_constraints;
 pub(crate) mod shape_location;
 
 pub(crate) mod shape_network_origin_configuration;
-
-pub(crate) mod shape_policy_document_list;
 
 pub(crate) mod shape_resource_type_statistics_map;
 

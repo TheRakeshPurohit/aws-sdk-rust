@@ -32,6 +32,22 @@
 ///     InstanceType::MlG4Dn4Xlarge => { /* ... */ },
 ///     InstanceType::MlG4Dn8Xlarge => { /* ... */ },
 ///     InstanceType::MlG4DnXlarge => { /* ... */ },
+///     InstanceType::MlG612Xlarge => { /* ... */ },
+///     InstanceType::MlG616Xlarge => { /* ... */ },
+///     InstanceType::MlG624Xlarge => { /* ... */ },
+///     InstanceType::MlG62Xlarge => { /* ... */ },
+///     InstanceType::MlG648Xlarge => { /* ... */ },
+///     InstanceType::MlG64Xlarge => { /* ... */ },
+///     InstanceType::MlG68Xlarge => { /* ... */ },
+///     InstanceType::MlG6Xlarge => { /* ... */ },
+///     InstanceType::MlG6E12Xlarge => { /* ... */ },
+///     InstanceType::MlG6E16Xlarge => { /* ... */ },
+///     InstanceType::MlG6E24Xlarge => { /* ... */ },
+///     InstanceType::MlG6E2Xlarge => { /* ... */ },
+///     InstanceType::MlG6E48Xlarge => { /* ... */ },
+///     InstanceType::MlG6E4Xlarge => { /* ... */ },
+///     InstanceType::MlG6E8Xlarge => { /* ... */ },
+///     InstanceType::MlG6EXlarge => { /* ... */ },
 ///     InstanceType::MlM410Xlarge => { /* ... */ },
 ///     InstanceType::MlM416Xlarge => { /* ... */ },
 ///     InstanceType::MlM42Xlarge => { /* ... */ },
@@ -51,6 +67,9 @@
 ///     InstanceType::MlP38Xlarge => { /* ... */ },
 ///     InstanceType::MlP3Dn24Xlarge => { /* ... */ },
 ///     InstanceType::MlP4D24Xlarge => { /* ... */ },
+///     InstanceType::MlT32Xlarge => { /* ... */ },
+///     InstanceType::MlT3Large => { /* ... */ },
+///     InstanceType::MlT3Xlarge => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -120,6 +139,38 @@ pub enum InstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlG4DnXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlG612Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG616Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG624Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG62Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG648Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG64Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG68Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6E12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6E16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6E24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6E2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6E48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6E4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6E8Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlG6EXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlM410Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlM416Xlarge,
@@ -157,6 +208,12 @@ pub enum InstanceType {
     MlP3Dn24Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlP4D24Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlT32Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlT3Large,
+    #[allow(missing_docs)] // documentation missing in model
+    MlT3Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -184,6 +241,22 @@ impl ::std::convert::From<&str> for InstanceType {
             "ml.g4dn.4xlarge" => InstanceType::MlG4Dn4Xlarge,
             "ml.g4dn.8xlarge" => InstanceType::MlG4Dn8Xlarge,
             "ml.g4dn.xlarge" => InstanceType::MlG4DnXlarge,
+            "ml.g6.12xlarge" => InstanceType::MlG612Xlarge,
+            "ml.g6.16xlarge" => InstanceType::MlG616Xlarge,
+            "ml.g6.24xlarge" => InstanceType::MlG624Xlarge,
+            "ml.g6.2xlarge" => InstanceType::MlG62Xlarge,
+            "ml.g6.48xlarge" => InstanceType::MlG648Xlarge,
+            "ml.g6.4xlarge" => InstanceType::MlG64Xlarge,
+            "ml.g6.8xlarge" => InstanceType::MlG68Xlarge,
+            "ml.g6.xlarge" => InstanceType::MlG6Xlarge,
+            "ml.g6e.12xlarge" => InstanceType::MlG6E12Xlarge,
+            "ml.g6e.16xlarge" => InstanceType::MlG6E16Xlarge,
+            "ml.g6e.24xlarge" => InstanceType::MlG6E24Xlarge,
+            "ml.g6e.2xlarge" => InstanceType::MlG6E2Xlarge,
+            "ml.g6e.48xlarge" => InstanceType::MlG6E48Xlarge,
+            "ml.g6e.4xlarge" => InstanceType::MlG6E4Xlarge,
+            "ml.g6e.8xlarge" => InstanceType::MlG6E8Xlarge,
+            "ml.g6e.xlarge" => InstanceType::MlG6EXlarge,
             "ml.m4.10xlarge" => InstanceType::MlM410Xlarge,
             "ml.m4.16xlarge" => InstanceType::MlM416Xlarge,
             "ml.m4.2xlarge" => InstanceType::MlM42Xlarge,
@@ -203,6 +276,9 @@ impl ::std::convert::From<&str> for InstanceType {
             "ml.p3.8xlarge" => InstanceType::MlP38Xlarge,
             "ml.p3dn.24xlarge" => InstanceType::MlP3Dn24Xlarge,
             "ml.p4d.24xlarge" => InstanceType::MlP4D24Xlarge,
+            "ml.t3.2xlarge" => InstanceType::MlT32Xlarge,
+            "ml.t3.large" => InstanceType::MlT3Large,
+            "ml.t3.xlarge" => InstanceType::MlT3Xlarge,
             other => InstanceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -238,6 +314,22 @@ impl InstanceType {
             InstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
             InstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
             InstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
+            InstanceType::MlG612Xlarge => "ml.g6.12xlarge",
+            InstanceType::MlG616Xlarge => "ml.g6.16xlarge",
+            InstanceType::MlG624Xlarge => "ml.g6.24xlarge",
+            InstanceType::MlG62Xlarge => "ml.g6.2xlarge",
+            InstanceType::MlG648Xlarge => "ml.g6.48xlarge",
+            InstanceType::MlG64Xlarge => "ml.g6.4xlarge",
+            InstanceType::MlG68Xlarge => "ml.g6.8xlarge",
+            InstanceType::MlG6Xlarge => "ml.g6.xlarge",
+            InstanceType::MlG6E12Xlarge => "ml.g6e.12xlarge",
+            InstanceType::MlG6E16Xlarge => "ml.g6e.16xlarge",
+            InstanceType::MlG6E24Xlarge => "ml.g6e.24xlarge",
+            InstanceType::MlG6E2Xlarge => "ml.g6e.2xlarge",
+            InstanceType::MlG6E48Xlarge => "ml.g6e.48xlarge",
+            InstanceType::MlG6E4Xlarge => "ml.g6e.4xlarge",
+            InstanceType::MlG6E8Xlarge => "ml.g6e.8xlarge",
+            InstanceType::MlG6EXlarge => "ml.g6e.xlarge",
             InstanceType::MlM410Xlarge => "ml.m4.10xlarge",
             InstanceType::MlM416Xlarge => "ml.m4.16xlarge",
             InstanceType::MlM42Xlarge => "ml.m4.2xlarge",
@@ -257,6 +349,9 @@ impl InstanceType {
             InstanceType::MlP38Xlarge => "ml.p3.8xlarge",
             InstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
             InstanceType::MlP4D24Xlarge => "ml.p4d.24xlarge",
+            InstanceType::MlT32Xlarge => "ml.t3.2xlarge",
+            InstanceType::MlT3Large => "ml.t3.large",
+            InstanceType::MlT3Xlarge => "ml.t3.xlarge",
             InstanceType::Unknown(value) => value.as_str(),
         }
     }
@@ -283,6 +378,22 @@ impl InstanceType {
             "ml.g4dn.4xlarge",
             "ml.g4dn.8xlarge",
             "ml.g4dn.xlarge",
+            "ml.g6.12xlarge",
+            "ml.g6.16xlarge",
+            "ml.g6.24xlarge",
+            "ml.g6.2xlarge",
+            "ml.g6.48xlarge",
+            "ml.g6.4xlarge",
+            "ml.g6.8xlarge",
+            "ml.g6.xlarge",
+            "ml.g6e.12xlarge",
+            "ml.g6e.16xlarge",
+            "ml.g6e.24xlarge",
+            "ml.g6e.2xlarge",
+            "ml.g6e.48xlarge",
+            "ml.g6e.4xlarge",
+            "ml.g6e.8xlarge",
+            "ml.g6e.xlarge",
             "ml.m4.10xlarge",
             "ml.m4.16xlarge",
             "ml.m4.2xlarge",
@@ -302,6 +413,9 @@ impl InstanceType {
             "ml.p3.8xlarge",
             "ml.p3dn.24xlarge",
             "ml.p4d.24xlarge",
+            "ml.t3.2xlarge",
+            "ml.t3.large",
+            "ml.t3.xlarge",
         ]
     }
 }
@@ -345,6 +459,22 @@ impl ::std::fmt::Display for InstanceType {
             InstanceType::MlG4Dn4Xlarge => write!(f, "ml.g4dn.4xlarge"),
             InstanceType::MlG4Dn8Xlarge => write!(f, "ml.g4dn.8xlarge"),
             InstanceType::MlG4DnXlarge => write!(f, "ml.g4dn.xlarge"),
+            InstanceType::MlG612Xlarge => write!(f, "ml.g6.12xlarge"),
+            InstanceType::MlG616Xlarge => write!(f, "ml.g6.16xlarge"),
+            InstanceType::MlG624Xlarge => write!(f, "ml.g6.24xlarge"),
+            InstanceType::MlG62Xlarge => write!(f, "ml.g6.2xlarge"),
+            InstanceType::MlG648Xlarge => write!(f, "ml.g6.48xlarge"),
+            InstanceType::MlG64Xlarge => write!(f, "ml.g6.4xlarge"),
+            InstanceType::MlG68Xlarge => write!(f, "ml.g6.8xlarge"),
+            InstanceType::MlG6Xlarge => write!(f, "ml.g6.xlarge"),
+            InstanceType::MlG6E12Xlarge => write!(f, "ml.g6e.12xlarge"),
+            InstanceType::MlG6E16Xlarge => write!(f, "ml.g6e.16xlarge"),
+            InstanceType::MlG6E24Xlarge => write!(f, "ml.g6e.24xlarge"),
+            InstanceType::MlG6E2Xlarge => write!(f, "ml.g6e.2xlarge"),
+            InstanceType::MlG6E48Xlarge => write!(f, "ml.g6e.48xlarge"),
+            InstanceType::MlG6E4Xlarge => write!(f, "ml.g6e.4xlarge"),
+            InstanceType::MlG6E8Xlarge => write!(f, "ml.g6e.8xlarge"),
+            InstanceType::MlG6EXlarge => write!(f, "ml.g6e.xlarge"),
             InstanceType::MlM410Xlarge => write!(f, "ml.m4.10xlarge"),
             InstanceType::MlM416Xlarge => write!(f, "ml.m4.16xlarge"),
             InstanceType::MlM42Xlarge => write!(f, "ml.m4.2xlarge"),
@@ -364,6 +494,9 @@ impl ::std::fmt::Display for InstanceType {
             InstanceType::MlP38Xlarge => write!(f, "ml.p3.8xlarge"),
             InstanceType::MlP3Dn24Xlarge => write!(f, "ml.p3dn.24xlarge"),
             InstanceType::MlP4D24Xlarge => write!(f, "ml.p4d.24xlarge"),
+            InstanceType::MlT32Xlarge => write!(f, "ml.t3.2xlarge"),
+            InstanceType::MlT3Large => write!(f, "ml.t3.large"),
+            InstanceType::MlT3Xlarge => write!(f, "ml.t3.xlarge"),
             InstanceType::Unknown(value) => write!(f, "{value}"),
         }
     }

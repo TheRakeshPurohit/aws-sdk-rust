@@ -31,5 +31,11 @@ pub fn ser_create_link_input_input(
         }
         object_8.finish();
     }
+    if let Some(var_11) = &input.timeout_in_millis {
+        object.key("timeoutInMillis").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+        );
+    }
     Ok(())
 }

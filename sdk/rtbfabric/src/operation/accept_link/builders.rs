@@ -165,4 +165,18 @@ impl AcceptLinkFluentBuilder {
     pub fn get_log_settings(&self) -> &::std::option::Option<crate::types::LinkLogSettings> {
         self.inner.get_log_settings()
     }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn timeout_in_millis(mut self, input: i64) -> Self {
+        self.inner = self.inner.timeout_in_millis(input);
+        self
+    }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn set_timeout_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.inner = self.inner.set_timeout_in_millis(input);
+        self
+    }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn get_timeout_in_millis(&self) -> &::std::option::Option<i64> {
+        self.inner.get_timeout_in_millis()
+    }
 }

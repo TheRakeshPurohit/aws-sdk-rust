@@ -7,6 +7,10 @@ pub struct CreateResponderGatewayOutput {
     pub gateway_id: ::std::string::String,
     /// <p>The status of the request.</p>
     pub status: crate::types::ResponderGatewayStatus,
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub listener_config: ::std::option::Option<crate::types::ListenerConfig>,
+    /// <p>The external inbound endpoint for the responder gateway.</p>
+    pub external_inbound_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateResponderGatewayOutput {
@@ -18,6 +22,14 @@ impl CreateResponderGatewayOutput {
     /// <p>The status of the request.</p>
     pub fn status(&self) -> &crate::types::ResponderGatewayStatus {
         &self.status
+    }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn listener_config(&self) -> ::std::option::Option<&crate::types::ListenerConfig> {
+        self.listener_config.as_ref()
+    }
+    /// <p>The external inbound endpoint for the responder gateway.</p>
+    pub fn external_inbound_endpoint(&self) -> ::std::option::Option<&str> {
+        self.external_inbound_endpoint.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateResponderGatewayOutput {
@@ -38,6 +50,8 @@ impl CreateResponderGatewayOutput {
 pub struct CreateResponderGatewayOutputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ResponderGatewayStatus>,
+    pub(crate) listener_config: ::std::option::Option<crate::types::ListenerConfig>,
+    pub(crate) external_inbound_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateResponderGatewayOutputBuilder {
@@ -71,6 +85,34 @@ impl CreateResponderGatewayOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResponderGatewayStatus> {
         &self.status
     }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn listener_config(mut self, input: crate::types::ListenerConfig) -> Self {
+        self.listener_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn set_listener_config(mut self, input: ::std::option::Option<crate::types::ListenerConfig>) -> Self {
+        self.listener_config = input;
+        self
+    }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn get_listener_config(&self) -> &::std::option::Option<crate::types::ListenerConfig> {
+        &self.listener_config
+    }
+    /// <p>The external inbound endpoint for the responder gateway.</p>
+    pub fn external_inbound_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_inbound_endpoint = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The external inbound endpoint for the responder gateway.</p>
+    pub fn set_external_inbound_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.external_inbound_endpoint = input;
+        self
+    }
+    /// <p>The external inbound endpoint for the responder gateway.</p>
+    pub fn get_external_inbound_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_inbound_endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -103,6 +145,8 @@ impl CreateResponderGatewayOutputBuilder {
                     "status was not specified but it is required when building CreateResponderGatewayOutput",
                 )
             })?,
+            listener_config: self.listener_config,
+            external_inbound_endpoint: self.external_inbound_endpoint,
             _request_id: self._request_id,
         })
     }

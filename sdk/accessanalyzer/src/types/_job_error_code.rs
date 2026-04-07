@@ -13,16 +13,7 @@
 /// # let joberrorcode = unimplemented!();
 /// match joberrorcode {
 ///     JobErrorCode::AuthorizationError => { /* ... */ },
-///     JobErrorCode::CanceledJobError => { /* ... */ },
-///     JobErrorCode::InsufficientPermissionsError => { /* ... */ },
-///     JobErrorCode::InvalidOrganizationConfiguration => { /* ... */ },
-///     JobErrorCode::InvalidPolicyPreviewConfiguration => { /* ... */ },
-///     JobErrorCode::InvalidServiceLinkedRole => { /* ... */ },
-///     JobErrorCode::InvalidTargetError => { /* ... */ },
-///     JobErrorCode::OrganizationAccessDeniedError => { /* ... */ },
 ///     JobErrorCode::ResourceNotFoundError => { /* ... */ },
-///     JobErrorCode::S3BucketNotFoundError => { /* ... */ },
-///     JobErrorCode::S3BucketPermissionError => { /* ... */ },
 ///     JobErrorCode::ServiceError => { /* ... */ },
 ///     JobErrorCode::ServiceQuotaExceededError => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -56,25 +47,7 @@ pub enum JobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AuthorizationError,
     #[allow(missing_docs)] // documentation missing in model
-    CanceledJobError,
-    #[allow(missing_docs)] // documentation missing in model
-    InsufficientPermissionsError,
-    #[allow(missing_docs)] // documentation missing in model
-    InvalidOrganizationConfiguration,
-    #[allow(missing_docs)] // documentation missing in model
-    InvalidPolicyPreviewConfiguration,
-    #[allow(missing_docs)] // documentation missing in model
-    InvalidServiceLinkedRole,
-    #[allow(missing_docs)] // documentation missing in model
-    InvalidTargetError,
-    #[allow(missing_docs)] // documentation missing in model
-    OrganizationAccessDeniedError,
-    #[allow(missing_docs)] // documentation missing in model
     ResourceNotFoundError,
-    #[allow(missing_docs)] // documentation missing in model
-    S3BucketNotFoundError,
-    #[allow(missing_docs)] // documentation missing in model
-    S3BucketPermissionError,
     #[allow(missing_docs)] // documentation missing in model
     ServiceError,
     #[allow(missing_docs)] // documentation missing in model
@@ -87,16 +60,7 @@ impl ::std::convert::From<&str> for JobErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "AUTHORIZATION_ERROR" => JobErrorCode::AuthorizationError,
-            "CANCELED_JOB_ERROR" => JobErrorCode::CanceledJobError,
-            "INSUFFICIENT_PERMISSIONS_ERROR" => JobErrorCode::InsufficientPermissionsError,
-            "INVALID_ORGANIZATION_CONFIGURATION" => JobErrorCode::InvalidOrganizationConfiguration,
-            "INVALID_POLICY_PREVIEW_CONFIGURATION" => JobErrorCode::InvalidPolicyPreviewConfiguration,
-            "INVALID_SERVICE_LINKED_ROLE" => JobErrorCode::InvalidServiceLinkedRole,
-            "INVALID_TARGET_ERROR" => JobErrorCode::InvalidTargetError,
-            "ORGANIZATION_ACCESS_DENIED_ERROR" => JobErrorCode::OrganizationAccessDeniedError,
             "RESOURCE_NOT_FOUND_ERROR" => JobErrorCode::ResourceNotFoundError,
-            "S3_BUCKET_NOT_FOUND_ERROR" => JobErrorCode::S3BucketNotFoundError,
-            "S3_BUCKET_PERMISSION_ERROR" => JobErrorCode::S3BucketPermissionError,
             "SERVICE_ERROR" => JobErrorCode::ServiceError,
             "SERVICE_QUOTA_EXCEEDED_ERROR" => JobErrorCode::ServiceQuotaExceededError,
             other => JobErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -115,16 +79,7 @@ impl JobErrorCode {
     pub fn as_str(&self) -> &str {
         match self {
             JobErrorCode::AuthorizationError => "AUTHORIZATION_ERROR",
-            JobErrorCode::CanceledJobError => "CANCELED_JOB_ERROR",
-            JobErrorCode::InsufficientPermissionsError => "INSUFFICIENT_PERMISSIONS_ERROR",
-            JobErrorCode::InvalidOrganizationConfiguration => "INVALID_ORGANIZATION_CONFIGURATION",
-            JobErrorCode::InvalidPolicyPreviewConfiguration => "INVALID_POLICY_PREVIEW_CONFIGURATION",
-            JobErrorCode::InvalidServiceLinkedRole => "INVALID_SERVICE_LINKED_ROLE",
-            JobErrorCode::InvalidTargetError => "INVALID_TARGET_ERROR",
-            JobErrorCode::OrganizationAccessDeniedError => "ORGANIZATION_ACCESS_DENIED_ERROR",
             JobErrorCode::ResourceNotFoundError => "RESOURCE_NOT_FOUND_ERROR",
-            JobErrorCode::S3BucketNotFoundError => "S3_BUCKET_NOT_FOUND_ERROR",
-            JobErrorCode::S3BucketPermissionError => "S3_BUCKET_PERMISSION_ERROR",
             JobErrorCode::ServiceError => "SERVICE_ERROR",
             JobErrorCode::ServiceQuotaExceededError => "SERVICE_QUOTA_EXCEEDED_ERROR",
             JobErrorCode::Unknown(value) => value.as_str(),
@@ -134,16 +89,7 @@ impl JobErrorCode {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AUTHORIZATION_ERROR",
-            "CANCELED_JOB_ERROR",
-            "INSUFFICIENT_PERMISSIONS_ERROR",
-            "INVALID_ORGANIZATION_CONFIGURATION",
-            "INVALID_POLICY_PREVIEW_CONFIGURATION",
-            "INVALID_SERVICE_LINKED_ROLE",
-            "INVALID_TARGET_ERROR",
-            "ORGANIZATION_ACCESS_DENIED_ERROR",
             "RESOURCE_NOT_FOUND_ERROR",
-            "S3_BUCKET_NOT_FOUND_ERROR",
-            "S3_BUCKET_PERMISSION_ERROR",
             "SERVICE_ERROR",
             "SERVICE_QUOTA_EXCEEDED_ERROR",
         ]
@@ -170,16 +116,7 @@ impl ::std::fmt::Display for JobErrorCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             JobErrorCode::AuthorizationError => write!(f, "AUTHORIZATION_ERROR"),
-            JobErrorCode::CanceledJobError => write!(f, "CANCELED_JOB_ERROR"),
-            JobErrorCode::InsufficientPermissionsError => write!(f, "INSUFFICIENT_PERMISSIONS_ERROR"),
-            JobErrorCode::InvalidOrganizationConfiguration => write!(f, "INVALID_ORGANIZATION_CONFIGURATION"),
-            JobErrorCode::InvalidPolicyPreviewConfiguration => write!(f, "INVALID_POLICY_PREVIEW_CONFIGURATION"),
-            JobErrorCode::InvalidServiceLinkedRole => write!(f, "INVALID_SERVICE_LINKED_ROLE"),
-            JobErrorCode::InvalidTargetError => write!(f, "INVALID_TARGET_ERROR"),
-            JobErrorCode::OrganizationAccessDeniedError => write!(f, "ORGANIZATION_ACCESS_DENIED_ERROR"),
             JobErrorCode::ResourceNotFoundError => write!(f, "RESOURCE_NOT_FOUND_ERROR"),
-            JobErrorCode::S3BucketNotFoundError => write!(f, "S3_BUCKET_NOT_FOUND_ERROR"),
-            JobErrorCode::S3BucketPermissionError => write!(f, "S3_BUCKET_PERMISSION_ERROR"),
             JobErrorCode::ServiceError => write!(f, "SERVICE_ERROR"),
             JobErrorCode::ServiceQuotaExceededError => write!(f, "SERVICE_QUOTA_EXCEEDED_ERROR"),
             JobErrorCode::Unknown(value) => write!(f, "{value}"),

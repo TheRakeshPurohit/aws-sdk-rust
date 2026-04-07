@@ -137,6 +137,9 @@ pub(crate) fn de_get_connection(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "configurations" => {
+                    builder = builder.set_configurations(crate::protocol_serde::shape_configurations::de_configurations(tokens, _value)?);
+                }
                 "connectionCredentials" => {
                     builder = builder.set_connection_credentials(crate::protocol_serde::shape_connection_credentials::de_connection_credentials(
                         tokens, _value,

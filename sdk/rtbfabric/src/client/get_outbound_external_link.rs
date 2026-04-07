@@ -10,10 +10,14 @@ impl super::Client {
     ///   - [`link_id(String)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::link_id): <p>The unique identifier of the link.</p>
     ///   - [`status(LinkStatus)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::status): <p>The status of the request.</p>
     ///   - [`public_endpoint(String)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::public_endpoint): <p>The public endpoint for the link.</p>
+    ///   - [`flow_modules(Option<Vec::<ModuleConfiguration>>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::flow_modules): <p>The configuration of flow modules.</p>
+    ///   - [`pending_flow_modules(Option<Vec::<ModuleConfiguration>>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::pending_flow_modules): <p>The configuration of pending flow modules.</p>
+    ///   - [`attributes(Option<LinkAttributes>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::attributes): <p>Describes the attributes of a link.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::created_at): <p>The timestamp of when the outbound external link was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::updated_at): <p>The timestamp of when the outbound external link was updated.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::tags): <p>A map of the key-value pairs for the tag or tags assigned to the specified resource.</p>
-    ///   - [`log_settings(Option<LinkLogSettings>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::log_settings): <p>Describes the settings for a link log.</p>
+    ///   - [`log_settings(Option<LinkLogSettings>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::log_settings): <p>Settings for the application logs.</p>
+    ///   - [`connectivity_type(Option<ConnectivityType>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::connectivity_type): <p>The connectivity type of the link.</p>
     /// - On failure, responds with [`SdkError<GetOutboundExternalLinkError>`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkError)
     pub fn get_outbound_external_link(&self) -> crate::operation::get_outbound_external_link::builders::GetOutboundExternalLinkFluentBuilder {
         crate::operation::get_outbound_external_link::builders::GetOutboundExternalLinkFluentBuilder::new(self.handle.clone())

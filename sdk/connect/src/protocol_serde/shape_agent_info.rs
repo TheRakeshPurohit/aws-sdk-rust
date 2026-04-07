@@ -90,6 +90,13 @@ where
                             builder =
                                 builder.set_state_transitions(crate::protocol_serde::shape_state_transitions::de_state_transitions(tokens, _value)?);
                         }
+                        "VoiceEnhancementMode" => {
+                            builder = builder.set_voice_enhancement_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VoiceEnhancementMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

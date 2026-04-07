@@ -30,6 +30,8 @@ pub struct AgentInfo {
     pub agent_initiated_hold_duration: ::std::option::Option<i32>,
     /// <p>List of <code>StateTransition</code> for a supervisor.</p>
     pub state_transitions: ::std::option::Option<::std::vec::Vec<crate::types::StateTransition>>,
+    /// <p>The voice enhancement mode used by the agent as the call is ending. Valid values: VOICE_ISOLATION | NOISE_SUPPRESSION | NONE. A value of null indicates this mode has not yet been set for this user.</p>
+    pub voice_enhancement_mode: ::std::option::Option<crate::types::VoiceEnhancementMode>,
 }
 impl AgentInfo {
     /// <p>The identifier of the agent who accepted the contact.</p>
@@ -86,6 +88,10 @@ impl AgentInfo {
     pub fn state_transitions(&self) -> &[crate::types::StateTransition] {
         self.state_transitions.as_deref().unwrap_or_default()
     }
+    /// <p>The voice enhancement mode used by the agent as the call is ending. Valid values: VOICE_ISOLATION | NOISE_SUPPRESSION | NONE. A value of null indicates this mode has not yet been set for this user.</p>
+    pub fn voice_enhancement_mode(&self) -> ::std::option::Option<&crate::types::VoiceEnhancementMode> {
+        self.voice_enhancement_mode.as_ref()
+    }
 }
 impl AgentInfo {
     /// Creates a new builder-style object to manufacture [`AgentInfo`](crate::types::AgentInfo).
@@ -111,6 +117,7 @@ pub struct AgentInfoBuilder {
     pub(crate) after_contact_work_end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) agent_initiated_hold_duration: ::std::option::Option<i32>,
     pub(crate) state_transitions: ::std::option::Option<::std::vec::Vec<crate::types::StateTransition>>,
+    pub(crate) voice_enhancement_mode: ::std::option::Option<crate::types::VoiceEnhancementMode>,
 }
 impl AgentInfoBuilder {
     /// <p>The identifier of the agent who accepted the contact.</p>
@@ -301,6 +308,20 @@ impl AgentInfoBuilder {
     pub fn get_state_transitions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StateTransition>> {
         &self.state_transitions
     }
+    /// <p>The voice enhancement mode used by the agent as the call is ending. Valid values: VOICE_ISOLATION | NOISE_SUPPRESSION | NONE. A value of null indicates this mode has not yet been set for this user.</p>
+    pub fn voice_enhancement_mode(mut self, input: crate::types::VoiceEnhancementMode) -> Self {
+        self.voice_enhancement_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The voice enhancement mode used by the agent as the call is ending. Valid values: VOICE_ISOLATION | NOISE_SUPPRESSION | NONE. A value of null indicates this mode has not yet been set for this user.</p>
+    pub fn set_voice_enhancement_mode(mut self, input: ::std::option::Option<crate::types::VoiceEnhancementMode>) -> Self {
+        self.voice_enhancement_mode = input;
+        self
+    }
+    /// <p>The voice enhancement mode used by the agent as the call is ending. Valid values: VOICE_ISOLATION | NOISE_SUPPRESSION | NONE. A value of null indicates this mode has not yet been set for this user.</p>
+    pub fn get_voice_enhancement_mode(&self) -> &::std::option::Option<crate::types::VoiceEnhancementMode> {
+        &self.voice_enhancement_mode
+    }
     /// Consumes the builder and constructs a [`AgentInfo`](crate::types::AgentInfo).
     pub fn build(self) -> crate::types::AgentInfo {
         crate::types::AgentInfo {
@@ -317,6 +338,7 @@ impl AgentInfoBuilder {
             after_contact_work_end_timestamp: self.after_contact_work_end_timestamp,
             agent_initiated_hold_duration: self.agent_initiated_hold_duration,
             state_transitions: self.state_transitions,
+            voice_enhancement_mode: self.voice_enhancement_mode,
         }
     }
 }

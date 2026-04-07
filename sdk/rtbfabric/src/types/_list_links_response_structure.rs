@@ -22,10 +22,16 @@ pub struct ListLinksResponseStructure {
     pub pending_flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::ModuleConfiguration>>,
     /// <p>Describes attributes of a link.</p>
     pub attributes: ::std::option::Option<crate::types::LinkAttributes>,
+    /// <p>Describes the settings for a link log.</p>
+    pub log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
+    /// <p>The connectivity type of the link.</p>
+    pub connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
     /// <p>The unique identifier of the link.</p>
     pub link_id: ::std::string::String,
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The public endpoint of the outbound link.</p>
+    pub public_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl ListLinksResponseStructure {
     /// <p>The unique identifier of the gateway.</p>
@@ -70,6 +76,14 @@ impl ListLinksResponseStructure {
     pub fn attributes(&self) -> ::std::option::Option<&crate::types::LinkAttributes> {
         self.attributes.as_ref()
     }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn log_settings(&self) -> ::std::option::Option<&crate::types::LinkLogSettings> {
+        self.log_settings.as_ref()
+    }
+    /// <p>The connectivity type of the link.</p>
+    pub fn connectivity_type(&self) -> ::std::option::Option<&crate::types::ConnectivityType> {
+        self.connectivity_type.as_ref()
+    }
     /// <p>The unique identifier of the link.</p>
     pub fn link_id(&self) -> &str {
         use std::ops::Deref;
@@ -78,6 +92,10 @@ impl ListLinksResponseStructure {
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The public endpoint of the outbound link.</p>
+    pub fn public_endpoint(&self) -> ::std::option::Option<&str> {
+        self.public_endpoint.as_deref()
     }
 }
 impl ListLinksResponseStructure {
@@ -100,8 +118,11 @@ pub struct ListLinksResponseStructureBuilder {
     pub(crate) flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::ModuleConfiguration>>,
     pub(crate) pending_flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::ModuleConfiguration>>,
     pub(crate) attributes: ::std::option::Option<crate::types::LinkAttributes>,
+    pub(crate) log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
+    pub(crate) connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
     pub(crate) link_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) public_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl ListLinksResponseStructureBuilder {
     /// <p>The unique identifier of the gateway.</p>
@@ -247,6 +268,34 @@ impl ListLinksResponseStructureBuilder {
     pub fn get_attributes(&self) -> &::std::option::Option<crate::types::LinkAttributes> {
         &self.attributes
     }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn log_settings(mut self, input: crate::types::LinkLogSettings) -> Self {
+        self.log_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn set_log_settings(mut self, input: ::std::option::Option<crate::types::LinkLogSettings>) -> Self {
+        self.log_settings = input;
+        self
+    }
+    /// <p>Describes the settings for a link log.</p>
+    pub fn get_log_settings(&self) -> &::std::option::Option<crate::types::LinkLogSettings> {
+        &self.log_settings
+    }
+    /// <p>The connectivity type of the link.</p>
+    pub fn connectivity_type(mut self, input: crate::types::ConnectivityType) -> Self {
+        self.connectivity_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The connectivity type of the link.</p>
+    pub fn set_connectivity_type(mut self, input: ::std::option::Option<crate::types::ConnectivityType>) -> Self {
+        self.connectivity_type = input;
+        self
+    }
+    /// <p>The connectivity type of the link.</p>
+    pub fn get_connectivity_type(&self) -> &::std::option::Option<crate::types::ConnectivityType> {
+        &self.connectivity_type
+    }
     /// <p>The unique identifier of the link.</p>
     /// This field is required.
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -281,6 +330,20 @@ impl ListLinksResponseStructureBuilder {
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
+    }
+    /// <p>The public endpoint of the outbound link.</p>
+    pub fn public_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.public_endpoint = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The public endpoint of the outbound link.</p>
+    pub fn set_public_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.public_endpoint = input;
+        self
+    }
+    /// <p>The public endpoint of the outbound link.</p>
+    pub fn get_public_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.public_endpoint
     }
     /// Consumes the builder and constructs a [`ListLinksResponseStructure`](crate::types::ListLinksResponseStructure).
     /// This method will fail if any of the following fields are not set:
@@ -326,6 +389,8 @@ impl ListLinksResponseStructureBuilder {
             flow_modules: self.flow_modules,
             pending_flow_modules: self.pending_flow_modules,
             attributes: self.attributes,
+            log_settings: self.log_settings,
+            connectivity_type: self.connectivity_type,
             link_id: self.link_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "link_id",
@@ -333,6 +398,7 @@ impl ListLinksResponseStructureBuilder {
                 )
             })?,
             tags: self.tags,
+            public_endpoint: self.public_endpoint,
         })
     }
 }

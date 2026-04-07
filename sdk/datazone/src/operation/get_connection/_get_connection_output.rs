@@ -5,6 +5,8 @@
 pub struct GetConnectionOutput {
     /// <p>Connection credentials.</p>
     pub connection_credentials: ::std::option::Option<crate::types::ConnectionCredentials>,
+    /// <p>The configurations of the connection.</p>
+    pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The ID of the connection.</p>
     pub connection_id: ::std::string::String,
     /// <p>Connection description.</p>
@@ -35,6 +37,12 @@ impl GetConnectionOutput {
     /// <p>Connection credentials.</p>
     pub fn connection_credentials(&self) -> ::std::option::Option<&crate::types::ConnectionCredentials> {
         self.connection_credentials.as_ref()
+    }
+    /// <p>The configurations of the connection.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::Configuration] {
+        self.configurations.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the connection.</p>
     pub fn connection_id(&self) -> &str {
@@ -94,6 +102,7 @@ impl ::std::fmt::Debug for GetConnectionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectionOutput");
         formatter.field("connection_credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("configurations", &self.configurations);
         formatter.field("connection_id", &self.connection_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("domain_id", &self.domain_id);
@@ -127,6 +136,7 @@ impl GetConnectionOutput {
 #[non_exhaustive]
 pub struct GetConnectionOutputBuilder {
     pub(crate) connection_credentials: ::std::option::Option<crate::types::ConnectionCredentials>,
+    pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
@@ -155,6 +165,26 @@ impl GetConnectionOutputBuilder {
     /// <p>Connection credentials.</p>
     pub fn get_connection_credentials(&self) -> &::std::option::Option<crate::types::ConnectionCredentials> {
         &self.connection_credentials
+    }
+    /// Appends an item to `configurations`.
+    ///
+    /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
+    ///
+    /// <p>The configurations of the connection.</p>
+    pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
+        let mut v = self.configurations.unwrap_or_default();
+        v.push(input);
+        self.configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configurations of the connection.</p>
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
+        self.configurations = input;
+        self
+    }
+    /// <p>The configurations of the connection.</p>
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.configurations
     }
     /// <p>The ID of the connection.</p>
     /// This field is required.
@@ -357,6 +387,7 @@ impl GetConnectionOutputBuilder {
     ) -> ::std::result::Result<crate::operation::get_connection::GetConnectionOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_connection::GetConnectionOutput {
             connection_credentials: self.connection_credentials,
+            configurations: self.configurations,
             connection_id: self.connection_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_id",
@@ -407,6 +438,7 @@ impl ::std::fmt::Debug for GetConnectionOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetConnectionOutputBuilder");
         formatter.field("connection_credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("configurations", &self.configurations);
         formatter.field("connection_id", &self.connection_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("domain_id", &self.domain_id);

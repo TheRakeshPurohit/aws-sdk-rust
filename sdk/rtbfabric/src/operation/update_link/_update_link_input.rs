@@ -9,6 +9,8 @@ pub struct UpdateLinkInput {
     pub link_id: ::std::option::Option<::std::string::String>,
     /// <p>Settings for the application logs.</p>
     pub log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
+    /// <p>The timeout value in milliseconds.</p>
+    pub timeout_in_millis: ::std::option::Option<i64>,
 }
 impl UpdateLinkInput {
     /// <p>The unique identifier of the gateway.</p>
@@ -22,6 +24,10 @@ impl UpdateLinkInput {
     /// <p>Settings for the application logs.</p>
     pub fn log_settings(&self) -> ::std::option::Option<&crate::types::LinkLogSettings> {
         self.log_settings.as_ref()
+    }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn timeout_in_millis(&self) -> ::std::option::Option<i64> {
+        self.timeout_in_millis
     }
 }
 impl UpdateLinkInput {
@@ -38,6 +44,7 @@ pub struct UpdateLinkInputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) link_id: ::std::option::Option<::std::string::String>,
     pub(crate) log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
+    pub(crate) timeout_in_millis: ::std::option::Option<i64>,
 }
 impl UpdateLinkInputBuilder {
     /// <p>The unique identifier of the gateway.</p>
@@ -84,12 +91,27 @@ impl UpdateLinkInputBuilder {
     pub fn get_log_settings(&self) -> &::std::option::Option<crate::types::LinkLogSettings> {
         &self.log_settings
     }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn timeout_in_millis(mut self, input: i64) -> Self {
+        self.timeout_in_millis = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn set_timeout_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.timeout_in_millis = input;
+        self
+    }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn get_timeout_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.timeout_in_millis
+    }
     /// Consumes the builder and constructs a [`UpdateLinkInput`](crate::operation::update_link::UpdateLinkInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_link::UpdateLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_link::UpdateLinkInput {
             gateway_id: self.gateway_id,
             link_id: self.link_id,
             log_settings: self.log_settings,
+            timeout_in_millis: self.timeout_in_millis,
         })
     }
 }

@@ -17,6 +17,8 @@ pub struct UpdateNodegroupConfigInput {
     pub update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
     /// <p>The node auto repair configuration for the node group.</p>
     pub node_repair_config: ::std::option::Option<crate::types::NodeRepairConfig>,
+    /// <p>The warm pool configuration to apply to the node group. You can use this to add a warm pool to an existing node group or modify the settings of an existing warm pool.</p>
+    pub warm_pool_config: ::std::option::Option<crate::types::WarmPoolConfig>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
 }
@@ -49,6 +51,10 @@ impl UpdateNodegroupConfigInput {
     pub fn node_repair_config(&self) -> ::std::option::Option<&crate::types::NodeRepairConfig> {
         self.node_repair_config.as_ref()
     }
+    /// <p>The warm pool configuration to apply to the node group. You can use this to add a warm pool to an existing node group or modify the settings of an existing warm pool.</p>
+    pub fn warm_pool_config(&self) -> ::std::option::Option<&crate::types::WarmPoolConfig> {
+        self.warm_pool_config.as_ref()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
@@ -72,6 +78,7 @@ pub struct UpdateNodegroupConfigInputBuilder {
     pub(crate) scaling_config: ::std::option::Option<crate::types::NodegroupScalingConfig>,
     pub(crate) update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
     pub(crate) node_repair_config: ::std::option::Option<crate::types::NodeRepairConfig>,
+    pub(crate) warm_pool_config: ::std::option::Option<crate::types::WarmPoolConfig>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateNodegroupConfigInputBuilder {
@@ -175,6 +182,20 @@ impl UpdateNodegroupConfigInputBuilder {
     pub fn get_node_repair_config(&self) -> &::std::option::Option<crate::types::NodeRepairConfig> {
         &self.node_repair_config
     }
+    /// <p>The warm pool configuration to apply to the node group. You can use this to add a warm pool to an existing node group or modify the settings of an existing warm pool.</p>
+    pub fn warm_pool_config(mut self, input: crate::types::WarmPoolConfig) -> Self {
+        self.warm_pool_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The warm pool configuration to apply to the node group. You can use this to add a warm pool to an existing node group or modify the settings of an existing warm pool.</p>
+    pub fn set_warm_pool_config(mut self, input: ::std::option::Option<crate::types::WarmPoolConfig>) -> Self {
+        self.warm_pool_config = input;
+        self
+    }
+    /// <p>The warm pool configuration to apply to the node group. You can use this to add a warm pool to an existing node group or modify the settings of an existing warm pool.</p>
+    pub fn get_warm_pool_config(&self) -> &::std::option::Option<crate::types::WarmPoolConfig> {
+        &self.warm_pool_config
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_token = ::std::option::Option::Some(input.into());
@@ -202,6 +223,7 @@ impl UpdateNodegroupConfigInputBuilder {
             scaling_config: self.scaling_config,
             update_config: self.update_config,
             node_repair_config: self.node_repair_config,
+            warm_pool_config: self.warm_pool_config,
             client_request_token: self.client_request_token,
         })
     }

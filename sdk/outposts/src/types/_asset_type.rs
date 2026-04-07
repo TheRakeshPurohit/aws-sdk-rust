@@ -13,6 +13,10 @@
 /// # let assettype = unimplemented!();
 /// match assettype {
 ///     AssetType::Compute => { /* ... */ },
+///     AssetType::Networking => { /* ... */ },
+///     AssetType::Powershelf => { /* ... */ },
+///     AssetType::Storage => { /* ... */ },
+///     AssetType::Switch => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +47,14 @@
 pub enum AssetType {
     #[allow(missing_docs)] // documentation missing in model
     Compute,
+    #[allow(missing_docs)] // documentation missing in model
+    Networking,
+    #[allow(missing_docs)] // documentation missing in model
+    Powershelf,
+    #[allow(missing_docs)] // documentation missing in model
+    Storage,
+    #[allow(missing_docs)] // documentation missing in model
+    Switch,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +63,10 @@ impl ::std::convert::From<&str> for AssetType {
     fn from(s: &str) -> Self {
         match s {
             "COMPUTE" => AssetType::Compute,
+            "NETWORKING" => AssetType::Networking,
+            "POWERSHELF" => AssetType::Powershelf,
+            "STORAGE" => AssetType::Storage,
+            "SWITCH" => AssetType::Switch,
             other => AssetType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +83,16 @@ impl AssetType {
     pub fn as_str(&self) -> &str {
         match self {
             AssetType::Compute => "COMPUTE",
+            AssetType::Networking => "NETWORKING",
+            AssetType::Powershelf => "POWERSHELF",
+            AssetType::Storage => "STORAGE",
+            AssetType::Switch => "SWITCH",
             AssetType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPUTE"]
+        &["COMPUTE", "NETWORKING", "POWERSHELF", "STORAGE", "SWITCH"]
     }
 }
 impl ::std::convert::AsRef<str> for AssetType {
@@ -96,6 +116,10 @@ impl ::std::fmt::Display for AssetType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AssetType::Compute => write!(f, "COMPUTE"),
+            AssetType::Networking => write!(f, "NETWORKING"),
+            AssetType::Powershelf => write!(f, "POWERSHELF"),
+            AssetType::Storage => write!(f, "STORAGE"),
+            AssetType::Switch => write!(f, "SWITCH"),
             AssetType::Unknown(value) => write!(f, "{value}"),
         }
     }

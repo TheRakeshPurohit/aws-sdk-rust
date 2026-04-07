@@ -133,10 +133,25 @@ pub(crate) fn de_get_outbound_external_link(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "attributes" => {
+                    builder = builder.set_attributes(crate::protocol_serde::shape_link_attributes::de_link_attributes(tokens, _value)?);
+                }
+                "connectivityType" => {
+                    builder = builder.set_connectivity_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ConnectivityType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "flowModules" => {
+                    builder = builder.set_flow_modules(crate::protocol_serde::shape_module_configuration_list::de_module_configuration_list(
+                        tokens, _value,
                     )?);
                 }
                 "gatewayId" => {
@@ -155,6 +170,11 @@ pub(crate) fn de_get_outbound_external_link(
                 }
                 "logSettings" => {
                     builder = builder.set_log_settings(crate::protocol_serde::shape_link_log_settings::de_link_log_settings(tokens, _value)?);
+                }
+                "pendingFlowModules" => {
+                    builder = builder.set_pending_flow_modules(crate::protocol_serde::shape_module_configuration_list::de_module_configuration_list(
+                        tokens, _value,
+                    )?);
                 }
                 "publicEndpoint" => {
                     builder = builder.set_public_endpoint(

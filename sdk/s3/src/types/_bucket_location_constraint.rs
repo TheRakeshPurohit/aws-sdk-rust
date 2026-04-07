@@ -15,6 +15,7 @@
 ///     BucketLocationConstraint::Eu => { /* ... */ },
 ///     BucketLocationConstraint::AfSouth1 => { /* ... */ },
 ///     BucketLocationConstraint::ApEast1 => { /* ... */ },
+///     BucketLocationConstraint::ApEast2 => { /* ... */ },
 ///     BucketLocationConstraint::ApNortheast1 => { /* ... */ },
 ///     BucketLocationConstraint::ApNortheast2 => { /* ... */ },
 ///     BucketLocationConstraint::ApNortheast3 => { /* ... */ },
@@ -25,7 +26,10 @@
 ///     BucketLocationConstraint::ApSoutheast3 => { /* ... */ },
 ///     BucketLocationConstraint::ApSoutheast4 => { /* ... */ },
 ///     BucketLocationConstraint::ApSoutheast5 => { /* ... */ },
+///     BucketLocationConstraint::ApSoutheast6 => { /* ... */ },
+///     BucketLocationConstraint::ApSoutheast7 => { /* ... */ },
 ///     BucketLocationConstraint::CaCentral1 => { /* ... */ },
+///     BucketLocationConstraint::CaWest1 => { /* ... */ },
 ///     BucketLocationConstraint::CnNorth1 => { /* ... */ },
 ///     BucketLocationConstraint::CnNorthwest1 => { /* ... */ },
 ///     BucketLocationConstraint::EuCentral1 => { /* ... */ },
@@ -39,6 +43,7 @@
 ///     BucketLocationConstraint::IlCentral1 => { /* ... */ },
 ///     BucketLocationConstraint::MeCentral1 => { /* ... */ },
 ///     BucketLocationConstraint::MeSouth1 => { /* ... */ },
+///     BucketLocationConstraint::MxCentral1 => { /* ... */ },
 ///     BucketLocationConstraint::SaEast1 => { /* ... */ },
 ///     BucketLocationConstraint::UsEast2 => { /* ... */ },
 ///     BucketLocationConstraint::UsGovEast1 => { /* ... */ },
@@ -80,6 +85,8 @@ pub enum BucketLocationConstraint {
     #[allow(missing_docs)] // documentation missing in model
     ApEast1,
     #[allow(missing_docs)] // documentation missing in model
+    ApEast2,
+    #[allow(missing_docs)] // documentation missing in model
     ApNortheast1,
     #[allow(missing_docs)] // documentation missing in model
     ApNortheast2,
@@ -100,7 +107,13 @@ pub enum BucketLocationConstraint {
     #[allow(missing_docs)] // documentation missing in model
     ApSoutheast5,
     #[allow(missing_docs)] // documentation missing in model
+    ApSoutheast6,
+    #[allow(missing_docs)] // documentation missing in model
+    ApSoutheast7,
+    #[allow(missing_docs)] // documentation missing in model
     CaCentral1,
+    #[allow(missing_docs)] // documentation missing in model
+    CaWest1,
     #[allow(missing_docs)] // documentation missing in model
     CnNorth1,
     #[allow(missing_docs)] // documentation missing in model
@@ -128,6 +141,8 @@ pub enum BucketLocationConstraint {
     #[allow(missing_docs)] // documentation missing in model
     MeSouth1,
     #[allow(missing_docs)] // documentation missing in model
+    MxCentral1,
+    #[allow(missing_docs)] // documentation missing in model
     SaEast1,
     #[allow(missing_docs)] // documentation missing in model
     UsEast2,
@@ -149,6 +164,7 @@ impl ::std::convert::From<&str> for BucketLocationConstraint {
             "EU" => BucketLocationConstraint::Eu,
             "af-south-1" => BucketLocationConstraint::AfSouth1,
             "ap-east-1" => BucketLocationConstraint::ApEast1,
+            "ap-east-2" => BucketLocationConstraint::ApEast2,
             "ap-northeast-1" => BucketLocationConstraint::ApNortheast1,
             "ap-northeast-2" => BucketLocationConstraint::ApNortheast2,
             "ap-northeast-3" => BucketLocationConstraint::ApNortheast3,
@@ -159,7 +175,10 @@ impl ::std::convert::From<&str> for BucketLocationConstraint {
             "ap-southeast-3" => BucketLocationConstraint::ApSoutheast3,
             "ap-southeast-4" => BucketLocationConstraint::ApSoutheast4,
             "ap-southeast-5" => BucketLocationConstraint::ApSoutheast5,
+            "ap-southeast-6" => BucketLocationConstraint::ApSoutheast6,
+            "ap-southeast-7" => BucketLocationConstraint::ApSoutheast7,
             "ca-central-1" => BucketLocationConstraint::CaCentral1,
+            "ca-west-1" => BucketLocationConstraint::CaWest1,
             "cn-north-1" => BucketLocationConstraint::CnNorth1,
             "cn-northwest-1" => BucketLocationConstraint::CnNorthwest1,
             "eu-central-1" => BucketLocationConstraint::EuCentral1,
@@ -173,6 +192,7 @@ impl ::std::convert::From<&str> for BucketLocationConstraint {
             "il-central-1" => BucketLocationConstraint::IlCentral1,
             "me-central-1" => BucketLocationConstraint::MeCentral1,
             "me-south-1" => BucketLocationConstraint::MeSouth1,
+            "mx-central-1" => BucketLocationConstraint::MxCentral1,
             "sa-east-1" => BucketLocationConstraint::SaEast1,
             "us-east-2" => BucketLocationConstraint::UsEast2,
             "us-gov-east-1" => BucketLocationConstraint::UsGovEast1,
@@ -197,6 +217,7 @@ impl BucketLocationConstraint {
             BucketLocationConstraint::Eu => "EU",
             BucketLocationConstraint::AfSouth1 => "af-south-1",
             BucketLocationConstraint::ApEast1 => "ap-east-1",
+            BucketLocationConstraint::ApEast2 => "ap-east-2",
             BucketLocationConstraint::ApNortheast1 => "ap-northeast-1",
             BucketLocationConstraint::ApNortheast2 => "ap-northeast-2",
             BucketLocationConstraint::ApNortheast3 => "ap-northeast-3",
@@ -207,7 +228,10 @@ impl BucketLocationConstraint {
             BucketLocationConstraint::ApSoutheast3 => "ap-southeast-3",
             BucketLocationConstraint::ApSoutheast4 => "ap-southeast-4",
             BucketLocationConstraint::ApSoutheast5 => "ap-southeast-5",
+            BucketLocationConstraint::ApSoutheast6 => "ap-southeast-6",
+            BucketLocationConstraint::ApSoutheast7 => "ap-southeast-7",
             BucketLocationConstraint::CaCentral1 => "ca-central-1",
+            BucketLocationConstraint::CaWest1 => "ca-west-1",
             BucketLocationConstraint::CnNorth1 => "cn-north-1",
             BucketLocationConstraint::CnNorthwest1 => "cn-northwest-1",
             BucketLocationConstraint::EuCentral1 => "eu-central-1",
@@ -221,6 +245,7 @@ impl BucketLocationConstraint {
             BucketLocationConstraint::IlCentral1 => "il-central-1",
             BucketLocationConstraint::MeCentral1 => "me-central-1",
             BucketLocationConstraint::MeSouth1 => "me-south-1",
+            BucketLocationConstraint::MxCentral1 => "mx-central-1",
             BucketLocationConstraint::SaEast1 => "sa-east-1",
             BucketLocationConstraint::UsEast2 => "us-east-2",
             BucketLocationConstraint::UsGovEast1 => "us-gov-east-1",
@@ -236,6 +261,7 @@ impl BucketLocationConstraint {
             "EU",
             "af-south-1",
             "ap-east-1",
+            "ap-east-2",
             "ap-northeast-1",
             "ap-northeast-2",
             "ap-northeast-3",
@@ -246,7 +272,10 @@ impl BucketLocationConstraint {
             "ap-southeast-3",
             "ap-southeast-4",
             "ap-southeast-5",
+            "ap-southeast-6",
+            "ap-southeast-7",
             "ca-central-1",
+            "ca-west-1",
             "cn-north-1",
             "cn-northwest-1",
             "eu-central-1",
@@ -260,6 +289,7 @@ impl BucketLocationConstraint {
             "il-central-1",
             "me-central-1",
             "me-south-1",
+            "mx-central-1",
             "sa-east-1",
             "us-east-2",
             "us-gov-east-1",
@@ -292,6 +322,7 @@ impl ::std::fmt::Display for BucketLocationConstraint {
             BucketLocationConstraint::Eu => write!(f, "EU"),
             BucketLocationConstraint::AfSouth1 => write!(f, "af-south-1"),
             BucketLocationConstraint::ApEast1 => write!(f, "ap-east-1"),
+            BucketLocationConstraint::ApEast2 => write!(f, "ap-east-2"),
             BucketLocationConstraint::ApNortheast1 => write!(f, "ap-northeast-1"),
             BucketLocationConstraint::ApNortheast2 => write!(f, "ap-northeast-2"),
             BucketLocationConstraint::ApNortheast3 => write!(f, "ap-northeast-3"),
@@ -302,7 +333,10 @@ impl ::std::fmt::Display for BucketLocationConstraint {
             BucketLocationConstraint::ApSoutheast3 => write!(f, "ap-southeast-3"),
             BucketLocationConstraint::ApSoutheast4 => write!(f, "ap-southeast-4"),
             BucketLocationConstraint::ApSoutheast5 => write!(f, "ap-southeast-5"),
+            BucketLocationConstraint::ApSoutheast6 => write!(f, "ap-southeast-6"),
+            BucketLocationConstraint::ApSoutheast7 => write!(f, "ap-southeast-7"),
             BucketLocationConstraint::CaCentral1 => write!(f, "ca-central-1"),
+            BucketLocationConstraint::CaWest1 => write!(f, "ca-west-1"),
             BucketLocationConstraint::CnNorth1 => write!(f, "cn-north-1"),
             BucketLocationConstraint::CnNorthwest1 => write!(f, "cn-northwest-1"),
             BucketLocationConstraint::EuCentral1 => write!(f, "eu-central-1"),
@@ -316,6 +350,7 @@ impl ::std::fmt::Display for BucketLocationConstraint {
             BucketLocationConstraint::IlCentral1 => write!(f, "il-central-1"),
             BucketLocationConstraint::MeCentral1 => write!(f, "me-central-1"),
             BucketLocationConstraint::MeSouth1 => write!(f, "me-south-1"),
+            BucketLocationConstraint::MxCentral1 => write!(f, "mx-central-1"),
             BucketLocationConstraint::SaEast1 => write!(f, "sa-east-1"),
             BucketLocationConstraint::UsEast2 => write!(f, "us-east-2"),
             BucketLocationConstraint::UsGovEast1 => write!(f, "us-gov-east-1"),

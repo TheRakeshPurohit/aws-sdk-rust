@@ -933,6 +933,8 @@ pub use crate::types::_metric_data_result::MetricDataResultBuilder;
 
 pub use crate::types::_capacity_manager_dimension::CapacityManagerDimensionBuilder;
 
+pub use crate::types::_capacity_manager_monitored_tag_key::CapacityManagerMonitoredTagKeyBuilder;
+
 pub use crate::types::_instance_usage::InstanceUsageBuilder;
 
 pub use crate::types::_coip_address_usage::CoipAddressUsageBuilder;
@@ -1602,6 +1604,8 @@ pub use crate::types::_verified_access_instance_open_vpn_client_configuration_ro
 pub use crate::types::_metric_point::MetricPointBuilder;
 
 pub use crate::types::_metric_value::MetricValueBuilder;
+
+pub use crate::types::_capacity_manager_tag_dimension::CapacityManagerTagDimensionBuilder;
 
 pub use crate::types::_regional_summary::RegionalSummaryBuilder;
 

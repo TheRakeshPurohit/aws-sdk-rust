@@ -73,6 +73,8 @@ pub use crate::types::_asset_instance::AssetInstance;
 
 pub use crate::types::_asset_state::AssetState;
 
+pub use crate::types::_asset_type::AssetType;
+
 pub use crate::types::_asset_info::AssetInfo;
 
 pub use crate::types::_blocking_instance::BlockingInstance;
@@ -94,8 +96,6 @@ pub use crate::types::_ec2_capacity::Ec2Capacity;
 pub use crate::types::_subscription_type::SubscriptionType;
 
 pub use crate::types::_subscription_status::SubscriptionStatus;
-
-pub use crate::types::_asset_type::AssetType;
 
 pub use crate::types::_compute_attributes::ComputeAttributes;
 

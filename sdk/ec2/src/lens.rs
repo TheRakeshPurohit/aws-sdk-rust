@@ -1389,6 +1389,16 @@ pub(crate) fn reflens_get_capacity_manager_metric_dimensions_output_output_next_
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_capacity_manager_monitored_tag_keys_output_output_next_token(
+    input: &crate::operation::get_capacity_manager_monitored_tag_keys::GetCapacityManagerMonitoredTagKeysOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_groups_for_capacity_reservation_output_output_next_token(
     input: &crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -2639,6 +2649,13 @@ pub(crate) fn lens_get_capacity_manager_metric_dimensions_output_output_metric_d
     input: crate::operation::get_capacity_manager_metric_dimensions::GetCapacityManagerMetricDimensionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityManagerDimension>> {
     let input = input.metric_dimension_results?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_capacity_manager_monitored_tag_keys_output_output_capacity_manager_tag_keys(
+    input: crate::operation::get_capacity_manager_monitored_tag_keys::GetCapacityManagerMonitoredTagKeysOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityManagerMonitoredTagKey>> {
+    let input = input.capacity_manager_tag_keys?;
     ::std::option::Option::Some(input)
 }
 

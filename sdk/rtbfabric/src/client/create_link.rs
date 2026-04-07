@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`http_responder_allowed(bool)`](crate::operation::create_link::builders::CreateLinkFluentBuilder::http_responder_allowed) / [`set_http_responder_allowed(Option<bool>)`](crate::operation::create_link::builders::CreateLinkFluentBuilder::set_http_responder_allowed):<br>required: **false**<br><p>Boolean to specify if an HTTP responder is allowed.</p><br>
     ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_link::builders::CreateLinkFluentBuilder::tags) / [`set_tags(Option<HashMap::<String, String>>)`](crate::operation::create_link::builders::CreateLinkFluentBuilder::set_tags):<br>required: **false**<br><p>A map of the key-value pairs of the tag or tags to assign to the resource.</p><br>
     ///   - [`log_settings(LinkLogSettings)`](crate::operation::create_link::builders::CreateLinkFluentBuilder::log_settings) / [`set_log_settings(Option<LinkLogSettings>)`](crate::operation::create_link::builders::CreateLinkFluentBuilder::set_log_settings):<br>required: **true**<br><p>Settings for the application logs.</p><br>
+    ///   - [`timeout_in_millis(i64)`](crate::operation::create_link::builders::CreateLinkFluentBuilder::timeout_in_millis) / [`set_timeout_in_millis(Option<i64>)`](crate::operation::create_link::builders::CreateLinkFluentBuilder::set_timeout_in_millis):<br>required: **false**<br><p>The timeout value in milliseconds.</p><br>
     /// - On success, responds with [`CreateLinkOutput`](crate::operation::create_link::CreateLinkOutput) with field(s):
     ///   - [`gateway_id(String)`](crate::operation::create_link::CreateLinkOutput::gateway_id): <p>The unique identifier of the gateway.</p>
     ///   - [`peer_gateway_id(String)`](crate::operation::create_link::CreateLinkOutput::peer_gateway_id): <p>The unique identifier of the peer gateway.</p>
@@ -19,6 +20,8 @@ impl super::Client {
     ///   - [`flow_modules(Option<Vec::<ModuleConfiguration>>)`](crate::operation::create_link::CreateLinkOutput::flow_modules): <p>The configuration of flow modules.</p>
     ///   - [`pending_flow_modules(Option<Vec::<ModuleConfiguration>>)`](crate::operation::create_link::CreateLinkOutput::pending_flow_modules): <p>The configuration of pending flow modules.</p>
     ///   - [`attributes(Option<LinkAttributes>)`](crate::operation::create_link::CreateLinkOutput::attributes): <p>Attributes of the link.</p>
+    ///   - [`log_settings(Option<LinkLogSettings>)`](crate::operation::create_link::CreateLinkOutput::log_settings): <p>Describes the settings for a link log.</p>
+    ///   - [`connectivity_type(Option<ConnectivityType>)`](crate::operation::create_link::CreateLinkOutput::connectivity_type): <p>The connectivity type of the link.</p>
     ///   - [`link_id(String)`](crate::operation::create_link::CreateLinkOutput::link_id): <p>The unique identifier of the link.</p>
     ///   - [`customer_provided_id(Option<String>)`](crate::operation::create_link::CreateLinkOutput::customer_provided_id): <p>The customer-provided unique identifier of the link.</p>
     /// - On failure, responds with [`SdkError<CreateLinkError>`](crate::operation::create_link::CreateLinkError)

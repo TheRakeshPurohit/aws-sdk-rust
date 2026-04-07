@@ -25,6 +25,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "glueConnectionNames" => {
+                            builder = builder.set_glue_connection_names(
+                                crate::protocol_serde::shape_glue_connection_names::de_glue_connection_names(tokens, _value)?,
+                            );
+                        }
                         "glueVersion" => {
                             builder = builder.set_glue_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

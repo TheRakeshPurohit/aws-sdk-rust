@@ -325,6 +325,8 @@ pub use crate::types::_column_filter_configuration::ColumnFilterConfiguration;
 
 pub use crate::types::_row_filter_configuration::RowFilterConfiguration;
 
+pub use crate::types::_configuration::Configuration;
+
 pub use crate::types::_athena_properties_input::AthenaPropertiesInput;
 
 pub use crate::types::_glue_properties_input::GluePropertiesInput;
@@ -932,6 +934,8 @@ mod _configurable_action_parameter;
 mod _configurable_action_type_authorization;
 
 mod _configurable_environment_action;
+
+mod _configuration;
 
 mod _configuration_status;
 

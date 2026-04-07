@@ -15,6 +15,8 @@ pub struct CreateResponderGatewayInput {
     pub port: ::std::option::Option<i32>,
     /// <p>The networking protocol to use.</p>
     pub protocol: ::std::option::Option<crate::types::Protocol>,
+    /// <p>Listener configuration for the protocols (HTTP, HTTPS, or both) accepted by the gateway.</p>
+    pub listener_config: ::std::option::Option<crate::types::ListenerConfig>,
     /// <p>The configuration of the trust store.</p>
     pub trust_store_configuration: ::std::option::Option<crate::types::TrustStoreConfiguration>,
     /// <p>The configuration for the managed endpoint.</p>
@@ -25,6 +27,8 @@ pub struct CreateResponderGatewayInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A map of the key-value pairs of the tag or tags to assign to the resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
+    pub gateway_type: ::std::option::Option<crate::types::GatewayType>,
 }
 impl CreateResponderGatewayInput {
     /// <p>The unique identifier of the Virtual Private Cloud (VPC).</p>
@@ -55,6 +59,10 @@ impl CreateResponderGatewayInput {
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
         self.protocol.as_ref()
     }
+    /// <p>Listener configuration for the protocols (HTTP, HTTPS, or both) accepted by the gateway.</p>
+    pub fn listener_config(&self) -> ::std::option::Option<&crate::types::ListenerConfig> {
+        self.listener_config.as_ref()
+    }
     /// <p>The configuration of the trust store.</p>
     pub fn trust_store_configuration(&self) -> ::std::option::Option<&crate::types::TrustStoreConfiguration> {
         self.trust_store_configuration.as_ref()
@@ -75,6 +83,10 @@ impl CreateResponderGatewayInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
+    pub fn gateway_type(&self) -> ::std::option::Option<&crate::types::GatewayType> {
+        self.gateway_type.as_ref()
+    }
 }
 impl CreateResponderGatewayInput {
     /// Creates a new builder-style object to manufacture [`CreateResponderGatewayInput`](crate::operation::create_responder_gateway::CreateResponderGatewayInput).
@@ -93,11 +105,13 @@ pub struct CreateResponderGatewayInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
+    pub(crate) listener_config: ::std::option::Option<crate::types::ListenerConfig>,
     pub(crate) trust_store_configuration: ::std::option::Option<crate::types::TrustStoreConfiguration>,
     pub(crate) managed_endpoint_configuration: ::std::option::Option<crate::types::ManagedEndpointConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) gateway_type: ::std::option::Option<crate::types::GatewayType>,
 }
 impl CreateResponderGatewayInputBuilder {
     /// <p>The unique identifier of the Virtual Private Cloud (VPC).</p>
@@ -199,6 +213,20 @@ impl CreateResponderGatewayInputBuilder {
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
         &self.protocol
     }
+    /// <p>Listener configuration for the protocols (HTTP, HTTPS, or both) accepted by the gateway.</p>
+    pub fn listener_config(mut self, input: crate::types::ListenerConfig) -> Self {
+        self.listener_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Listener configuration for the protocols (HTTP, HTTPS, or both) accepted by the gateway.</p>
+    pub fn set_listener_config(mut self, input: ::std::option::Option<crate::types::ListenerConfig>) -> Self {
+        self.listener_config = input;
+        self
+    }
+    /// <p>Listener configuration for the protocols (HTTP, HTTPS, or both) accepted by the gateway.</p>
+    pub fn get_listener_config(&self) -> &::std::option::Option<crate::types::ListenerConfig> {
+        &self.listener_config
+    }
     /// <p>The configuration of the trust store.</p>
     pub fn trust_store_configuration(mut self, input: crate::types::TrustStoreConfiguration) -> Self {
         self.trust_store_configuration = ::std::option::Option::Some(input);
@@ -276,6 +304,20 @@ impl CreateResponderGatewayInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
+    pub fn gateway_type(mut self, input: crate::types::GatewayType) -> Self {
+        self.gateway_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
+    pub fn set_gateway_type(mut self, input: ::std::option::Option<crate::types::GatewayType>) -> Self {
+        self.gateway_type = input;
+        self
+    }
+    /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
+    pub fn get_gateway_type(&self) -> &::std::option::Option<crate::types::GatewayType> {
+        &self.gateway_type
+    }
     /// Consumes the builder and constructs a [`CreateResponderGatewayInput`](crate::operation::create_responder_gateway::CreateResponderGatewayInput).
     pub fn build(
         self,
@@ -290,11 +332,13 @@ impl CreateResponderGatewayInputBuilder {
             domain_name: self.domain_name,
             port: self.port,
             protocol: self.protocol,
+            listener_config: self.listener_config,
             trust_store_configuration: self.trust_store_configuration,
             managed_endpoint_configuration: self.managed_endpoint_configuration,
             client_token: self.client_token,
             description: self.description,
             tags: self.tags,
+            gateway_type: self.gateway_type,
         })
     }
 }

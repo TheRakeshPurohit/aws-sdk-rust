@@ -36,5 +36,11 @@ pub fn ser_update_nodegroup_config_input_input(
         crate::protocol_serde::shape_nodegroup_update_config::ser_nodegroup_update_config(&mut object_11, var_10)?;
         object_11.finish();
     }
+    if let Some(var_12) = &input.warm_pool_config {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("warmPoolConfig").start_object();
+        crate::protocol_serde::shape_warm_pool_config::ser_warm_pool_config(&mut object_13, var_12)?;
+        object_13.finish();
+    }
     Ok(())
 }

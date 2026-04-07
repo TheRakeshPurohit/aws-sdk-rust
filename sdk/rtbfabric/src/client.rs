@@ -142,12 +142,18 @@ impl Client {
 pub trait Waiters {
     /// Wait for `inbound_external_link_active`
     fn wait_until_inbound_external_link_active(&self) -> crate::waiters::inbound_external_link_active::InboundExternalLinkActiveFluentBuilder;
+    /// Wait for `inbound_external_link_deleted`
+    fn wait_until_inbound_external_link_deleted(&self) -> crate::waiters::inbound_external_link_deleted::InboundExternalLinkDeletedFluentBuilder;
     /// Wait for `link_accepted`
     fn wait_until_link_accepted(&self) -> crate::waiters::link_accepted::LinkAcceptedFluentBuilder;
     /// Wait for `link_active`
     fn wait_until_link_active(&self) -> crate::waiters::link_active::LinkActiveFluentBuilder;
+    /// Wait for `link_deleted`
+    fn wait_until_link_deleted(&self) -> crate::waiters::link_deleted::LinkDeletedFluentBuilder;
     /// Wait for `outbound_external_link_active`
     fn wait_until_outbound_external_link_active(&self) -> crate::waiters::outbound_external_link_active::OutboundExternalLinkActiveFluentBuilder;
+    /// Wait for `outbound_external_link_deleted`
+    fn wait_until_outbound_external_link_deleted(&self) -> crate::waiters::outbound_external_link_deleted::OutboundExternalLinkDeletedFluentBuilder;
     /// Wait for `requester_gateway_active`
     fn wait_until_requester_gateway_active(&self) -> crate::waiters::requester_gateway_active::RequesterGatewayActiveFluentBuilder;
     /// Wait for `requester_gateway_deleted`
@@ -161,14 +167,23 @@ impl Waiters for Client {
     fn wait_until_inbound_external_link_active(&self) -> crate::waiters::inbound_external_link_active::InboundExternalLinkActiveFluentBuilder {
         crate::waiters::inbound_external_link_active::InboundExternalLinkActiveFluentBuilder::new(self.handle.clone())
     }
+    fn wait_until_inbound_external_link_deleted(&self) -> crate::waiters::inbound_external_link_deleted::InboundExternalLinkDeletedFluentBuilder {
+        crate::waiters::inbound_external_link_deleted::InboundExternalLinkDeletedFluentBuilder::new(self.handle.clone())
+    }
     fn wait_until_link_accepted(&self) -> crate::waiters::link_accepted::LinkAcceptedFluentBuilder {
         crate::waiters::link_accepted::LinkAcceptedFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_link_active(&self) -> crate::waiters::link_active::LinkActiveFluentBuilder {
         crate::waiters::link_active::LinkActiveFluentBuilder::new(self.handle.clone())
     }
+    fn wait_until_link_deleted(&self) -> crate::waiters::link_deleted::LinkDeletedFluentBuilder {
+        crate::waiters::link_deleted::LinkDeletedFluentBuilder::new(self.handle.clone())
+    }
     fn wait_until_outbound_external_link_active(&self) -> crate::waiters::outbound_external_link_active::OutboundExternalLinkActiveFluentBuilder {
         crate::waiters::outbound_external_link_active::OutboundExternalLinkActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_outbound_external_link_deleted(&self) -> crate::waiters::outbound_external_link_deleted::OutboundExternalLinkDeletedFluentBuilder {
+        crate::waiters::outbound_external_link_deleted::OutboundExternalLinkDeletedFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_requester_gateway_active(&self) -> crate::waiters::requester_gateway_active::RequesterGatewayActiveFluentBuilder {
         crate::waiters::requester_gateway_active::RequesterGatewayActiveFluentBuilder::new(self.handle.clone())

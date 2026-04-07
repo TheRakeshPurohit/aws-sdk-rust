@@ -71,6 +71,12 @@ pub use crate::types::error::_request_too_large_exception::RequestTooLargeExcept
 
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyExceptionBuilder;
 
+pub use crate::types::error::_s3_files_mount_connectivity_exception::S3FilesMountConnectivityExceptionBuilder;
+
+pub use crate::types::error::_s3_files_mount_failure_exception::S3FilesMountFailureExceptionBuilder;
+
+pub use crate::types::error::_s3_files_mount_timeout_exception::S3FilesMountTimeoutExceptionBuilder;
+
 pub use crate::types::error::_serialized_request_entity_too_large_exception::SerializedRequestEntityTooLargeExceptionBuilder;
 
 pub use crate::types::error::_snap_start_exception::SnapStartExceptionBuilder;

@@ -349,6 +349,12 @@ pub enum InvokeWithResponseStreamError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
     ResourceNotReadyException(crate::types::error::ResourceNotReadyException),
+    /// <p>The Lambda function couldn't make a network connection to the configured S3 Files access point.</p>
+    S3FilesMountConnectivityException(crate::types::error::S3FilesMountConnectivityException),
+    /// <p>The Lambda function couldn't mount the configured S3 Files access point due to a permission or configuration issue.</p>
+    S3FilesMountFailureException(crate::types::error::S3FilesMountFailureException),
+    /// <p>The Lambda function made a network connection to the configured S3 Files access point, but the mount operation timed out.</p>
+    S3FilesMountTimeoutException(crate::types::error::S3FilesMountTimeoutException),
     /// <p>The request payload exceeded the maximum allowed size for serialized request entities.</p>
     SerializedRequestEntityTooLargeException(crate::types::error::SerializedRequestEntityTooLargeException),
     /// <p>The Lambda service encountered an internal error.</p>
@@ -422,6 +428,9 @@ impl InvokeWithResponseStreamError {
             Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::S3FilesMountConnectivityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::S3FilesMountFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::S3FilesMountTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SerializedRequestEntityTooLargeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapStartException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -529,6 +538,18 @@ impl InvokeWithResponseStreamError {
     pub fn is_resource_not_ready_exception(&self) -> bool {
         matches!(self, Self::ResourceNotReadyException(_))
     }
+    /// Returns `true` if the error kind is `InvokeWithResponseStreamError::S3FilesMountConnectivityException`.
+    pub fn is_s3_files_mount_connectivity_exception(&self) -> bool {
+        matches!(self, Self::S3FilesMountConnectivityException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeWithResponseStreamError::S3FilesMountFailureException`.
+    pub fn is_s3_files_mount_failure_exception(&self) -> bool {
+        matches!(self, Self::S3FilesMountFailureException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeWithResponseStreamError::S3FilesMountTimeoutException`.
+    pub fn is_s3_files_mount_timeout_exception(&self) -> bool {
+        matches!(self, Self::S3FilesMountTimeoutException(_))
+    }
     /// Returns `true` if the error kind is `InvokeWithResponseStreamError::SerializedRequestEntityTooLargeException`.
     pub fn is_serialized_request_entity_too_large_exception(&self) -> bool {
         matches!(self, Self::SerializedRequestEntityTooLargeException(_))
@@ -589,6 +610,9 @@ impl ::std::error::Error for InvokeWithResponseStreamError {
             Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotReadyException(_inner) => ::std::option::Option::Some(_inner),
+            Self::S3FilesMountConnectivityException(_inner) => ::std::option::Option::Some(_inner),
+            Self::S3FilesMountFailureException(_inner) => ::std::option::Option::Some(_inner),
+            Self::S3FilesMountTimeoutException(_inner) => ::std::option::Option::Some(_inner),
             Self::SerializedRequestEntityTooLargeException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapStartException(_inner) => ::std::option::Option::Some(_inner),
@@ -628,6 +652,9 @@ impl ::std::fmt::Display for InvokeWithResponseStreamError {
             Self::ResourceConflictException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ResourceNotReadyException(_inner) => _inner.fmt(f),
+            Self::S3FilesMountConnectivityException(_inner) => _inner.fmt(f),
+            Self::S3FilesMountFailureException(_inner) => _inner.fmt(f),
+            Self::S3FilesMountTimeoutException(_inner) => _inner.fmt(f),
             Self::SerializedRequestEntityTooLargeException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::SnapStartException(_inner) => _inner.fmt(f),
@@ -681,6 +708,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeWithRes
             Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::S3FilesMountConnectivityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::S3FilesMountFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::S3FilesMountTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SerializedRequestEntityTooLargeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapStartException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

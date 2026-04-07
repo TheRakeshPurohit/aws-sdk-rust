@@ -12,26 +12,38 @@ pub fn ser_create_connection_input_input(
     if let Some(var_3) = &input.client_token {
         object.key("clientToken").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.description {
-        object.key("description").string(var_4.as_str());
+    if let Some(var_4) = &input.configurations {
+        let mut array_5 = object.key("configurations").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_configuration::ser_configuration(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
     }
-    if let Some(var_5) = &input.enable_trusted_identity_propagation {
-        object.key("enableTrustedIdentityPropagation").boolean(*var_5);
+    if let Some(var_8) = &input.description {
+        object.key("description").string(var_8.as_str());
     }
-    if let Some(var_6) = &input.environment_identifier {
-        object.key("environmentIdentifier").string(var_6.as_str());
+    if let Some(var_9) = &input.enable_trusted_identity_propagation {
+        object.key("enableTrustedIdentityPropagation").boolean(*var_9);
     }
-    if let Some(var_7) = &input.name {
-        object.key("name").string(var_7.as_str());
+    if let Some(var_10) = &input.environment_identifier {
+        object.key("environmentIdentifier").string(var_10.as_str());
     }
-    if let Some(var_8) = &input.props {
+    if let Some(var_11) = &input.name {
+        object.key("name").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.props {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("props").start_object();
-        crate::protocol_serde::shape_connection_properties_input::ser_connection_properties_input(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_13 = object.key("props").start_object();
+        crate::protocol_serde::shape_connection_properties_input::ser_connection_properties_input(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_10) = &input.scope {
-        object.key("scope").string(var_10.as_str());
+    if let Some(var_14) = &input.scope {
+        object.key("scope").string(var_14.as_str());
     }
     Ok(())
 }

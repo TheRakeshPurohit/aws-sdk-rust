@@ -110,15 +110,6 @@ pub(crate) fn create_access_preview_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn create_policy_preview_configuration_output_output_correct_errors(
-    mut builder: crate::operation::create_policy_preview_configuration::builders::CreatePolicyPreviewConfigurationOutputBuilder,
-) -> crate::operation::create_policy_preview_configuration::builders::CreatePolicyPreviewConfigurationOutputBuilder {
-    if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::PolicyPreviewStatus>().ok()
-    }
-    builder
-}
-
 pub(crate) fn get_access_preview_output_output_correct_errors(
     mut builder: crate::operation::get_access_preview::builders::GetAccessPreviewOutputBuilder,
 ) -> crate::operation::get_access_preview::builders::GetAccessPreviewOutputBuilder {
@@ -221,18 +212,6 @@ pub(crate) fn get_generated_policy_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn get_policy_preview_job_output_output_correct_errors(
-    mut builder: crate::operation::get_policy_preview_job::builders::GetPolicyPreviewJobOutputBuilder,
-) -> crate::operation::get_policy_preview_job::builders::GetPolicyPreviewJobOutputBuilder {
-    if builder.job_id.is_none() {
-        builder.job_id = Some(Default::default())
-    }
-    if builder.output_s3_uri.is_none() {
-        builder.output_s3_uri = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn list_access_preview_findings_output_output_correct_errors(
     mut builder: crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsOutputBuilder,
 ) -> crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsOutputBuilder {
@@ -305,27 +284,9 @@ pub(crate) fn list_policy_generations_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_policy_preview_jobs_output_output_correct_errors(
-    mut builder: crate::operation::list_policy_preview_jobs::builders::ListPolicyPreviewJobsOutputBuilder,
-) -> crate::operation::list_policy_preview_jobs::builders::ListPolicyPreviewJobsOutputBuilder {
-    if builder.analysis_reports.is_none() {
-        builder.analysis_reports = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn start_policy_generation_output_output_correct_errors(
     mut builder: crate::operation::start_policy_generation::builders::StartPolicyGenerationOutputBuilder,
 ) -> crate::operation::start_policy_generation::builders::StartPolicyGenerationOutputBuilder {
-    if builder.job_id.is_none() {
-        builder.job_id = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn start_policy_preview_job_output_output_correct_errors(
-    mut builder: crate::operation::start_policy_preview_job::builders::StartPolicyPreviewJobOutputBuilder,
-) -> crate::operation::start_policy_preview_job::builders::StartPolicyPreviewJobOutputBuilder {
     if builder.job_id.is_none() {
         builder.job_id = Some(Default::default())
     }
@@ -477,33 +438,6 @@ pub(crate) fn finding_correct_errors(mut builder: crate::types::builders::Findin
     }
     if builder.resource_owner_account.is_none() {
         builder.resource_owner_account = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn policy_preview_job_details_correct_errors(
-    mut builder: crate::types::builders::PolicyPreviewJobDetailsBuilder,
-) -> crate::types::builders::PolicyPreviewJobDetailsBuilder {
-    if builder.job_status.is_none() {
-        builder.job_status = "no value was set".parse::<crate::types::ImpactAnalysisJobStatus>().ok()
-    }
-    if builder.submitted_at.is_none() {
-        builder.submitted_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    builder
-}
-
-pub(crate) fn policy_preview_job_parameters_correct_errors(
-    mut builder: crate::types::builders::PolicyPreviewJobParametersBuilder,
-) -> crate::types::builders::PolicyPreviewJobParametersBuilder {
-    if builder.start_time.is_none() {
-        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.end_time.is_none() {
-        builder.end_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.policy_configurations.is_none() {
-        builder.policy_configurations = Some(Default::default())
     }
     builder
 }
@@ -680,39 +614,6 @@ pub(crate) fn policy_generation_correct_errors(
     builder
 }
 
-pub(crate) fn policy_preview_analysis_report_correct_errors(
-    mut builder: crate::types::builders::PolicyPreviewAnalysisReportBuilder,
-) -> crate::types::builders::PolicyPreviewAnalysisReportBuilder {
-    if builder.job_id.is_none() {
-        builder.job_id = Some(Default::default())
-    }
-    if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::ImpactAnalysisJobStatus>().ok()
-    }
-    if builder.submitted_at.is_none() {
-        builder.submitted_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.output_s3_uri.is_none() {
-        builder.output_s3_uri = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn policy_preview_configuration_correct_errors(
-    mut builder: crate::types::builders::PolicyPreviewConfigurationBuilder,
-) -> crate::types::builders::PolicyPreviewConfigurationBuilder {
-    if builder.scope.is_none() {
-        builder.scope = "no value was set".parse::<crate::types::PolicyPreviewScope>().ok()
-    }
-    if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::PolicyPreviewStatus>().ok()
-    }
-    if builder.created_at.is_none() {
-        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    builder
-}
-
 pub(crate) fn status_reason_correct_errors(mut builder: crate::types::builders::StatusReasonBuilder) -> crate::types::builders::StatusReasonBuilder {
     if builder.code.is_none() {
         builder.code = "no value was set".parse::<crate::types::ReasonCode>().ok()
@@ -791,21 +692,6 @@ pub(crate) fn generated_policy_correct_errors(
 ) -> crate::types::builders::GeneratedPolicyBuilder {
     if builder.policy.is_none() {
         builder.policy = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn policy_configuration_correct_errors(
-    mut builder: crate::types::builders::PolicyConfigurationBuilder,
-) -> crate::types::builders::PolicyConfigurationBuilder {
-    if builder.job_type.is_none() {
-        builder.job_type = "no value was set".parse::<crate::types::ImpactAnalysisJobType>().ok()
-    }
-    if builder.target_id.is_none() {
-        builder.target_id = Some(Default::default())
-    }
-    if builder.policy_documents_list.is_none() {
-        builder.policy_documents_list = Some(Default::default())
     }
     builder
 }

@@ -410,4 +410,18 @@ impl CreateNodegroupFluentBuilder {
     pub fn get_release_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_release_version()
     }
+    /// <p>The warm pool configuration for the node group. Warm pools maintain pre-initialized EC2 instances that can quickly join your cluster during scale-out events, improving application scaling performance and reducing costs.</p>
+    pub fn warm_pool_config(mut self, input: crate::types::WarmPoolConfig) -> Self {
+        self.inner = self.inner.warm_pool_config(input);
+        self
+    }
+    /// <p>The warm pool configuration for the node group. Warm pools maintain pre-initialized EC2 instances that can quickly join your cluster during scale-out events, improving application scaling performance and reducing costs.</p>
+    pub fn set_warm_pool_config(mut self, input: ::std::option::Option<crate::types::WarmPoolConfig>) -> Self {
+        self.inner = self.inner.set_warm_pool_config(input);
+        self
+    }
+    /// <p>The warm pool configuration for the node group. Warm pools maintain pre-initialized EC2 instances that can quickly join your cluster during scale-out events, improving application scaling performance and reducing costs.</p>
+    pub fn get_warm_pool_config(&self) -> &::std::option::Option<crate::types::WarmPoolConfig> {
+        self.inner.get_warm_pool_config()
+    }
 }

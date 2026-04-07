@@ -136,6 +136,13 @@ pub(crate) fn de_get_inbound_external_link(
                 "attributes" => {
                     builder = builder.set_attributes(crate::protocol_serde::shape_link_attributes::de_link_attributes(tokens, _value)?);
                 }
+                "connectivityType" => {
+                    builder = builder.set_connectivity_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ConnectivityType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

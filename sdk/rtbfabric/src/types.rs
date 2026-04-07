@@ -3,9 +3,13 @@ pub use crate::types::_requester_gateway_status::RequesterGatewayStatus;
 
 pub use crate::types::_protocol::Protocol;
 
+pub use crate::types::_listener_config::ListenerConfig;
+
 pub use crate::types::_trust_store_configuration::TrustStoreConfiguration;
 
 pub use crate::types::_managed_endpoint_configuration::ManagedEndpointConfiguration;
+
+pub use crate::types::_gateway_type::GatewayType;
 
 pub use crate::types::_responder_gateway_status::ResponderGatewayStatus;
 
@@ -16,6 +20,8 @@ pub use crate::types::_link_log_settings::LinkLogSettings;
 pub use crate::types::_link_status::LinkStatus;
 
 pub use crate::types::_link_direction::LinkDirection;
+
+pub use crate::types::_connectivity_type::ConnectivityType;
 
 pub use crate::types::_auto_scaling_groups_configuration::AutoScalingGroupsConfiguration;
 
@@ -59,6 +65,8 @@ mod _action;
 
 mod _auto_scaling_groups_configuration;
 
+mod _connectivity_type;
+
 mod _eks_endpoints_configuration;
 
 mod _filter;
@@ -66,6 +74,8 @@ mod _filter;
 mod _filter_criterion;
 
 mod _filter_type;
+
+mod _gateway_type;
 
 mod _header_tag_action;
 
@@ -82,6 +92,8 @@ mod _link_log_settings;
 mod _link_status;
 
 mod _list_links_response_structure;
+
+mod _listener_config;
 
 mod _managed_endpoint_configuration;
 

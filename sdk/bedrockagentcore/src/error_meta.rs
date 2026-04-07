@@ -811,6 +811,33 @@ impl From<crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeComm
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_browser::InvokeBrowserError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_browser::InvokeBrowserError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::invoke_browser::InvokeBrowserError> for Error {
+    fn from(err: crate::operation::invoke_browser::InvokeBrowserError) -> Self {
+        match err {
+            crate::operation::invoke_browser::InvokeBrowserError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::invoke_browser::InvokeBrowserError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::invoke_browser::InvokeBrowserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::invoke_browser::InvokeBrowserError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::invoke_browser::InvokeBrowserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::invoke_browser::InvokeBrowserError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::invoke_browser::InvokeBrowserError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

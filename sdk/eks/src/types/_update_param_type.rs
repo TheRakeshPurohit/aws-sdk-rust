@@ -51,6 +51,11 @@
 ///     UpdateParamType::UpdatedTier => { /* ... */ },
 ///     UpdateParamType::UpgradePolicy => { /* ... */ },
 ///     UpdateParamType::Version => { /* ... */ },
+///     UpdateParamType::WarmPoolEnabled => { /* ... */ },
+///     UpdateParamType::WarmPoolMaxGroupPreparedCapacity => { /* ... */ },
+///     UpdateParamType::WarmPoolMinSize => { /* ... */ },
+///     UpdateParamType::WarmPoolReuseOnScaleIn => { /* ... */ },
+///     UpdateParamType::WarmPoolState => { /* ... */ },
 ///     UpdateParamType::ZonalShiftConfig => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -159,6 +164,16 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     Version,
     #[allow(missing_docs)] // documentation missing in model
+    WarmPoolEnabled,
+    #[allow(missing_docs)] // documentation missing in model
+    WarmPoolMaxGroupPreparedCapacity,
+    #[allow(missing_docs)] // documentation missing in model
+    WarmPoolMinSize,
+    #[allow(missing_docs)] // documentation missing in model
+    WarmPoolReuseOnScaleIn,
+    #[allow(missing_docs)] // documentation missing in model
+    WarmPoolState,
+    #[allow(missing_docs)] // documentation missing in model
     ZonalShiftConfig,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -206,6 +221,11 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "UpdatedTier" => UpdateParamType::UpdatedTier,
             "UpgradePolicy" => UpdateParamType::UpgradePolicy,
             "Version" => UpdateParamType::Version,
+            "WarmPoolEnabled" => UpdateParamType::WarmPoolEnabled,
+            "WarmPoolMaxGroupPreparedCapacity" => UpdateParamType::WarmPoolMaxGroupPreparedCapacity,
+            "WarmPoolMinSize" => UpdateParamType::WarmPoolMinSize,
+            "WarmPoolReuseOnScaleIn" => UpdateParamType::WarmPoolReuseOnScaleIn,
+            "WarmPoolState" => UpdateParamType::WarmPoolState,
             "ZonalShiftConfig" => UpdateParamType::ZonalShiftConfig,
             other => UpdateParamType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -261,6 +281,11 @@ impl UpdateParamType {
             UpdateParamType::UpdatedTier => "UpdatedTier",
             UpdateParamType::UpgradePolicy => "UpgradePolicy",
             UpdateParamType::Version => "Version",
+            UpdateParamType::WarmPoolEnabled => "WarmPoolEnabled",
+            UpdateParamType::WarmPoolMaxGroupPreparedCapacity => "WarmPoolMaxGroupPreparedCapacity",
+            UpdateParamType::WarmPoolMinSize => "WarmPoolMinSize",
+            UpdateParamType::WarmPoolReuseOnScaleIn => "WarmPoolReuseOnScaleIn",
+            UpdateParamType::WarmPoolState => "WarmPoolState",
             UpdateParamType::ZonalShiftConfig => "ZonalShiftConfig",
             UpdateParamType::Unknown(value) => value.as_str(),
         }
@@ -307,6 +332,11 @@ impl UpdateParamType {
             "UpdatedTier",
             "UpgradePolicy",
             "Version",
+            "WarmPoolEnabled",
+            "WarmPoolMaxGroupPreparedCapacity",
+            "WarmPoolMinSize",
+            "WarmPoolReuseOnScaleIn",
+            "WarmPoolState",
             "ZonalShiftConfig",
         ]
     }
@@ -370,6 +400,11 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::UpdatedTier => write!(f, "UpdatedTier"),
             UpdateParamType::UpgradePolicy => write!(f, "UpgradePolicy"),
             UpdateParamType::Version => write!(f, "Version"),
+            UpdateParamType::WarmPoolEnabled => write!(f, "WarmPoolEnabled"),
+            UpdateParamType::WarmPoolMaxGroupPreparedCapacity => write!(f, "WarmPoolMaxGroupPreparedCapacity"),
+            UpdateParamType::WarmPoolMinSize => write!(f, "WarmPoolMinSize"),
+            UpdateParamType::WarmPoolReuseOnScaleIn => write!(f, "WarmPoolReuseOnScaleIn"),
+            UpdateParamType::WarmPoolState => write!(f, "WarmPoolState"),
             UpdateParamType::ZonalShiftConfig => write!(f, "ZonalShiftConfig"),
             UpdateParamType::Unknown(value) => write!(f, "{value}"),
         }

@@ -11,10 +11,6 @@ pub use crate::types::_job_details::JobDetailsBuilder;
 
 pub use crate::types::_generated_policy_result::GeneratedPolicyResultBuilder;
 
-pub use crate::types::_policy_preview_job_parameters::PolicyPreviewJobParametersBuilder;
-
-pub use crate::types::_policy_preview_job_details::PolicyPreviewJobDetailsBuilder;
-
 pub use crate::types::_sort_criteria::SortCriteriaBuilder;
 
 pub use crate::types::_policy_generation_details::PolicyGenerationDetailsBuilder;
@@ -35,8 +31,6 @@ pub use crate::types::_job_error::JobErrorBuilder;
 
 pub use crate::types::_generated_policy_properties::GeneratedPolicyPropertiesBuilder;
 
-pub use crate::types::_policy_preview_configuration::PolicyPreviewConfigurationBuilder;
-
 pub use crate::types::_criterion::CriterionBuilder;
 
 pub use crate::types::_access_preview_finding::AccessPreviewFindingBuilder;
@@ -50,10 +44,6 @@ pub use crate::types::_finding_summary::FindingSummaryBuilder;
 pub use crate::types::_finding_summary_v2::FindingSummaryV2Builder;
 
 pub use crate::types::_policy_generation::PolicyGenerationBuilder;
-
-pub use crate::types::_policy_preview_analysis_report::PolicyPreviewAnalysisReportBuilder;
-
-pub use crate::types::_policy_configuration::PolicyConfigurationBuilder;
 
 pub use crate::types::_validate_policy_finding::ValidatePolicyFindingBuilder;
 

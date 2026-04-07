@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateConnectionInput {
+    /// <p>The configurations of the connection.</p>
+    pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The ID of the domain where a connection is to be updated.</p>
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the connection to be updated.</p>
@@ -15,6 +17,12 @@ pub struct UpdateConnectionInput {
     pub props: ::std::option::Option<crate::types::ConnectionPropertiesPatch>,
 }
 impl UpdateConnectionInput {
+    /// <p>The configurations of the connection.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::Configuration] {
+        self.configurations.as_deref().unwrap_or_default()
+    }
     /// <p>The ID of the domain where a connection is to be updated.</p>
     pub fn domain_identifier(&self) -> ::std::option::Option<&str> {
         self.domain_identifier.as_deref()
@@ -39,6 +47,7 @@ impl UpdateConnectionInput {
 impl ::std::fmt::Debug for UpdateConnectionInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionInput");
+        formatter.field("configurations", &self.configurations);
         formatter.field("domain_identifier", &self.domain_identifier);
         formatter.field("identifier", &self.identifier);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
@@ -58,6 +67,7 @@ impl UpdateConnectionInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct UpdateConnectionInputBuilder {
+    pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -65,6 +75,26 @@ pub struct UpdateConnectionInputBuilder {
     pub(crate) props: ::std::option::Option<crate::types::ConnectionPropertiesPatch>,
 }
 impl UpdateConnectionInputBuilder {
+    /// Appends an item to `configurations`.
+    ///
+    /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
+    ///
+    /// <p>The configurations of the connection.</p>
+    pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
+        let mut v = self.configurations.unwrap_or_default();
+        v.push(input);
+        self.configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configurations of the connection.</p>
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
+        self.configurations = input;
+        self
+    }
+    /// <p>The configurations of the connection.</p>
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.configurations
+    }
     /// <p>The ID of the domain where a connection is to be updated.</p>
     /// This field is required.
     pub fn domain_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -142,6 +172,7 @@ impl UpdateConnectionInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::update_connection::UpdateConnectionInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_connection::UpdateConnectionInput {
+            configurations: self.configurations,
             domain_identifier: self.domain_identifier,
             identifier: self.identifier,
             description: self.description,
@@ -153,6 +184,7 @@ impl UpdateConnectionInputBuilder {
 impl ::std::fmt::Debug for UpdateConnectionInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionInputBuilder");
+        formatter.field("configurations", &self.configurations);
         formatter.field("domain_identifier", &self.domain_identifier);
         formatter.field("identifier", &self.identifier);
         formatter.field("description", &"*** Sensitive Data Redacted ***");

@@ -43,6 +43,8 @@ pub struct CreateNodegroupInput {
     /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub release_version: ::std::option::Option<::std::string::String>,
+    /// <p>The warm pool configuration for the node group. Warm pools maintain pre-initialized EC2 instances that can quickly join your cluster during scale-out events, improving application scaling performance and reducing costs.</p>
+    pub warm_pool_config: ::std::option::Option<crate::types::WarmPoolConfig>,
 }
 impl CreateNodegroupInput {
     /// <p>The name of your cluster.</p>
@@ -129,6 +131,10 @@ impl CreateNodegroupInput {
     pub fn release_version(&self) -> ::std::option::Option<&str> {
         self.release_version.as_deref()
     }
+    /// <p>The warm pool configuration for the node group. Warm pools maintain pre-initialized EC2 instances that can quickly join your cluster during scale-out events, improving application scaling performance and reducing costs.</p>
+    pub fn warm_pool_config(&self) -> ::std::option::Option<&crate::types::WarmPoolConfig> {
+        self.warm_pool_config.as_ref()
+    }
 }
 impl CreateNodegroupInput {
     /// Creates a new builder-style object to manufacture [`CreateNodegroupInput`](crate::operation::create_nodegroup::CreateNodegroupInput).
@@ -160,6 +166,7 @@ pub struct CreateNodegroupInputBuilder {
     pub(crate) capacity_type: ::std::option::Option<crate::types::CapacityTypes>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) release_version: ::std::option::Option<::std::string::String>,
+    pub(crate) warm_pool_config: ::std::option::Option<crate::types::WarmPoolConfig>,
 }
 impl CreateNodegroupInputBuilder {
     /// <p>The name of your cluster.</p>
@@ -467,6 +474,20 @@ impl CreateNodegroupInputBuilder {
     pub fn get_release_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.release_version
     }
+    /// <p>The warm pool configuration for the node group. Warm pools maintain pre-initialized EC2 instances that can quickly join your cluster during scale-out events, improving application scaling performance and reducing costs.</p>
+    pub fn warm_pool_config(mut self, input: crate::types::WarmPoolConfig) -> Self {
+        self.warm_pool_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The warm pool configuration for the node group. Warm pools maintain pre-initialized EC2 instances that can quickly join your cluster during scale-out events, improving application scaling performance and reducing costs.</p>
+    pub fn set_warm_pool_config(mut self, input: ::std::option::Option<crate::types::WarmPoolConfig>) -> Self {
+        self.warm_pool_config = input;
+        self
+    }
+    /// <p>The warm pool configuration for the node group. Warm pools maintain pre-initialized EC2 instances that can quickly join your cluster during scale-out events, improving application scaling performance and reducing costs.</p>
+    pub fn get_warm_pool_config(&self) -> &::std::option::Option<crate::types::WarmPoolConfig> {
+        &self.warm_pool_config
+    }
     /// Consumes the builder and constructs a [`CreateNodegroupInput`](crate::operation::create_nodegroup::CreateNodegroupInput).
     pub fn build(
         self,
@@ -491,6 +512,7 @@ impl CreateNodegroupInputBuilder {
             capacity_type: self.capacity_type,
             version: self.version,
             release_version: self.release_version,
+            warm_pool_config: self.warm_pool_config,
         })
     }
 }

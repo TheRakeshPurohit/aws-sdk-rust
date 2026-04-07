@@ -8,6 +8,8 @@ pub struct S3PropertiesInput {
     pub s3_uri: ::std::string::String,
     /// <p>The Amazon S3 Access Grant location ID that's part of the Amazon S3 properties of a connection.</p>
     pub s3_access_grant_location_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to register the Amazon S3 Access Grant location.</p>
+    pub register_s3_access_grant_location: ::std::option::Option<bool>,
 }
 impl S3PropertiesInput {
     /// <p>The Amazon S3 URI that's part of the Amazon S3 properties of a connection.</p>
@@ -18,6 +20,10 @@ impl S3PropertiesInput {
     /// <p>The Amazon S3 Access Grant location ID that's part of the Amazon S3 properties of a connection.</p>
     pub fn s3_access_grant_location_id(&self) -> ::std::option::Option<&str> {
         self.s3_access_grant_location_id.as_deref()
+    }
+    /// <p>Specifies whether to register the Amazon S3 Access Grant location.</p>
+    pub fn register_s3_access_grant_location(&self) -> ::std::option::Option<bool> {
+        self.register_s3_access_grant_location
     }
 }
 impl S3PropertiesInput {
@@ -33,6 +39,7 @@ impl S3PropertiesInput {
 pub struct S3PropertiesInputBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) s3_access_grant_location_id: ::std::option::Option<::std::string::String>,
+    pub(crate) register_s3_access_grant_location: ::std::option::Option<bool>,
 }
 impl S3PropertiesInputBuilder {
     /// <p>The Amazon S3 URI that's part of the Amazon S3 properties of a connection.</p>
@@ -64,6 +71,20 @@ impl S3PropertiesInputBuilder {
     pub fn get_s3_access_grant_location_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_access_grant_location_id
     }
+    /// <p>Specifies whether to register the Amazon S3 Access Grant location.</p>
+    pub fn register_s3_access_grant_location(mut self, input: bool) -> Self {
+        self.register_s3_access_grant_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to register the Amazon S3 Access Grant location.</p>
+    pub fn set_register_s3_access_grant_location(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.register_s3_access_grant_location = input;
+        self
+    }
+    /// <p>Specifies whether to register the Amazon S3 Access Grant location.</p>
+    pub fn get_register_s3_access_grant_location(&self) -> &::std::option::Option<bool> {
+        &self.register_s3_access_grant_location
+    }
     /// Consumes the builder and constructs a [`S3PropertiesInput`](crate::types::S3PropertiesInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`s3_uri`](crate::types::builders::S3PropertiesInputBuilder::s3_uri)
@@ -76,6 +97,7 @@ impl S3PropertiesInputBuilder {
                 )
             })?,
             s3_access_grant_location_id: self.s3_access_grant_location_id,
+            register_s3_access_grant_location: self.register_s3_access_grant_location,
         })
     }
 }

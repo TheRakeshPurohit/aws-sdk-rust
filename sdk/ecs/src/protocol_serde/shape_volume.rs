@@ -24,17 +24,23 @@ pub fn ser_volume(
         crate::protocol_serde::shape_efs_volume_configuration::ser_efs_volume_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.fsx_windows_file_server_volume_configuration {
+    if let Some(var_8) = &input.s3files_volume_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("fsxWindowsFileServerVolumeConfiguration").start_object();
-        crate::protocol_serde::shape_f_sx_windows_file_server_volume_configuration::ser_f_sx_windows_file_server_volume_configuration(
-            &mut object_9,
-            var_8,
-        )?;
+        let mut object_9 = object.key("s3filesVolumeConfiguration").start_object();
+        crate::protocol_serde::shape_s3_files_volume_configuration::ser_s3_files_volume_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.configured_at_launch {
-        object.key("configuredAtLaunch").boolean(*var_10);
+    if let Some(var_10) = &input.fsx_windows_file_server_volume_configuration {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("fsxWindowsFileServerVolumeConfiguration").start_object();
+        crate::protocol_serde::shape_f_sx_windows_file_server_volume_configuration::ser_f_sx_windows_file_server_volume_configuration(
+            &mut object_11,
+            var_10,
+        )?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.configured_at_launch {
+        object.key("configuredAtLaunch").boolean(*var_12);
     }
     Ok(())
 }
@@ -75,6 +81,11 @@ where
                         "efsVolumeConfiguration" => {
                             builder = builder.set_efs_volume_configuration(
                                 crate::protocol_serde::shape_efs_volume_configuration::de_efs_volume_configuration(tokens, _value)?,
+                            );
+                        }
+                        "s3filesVolumeConfiguration" => {
+                            builder = builder.set_s3files_volume_configuration(
+                                crate::protocol_serde::shape_s3_files_volume_configuration::de_s3_files_volume_configuration(tokens, _value)?,
                             );
                         }
                         "fsxWindowsFileServerVolumeConfiguration" => {

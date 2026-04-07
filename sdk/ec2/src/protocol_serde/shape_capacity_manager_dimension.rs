@@ -46,7 +46,7 @@ pub fn de_capacity_manager_dimension(
                 builder = builder.set_account_id(var_3);
             }
             ,
-            s if s.matches("instanceFamily") /* InstanceFamily com.amazonaws.ec2#CapacityManagerDimension$InstanceFamily */ =>  {
+            s if s.matches("accountName") /* AccountName com.amazonaws.ec2#CapacityManagerDimension$AccountName */ =>  {
                 let var_4 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -56,10 +56,10 @@ pub fn de_capacity_manager_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_instance_family(var_4);
+                builder = builder.set_account_name(var_4);
             }
             ,
-            s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2#CapacityManagerDimension$InstanceType */ =>  {
+            s if s.matches("instanceFamily") /* InstanceFamily com.amazonaws.ec2#CapacityManagerDimension$InstanceFamily */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -69,10 +69,10 @@ pub fn de_capacity_manager_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_instance_type(var_5);
+                builder = builder.set_instance_family(var_5);
             }
             ,
-            s if s.matches("instancePlatform") /* InstancePlatform com.amazonaws.ec2#CapacityManagerDimension$InstancePlatform */ =>  {
+            s if s.matches("instanceType") /* InstanceType com.amazonaws.ec2#CapacityManagerDimension$InstanceType */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -82,10 +82,10 @@ pub fn de_capacity_manager_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_instance_platform(var_6);
+                builder = builder.set_instance_type(var_6);
             }
             ,
-            s if s.matches("reservationArn") /* ReservationArn com.amazonaws.ec2#CapacityManagerDimension$ReservationArn */ =>  {
+            s if s.matches("instancePlatform") /* InstancePlatform com.amazonaws.ec2#CapacityManagerDimension$InstancePlatform */ =>  {
                 let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -95,10 +95,10 @@ pub fn de_capacity_manager_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_reservation_arn(var_7);
+                builder = builder.set_instance_platform(var_7);
             }
             ,
-            s if s.matches("reservationId") /* ReservationId com.amazonaws.ec2#CapacityManagerDimension$ReservationId */ =>  {
+            s if s.matches("reservationArn") /* ReservationArn com.amazonaws.ec2#CapacityManagerDimension$ReservationArn */ =>  {
                 let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -108,11 +108,24 @@ pub fn de_capacity_manager_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_reservation_id(var_8);
+                builder = builder.set_reservation_arn(var_8);
+            }
+            ,
+            s if s.matches("reservationId") /* ReservationId com.amazonaws.ec2#CapacityManagerDimension$ReservationId */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_reservation_id(var_9);
             }
             ,
             s if s.matches("reservationType") /* ReservationType com.amazonaws.ec2#CapacityManagerDimension$ReservationType */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         Result::<crate::types::ReservationType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ReservationType::from(
@@ -122,24 +135,10 @@ pub fn de_capacity_manager_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_reservation_type(var_9);
+                builder = builder.set_reservation_type(var_10);
             }
             ,
             s if s.matches("reservationCreateTimestamp") /* ReservationCreateTimestamp com.amazonaws.ec2#CapacityManagerDimension$ReservationCreateTimestamp */ =>  {
-                let var_10 =
-                    Some(
-                        ::aws_smithy_types::DateTime::from_str(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
-                        )
-                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#MillisecondDateTime`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_reservation_create_timestamp(var_10);
-            }
-            ,
-            s if s.matches("reservationStartTimestamp") /* ReservationStartTimestamp com.amazonaws.ec2#CapacityManagerDimension$ReservationStartTimestamp */ =>  {
                 let var_11 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
@@ -150,10 +149,10 @@ pub fn de_capacity_manager_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_reservation_start_timestamp(var_11);
+                builder = builder.set_reservation_create_timestamp(var_11);
             }
             ,
-            s if s.matches("reservationEndTimestamp") /* ReservationEndTimestamp com.amazonaws.ec2#CapacityManagerDimension$ReservationEndTimestamp */ =>  {
+            s if s.matches("reservationStartTimestamp") /* ReservationStartTimestamp com.amazonaws.ec2#CapacityManagerDimension$ReservationStartTimestamp */ =>  {
                 let var_12 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
@@ -164,11 +163,25 @@ pub fn de_capacity_manager_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_reservation_end_timestamp(var_12);
+                builder = builder.set_reservation_start_timestamp(var_12);
+            }
+            ,
+            s if s.matches("reservationEndTimestamp") /* ReservationEndTimestamp com.amazonaws.ec2#CapacityManagerDimension$ReservationEndTimestamp */ =>  {
+                let var_13 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#MillisecondDateTime`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_reservation_end_timestamp(var_13);
             }
             ,
             s if s.matches("reservationEndDateType") /* ReservationEndDateType com.amazonaws.ec2#CapacityManagerDimension$ReservationEndDateType */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         Result::<crate::types::ReservationEndDateType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ReservationEndDateType::from(
@@ -178,11 +191,11 @@ pub fn de_capacity_manager_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_reservation_end_date_type(var_13);
+                builder = builder.set_reservation_end_date_type(var_14);
             }
             ,
             s if s.matches("tenancy") /* Tenancy com.amazonaws.ec2#CapacityManagerDimension$Tenancy */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                         Result::<crate::types::CapacityTenancy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::CapacityTenancy::from(
@@ -192,11 +205,11 @@ pub fn de_capacity_manager_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_tenancy(var_14);
+                builder = builder.set_tenancy(var_15);
             }
             ,
             s if s.matches("reservationState") /* ReservationState com.amazonaws.ec2#CapacityManagerDimension$ReservationState */ =>  {
-                let var_15 =
+                let var_16 =
                     Some(
                         Result::<crate::types::ReservationState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ReservationState::from(
@@ -206,23 +219,10 @@ pub fn de_capacity_manager_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_reservation_state(var_15);
+                builder = builder.set_reservation_state(var_16);
             }
             ,
             s if s.matches("reservationInstanceMatchCriteria") /* ReservationInstanceMatchCriteria com.amazonaws.ec2#CapacityManagerDimension$ReservationInstanceMatchCriteria */ =>  {
-                let var_16 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_reservation_instance_match_criteria(var_16);
-            }
-            ,
-            s if s.matches("reservationUnusedFinancialOwner") /* ReservationUnusedFinancialOwner com.amazonaws.ec2#CapacityManagerDimension$ReservationUnusedFinancialOwner */ =>  {
                 let var_17 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -232,7 +232,30 @@ pub fn de_capacity_manager_dimension(
                         ?
                     )
                 ;
-                builder = builder.set_reservation_unused_financial_owner(var_17);
+                builder = builder.set_reservation_instance_match_criteria(var_17);
+            }
+            ,
+            s if s.matches("reservationUnusedFinancialOwner") /* ReservationUnusedFinancialOwner com.amazonaws.ec2#CapacityManagerDimension$ReservationUnusedFinancialOwner */ =>  {
+                let var_18 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_reservation_unused_financial_owner(var_18);
+            }
+            ,
+            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#CapacityManagerDimension$Tags */ =>  {
+                let var_19 =
+                    Some(
+                        crate::protocol_serde::shape_capacity_manager_tag_dimension_set::de_capacity_manager_tag_dimension_set(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tags(var_19);
             }
             ,
             _ => {}

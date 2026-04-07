@@ -156,10 +156,24 @@ pub(crate) fn de_get_responder_gateway(
                             .transpose()?,
                     );
                 }
+                "externalInboundEndpoint" => {
+                    builder = builder.set_external_inbound_endpoint(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "gatewayId" => {
                     builder = builder.set_gateway_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "gatewayType" => {
+                    builder = builder.set_gateway_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::GatewayType::from(u.as_ref())))
                             .transpose()?,
                     );
                 }
@@ -169,6 +183,9 @@ pub(crate) fn de_get_responder_gateway(
                             .map(i32::try_from)
                             .transpose()?,
                     );
+                }
+                "listenerConfig" => {
+                    builder = builder.set_listener_config(crate::protocol_serde::shape_listener_config::de_listener_config(tokens, _value)?);
                 }
                 "managedEndpointConfiguration" => {
                     builder = builder.set_managed_endpoint_configuration(

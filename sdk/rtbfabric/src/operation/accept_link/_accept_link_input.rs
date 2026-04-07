@@ -11,6 +11,8 @@ pub struct AcceptLinkInput {
     pub attributes: ::std::option::Option<crate::types::LinkAttributes>,
     /// <p>Settings for the application logs.</p>
     pub log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
+    /// <p>The timeout value in milliseconds.</p>
+    pub timeout_in_millis: ::std::option::Option<i64>,
 }
 impl AcceptLinkInput {
     /// <p>The unique identifier of the gateway.</p>
@@ -29,6 +31,10 @@ impl AcceptLinkInput {
     pub fn log_settings(&self) -> ::std::option::Option<&crate::types::LinkLogSettings> {
         self.log_settings.as_ref()
     }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn timeout_in_millis(&self) -> ::std::option::Option<i64> {
+        self.timeout_in_millis
+    }
 }
 impl AcceptLinkInput {
     /// Creates a new builder-style object to manufacture [`AcceptLinkInput`](crate::operation::accept_link::AcceptLinkInput).
@@ -45,6 +51,7 @@ pub struct AcceptLinkInputBuilder {
     pub(crate) link_id: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<crate::types::LinkAttributes>,
     pub(crate) log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
+    pub(crate) timeout_in_millis: ::std::option::Option<i64>,
 }
 impl AcceptLinkInputBuilder {
     /// <p>The unique identifier of the gateway.</p>
@@ -106,6 +113,20 @@ impl AcceptLinkInputBuilder {
     pub fn get_log_settings(&self) -> &::std::option::Option<crate::types::LinkLogSettings> {
         &self.log_settings
     }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn timeout_in_millis(mut self, input: i64) -> Self {
+        self.timeout_in_millis = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn set_timeout_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.timeout_in_millis = input;
+        self
+    }
+    /// <p>The timeout value in milliseconds.</p>
+    pub fn get_timeout_in_millis(&self) -> &::std::option::Option<i64> {
+        &self.timeout_in_millis
+    }
     /// Consumes the builder and constructs a [`AcceptLinkInput`](crate::operation::accept_link::AcceptLinkInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::accept_link::AcceptLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::accept_link::AcceptLinkInput {
@@ -113,6 +134,7 @@ impl AcceptLinkInputBuilder {
             link_id: self.link_id,
             attributes: self.attributes,
             log_settings: self.log_settings,
+            timeout_in_millis: self.timeout_in_millis,
         })
     }
 }

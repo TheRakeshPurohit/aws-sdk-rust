@@ -12,29 +12,38 @@ pub fn ser_spark_glue_properties_input(
     if let Some(var_3) = &input.glue_connection_name {
         object.key("glueConnectionName").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.glue_version {
-        object.key("glueVersion").string(var_4.as_str());
+    if let Some(var_4) = &input.glue_connection_names {
+        let mut array_5 = object.key("glueConnectionNames").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
     }
-    if let Some(var_5) = &input.idle_timeout {
+    if let Some(var_7) = &input.glue_version {
+        object.key("glueVersion").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.idle_timeout {
         object.key("idleTimeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_6) = &input.java_virtual_env {
-        object.key("javaVirtualEnv").string(var_6.as_str());
+    if let Some(var_9) = &input.java_virtual_env {
+        object.key("javaVirtualEnv").string(var_9.as_str());
     }
-    if let Some(var_7) = &input.number_of_workers {
+    if let Some(var_10) = &input.number_of_workers {
         object.key("numberOfWorkers").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_8) = &input.python_virtual_env {
-        object.key("pythonVirtualEnv").string(var_8.as_str());
+    if let Some(var_11) = &input.python_virtual_env {
+        object.key("pythonVirtualEnv").string(var_11.as_str());
     }
-    if let Some(var_9) = &input.worker_type {
-        object.key("workerType").string(var_9.as_str());
+    if let Some(var_12) = &input.worker_type {
+        object.key("workerType").string(var_12.as_str());
     }
     Ok(())
 }

@@ -7,6 +7,7 @@ impl super::Client {
     ///   - [`link_id(impl Into<String>)`](crate::operation::accept_link::builders::AcceptLinkFluentBuilder::link_id) / [`set_link_id(Option<String>)`](crate::operation::accept_link::builders::AcceptLinkFluentBuilder::set_link_id):<br>required: **true**<br><p>The unique identifier of the link.</p><br>
     ///   - [`attributes(LinkAttributes)`](crate::operation::accept_link::builders::AcceptLinkFluentBuilder::attributes) / [`set_attributes(Option<LinkAttributes>)`](crate::operation::accept_link::builders::AcceptLinkFluentBuilder::set_attributes):<br>required: **false**<br><p>Attributes of the link.</p><br>
     ///   - [`log_settings(LinkLogSettings)`](crate::operation::accept_link::builders::AcceptLinkFluentBuilder::log_settings) / [`set_log_settings(Option<LinkLogSettings>)`](crate::operation::accept_link::builders::AcceptLinkFluentBuilder::set_log_settings):<br>required: **true**<br><p>Settings for the application logs.</p><br>
+    ///   - [`timeout_in_millis(i64)`](crate::operation::accept_link::builders::AcceptLinkFluentBuilder::timeout_in_millis) / [`set_timeout_in_millis(Option<i64>)`](crate::operation::accept_link::builders::AcceptLinkFluentBuilder::set_timeout_in_millis):<br>required: **false**<br><p>The timeout value in milliseconds.</p><br>
     /// - On success, responds with [`AcceptLinkOutput`](crate::operation::accept_link::AcceptLinkOutput) with field(s):
     ///   - [`gateway_id(String)`](crate::operation::accept_link::AcceptLinkOutput::gateway_id): <p>The unique identifier of the gateway.</p>
     ///   - [`peer_gateway_id(String)`](crate::operation::accept_link::AcceptLinkOutput::peer_gateway_id): <p>The unique identifier of the peer gateway.</p>
@@ -17,6 +18,8 @@ impl super::Client {
     ///   - [`flow_modules(Option<Vec::<ModuleConfiguration>>)`](crate::operation::accept_link::AcceptLinkOutput::flow_modules): <p>The configuration of flow modules.</p>
     ///   - [`pending_flow_modules(Option<Vec::<ModuleConfiguration>>)`](crate::operation::accept_link::AcceptLinkOutput::pending_flow_modules): <p>The configuration of pending flow modules.</p>
     ///   - [`attributes(Option<LinkAttributes>)`](crate::operation::accept_link::AcceptLinkOutput::attributes): <p>Attributes of the link.</p>
+    ///   - [`log_settings(Option<LinkLogSettings>)`](crate::operation::accept_link::AcceptLinkOutput::log_settings): <p>Describes the settings for a link log.</p>
+    ///   - [`connectivity_type(Option<ConnectivityType>)`](crate::operation::accept_link::AcceptLinkOutput::connectivity_type): <p>The connectivity type of the link.</p>
     ///   - [`link_id(String)`](crate::operation::accept_link::AcceptLinkOutput::link_id): <p>The unique identifier of the link.</p>
     /// - On failure, responds with [`SdkError<AcceptLinkError>`](crate::operation::accept_link::AcceptLinkError)
     pub fn accept_link(&self) -> crate::operation::accept_link::builders::AcceptLinkFluentBuilder {

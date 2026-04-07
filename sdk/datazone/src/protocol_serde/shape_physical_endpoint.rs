@@ -25,6 +25,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "glueConnectionNames" => {
+                            builder = builder.set_glue_connection_names(
+                                crate::protocol_serde::shape_glue_connection_names::de_glue_connection_names(tokens, _value)?,
+                            );
+                        }
                         "glueConnection" => {
                             builder = builder.set_glue_connection(crate::protocol_serde::shape_glue_connection::de_glue_connection(tokens, _value)?);
                         }

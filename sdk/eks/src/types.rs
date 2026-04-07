@@ -69,6 +69,8 @@ pub use crate::types::_node_repair_config::NodeRepairConfig;
 
 pub use crate::types::_capacity_types::CapacityTypes;
 
+pub use crate::types::_warm_pool_config::WarmPoolConfig;
+
 pub use crate::types::_nodegroup::Nodegroup;
 
 pub use crate::types::_pod_identity_association::PodIdentityAssociation;
@@ -176,6 +178,8 @@ pub use crate::types::_fargate_profile_health::FargateProfileHealth;
 pub use crate::types::_taint::Taint;
 
 pub use crate::types::_nodegroup_update_strategies::NodegroupUpdateStrategies;
+
+pub use crate::types::_warm_pool_state::WarmPoolState;
 
 pub use crate::types::_nodegroup_status::NodegroupStatus;
 
@@ -594,6 +598,10 @@ mod _version_status;
 mod _vpc_config_request;
 
 mod _vpc_config_response;
+
+mod _warm_pool_config;
+
+mod _warm_pool_state;
 
 mod _zonal_shift_config_request;
 

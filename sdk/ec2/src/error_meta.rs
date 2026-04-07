@@ -14278,6 +14278,40 @@ impl From<crate::operation::get_capacity_manager_metric_dimensions::GetCapacityM
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_capacity_manager_monitored_tag_keys::GetCapacityManagerMonitoredTagKeysError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_capacity_manager_monitored_tag_keys::GetCapacityManagerMonitoredTagKeysError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_capacity_manager_monitored_tag_keys::GetCapacityManagerMonitoredTagKeysError> for Error {
+    fn from(err: crate::operation::get_capacity_manager_monitored_tag_keys::GetCapacityManagerMonitoredTagKeysError) -> Self {
+        match err {
+            crate::operation::get_capacity_manager_monitored_tag_keys::GetCapacityManagerMonitoredTagKeysError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError, R>>
     for Error
 where
@@ -20225,6 +20259,40 @@ impl From<crate::operation::unmonitor_instances::UnmonitorInstancesError> for Er
     fn from(err: crate::operation::unmonitor_instances::UnmonitorInstancesError) -> Self {
         match err {
             crate::operation::unmonitor_instances::UnmonitorInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_capacity_manager_monitored_tag_keys::UpdateCapacityManagerMonitoredTagKeysError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_capacity_manager_monitored_tag_keys::UpdateCapacityManagerMonitoredTagKeysError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_capacity_manager_monitored_tag_keys::UpdateCapacityManagerMonitoredTagKeysError> for Error {
+    fn from(err: crate::operation::update_capacity_manager_monitored_tag_keys::UpdateCapacityManagerMonitoredTagKeysError) -> Self {
+        match err {
+            crate::operation::update_capacity_manager_monitored_tag_keys::UpdateCapacityManagerMonitoredTagKeysError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

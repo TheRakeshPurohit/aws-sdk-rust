@@ -148,6 +148,13 @@ pub(crate) fn de_accept_link(
                 "attributes" => {
                     builder = builder.set_attributes(crate::protocol_serde::shape_link_attributes::de_link_attributes(tokens, _value)?);
                 }
+                "connectivityType" => {
+                    builder = builder.set_connectivity_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ConnectivityType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -179,6 +186,9 @@ pub(crate) fn de_accept_link(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "logSettings" => {
+                    builder = builder.set_log_settings(crate::protocol_serde::shape_link_log_settings::de_link_log_settings(tokens, _value)?);
                 }
                 "peerGatewayId" => {
                     builder = builder.set_peer_gateway_id(

@@ -57,6 +57,8 @@ pub use crate::types::_nodegroup_update_config::NodegroupUpdateConfigBuilder;
 
 pub use crate::types::_node_repair_config::NodeRepairConfigBuilder;
 
+pub use crate::types::_warm_pool_config::WarmPoolConfigBuilder;
+
 pub use crate::types::_nodegroup::NodegroupBuilder;
 
 pub use crate::types::_pod_identity_association::PodIdentityAssociationBuilder;

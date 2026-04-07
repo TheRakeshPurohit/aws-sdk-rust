@@ -389,6 +389,8 @@ pub use crate::types::_docker_volume_configuration::DockerVolumeConfiguration;
 
 pub use crate::types::_efs_volume_configuration::EfsVolumeConfiguration;
 
+pub use crate::types::_s3_files_volume_configuration::S3FilesVolumeConfiguration;
+
 pub use crate::types::_f_sx_windows_file_server_volume_configuration::FSxWindowsFileServerVolumeConfiguration;
 
 pub use crate::types::_task_definition_placement_constraint_type::TaskDefinitionPlacementConstraintType;
@@ -984,6 +986,8 @@ mod _resource_type;
 mod _rollback;
 
 mod _runtime_platform;
+
+mod _s3_files_volume_configuration;
 
 mod _scale;
 

@@ -15,6 +15,8 @@ impl super::Client {
     ///   - [`flow_modules(Option<Vec::<ModuleConfiguration>>)`](crate::operation::reject_link::RejectLinkOutput::flow_modules): <p>The configuration of flow modules.</p>
     ///   - [`pending_flow_modules(Option<Vec::<ModuleConfiguration>>)`](crate::operation::reject_link::RejectLinkOutput::pending_flow_modules): <p>The configuration of pending flow modules.</p>
     ///   - [`attributes(Option<LinkAttributes>)`](crate::operation::reject_link::RejectLinkOutput::attributes): <p>Attributes of the link.</p>
+    ///   - [`log_settings(Option<LinkLogSettings>)`](crate::operation::reject_link::RejectLinkOutput::log_settings): <p>Describes the settings for a link log.</p>
+    ///   - [`connectivity_type(Option<ConnectivityType>)`](crate::operation::reject_link::RejectLinkOutput::connectivity_type): <p>The connectivity type of the link.</p>
     ///   - [`link_id(String)`](crate::operation::reject_link::RejectLinkOutput::link_id): <p>The unique identifier of the link.</p>
     /// - On failure, responds with [`SdkError<RejectLinkError>`](crate::operation::reject_link::RejectLinkError)
     pub fn reject_link(&self) -> crate::operation::reject_link::builders::RejectLinkFluentBuilder {

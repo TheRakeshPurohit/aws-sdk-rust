@@ -8,6 +8,8 @@ pub struct SparkGluePropertiesOutput {
     pub additional_args: ::std::option::Option<crate::types::SparkGlueArgs>,
     /// <p>The Amazon Web Services Glue connection name in the Spark Amazon Web Services Glue properties.</p>
     pub glue_connection_name: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services Glue connection names in the Spark Amazon Web Services Glue properties.</p>
+    pub glue_connection_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Web Services Glue version in the Spark Amazon Web Services Glue properties.</p>
     pub glue_version: ::std::option::Option<::std::string::String>,
     /// <p>The idle timeout in the Spark Amazon Web Services Glue properties.</p>
@@ -29,6 +31,12 @@ impl SparkGluePropertiesOutput {
     /// <p>The Amazon Web Services Glue connection name in the Spark Amazon Web Services Glue properties.</p>
     pub fn glue_connection_name(&self) -> ::std::option::Option<&str> {
         self.glue_connection_name.as_deref()
+    }
+    /// <p>The Amazon Web Services Glue connection names in the Spark Amazon Web Services Glue properties.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.glue_connection_names.is_none()`.
+    pub fn glue_connection_names(&self) -> &[::std::string::String] {
+        self.glue_connection_names.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Web Services Glue version in the Spark Amazon Web Services Glue properties.</p>
     pub fn glue_version(&self) -> ::std::option::Option<&str> {
@@ -68,6 +76,7 @@ impl SparkGluePropertiesOutput {
 pub struct SparkGluePropertiesOutputBuilder {
     pub(crate) additional_args: ::std::option::Option<crate::types::SparkGlueArgs>,
     pub(crate) glue_connection_name: ::std::option::Option<::std::string::String>,
+    pub(crate) glue_connection_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) glue_version: ::std::option::Option<::std::string::String>,
     pub(crate) idle_timeout: ::std::option::Option<i32>,
     pub(crate) java_virtual_env: ::std::option::Option<::std::string::String>,
@@ -103,6 +112,26 @@ impl SparkGluePropertiesOutputBuilder {
     /// <p>The Amazon Web Services Glue connection name in the Spark Amazon Web Services Glue properties.</p>
     pub fn get_glue_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.glue_connection_name
+    }
+    /// Appends an item to `glue_connection_names`.
+    ///
+    /// To override the contents of this collection use [`set_glue_connection_names`](Self::set_glue_connection_names).
+    ///
+    /// <p>The Amazon Web Services Glue connection names in the Spark Amazon Web Services Glue properties.</p>
+    pub fn glue_connection_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.glue_connection_names.unwrap_or_default();
+        v.push(input.into());
+        self.glue_connection_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Web Services Glue connection names in the Spark Amazon Web Services Glue properties.</p>
+    pub fn set_glue_connection_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.glue_connection_names = input;
+        self
+    }
+    /// <p>The Amazon Web Services Glue connection names in the Spark Amazon Web Services Glue properties.</p>
+    pub fn get_glue_connection_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.glue_connection_names
     }
     /// <p>The Amazon Web Services Glue version in the Spark Amazon Web Services Glue properties.</p>
     pub fn glue_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -193,6 +222,7 @@ impl SparkGluePropertiesOutputBuilder {
         crate::types::SparkGluePropertiesOutput {
             additional_args: self.additional_args,
             glue_connection_name: self.glue_connection_name,
+            glue_connection_names: self.glue_connection_names,
             glue_version: self.glue_version,
             idle_timeout: self.idle_timeout,
             java_virtual_env: self.java_virtual_env,

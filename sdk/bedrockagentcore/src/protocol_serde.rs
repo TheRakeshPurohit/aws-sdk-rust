@@ -71,6 +71,8 @@ pub(crate) mod shape_invoke_agent_runtime_command_input;
 
 pub(crate) mod shape_invoke_agent_runtime_input;
 
+pub(crate) mod shape_invoke_browser;
+
 pub(crate) mod shape_invoke_code_interpreter;
 
 pub(crate) mod shape_list_actors;
@@ -151,6 +153,10 @@ pub(crate) mod shape_invoke_agent_runtime_command_output;
 
 pub(crate) mod shape_invoke_agent_runtime_output;
 
+pub(crate) mod shape_invoke_browser_input;
+
+pub(crate) mod shape_invoke_browser_output;
+
 pub(crate) mod shape_invoke_code_interpreter_input;
 
 pub(crate) mod shape_invoke_code_interpreter_output;
@@ -218,6 +224,10 @@ pub(crate) mod shape_actor_summary_list;
 pub(crate) mod shape_agent_card;
 
 pub(crate) mod shape_branch;
+
+pub(crate) mod shape_browser_action;
+
+pub(crate) mod shape_browser_action_result;
 
 pub(crate) mod shape_browser_enterprise_policies;
 
@@ -327,6 +337,18 @@ pub(crate) mod shape_extraction_job_metadata;
 
 pub(crate) mod shape_input_content_block;
 
+pub(crate) mod shape_key_press_arguments;
+
+pub(crate) mod shape_key_press_result;
+
+pub(crate) mod shape_key_shortcut_arguments;
+
+pub(crate) mod shape_key_shortcut_result;
+
+pub(crate) mod shape_key_type_arguments;
+
+pub(crate) mod shape_key_type_result;
+
 pub(crate) mod shape_live_view_stream;
 
 pub(crate) mod shape_memory_content;
@@ -338,6 +360,22 @@ pub(crate) mod shape_memory_record_output;
 pub(crate) mod shape_memory_record_summary;
 
 pub(crate) mod shape_metadata_map;
+
+pub(crate) mod shape_mouse_click_arguments;
+
+pub(crate) mod shape_mouse_click_result;
+
+pub(crate) mod shape_mouse_drag_arguments;
+
+pub(crate) mod shape_mouse_drag_result;
+
+pub(crate) mod shape_mouse_move_arguments;
+
+pub(crate) mod shape_mouse_move_result;
+
+pub(crate) mod shape_mouse_scroll_arguments;
+
+pub(crate) mod shape_mouse_scroll_result;
 
 pub(crate) mod shape_namespaces_list;
 
@@ -352,6 +390,10 @@ pub(crate) mod shape_proxy_bypass;
 pub(crate) mod shape_resource_location;
 
 pub(crate) mod shape_response_chunk;
+
+pub(crate) mod shape_screenshot_arguments;
+
+pub(crate) mod shape_screenshot_result;
 
 pub(crate) mod shape_session_summary;
 

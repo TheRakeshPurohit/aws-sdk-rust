@@ -225,6 +225,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssetsRe
                         }
                     }
                 }
+                if let ::std::option::Option::Some(inner_8) = &_input.asset_type_filter {
+                    {
+                        for inner_9 in inner_8 {
+                            query.push_kv("AssetTypeFilter", &::aws_smithy_http::query::fmt_string(inner_9));
+                        }
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

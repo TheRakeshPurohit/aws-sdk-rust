@@ -2147,6 +2147,10 @@ pub(crate) mod shape_get_capacity_manager_metric_dimensions;
 
 pub(crate) mod shape_get_capacity_manager_metric_dimensions_input;
 
+pub(crate) mod shape_get_capacity_manager_monitored_tag_keys;
+
+pub(crate) mod shape_get_capacity_manager_monitored_tag_keys_input;
+
 pub(crate) mod shape_get_capacity_reservation_usage;
 
 pub(crate) mod shape_get_capacity_reservation_usage_input;
@@ -3027,6 +3031,10 @@ pub(crate) mod shape_unmonitor_instances;
 
 pub(crate) mod shape_unmonitor_instances_input;
 
+pub(crate) mod shape_update_capacity_manager_monitored_tag_keys;
+
+pub(crate) mod shape_update_capacity_manager_monitored_tag_keys_input;
+
 pub(crate) mod shape_update_capacity_manager_organizations_access;
 
 pub(crate) mod shape_update_capacity_manager_organizations_access_input;
@@ -3424,6 +3432,8 @@ pub(crate) mod shape_capacity_block_set;
 pub(crate) mod shape_capacity_block_status_set;
 
 pub(crate) mod shape_capacity_manager_data_export_response_set;
+
+pub(crate) mod shape_capacity_manager_monitored_tag_key_list;
 
 pub(crate) mod shape_capacity_reservation;
 
@@ -4423,6 +4433,8 @@ pub(crate) mod shape_capacity_manager_data_export_response;
 
 pub(crate) mod shape_capacity_manager_dimension;
 
+pub(crate) mod shape_capacity_manager_monitored_tag_key;
+
 pub(crate) mod shape_capacity_reservation_billing_request;
 
 pub(crate) mod shape_capacity_reservation_commitment_info;
@@ -5041,6 +5053,8 @@ pub(crate) mod shape_cancel_spot_fleet_requests_error;
 
 pub(crate) mod shape_capacity_allocation;
 
+pub(crate) mod shape_capacity_manager_tag_dimension_set;
+
 pub(crate) mod shape_capacity_reservation_id_set;
 
 pub(crate) mod shape_capacity_reservation_info;
@@ -5462,6 +5476,8 @@ pub(crate) mod shape_available_instance_capacity_list;
 pub(crate) mod shape_bandwidth_weighting_type_list;
 
 pub(crate) mod shape_capacity_allocation_metadata_list;
+
+pub(crate) mod shape_capacity_manager_tag_dimension;
 
 pub(crate) mod shape_capacity_reservation_options;
 

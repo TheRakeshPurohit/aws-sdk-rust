@@ -15,9 +15,12 @@ impl super::Client {
     ///   - [`flow_modules(Option<Vec::<ModuleConfiguration>>)`](crate::operation::get_link::GetLinkOutput::flow_modules): <p>The configuration of flow modules.</p>
     ///   - [`pending_flow_modules(Option<Vec::<ModuleConfiguration>>)`](crate::operation::get_link::GetLinkOutput::pending_flow_modules): <p>The configuration of pending flow modules.</p>
     ///   - [`attributes(Option<LinkAttributes>)`](crate::operation::get_link::GetLinkOutput::attributes): <p>Attributes of the link.</p>
+    ///   - [`log_settings(Option<LinkLogSettings>)`](crate::operation::get_link::GetLinkOutput::log_settings): <p>Settings for the application logs.</p>
+    ///   - [`connectivity_type(Option<ConnectivityType>)`](crate::operation::get_link::GetLinkOutput::connectivity_type): <p>The connectivity type of the link.</p>
     ///   - [`link_id(String)`](crate::operation::get_link::GetLinkOutput::link_id): <p>The unique identifier of the link.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_link::GetLinkOutput::tags): <p>A map of the key-value pairs for the tag or tags assigned to the specified resource.</p>
-    ///   - [`log_settings(Option<LinkLogSettings>)`](crate::operation::get_link::GetLinkOutput::log_settings): <p>Settings for the application logs.</p>
+    ///   - [`http_responder_allowed(Option<bool>)`](crate::operation::get_link::GetLinkOutput::http_responder_allowed): <p>Boolean to specify if an HTTP responder is allowed.</p>
+    ///   - [`timeout_in_millis(Option<i64>)`](crate::operation::get_link::GetLinkOutput::timeout_in_millis): <p>The timeout value in milliseconds.</p>
     /// - On failure, responds with [`SdkError<GetLinkError>`](crate::operation::get_link::GetLinkError)
     pub fn get_link(&self) -> crate::operation::get_link::builders::GetLinkFluentBuilder {
         crate::operation::get_link::builders::GetLinkFluentBuilder::new(self.handle.clone())

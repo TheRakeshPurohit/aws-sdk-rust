@@ -27,6 +27,10 @@ pub use crate::types::_browser_session_stream::BrowserSessionStream;
 
 pub use crate::types::_proxy_configuration::ProxyConfiguration;
 
+pub use crate::types::_browser_action::BrowserAction;
+
+pub use crate::types::_browser_action_result::BrowserActionResult;
+
 pub use crate::types::_stream_update::StreamUpdate;
 
 pub use crate::types::_code_interpreter_session_status::CodeInterpreterSessionStatus;
@@ -72,6 +76,38 @@ pub use crate::types::_live_view_stream::LiveViewStream;
 pub use crate::types::_proxy_bypass::ProxyBypass;
 
 pub use crate::types::_certificate::Certificate;
+
+pub use crate::types::_mouse_click_arguments::MouseClickArguments;
+
+pub use crate::types::_mouse_move_arguments::MouseMoveArguments;
+
+pub use crate::types::_mouse_drag_arguments::MouseDragArguments;
+
+pub use crate::types::_mouse_scroll_arguments::MouseScrollArguments;
+
+pub use crate::types::_key_type_arguments::KeyTypeArguments;
+
+pub use crate::types::_key_press_arguments::KeyPressArguments;
+
+pub use crate::types::_key_shortcut_arguments::KeyShortcutArguments;
+
+pub use crate::types::_screenshot_arguments::ScreenshotArguments;
+
+pub use crate::types::_mouse_click_result::MouseClickResult;
+
+pub use crate::types::_mouse_move_result::MouseMoveResult;
+
+pub use crate::types::_mouse_drag_result::MouseDragResult;
+
+pub use crate::types::_mouse_scroll_result::MouseScrollResult;
+
+pub use crate::types::_key_type_result::KeyTypeResult;
+
+pub use crate::types::_key_press_result::KeyPressResult;
+
+pub use crate::types::_key_shortcut_result::KeyShortcutResult;
+
+pub use crate::types::_screenshot_result::ScreenshotResult;
 
 pub use crate::types::_browser_session_summary::BrowserSessionSummary;
 
@@ -130,6 +166,12 @@ pub use crate::types::_automation_stream_status::AutomationStreamStatus;
 pub use crate::types::_proxy::Proxy;
 
 pub use crate::types::_certificate_location::CertificateLocation;
+
+pub use crate::types::_mouse_button::MouseButton;
+
+pub use crate::types::_screenshot_format::ScreenshotFormat;
+
+pub use crate::types::_browser_action_status::BrowserActionStatus;
 
 pub use crate::types::_context::Context;
 
@@ -198,6 +240,12 @@ mod _basic_auth;
 mod _branch;
 
 mod _branch_filter;
+
+mod _browser_action;
+
+mod _browser_action_result;
+
+mod _browser_action_status;
 
 mod _browser_enterprise_policy;
 
@@ -281,6 +329,18 @@ mod _invoke_agent_runtime_command_request_body;
 
 mod _invoke_agent_runtime_command_stream_output;
 
+mod _key_press_arguments;
+
+mod _key_press_result;
+
+mod _key_shortcut_arguments;
+
+mod _key_shortcut_result;
+
+mod _key_type_arguments;
+
+mod _key_type_result;
+
 mod _language_runtime;
 
 mod _left_expression;
@@ -308,6 +368,24 @@ mod _memory_record_update_input;
 mod _message_metadata;
 
 mod _metadata_value;
+
+mod _mouse_button;
+
+mod _mouse_click_arguments;
+
+mod _mouse_click_result;
+
+mod _mouse_drag_arguments;
+
+mod _mouse_drag_result;
+
+mod _mouse_move_arguments;
+
+mod _mouse_move_result;
+
+mod _mouse_scroll_arguments;
+
+mod _mouse_scroll_result;
 
 mod _oauth2_flow_type;
 
@@ -338,6 +416,12 @@ mod _right_expression;
 mod _role;
 
 mod _s3_location;
+
+mod _screenshot_arguments;
+
+mod _screenshot_format;
+
+mod _screenshot_result;
 
 mod _search_criteria;
 

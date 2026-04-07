@@ -438,17 +438,17 @@ impl CreateFunctionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_file_system_configs`](Self::set_file_system_configs).
     ///
-    /// <p>Connection settings for an Amazon EFS file system.</p>
+    /// <p>Connection settings for an Amazon EFS file system or an Amazon S3 Files file system.</p>
     pub fn file_system_configs(mut self, input: crate::types::FileSystemConfig) -> Self {
         self.inner = self.inner.file_system_configs(input);
         self
     }
-    /// <p>Connection settings for an Amazon EFS file system.</p>
+    /// <p>Connection settings for an Amazon EFS file system or an Amazon S3 Files file system.</p>
     pub fn set_file_system_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>) -> Self {
         self.inner = self.inner.set_file_system_configs(input);
         self
     }
-    /// <p>Connection settings for an Amazon EFS file system.</p>
+    /// <p>Connection settings for an Amazon EFS file system or an Amazon S3 Files file system.</p>
     pub fn get_file_system_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>> {
         self.inner.get_file_system_configs()
     }

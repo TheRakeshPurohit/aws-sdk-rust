@@ -150,6 +150,20 @@ impl UpdateResponderGatewayFluentBuilder {
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
         self.inner.get_protocol()
     }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn listener_config(mut self, input: crate::types::ListenerConfig) -> Self {
+        self.inner = self.inner.listener_config(input);
+        self
+    }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn set_listener_config(mut self, input: ::std::option::Option<crate::types::ListenerConfig>) -> Self {
+        self.inner = self.inner.set_listener_config(input);
+        self
+    }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn get_listener_config(&self) -> &::std::option::Option<crate::types::ListenerConfig> {
+        self.inner.get_listener_config()
+    }
     /// <p>The configuration of the trust store.</p>
     pub fn trust_store_configuration(mut self, input: crate::types::TrustStoreConfiguration) -> Self {
         self.inner = self.inner.trust_store_configuration(input);

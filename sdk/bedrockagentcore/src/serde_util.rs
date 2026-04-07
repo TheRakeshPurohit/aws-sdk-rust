@@ -239,6 +239,18 @@ pub(crate) fn invoke_agent_runtime_command_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn invoke_browser_output_output_correct_errors(
+    mut builder: crate::operation::invoke_browser::builders::InvokeBrowserOutputBuilder,
+) -> crate::operation::invoke_browser::builders::InvokeBrowserOutputBuilder {
+    if builder.result.is_none() {
+        builder.result = Some(crate::types::BrowserActionResult::Unknown)
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_actors_output_output_correct_errors(
     mut builder: crate::operation::list_actors::builders::ListActorsOutputBuilder,
 ) -> crate::operation::list_actors::builders::ListActorsOutputBuilder {
@@ -617,6 +629,33 @@ pub(crate) fn extraction_job_metadata_correct_errors(
     builder
 }
 
+pub(crate) fn key_press_result_correct_errors(
+    mut builder: crate::types::builders::KeyPressResultBuilder,
+) -> crate::types::builders::KeyPressResultBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BrowserActionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn key_shortcut_result_correct_errors(
+    mut builder: crate::types::builders::KeyShortcutResultBuilder,
+) -> crate::types::builders::KeyShortcutResultBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BrowserActionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn key_type_result_correct_errors(
+    mut builder: crate::types::builders::KeyTypeResultBuilder,
+) -> crate::types::builders::KeyTypeResultBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BrowserActionStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn memory_record_output_correct_errors(
     mut builder: crate::types::builders::MemoryRecordOutputBuilder,
 ) -> crate::types::builders::MemoryRecordOutputBuilder {
@@ -646,6 +685,51 @@ pub(crate) fn memory_record_summary_correct_errors(
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn mouse_click_result_correct_errors(
+    mut builder: crate::types::builders::MouseClickResultBuilder,
+) -> crate::types::builders::MouseClickResultBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BrowserActionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn mouse_drag_result_correct_errors(
+    mut builder: crate::types::builders::MouseDragResultBuilder,
+) -> crate::types::builders::MouseDragResultBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BrowserActionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn mouse_move_result_correct_errors(
+    mut builder: crate::types::builders::MouseMoveResultBuilder,
+) -> crate::types::builders::MouseMoveResultBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BrowserActionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn mouse_scroll_result_correct_errors(
+    mut builder: crate::types::builders::MouseScrollResultBuilder,
+) -> crate::types::builders::MouseScrollResultBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BrowserActionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn screenshot_result_correct_errors(
+    mut builder: crate::types::builders::ScreenshotResultBuilder,
+) -> crate::types::builders::ScreenshotResultBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BrowserActionStatus>().ok()
     }
     builder
 }

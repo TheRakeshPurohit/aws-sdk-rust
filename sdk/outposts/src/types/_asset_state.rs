@@ -13,6 +13,7 @@
 /// # let assetstate = unimplemented!();
 /// match assetstate {
 ///     AssetState::Active => { /* ... */ },
+///     AssetState::Installing => { /* ... */ },
 ///     AssetState::Isolated => { /* ... */ },
 ///     AssetState::Retiring => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum AssetState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    Installing,
+    #[allow(missing_docs)] // documentation missing in model
     Isolated,
     #[allow(missing_docs)] // documentation missing in model
     Retiring,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for AssetState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => AssetState::Active,
+            "INSTALLING" => AssetState::Installing,
             "ISOLATED" => AssetState::Isolated,
             "RETIRING" => AssetState::Retiring,
             other => AssetState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl AssetState {
     pub fn as_str(&self) -> &str {
         match self {
             AssetState::Active => "ACTIVE",
+            AssetState::Installing => "INSTALLING",
             AssetState::Isolated => "ISOLATED",
             AssetState::Retiring => "RETIRING",
             AssetState::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl AssetState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "ISOLATED", "RETIRING"]
+        &["ACTIVE", "INSTALLING", "ISOLATED", "RETIRING"]
     }
 }
 impl ::std::convert::AsRef<str> for AssetState {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for AssetState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AssetState::Active => write!(f, "ACTIVE"),
+            AssetState::Installing => write!(f, "INSTALLING"),
             AssetState::Isolated => write!(f, "ISOLATED"),
             AssetState::Retiring => write!(f, "RETIRING"),
             AssetState::Unknown(value) => write!(f, "{value}"),

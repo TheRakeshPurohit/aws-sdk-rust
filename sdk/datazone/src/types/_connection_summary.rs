@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionSummary {
+    /// <p>The configurations of a connection summary.</p>
+    pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The ID of a connection.</p>
     pub connection_id: ::std::string::String,
     /// <p>The domain ID of a connection.</p>
@@ -26,6 +28,12 @@ pub struct ConnectionSummary {
     pub scope: ::std::option::Option<crate::types::ConnectionScope>,
 }
 impl ConnectionSummary {
+    /// <p>The configurations of a connection summary.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::Configuration] {
+        self.configurations.as_deref().unwrap_or_default()
+    }
     /// <p>The ID of a connection.</p>
     pub fn connection_id(&self) -> &str {
         use std::ops::Deref;
@@ -83,6 +91,7 @@ impl ConnectionSummary {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ConnectionSummaryBuilder {
+    pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_unit_id: ::std::option::Option<::std::string::String>,
@@ -95,6 +104,26 @@ pub struct ConnectionSummaryBuilder {
     pub(crate) scope: ::std::option::Option<crate::types::ConnectionScope>,
 }
 impl ConnectionSummaryBuilder {
+    /// Appends an item to `configurations`.
+    ///
+    /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
+    ///
+    /// <p>The configurations of a connection summary.</p>
+    pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
+        let mut v = self.configurations.unwrap_or_default();
+        v.push(input);
+        self.configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configurations of a connection summary.</p>
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
+        self.configurations = input;
+        self
+    }
+    /// <p>The configurations of a connection summary.</p>
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.configurations
+    }
     /// <p>The ID of a connection.</p>
     /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -256,6 +285,7 @@ impl ConnectionSummaryBuilder {
     /// - [`r#type`](crate::types::builders::ConnectionSummaryBuilder::type)
     pub fn build(self) -> ::std::result::Result<crate::types::ConnectionSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConnectionSummary {
+            configurations: self.configurations,
             connection_id: self.connection_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_id",

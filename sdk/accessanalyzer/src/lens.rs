@@ -99,16 +99,6 @@ pub(crate) fn reflens_list_policy_generations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
-pub(crate) fn reflens_list_policy_preview_jobs_output_output_next_token(
-    input: &crate::operation::list_policy_preview_jobs::ListPolicyPreviewJobsOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
 pub(crate) fn reflens_validate_policy_output_output_next_token(
     input: &crate::operation::validate_policy::ValidatePolicyOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -186,13 +176,6 @@ pub(crate) fn lens_list_policy_generations_output_output_policy_generations(
     input: crate::operation::list_policy_generations::ListPolicyGenerationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>> {
     let input = input.policy_generations;
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn lens_list_policy_preview_jobs_output_output_analysis_reports(
-    input: crate::operation::list_policy_preview_jobs::ListPolicyPreviewJobsOutput,
-) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyPreviewAnalysisReport>> {
-    let input = input.analysis_reports;
     ::std::option::Option::Some(input)
 }
 

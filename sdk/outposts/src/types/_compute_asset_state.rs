@@ -13,6 +13,7 @@
 /// # let computeassetstate = unimplemented!();
 /// match computeassetstate {
 ///     ComputeAssetState::Active => { /* ... */ },
+///     ComputeAssetState::Installing => { /* ... */ },
 ///     ComputeAssetState::Isolated => { /* ... */ },
 ///     ComputeAssetState::Retiring => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum ComputeAssetState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    Installing,
+    #[allow(missing_docs)] // documentation missing in model
     Isolated,
     #[allow(missing_docs)] // documentation missing in model
     Retiring,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for ComputeAssetState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => ComputeAssetState::Active,
+            "INSTALLING" => ComputeAssetState::Installing,
             "ISOLATED" => ComputeAssetState::Isolated,
             "RETIRING" => ComputeAssetState::Retiring,
             other => ComputeAssetState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl ComputeAssetState {
     pub fn as_str(&self) -> &str {
         match self {
             ComputeAssetState::Active => "ACTIVE",
+            ComputeAssetState::Installing => "INSTALLING",
             ComputeAssetState::Isolated => "ISOLATED",
             ComputeAssetState::Retiring => "RETIRING",
             ComputeAssetState::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl ComputeAssetState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "ISOLATED", "RETIRING"]
+        &["ACTIVE", "INSTALLING", "ISOLATED", "RETIRING"]
     }
 }
 impl ::std::convert::AsRef<str> for ComputeAssetState {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for ComputeAssetState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ComputeAssetState::Active => write!(f, "ACTIVE"),
+            ComputeAssetState::Installing => write!(f, "INSTALLING"),
             ComputeAssetState::Isolated => write!(f, "ISOLATED"),
             ComputeAssetState::Retiring => write!(f, "RETIRING"),
             ComputeAssetState::Unknown(value) => write!(f, "{value}"),

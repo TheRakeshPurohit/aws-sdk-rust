@@ -9,6 +9,8 @@ pub struct UpdateResponderGatewayInput {
     pub port: ::std::option::Option<i32>,
     /// <p>The networking protocol to use.</p>
     pub protocol: ::std::option::Option<crate::types::Protocol>,
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub listener_config: ::std::option::Option<crate::types::ListenerConfig>,
     /// <p>The configuration of the trust store.</p>
     pub trust_store_configuration: ::std::option::Option<crate::types::TrustStoreConfiguration>,
     /// <p>The configuration for the managed endpoint.</p>
@@ -32,6 +34,10 @@ impl UpdateResponderGatewayInput {
     /// <p>The networking protocol to use.</p>
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
         self.protocol.as_ref()
+    }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn listener_config(&self) -> ::std::option::Option<&crate::types::ListenerConfig> {
+        self.listener_config.as_ref()
     }
     /// <p>The configuration of the trust store.</p>
     pub fn trust_store_configuration(&self) -> ::std::option::Option<&crate::types::TrustStoreConfiguration> {
@@ -68,6 +74,7 @@ pub struct UpdateResponderGatewayInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
+    pub(crate) listener_config: ::std::option::Option<crate::types::ListenerConfig>,
     pub(crate) trust_store_configuration: ::std::option::Option<crate::types::TrustStoreConfiguration>,
     pub(crate) managed_endpoint_configuration: ::std::option::Option<crate::types::ManagedEndpointConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -118,6 +125,20 @@ impl UpdateResponderGatewayInputBuilder {
     /// <p>The networking protocol to use.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
         &self.protocol
+    }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn listener_config(mut self, input: crate::types::ListenerConfig) -> Self {
+        self.listener_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn set_listener_config(mut self, input: ::std::option::Option<crate::types::ListenerConfig>) -> Self {
+        self.listener_config = input;
+        self
+    }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn get_listener_config(&self) -> &::std::option::Option<crate::types::ListenerConfig> {
+        &self.listener_config
     }
     /// <p>The configuration of the trust store.</p>
     pub fn trust_store_configuration(mut self, input: crate::types::TrustStoreConfiguration) -> Self {
@@ -202,6 +223,7 @@ impl UpdateResponderGatewayInputBuilder {
             domain_name: self.domain_name,
             port: self.port,
             protocol: self.protocol,
+            listener_config: self.listener_config,
             trust_store_configuration: self.trust_store_configuration,
             managed_endpoint_configuration: self.managed_endpoint_configuration,
             client_token: self.client_token,

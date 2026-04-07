@@ -23,6 +23,8 @@ pub struct GetResponderGatewayOutput {
     pub port: i32,
     /// <p>The networking protocol.</p>
     pub protocol: crate::types::Protocol,
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub listener_config: ::std::option::Option<crate::types::ListenerConfig>,
     /// <p>The configuration of the trust store.</p>
     pub trust_store_configuration: ::std::option::Option<crate::types::TrustStoreConfiguration>,
     /// <p>The configuration of the managed endpoint.</p>
@@ -37,6 +39,10 @@ pub struct GetResponderGatewayOutput {
     pub total_links_count: ::std::option::Option<i32>,
     /// <p>The count of inbound links for the responder gateway.</p>
     pub inbound_links_count: ::std::option::Option<i32>,
+    /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
+    pub gateway_type: ::std::option::Option<crate::types::GatewayType>,
+    /// <p>The external inbound endpoint for the responder gateway.</p>
+    pub external_inbound_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetResponderGatewayOutput {
@@ -83,6 +89,10 @@ impl GetResponderGatewayOutput {
     pub fn protocol(&self) -> &crate::types::Protocol {
         &self.protocol
     }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn listener_config(&self) -> ::std::option::Option<&crate::types::ListenerConfig> {
+        self.listener_config.as_ref()
+    }
     /// <p>The configuration of the trust store.</p>
     pub fn trust_store_configuration(&self) -> ::std::option::Option<&crate::types::TrustStoreConfiguration> {
         self.trust_store_configuration.as_ref()
@@ -112,6 +122,14 @@ impl GetResponderGatewayOutput {
     pub fn inbound_links_count(&self) -> ::std::option::Option<i32> {
         self.inbound_links_count
     }
+    /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
+    pub fn gateway_type(&self) -> ::std::option::Option<&crate::types::GatewayType> {
+        self.gateway_type.as_ref()
+    }
+    /// <p>The external inbound endpoint for the responder gateway.</p>
+    pub fn external_inbound_endpoint(&self) -> ::std::option::Option<&str> {
+        self.external_inbound_endpoint.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetResponderGatewayOutput {
     fn request_id(&self) -> Option<&str> {
@@ -139,6 +157,7 @@ pub struct GetResponderGatewayOutputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
+    pub(crate) listener_config: ::std::option::Option<crate::types::ListenerConfig>,
     pub(crate) trust_store_configuration: ::std::option::Option<crate::types::TrustStoreConfiguration>,
     pub(crate) managed_endpoint_configuration: ::std::option::Option<crate::types::ManagedEndpointConfiguration>,
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
@@ -146,6 +165,8 @@ pub struct GetResponderGatewayOutputBuilder {
     pub(crate) active_links_count: ::std::option::Option<i32>,
     pub(crate) total_links_count: ::std::option::Option<i32>,
     pub(crate) inbound_links_count: ::std::option::Option<i32>,
+    pub(crate) gateway_type: ::std::option::Option<crate::types::GatewayType>,
+    pub(crate) external_inbound_endpoint: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetResponderGatewayOutputBuilder {
@@ -305,6 +326,20 @@ impl GetResponderGatewayOutputBuilder {
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
         &self.protocol
     }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn listener_config(mut self, input: crate::types::ListenerConfig) -> Self {
+        self.listener_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn set_listener_config(mut self, input: ::std::option::Option<crate::types::ListenerConfig>) -> Self {
+        self.listener_config = input;
+        self
+    }
+    /// <p>The listener configuration for the responder gateway.</p>
+    pub fn get_listener_config(&self) -> &::std::option::Option<crate::types::ListenerConfig> {
+        &self.listener_config
+    }
     /// <p>The configuration of the trust store.</p>
     pub fn trust_store_configuration(mut self, input: crate::types::TrustStoreConfiguration) -> Self {
         self.trust_store_configuration = ::std::option::Option::Some(input);
@@ -410,6 +445,34 @@ impl GetResponderGatewayOutputBuilder {
     pub fn get_inbound_links_count(&self) -> &::std::option::Option<i32> {
         &self.inbound_links_count
     }
+    /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
+    pub fn gateway_type(mut self, input: crate::types::GatewayType) -> Self {
+        self.gateway_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
+    pub fn set_gateway_type(mut self, input: ::std::option::Option<crate::types::GatewayType>) -> Self {
+        self.gateway_type = input;
+        self
+    }
+    /// <p>The type of gateway. Valid values are <code>EXTERNAL</code> or <code>INTERNAL</code>.</p>
+    pub fn get_gateway_type(&self) -> &::std::option::Option<crate::types::GatewayType> {
+        &self.gateway_type
+    }
+    /// <p>The external inbound endpoint for the responder gateway.</p>
+    pub fn external_inbound_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_inbound_endpoint = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The external inbound endpoint for the responder gateway.</p>
+    pub fn set_external_inbound_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.external_inbound_endpoint = input;
+        self
+    }
+    /// <p>The external inbound endpoint for the responder gateway.</p>
+    pub fn get_external_inbound_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.external_inbound_endpoint
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -473,6 +536,7 @@ impl GetResponderGatewayOutputBuilder {
                     "protocol was not specified but it is required when building GetResponderGatewayOutput",
                 )
             })?,
+            listener_config: self.listener_config,
             trust_store_configuration: self.trust_store_configuration,
             managed_endpoint_configuration: self.managed_endpoint_configuration,
             gateway_id: self.gateway_id.ok_or_else(|| {
@@ -485,6 +549,8 @@ impl GetResponderGatewayOutputBuilder {
             active_links_count: self.active_links_count,
             total_links_count: self.total_links_count,
             inbound_links_count: self.inbound_links_count,
+            gateway_type: self.gateway_type,
+            external_inbound_endpoint: self.external_inbound_endpoint,
             _request_id: self._request_id,
         })
     }

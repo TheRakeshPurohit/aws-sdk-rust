@@ -136,6 +136,25 @@ impl CreateConnectionFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
+    /// Appends an item to `configurations`.
+    ///
+    /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
+    ///
+    /// <p>The configurations of the connection.</p>
+    pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
+        self.inner = self.inner.configurations(input);
+        self
+    }
+    /// <p>The configurations of the connection.</p>
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
+        self.inner = self.inner.set_configurations(input);
+        self
+    }
+    /// <p>The configurations of the connection.</p>
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        self.inner.get_configurations()
+    }
     /// <p>A connection description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());

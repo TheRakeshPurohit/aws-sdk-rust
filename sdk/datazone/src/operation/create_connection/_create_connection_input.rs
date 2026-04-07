@@ -7,6 +7,8 @@ pub struct CreateConnectionInput {
     pub aws_location: ::std::option::Option<crate::types::AwsLocation>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The configurations of the connection.</p>
+    pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>A connection description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the domain where the connection is created.</p>
@@ -30,6 +32,12 @@ impl CreateConnectionInput {
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
+    }
+    /// <p>The configurations of the connection.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::Configuration] {
+        self.configurations.as_deref().unwrap_or_default()
     }
     /// <p>A connection description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -65,6 +73,7 @@ impl ::std::fmt::Debug for CreateConnectionInput {
         let mut formatter = f.debug_struct("CreateConnectionInput");
         formatter.field("aws_location", &self.aws_location);
         formatter.field("client_token", &self.client_token);
+        formatter.field("configurations", &self.configurations);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("domain_identifier", &self.domain_identifier);
         formatter.field("environment_identifier", &self.environment_identifier);
@@ -88,6 +97,7 @@ impl CreateConnectionInput {
 pub struct CreateConnectionInputBuilder {
     pub(crate) aws_location: ::std::option::Option<crate::types::AwsLocation>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) environment_identifier: ::std::option::Option<::std::string::String>,
@@ -124,6 +134,26 @@ impl CreateConnectionInputBuilder {
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
+    }
+    /// Appends an item to `configurations`.
+    ///
+    /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
+    ///
+    /// <p>The configurations of the connection.</p>
+    pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
+        let mut v = self.configurations.unwrap_or_default();
+        v.push(input);
+        self.configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configurations of the connection.</p>
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
+        self.configurations = input;
+        self
+    }
+    /// <p>The configurations of the connection.</p>
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.configurations
     }
     /// <p>A connection description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -232,6 +262,7 @@ impl CreateConnectionInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_connection::CreateConnectionInput {
             aws_location: self.aws_location,
             client_token: self.client_token,
+            configurations: self.configurations,
             description: self.description,
             domain_identifier: self.domain_identifier,
             environment_identifier: self.environment_identifier,
@@ -247,6 +278,7 @@ impl ::std::fmt::Debug for CreateConnectionInputBuilder {
         let mut formatter = f.debug_struct("CreateConnectionInputBuilder");
         formatter.field("aws_location", &self.aws_location);
         formatter.field("client_token", &self.client_token);
+        formatter.field("configurations", &self.configurations);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("domain_identifier", &self.domain_identifier);
         formatter.field("environment_identifier", &self.environment_identifier);

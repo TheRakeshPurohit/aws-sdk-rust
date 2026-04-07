@@ -137,6 +137,13 @@ pub(crate) fn de_get_link(
                 "attributes" => {
                     builder = builder.set_attributes(crate::protocol_serde::shape_link_attributes::de_link_attributes(tokens, _value)?);
                 }
+                "connectivityType" => {
+                    builder = builder.set_connectivity_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ConnectivityType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -161,6 +168,9 @@ pub(crate) fn de_get_link(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "httpResponderAllowed" => {
+                    builder = builder.set_http_responder_allowed(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "linkId" => {
                     builder = builder.set_link_id(
@@ -193,6 +203,13 @@ pub(crate) fn de_get_link(
                 }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
+                }
+                "timeoutInMillis" => {
+                    builder = builder.set_timeout_in_millis(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
                 }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

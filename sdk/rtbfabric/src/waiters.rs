@@ -3,14 +3,23 @@
 /// Supporting types for the `inbound_external_link_active` waiter.
 pub mod inbound_external_link_active;
 
+/// Supporting types for the `inbound_external_link_deleted` waiter.
+pub mod inbound_external_link_deleted;
+
 /// Supporting types for the `link_accepted` waiter.
 pub mod link_accepted;
 
 /// Supporting types for the `link_active` waiter.
 pub mod link_active;
 
+/// Supporting types for the `link_deleted` waiter.
+pub mod link_deleted;
+
 /// Supporting types for the `outbound_external_link_active` waiter.
 pub mod outbound_external_link_active;
+
+/// Supporting types for the `outbound_external_link_deleted` waiter.
+pub mod outbound_external_link_deleted;
 
 /// Supporting types for the `requester_gateway_active` waiter.
 pub mod requester_gateway_active;

@@ -160,12 +160,22 @@ pub(crate) fn de_create_responder_gateway(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "externalInboundEndpoint" => {
+                    builder = builder.set_external_inbound_endpoint(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "gatewayId" => {
                     builder = builder.set_gateway_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "listenerConfig" => {
+                    builder = builder.set_listener_config(crate::protocol_serde::shape_listener_config::de_listener_config(tokens, _value)?);
                 }
                 "status" => {
                     builder = builder.set_status(

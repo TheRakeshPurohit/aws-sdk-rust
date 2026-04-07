@@ -143,6 +143,10 @@ where
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                         }
+                        "warmPoolConfig" => {
+                            builder =
+                                builder.set_warm_pool_config(crate::protocol_serde::shape_warm_pool_config::de_warm_pool_config(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

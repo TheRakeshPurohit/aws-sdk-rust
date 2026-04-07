@@ -1594,6 +1594,9 @@ pub mod get_capacity_manager_metric_data;
 /// Types for the `GetCapacityManagerMetricDimensions` operation.
 pub mod get_capacity_manager_metric_dimensions;
 
+/// Types for the `GetCapacityManagerMonitoredTagKeys` operation.
+pub mod get_capacity_manager_monitored_tag_keys;
+
 /// Types for the `GetCapacityReservationUsage` operation.
 pub mod get_capacity_reservation_usage;
 
@@ -2253,6 +2256,9 @@ pub mod unlock_snapshot;
 
 /// Types for the `UnmonitorInstances` operation.
 pub mod unmonitor_instances;
+
+/// Types for the `UpdateCapacityManagerMonitoredTagKeys` operation.
+pub mod update_capacity_manager_monitored_tag_keys;
 
 /// Types for the `UpdateCapacityManagerOrganizationsAccess` operation.
 pub mod update_capacity_manager_organizations_access;

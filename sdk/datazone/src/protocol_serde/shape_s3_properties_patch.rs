@@ -9,5 +9,8 @@ pub fn ser_s3_properties_patch(
     if let Some(var_1) = &input.s3_access_grant_location_id {
         object.key("s3AccessGrantLocationId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.register_s3_access_grant_location {
+        object.key("registerS3AccessGrantLocation").boolean(*var_2);
+    }
     Ok(())
 }

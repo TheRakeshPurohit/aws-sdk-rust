@@ -685,6 +685,8 @@ pub(crate) mod shape_resource_requirement;
 
 pub(crate) mod shape_resources;
 
+pub(crate) mod shape_s3_files_volume_configuration;
+
 pub(crate) mod shape_secret;
 
 pub(crate) mod shape_service_connect_access_log_configuration;

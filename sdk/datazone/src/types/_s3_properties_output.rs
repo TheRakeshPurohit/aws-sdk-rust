@@ -8,6 +8,8 @@ pub struct S3PropertiesOutput {
     pub s3_uri: ::std::string::String,
     /// <p>The Amazon S3 Access Grant location ID that's part of the Amazon S3 properties of a connection.</p>
     pub s3_access_grant_location_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to register the Amazon S3 Access Grant location.</p>
+    pub register_s3_access_grant_location: ::std::option::Option<bool>,
     /// <p>The status of the Amazon S3 connection.</p>
     pub status: ::std::option::Option<crate::types::ConnectionStatus>,
     /// <p>The error message that gets displayed.</p>
@@ -22,6 +24,10 @@ impl S3PropertiesOutput {
     /// <p>The Amazon S3 Access Grant location ID that's part of the Amazon S3 properties of a connection.</p>
     pub fn s3_access_grant_location_id(&self) -> ::std::option::Option<&str> {
         self.s3_access_grant_location_id.as_deref()
+    }
+    /// <p>Specifies whether to register the Amazon S3 Access Grant location.</p>
+    pub fn register_s3_access_grant_location(&self) -> ::std::option::Option<bool> {
+        self.register_s3_access_grant_location
     }
     /// <p>The status of the Amazon S3 connection.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ConnectionStatus> {
@@ -45,6 +51,7 @@ impl S3PropertiesOutput {
 pub struct S3PropertiesOutputBuilder {
     pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) s3_access_grant_location_id: ::std::option::Option<::std::string::String>,
+    pub(crate) register_s3_access_grant_location: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<crate::types::ConnectionStatus>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
@@ -77,6 +84,20 @@ impl S3PropertiesOutputBuilder {
     /// <p>The Amazon S3 Access Grant location ID that's part of the Amazon S3 properties of a connection.</p>
     pub fn get_s3_access_grant_location_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_access_grant_location_id
+    }
+    /// <p>Specifies whether to register the Amazon S3 Access Grant location.</p>
+    pub fn register_s3_access_grant_location(mut self, input: bool) -> Self {
+        self.register_s3_access_grant_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to register the Amazon S3 Access Grant location.</p>
+    pub fn set_register_s3_access_grant_location(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.register_s3_access_grant_location = input;
+        self
+    }
+    /// <p>Specifies whether to register the Amazon S3 Access Grant location.</p>
+    pub fn get_register_s3_access_grant_location(&self) -> &::std::option::Option<bool> {
+        &self.register_s3_access_grant_location
     }
     /// <p>The status of the Amazon S3 connection.</p>
     pub fn status(mut self, input: crate::types::ConnectionStatus) -> Self {
@@ -118,6 +139,7 @@ impl S3PropertiesOutputBuilder {
                 )
             })?,
             s3_access_grant_location_id: self.s3_access_grant_location_id,
+            register_s3_access_grant_location: self.register_s3_access_grant_location,
             status: self.status,
             error_message: self.error_message,
         })

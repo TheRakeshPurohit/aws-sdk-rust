@@ -54,6 +54,8 @@ pub struct Nodegroup {
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     /// <p>Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The warm pool configuration attached to the node group. Amazon EKS manages warm pools throughout the node group lifecycle using the <code>AWSServiceRoleForAmazonEKSNodegroup</code> service-linked role to create, update, and delete warm pool resources.</p>
+    pub warm_pool_config: ::std::option::Option<crate::types::WarmPoolConfig>,
 }
 impl Nodegroup {
     /// <p>The name associated with an Amazon EKS managed node group.</p>
@@ -160,6 +162,10 @@ impl Nodegroup {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The warm pool configuration attached to the node group. Amazon EKS manages warm pools throughout the node group lifecycle using the <code>AWSServiceRoleForAmazonEKSNodegroup</code> service-linked role to create, update, and delete warm pool resources.</p>
+    pub fn warm_pool_config(&self) -> ::std::option::Option<&crate::types::WarmPoolConfig> {
+        self.warm_pool_config.as_ref()
+    }
 }
 impl Nodegroup {
     /// Creates a new builder-style object to manufacture [`Nodegroup`](crate::types::Nodegroup).
@@ -196,6 +202,7 @@ pub struct NodegroupBuilder {
     pub(crate) node_repair_config: ::std::option::Option<crate::types::NodeRepairConfig>,
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) warm_pool_config: ::std::option::Option<crate::types::WarmPoolConfig>,
 }
 impl NodegroupBuilder {
     /// <p>The name associated with an Amazon EKS managed node group.</p>
@@ -570,6 +577,20 @@ impl NodegroupBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The warm pool configuration attached to the node group. Amazon EKS manages warm pools throughout the node group lifecycle using the <code>AWSServiceRoleForAmazonEKSNodegroup</code> service-linked role to create, update, and delete warm pool resources.</p>
+    pub fn warm_pool_config(mut self, input: crate::types::WarmPoolConfig) -> Self {
+        self.warm_pool_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The warm pool configuration attached to the node group. Amazon EKS manages warm pools throughout the node group lifecycle using the <code>AWSServiceRoleForAmazonEKSNodegroup</code> service-linked role to create, update, and delete warm pool resources.</p>
+    pub fn set_warm_pool_config(mut self, input: ::std::option::Option<crate::types::WarmPoolConfig>) -> Self {
+        self.warm_pool_config = input;
+        self
+    }
+    /// <p>The warm pool configuration attached to the node group. Amazon EKS manages warm pools throughout the node group lifecycle using the <code>AWSServiceRoleForAmazonEKSNodegroup</code> service-linked role to create, update, and delete warm pool resources.</p>
+    pub fn get_warm_pool_config(&self) -> &::std::option::Option<crate::types::WarmPoolConfig> {
+        &self.warm_pool_config
+    }
     /// Consumes the builder and constructs a [`Nodegroup`](crate::types::Nodegroup).
     pub fn build(self) -> crate::types::Nodegroup {
         crate::types::Nodegroup {
@@ -597,6 +618,7 @@ impl NodegroupBuilder {
             node_repair_config: self.node_repair_config,
             launch_template: self.launch_template,
             tags: self.tags,
+            warm_pool_config: self.warm_pool_config,
         }
     }
 }

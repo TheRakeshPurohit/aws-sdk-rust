@@ -81,6 +81,12 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
     ResourceNotReadyException(crate::types::error::ResourceNotReadyException),
+    /// <p>The Lambda function couldn't make a network connection to the configured S3 Files access point.</p>
+    S3FilesMountConnectivityException(crate::types::error::S3FilesMountConnectivityException),
+    /// <p>The Lambda function couldn't mount the configured S3 Files access point due to a permission or configuration issue.</p>
+    S3FilesMountFailureException(crate::types::error::S3FilesMountFailureException),
+    /// <p>The Lambda function made a network connection to the configured S3 Files access point, but the mount operation timed out.</p>
+    S3FilesMountTimeoutException(crate::types::error::S3FilesMountTimeoutException),
     /// <p>The request payload exceeded the maximum allowed size for serialized request entities.</p>
     SerializedRequestEntityTooLargeException(crate::types::error::SerializedRequestEntityTooLargeException),
     /// <p>The Lambda service encountered an internal error.</p>
@@ -145,6 +151,9 @@ impl ::std::fmt::Display for Error {
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ResourceNotReadyException(inner) => inner.fmt(f),
+            Error::S3FilesMountConnectivityException(inner) => inner.fmt(f),
+            Error::S3FilesMountFailureException(inner) => inner.fmt(f),
+            Error::S3FilesMountTimeoutException(inner) => inner.fmt(f),
             Error::SerializedRequestEntityTooLargeException(inner) => inner.fmt(f),
             Error::ServiceException(inner) => inner.fmt(f),
             Error::SnapStartException(inner) => inner.fmt(f),
@@ -210,6 +219,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ResourceNotReadyException(inner) => inner.meta(),
+            Self::S3FilesMountConnectivityException(inner) => inner.meta(),
+            Self::S3FilesMountFailureException(inner) => inner.meta(),
+            Self::S3FilesMountTimeoutException(inner) => inner.meta(),
             Self::SerializedRequestEntityTooLargeException(inner) => inner.meta(),
             Self::ServiceException(inner) => inner.meta(),
             Self::SnapStartException(inner) => inner.meta(),
@@ -1690,6 +1702,9 @@ impl From<crate::operation::invoke::InvokeError> for Error {
             crate::operation::invoke::InvokeError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
             crate::operation::invoke::InvokeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::invoke::InvokeError::ResourceNotReadyException(inner) => Error::ResourceNotReadyException(inner),
+            crate::operation::invoke::InvokeError::S3FilesMountConnectivityException(inner) => Error::S3FilesMountConnectivityException(inner),
+            crate::operation::invoke::InvokeError::S3FilesMountFailureException(inner) => Error::S3FilesMountFailureException(inner),
+            crate::operation::invoke::InvokeError::S3FilesMountTimeoutException(inner) => Error::S3FilesMountTimeoutException(inner),
             crate::operation::invoke::InvokeError::SerializedRequestEntityTooLargeException(inner) => {
                 Error::SerializedRequestEntityTooLargeException(inner)
             }
@@ -1819,6 +1834,15 @@ impl From<crate::operation::invoke_with_response_stream::InvokeWithResponseStrea
             }
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::ResourceNotReadyException(inner) => {
                 Error::ResourceNotReadyException(inner)
+            }
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::S3FilesMountConnectivityException(inner) => {
+                Error::S3FilesMountConnectivityException(inner)
+            }
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::S3FilesMountFailureException(inner) => {
+                Error::S3FilesMountFailureException(inner)
+            }
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::S3FilesMountTimeoutException(inner) => {
+                Error::S3FilesMountTimeoutException(inner)
             }
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::SerializedRequestEntityTooLargeException(inner) => {
                 Error::SerializedRequestEntityTooLargeException(inner)
@@ -3378,6 +3402,9 @@ impl ::std::error::Error for Error {
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ResourceNotReadyException(inner) => inner.source(),
+            Error::S3FilesMountConnectivityException(inner) => inner.source(),
+            Error::S3FilesMountFailureException(inner) => inner.source(),
+            Error::S3FilesMountTimeoutException(inner) => inner.source(),
             Error::SerializedRequestEntityTooLargeException(inner) => inner.source(),
             Error::ServiceException(inner) => inner.source(),
             Error::SnapStartException(inner) => inner.source(),
@@ -3429,6 +3456,9 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ResourceNotReadyException(e) => e.request_id(),
+            Self::S3FilesMountConnectivityException(e) => e.request_id(),
+            Self::S3FilesMountFailureException(e) => e.request_id(),
+            Self::S3FilesMountTimeoutException(e) => e.request_id(),
             Self::SerializedRequestEntityTooLargeException(e) => e.request_id(),
             Self::ServiceException(e) => e.request_id(),
             Self::SnapStartException(e) => e.request_id(),

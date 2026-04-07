@@ -255,6 +255,15 @@ pub(crate) fn repository_credentials_correct_errors(
     builder
 }
 
+pub(crate) fn s3_files_volume_configuration_correct_errors(
+    mut builder: crate::types::builders::S3FilesVolumeConfigurationBuilder,
+) -> crate::types::builders::S3FilesVolumeConfigurationBuilder {
+    if builder.file_system_arn.is_none() {
+        builder.file_system_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn service_connect_access_log_configuration_correct_errors(
     mut builder: crate::types::builders::ServiceConnectAccessLogConfigurationBuilder,
 ) -> crate::types::builders::ServiceConnectAccessLogConfigurationBuilder {

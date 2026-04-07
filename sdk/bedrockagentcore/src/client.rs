@@ -203,6 +203,8 @@ mod invoke_agent_runtime;
 
 mod invoke_agent_runtime_command;
 
+mod invoke_browser;
+
 mod invoke_code_interpreter;
 
 mod list_actors;

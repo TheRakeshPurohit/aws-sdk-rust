@@ -9,5 +9,11 @@ pub fn ser_update_link_input_input(
         crate::protocol_serde::shape_link_log_settings::ser_link_log_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.timeout_in_millis {
+        object.key("timeoutInMillis").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
     Ok(())
 }

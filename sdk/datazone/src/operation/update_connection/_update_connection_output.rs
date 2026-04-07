@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateConnectionOutput {
+    /// <p>The configurations of the connection.</p>
+    pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>The ID of the connection.</p>
     pub connection_id: ::std::string::String,
     /// <p>The connection description.</p>
@@ -28,6 +30,12 @@ pub struct UpdateConnectionOutput {
     _request_id: Option<String>,
 }
 impl UpdateConnectionOutput {
+    /// <p>The configurations of the connection.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configurations.is_none()`.
+    pub fn configurations(&self) -> &[crate::types::Configuration] {
+        self.configurations.as_deref().unwrap_or_default()
+    }
     /// <p>The ID of the connection.</p>
     pub fn connection_id(&self) -> &str {
         use std::ops::Deref;
@@ -81,6 +89,7 @@ impl UpdateConnectionOutput {
 impl ::std::fmt::Debug for UpdateConnectionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionOutput");
+        formatter.field("configurations", &self.configurations);
         formatter.field("connection_id", &self.connection_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("domain_id", &self.domain_id);
@@ -112,6 +121,7 @@ impl UpdateConnectionOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct UpdateConnectionOutputBuilder {
+    pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     pub(crate) connection_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
@@ -126,6 +136,26 @@ pub struct UpdateConnectionOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateConnectionOutputBuilder {
+    /// Appends an item to `configurations`.
+    ///
+    /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
+    ///
+    /// <p>The configurations of the connection.</p>
+    pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
+        let mut v = self.configurations.unwrap_or_default();
+        v.push(input);
+        self.configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configurations of the connection.</p>
+    pub fn set_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>) -> Self {
+        self.configurations = input;
+        self
+    }
+    /// <p>The configurations of the connection.</p>
+    pub fn get_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Configuration>> {
+        &self.configurations
+    }
     /// <p>The ID of the connection.</p>
     /// This field is required.
     pub fn connection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -312,6 +342,7 @@ impl UpdateConnectionOutputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::update_connection::UpdateConnectionOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_connection::UpdateConnectionOutput {
+            configurations: self.configurations,
             connection_id: self.connection_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "connection_id",
@@ -360,6 +391,7 @@ impl UpdateConnectionOutputBuilder {
 impl ::std::fmt::Debug for UpdateConnectionOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateConnectionOutputBuilder");
+        formatter.field("configurations", &self.configurations);
         formatter.field("connection_id", &self.connection_id);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("domain_id", &self.domain_id);

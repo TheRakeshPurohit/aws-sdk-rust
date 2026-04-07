@@ -7,7 +7,7 @@ pub struct ListDurableExecutionsByFunctionInput {
     pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>The function version or alias. If not specified, lists executions for the $LATEST version.</p>
     pub qualifier: ::std::option::Option<::std::string::String>,
-    /// <p>Filter executions by name. Only executions with names that contain this string are returned.</p>
+    /// <p>Filter executions by name. Only executions with names that matches this string are returned.</p>
     pub durable_execution_name: ::std::option::Option<::std::string::String>,
     /// <p>Filter executions by status. Valid values: RUNNING, SUCCEEDED, FAILED, TIMED_OUT, STOPPED.</p>
     pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>>,
@@ -31,7 +31,7 @@ impl ListDurableExecutionsByFunctionInput {
     pub fn qualifier(&self) -> ::std::option::Option<&str> {
         self.qualifier.as_deref()
     }
-    /// <p>Filter executions by name. Only executions with names that contain this string are returned.</p>
+    /// <p>Filter executions by name. Only executions with names that matches this string are returned.</p>
     pub fn durable_execution_name(&self) -> ::std::option::Option<&str> {
         self.durable_execution_name.as_deref()
     }
@@ -113,17 +113,17 @@ impl ListDurableExecutionsByFunctionInputBuilder {
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.qualifier
     }
-    /// <p>Filter executions by name. Only executions with names that contain this string are returned.</p>
+    /// <p>Filter executions by name. Only executions with names that matches this string are returned.</p>
     pub fn durable_execution_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.durable_execution_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Filter executions by name. Only executions with names that contain this string are returned.</p>
+    /// <p>Filter executions by name. Only executions with names that matches this string are returned.</p>
     pub fn set_durable_execution_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.durable_execution_name = input;
         self
     }
-    /// <p>Filter executions by name. Only executions with names that contain this string are returned.</p>
+    /// <p>Filter executions by name. Only executions with names that matches this string are returned.</p>
     pub fn get_durable_execution_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.durable_execution_name
     }
