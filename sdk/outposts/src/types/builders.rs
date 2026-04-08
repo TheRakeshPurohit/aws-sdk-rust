@@ -25,6 +25,8 @@ pub use crate::types::_subscription::SubscriptionBuilder;
 
 pub use crate::types::_instance_type_item::InstanceTypeItemBuilder;
 
+pub use crate::types::_pricing_option::PricingOptionBuilder;
+
 pub use crate::types::_asset_instance::AssetInstanceBuilder;
 
 pub use crate::types::_asset_info::AssetInfoBuilder;
@@ -38,6 +40,8 @@ pub use crate::types::_order_summary::OrderSummaryBuilder;
 pub use crate::types::_line_item::LineItemBuilder;
 
 pub use crate::types::_ec2_capacity::Ec2CapacityBuilder;
+
+pub use crate::types::_subscription_pricing_details::SubscriptionPricingDetailsBuilder;
 
 pub use crate::types::_compute_attributes::ComputeAttributesBuilder;
 

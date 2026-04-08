@@ -96,5 +96,11 @@ pub fn ser_update_channel_input_input(
     if let Some(var_31) = &input.role_arn {
         object.key("roleArn").string(var_31.as_str());
     }
+    if let Some(var_32) = &input.special_router_settings {
+        #[allow(unused_mut)]
+        let mut object_33 = object.key("specialRouterSettings").start_object();
+        crate::protocol_serde::shape_special_router_settings::ser_special_router_settings(&mut object_33, var_32)?;
+        object_33.finish();
+    }
     Ok(())
 }

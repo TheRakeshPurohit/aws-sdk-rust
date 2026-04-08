@@ -69,6 +69,8 @@ pub use crate::types::error::_unable_to_get_upstream_layer_exception::UnableToGe
 
 pub use crate::types::error::_lifecycle_policy_preview_not_found_exception::LifecyclePolicyPreviewNotFoundExceptionBuilder;
 
+pub use crate::types::error::_unable_to_list_upstream_image_referrers_exception::UnableToListUpstreamImageReferrersExceptionBuilder;
+
 pub use crate::types::error::_image_already_exists_exception::ImageAlreadyExistsExceptionBuilder;
 
 pub use crate::types::error::_image_digest_does_not_match_exception::ImageDigestDoesNotMatchExceptionBuilder;

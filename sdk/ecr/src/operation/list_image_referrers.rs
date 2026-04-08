@@ -264,6 +264,8 @@ pub enum ListImageReferrersError {
     RepositoryNotFoundException(crate::types::error::RepositoryNotFoundException),
     /// <p>These errors are usually caused by a server-side issue.</p>
     ServerException(crate::types::error::ServerException),
+    /// <p>The referrer or referrers were unable to be listed using the pull through cache rule. This is usually caused because of an issue with the Secrets Manager secret containing the credentials for the upstream registry.</p>
+    UnableToListUpstreamImageReferrersException(crate::types::error::UnableToListUpstreamImageReferrersException),
     /// <p>There was an exception validating this request.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -302,6 +304,7 @@ impl ListImageReferrersError {
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RepositoryNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnableToListUpstreamImageReferrersException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -318,6 +321,10 @@ impl ListImageReferrersError {
     pub fn is_server_exception(&self) -> bool {
         matches!(self, Self::ServerException(_))
     }
+    /// Returns `true` if the error kind is `ListImageReferrersError::UnableToListUpstreamImageReferrersException`.
+    pub fn is_unable_to_list_upstream_image_referrers_exception(&self) -> bool {
+        matches!(self, Self::UnableToListUpstreamImageReferrersException(_))
+    }
     /// Returns `true` if the error kind is `ListImageReferrersError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(self, Self::ValidationException(_))
@@ -329,6 +336,7 @@ impl ::std::error::Error for ListImageReferrersError {
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::RepositoryNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnableToListUpstreamImageReferrersException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -340,6 +348,7 @@ impl ::std::fmt::Display for ListImageReferrersError {
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::RepositoryNotFoundException(_inner) => _inner.fmt(f),
             Self::ServerException(_inner) => _inner.fmt(f),
+            Self::UnableToListUpstreamImageReferrersException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -365,6 +374,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListImageRefe
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RepositoryNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnableToListUpstreamImageReferrersException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

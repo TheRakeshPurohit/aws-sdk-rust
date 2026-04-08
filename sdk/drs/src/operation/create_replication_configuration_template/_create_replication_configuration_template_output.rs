@@ -37,6 +37,8 @@ pub struct CreateReplicationConfigurationTemplateOutput {
     pub pit_policy: ::std::option::Option<::std::vec::Vec<crate::types::PitPolicyRule>>,
     /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
     pub auto_replicate_new_disks: ::std::option::Option<bool>,
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
     _request_id: Option<String>,
 }
 impl CreateReplicationConfigurationTemplateOutput {
@@ -113,6 +115,10 @@ impl CreateReplicationConfigurationTemplateOutput {
     pub fn auto_replicate_new_disks(&self) -> ::std::option::Option<bool> {
         self.auto_replicate_new_disks
     }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn internet_protocol(&self) -> ::std::option::Option<&crate::types::InternetProtocol> {
+        self.internet_protocol.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -134,6 +140,7 @@ impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateOutput {
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("pit_policy", &self.pit_policy);
         formatter.field("auto_replicate_new_disks", &self.auto_replicate_new_disks);
+        formatter.field("internet_protocol", &self.internet_protocol);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -171,6 +178,7 @@ pub struct CreateReplicationConfigurationTemplateOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) pit_policy: ::std::option::Option<::std::vec::Vec<crate::types::PitPolicyRule>>,
     pub(crate) auto_replicate_new_disks: ::std::option::Option<bool>,
+    pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
     _request_id: Option<String>,
 }
 impl CreateReplicationConfigurationTemplateOutputBuilder {
@@ -447,6 +455,20 @@ impl CreateReplicationConfigurationTemplateOutputBuilder {
     pub fn get_auto_replicate_new_disks(&self) -> &::std::option::Option<bool> {
         &self.auto_replicate_new_disks
     }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn internet_protocol(mut self, input: crate::types::InternetProtocol) -> Self {
+        self.internet_protocol = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn set_internet_protocol(mut self, input: ::std::option::Option<crate::types::InternetProtocol>) -> Self {
+        self.internet_protocol = input;
+        self
+    }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn get_internet_protocol(&self) -> &::std::option::Option<crate::types::InternetProtocol> {
+        &self.internet_protocol
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -505,6 +527,8 @@ impl CreateReplicationConfigurationTemplateOutputBuilder {
                 ,
                 auto_replicate_new_disks: self.auto_replicate_new_disks
                 ,
+                internet_protocol: self.internet_protocol
+                ,
                 _request_id: self._request_id,
             }
         )
@@ -530,6 +554,7 @@ impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateOutputBuilder {
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("pit_policy", &self.pit_policy);
         formatter.field("auto_replicate_new_disks", &self.auto_replicate_new_disks);
+        formatter.field("internet_protocol", &self.internet_protocol);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

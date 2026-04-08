@@ -144,6 +144,8 @@ mod create_order;
 
 mod create_outpost;
 
+mod create_renewal;
+
 mod create_site;
 
 /// Operation customization and supporting types.
@@ -192,6 +194,8 @@ mod get_outpost_billing_information;
 mod get_outpost_instance_types;
 
 mod get_outpost_supported_instance_types;
+
+mod get_renewal_pricing;
 
 mod get_site;
 

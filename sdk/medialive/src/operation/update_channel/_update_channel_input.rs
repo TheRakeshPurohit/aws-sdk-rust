@@ -36,6 +36,8 @@ pub struct UpdateChannelInput {
     pub channel_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Include this setting to include Elemental Inference features in this channel.
     pub inference_settings: ::std::option::Option<crate::types::InferenceSettings>,
+    /// When using MediaConnect Router as the source of a MediaLive input there's a special handoff that occurs when a router output is created. This group of settings is set on your behalf by the MediaConnect Router service using this set of settings. This setting object can only by used by that service.
+    pub special_router_settings: ::std::option::Option<crate::types::SpecialRouterSettings>,
 }
 impl UpdateChannelInput {
     /// Specification of CDI inputs for this channel
@@ -108,6 +110,10 @@ impl UpdateChannelInput {
     pub fn inference_settings(&self) -> ::std::option::Option<&crate::types::InferenceSettings> {
         self.inference_settings.as_ref()
     }
+    /// When using MediaConnect Router as the source of a MediaLive input there's a special handoff that occurs when a router output is created. This group of settings is set on your behalf by the MediaConnect Router service using this set of settings. This setting object can only by used by that service.
+    pub fn special_router_settings(&self) -> ::std::option::Option<&crate::types::SpecialRouterSettings> {
+        self.special_router_settings.as_ref()
+    }
 }
 impl UpdateChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
@@ -136,6 +142,7 @@ pub struct UpdateChannelInputBuilder {
     pub(crate) linked_channel_settings: ::std::option::Option<crate::types::LinkedChannelSettings>,
     pub(crate) channel_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) inference_settings: ::std::option::Option<crate::types::InferenceSettings>,
+    pub(crate) special_router_settings: ::std::option::Option<crate::types::SpecialRouterSettings>,
 }
 impl UpdateChannelInputBuilder {
     /// Specification of CDI inputs for this channel
@@ -381,6 +388,20 @@ impl UpdateChannelInputBuilder {
     pub fn get_inference_settings(&self) -> &::std::option::Option<crate::types::InferenceSettings> {
         &self.inference_settings
     }
+    /// When using MediaConnect Router as the source of a MediaLive input there's a special handoff that occurs when a router output is created. This group of settings is set on your behalf by the MediaConnect Router service using this set of settings. This setting object can only by used by that service.
+    pub fn special_router_settings(mut self, input: crate::types::SpecialRouterSettings) -> Self {
+        self.special_router_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// When using MediaConnect Router as the source of a MediaLive input there's a special handoff that occurs when a router output is created. This group of settings is set on your behalf by the MediaConnect Router service using this set of settings. This setting object can only by used by that service.
+    pub fn set_special_router_settings(mut self, input: ::std::option::Option<crate::types::SpecialRouterSettings>) -> Self {
+        self.special_router_settings = input;
+        self
+    }
+    /// When using MediaConnect Router as the source of a MediaLive input there's a special handoff that occurs when a router output is created. This group of settings is set on your behalf by the MediaConnect Router service using this set of settings. This setting object can only by used by that service.
+    pub fn get_special_router_settings(&self) -> &::std::option::Option<crate::types::SpecialRouterSettings> {
+        &self.special_router_settings
+    }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
@@ -402,6 +423,7 @@ impl UpdateChannelInputBuilder {
             linked_channel_settings: self.linked_channel_settings,
             channel_security_groups: self.channel_security_groups,
             inference_settings: self.inference_settings,
+            special_router_settings: self.special_router_settings,
         })
     }
 }

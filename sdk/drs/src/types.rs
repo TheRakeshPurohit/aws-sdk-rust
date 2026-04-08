@@ -21,6 +21,8 @@ pub use crate::types::_launch_configuration_template::LaunchConfigurationTemplat
 
 pub use crate::types::_describe_recovery_instances_request_filters::DescribeRecoveryInstancesRequestFilters;
 
+pub use crate::types::_internet_protocol::InternetProtocol;
+
 pub use crate::types::_job::Job;
 
 pub use crate::types::_replication_configuration_default_large_staging_disk_type::ReplicationConfigurationDefaultLargeStagingDiskType;
@@ -246,6 +248,8 @@ mod _failback_state;
 mod _identification_hints;
 
 mod _initiated_by;
+
+mod _internet_protocol;
 
 mod _job;
 

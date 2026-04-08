@@ -33,6 +33,8 @@ pub struct CreateReplicationConfigurationTemplateInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
     pub auto_replicate_new_disks: ::std::option::Option<bool>,
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
 }
 impl CreateReplicationConfigurationTemplateInput {
     /// <p>The subnet to be used by the replication staging area.</p>
@@ -99,6 +101,10 @@ impl CreateReplicationConfigurationTemplateInput {
     pub fn auto_replicate_new_disks(&self) -> ::std::option::Option<bool> {
         self.auto_replicate_new_disks
     }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn internet_protocol(&self) -> ::std::option::Option<&crate::types::InternetProtocol> {
+        self.internet_protocol.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -118,6 +124,7 @@ impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateInput {
         formatter.field("pit_policy", &self.pit_policy);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("auto_replicate_new_disks", &self.auto_replicate_new_disks);
+        formatter.field("internet_protocol", &self.internet_protocol);
         formatter.finish()
     }
 }
@@ -147,6 +154,7 @@ pub struct CreateReplicationConfigurationTemplateInputBuilder {
     pub(crate) pit_policy: ::std::option::Option<::std::vec::Vec<crate::types::PitPolicyRule>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) auto_replicate_new_disks: ::std::option::Option<bool>,
+    pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
 }
 impl CreateReplicationConfigurationTemplateInputBuilder {
     /// <p>The subnet to be used by the replication staging area.</p>
@@ -165,7 +173,6 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
         &self.staging_area_subnet_id
     }
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
-    /// This field is required.
     pub fn associate_default_security_group(mut self, input: bool) -> Self {
         self.associate_default_security_group = ::std::option::Option::Some(input);
         self
@@ -200,7 +207,6 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
         &self.replication_servers_security_groups_ids
     }
     /// <p>The instance type to be used for the replication server.</p>
-    /// This field is required.
     pub fn replication_server_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_server_instance_type = ::std::option::Option::Some(input.into());
         self
@@ -215,7 +221,6 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
         &self.replication_server_instance_type
     }
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-    /// This field is required.
     pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
         self.use_dedicated_replication_server = ::std::option::Option::Some(input);
         self
@@ -230,7 +235,6 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
         &self.use_dedicated_replication_server
     }
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-    /// This field is required.
     pub fn default_large_staging_disk_type(mut self, input: crate::types::ReplicationConfigurationDefaultLargeStagingDiskType) -> Self {
         self.default_large_staging_disk_type = ::std::option::Option::Some(input);
         self
@@ -292,7 +296,6 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
         &self.bandwidth_throttling
     }
     /// <p>The data plane routing mechanism that will be used for replication.</p>
-    /// This field is required.
     pub fn data_plane_routing(mut self, input: crate::types::ReplicationConfigurationDataPlaneRouting) -> Self {
         self.data_plane_routing = ::std::option::Option::Some(input);
         self
@@ -307,7 +310,6 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
         &self.data_plane_routing
     }
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-    /// This field is required.
     pub fn create_public_ip(mut self, input: bool) -> Self {
         self.create_public_ip = ::std::option::Option::Some(input);
         self
@@ -402,6 +404,20 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
     pub fn get_auto_replicate_new_disks(&self) -> &::std::option::Option<bool> {
         &self.auto_replicate_new_disks
     }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn internet_protocol(mut self, input: crate::types::InternetProtocol) -> Self {
+        self.internet_protocol = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn set_internet_protocol(mut self, input: ::std::option::Option<crate::types::InternetProtocol>) -> Self {
+        self.internet_protocol = input;
+        self
+    }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn get_internet_protocol(&self) -> &::std::option::Option<crate::types::InternetProtocol> {
+        &self.internet_protocol
+    }
     /// Consumes the builder and constructs a [`CreateReplicationConfigurationTemplateInput`](crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateInput).
     pub fn build(
         self,
@@ -426,6 +442,7 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
                 pit_policy: self.pit_policy,
                 tags: self.tags,
                 auto_replicate_new_disks: self.auto_replicate_new_disks,
+                internet_protocol: self.internet_protocol,
             },
         )
     }
@@ -448,6 +465,7 @@ impl ::std::fmt::Debug for CreateReplicationConfigurationTemplateInputBuilder {
         formatter.field("pit_policy", &self.pit_policy);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("auto_replicate_new_disks", &self.auto_replicate_new_disks);
+        formatter.field("internet_protocol", &self.internet_protocol);
         formatter.finish()
     }
 }

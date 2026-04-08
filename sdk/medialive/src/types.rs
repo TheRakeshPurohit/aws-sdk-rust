@@ -167,11 +167,11 @@ pub use crate::types::_reboot_input_device_force::RebootInputDeviceForce;
 
 pub use crate::types::_maintenance_update_settings::MaintenanceUpdateSettings;
 
+pub use crate::types::_special_router_settings::SpecialRouterSettings;
+
 pub use crate::types::_cluster_network_settings_update_request::ClusterNetworkSettingsUpdateRequest;
 
 pub use crate::types::_multicast_settings_update_request::MulticastSettingsUpdateRequest;
-
-pub use crate::types::_special_router_settings::SpecialRouterSettings;
 
 pub use crate::types::_input_device_configurable_settings::InputDeviceConfigurableSettings;
 
@@ -481,6 +481,8 @@ pub use crate::types::_output_destination_settings::OutputDestinationSettings;
 
 pub use crate::types::_srt_output_destination_settings::SrtOutputDestinationSettings;
 
+pub use crate::types::_media_connect_router_output_destination_settings::MediaConnectRouterOutputDestinationSettings;
+
 pub use crate::types::_audio_normalization_settings::AudioNormalizationSettings;
 
 pub use crate::types::_audio_type::AudioType;
@@ -605,6 +607,8 @@ pub use crate::types::_input_device_configurable_audio_channel_pair_profile::Inp
 
 pub use crate::types::_connection_mode::ConnectionMode;
 
+pub use crate::types::_media_connect_router_output_encryption_type::MediaConnectRouterOutputEncryptionType;
+
 pub use crate::types::_audio_normalization_algorithm::AudioNormalizationAlgorithm;
 
 pub use crate::types::_audio_normalization_algorithm_control::AudioNormalizationAlgorithmControl;
@@ -684,6 +688,8 @@ pub use crate::types::_udp_group_settings::UdpGroupSettings;
 pub use crate::types::_cmaf_ingest_group_settings::CmafIngestGroupSettings;
 
 pub use crate::types::_srt_group_settings::SrtGroupSettings;
+
+pub use crate::types::_media_connect_router_group_settings::MediaConnectRouterGroupSettings;
 
 pub use crate::types::_output::Output;
 
@@ -1153,6 +1159,8 @@ pub use crate::types::_cmaf_ingest_output_settings::CmafIngestOutputSettings;
 
 pub use crate::types::_srt_output_settings::SrtOutputSettings;
 
+pub use crate::types::_media_connect_router_output_settings::MediaConnectRouterOutputSettings;
+
 pub use crate::types::_timecode_burnin_font_size::TimecodeBurninFontSize;
 
 pub use crate::types::_timecode_burnin_position::TimecodeBurninPosition;
@@ -1236,6 +1244,10 @@ pub use crate::types::_udp_container_settings::UdpContainerSettings;
 pub use crate::types::_fec_output_settings::FecOutputSettings;
 
 pub use crate::types::_srt_encryption_type::SrtEncryptionType;
+
+pub use crate::types::_media_connect_router_output_connection_map::MediaConnectRouterOutputConnectionMap;
+
+pub use crate::types::_media_connect_router_container_settings::MediaConnectRouterContainerSettings;
 
 pub use crate::types::_temporal_filter_post_filter_sharpening::TemporalFilterPostFilterSharpening;
 
@@ -2232,6 +2244,18 @@ mod _maintenance_update_settings;
 mod _media_connect_flow;
 
 mod _media_connect_flow_request;
+
+mod _media_connect_router_container_settings;
+
+mod _media_connect_router_group_settings;
+
+mod _media_connect_router_output_connection_map;
+
+mod _media_connect_router_output_destination_settings;
+
+mod _media_connect_router_output_encryption_type;
+
+mod _media_connect_router_output_settings;
 
 mod _media_package_additional_destinations;
 

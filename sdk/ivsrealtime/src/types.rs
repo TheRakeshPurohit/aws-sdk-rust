@@ -79,6 +79,8 @@ pub use crate::types::_pip_configuration::PipConfiguration;
 
 pub use crate::types::_destination_configuration::DestinationConfiguration;
 
+pub use crate::types::_redundant_ingest_credential::RedundantIngestCredential;
+
 pub use crate::types::_participant_recording_media_type::ParticipantRecordingMediaType;
 
 pub use crate::types::_thumbnail_recording_mode::ThumbnailRecordingMode;
@@ -208,6 +210,8 @@ mod _public_key_summary;
 mod _recording_configuration;
 
 mod _recording_configuration_format;
+
+mod _redundant_ingest_credential;
 
 mod _replication_state;
 

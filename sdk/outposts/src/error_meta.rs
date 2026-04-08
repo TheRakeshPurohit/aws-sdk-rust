@@ -170,6 +170,31 @@ impl From<crate::operation::create_outpost::CreateOutpostError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_renewal::CreateRenewalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_renewal::CreateRenewalError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_renewal::CreateRenewalError> for Error {
+    fn from(err: crate::operation::create_renewal::CreateRenewalError) -> Self {
+        match err {
+            crate::operation::create_renewal::CreateRenewalError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_renewal::CreateRenewalError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_renewal::CreateRenewalError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_renewal::CreateRenewalError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_renewal::CreateRenewalError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_site::CreateSiteError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -486,6 +511,31 @@ impl From<crate::operation::get_outpost_supported_instance_types::GetOutpostSupp
             crate::operation::get_outpost_supported_instance_types::GetOutpostSupportedInstanceTypesError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_renewal_pricing::GetRenewalPricingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_renewal_pricing::GetRenewalPricingError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_renewal_pricing::GetRenewalPricingError> for Error {
+    fn from(err: crate::operation::get_renewal_pricing::GetRenewalPricingError) -> Self {
+        match err {
+            crate::operation::get_renewal_pricing::GetRenewalPricingError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_renewal_pricing::GetRenewalPricingError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_renewal_pricing::GetRenewalPricingError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_renewal_pricing::GetRenewalPricingError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_renewal_pricing::GetRenewalPricingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

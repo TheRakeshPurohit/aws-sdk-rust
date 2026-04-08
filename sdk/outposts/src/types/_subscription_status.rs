@@ -15,6 +15,7 @@
 ///     SubscriptionStatus::Active => { /* ... */ },
 ///     SubscriptionStatus::Cancelled => { /* ... */ },
 ///     SubscriptionStatus::Inactive => { /* ... */ },
+///     SubscriptionStatus::Pending => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum SubscriptionStatus {
     Cancelled,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for SubscriptionStatus {
             "ACTIVE" => SubscriptionStatus::Active,
             "CANCELLED" => SubscriptionStatus::Cancelled,
             "INACTIVE" => SubscriptionStatus::Inactive,
+            "PENDING" => SubscriptionStatus::Pending,
             other => SubscriptionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl SubscriptionStatus {
             SubscriptionStatus::Active => "ACTIVE",
             SubscriptionStatus::Cancelled => "CANCELLED",
             SubscriptionStatus::Inactive => "INACTIVE",
+            SubscriptionStatus::Pending => "PENDING",
             SubscriptionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CANCELLED", "INACTIVE"]
+        &["ACTIVE", "CANCELLED", "INACTIVE", "PENDING"]
     }
 }
 impl ::std::convert::AsRef<str> for SubscriptionStatus {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for SubscriptionStatus {
             SubscriptionStatus::Active => write!(f, "ACTIVE"),
             SubscriptionStatus::Cancelled => write!(f, "CANCELLED"),
             SubscriptionStatus::Inactive => write!(f, "INACTIVE"),
+            SubscriptionStatus::Pending => write!(f, "PENDING"),
             SubscriptionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

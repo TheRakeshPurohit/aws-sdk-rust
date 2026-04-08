@@ -18,6 +18,8 @@ pub struct IngestConfigurationSummary {
     pub state: crate::types::IngestConfigurationState,
     /// <p>Customer-assigned name to help identify the participant using the IngestConfiguration; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
     pub user_id: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration.</p>
+    pub redundant_ingest: bool,
 }
 impl IngestConfigurationSummary {
     /// <p>Ingest name.</p>
@@ -51,6 +53,10 @@ impl IngestConfigurationSummary {
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration.</p>
+    pub fn redundant_ingest(&self) -> bool {
+        self.redundant_ingest
+    }
 }
 impl IngestConfigurationSummary {
     /// Creates a new builder-style object to manufacture [`IngestConfigurationSummary`](crate::types::IngestConfigurationSummary).
@@ -70,6 +76,7 @@ pub struct IngestConfigurationSummaryBuilder {
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::IngestConfigurationState>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) redundant_ingest: ::std::option::Option<bool>,
 }
 impl IngestConfigurationSummaryBuilder {
     /// <p>Ingest name.</p>
@@ -175,6 +182,20 @@ impl IngestConfigurationSummaryBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration.</p>
+    pub fn redundant_ingest(mut self, input: bool) -> Self {
+        self.redundant_ingest = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration.</p>
+    pub fn set_redundant_ingest(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.redundant_ingest = input;
+        self
+    }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration.</p>
+    pub fn get_redundant_ingest(&self) -> &::std::option::Option<bool> {
+        &self.redundant_ingest
+    }
     /// Consumes the builder and constructs a [`IngestConfigurationSummary`](crate::types::IngestConfigurationSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::IngestConfigurationSummaryBuilder::arn)
@@ -216,6 +237,7 @@ impl IngestConfigurationSummaryBuilder {
                 )
             })?,
             user_id: self.user_id,
+            redundant_ingest: self.redundant_ingest.unwrap_or_default(),
         })
     }
 }

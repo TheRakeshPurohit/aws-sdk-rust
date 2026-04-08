@@ -24,6 +24,10 @@ pub struct ParticipantSummary {
     pub source_stage_arn: ::std::option::Option<::std::string::String>,
     /// <p>ID of the session within the source stage, if <code>replicationType</code> is <code>REPLICA</code>.</p>
     pub source_session_id: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether redundant ingest is enabled for the participant.</p>
+    pub redundant_ingest: bool,
+    /// <p>The participant’s ingest configuration.</p>
+    pub ingest_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl ParticipantSummary {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
@@ -66,6 +70,14 @@ impl ParticipantSummary {
     pub fn source_session_id(&self) -> ::std::option::Option<&str> {
         self.source_session_id.as_deref()
     }
+    /// <p>Indicates whether redundant ingest is enabled for the participant.</p>
+    pub fn redundant_ingest(&self) -> bool {
+        self.redundant_ingest
+    }
+    /// <p>The participant’s ingest configuration.</p>
+    pub fn ingest_configuration_arn(&self) -> ::std::option::Option<&str> {
+        self.ingest_configuration_arn.as_deref()
+    }
 }
 impl ParticipantSummary {
     /// Creates a new builder-style object to manufacture [`ParticipantSummary`](crate::types::ParticipantSummary).
@@ -88,6 +100,8 @@ pub struct ParticipantSummaryBuilder {
     pub(crate) replication_state: ::std::option::Option<crate::types::ReplicationState>,
     pub(crate) source_stage_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) redundant_ingest: ::std::option::Option<bool>,
+    pub(crate) ingest_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl ParticipantSummaryBuilder {
     /// <p>Unique identifier for this participant, assigned by IVS.</p>
@@ -230,6 +244,34 @@ impl ParticipantSummaryBuilder {
     pub fn get_source_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_session_id
     }
+    /// <p>Indicates whether redundant ingest is enabled for the participant.</p>
+    pub fn redundant_ingest(mut self, input: bool) -> Self {
+        self.redundant_ingest = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether redundant ingest is enabled for the participant.</p>
+    pub fn set_redundant_ingest(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.redundant_ingest = input;
+        self
+    }
+    /// <p>Indicates whether redundant ingest is enabled for the participant.</p>
+    pub fn get_redundant_ingest(&self) -> &::std::option::Option<bool> {
+        &self.redundant_ingest
+    }
+    /// <p>The participant’s ingest configuration.</p>
+    pub fn ingest_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ingest_configuration_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The participant’s ingest configuration.</p>
+    pub fn set_ingest_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ingest_configuration_arn = input;
+        self
+    }
+    /// <p>The participant’s ingest configuration.</p>
+    pub fn get_ingest_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ingest_configuration_arn
+    }
     /// Consumes the builder and constructs a [`ParticipantSummary`](crate::types::ParticipantSummary).
     pub fn build(self) -> crate::types::ParticipantSummary {
         crate::types::ParticipantSummary {
@@ -243,6 +285,8 @@ impl ParticipantSummaryBuilder {
             replication_state: self.replication_state,
             source_stage_arn: self.source_stage_arn,
             source_session_id: self.source_session_id,
+            redundant_ingest: self.redundant_ingest.unwrap_or_default(),
+            ingest_configuration_arn: self.ingest_configuration_arn,
         }
     }
 }

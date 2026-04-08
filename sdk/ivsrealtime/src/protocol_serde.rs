@@ -287,6 +287,8 @@ pub(crate) mod shape_pip_configuration;
 
 pub(crate) mod shape_public_key_summary;
 
+pub(crate) mod shape_redundant_ingest_credentials;
+
 pub(crate) mod shape_s3_destination_configuration;
 
 pub(crate) mod shape_stage_endpoints;
@@ -308,6 +310,8 @@ pub(crate) mod shape_exchanged_participant_token;
 pub(crate) mod shape_participant_recording_media_type_list;
 
 pub(crate) mod shape_recording_configuration;
+
+pub(crate) mod shape_redundant_ingest_credential;
 
 pub(crate) mod shape_composition_recording_hls_configuration;
 

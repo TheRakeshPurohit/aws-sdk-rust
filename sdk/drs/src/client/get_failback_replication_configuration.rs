@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`name(Option<String>)`](crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationOutput::name): <p>The name of the Failback Replication Configuration.</p>
     ///   - [`bandwidth_throttling(i64)`](crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationOutput::bandwidth_throttling): <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
     ///   - [`use_private_ip(Option<bool>)`](crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationOutput::use_private_ip): <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
+    ///   - [`internet_protocol(Option<InternetProtocol>)`](crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationOutput::internet_protocol): <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
     /// - On failure, responds with [`SdkError<GetFailbackReplicationConfigurationError>`](crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationError)
     pub fn get_failback_replication_configuration(
         &self,

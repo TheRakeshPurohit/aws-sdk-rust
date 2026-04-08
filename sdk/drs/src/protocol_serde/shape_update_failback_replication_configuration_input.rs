@@ -9,14 +9,17 @@ pub fn ser_update_failback_replication_configuration_input_input(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_2) = &input.internet_protocol {
+        object.key("internetProtocol").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.recovery_instance_id {
-        object.key("recoveryInstanceID").string(var_3.as_str());
+    if let Some(var_3) = &input.name {
+        object.key("name").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.use_private_ip {
-        object.key("usePrivateIP").boolean(*var_4);
+    if let Some(var_4) = &input.recovery_instance_id {
+        object.key("recoveryInstanceID").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.use_private_ip {
+        object.key("usePrivateIP").boolean(*var_5);
     }
     Ok(())
 }

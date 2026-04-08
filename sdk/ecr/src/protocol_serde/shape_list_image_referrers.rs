@@ -66,6 +66,22 @@ pub fn de_list_image_referrers_http_error(
             }
             tmp
         }),
+        "UnableToListUpstreamImageReferrersException" => {
+            crate::operation::list_image_referrers::ListImageReferrersError::UnableToListUpstreamImageReferrersException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::UnableToListUpstreamImageReferrersExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_unable_to_list_upstream_image_referrers_exception::de_unable_to_list_upstream_image_referrers_exception_json_err(_response_body, output).map_err(crate::operation::list_image_referrers::ListImageReferrersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ValidationException" => crate::operation::list_image_referrers::ListImageReferrersError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -69,6 +69,8 @@ pub use crate::types::error::_unable_to_get_upstream_layer_exception::UnableToGe
 
 pub use crate::types::error::_lifecycle_policy_preview_not_found_exception::LifecyclePolicyPreviewNotFoundException;
 
+pub use crate::types::error::_unable_to_list_upstream_image_referrers_exception::UnableToListUpstreamImageReferrersException;
+
 pub use crate::types::error::_image_already_exists_exception::ImageAlreadyExistsException;
 
 pub use crate::types::error::_image_digest_does_not_match_exception::ImageDigestDoesNotMatchException;
@@ -174,6 +176,8 @@ mod _unable_to_decrypt_secret_value_exception;
 mod _unable_to_get_upstream_image_exception;
 
 mod _unable_to_get_upstream_layer_exception;
+
+mod _unable_to_list_upstream_image_referrers_exception;
 
 mod _unsupported_image_type_exception;
 

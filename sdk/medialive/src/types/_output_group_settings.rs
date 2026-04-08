@@ -24,6 +24,8 @@ pub struct OutputGroupSettings {
     pub cmaf_ingest_group_settings: ::std::option::Option<crate::types::CmafIngestGroupSettings>,
     /// Srt Group Settings
     pub srt_group_settings: ::std::option::Option<crate::types::SrtGroupSettings>,
+    /// Media Connect Router Group Settings
+    pub media_connect_router_group_settings: ::std::option::Option<crate::types::MediaConnectRouterGroupSettings>,
 }
 impl OutputGroupSettings {
     /// Archive Group Settings
@@ -66,6 +68,10 @@ impl OutputGroupSettings {
     pub fn srt_group_settings(&self) -> ::std::option::Option<&crate::types::SrtGroupSettings> {
         self.srt_group_settings.as_ref()
     }
+    /// Media Connect Router Group Settings
+    pub fn media_connect_router_group_settings(&self) -> ::std::option::Option<&crate::types::MediaConnectRouterGroupSettings> {
+        self.media_connect_router_group_settings.as_ref()
+    }
 }
 impl OutputGroupSettings {
     /// Creates a new builder-style object to manufacture [`OutputGroupSettings`](crate::types::OutputGroupSettings).
@@ -88,6 +94,7 @@ pub struct OutputGroupSettingsBuilder {
     pub(crate) udp_group_settings: ::std::option::Option<crate::types::UdpGroupSettings>,
     pub(crate) cmaf_ingest_group_settings: ::std::option::Option<crate::types::CmafIngestGroupSettings>,
     pub(crate) srt_group_settings: ::std::option::Option<crate::types::SrtGroupSettings>,
+    pub(crate) media_connect_router_group_settings: ::std::option::Option<crate::types::MediaConnectRouterGroupSettings>,
 }
 impl OutputGroupSettingsBuilder {
     /// Archive Group Settings
@@ -230,6 +237,20 @@ impl OutputGroupSettingsBuilder {
     pub fn get_srt_group_settings(&self) -> &::std::option::Option<crate::types::SrtGroupSettings> {
         &self.srt_group_settings
     }
+    /// Media Connect Router Group Settings
+    pub fn media_connect_router_group_settings(mut self, input: crate::types::MediaConnectRouterGroupSettings) -> Self {
+        self.media_connect_router_group_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Media Connect Router Group Settings
+    pub fn set_media_connect_router_group_settings(mut self, input: ::std::option::Option<crate::types::MediaConnectRouterGroupSettings>) -> Self {
+        self.media_connect_router_group_settings = input;
+        self
+    }
+    /// Media Connect Router Group Settings
+    pub fn get_media_connect_router_group_settings(&self) -> &::std::option::Option<crate::types::MediaConnectRouterGroupSettings> {
+        &self.media_connect_router_group_settings
+    }
     /// Consumes the builder and constructs a [`OutputGroupSettings`](crate::types::OutputGroupSettings).
     pub fn build(self) -> crate::types::OutputGroupSettings {
         crate::types::OutputGroupSettings {
@@ -243,6 +264,7 @@ impl OutputGroupSettingsBuilder {
             udp_group_settings: self.udp_group_settings,
             cmaf_ingest_group_settings: self.cmaf_ingest_group_settings,
             srt_group_settings: self.srt_group_settings,
+            media_connect_router_group_settings: self.media_connect_router_group_settings,
         }
     }
 }

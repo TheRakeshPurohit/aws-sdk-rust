@@ -13,6 +13,9 @@ pub mod create_order;
 /// Types for the `CreateOutpost` operation.
 pub mod create_outpost;
 
+/// Types for the `CreateRenewal` operation.
+pub mod create_renewal;
+
 /// Types for the `CreateSite` operation.
 pub mod create_site;
 
@@ -45,6 +48,9 @@ pub mod get_outpost_instance_types;
 
 /// Types for the `GetOutpostSupportedInstanceTypes` operation.
 pub mod get_outpost_supported_instance_types;
+
+/// Types for the `GetRenewalPricing` operation.
+pub mod get_renewal_pricing;
 
 /// Types for the `GetSite` operation.
 pub mod get_site;

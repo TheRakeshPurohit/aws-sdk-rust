@@ -3,48 +3,48 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartParticipantReplicationOutput {
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
     pub access_control_allow_origin: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
     pub access_control_expose_headers: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">Cache-Control</a> in the MDN Web Docs.</p>
     pub cache_control: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
     pub content_security_policy: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
     pub strict_transport_security: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
     pub x_content_type_options: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     pub x_frame_options: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartParticipantReplicationOutput {
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
     pub fn access_control_allow_origin(&self) -> ::std::option::Option<&str> {
         self.access_control_allow_origin.as_deref()
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
     pub fn access_control_expose_headers(&self) -> ::std::option::Option<&str> {
         self.access_control_expose_headers.as_deref()
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">Cache-Control</a> in the MDN Web Docs.</p>
     pub fn cache_control(&self) -> ::std::option::Option<&str> {
         self.cache_control.as_deref()
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
     pub fn content_security_policy(&self) -> ::std::option::Option<&str> {
         self.content_security_policy.as_deref()
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
     pub fn strict_transport_security(&self) -> ::std::option::Option<&str> {
         self.strict_transport_security.as_deref()
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
     pub fn x_content_type_options(&self) -> ::std::option::Option<&str> {
         self.x_content_type_options.as_deref()
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     pub fn x_frame_options(&self) -> ::std::option::Option<&str> {
         self.x_frame_options.as_deref()
     }
@@ -75,101 +75,101 @@ pub struct StartParticipantReplicationOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartParticipantReplicationOutputBuilder {
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
     pub fn access_control_allow_origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_control_allow_origin = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
     pub fn set_access_control_allow_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_control_allow_origin = input;
         self
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a> in the MDN Web Docs.</p>
     pub fn get_access_control_allow_origin(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_control_allow_origin
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
     pub fn access_control_expose_headers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_control_expose_headers = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
     pub fn set_access_control_expose_headers(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_control_expose_headers = input;
         self
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a> in the MDN Web Docs.</p>
     pub fn get_access_control_expose_headers(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_control_expose_headers
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">Cache-Control</a> in the MDN Web Docs.</p>
     pub fn cache_control(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cache_control = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">Cache-Control</a> in the MDN Web Docs.</p>
     pub fn set_cache_control(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cache_control = input;
         self
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">Cache-Control</a> in the MDN Web Docs.</p>
     pub fn get_cache_control(&self) -> &::std::option::Option<::std::string::String> {
         &self.cache_control
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
     pub fn content_security_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.content_security_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
     pub fn set_content_security_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_security_policy = input;
         self
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">Content-Security-Policy</a> in the MDN Web Docs.</p>
     pub fn get_content_security_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.content_security_policy
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
     pub fn strict_transport_security(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.strict_transport_security = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
     pub fn set_strict_transport_security(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.strict_transport_security = input;
         self
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security">Strict-Transport-Security</a> in the MDN Web Docs.</p>
     pub fn get_strict_transport_security(&self) -> &::std::option::Option<::std::string::String> {
         &self.strict_transport_security
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
     pub fn x_content_type_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.x_content_type_options = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
     pub fn set_x_content_type_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.x_content_type_options = input;
         self
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
     pub fn get_x_content_type_options(&self) -> &::std::option::Option<::std::string::String> {
         &self.x_content_type_options
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     pub fn x_frame_options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.x_frame_options = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     pub fn set_x_frame_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.x_frame_options = input;
         self
     }
-    /// <p></p>
+    /// <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options">X-Frame-Options</a> in the MDN Web Docs.</p>
     pub fn get_x_frame_options(&self) -> &::std::option::Option<::std::string::String> {
         &self.x_frame_options
     }

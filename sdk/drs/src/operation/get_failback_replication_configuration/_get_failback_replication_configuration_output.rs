@@ -11,6 +11,8 @@ pub struct GetFailbackReplicationConfigurationOutput {
     pub bandwidth_throttling: i64,
     /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
     pub use_private_ip: ::std::option::Option<bool>,
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
     _request_id: Option<String>,
 }
 impl GetFailbackReplicationConfigurationOutput {
@@ -30,6 +32,10 @@ impl GetFailbackReplicationConfigurationOutput {
     /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
     pub fn use_private_ip(&self) -> ::std::option::Option<bool> {
         self.use_private_ip
+    }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn internet_protocol(&self) -> ::std::option::Option<&crate::types::InternetProtocol> {
+        self.internet_protocol.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFailbackReplicationConfigurationOutput {
@@ -52,6 +58,7 @@ pub struct GetFailbackReplicationConfigurationOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) bandwidth_throttling: ::std::option::Option<i64>,
     pub(crate) use_private_ip: ::std::option::Option<bool>,
+    pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
     _request_id: Option<String>,
 }
 impl GetFailbackReplicationConfigurationOutputBuilder {
@@ -112,6 +119,20 @@ impl GetFailbackReplicationConfigurationOutputBuilder {
     pub fn get_use_private_ip(&self) -> &::std::option::Option<bool> {
         &self.use_private_ip
     }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn internet_protocol(mut self, input: crate::types::InternetProtocol) -> Self {
+        self.internet_protocol = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn set_internet_protocol(mut self, input: ::std::option::Option<crate::types::InternetProtocol>) -> Self {
+        self.internet_protocol = input;
+        self
+    }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn get_internet_protocol(&self) -> &::std::option::Option<crate::types::InternetProtocol> {
+        &self.internet_protocol
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -141,6 +162,7 @@ impl GetFailbackReplicationConfigurationOutputBuilder {
                 name: self.name,
                 bandwidth_throttling: self.bandwidth_throttling.unwrap_or_default(),
                 use_private_ip: self.use_private_ip,
+                internet_protocol: self.internet_protocol,
                 _request_id: self._request_id,
             },
         )

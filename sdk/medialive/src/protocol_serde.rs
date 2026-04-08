@@ -731,6 +731,8 @@ pub(crate) mod shape_list_of_video_description;
 
 pub(crate) mod shape_media_connect_flow;
 
+pub(crate) mod shape_media_connect_router_output_destination_settings;
+
 pub(crate) mod shape_media_package_output_destination_settings;
 
 pub(crate) mod shape_media_resource;
@@ -834,6 +836,8 @@ pub(crate) mod shape_interface_mapping;
 pub(crate) mod shape_list_of_color_correction;
 
 pub(crate) mod shape_list_of_input_destination_route;
+
+pub(crate) mod shape_list_of_media_connect_router_output_destination_settings;
 
 pub(crate) mod shape_list_of_media_package_output_destination_settings;
 
@@ -970,6 +974,8 @@ pub(crate) mod shape_list_of_dash_role_caption;
 pub(crate) mod shape_list_of_failover_condition;
 
 pub(crate) mod shape_list_of_output;
+
+pub(crate) mod shape_media_connect_router_group_settings;
 
 pub(crate) mod shape_media_package_group_settings;
 
@@ -1117,6 +1123,8 @@ pub(crate) mod shape_list_of_pipeline_pause_state_settings;
 
 pub(crate) mod shape_list_of_scte35_descriptor;
 
+pub(crate) mod shape_media_connect_router_output_settings;
+
 pub(crate) mod shape_media_package_output_settings;
 
 pub(crate) mod shape_media_package_v2_group_settings;
@@ -1200,6 +1208,10 @@ pub(crate) mod shape_list_of_cmaf_ingest_caption_language_mapping;
 pub(crate) mod shape_list_of_hls_ad_markers;
 
 pub(crate) mod shape_list_of_rtmp_ad_markers;
+
+pub(crate) mod shape_media_connect_router_container_settings;
+
+pub(crate) mod shape_media_connect_router_output_connection_map;
 
 pub(crate) mod shape_media_package_additional_destinations;
 

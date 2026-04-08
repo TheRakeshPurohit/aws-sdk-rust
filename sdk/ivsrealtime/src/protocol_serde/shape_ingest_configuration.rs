@@ -71,6 +71,14 @@ where
                                     .transpose()?,
                             );
                         }
+                        "redundantIngest" => {
+                            builder = builder.set_redundant_ingest(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "redundantIngestCredentials" => {
+                            builder = builder.set_redundant_ingest_credentials(
+                                crate::protocol_serde::shape_redundant_ingest_credentials::de_redundant_ingest_credentials(tokens, _value)?,
+                            );
+                        }
                         "attributes" => {
                             builder = builder.set_attributes(crate::protocol_serde::shape_participant_attributes::de_participant_attributes(
                                 tokens, _value,

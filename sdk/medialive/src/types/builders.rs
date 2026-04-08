@@ -95,11 +95,11 @@ pub use crate::types::_reservation::ReservationBuilder;
 
 pub use crate::types::_maintenance_update_settings::MaintenanceUpdateSettingsBuilder;
 
+pub use crate::types::_special_router_settings::SpecialRouterSettingsBuilder;
+
 pub use crate::types::_cluster_network_settings_update_request::ClusterNetworkSettingsUpdateRequestBuilder;
 
 pub use crate::types::_multicast_settings_update_request::MulticastSettingsUpdateRequestBuilder;
-
-pub use crate::types::_special_router_settings::SpecialRouterSettingsBuilder;
 
 pub use crate::types::_input_device_configurable_settings::InputDeviceConfigurableSettingsBuilder;
 
@@ -319,6 +319,8 @@ pub use crate::types::_output_destination_settings::OutputDestinationSettingsBui
 
 pub use crate::types::_srt_output_destination_settings::SrtOutputDestinationSettingsBuilder;
 
+pub use crate::types::_media_connect_router_output_destination_settings::MediaConnectRouterOutputDestinationSettingsBuilder;
+
 pub use crate::types::_audio_normalization_settings::AudioNormalizationSettingsBuilder;
 
 pub use crate::types::_audio_watermark_settings::AudioWatermarkSettingsBuilder;
@@ -469,6 +471,8 @@ pub use crate::types::_cmaf_ingest_group_settings::CmafIngestGroupSettingsBuilde
 
 pub use crate::types::_srt_group_settings::SrtGroupSettingsBuilder;
 
+pub use crate::types::_media_connect_router_group_settings::MediaConnectRouterGroupSettingsBuilder;
+
 pub use crate::types::_output::OutputBuilder;
 
 pub use crate::types::_frame_capture_settings::FrameCaptureSettingsBuilder;
@@ -595,6 +599,8 @@ pub use crate::types::_cmaf_ingest_output_settings::CmafIngestOutputSettingsBuil
 
 pub use crate::types::_srt_output_settings::SrtOutputSettingsBuilder;
 
+pub use crate::types::_media_connect_router_output_settings::MediaConnectRouterOutputSettingsBuilder;
+
 pub use crate::types::_color_space_passthrough_settings::ColorSpacePassthroughSettingsBuilder;
 
 pub use crate::types::_rec601_settings::Rec601SettingsBuilder;
@@ -654,6 +660,10 @@ pub use crate::types::_multiplex_container_settings::MultiplexContainerSettingsB
 pub use crate::types::_udp_container_settings::UdpContainerSettingsBuilder;
 
 pub use crate::types::_fec_output_settings::FecOutputSettingsBuilder;
+
+pub use crate::types::_media_connect_router_output_connection_map::MediaConnectRouterOutputConnectionMapBuilder;
+
+pub use crate::types::_media_connect_router_container_settings::MediaConnectRouterContainerSettingsBuilder;
 
 pub use crate::types::_audio_dolby_e_decode::AudioDolbyEDecodeBuilder;
 

@@ -15,7 +15,7 @@ pub struct ListImageReferrersInput {
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of image referrer results returned by <code>ListImageReferrers</code> in paginated output. When this parameter is used, <code>ListImageReferrers</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImageReferrers</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 50. If this parameter is not used, then <code>ListImageReferrers</code> returns up to 50 results and a <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of image referrer results returned by <code>ListImageReferrers</code> in paginated output. When this parameter is used, <code>ListImageReferrers</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImageReferrers</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 50. If this parameter is not used, then <code>ListImageReferrers</code> returns up to 20 results and a <code>nextToken</code> value, if applicable.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListImageReferrersInput {
@@ -41,7 +41,7 @@ impl ListImageReferrersInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of image referrer results returned by <code>ListImageReferrers</code> in paginated output. When this parameter is used, <code>ListImageReferrers</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImageReferrers</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 50. If this parameter is not used, then <code>ListImageReferrers</code> returns up to 50 results and a <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of image referrer results returned by <code>ListImageReferrers</code> in paginated output. When this parameter is used, <code>ListImageReferrers</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImageReferrers</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 50. If this parameter is not used, then <code>ListImageReferrers</code> returns up to 20 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -143,17 +143,17 @@ impl ListImageReferrersInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The maximum number of image referrer results returned by <code>ListImageReferrers</code> in paginated output. When this parameter is used, <code>ListImageReferrers</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImageReferrers</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 50. If this parameter is not used, then <code>ListImageReferrers</code> returns up to 50 results and a <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of image referrer results returned by <code>ListImageReferrers</code> in paginated output. When this parameter is used, <code>ListImageReferrers</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImageReferrers</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 50. If this parameter is not used, then <code>ListImageReferrers</code> returns up to 20 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of image referrer results returned by <code>ListImageReferrers</code> in paginated output. When this parameter is used, <code>ListImageReferrers</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImageReferrers</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 50. If this parameter is not used, then <code>ListImageReferrers</code> returns up to 50 results and a <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of image referrer results returned by <code>ListImageReferrers</code> in paginated output. When this parameter is used, <code>ListImageReferrers</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImageReferrers</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 50. If this parameter is not used, then <code>ListImageReferrers</code> returns up to 20 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of image referrer results returned by <code>ListImageReferrers</code> in paginated output. When this parameter is used, <code>ListImageReferrers</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImageReferrers</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 50. If this parameter is not used, then <code>ListImageReferrers</code> returns up to 50 results and a <code>nextToken</code> value, if applicable.</p>
+    /// <p>The maximum number of image referrer results returned by <code>ListImageReferrers</code> in paginated output. When this parameter is used, <code>ListImageReferrers</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListImageReferrers</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 50. If this parameter is not used, then <code>ListImageReferrers</code> returns up to 20 results and a <code>nextToken</code> value, if applicable.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

@@ -30,55 +30,58 @@ pub fn ser_create_replication_configuration_template_input_input(
     if let Some(var_8) = &input.ebs_encryption_key_arn {
         object.key("ebsEncryptionKeyArn").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.pit_policy {
-        let mut array_10 = object.key("pitPolicy").start_array();
-        for item_11 in var_9 {
+    if let Some(var_9) = &input.internet_protocol {
+        object.key("internetProtocol").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.pit_policy {
+        let mut array_11 = object.key("pitPolicy").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_pit_policy_rule::ser_pit_policy_rule(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_pit_policy_rule::ser_pit_policy_rule(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
-    if let Some(var_13) = &input.replication_server_instance_type {
-        object.key("replicationServerInstanceType").string(var_13.as_str());
+    if let Some(var_14) = &input.replication_server_instance_type {
+        object.key("replicationServerInstanceType").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.replication_servers_security_groups_ids {
-        let mut array_15 = object.key("replicationServersSecurityGroupsIDs").start_array();
-        for item_16 in var_14 {
+    if let Some(var_15) = &input.replication_servers_security_groups_ids {
+        let mut array_16 = object.key("replicationServersSecurityGroupsIDs").start_array();
+        for item_17 in var_15 {
             {
-                array_15.value().string(item_16.as_str());
+                array_16.value().string(item_17.as_str());
             }
         }
-        array_15.finish();
+        array_16.finish();
     }
-    if let Some(var_17) = &input.staging_area_subnet_id {
-        object.key("stagingAreaSubnetId").string(var_17.as_str());
+    if let Some(var_18) = &input.staging_area_subnet_id {
+        object.key("stagingAreaSubnetId").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.staging_area_tags {
+    if let Some(var_19) = &input.staging_area_tags {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("stagingAreaTags").start_object();
-        for (key_20, value_21) in var_18 {
+        let mut object_20 = object.key("stagingAreaTags").start_object();
+        for (key_21, value_22) in var_19 {
             {
-                object_19.key(key_20.as_str()).string(value_21.as_str());
+                object_20.key(key_21.as_str()).string(value_22.as_str());
             }
         }
-        object_19.finish();
+        object_20.finish();
     }
-    if let Some(var_22) = &input.tags {
+    if let Some(var_23) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("tags").start_object();
-        for (key_24, value_25) in var_22 {
+        let mut object_24 = object.key("tags").start_object();
+        for (key_25, value_26) in var_23 {
             {
-                object_23.key(key_24.as_str()).string(value_25.as_str());
+                object_24.key(key_25.as_str()).string(value_26.as_str());
             }
         }
-        object_23.finish();
+        object_24.finish();
     }
-    if let Some(var_26) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_26);
+    if let Some(var_27) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_27);
     }
     Ok(())
 }

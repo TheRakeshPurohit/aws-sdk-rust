@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`staging_area_tags(Option<HashMap::<String, String>>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::staging_area_tags): <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
     ///   - [`pit_policy(Option<Vec::<PitPolicyRule>>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::pit_policy): <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
     ///   - [`auto_replicate_new_disks(Option<bool>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::auto_replicate_new_disks): <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
+    ///   - [`internet_protocol(Option<InternetProtocol>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::internet_protocol): <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
     /// - On failure, responds with [`SdkError<GetReplicationConfigurationError>`](crate::operation::get_replication_configuration::GetReplicationConfigurationError)
     pub fn get_replication_configuration(
         &self,

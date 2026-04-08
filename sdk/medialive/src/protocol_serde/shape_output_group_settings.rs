@@ -63,6 +63,12 @@ pub fn ser_output_group_settings(
         crate::protocol_serde::shape_srt_group_settings::ser_srt_group_settings(&mut object_20, var_19)?;
         object_20.finish();
     }
+    if let Some(var_21) = &input.media_connect_router_group_settings {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("mediaConnectRouterGroupSettings").start_object();
+        crate::protocol_serde::shape_media_connect_router_group_settings::ser_media_connect_router_group_settings(&mut object_22, var_21)?;
+        object_22.finish();
+    }
     Ok(())
 }
 
@@ -127,6 +133,13 @@ where
                         "srtGroupSettings" => {
                             builder = builder
                                 .set_srt_group_settings(crate::protocol_serde::shape_srt_group_settings::de_srt_group_settings(tokens, _value)?);
+                        }
+                        "mediaConnectRouterGroupSettings" => {
+                            builder = builder.set_media_connect_router_group_settings(
+                                crate::protocol_serde::shape_media_connect_router_group_settings::de_media_connect_router_group_settings(
+                                    tokens, _value,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

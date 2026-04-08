@@ -59,6 +59,8 @@ pub use crate::types::_pip_configuration::PipConfigurationBuilder;
 
 pub use crate::types::_destination_configuration::DestinationConfigurationBuilder;
 
+pub use crate::types::_redundant_ingest_credential::RedundantIngestCredentialBuilder;
+
 pub use crate::types::_destination::DestinationBuilder;
 
 pub use crate::types::_exchanged_participant_token::ExchangedParticipantTokenBuilder;

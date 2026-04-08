@@ -116,6 +116,20 @@ pub(crate) fn de_get_outpost_billing_information(
                             .transpose()?,
                     );
                 }
+                "PaymentOption" => {
+                    builder = builder.set_payment_option(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::PaymentOption::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "PaymentTerm" => {
+                    builder = builder.set_payment_term(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::PaymentTerm::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "Subscriptions" => {
                     builder = builder.set_subscriptions(crate::protocol_serde::shape_subscription_list::de_subscription_list(tokens, _value)?);
                 }

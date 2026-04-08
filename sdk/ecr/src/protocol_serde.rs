@@ -323,6 +323,8 @@ pub(crate) mod shape_unable_to_get_upstream_image_exception;
 
 pub(crate) mod shape_unable_to_get_upstream_layer_exception;
 
+pub(crate) mod shape_unable_to_list_upstream_image_referrers_exception;
+
 pub(crate) mod shape_unsupported_image_type_exception;
 
 pub(crate) mod shape_unsupported_upstream_registry_exception;

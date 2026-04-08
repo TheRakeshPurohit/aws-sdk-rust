@@ -6,7 +6,7 @@
 pub struct DescribeImagesFilter {
     /// <p>The tag status with which to filter your <code>DescribeImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
     pub tag_status: ::std::option::Option<crate::types::TagStatus>,
-    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>. If not specified, only images with <code>ACTIVE</code> status are returned.</p>
     pub image_status: ::std::option::Option<crate::types::ImageStatusFilter>,
 }
 impl DescribeImagesFilter {
@@ -14,7 +14,7 @@ impl DescribeImagesFilter {
     pub fn tag_status(&self) -> ::std::option::Option<&crate::types::TagStatus> {
         self.tag_status.as_ref()
     }
-    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>. If not specified, only images with <code>ACTIVE</code> status are returned.</p>
     pub fn image_status(&self) -> ::std::option::Option<&crate::types::ImageStatusFilter> {
         self.image_status.as_ref()
     }
@@ -48,17 +48,17 @@ impl DescribeImagesFilterBuilder {
     pub fn get_tag_status(&self) -> &::std::option::Option<crate::types::TagStatus> {
         &self.tag_status
     }
-    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>. If not specified, only images with <code>ACTIVE</code> status are returned.</p>
     pub fn image_status(mut self, input: crate::types::ImageStatusFilter) -> Self {
         self.image_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>. If not specified, only images with <code>ACTIVE</code> status are returned.</p>
     pub fn set_image_status(mut self, input: ::std::option::Option<crate::types::ImageStatusFilter>) -> Self {
         self.image_status = input;
         self
     }
-    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>.</p>
+    /// <p>The image status with which to filter your <code>DescribeImages</code> results. Valid values are <code>ACTIVE</code>, <code>ARCHIVED</code>, and <code>ACTIVATING</code>. If not specified, only images with <code>ACTIVE</code> status are returned.</p>
     pub fn get_image_status(&self) -> &::std::option::Option<crate::types::ImageStatusFilter> {
         &self.image_status
     }

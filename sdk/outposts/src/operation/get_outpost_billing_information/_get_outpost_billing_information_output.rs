@@ -9,6 +9,10 @@ pub struct GetOutpostBillingInformationOutput {
     pub subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     /// <p>The date the current contract term ends for the specified Outpost. You must start the renewal or decommission process at least 5 business days before the current term for your Amazon Web Services Outposts ends. Failing to complete these steps at least 5 business days before the current term ends might result in unanticipated charges.</p>
     pub contract_end_date: ::std::option::Option<::std::string::String>,
+    /// <p>The payment term.</p>
+    pub payment_term: ::std::option::Option<crate::types::PaymentTerm>,
+    /// <p>The payment option.</p>
+    pub payment_option: ::std::option::Option<crate::types::PaymentOption>,
     _request_id: Option<String>,
 }
 impl GetOutpostBillingInformationOutput {
@@ -25,6 +29,14 @@ impl GetOutpostBillingInformationOutput {
     /// <p>The date the current contract term ends for the specified Outpost. You must start the renewal or decommission process at least 5 business days before the current term for your Amazon Web Services Outposts ends. Failing to complete these steps at least 5 business days before the current term ends might result in unanticipated charges.</p>
     pub fn contract_end_date(&self) -> ::std::option::Option<&str> {
         self.contract_end_date.as_deref()
+    }
+    /// <p>The payment term.</p>
+    pub fn payment_term(&self) -> ::std::option::Option<&crate::types::PaymentTerm> {
+        self.payment_term.as_ref()
+    }
+    /// <p>The payment option.</p>
+    pub fn payment_option(&self) -> ::std::option::Option<&crate::types::PaymentOption> {
+        self.payment_option.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetOutpostBillingInformationOutput {
@@ -46,6 +58,8 @@ pub struct GetOutpostBillingInformationOutputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) subscriptions: ::std::option::Option<::std::vec::Vec<crate::types::Subscription>>,
     pub(crate) contract_end_date: ::std::option::Option<::std::string::String>,
+    pub(crate) payment_term: ::std::option::Option<crate::types::PaymentTerm>,
+    pub(crate) payment_option: ::std::option::Option<crate::types::PaymentOption>,
     _request_id: Option<String>,
 }
 impl GetOutpostBillingInformationOutputBuilder {
@@ -97,6 +111,34 @@ impl GetOutpostBillingInformationOutputBuilder {
     pub fn get_contract_end_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.contract_end_date
     }
+    /// <p>The payment term.</p>
+    pub fn payment_term(mut self, input: crate::types::PaymentTerm) -> Self {
+        self.payment_term = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The payment term.</p>
+    pub fn set_payment_term(mut self, input: ::std::option::Option<crate::types::PaymentTerm>) -> Self {
+        self.payment_term = input;
+        self
+    }
+    /// <p>The payment term.</p>
+    pub fn get_payment_term(&self) -> &::std::option::Option<crate::types::PaymentTerm> {
+        &self.payment_term
+    }
+    /// <p>The payment option.</p>
+    pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
+        self.payment_option = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The payment option.</p>
+    pub fn set_payment_option(mut self, input: ::std::option::Option<crate::types::PaymentOption>) -> Self {
+        self.payment_option = input;
+        self
+    }
+    /// <p>The payment option.</p>
+    pub fn get_payment_option(&self) -> &::std::option::Option<crate::types::PaymentOption> {
+        &self.payment_option
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -112,6 +154,8 @@ impl GetOutpostBillingInformationOutputBuilder {
             next_token: self.next_token,
             subscriptions: self.subscriptions,
             contract_end_date: self.contract_end_date,
+            payment_term: self.payment_term,
+            payment_option: self.payment_option,
             _request_id: self._request_id,
         }
     }

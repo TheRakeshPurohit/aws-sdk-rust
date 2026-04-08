@@ -20,6 +20,10 @@ pub struct IngestConfiguration {
     pub state: crate::types::IngestConfigurationState,
     /// <p>Customer-assigned name to help identify the participant using the IngestConfiguration; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
     pub user_id: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration.</p>
+    pub redundant_ingest: bool,
+    /// <p>A list of redundant ingest credentials, present only when <code>redundantIngest</code> is set to <code>true</code>. See <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html#redundant-ingest">Redundant Ingest</a> in <i>IVS RTMP Publishing</i> for details.</p>
+    pub redundant_ingest_credentials: ::std::option::Option<::std::vec::Vec<crate::types::RedundantIngestCredential>>,
     /// <p>Application-provided attributes to to store in the IngestConfiguration and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best practices and strategies</a> in <i>Tagging AWS Resources and Tag Editor</i> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
@@ -62,6 +66,16 @@ impl IngestConfiguration {
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration.</p>
+    pub fn redundant_ingest(&self) -> bool {
+        self.redundant_ingest
+    }
+    /// <p>A list of redundant ingest credentials, present only when <code>redundantIngest</code> is set to <code>true</code>. See <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html#redundant-ingest">Redundant Ingest</a> in <i>IVS RTMP Publishing</i> for details.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.redundant_ingest_credentials.is_none()`.
+    pub fn redundant_ingest_credentials(&self) -> &[crate::types::RedundantIngestCredential] {
+        self.redundant_ingest_credentials.as_deref().unwrap_or_default()
+    }
     /// <p>Application-provided attributes to to store in the IngestConfiguration and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i></p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
@@ -82,6 +96,8 @@ impl ::std::fmt::Debug for IngestConfiguration {
         formatter.field("participant_id", &self.participant_id);
         formatter.field("state", &self.state);
         formatter.field("user_id", &self.user_id);
+        formatter.field("redundant_ingest", &self.redundant_ingest);
+        formatter.field("redundant_ingest_credentials", &self.redundant_ingest_credentials);
         formatter.field("attributes", &self.attributes);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -106,6 +122,8 @@ pub struct IngestConfigurationBuilder {
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::IngestConfigurationState>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) redundant_ingest: ::std::option::Option<bool>,
+    pub(crate) redundant_ingest_credentials: ::std::option::Option<::std::vec::Vec<crate::types::RedundantIngestCredential>>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -228,6 +246,43 @@ impl IngestConfigurationBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration.</p>
+    pub fn redundant_ingest(mut self, input: bool) -> Self {
+        self.redundant_ingest = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration.</p>
+    pub fn set_redundant_ingest(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.redundant_ingest = input;
+        self
+    }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration.</p>
+    pub fn get_redundant_ingest(&self) -> &::std::option::Option<bool> {
+        &self.redundant_ingest
+    }
+    /// Appends an item to `redundant_ingest_credentials`.
+    ///
+    /// To override the contents of this collection use [`set_redundant_ingest_credentials`](Self::set_redundant_ingest_credentials).
+    ///
+    /// <p>A list of redundant ingest credentials, present only when <code>redundantIngest</code> is set to <code>true</code>. See <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html#redundant-ingest">Redundant Ingest</a> in <i>IVS RTMP Publishing</i> for details.</p>
+    pub fn redundant_ingest_credentials(mut self, input: crate::types::RedundantIngestCredential) -> Self {
+        let mut v = self.redundant_ingest_credentials.unwrap_or_default();
+        v.push(input);
+        self.redundant_ingest_credentials = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of redundant ingest credentials, present only when <code>redundantIngest</code> is set to <code>true</code>. See <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html#redundant-ingest">Redundant Ingest</a> in <i>IVS RTMP Publishing</i> for details.</p>
+    pub fn set_redundant_ingest_credentials(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RedundantIngestCredential>>,
+    ) -> Self {
+        self.redundant_ingest_credentials = input;
+        self
+    }
+    /// <p>A list of redundant ingest credentials, present only when <code>redundantIngest</code> is set to <code>true</code>. See <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html#redundant-ingest">Redundant Ingest</a> in <i>IVS RTMP Publishing</i> for details.</p>
+    pub fn get_redundant_ingest_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RedundantIngestCredential>> {
+        &self.redundant_ingest_credentials
+    }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
@@ -316,6 +371,8 @@ impl IngestConfigurationBuilder {
                 )
             })?,
             user_id: self.user_id,
+            redundant_ingest: self.redundant_ingest.unwrap_or_default(),
+            redundant_ingest_credentials: self.redundant_ingest_credentials,
             attributes: self.attributes,
             tags: self.tags,
         })
@@ -332,6 +389,8 @@ impl ::std::fmt::Debug for IngestConfigurationBuilder {
         formatter.field("participant_id", &self.participant_id);
         formatter.field("state", &self.state);
         formatter.field("user_id", &self.user_id);
+        formatter.field("redundant_ingest", &self.redundant_ingest);
+        formatter.field("redundant_ingest_credentials", &self.redundant_ingest_credentials);
         formatter.field("attributes", &self.attributes);
         formatter.field("tags", &self.tags);
         formatter.finish()

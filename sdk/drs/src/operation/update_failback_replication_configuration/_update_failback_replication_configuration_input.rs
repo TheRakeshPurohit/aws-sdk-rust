@@ -11,6 +11,8 @@ pub struct UpdateFailbackReplicationConfigurationInput {
     pub bandwidth_throttling: ::std::option::Option<i64>,
     /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
     pub use_private_ip: ::std::option::Option<bool>,
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
 }
 impl UpdateFailbackReplicationConfigurationInput {
     /// <p>The ID of the Recovery Instance.</p>
@@ -29,6 +31,10 @@ impl UpdateFailbackReplicationConfigurationInput {
     pub fn use_private_ip(&self) -> ::std::option::Option<bool> {
         self.use_private_ip
     }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn internet_protocol(&self) -> ::std::option::Option<&crate::types::InternetProtocol> {
+        self.internet_protocol.as_ref()
+    }
 }
 impl UpdateFailbackReplicationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateFailbackReplicationConfigurationInput`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput).
@@ -45,6 +51,7 @@ pub struct UpdateFailbackReplicationConfigurationInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) bandwidth_throttling: ::std::option::Option<i64>,
     pub(crate) use_private_ip: ::std::option::Option<bool>,
+    pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
 }
 impl UpdateFailbackReplicationConfigurationInputBuilder {
     /// <p>The ID of the Recovery Instance.</p>
@@ -104,6 +111,20 @@ impl UpdateFailbackReplicationConfigurationInputBuilder {
     pub fn get_use_private_ip(&self) -> &::std::option::Option<bool> {
         &self.use_private_ip
     }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn internet_protocol(mut self, input: crate::types::InternetProtocol) -> Self {
+        self.internet_protocol = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn set_internet_protocol(mut self, input: ::std::option::Option<crate::types::InternetProtocol>) -> Self {
+        self.internet_protocol = input;
+        self
+    }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn get_internet_protocol(&self) -> &::std::option::Option<crate::types::InternetProtocol> {
+        &self.internet_protocol
+    }
     /// Consumes the builder and constructs a [`UpdateFailbackReplicationConfigurationInput`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput).
     pub fn build(
         self,
@@ -117,6 +138,7 @@ impl UpdateFailbackReplicationConfigurationInputBuilder {
                 name: self.name,
                 bandwidth_throttling: self.bandwidth_throttling,
                 use_private_ip: self.use_private_ip,
+                internet_protocol: self.internet_protocol,
             },
         )
     }

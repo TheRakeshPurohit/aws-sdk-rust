@@ -869,6 +869,24 @@ pub(crate) fn hls_output_settings_correct_errors(
     builder
 }
 
+pub(crate) fn media_connect_router_output_settings_correct_errors(
+    mut builder: crate::types::builders::MediaConnectRouterOutputSettingsBuilder,
+) -> crate::types::builders::MediaConnectRouterOutputSettingsBuilder {
+    if builder.container_settings.is_none() {
+        builder.container_settings = {
+            let builder = crate::types::builders::MediaConnectRouterContainerSettingsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.destination.is_none() {
+        builder.destination = {
+            let builder = crate::types::builders::OutputLocationRefBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn multiplex_output_settings_correct_errors(
     mut builder: crate::types::builders::MultiplexOutputSettingsBuilder,
 ) -> crate::types::builders::MultiplexOutputSettingsBuilder {

@@ -23,6 +23,8 @@ pub struct Subscription {
     /// <li>
     /// <p><b>ACTIVE</b> - Subscription requests that are in progress and have an end date in the future.</p></li>
     /// <li>
+    /// <p><b>PENDING</b> - Subscription has been created but billing has not yet commenced because the subscription begin date has not been reached.</p></li>
+    /// <li>
     /// <p><b>CANCELLED</b> - Subscription requests that are cancelled.</p></li>
     /// </ul>
     pub subscription_status: ::std::option::Option<crate::types::SubscriptionStatus>,
@@ -60,6 +62,8 @@ impl Subscription {
     /// <p><b>INACTIVE</b> - Subscription requests that are inactive.</p></li>
     /// <li>
     /// <p><b>ACTIVE</b> - Subscription requests that are in progress and have an end date in the future.</p></li>
+    /// <li>
+    /// <p><b>PENDING</b> - Subscription has been created but billing has not yet commenced because the subscription begin date has not been reached.</p></li>
     /// <li>
     /// <p><b>CANCELLED</b> - Subscription requests that are cancelled.</p></li>
     /// </ul>
@@ -169,6 +173,8 @@ impl SubscriptionBuilder {
     /// <li>
     /// <p><b>ACTIVE</b> - Subscription requests that are in progress and have an end date in the future.</p></li>
     /// <li>
+    /// <p><b>PENDING</b> - Subscription has been created but billing has not yet commenced because the subscription begin date has not been reached.</p></li>
+    /// <li>
     /// <p><b>CANCELLED</b> - Subscription requests that are cancelled.</p></li>
     /// </ul>
     pub fn subscription_status(mut self, input: crate::types::SubscriptionStatus) -> Self {
@@ -182,6 +188,8 @@ impl SubscriptionBuilder {
     /// <li>
     /// <p><b>ACTIVE</b> - Subscription requests that are in progress and have an end date in the future.</p></li>
     /// <li>
+    /// <p><b>PENDING</b> - Subscription has been created but billing has not yet commenced because the subscription begin date has not been reached.</p></li>
+    /// <li>
     /// <p><b>CANCELLED</b> - Subscription requests that are cancelled.</p></li>
     /// </ul>
     pub fn set_subscription_status(mut self, input: ::std::option::Option<crate::types::SubscriptionStatus>) -> Self {
@@ -194,6 +202,8 @@ impl SubscriptionBuilder {
     /// <p><b>INACTIVE</b> - Subscription requests that are inactive.</p></li>
     /// <li>
     /// <p><b>ACTIVE</b> - Subscription requests that are in progress and have an end date in the future.</p></li>
+    /// <li>
+    /// <p><b>PENDING</b> - Subscription has been created but billing has not yet commenced because the subscription begin date has not been reached.</p></li>
     /// <li>
     /// <p><b>CANCELLED</b> - Subscription requests that are cancelled.</p></li>
     /// </ul>

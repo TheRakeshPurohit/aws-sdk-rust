@@ -30,66 +30,69 @@ pub fn ser_update_replication_configuration_input_input(
     if let Some(var_8) = &input.ebs_encryption_key_arn {
         object.key("ebsEncryptionKeyArn").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.name {
-        object.key("name").string(var_9.as_str());
+    if let Some(var_9) = &input.internet_protocol {
+        object.key("internetProtocol").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.pit_policy {
-        let mut array_11 = object.key("pitPolicy").start_array();
-        for item_12 in var_10 {
+    if let Some(var_10) = &input.name {
+        object.key("name").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.pit_policy {
+        let mut array_12 = object.key("pitPolicy").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_pit_policy_rule::ser_pit_policy_rule(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_pit_policy_rule::ser_pit_policy_rule(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if let Some(var_14) = &input.replicated_disks {
-        let mut array_15 = object.key("replicatedDisks").start_array();
-        for item_16 in var_14 {
+    if let Some(var_15) = &input.replicated_disks {
+        let mut array_16 = object.key("replicatedDisks").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
+                let mut object_18 = array_16.value().start_object();
                 crate::protocol_serde::shape_replication_configuration_replicated_disk::ser_replication_configuration_replicated_disk(
-                    &mut object_17,
-                    item_16,
+                    &mut object_18,
+                    item_17,
                 )?;
-                object_17.finish();
+                object_18.finish();
             }
         }
-        array_15.finish();
+        array_16.finish();
     }
-    if let Some(var_18) = &input.replication_server_instance_type {
-        object.key("replicationServerInstanceType").string(var_18.as_str());
+    if let Some(var_19) = &input.replication_server_instance_type {
+        object.key("replicationServerInstanceType").string(var_19.as_str());
     }
-    if let Some(var_19) = &input.replication_servers_security_groups_ids {
-        let mut array_20 = object.key("replicationServersSecurityGroupsIDs").start_array();
-        for item_21 in var_19 {
+    if let Some(var_20) = &input.replication_servers_security_groups_ids {
+        let mut array_21 = object.key("replicationServersSecurityGroupsIDs").start_array();
+        for item_22 in var_20 {
             {
-                array_20.value().string(item_21.as_str());
+                array_21.value().string(item_22.as_str());
             }
         }
-        array_20.finish();
+        array_21.finish();
     }
-    if let Some(var_22) = &input.source_server_id {
-        object.key("sourceServerID").string(var_22.as_str());
+    if let Some(var_23) = &input.source_server_id {
+        object.key("sourceServerID").string(var_23.as_str());
     }
-    if let Some(var_23) = &input.staging_area_subnet_id {
-        object.key("stagingAreaSubnetId").string(var_23.as_str());
+    if let Some(var_24) = &input.staging_area_subnet_id {
+        object.key("stagingAreaSubnetId").string(var_24.as_str());
     }
-    if let Some(var_24) = &input.staging_area_tags {
+    if let Some(var_25) = &input.staging_area_tags {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("stagingAreaTags").start_object();
-        for (key_26, value_27) in var_24 {
+        let mut object_26 = object.key("stagingAreaTags").start_object();
+        for (key_27, value_28) in var_25 {
             {
-                object_25.key(key_26.as_str()).string(value_27.as_str());
+                object_26.key(key_27.as_str()).string(value_28.as_str());
             }
         }
-        object_25.finish();
+        object_26.finish();
     }
-    if let Some(var_28) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_28);
+    if let Some(var_29) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_29);
     }
     Ok(())
 }

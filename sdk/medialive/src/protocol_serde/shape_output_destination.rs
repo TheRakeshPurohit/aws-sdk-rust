@@ -63,6 +63,21 @@ pub fn ser_output_destination(
         }
         array_17.finish();
     }
+    if let Some(var_19) = &input.media_connect_router_settings {
+        let mut array_20 = object.key("mediaConnectRouterSettings").start_array();
+        for item_21 in var_19 {
+            {
+                #[allow(unused_mut)]
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_media_connect_router_output_destination_settings::ser_media_connect_router_output_destination_settings(
+                    &mut object_22,
+                    item_21,
+                )?;
+                object_22.finish();
+            }
+        }
+        array_20.finish();
+    }
     Ok(())
 }
 
@@ -116,6 +131,11 @@ where
                         "logicalInterfaceNames" => {
                             builder =
                                 builder.set_logical_interface_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
+                        }
+                        "mediaConnectRouterSettings" => {
+                            builder = builder.set_media_connect_router_settings(
+                                    crate::protocol_serde::shape_list_of_media_connect_router_output_destination_settings::de_list_of_media_connect_router_output_destination_settings(tokens, _value)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -15,6 +15,8 @@ pub struct CreateIngestConfigurationInput {
     pub ingest_protocol: ::std::option::Option<crate::types::IngestProtocol>,
     /// <p>Whether the stage allows insecure RTMP ingest. This must be set to <code>true</code>, if <code>ingestProtocol</code> is set to <code>RTMP</code>. Default: <code>false</code>.</p>
     pub insecure_ingest: ::std::option::Option<bool>,
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration. Default: <code>false</code>.</p>
+    pub redundant_ingest: ::std::option::Option<bool>,
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best practices and strategies</a> in <i>Tagging AWS Resources and Tag Editor</i> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -43,6 +45,10 @@ impl CreateIngestConfigurationInput {
     pub fn insecure_ingest(&self) -> ::std::option::Option<bool> {
         self.insecure_ingest
     }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration. Default: <code>false</code>.</p>
+    pub fn redundant_ingest(&self) -> ::std::option::Option<bool> {
+        self.redundant_ingest
+    }
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best practices and strategies</a> in <i>Tagging AWS Resources and Tag Editor</i> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -65,6 +71,7 @@ pub struct CreateIngestConfigurationInputBuilder {
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) ingest_protocol: ::std::option::Option<crate::types::IngestProtocol>,
     pub(crate) insecure_ingest: ::std::option::Option<bool>,
+    pub(crate) redundant_ingest: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateIngestConfigurationInputBuilder {
@@ -159,6 +166,20 @@ impl CreateIngestConfigurationInputBuilder {
     pub fn get_insecure_ingest(&self) -> &::std::option::Option<bool> {
         &self.insecure_ingest
     }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration. Default: <code>false</code>.</p>
+    pub fn redundant_ingest(mut self, input: bool) -> Self {
+        self.redundant_ingest = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration. Default: <code>false</code>.</p>
+    pub fn set_redundant_ingest(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.redundant_ingest = input;
+        self
+    }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration. Default: <code>false</code>.</p>
+    pub fn get_redundant_ingest(&self) -> &::std::option::Option<bool> {
+        &self.redundant_ingest
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -193,6 +214,7 @@ impl CreateIngestConfigurationInputBuilder {
             attributes: self.attributes,
             ingest_protocol: self.ingest_protocol,
             insecure_ingest: self.insecure_ingest,
+            redundant_ingest: self.redundant_ingest,
             tags: self.tags,
         })
     }

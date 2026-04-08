@@ -31,6 +31,8 @@ pub(crate) mod shape_create_order;
 
 pub(crate) mod shape_create_outpost;
 
+pub(crate) mod shape_create_renewal;
+
 pub(crate) mod shape_create_site;
 
 pub(crate) mod shape_delete_outpost;
@@ -52,6 +54,8 @@ pub(crate) mod shape_get_outpost_billing_information;
 pub(crate) mod shape_get_outpost_instance_types;
 
 pub(crate) mod shape_get_outpost_supported_instance_types;
+
+pub(crate) mod shape_get_renewal_pricing;
 
 pub(crate) mod shape_get_site;
 
@@ -108,6 +112,8 @@ pub(crate) mod shape_conflict_exception;
 pub(crate) mod shape_create_order_input;
 
 pub(crate) mod shape_create_outpost_input;
+
+pub(crate) mod shape_create_renewal_input;
 
 pub(crate) mod shape_create_site_input;
 
@@ -171,6 +177,8 @@ pub(crate) mod shape_outpost;
 
 pub(crate) mod shape_outpost_list_definition;
 
+pub(crate) mod shape_pricing_option_list;
+
 pub(crate) mod shape_rack_physical_properties;
 
 pub(crate) mod shape_requested_instance_pools;
@@ -207,6 +215,8 @@ pub(crate) mod shape_line_item_list_definition;
 
 pub(crate) mod shape_order_summary;
 
+pub(crate) mod shape_pricing_option;
+
 pub(crate) mod shape_subscription;
 
 pub(crate) mod shape_supported_storage_list;
@@ -224,6 +234,8 @@ pub(crate) mod shape_line_item;
 pub(crate) mod shape_line_item_status_counts;
 
 pub(crate) mod shape_order_id_list;
+
+pub(crate) mod shape_subscription_pricing_details;
 
 pub(crate) mod shape_asset_instance_capacity_list;
 

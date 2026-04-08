@@ -7,6 +7,8 @@ pub struct UpdateIngestConfigurationInput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Stage ARN that needs to be updated.</p>
     pub stage_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration. Default: <code>false</code>.</p>
+    pub redundant_ingest: ::std::option::Option<bool>,
 }
 impl UpdateIngestConfigurationInput {
     /// <p>ARN of the IngestConfiguration, for which the related stage ARN needs to be updated.</p>
@@ -16,6 +18,10 @@ impl UpdateIngestConfigurationInput {
     /// <p>Stage ARN that needs to be updated.</p>
     pub fn stage_arn(&self) -> ::std::option::Option<&str> {
         self.stage_arn.as_deref()
+    }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration. Default: <code>false</code>.</p>
+    pub fn redundant_ingest(&self) -> ::std::option::Option<bool> {
+        self.redundant_ingest
     }
 }
 impl UpdateIngestConfigurationInput {
@@ -31,6 +37,7 @@ impl UpdateIngestConfigurationInput {
 pub struct UpdateIngestConfigurationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) stage_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) redundant_ingest: ::std::option::Option<bool>,
 }
 impl UpdateIngestConfigurationInputBuilder {
     /// <p>ARN of the IngestConfiguration, for which the related stage ARN needs to be updated.</p>
@@ -62,6 +69,20 @@ impl UpdateIngestConfigurationInputBuilder {
     pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stage_arn
     }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration. Default: <code>false</code>.</p>
+    pub fn redundant_ingest(mut self, input: bool) -> Self {
+        self.redundant_ingest = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration. Default: <code>false</code>.</p>
+    pub fn set_redundant_ingest(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.redundant_ingest = input;
+        self
+    }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration. Default: <code>false</code>.</p>
+    pub fn get_redundant_ingest(&self) -> &::std::option::Option<bool> {
+        &self.redundant_ingest
+    }
     /// Consumes the builder and constructs a [`UpdateIngestConfigurationInput`](crate::operation::update_ingest_configuration::UpdateIngestConfigurationInput).
     pub fn build(
         self,
@@ -72,6 +93,7 @@ impl UpdateIngestConfigurationInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_ingest_configuration::UpdateIngestConfigurationInput {
             arn: self.arn,
             stage_arn: self.stage_arn,
+            redundant_ingest: self.redundant_ingest,
         })
     }
 }

@@ -64,6 +64,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "redundantIngest" => {
+                            builder = builder.set_redundant_ingest(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

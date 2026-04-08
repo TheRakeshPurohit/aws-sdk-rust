@@ -23,6 +23,9 @@
 ///     BackupVaultEvent::CopyJobFailed => { /* ... */ },
 ///     BackupVaultEvent::CopyJobStarted => { /* ... */ },
 ///     BackupVaultEvent::CopyJobSuccessful => { /* ... */ },
+///     BackupVaultEvent::EksBackupObjectFailed => { /* ... */ },
+///     BackupVaultEvent::EksRestoreObjectFailed => { /* ... */ },
+///     BackupVaultEvent::EksRestoreObjectSkipped => { /* ... */ },
 ///     BackupVaultEvent::RecoveryPointIndexingFailed => { /* ... */ },
 ///     BackupVaultEvent::RecoveryPointIndexCompleted => { /* ... */ },
 ///     BackupVaultEvent::RecoveryPointIndexDeleted => { /* ... */ },
@@ -84,6 +87,12 @@ pub enum BackupVaultEvent {
     #[allow(missing_docs)] // documentation missing in model
     CopyJobSuccessful,
     #[allow(missing_docs)] // documentation missing in model
+    EksBackupObjectFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    EksRestoreObjectFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    EksRestoreObjectSkipped,
+    #[allow(missing_docs)] // documentation missing in model
     RecoveryPointIndexingFailed,
     #[allow(missing_docs)] // documentation missing in model
     RecoveryPointIndexCompleted,
@@ -121,6 +130,9 @@ impl ::std::convert::From<&str> for BackupVaultEvent {
             "COPY_JOB_FAILED" => BackupVaultEvent::CopyJobFailed,
             "COPY_JOB_STARTED" => BackupVaultEvent::CopyJobStarted,
             "COPY_JOB_SUCCESSFUL" => BackupVaultEvent::CopyJobSuccessful,
+            "EKS_BACKUP_OBJECT_FAILED" => BackupVaultEvent::EksBackupObjectFailed,
+            "EKS_RESTORE_OBJECT_FAILED" => BackupVaultEvent::EksRestoreObjectFailed,
+            "EKS_RESTORE_OBJECT_SKIPPED" => BackupVaultEvent::EksRestoreObjectSkipped,
             "RECOVERY_POINT_INDEXING_FAILED" => BackupVaultEvent::RecoveryPointIndexingFailed,
             "RECOVERY_POINT_INDEX_COMPLETED" => BackupVaultEvent::RecoveryPointIndexCompleted,
             "RECOVERY_POINT_INDEX_DELETED" => BackupVaultEvent::RecoveryPointIndexDeleted,
@@ -157,6 +169,9 @@ impl BackupVaultEvent {
             BackupVaultEvent::CopyJobFailed => "COPY_JOB_FAILED",
             BackupVaultEvent::CopyJobStarted => "COPY_JOB_STARTED",
             BackupVaultEvent::CopyJobSuccessful => "COPY_JOB_SUCCESSFUL",
+            BackupVaultEvent::EksBackupObjectFailed => "EKS_BACKUP_OBJECT_FAILED",
+            BackupVaultEvent::EksRestoreObjectFailed => "EKS_RESTORE_OBJECT_FAILED",
+            BackupVaultEvent::EksRestoreObjectSkipped => "EKS_RESTORE_OBJECT_SKIPPED",
             BackupVaultEvent::RecoveryPointIndexingFailed => "RECOVERY_POINT_INDEXING_FAILED",
             BackupVaultEvent::RecoveryPointIndexCompleted => "RECOVERY_POINT_INDEX_COMPLETED",
             BackupVaultEvent::RecoveryPointIndexDeleted => "RECOVERY_POINT_INDEX_DELETED",
@@ -184,6 +199,9 @@ impl BackupVaultEvent {
             "COPY_JOB_FAILED",
             "COPY_JOB_STARTED",
             "COPY_JOB_SUCCESSFUL",
+            "EKS_BACKUP_OBJECT_FAILED",
+            "EKS_RESTORE_OBJECT_FAILED",
+            "EKS_RESTORE_OBJECT_SKIPPED",
             "RECOVERY_POINT_INDEXING_FAILED",
             "RECOVERY_POINT_INDEX_COMPLETED",
             "RECOVERY_POINT_INDEX_DELETED",
@@ -228,6 +246,9 @@ impl ::std::fmt::Display for BackupVaultEvent {
             BackupVaultEvent::CopyJobFailed => write!(f, "COPY_JOB_FAILED"),
             BackupVaultEvent::CopyJobStarted => write!(f, "COPY_JOB_STARTED"),
             BackupVaultEvent::CopyJobSuccessful => write!(f, "COPY_JOB_SUCCESSFUL"),
+            BackupVaultEvent::EksBackupObjectFailed => write!(f, "EKS_BACKUP_OBJECT_FAILED"),
+            BackupVaultEvent::EksRestoreObjectFailed => write!(f, "EKS_RESTORE_OBJECT_FAILED"),
+            BackupVaultEvent::EksRestoreObjectSkipped => write!(f, "EKS_RESTORE_OBJECT_SKIPPED"),
             BackupVaultEvent::RecoveryPointIndexingFailed => write!(f, "RECOVERY_POINT_INDEXING_FAILED"),
             BackupVaultEvent::RecoveryPointIndexCompleted => write!(f, "RECOVERY_POINT_INDEX_COMPLETED"),
             BackupVaultEvent::RecoveryPointIndexDeleted => write!(f, "RECOVERY_POINT_INDEX_DELETED"),

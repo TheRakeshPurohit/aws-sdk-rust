@@ -112,6 +112,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Marketplace Catalog Service | [aws-sdk-marketplacecatalog](https://crates.io/crates/aws-sdk-marketplacecatalog) ([docs](https://docs.rs/aws-sdk-marketplacecatalog)) |
 | AWS Marketplace Commerce Analytics | [aws-sdk-marketplacecommerceanalytics](https://crates.io/crates/aws-sdk-marketplacecommerceanalytics) ([docs](https://docs.rs/aws-sdk-marketplacecommerceanalytics)) |
 | AWS Marketplace Deployment Service | [aws-sdk-marketplacedeployment](https://crates.io/crates/aws-sdk-marketplacedeployment) ([docs](https://docs.rs/aws-sdk-marketplacedeployment)) |
+| AWS Marketplace Discovery | [aws-sdk-marketplacediscovery](https://crates.io/crates/aws-sdk-marketplacediscovery) ([docs](https://docs.rs/aws-sdk-marketplacediscovery)) |
 | AWS Marketplace Entitlement Service | [aws-sdk-marketplaceentitlement](https://crates.io/crates/aws-sdk-marketplaceentitlement) ([docs](https://docs.rs/aws-sdk-marketplaceentitlement)) |
 | AWS Marketplace Reporting Service | [aws-sdk-marketplacereporting](https://crates.io/crates/aws-sdk-marketplacereporting) ([docs](https://docs.rs/aws-sdk-marketplacereporting)) |
 | AWS MediaConnect | [aws-sdk-mediaconnect](https://crates.io/crates/aws-sdk-mediaconnect) ([docs](https://docs.rs/aws-sdk-mediaconnect)) |

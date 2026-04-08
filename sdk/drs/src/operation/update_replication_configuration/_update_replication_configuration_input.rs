@@ -37,6 +37,8 @@ pub struct UpdateReplicationConfigurationInput {
     pub pit_policy: ::std::option::Option<::std::vec::Vec<crate::types::PitPolicyRule>>,
     /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
     pub auto_replicate_new_disks: ::std::option::Option<bool>,
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
 }
 impl UpdateReplicationConfigurationInput {
     /// <p>The ID of the Source Server for this Replication Configuration.</p>
@@ -113,6 +115,10 @@ impl UpdateReplicationConfigurationInput {
     pub fn auto_replicate_new_disks(&self) -> ::std::option::Option<bool> {
         self.auto_replicate_new_disks
     }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn internet_protocol(&self) -> ::std::option::Option<&crate::types::InternetProtocol> {
+        self.internet_protocol.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateReplicationConfigurationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -134,6 +140,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationInput {
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("pit_policy", &self.pit_policy);
         formatter.field("auto_replicate_new_disks", &self.auto_replicate_new_disks);
+        formatter.field("internet_protocol", &self.internet_protocol);
         formatter.finish()
     }
 }
@@ -165,6 +172,7 @@ pub struct UpdateReplicationConfigurationInputBuilder {
     pub(crate) staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) pit_policy: ::std::option::Option<::std::vec::Vec<crate::types::PitPolicyRule>>,
     pub(crate) auto_replicate_new_disks: ::std::option::Option<bool>,
+    pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
 }
 impl UpdateReplicationConfigurationInputBuilder {
     /// <p>The ID of the Source Server for this Replication Configuration.</p>
@@ -443,6 +451,20 @@ impl UpdateReplicationConfigurationInputBuilder {
     pub fn get_auto_replicate_new_disks(&self) -> &::std::option::Option<bool> {
         &self.auto_replicate_new_disks
     }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn internet_protocol(mut self, input: crate::types::InternetProtocol) -> Self {
+        self.internet_protocol = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn set_internet_protocol(mut self, input: ::std::option::Option<crate::types::InternetProtocol>) -> Self {
+        self.internet_protocol = input;
+        self
+    }
+    /// <p>Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)</p>
+    pub fn get_internet_protocol(&self) -> &::std::option::Option<crate::types::InternetProtocol> {
+        &self.internet_protocol
+    }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationInput`](crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput).
     pub fn build(
         self,
@@ -468,6 +490,7 @@ impl UpdateReplicationConfigurationInputBuilder {
             staging_area_tags: self.staging_area_tags,
             pit_policy: self.pit_policy,
             auto_replicate_new_disks: self.auto_replicate_new_disks,
+            internet_protocol: self.internet_protocol,
         })
     }
 }
@@ -491,6 +514,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationInputBuilder {
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("pit_policy", &self.pit_policy);
         formatter.field("auto_replicate_new_disks", &self.auto_replicate_new_disks);
+        formatter.field("internet_protocol", &self.internet_protocol);
         formatter.finish()
     }
 }

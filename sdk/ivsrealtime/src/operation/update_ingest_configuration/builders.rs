@@ -136,4 +136,18 @@ impl UpdateIngestConfigurationFluentBuilder {
     pub fn get_stage_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stage_arn()
     }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration. Default: <code>false</code>.</p>
+    pub fn redundant_ingest(mut self, input: bool) -> Self {
+        self.inner = self.inner.redundant_ingest(input);
+        self
+    }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration. Default: <code>false</code>.</p>
+    pub fn set_redundant_ingest(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_redundant_ingest(input);
+        self
+    }
+    /// <p>Indicates whether redundant ingest is enabled for the ingest configuration. Default: <code>false</code>.</p>
+    pub fn get_redundant_ingest(&self) -> &::std::option::Option<bool> {
+        self.inner.get_redundant_ingest()
+    }
 }

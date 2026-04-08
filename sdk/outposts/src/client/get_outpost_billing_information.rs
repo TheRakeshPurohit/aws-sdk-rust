@@ -11,6 +11,8 @@ impl super::Client {
     ///   - [`next_token(Option<String>)`](crate::operation::get_outpost_billing_information::GetOutpostBillingInformationOutput::next_token): <p>The pagination token.</p>
     ///   - [`subscriptions(Option<Vec::<Subscription>>)`](crate::operation::get_outpost_billing_information::GetOutpostBillingInformationOutput::subscriptions): <p>The subscription details for the specified Outpost.</p>
     ///   - [`contract_end_date(Option<String>)`](crate::operation::get_outpost_billing_information::GetOutpostBillingInformationOutput::contract_end_date): <p>The date the current contract term ends for the specified Outpost. You must start the renewal or decommission process at least 5 business days before the current term for your Amazon Web Services Outposts ends. Failing to complete these steps at least 5 business days before the current term ends might result in unanticipated charges.</p>
+    ///   - [`payment_term(Option<PaymentTerm>)`](crate::operation::get_outpost_billing_information::GetOutpostBillingInformationOutput::payment_term): <p>The payment term.</p>
+    ///   - [`payment_option(Option<PaymentOption>)`](crate::operation::get_outpost_billing_information::GetOutpostBillingInformationOutput::payment_option): <p>The payment option.</p>
     /// - On failure, responds with [`SdkError<GetOutpostBillingInformationError>`](crate::operation::get_outpost_billing_information::GetOutpostBillingInformationError)
     pub fn get_outpost_billing_information(
         &self,

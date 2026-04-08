@@ -87,6 +87,8 @@ pub enum Error {
     UnableToGetUpstreamImageException(crate::types::error::UnableToGetUpstreamImageException),
     /// <p>There was an issue getting the upstream layer matching the pull through cache rule.</p>
     UnableToGetUpstreamLayerException(crate::types::error::UnableToGetUpstreamLayerException),
+    /// <p>The referrer or referrers were unable to be listed using the pull through cache rule. This is usually caused because of an issue with the Secrets Manager secret containing the credentials for the upstream registry.</p>
+    UnableToListUpstreamImageReferrersException(crate::types::error::UnableToListUpstreamImageReferrersException),
     /// <p>The image is of a type that cannot be scanned.</p>
     UnsupportedImageTypeException(crate::types::error::UnsupportedImageTypeException),
     /// <p>The specified upstream registry isn't supported.</p>
@@ -149,6 +151,7 @@ impl ::std::fmt::Display for Error {
             Error::UnableToDecryptSecretValueException(inner) => inner.fmt(f),
             Error::UnableToGetUpstreamImageException(inner) => inner.fmt(f),
             Error::UnableToGetUpstreamLayerException(inner) => inner.fmt(f),
+            Error::UnableToListUpstreamImageReferrersException(inner) => inner.fmt(f),
             Error::UnsupportedImageTypeException(inner) => inner.fmt(f),
             Error::UnsupportedUpstreamRegistryException(inner) => inner.fmt(f),
             Error::UploadNotFoundException(inner) => inner.fmt(f),
@@ -216,6 +219,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::UnableToDecryptSecretValueException(inner) => inner.meta(),
             Self::UnableToGetUpstreamImageException(inner) => inner.meta(),
             Self::UnableToGetUpstreamLayerException(inner) => inner.meta(),
+            Self::UnableToListUpstreamImageReferrersException(inner) => inner.meta(),
             Self::UnsupportedImageTypeException(inner) => inner.meta(),
             Self::UnsupportedUpstreamRegistryException(inner) => inner.meta(),
             Self::UploadNotFoundException(inner) => inner.meta(),
@@ -1445,6 +1449,9 @@ impl From<crate::operation::list_image_referrers::ListImageReferrersError> for E
                 Error::RepositoryNotFoundException(inner)
             }
             crate::operation::list_image_referrers::ListImageReferrersError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_image_referrers::ListImageReferrersError::UnableToListUpstreamImageReferrersException(inner) => {
+                Error::UnableToListUpstreamImageReferrersException(inner)
+            }
             crate::operation::list_image_referrers::ListImageReferrersError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_image_referrers::ListImageReferrersError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2294,6 +2301,7 @@ impl ::std::error::Error for Error {
             Error::UnableToDecryptSecretValueException(inner) => inner.source(),
             Error::UnableToGetUpstreamImageException(inner) => inner.source(),
             Error::UnableToGetUpstreamLayerException(inner) => inner.source(),
+            Error::UnableToListUpstreamImageReferrersException(inner) => inner.source(),
             Error::UnsupportedImageTypeException(inner) => inner.source(),
             Error::UnsupportedUpstreamRegistryException(inner) => inner.source(),
             Error::UploadNotFoundException(inner) => inner.source(),
@@ -2347,6 +2355,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::UnableToDecryptSecretValueException(e) => e.request_id(),
             Self::UnableToGetUpstreamImageException(e) => e.request_id(),
             Self::UnableToGetUpstreamLayerException(e) => e.request_id(),
+            Self::UnableToListUpstreamImageReferrersException(e) => e.request_id(),
             Self::UnsupportedImageTypeException(e) => e.request_id(),
             Self::UnsupportedUpstreamRegistryException(e) => e.request_id(),
             Self::UploadNotFoundException(e) => e.request_id(),

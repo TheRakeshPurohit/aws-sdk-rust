@@ -29,6 +29,8 @@ pub use crate::types::_catalog_item::CatalogItem;
 
 pub use crate::types::_connection_details::ConnectionDetails;
 
+pub use crate::types::_pricing_result::PricingResult;
+
 pub use crate::types::_address_type::AddressType;
 
 pub use crate::types::_decommission_request_status::DecommissionRequestStatus;
@@ -67,6 +69,8 @@ pub use crate::types::_subscription::Subscription;
 
 pub use crate::types::_instance_type_item::InstanceTypeItem;
 
+pub use crate::types::_pricing_option::PricingOption;
+
 pub use crate::types::_aws_service_name::AwsServiceName;
 
 pub use crate::types::_asset_instance::AssetInstance;
@@ -96,6 +100,10 @@ pub use crate::types::_ec2_capacity::Ec2Capacity;
 pub use crate::types::_subscription_type::SubscriptionType;
 
 pub use crate::types::_subscription_status::SubscriptionStatus;
+
+pub use crate::types::_quote_pricing_type::QuotePricingType;
+
+pub use crate::types::_subscription_pricing_details::SubscriptionPricingDetails;
 
 pub use crate::types::_compute_attributes::ComputeAttributes;
 
@@ -201,6 +209,12 @@ mod _power_feed_drop;
 
 mod _power_phase;
 
+mod _pricing_option;
+
+mod _pricing_result;
+
+mod _quote_pricing_type;
+
 mod _rack_physical_properties;
 
 mod _resource_type;
@@ -212,6 +226,8 @@ mod _shipment_information;
 mod _site;
 
 mod _subscription;
+
+mod _subscription_pricing_details;
 
 mod _subscription_status;
 
