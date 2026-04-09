@@ -4,8 +4,17 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CreateDashboard` operation.
 pub mod create_dashboard;
 
+/// Types for the `CreateScheduledReport` operation.
+pub mod create_scheduled_report;
+
 /// Types for the `DeleteDashboard` operation.
 pub mod delete_dashboard;
+
+/// Types for the `DeleteScheduledReport` operation.
+pub mod delete_scheduled_report;
+
+/// Types for the `ExecuteScheduledReport` operation.
+pub mod execute_scheduled_report;
 
 /// Types for the `GetDashboard` operation.
 pub mod get_dashboard;
@@ -13,8 +22,14 @@ pub mod get_dashboard;
 /// Types for the `GetResourcePolicy` operation.
 pub mod get_resource_policy;
 
+/// Types for the `GetScheduledReport` operation.
+pub mod get_scheduled_report;
+
 /// Types for the `ListDashboards` operation.
 pub mod list_dashboards;
+
+/// Types for the `ListScheduledReports` operation.
+pub mod list_scheduled_reports;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -27,3 +42,6 @@ pub mod untag_resource;
 
 /// Types for the `UpdateDashboard` operation.
 pub mod update_dashboard;
+
+/// Types for the `UpdateScheduledReport` operation.
+pub mod update_scheduled_report;

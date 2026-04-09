@@ -14,6 +14,7 @@
 /// match routerinputtype {
 ///     RouterInputType::Failover => { /* ... */ },
 ///     RouterInputType::MediaconnectFlow => { /* ... */ },
+///     RouterInputType::MedialiveChannel => { /* ... */ },
 ///     RouterInputType::Merge => { /* ... */ },
 ///     RouterInputType::Standard => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +50,8 @@ pub enum RouterInputType {
     #[allow(missing_docs)] // documentation missing in model
     MediaconnectFlow,
     #[allow(missing_docs)] // documentation missing in model
+    MedialiveChannel,
+    #[allow(missing_docs)] // documentation missing in model
     Merge,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for RouterInputType {
         match s {
             "FAILOVER" => RouterInputType::Failover,
             "MEDIACONNECT_FLOW" => RouterInputType::MediaconnectFlow,
+            "MEDIALIVE_CHANNEL" => RouterInputType::MedialiveChannel,
             "MERGE" => RouterInputType::Merge,
             "STANDARD" => RouterInputType::Standard,
             other => RouterInputType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +84,7 @@ impl RouterInputType {
         match self {
             RouterInputType::Failover => "FAILOVER",
             RouterInputType::MediaconnectFlow => "MEDIACONNECT_FLOW",
+            RouterInputType::MedialiveChannel => "MEDIALIVE_CHANNEL",
             RouterInputType::Merge => "MERGE",
             RouterInputType::Standard => "STANDARD",
             RouterInputType::Unknown(value) => value.as_str(),
@@ -87,7 +92,7 @@ impl RouterInputType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILOVER", "MEDIACONNECT_FLOW", "MERGE", "STANDARD"]
+        &["FAILOVER", "MEDIACONNECT_FLOW", "MEDIALIVE_CHANNEL", "MERGE", "STANDARD"]
     }
 }
 impl ::std::convert::AsRef<str> for RouterInputType {
@@ -112,6 +117,7 @@ impl ::std::fmt::Display for RouterInputType {
         match self {
             RouterInputType::Failover => write!(f, "FAILOVER"),
             RouterInputType::MediaconnectFlow => write!(f, "MEDIACONNECT_FLOW"),
+            RouterInputType::MedialiveChannel => write!(f, "MEDIALIVE_CHANNEL"),
             RouterInputType::Merge => write!(f, "MERGE"),
             RouterInputType::Standard => write!(f, "STANDARD"),
             RouterInputType::Unknown(value) => write!(f, "{value}"),

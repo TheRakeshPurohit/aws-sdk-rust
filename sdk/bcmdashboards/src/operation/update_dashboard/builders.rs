@@ -122,31 +122,31 @@ impl UpdateDashboardFluentBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
-    /// <p>The new name for the dashboard. If not specified, the existing name is retained.</p>
+    /// <p>The new name for the dashboard.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The new name for the dashboard. If not specified, the existing name is retained.</p>
+    /// <p>The new name for the dashboard.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The new name for the dashboard. If not specified, the existing name is retained.</p>
+    /// <p>The new name for the dashboard.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The new description for the dashboard. If not specified, the existing description is retained.</p>
+    /// <p>The new description for the dashboard.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The new description for the dashboard. If not specified, the existing description is retained.</p>
+    /// <p>The new description for the dashboard.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The new description for the dashboard. If not specified, the existing description is retained.</p>
+    /// <p>The new description for the dashboard.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

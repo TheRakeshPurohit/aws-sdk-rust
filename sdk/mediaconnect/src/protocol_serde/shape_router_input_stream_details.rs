@@ -36,22 +36,28 @@ where
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Standard' cannot be null"))?
                                 ))
                             }
+                            "mediaLiveChannel" => {
+                                Some(crate::types::RouterInputStreamDetails::MediaLiveChannel(
+                                    crate::protocol_serde::shape_media_live_channel_router_input_stream_details::de_media_live_channel_router_input_stream_details(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MediaLiveChannel' cannot be null"))?
+                                ))
+                            }
                             "failover" => {
                                 Some(crate::types::RouterInputStreamDetails::Failover(
                                     crate::protocol_serde::shape_failover_router_input_stream_details::de_failover_router_input_stream_details(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Failover' cannot be null"))?
                                 ))
                             }
-                            "merge" => {
-                                Some(crate::types::RouterInputStreamDetails::Merge(
-                                    crate::protocol_serde::shape_merge_router_input_stream_details::de_merge_router_input_stream_details(tokens, _value)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Merge' cannot be null"))?
-                                ))
-                            }
                             "mediaConnectFlow" => {
                                 Some(crate::types::RouterInputStreamDetails::MediaConnectFlow(
                                     crate::protocol_serde::shape_media_connect_flow_router_input_stream_details::de_media_connect_flow_router_input_stream_details(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MediaConnectFlow' cannot be null"))?
+                                ))
+                            }
+                            "merge" => {
+                                Some(crate::types::RouterInputStreamDetails::Merge(
+                                    crate::protocol_serde::shape_merge_router_input_stream_details::de_merge_router_input_stream_details(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Merge' cannot be null"))?
                                 ))
                             }
                             _ => {

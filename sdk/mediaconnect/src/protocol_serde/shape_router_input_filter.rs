@@ -4,8 +4,8 @@ pub fn ser_router_input_filter(
     input: &crate::types::RouterInputFilter,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
-        crate::types::RouterInputFilter::RegionNames(inner) => {
-            let mut array_1 = object_4.key("regionNames").start_array();
+        crate::types::RouterInputFilter::NameContains(inner) => {
+            let mut array_1 = object_4.key("nameContains").start_array();
             for item_2 in inner {
                 {
                     array_1.value().string(item_2.as_str());
@@ -13,8 +13,8 @@ pub fn ser_router_input_filter(
             }
             array_1.finish();
         }
-        crate::types::RouterInputFilter::InputTypes(inner) => {
-            let mut array_3 = object_4.key("inputTypes").start_array();
+        crate::types::RouterInputFilter::RegionNames(inner) => {
+            let mut array_3 = object_4.key("regionNames").start_array();
             for item_4 in inner {
                 {
                     array_3.value().string(item_4.as_str());
@@ -22,8 +22,8 @@ pub fn ser_router_input_filter(
             }
             array_3.finish();
         }
-        crate::types::RouterInputFilter::NameContains(inner) => {
-            let mut array_5 = object_4.key("nameContains").start_array();
+        crate::types::RouterInputFilter::NetworkInterfaceArns(inner) => {
+            let mut array_5 = object_4.key("networkInterfaceArns").start_array();
             for item_6 in inner {
                 {
                     array_5.value().string(item_6.as_str());
@@ -31,8 +31,8 @@ pub fn ser_router_input_filter(
             }
             array_5.finish();
         }
-        crate::types::RouterInputFilter::NetworkInterfaceArns(inner) => {
-            let mut array_7 = object_4.key("networkInterfaceArns").start_array();
+        crate::types::RouterInputFilter::RoutingScopes(inner) => {
+            let mut array_7 = object_4.key("routingScopes").start_array();
             for item_8 in inner {
                 {
                     array_7.value().string(item_8.as_str());
@@ -40,8 +40,8 @@ pub fn ser_router_input_filter(
             }
             array_7.finish();
         }
-        crate::types::RouterInputFilter::RoutingScopes(inner) => {
-            let mut array_9 = object_4.key("routingScopes").start_array();
+        crate::types::RouterInputFilter::InputTypes(inner) => {
+            let mut array_9 = object_4.key("inputTypes").start_array();
             for item_10 in inner {
                 {
                     array_9.value().string(item_10.as_str());

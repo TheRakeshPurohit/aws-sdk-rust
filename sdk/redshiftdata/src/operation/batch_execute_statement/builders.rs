@@ -226,6 +226,25 @@ impl BatchExecuteStatementFluentBuilder {
     pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_statement_name()
     }
+    ///
+    /// Appends an item to `Parameters`.
+    ///
+    /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+    ///
+    /// <p>The parameters for the SQL statements. The parameters are shared across all SQL statements in the batch.</p>
+    pub fn parameters(mut self, input: crate::types::SqlParameter) -> Self {
+        self.inner = self.inner.parameters(input);
+        self
+    }
+    /// <p>The parameters for the SQL statements. The parameters are shared across all SQL statements in the batch.</p>
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>) -> Self {
+        self.inner = self.inner.set_parameters(input);
+        self
+    }
+    /// <p>The parameters for the SQL statements. The parameters are shared across all SQL statements in the batch.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
+        self.inner.get_parameters()
+    }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workgroup_name(input.into());

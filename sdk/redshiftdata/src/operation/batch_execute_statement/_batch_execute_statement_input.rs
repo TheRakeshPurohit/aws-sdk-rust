@@ -17,6 +17,8 @@ pub struct BatchExecuteStatementInput {
     pub with_event: ::std::option::Option<bool>,
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query.</p>
     pub statement_name: ::std::option::Option<::std::string::String>,
+    /// <p>The parameters for the SQL statements. The parameters are shared across all SQL statements in the batch.</p>
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub workgroup_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -59,6 +61,12 @@ impl BatchExecuteStatementInput {
     pub fn statement_name(&self) -> ::std::option::Option<&str> {
         self.statement_name.as_deref()
     }
+    /// <p>The parameters for the SQL statements. The parameters are shared across all SQL statements in the batch.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
+    pub fn parameters(&self) -> &[crate::types::SqlParameter] {
+        self.parameters.as_deref().unwrap_or_default()
+    }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
         self.workgroup_name.as_deref()
@@ -98,6 +106,7 @@ pub struct BatchExecuteStatementInputBuilder {
     pub(crate) database: ::std::option::Option<::std::string::String>,
     pub(crate) with_event: ::std::option::Option<bool>,
     pub(crate) statement_name: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>,
     pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) result_format: ::std::option::Option<crate::types::ResultFormatString>,
@@ -209,6 +218,26 @@ impl BatchExecuteStatementInputBuilder {
     pub fn get_statement_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.statement_name
     }
+    /// Appends an item to `parameters`.
+    ///
+    /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+    ///
+    /// <p>The parameters for the SQL statements. The parameters are shared across all SQL statements in the batch.</p>
+    pub fn parameters(mut self, input: crate::types::SqlParameter) -> Self {
+        let mut v = self.parameters.unwrap_or_default();
+        v.push(input);
+        self.parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The parameters for the SQL statements. The parameters are shared across all SQL statements in the batch.</p>
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>>) -> Self {
+        self.parameters = input;
+        self
+    }
+    /// <p>The parameters for the SQL statements. The parameters are shared across all SQL statements in the batch.</p>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SqlParameter>> {
+        &self.parameters
+    }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workgroup_name = ::std::option::Option::Some(input.into());
@@ -292,6 +321,7 @@ impl BatchExecuteStatementInputBuilder {
             database: self.database,
             with_event: self.with_event,
             statement_name: self.statement_name,
+            parameters: self.parameters,
             workgroup_name: self.workgroup_name,
             client_token: self.client_token,
             result_format: self.result_format,

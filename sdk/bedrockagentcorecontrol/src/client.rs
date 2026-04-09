@@ -218,6 +218,10 @@ mod create_policy;
 
 mod create_policy_engine;
 
+mod create_registry;
+
+mod create_registry_record;
+
 mod create_workload_identity;
 
 /// Operation customization and supporting types.
@@ -275,6 +279,10 @@ mod delete_policy;
 
 mod delete_policy_engine;
 
+mod delete_registry;
+
+mod delete_registry_record;
+
 mod delete_resource_policy;
 
 mod delete_workload_identity;
@@ -308,6 +316,10 @@ mod get_policy;
 mod get_policy_engine;
 
 mod get_policy_generation;
+
+mod get_registry;
+
+mod get_registry_record;
 
 mod get_resource_policy;
 
@@ -349,6 +361,10 @@ mod list_policy_generation_assets;
 
 mod list_policy_generations;
 
+mod list_registries;
+
+mod list_registry_records;
+
 mod list_tags_for_resource;
 
 mod list_workload_identities;
@@ -358,6 +374,8 @@ mod put_resource_policy;
 mod set_token_vault_cmk;
 
 mod start_policy_generation;
+
+mod submit_registry_record_for_approval;
 
 mod synchronize_gateway_targets;
 
@@ -386,5 +404,11 @@ mod update_online_evaluation_config;
 mod update_policy;
 
 mod update_policy_engine;
+
+mod update_registry;
+
+mod update_registry_record;
+
+mod update_registry_record_status;
 
 mod update_workload_identity;

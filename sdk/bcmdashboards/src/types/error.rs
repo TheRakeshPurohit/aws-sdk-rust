@@ -9,9 +9,13 @@ pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 pub use crate::types::error::_validation_exception::ValidationException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
 mod _access_denied_exception;
+
+mod _conflict_exception;
 
 mod _internal_server_exception;
 

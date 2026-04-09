@@ -157,11 +157,13 @@ pub use crate::types::_listed_router_input::ListedRouterInputBuilder;
 
 pub use crate::types::_standard_router_input_configuration::StandardRouterInputConfigurationBuilder;
 
+pub use crate::types::_media_live_channel_router_input_configuration::MediaLiveChannelRouterInputConfigurationBuilder;
+
 pub use crate::types::_failover_router_input_configuration::FailoverRouterInputConfigurationBuilder;
 
-pub use crate::types::_merge_router_input_configuration::MergeRouterInputConfigurationBuilder;
-
 pub use crate::types::_media_connect_flow_router_input_configuration::MediaConnectFlowRouterInputConfigurationBuilder;
+
+pub use crate::types::_merge_router_input_configuration::MergeRouterInputConfigurationBuilder;
 
 pub use crate::types::_preferred_day_time_maintenance_configuration::PreferredDayTimeMaintenanceConfigurationBuilder;
 
@@ -215,17 +217,19 @@ pub use crate::types::_media_stream_output_configuration::MediaStreamOutputConfi
 
 pub use crate::types::_media_stream_source_configuration::MediaStreamSourceConfigurationBuilder;
 
+pub use crate::types::_media_live_transit_encryption::MediaLiveTransitEncryptionBuilder;
+
 pub use crate::types::_router_input_message::RouterInputMessageBuilder;
 
 pub use crate::types::_standard_router_input_stream_details::StandardRouterInputStreamDetailsBuilder;
 
-pub use crate::types::_failover_router_input_stream_details::FailoverRouterInputStreamDetailsBuilder;
+pub use crate::types::_media_live_channel_router_input_stream_details::MediaLiveChannelRouterInputStreamDetailsBuilder;
 
-pub use crate::types::_merge_router_input_stream_details::MergeRouterInputStreamDetailsBuilder;
+pub use crate::types::_failover_router_input_stream_details::FailoverRouterInputStreamDetailsBuilder;
 
 pub use crate::types::_media_connect_flow_router_input_stream_details::MediaConnectFlowRouterInputStreamDetailsBuilder;
 
-pub use crate::types::_media_live_transit_encryption::MediaLiveTransitEncryptionBuilder;
+pub use crate::types::_merge_router_input_stream_details::MergeRouterInputStreamDetailsBuilder;
 
 pub use crate::types::_router_output_message::RouterOutputMessageBuilder;
 
@@ -249,13 +253,13 @@ pub use crate::types::_encoding_parameters::EncodingParametersBuilder;
 
 pub use crate::types::_input_configuration_request::InputConfigurationRequestBuilder;
 
-pub use crate::types::_rtp_router_input_configuration::RtpRouterInputConfigurationBuilder;
-
 pub use crate::types::_rist_router_input_configuration::RistRouterInputConfigurationBuilder;
 
 pub use crate::types::_srt_listener_router_input_configuration::SrtListenerRouterInputConfigurationBuilder;
 
 pub use crate::types::_srt_caller_router_input_configuration::SrtCallerRouterInputConfigurationBuilder;
+
+pub use crate::types::_rtp_router_input_configuration::RtpRouterInputConfigurationBuilder;
 
 pub use crate::types::_failover_router_input_indexed_stream_details::FailoverRouterInputIndexedStreamDetailsBuilder;
 
@@ -263,13 +267,13 @@ pub use crate::types::_merge_router_input_indexed_stream_details::MergeRouterInp
 
 pub use crate::types::_public_router_network_interface_rule::PublicRouterNetworkInterfaceRuleBuilder;
 
-pub use crate::types::_rtp_router_output_configuration::RtpRouterOutputConfigurationBuilder;
-
 pub use crate::types::_rist_router_output_configuration::RistRouterOutputConfigurationBuilder;
 
 pub use crate::types::_srt_listener_router_output_configuration::SrtListenerRouterOutputConfigurationBuilder;
 
 pub use crate::types::_srt_caller_router_output_configuration::SrtCallerRouterOutputConfigurationBuilder;
+
+pub use crate::types::_rtp_router_output_configuration::RtpRouterOutputConfigurationBuilder;
 
 pub use crate::types::_transport_stream::TransportStreamBuilder;
 

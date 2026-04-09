@@ -138,6 +138,8 @@ impl Client {
 
 mod create_dashboard;
 
+mod create_scheduled_report;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -167,11 +169,19 @@ pub mod customize;
 
 mod delete_dashboard;
 
+mod delete_scheduled_report;
+
+mod execute_scheduled_report;
+
 mod get_dashboard;
 
 mod get_resource_policy;
 
+mod get_scheduled_report;
+
 mod list_dashboards;
+
+mod list_scheduled_reports;
 
 mod list_tags_for_resource;
 
@@ -180,3 +190,5 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_dashboard;
+
+mod update_scheduled_report;

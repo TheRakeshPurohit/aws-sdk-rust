@@ -93,6 +93,8 @@ pub(crate) mod shape_retrieve_memory_records;
 
 pub(crate) mod shape_save_browser_session_profile;
 
+pub(crate) mod shape_search_registry_records;
+
 pub(crate) mod shape_start_browser_session;
 
 pub(crate) mod shape_start_code_interpreter_session;
@@ -184,6 +186,8 @@ pub(crate) mod shape_retryable_conflict_exception;
 pub(crate) mod shape_runtime_client_error;
 
 pub(crate) mod shape_save_browser_session_profile_input;
+
+pub(crate) mod shape_search_registry_records_input;
 
 pub(crate) mod shape_service_exception;
 
@@ -289,6 +293,8 @@ pub(crate) mod shape_payload_type;
 
 pub(crate) mod shape_proxy_configuration;
 
+pub(crate) mod shape_registry_record_summary_list;
+
 pub(crate) mod shape_search_criteria;
 
 pub(crate) mod shape_session_filter;
@@ -387,6 +393,8 @@ pub(crate) mod shape_proxy;
 
 pub(crate) mod shape_proxy_bypass;
 
+pub(crate) mod shape_registry_record_summary;
+
 pub(crate) mod shape_resource_location;
 
 pub(crate) mod shape_response_chunk;
@@ -400,6 +408,8 @@ pub(crate) mod shape_session_summary;
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_content;
+
+pub(crate) mod shape_descriptors;
 
 pub(crate) mod shape_domain_patterns;
 
@@ -421,6 +431,10 @@ pub(crate) mod shape_span_context;
 
 pub(crate) mod shape_token_usage;
 
+pub(crate) mod shape_a2a_descriptor;
+
+pub(crate) mod shape_agent_skills_descriptor;
+
 pub(crate) mod shape_content_block_list;
 
 pub(crate) mod shape_content_delta_event;
@@ -429,16 +443,30 @@ pub(crate) mod shape_content_start_event;
 
 pub(crate) mod shape_content_stop_event;
 
+pub(crate) mod shape_custom_descriptor;
+
+pub(crate) mod shape_mcp_descriptor;
+
 pub(crate) mod shape_messages_list;
 
 pub(crate) mod shape_proxy_credentials;
 
 pub(crate) mod shape_tool_result_structured_content;
 
+pub(crate) mod shape_agent_card_definition;
+
 pub(crate) mod shape_basic_auth;
 
 pub(crate) mod shape_content_block;
 
 pub(crate) mod shape_message_metadata;
+
+pub(crate) mod shape_server_definition;
+
+pub(crate) mod shape_skill_definition;
+
+pub(crate) mod shape_skill_md_definition;
+
+pub(crate) mod shape_tools_definition;
 
 pub(crate) mod shape_resource_content;

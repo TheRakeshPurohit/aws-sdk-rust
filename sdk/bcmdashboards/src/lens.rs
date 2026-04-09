@@ -9,9 +9,26 @@ pub(crate) fn reflens_list_dashboards_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_scheduled_reports_output_output_next_token(
+    input: &crate::operation::list_scheduled_reports::ListScheduledReportsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_dashboards_output_output_dashboards(
     input: crate::operation::list_dashboards::ListDashboardsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DashboardReference>> {
     let input = input.dashboards;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_scheduled_reports_output_output_scheduled_reports(
+    input: crate::operation::list_scheduled_reports::ListScheduledReportsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ScheduledReportSummary>> {
+    let input = input.scheduled_reports;
     ::std::option::Option::Some(input)
 }

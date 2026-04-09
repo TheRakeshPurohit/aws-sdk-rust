@@ -5,11 +5,13 @@
 pub enum Error {
     /// <p>You do not have sufficient permissions to perform this action. Verify your IAM permissions and any resource policies.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The request could not be completed due to a conflict with the current state of the resource. For example, attempting to create a resource that already exists or is being created.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>An internal error occurred while processing the request. Retry your request. If the problem persists, contact Amazon Web Services Support.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified resource (dashboard, policy, or widget) was not found. Verify the ARN and try again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request would exceed service quotas. For example, attempting to create more than 20 widgets in a dashboard or exceeding the maximum number of dashboards per account.</p>
+    /// <p>The request would exceed a service quota. Review the service quotas for Amazon Web Services Billing and Cost Management Dashboards and retry your request.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling. Reduce the frequency of requests and use exponential backoff.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
@@ -28,6 +30,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
@@ -55,6 +58,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
@@ -92,6 +96,41 @@ impl From<crate::operation::create_dashboard::CreateDashboardError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_scheduled_report::CreateScheduledReportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_scheduled_report::CreateScheduledReportError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_scheduled_report::CreateScheduledReportError> for Error {
+    fn from(err: crate::operation::create_scheduled_report::CreateScheduledReportError) -> Self {
+        match err {
+            crate::operation::create_scheduled_report::CreateScheduledReportError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_scheduled_report::CreateScheduledReportError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_scheduled_report::CreateScheduledReportError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_scheduled_report::CreateScheduledReportError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_scheduled_report::CreateScheduledReportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_scheduled_report::CreateScheduledReportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_scheduled_report::CreateScheduledReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_dashboard::DeleteDashboardError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -114,6 +153,75 @@ impl From<crate::operation::delete_dashboard::DeleteDashboardError> for Error {
             crate::operation::delete_dashboard::DeleteDashboardError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_dashboard::DeleteDashboardError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_dashboard::DeleteDashboardError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_scheduled_report::DeleteScheduledReportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_scheduled_report::DeleteScheduledReportError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_scheduled_report::DeleteScheduledReportError> for Error {
+    fn from(err: crate::operation::delete_scheduled_report::DeleteScheduledReportError) -> Self {
+        match err {
+            crate::operation::delete_scheduled_report::DeleteScheduledReportError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_scheduled_report::DeleteScheduledReportError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_scheduled_report::DeleteScheduledReportError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_scheduled_report::DeleteScheduledReportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_scheduled_report::DeleteScheduledReportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_scheduled_report::DeleteScheduledReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_scheduled_report::ExecuteScheduledReportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_scheduled_report::ExecuteScheduledReportError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::execute_scheduled_report::ExecuteScheduledReportError> for Error {
+    fn from(err: crate::operation::execute_scheduled_report::ExecuteScheduledReportError) -> Self {
+        match err {
+            crate::operation::execute_scheduled_report::ExecuteScheduledReportError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::execute_scheduled_report::ExecuteScheduledReportError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::execute_scheduled_report::ExecuteScheduledReportError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::execute_scheduled_report::ExecuteScheduledReportError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::execute_scheduled_report::ExecuteScheduledReportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::execute_scheduled_report::ExecuteScheduledReportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::execute_scheduled_report::ExecuteScheduledReportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -171,6 +279,34 @@ impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_scheduled_report::GetScheduledReportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_scheduled_report::GetScheduledReportError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_scheduled_report::GetScheduledReportError> for Error {
+    fn from(err: crate::operation::get_scheduled_report::GetScheduledReportError) -> Self {
+        match err {
+            crate::operation::get_scheduled_report::GetScheduledReportError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_scheduled_report::GetScheduledReportError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_scheduled_report::GetScheduledReportError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_scheduled_report::GetScheduledReportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_scheduled_report::GetScheduledReportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_scheduled_report::GetScheduledReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dashboards::ListDashboardsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -193,6 +329,33 @@ impl From<crate::operation::list_dashboards::ListDashboardsError> for Error {
             crate::operation::list_dashboards::ListDashboardsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_dashboards::ListDashboardsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_dashboards::ListDashboardsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_scheduled_reports::ListScheduledReportsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_scheduled_reports::ListScheduledReportsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_scheduled_reports::ListScheduledReportsError> for Error {
+    fn from(err: crate::operation::list_scheduled_reports::ListScheduledReportsError) -> Self {
+        match err {
+            crate::operation::list_scheduled_reports::ListScheduledReportsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_scheduled_reports::ListScheduledReportsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_scheduled_reports::ListScheduledReportsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_scheduled_reports::ListScheduledReportsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_scheduled_reports::ListScheduledReportsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -301,10 +464,46 @@ impl From<crate::operation::update_dashboard::UpdateDashboardError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_scheduled_report::UpdateScheduledReportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_scheduled_report::UpdateScheduledReportError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_scheduled_report::UpdateScheduledReportError> for Error {
+    fn from(err: crate::operation::update_scheduled_report::UpdateScheduledReportError) -> Self {
+        match err {
+            crate::operation::update_scheduled_report::UpdateScheduledReportError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_scheduled_report::UpdateScheduledReportError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_scheduled_report::UpdateScheduledReportError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_scheduled_report::UpdateScheduledReportError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_scheduled_report::UpdateScheduledReportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_scheduled_report::UpdateScheduledReportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_scheduled_report::UpdateScheduledReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
@@ -318,6 +517,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),

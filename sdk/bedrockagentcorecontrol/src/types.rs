@@ -131,6 +131,32 @@ pub use crate::types::_policy_validation_mode::PolicyValidationMode;
 
 pub use crate::types::_policy_status::PolicyStatus;
 
+pub use crate::types::_registry_record_status::RegistryRecordStatus;
+
+pub use crate::types::_descriptor_type::DescriptorType;
+
+pub use crate::types::_descriptors::Descriptors;
+
+pub use crate::types::_synchronization_type::SynchronizationType;
+
+pub use crate::types::_synchronization_configuration::SynchronizationConfiguration;
+
+pub use crate::types::_updated_descriptors::UpdatedDescriptors;
+
+pub use crate::types::_updated_synchronization_type::UpdatedSynchronizationType;
+
+pub use crate::types::_updated_synchronization_configuration::UpdatedSynchronizationConfiguration;
+
+pub use crate::types::_registry_status::RegistryStatus;
+
+pub use crate::types::_registry_authorizer_type::RegistryAuthorizerType;
+
+pub use crate::types::_approval_configuration::ApprovalConfiguration;
+
+pub use crate::types::_updated_authorizer_configuration::UpdatedAuthorizerConfiguration;
+
+pub use crate::types::_updated_approval_configuration::UpdatedApprovalConfiguration;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_key_type::KeyType;
@@ -251,6 +277,22 @@ pub use crate::types::_cedar_policy::CedarPolicy;
 
 pub use crate::types::_policy_generation_details::PolicyGenerationDetails;
 
+pub use crate::types::_registry_record_summary::RegistryRecordSummary;
+
+pub use crate::types::_mcp_descriptor::McpDescriptor;
+
+pub use crate::types::_a2a_descriptor::A2aDescriptor;
+
+pub use crate::types::_custom_descriptor::CustomDescriptor;
+
+pub use crate::types::_agent_skills_descriptor::AgentSkillsDescriptor;
+
+pub use crate::types::_from_url_synchronization_configuration::FromUrlSynchronizationConfiguration;
+
+pub use crate::types::_updated_descriptors_union::UpdatedDescriptorsUnion;
+
+pub use crate::types::_registry_summary::RegistrySummary;
+
 pub use crate::types::_workload_identity_type::WorkloadIdentityType;
 
 pub use crate::types::_oauth2_authorization_server_metadata::Oauth2AuthorizationServerMetadata;
@@ -315,6 +357,24 @@ pub use crate::types::_delete_memory_strategy_input::DeleteMemoryStrategyInput;
 
 pub use crate::types::_filter::Filter;
 
+pub use crate::types::_server_definition::ServerDefinition;
+
+pub use crate::types::_tools_definition::ToolsDefinition;
+
+pub use crate::types::_agent_card_definition::AgentCardDefinition;
+
+pub use crate::types::_skill_md_definition::SkillMdDefinition;
+
+pub use crate::types::_skill_definition::SkillDefinition;
+
+pub use crate::types::_updated_mcp_descriptor::UpdatedMcpDescriptor;
+
+pub use crate::types::_updated_a2a_descriptor::UpdatedA2aDescriptor;
+
+pub use crate::types::_updated_custom_descriptor::UpdatedCustomDescriptor;
+
+pub use crate::types::_updated_agent_skills_descriptor::UpdatedAgentSkillsDescriptor;
+
 pub use crate::types::_custom_claim_validation_type::CustomClaimValidationType;
 
 pub use crate::types::_secrets_manager_location::SecretsManagerLocation;
@@ -359,6 +419,12 @@ pub use crate::types::_filter_value::FilterValue;
 
 pub use crate::types::_finding::Finding;
 
+pub use crate::types::_registry_record_credential_provider_configuration::RegistryRecordCredentialProviderConfiguration;
+
+pub use crate::types::_updated_mcp_descriptor_fields::UpdatedMcpDescriptorFields;
+
+pub use crate::types::_updated_agent_skills_descriptor_fields::UpdatedAgentSkillsDescriptorFields;
+
 pub use crate::types::_inbound_token_claim_value_type::InboundTokenClaimValueType;
 
 pub use crate::types::_authorizing_claim_match_value_type::AuthorizingClaimMatchValueType;
@@ -402,6 +468,18 @@ pub use crate::types::_modify_reflection_configuration::ModifyReflectionConfigur
 pub use crate::types::_modify_self_managed_configuration::ModifySelfManagedConfiguration;
 
 pub use crate::types::_finding_type::FindingType;
+
+pub use crate::types::_registry_record_credential_provider_type::RegistryRecordCredentialProviderType;
+
+pub use crate::types::_registry_record_credential_provider_union::RegistryRecordCredentialProviderUnion;
+
+pub use crate::types::_updated_server_definition::UpdatedServerDefinition;
+
+pub use crate::types::_updated_tools_definition::UpdatedToolsDefinition;
+
+pub use crate::types::_updated_skill_md_definition::UpdatedSkillMdDefinition;
+
+pub use crate::types::_updated_skill_definition::UpdatedSkillDefinition;
 
 pub use crate::types::_claim_match_value_type::ClaimMatchValueType;
 
@@ -451,6 +529,10 @@ pub use crate::types::_custom_reflection_configuration_input::CustomReflectionCo
 
 pub use crate::types::_modify_invocation_configuration_input::ModifyInvocationConfigurationInput;
 
+pub use crate::types::_registry_record_o_auth_credential_provider::RegistryRecordOAuthCredentialProvider;
+
+pub use crate::types::_registry_record_iam_credential_provider::RegistryRecordIamCredentialProvider;
+
 pub use crate::types::_schema_definition::SchemaDefinition;
 
 pub use crate::types::_rest_api_method::RestApiMethod;
@@ -479,6 +561,8 @@ pub use crate::types::_episodic_reflection_override::EpisodicReflectionOverride;
 
 pub use crate::types::_trigger_condition::TriggerCondition;
 
+pub use crate::types::_registry_record_o_auth_grant_type::RegistryRecordOAuthGrantType;
+
 pub use crate::types::_schema_type::SchemaType;
 
 pub use crate::types::_message_based_trigger_input::MessageBasedTriggerInput;
@@ -493,6 +577,10 @@ pub use crate::types::_token_based_trigger::TokenBasedTrigger;
 
 pub use crate::types::_time_based_trigger::TimeBasedTrigger;
 
+mod _a2a_descriptor;
+
+mod _agent_card_definition;
+
 mod _agent_managed_runtime_type;
 
 mod _agent_runtime;
@@ -504,6 +592,8 @@ mod _agent_runtime_endpoint;
 mod _agent_runtime_endpoint_status;
 
 mod _agent_runtime_status;
+
+mod _agent_skills_descriptor;
 
 mod _api_gateway_target_configuration;
 
@@ -518,6 +608,8 @@ mod _api_key_credential_location;
 mod _api_key_credential_provider_item;
 
 mod _api_schema_configuration;
+
+mod _approval_configuration;
 
 mod _atlassian_oauth2_provider_config_input;
 
@@ -611,6 +703,8 @@ mod _custom_consolidation_configuration;
 
 mod _custom_consolidation_configuration_input;
 
+mod _custom_descriptor;
+
 mod _custom_extraction_configuration;
 
 mod _custom_extraction_configuration_input;
@@ -630,6 +724,10 @@ mod _custom_reflection_configuration_input;
 mod _data_source_config;
 
 mod _delete_memory_strategy_input;
+
+mod _descriptor_type;
+
+mod _descriptors;
 
 mod _endpoint_ip_address_type;
 
@@ -682,6 +780,8 @@ mod _filter_value;
 mod _finding;
 
 mod _finding_type;
+
+mod _from_url_synchronization_configuration;
 
 mod _gateway_api_key_credential_provider;
 
@@ -750,6 +850,8 @@ mod _llm_as_a_judge_evaluator_config;
 mod _managed_lattice_resource;
 
 mod _managed_resource_details;
+
+mod _mcp_descriptor;
 
 mod _mcp_gateway_configuration;
 
@@ -865,6 +967,28 @@ mod _recording_config;
 
 mod _reflection_configuration;
 
+mod _registry_authorizer_type;
+
+mod _registry_record_credential_provider_configuration;
+
+mod _registry_record_credential_provider_type;
+
+mod _registry_record_credential_provider_union;
+
+mod _registry_record_iam_credential_provider;
+
+mod _registry_record_o_auth_credential_provider;
+
+mod _registry_record_o_auth_grant_type;
+
+mod _registry_record_status;
+
+mod _registry_record_summary;
+
+mod _registry_status;
+
+mod _registry_summary;
+
 mod _request_header_configuration;
 
 mod _resource;
@@ -917,11 +1041,17 @@ mod _semantic_override_consolidation_configuration_input;
 
 mod _semantic_override_extraction_configuration_input;
 
+mod _server_definition;
+
 mod _server_protocol;
 
 mod _session_config;
 
 mod _session_storage_configuration;
+
+mod _skill_definition;
+
+mod _skill_md_definition;
 
 mod _slack_oauth2_provider_config_input;
 
@@ -941,6 +1071,10 @@ mod _summary_override_configuration_input;
 
 mod _summary_override_consolidation_configuration_input;
 
+mod _synchronization_configuration;
+
+mod _synchronization_type;
+
 mod _target_configuration;
 
 mod _target_status;
@@ -959,11 +1093,45 @@ mod _tool_definition;
 
 mod _tool_schema;
 
+mod _tools_definition;
+
 mod _trigger_condition;
 
 mod _trigger_condition_input;
 
+mod _updated_a2a_descriptor;
+
+mod _updated_agent_skills_descriptor;
+
+mod _updated_agent_skills_descriptor_fields;
+
+mod _updated_approval_configuration;
+
+mod _updated_authorizer_configuration;
+
+mod _updated_custom_descriptor;
+
 mod _updated_description;
+
+mod _updated_descriptors;
+
+mod _updated_descriptors_union;
+
+mod _updated_mcp_descriptor;
+
+mod _updated_mcp_descriptor_fields;
+
+mod _updated_server_definition;
+
+mod _updated_skill_definition;
+
+mod _updated_skill_md_definition;
+
+mod _updated_synchronization_configuration;
+
+mod _updated_synchronization_type;
+
+mod _updated_tools_definition;
 
 mod _user_preference_consolidation_override;
 

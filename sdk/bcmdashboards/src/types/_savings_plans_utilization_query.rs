@@ -6,7 +6,7 @@
 pub struct SavingsPlansUtilizationQuery {
     /// <p>Defines a time period with explicit start and end times for data queries.</p>
     pub time_range: ::std::option::Option<crate::types::DateTimeRange>,
-    /// <p>The time granularity of the retrieved data: HOURLY, DAILY, or MONTHLY.</p>
+    /// <p>The time granularity of the retrieved data: <code>HOURLY</code>, <code>DAILY</code>, or <code>MONTHLY</code>.</p>
     pub granularity: ::std::option::Option<crate::types::Granularity>,
     /// <p>Defines complex filtering conditions using logical operators (<code>AND</code>, <code>OR</code>, <code>NOT</code>) and various filter types.</p>
     pub filter: ::std::option::Option<crate::types::Expression>,
@@ -16,7 +16,7 @@ impl SavingsPlansUtilizationQuery {
     pub fn time_range(&self) -> ::std::option::Option<&crate::types::DateTimeRange> {
         self.time_range.as_ref()
     }
-    /// <p>The time granularity of the retrieved data: HOURLY, DAILY, or MONTHLY.</p>
+    /// <p>The time granularity of the retrieved data: <code>HOURLY</code>, <code>DAILY</code>, or <code>MONTHLY</code>.</p>
     pub fn granularity(&self) -> ::std::option::Option<&crate::types::Granularity> {
         self.granularity.as_ref()
     }
@@ -56,17 +56,17 @@ impl SavingsPlansUtilizationQueryBuilder {
     pub fn get_time_range(&self) -> &::std::option::Option<crate::types::DateTimeRange> {
         &self.time_range
     }
-    /// <p>The time granularity of the retrieved data: HOURLY, DAILY, or MONTHLY.</p>
+    /// <p>The time granularity of the retrieved data: <code>HOURLY</code>, <code>DAILY</code>, or <code>MONTHLY</code>.</p>
     pub fn granularity(mut self, input: crate::types::Granularity) -> Self {
         self.granularity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time granularity of the retrieved data: HOURLY, DAILY, or MONTHLY.</p>
+    /// <p>The time granularity of the retrieved data: <code>HOURLY</code>, <code>DAILY</code>, or <code>MONTHLY</code>.</p>
     pub fn set_granularity(mut self, input: ::std::option::Option<crate::types::Granularity>) -> Self {
         self.granularity = input;
         self
     }
-    /// <p>The time granularity of the retrieved data: HOURLY, DAILY, or MONTHLY.</p>
+    /// <p>The time granularity of the retrieved data: <code>HOURLY</code>, <code>DAILY</code>, or <code>MONTHLY</code>.</p>
     pub fn get_granularity(&self) -> &::std::option::Option<crate::types::Granularity> {
         &self.granularity
     }

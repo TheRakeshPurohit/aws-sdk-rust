@@ -8,6 +8,8 @@ pub enum RouterInputConfiguration {
     Failover(crate::types::FailoverRouterInputConfiguration),
     /// <p>Configuration settings for connecting a router input to a flow output.</p>
     MediaConnectFlow(crate::types::MediaConnectFlowRouterInputConfiguration),
+    /// <p>Configuration settings for connecting a router input to a MediaLive channel output.</p>
+    MediaLiveChannel(crate::types::MediaLiveChannelRouterInputConfiguration),
     /// <p>Configuration settings for a merge router input that combines two input sources.</p>
     Merge(crate::types::MergeRouterInputConfiguration),
     /// <p>The configuration settings for a standard router input, including the protocol, protocol-specific configuration, network interface, and availability zone.</p>
@@ -48,6 +50,19 @@ impl RouterInputConfiguration {
     /// Returns true if this is a [`MediaConnectFlow`](crate::types::RouterInputConfiguration::MediaConnectFlow).
     pub fn is_media_connect_flow(&self) -> bool {
         self.as_media_connect_flow().is_ok()
+    }
+    /// Tries to convert the enum instance into [`MediaLiveChannel`](crate::types::RouterInputConfiguration::MediaLiveChannel), extracting the inner [`MediaLiveChannelRouterInputConfiguration`](crate::types::MediaLiveChannelRouterInputConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_media_live_channel(&self) -> ::std::result::Result<&crate::types::MediaLiveChannelRouterInputConfiguration, &Self> {
+        if let RouterInputConfiguration::MediaLiveChannel(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MediaLiveChannel`](crate::types::RouterInputConfiguration::MediaLiveChannel).
+    pub fn is_media_live_channel(&self) -> bool {
+        self.as_media_live_channel().is_ok()
     }
     /// Tries to convert the enum instance into [`Merge`](crate::types::RouterInputConfiguration::Merge), extracting the inner [`MergeRouterInputConfiguration`](crate::types::MergeRouterInputConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

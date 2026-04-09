@@ -263,7 +263,7 @@ pub enum CreateDashboardError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An internal error occurred while processing the request. Retry your request. If the problem persists, contact Amazon Web Services Support.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The request would exceed service quotas. For example, attempting to create more than 20 widgets in a dashboard or exceeding the maximum number of dashboards per account.</p>
+    /// <p>The request would exceed a service quota. Review the service quotas for Amazon Web Services Billing and Cost Management Dashboards and retry your request.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling. Reduce the frequency of requests and use exponential backoff.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

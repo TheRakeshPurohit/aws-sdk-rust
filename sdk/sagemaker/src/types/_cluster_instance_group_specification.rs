@@ -253,7 +253,6 @@ impl ClusterInstanceGroupSpecificationBuilder {
         &self.instance_group_name
     }
     /// <p>Specifies the instance type of the instance group.</p>
-    /// This field is required.
     pub fn instance_type(mut self, input: crate::types::ClusterInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self

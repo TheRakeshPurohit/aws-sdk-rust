@@ -53,6 +53,24 @@ pub(crate) fn create_dashboard_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn conflict_exception_correct_errors(
+    mut builder: crate::types::error::builders::ConflictExceptionBuilder,
+) -> crate::types::error::builders::ConflictExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_scheduled_report_output_output_correct_errors(
+    mut builder: crate::operation::create_scheduled_report::builders::CreateScheduledReportOutputBuilder,
+) -> crate::operation::create_scheduled_report::builders::CreateScheduledReportOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_dashboard_output_output_correct_errors(
     mut builder: crate::operation::delete_dashboard::builders::DeleteDashboardOutputBuilder,
 ) -> crate::operation::delete_dashboard::builders::DeleteDashboardOutputBuilder {
@@ -67,6 +85,15 @@ pub(crate) fn resource_not_found_exception_correct_errors(
 ) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_scheduled_report_output_output_correct_errors(
+    mut builder: crate::operation::delete_scheduled_report::builders::DeleteScheduledReportOutputBuilder,
+) -> crate::operation::delete_scheduled_report::builders::DeleteScheduledReportOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }
@@ -107,6 +134,18 @@ pub(crate) fn get_resource_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_scheduled_report_output_output_correct_errors(
+    mut builder: crate::operation::get_scheduled_report::builders::GetScheduledReportOutputBuilder,
+) -> crate::operation::get_scheduled_report::builders::GetScheduledReportOutputBuilder {
+    if builder.scheduled_report.is_none() {
+        builder.scheduled_report = {
+            let builder = crate::types::builders::ScheduledReportBuilder::default();
+            crate::serde_util::scheduled_report_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn list_dashboards_output_output_correct_errors(
     mut builder: crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder,
 ) -> crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder {
@@ -116,11 +155,57 @@ pub(crate) fn list_dashboards_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_scheduled_reports_output_output_correct_errors(
+    mut builder: crate::operation::list_scheduled_reports::builders::ListScheduledReportsOutputBuilder,
+) -> crate::operation::list_scheduled_reports::builders::ListScheduledReportsOutputBuilder {
+    if builder.scheduled_reports.is_none() {
+        builder.scheduled_reports = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_dashboard_output_output_correct_errors(
     mut builder: crate::operation::update_dashboard::builders::UpdateDashboardOutputBuilder,
 ) -> crate::operation::update_dashboard::builders::UpdateDashboardOutputBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_scheduled_report_output_output_correct_errors(
+    mut builder: crate::operation::update_scheduled_report::builders::UpdateScheduledReportOutputBuilder,
+) -> crate::operation::update_scheduled_report::builders::UpdateScheduledReportOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn scheduled_report_correct_errors(
+    mut builder: crate::types::builders::ScheduledReportBuilder,
+) -> crate::types::builders::ScheduledReportBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.dashboard_arn.is_none() {
+        builder.dashboard_arn = Some(Default::default())
+    }
+    if builder.scheduled_report_execution_role_arn.is_none() {
+        builder.scheduled_report_execution_role_arn = Some(Default::default())
+    }
+    if builder.schedule_config.is_none() {
+        builder.schedule_config = {
+            let builder = crate::types::builders::ScheduleConfigBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn health_status_correct_errors(mut builder: crate::types::builders::HealthStatusBuilder) -> crate::types::builders::HealthStatusBuilder {
+    if builder.status_code.is_none() {
+        builder.status_code = "no value was set".parse::<crate::types::HealthStatusCode>().ok()
     }
     builder
 }
@@ -146,6 +231,24 @@ pub(crate) fn dashboard_reference_correct_errors(
     builder
 }
 
+pub(crate) fn date_time_range_correct_errors(
+    mut builder: crate::types::builders::DateTimeRangeBuilder,
+) -> crate::types::builders::DateTimeRangeBuilder {
+    if builder.start_time.is_none() {
+        builder.start_time = {
+            let builder = crate::types::builders::DateTimeValueBuilder::default();
+            crate::serde_util::date_time_value_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.end_time.is_none() {
+        builder.end_time = {
+            let builder = crate::types::builders::DateTimeValueBuilder::default();
+            crate::serde_util::date_time_value_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn resource_tag_correct_errors(mut builder: crate::types::builders::ResourceTagBuilder) -> crate::types::builders::ResourceTagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -156,12 +259,51 @@ pub(crate) fn resource_tag_correct_errors(mut builder: crate::types::builders::R
     builder
 }
 
+pub(crate) fn scheduled_report_summary_correct_errors(
+    mut builder: crate::types::builders::ScheduledReportSummaryBuilder,
+) -> crate::types::builders::ScheduledReportSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.dashboard_arn.is_none() {
+        builder.dashboard_arn = Some(Default::default())
+    }
+    if builder.schedule_expression.is_none() {
+        builder.schedule_expression = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::ScheduleState>().ok()
+    }
+    if builder.health_status.is_none() {
+        builder.health_status = {
+            let builder = crate::types::builders::HealthStatusBuilder::default();
+            crate::serde_util::health_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn widget_correct_errors(mut builder: crate::types::builders::WidgetBuilder) -> crate::types::builders::WidgetBuilder {
     if builder.title.is_none() {
         builder.title = Some(Default::default())
     }
     if builder.configs.is_none() {
         builder.configs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn date_time_value_correct_errors(
+    mut builder: crate::types::builders::DateTimeValueBuilder,
+) -> crate::types::builders::DateTimeValueBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::DateTimeType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }
@@ -242,41 +384,11 @@ pub(crate) fn savings_plans_utilization_query_correct_errors(
     builder
 }
 
-pub(crate) fn date_time_range_correct_errors(
-    mut builder: crate::types::builders::DateTimeRangeBuilder,
-) -> crate::types::builders::DateTimeRangeBuilder {
-    if builder.start_time.is_none() {
-        builder.start_time = {
-            let builder = crate::types::builders::DateTimeValueBuilder::default();
-            crate::serde_util::date_time_value_correct_errors(builder).build().ok()
-        }
-    }
-    if builder.end_time.is_none() {
-        builder.end_time = {
-            let builder = crate::types::builders::DateTimeValueBuilder::default();
-            crate::serde_util::date_time_value_correct_errors(builder).build().ok()
-        }
-    }
-    builder
-}
-
 pub(crate) fn graph_display_config_correct_errors(
     mut builder: crate::types::builders::GraphDisplayConfigBuilder,
 ) -> crate::types::builders::GraphDisplayConfigBuilder {
     if builder.visual_type.is_none() {
         builder.visual_type = "no value was set".parse::<crate::types::VisualType>().ok()
-    }
-    builder
-}
-
-pub(crate) fn date_time_value_correct_errors(
-    mut builder: crate::types::builders::DateTimeValueBuilder,
-) -> crate::types::builders::DateTimeValueBuilder {
-    if builder.r#type.is_none() {
-        builder.r#type = "no value was set".parse::<crate::types::DateTimeType>().ok()
-    }
-    if builder.value.is_none() {
-        builder.value = Some(Default::default())
     }
     builder
 }

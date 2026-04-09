@@ -614,6 +614,69 @@ impl From<crate::operation::create_policy_engine::CreatePolicyEngineError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_registry::CreateRegistryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_registry::CreateRegistryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_registry::CreateRegistryError> for Error {
+    fn from(err: crate::operation::create_registry::CreateRegistryError) -> Self {
+        match err {
+            crate::operation::create_registry::CreateRegistryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_registry::CreateRegistryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_registry::CreateRegistryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_registry::CreateRegistryError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_registry::CreateRegistryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_registry::CreateRegistryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_registry::CreateRegistryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_registry_record::CreateRegistryRecordError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_registry_record::CreateRegistryRecordError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_registry_record::CreateRegistryRecordError> for Error {
+    fn from(err: crate::operation::create_registry_record::CreateRegistryRecordError) -> Self {
+        match err {
+            crate::operation::create_registry_record::CreateRegistryRecordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_registry_record::CreateRegistryRecordError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_registry_record::CreateRegistryRecordError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_registry_record::CreateRegistryRecordError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_registry_record::CreateRegistryRecordError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_registry_record::CreateRegistryRecordError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_registry_record::CreateRegistryRecordError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_registry_record::CreateRegistryRecordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_workload_identity::CreateWorkloadIdentityError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1126,6 +1189,64 @@ impl From<crate::operation::delete_policy_engine::DeletePolicyEngineError> for E
             crate::operation::delete_policy_engine::DeletePolicyEngineError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_policy_engine::DeletePolicyEngineError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_policy_engine::DeletePolicyEngineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_registry::DeleteRegistryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_registry::DeleteRegistryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_registry::DeleteRegistryError> for Error {
+    fn from(err: crate::operation::delete_registry::DeleteRegistryError) -> Self {
+        match err {
+            crate::operation::delete_registry::DeleteRegistryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_registry::DeleteRegistryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_registry::DeleteRegistryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_registry::DeleteRegistryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_registry::DeleteRegistryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_registry::DeleteRegistryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_registry::DeleteRegistryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_registry_record::DeleteRegistryRecordError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_registry_record::DeleteRegistryRecordError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_registry_record::DeleteRegistryRecordError> for Error {
+    fn from(err: crate::operation::delete_registry_record::DeleteRegistryRecordError) -> Self {
+        match err {
+            crate::operation::delete_registry_record::DeleteRegistryRecordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_registry_record::DeleteRegistryRecordError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_registry_record::DeleteRegistryRecordError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_registry_record::DeleteRegistryRecordError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_registry_record::DeleteRegistryRecordError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_registry_record::DeleteRegistryRecordError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_registry_record::DeleteRegistryRecordError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1665,6 +1786,61 @@ impl From<crate::operation::get_policy_generation::GetPolicyGenerationError> for
             crate::operation::get_policy_generation::GetPolicyGenerationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_policy_generation::GetPolicyGenerationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_policy_generation::GetPolicyGenerationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_registry::GetRegistryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_registry::GetRegistryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_registry::GetRegistryError> for Error {
+    fn from(err: crate::operation::get_registry::GetRegistryError) -> Self {
+        match err {
+            crate::operation::get_registry::GetRegistryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_registry::GetRegistryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_registry::GetRegistryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_registry::GetRegistryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_registry::GetRegistryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_registry::GetRegistryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_registry_record::GetRegistryRecordError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_registry_record::GetRegistryRecordError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_registry_record::GetRegistryRecordError> for Error {
+    fn from(err: crate::operation::get_registry_record::GetRegistryRecordError) -> Self {
+        match err {
+            crate::operation::get_registry_record::GetRegistryRecordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_registry_record::GetRegistryRecordError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_registry_record::GetRegistryRecordError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_registry_record::GetRegistryRecordError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_registry_record::GetRegistryRecordError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_registry_record::GetRegistryRecordError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_registry_record::GetRegistryRecordError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2295,6 +2471,62 @@ impl From<crate::operation::list_policy_generations::ListPolicyGenerationsError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_registries::ListRegistriesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_registries::ListRegistriesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_registries::ListRegistriesError> for Error {
+    fn from(err: crate::operation::list_registries::ListRegistriesError) -> Self {
+        match err {
+            crate::operation::list_registries::ListRegistriesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_registries::ListRegistriesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_registries::ListRegistriesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_registries::ListRegistriesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_registries::ListRegistriesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_registry_records::ListRegistryRecordsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_registry_records::ListRegistryRecordsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_registry_records::ListRegistryRecordsError> for Error {
+    fn from(err: crate::operation::list_registry_records::ListRegistryRecordsError) -> Self {
+        match err {
+            crate::operation::list_registry_records::ListRegistryRecordsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_registry_records::ListRegistryRecordsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_registry_records::ListRegistryRecordsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_registry_records::ListRegistryRecordsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_registry_records::ListRegistryRecordsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_registry_records::ListRegistryRecordsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_registry_records::ListRegistryRecordsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2455,6 +2687,56 @@ impl From<crate::operation::start_policy_generation::StartPolicyGenerationError>
             crate::operation::start_policy_generation::StartPolicyGenerationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_policy_generation::StartPolicyGenerationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_policy_generation::StartPolicyGenerationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalError> for Error {
+    fn from(err: crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalError) -> Self {
+        match err {
+            crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2979,6 +3261,109 @@ impl From<crate::operation::update_policy_engine::UpdatePolicyEngineError> for E
             crate::operation::update_policy_engine::UpdatePolicyEngineError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_policy_engine::UpdatePolicyEngineError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_policy_engine::UpdatePolicyEngineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_registry::UpdateRegistryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_registry::UpdateRegistryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_registry::UpdateRegistryError> for Error {
+    fn from(err: crate::operation::update_registry::UpdateRegistryError) -> Self {
+        match err {
+            crate::operation::update_registry::UpdateRegistryError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_registry::UpdateRegistryError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_registry::UpdateRegistryError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_registry::UpdateRegistryError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_registry::UpdateRegistryError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_registry::UpdateRegistryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_registry::UpdateRegistryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_registry::UpdateRegistryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_registry_record::UpdateRegistryRecordError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_registry_record::UpdateRegistryRecordError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_registry_record::UpdateRegistryRecordError> for Error {
+    fn from(err: crate::operation::update_registry_record::UpdateRegistryRecordError) -> Self {
+        match err {
+            crate::operation::update_registry_record::UpdateRegistryRecordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_registry_record::UpdateRegistryRecordError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_registry_record::UpdateRegistryRecordError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_registry_record::UpdateRegistryRecordError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_registry_record::UpdateRegistryRecordError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_registry_record::UpdateRegistryRecordError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_registry_record::UpdateRegistryRecordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_registry_record_status::UpdateRegistryRecordStatusError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_registry_record_status::UpdateRegistryRecordStatusError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_registry_record_status::UpdateRegistryRecordStatusError> for Error {
+    fn from(err: crate::operation::update_registry_record_status::UpdateRegistryRecordStatusError) -> Self {
+        match err {
+            crate::operation::update_registry_record_status::UpdateRegistryRecordStatusError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_registry_record_status::UpdateRegistryRecordStatusError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_registry_record_status::UpdateRegistryRecordStatusError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_registry_record_status::UpdateRegistryRecordStatusError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_registry_record_status::UpdateRegistryRecordStatusError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_registry_record_status::UpdateRegistryRecordStatusError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_registry_record_status::UpdateRegistryRecordStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

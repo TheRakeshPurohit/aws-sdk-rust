@@ -2,7 +2,7 @@
 
 /// <p>The rating scale that defines how evaluators should score agent performance, supporting both numerical and categorical scales.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum RatingScale {
     /// <p>The categorical rating scale with named categories and definitions for qualitative evaluation.</p>
     Categorical(::std::vec::Vec<crate::types::CategoricalScaleDefinition>),
@@ -48,5 +48,10 @@ impl RatingScale {
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
+    }
+}
+impl ::std::fmt::Debug for RatingScale {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::std::write!(f, "*** Sensitive Data Redacted ***")
     }
 }

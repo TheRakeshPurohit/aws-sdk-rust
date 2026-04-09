@@ -16,7 +16,7 @@ pub struct ColumnMetadata {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the column is nullable.</p>
     pub nullable: i32,
-    /// <p>The precision value of a decimal number column.</p>
+    /// <p>The precision value of a decimal number column, or the column length for a non-numeric column.</p>
     pub precision: i32,
     /// <p>The scale value of a decimal number column.</p>
     pub scale: i32,
@@ -56,7 +56,7 @@ impl ColumnMetadata {
     pub fn nullable(&self) -> i32 {
         self.nullable
     }
-    /// <p>The precision value of a decimal number column.</p>
+    /// <p>The precision value of a decimal number column, or the column length for a non-numeric column.</p>
     pub fn precision(&self) -> i32 {
         self.precision
     }
@@ -195,17 +195,17 @@ impl ColumnMetadataBuilder {
     pub fn get_nullable(&self) -> &::std::option::Option<i32> {
         &self.nullable
     }
-    /// <p>The precision value of a decimal number column.</p>
+    /// <p>The precision value of a decimal number column, or the column length for a non-numeric column.</p>
     pub fn precision(mut self, input: i32) -> Self {
         self.precision = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The precision value of a decimal number column.</p>
+    /// <p>The precision value of a decimal number column, or the column length for a non-numeric column.</p>
     pub fn set_precision(mut self, input: ::std::option::Option<i32>) -> Self {
         self.precision = input;
         self
     }
-    /// <p>The precision value of a decimal number column.</p>
+    /// <p>The precision value of a decimal number column, or the column length for a non-numeric column.</p>
     pub fn get_precision(&self) -> &::std::option::Option<i32> {
         &self.precision
     }

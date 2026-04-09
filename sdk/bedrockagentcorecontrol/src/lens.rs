@@ -169,6 +169,26 @@ pub(crate) fn reflens_list_policy_generations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_registries_output_output_next_token(
+    input: &crate::operation::list_registries::ListRegistriesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_registry_records_output_output_next_token(
+    input: &crate::operation::list_registry_records::ListRegistryRecordsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_workload_identities_output_output_next_token(
     input: &crate::operation::list_workload_identities::ListWorkloadIdentitiesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -295,6 +315,20 @@ pub(crate) fn lens_list_policy_generations_output_output_policy_generations(
     input: crate::operation::list_policy_generations::ListPolicyGenerationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyGeneration>> {
     let input = input.policy_generations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_registries_output_output_registries(
+    input: crate::operation::list_registries::ListRegistriesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RegistrySummary>> {
+    let input = input.registries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_registry_records_output_output_registry_records(
+    input: crate::operation::list_registry_records::ListRegistryRecordsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RegistryRecordSummary>> {
+    let input = input.registry_records;
     ::std::option::Option::Some(input)
 }
 

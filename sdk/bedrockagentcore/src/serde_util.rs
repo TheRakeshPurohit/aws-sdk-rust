@@ -341,6 +341,15 @@ pub(crate) fn save_browser_session_profile_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn search_registry_records_output_output_correct_errors(
+    mut builder: crate::operation::search_registry_records::builders::SearchRegistryRecordsOutputBuilder,
+) -> crate::operation::search_registry_records::builders::SearchRegistryRecordsOutputBuilder {
+    if builder.registry_records.is_none() {
+        builder.registry_records = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn start_browser_session_output_output_correct_errors(
     mut builder: crate::operation::start_browser_session::builders::StartBrowserSessionOutputBuilder,
 ) -> crate::operation::start_browser_session::builders::StartBrowserSessionOutputBuilder {
@@ -725,6 +734,45 @@ pub(crate) fn mouse_scroll_result_correct_errors(
     builder
 }
 
+pub(crate) fn registry_record_summary_correct_errors(
+    mut builder: crate::types::builders::RegistryRecordSummaryBuilder,
+) -> crate::types::builders::RegistryRecordSummaryBuilder {
+    if builder.registry_arn.is_none() {
+        builder.registry_arn = Some(Default::default())
+    }
+    if builder.record_arn.is_none() {
+        builder.record_arn = Some(Default::default())
+    }
+    if builder.record_id.is_none() {
+        builder.record_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.descriptor_type.is_none() {
+        builder.descriptor_type = "no value was set".parse::<crate::types::DescriptorType>().ok()
+    }
+    if builder.descriptors.is_none() {
+        builder.descriptors = {
+            let builder = crate::types::builders::DescriptorsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RegistryRecordStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn screenshot_result_correct_errors(
     mut builder: crate::types::builders::ScreenshotResultBuilder,
 ) -> crate::types::builders::ScreenshotResultBuilder {
@@ -770,6 +818,30 @@ pub(crate) fn code_interpreter_result_correct_errors(
     builder
 }
 
+pub(crate) fn a2a_descriptor_correct_errors(
+    mut builder: crate::types::builders::A2aDescriptorBuilder,
+) -> crate::types::builders::A2aDescriptorBuilder {
+    if builder.agent_card.is_none() {
+        builder.agent_card = {
+            let builder = crate::types::builders::AgentCardDefinitionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn agent_skills_descriptor_correct_errors(
+    mut builder: crate::types::builders::AgentSkillsDescriptorBuilder,
+) -> crate::types::builders::AgentSkillsDescriptorBuilder {
+    if builder.skill_md.is_none() {
+        builder.skill_md = {
+            let builder = crate::types::builders::SkillMdDefinitionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn content_stop_event_correct_errors(
     mut builder: crate::types::builders::ContentStopEventBuilder,
 ) -> crate::types::builders::ContentStopEventBuilder {
@@ -802,6 +874,24 @@ pub(crate) fn external_proxy_correct_errors(
     }
     if builder.port.is_none() {
         builder.port = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn mcp_descriptor_correct_errors(
+    mut builder: crate::types::builders::McpDescriptorBuilder,
+) -> crate::types::builders::McpDescriptorBuilder {
+    if builder.server.is_none() {
+        builder.server = {
+            let builder = crate::types::builders::ServerDefinitionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.tools.is_none() {
+        builder.tools = {
+            let builder = crate::types::builders::ToolsDefinitionBuilder::default();
+            Some(builder.build())
+        }
     }
     builder
 }

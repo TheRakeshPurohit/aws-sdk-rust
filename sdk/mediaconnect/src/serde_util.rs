@@ -1502,6 +1502,18 @@ pub(crate) fn media_connect_flow_router_output_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn media_live_channel_router_input_configuration_correct_errors(
+    mut builder: crate::types::builders::MediaLiveChannelRouterInputConfigurationBuilder,
+) -> crate::types::builders::MediaLiveChannelRouterInputConfigurationBuilder {
+    if builder.source_transit_decryption.is_none() {
+        builder.source_transit_decryption = {
+            let builder = crate::types::builders::MediaLiveTransitEncryptionBuilder::default();
+            Some(crate::serde_util::media_live_transit_encryption_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn media_live_input_router_output_configuration_correct_errors(
     mut builder: crate::types::builders::MediaLiveInputRouterOutputConfigurationBuilder,
 ) -> crate::types::builders::MediaLiveInputRouterOutputConfigurationBuilder {

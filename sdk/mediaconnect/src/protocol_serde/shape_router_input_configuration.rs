@@ -10,16 +10,19 @@ pub fn ser_router_input_configuration(
             crate::protocol_serde::shape_standard_router_input_configuration::ser_standard_router_input_configuration(&mut object_1, inner)?;
             object_1.finish();
         }
-        crate::types::RouterInputConfiguration::Failover(inner) => {
+        crate::types::RouterInputConfiguration::MediaLiveChannel(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_4.key("failover").start_object();
-            crate::protocol_serde::shape_failover_router_input_configuration::ser_failover_router_input_configuration(&mut object_2, inner)?;
+            let mut object_2 = object_4.key("mediaLiveChannel").start_object();
+            crate::protocol_serde::shape_media_live_channel_router_input_configuration::ser_media_live_channel_router_input_configuration(
+                &mut object_2,
+                inner,
+            )?;
             object_2.finish();
         }
-        crate::types::RouterInputConfiguration::Merge(inner) => {
+        crate::types::RouterInputConfiguration::Failover(inner) => {
             #[allow(unused_mut)]
-            let mut object_3 = object_4.key("merge").start_object();
-            crate::protocol_serde::shape_merge_router_input_configuration::ser_merge_router_input_configuration(&mut object_3, inner)?;
+            let mut object_3 = object_4.key("failover").start_object();
+            crate::protocol_serde::shape_failover_router_input_configuration::ser_failover_router_input_configuration(&mut object_3, inner)?;
             object_3.finish();
         }
         crate::types::RouterInputConfiguration::MediaConnectFlow(inner) => {
@@ -30,6 +33,12 @@ pub fn ser_router_input_configuration(
                 inner,
             )?;
             object_4.finish();
+        }
+        crate::types::RouterInputConfiguration::Merge(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_4.key("merge").start_object();
+            crate::protocol_serde::shape_merge_router_input_configuration::ser_merge_router_input_configuration(&mut object_5, inner)?;
+            object_5.finish();
         }
         crate::types::RouterInputConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
@@ -77,22 +86,28 @@ where
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Standard' cannot be null"))?
                                 ))
                             }
+                            "mediaLiveChannel" => {
+                                Some(crate::types::RouterInputConfiguration::MediaLiveChannel(
+                                    crate::protocol_serde::shape_media_live_channel_router_input_configuration::de_media_live_channel_router_input_configuration(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MediaLiveChannel' cannot be null"))?
+                                ))
+                            }
                             "failover" => {
                                 Some(crate::types::RouterInputConfiguration::Failover(
                                     crate::protocol_serde::shape_failover_router_input_configuration::de_failover_router_input_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Failover' cannot be null"))?
                                 ))
                             }
-                            "merge" => {
-                                Some(crate::types::RouterInputConfiguration::Merge(
-                                    crate::protocol_serde::shape_merge_router_input_configuration::de_merge_router_input_configuration(tokens, _value)?
-                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Merge' cannot be null"))?
-                                ))
-                            }
                             "mediaConnectFlow" => {
                                 Some(crate::types::RouterInputConfiguration::MediaConnectFlow(
                                     crate::protocol_serde::shape_media_connect_flow_router_input_configuration::de_media_connect_flow_router_input_configuration(tokens, _value)?
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MediaConnectFlow' cannot be null"))?
+                                ))
+                            }
+                            "merge" => {
+                                Some(crate::types::RouterInputConfiguration::Merge(
+                                    crate::protocol_serde::shape_merge_router_input_configuration::de_merge_router_input_configuration(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Merge' cannot be null"))?
                                 ))
                             }
                             _ => {

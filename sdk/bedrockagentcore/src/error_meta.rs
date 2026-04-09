@@ -1185,6 +1185,43 @@ impl From<crate::operation::save_browser_session_profile::SaveBrowserSessionProf
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_registry_records::SearchRegistryRecordsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_registry_records::SearchRegistryRecordsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_registry_records::SearchRegistryRecordsError> for Error {
+    fn from(err: crate::operation::search_registry_records::SearchRegistryRecordsError) -> Self {
+        match err {
+            crate::operation::search_registry_records::SearchRegistryRecordsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::search_registry_records::SearchRegistryRecordsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::search_registry_records::SearchRegistryRecordsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_registry_records::SearchRegistryRecordsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_registry_records::SearchRegistryRecordsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::search_registry_records::SearchRegistryRecordsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::search_registry_records::SearchRegistryRecordsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_browser_session::StartBrowserSessionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

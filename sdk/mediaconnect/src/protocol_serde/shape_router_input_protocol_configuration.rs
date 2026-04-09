@@ -4,28 +4,28 @@ pub fn ser_router_input_protocol_configuration(
     input: &crate::types::RouterInputProtocolConfiguration,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
-        crate::types::RouterInputProtocolConfiguration::Rtp(inner) => {
-            #[allow(unused_mut)]
-            let mut object_1 = object_2.key("rtp").start_object();
-            crate::protocol_serde::shape_rtp_router_input_configuration::ser_rtp_router_input_configuration(&mut object_1, inner)?;
-            object_1.finish();
-        }
         crate::types::RouterInputProtocolConfiguration::Rist(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_2.key("rist").start_object();
-            crate::protocol_serde::shape_rist_router_input_configuration::ser_rist_router_input_configuration(&mut object_2, inner)?;
-            object_2.finish();
+            let mut object_1 = object_2.key("rist").start_object();
+            crate::protocol_serde::shape_rist_router_input_configuration::ser_rist_router_input_configuration(&mut object_1, inner)?;
+            object_1.finish();
         }
         crate::types::RouterInputProtocolConfiguration::SrtListener(inner) => {
             #[allow(unused_mut)]
-            let mut object_3 = object_2.key("srtListener").start_object();
-            crate::protocol_serde::shape_srt_listener_router_input_configuration::ser_srt_listener_router_input_configuration(&mut object_3, inner)?;
-            object_3.finish();
+            let mut object_2 = object_2.key("srtListener").start_object();
+            crate::protocol_serde::shape_srt_listener_router_input_configuration::ser_srt_listener_router_input_configuration(&mut object_2, inner)?;
+            object_2.finish();
         }
         crate::types::RouterInputProtocolConfiguration::SrtCaller(inner) => {
             #[allow(unused_mut)]
-            let mut object_4 = object_2.key("srtCaller").start_object();
-            crate::protocol_serde::shape_srt_caller_router_input_configuration::ser_srt_caller_router_input_configuration(&mut object_4, inner)?;
+            let mut object_3 = object_2.key("srtCaller").start_object();
+            crate::protocol_serde::shape_srt_caller_router_input_configuration::ser_srt_caller_router_input_configuration(&mut object_3, inner)?;
+            object_3.finish();
+        }
+        crate::types::RouterInputProtocolConfiguration::Rtp(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_2.key("rtp").start_object();
+            crate::protocol_serde::shape_rtp_router_input_configuration::ser_rtp_router_input_configuration(&mut object_4, inner)?;
             object_4.finish();
         }
         crate::types::RouterInputProtocolConfiguration::Unknown => {
@@ -68,10 +68,6 @@ where
                         ));
                     }
                     variant = match key.as_ref() {
-                        "rtp" => Some(crate::types::RouterInputProtocolConfiguration::Rtp(
-                            crate::protocol_serde::shape_rtp_router_input_configuration::de_rtp_router_input_configuration(tokens, _value)?
-                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Rtp' cannot be null"))?,
-                        )),
                         "rist" => Some(crate::types::RouterInputProtocolConfiguration::Rist(
                             crate::protocol_serde::shape_rist_router_input_configuration::de_rist_router_input_configuration(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Rist' cannot be null"))?,
@@ -89,6 +85,10 @@ where
                                 tokens, _value,
                             )?
                             .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SrtCaller' cannot be null"))?,
+                        )),
+                        "rtp" => Some(crate::types::RouterInputProtocolConfiguration::Rtp(
+                            crate::protocol_serde::shape_rtp_router_input_configuration::de_rtp_router_input_configuration(tokens, _value)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Rtp' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

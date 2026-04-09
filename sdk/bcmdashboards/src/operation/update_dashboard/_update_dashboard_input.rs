@@ -5,9 +5,9 @@
 pub struct UpdateDashboardInput {
     /// <p>The ARN of the dashboard to update.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The new name for the dashboard. If not specified, the existing name is retained.</p>
+    /// <p>The new name for the dashboard.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The new description for the dashboard. If not specified, the existing description is retained.</p>
+    /// <p>The new description for the dashboard.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The updated array of widget configurations for the dashboard. Replaces all existing widgets.</p>
     pub widgets: ::std::option::Option<::std::vec::Vec<crate::types::Widget>>,
@@ -17,11 +17,11 @@ impl UpdateDashboardInput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The new name for the dashboard. If not specified, the existing name is retained.</p>
+    /// <p>The new name for the dashboard.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The new description for the dashboard. If not specified, the existing description is retained.</p>
+    /// <p>The new description for the dashboard.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
@@ -64,31 +64,32 @@ impl UpdateDashboardInputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The new name for the dashboard. If not specified, the existing name is retained.</p>
+    /// <p>The new name for the dashboard.</p>
+    /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new name for the dashboard. If not specified, the existing name is retained.</p>
+    /// <p>The new name for the dashboard.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The new name for the dashboard. If not specified, the existing name is retained.</p>
+    /// <p>The new name for the dashboard.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The new description for the dashboard. If not specified, the existing description is retained.</p>
+    /// <p>The new description for the dashboard.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new description for the dashboard. If not specified, the existing description is retained.</p>
+    /// <p>The new description for the dashboard.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The new description for the dashboard. If not specified, the existing description is retained.</p>
+    /// <p>The new description for the dashboard.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }

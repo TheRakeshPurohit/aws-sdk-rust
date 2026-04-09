@@ -43,6 +43,12 @@ pub mod create_policy;
 /// Types for the `CreatePolicyEngine` operation.
 pub mod create_policy_engine;
 
+/// Types for the `CreateRegistry` operation.
+pub mod create_registry;
+
+/// Types for the `CreateRegistryRecord` operation.
+pub mod create_registry_record;
+
 /// Types for the `CreateWorkloadIdentity` operation.
 pub mod create_workload_identity;
 
@@ -87,6 +93,12 @@ pub mod delete_policy;
 
 /// Types for the `DeletePolicyEngine` operation.
 pub mod delete_policy_engine;
+
+/// Types for the `DeleteRegistry` operation.
+pub mod delete_registry;
+
+/// Types for the `DeleteRegistryRecord` operation.
+pub mod delete_registry_record;
 
 /// Types for the `DeleteResourcePolicy` operation.
 pub mod delete_resource_policy;
@@ -138,6 +150,12 @@ pub mod get_policy_engine;
 
 /// Types for the `GetPolicyGeneration` operation.
 pub mod get_policy_generation;
+
+/// Types for the `GetRegistry` operation.
+pub mod get_registry;
+
+/// Types for the `GetRegistryRecord` operation.
+pub mod get_registry_record;
 
 /// Types for the `GetResourcePolicy` operation.
 pub mod get_resource_policy;
@@ -199,6 +217,12 @@ pub mod list_policy_generation_assets;
 /// Types for the `ListPolicyGenerations` operation.
 pub mod list_policy_generations;
 
+/// Types for the `ListRegistries` operation.
+pub mod list_registries;
+
+/// Types for the `ListRegistryRecords` operation.
+pub mod list_registry_records;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
@@ -213,6 +237,9 @@ pub mod set_token_vault_cmk;
 
 /// Types for the `StartPolicyGeneration` operation.
 pub mod start_policy_generation;
+
+/// Types for the `SubmitRegistryRecordForApproval` operation.
+pub mod submit_registry_record_for_approval;
 
 /// Types for the `SynchronizeGatewayTargets` operation.
 pub mod synchronize_gateway_targets;
@@ -255,6 +282,15 @@ pub mod update_policy;
 
 /// Types for the `UpdatePolicyEngine` operation.
 pub mod update_policy_engine;
+
+/// Types for the `UpdateRegistry` operation.
+pub mod update_registry;
+
+/// Types for the `UpdateRegistryRecord` operation.
+pub mod update_registry_record;
+
+/// Types for the `UpdateRegistryRecordStatus` operation.
+pub mod update_registry_record_status;
 
 /// Types for the `UpdateWorkloadIdentity` operation.
 pub mod update_workload_identity;

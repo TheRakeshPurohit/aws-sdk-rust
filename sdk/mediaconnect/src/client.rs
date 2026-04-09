@@ -142,36 +142,39 @@ impl Client {
 pub trait Waiters {
     /// Wait until a flow is active
     fn wait_until_flow_active(&self) -> crate::waiters::flow_active::FlowActiveFluentBuilder;
-    /// Wait until a flow is deleted
-    fn wait_until_flow_deleted(&self) -> crate::waiters::flow_deleted::FlowDeletedFluentBuilder;
     /// Wait until a flow is in standby mode
     fn wait_until_flow_standby(&self) -> crate::waiters::flow_standby::FlowStandbyFluentBuilder;
+    /// Wait until a flow is deleted
+    fn wait_until_flow_deleted(&self) -> crate::waiters::flow_deleted::FlowDeletedFluentBuilder;
+    /// Wait until the Input is ACTIVE
+    fn wait_until_input_active(&self) -> crate::waiters::input_active::InputActiveFluentBuilder;
     /// Wait until the Input is STANDBY
     fn wait_until_input_standby(&self) -> crate::waiters::input_standby::InputStandbyFluentBuilder;
     /// Wait until the Input is deleted
     fn wait_until_input_deleted(&self) -> crate::waiters::input_deleted::InputDeletedFluentBuilder;
-    /// Wait until the Input is ACTIVE
-    fn wait_until_input_active(&self) -> crate::waiters::input_active::InputActiveFluentBuilder;
-    /// Wait until the Output is UNROUTED
-    fn wait_until_output_unrouted(&self) -> crate::waiters::output_unrouted::OutputUnroutedFluentBuilder;
-    /// Wait until the Output is deleted
-    fn wait_until_output_deleted(&self) -> crate::waiters::output_deleted::OutputDeletedFluentBuilder;
     /// Wait until the Output is ACTIVE
     fn wait_until_output_active(&self) -> crate::waiters::output_active::OutputActiveFluentBuilder;
-    /// Wait until the Output is STANDBY
-    fn wait_until_output_standby(&self) -> crate::waiters::output_standby::OutputStandbyFluentBuilder;
+    /// Wait until the Output is deleted
+    fn wait_until_output_deleted(&self) -> crate::waiters::output_deleted::OutputDeletedFluentBuilder;
     /// Wait until the Output is ROUTED
     fn wait_until_output_routed(&self) -> crate::waiters::output_routed::OutputRoutedFluentBuilder;
+    /// Wait until the Output is STANDBY
+    fn wait_until_output_standby(&self) -> crate::waiters::output_standby::OutputStandbyFluentBuilder;
+    /// Wait until the Output is UNROUTED
+    fn wait_until_output_unrouted(&self) -> crate::waiters::output_unrouted::OutputUnroutedFluentBuilder;
 }
 impl Waiters for Client {
     fn wait_until_flow_active(&self) -> crate::waiters::flow_active::FlowActiveFluentBuilder {
         crate::waiters::flow_active::FlowActiveFluentBuilder::new(self.handle.clone())
     }
+    fn wait_until_flow_standby(&self) -> crate::waiters::flow_standby::FlowStandbyFluentBuilder {
+        crate::waiters::flow_standby::FlowStandbyFluentBuilder::new(self.handle.clone())
+    }
     fn wait_until_flow_deleted(&self) -> crate::waiters::flow_deleted::FlowDeletedFluentBuilder {
         crate::waiters::flow_deleted::FlowDeletedFluentBuilder::new(self.handle.clone())
     }
-    fn wait_until_flow_standby(&self) -> crate::waiters::flow_standby::FlowStandbyFluentBuilder {
-        crate::waiters::flow_standby::FlowStandbyFluentBuilder::new(self.handle.clone())
+    fn wait_until_input_active(&self) -> crate::waiters::input_active::InputActiveFluentBuilder {
+        crate::waiters::input_active::InputActiveFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_input_standby(&self) -> crate::waiters::input_standby::InputStandbyFluentBuilder {
         crate::waiters::input_standby::InputStandbyFluentBuilder::new(self.handle.clone())
@@ -179,23 +182,20 @@ impl Waiters for Client {
     fn wait_until_input_deleted(&self) -> crate::waiters::input_deleted::InputDeletedFluentBuilder {
         crate::waiters::input_deleted::InputDeletedFluentBuilder::new(self.handle.clone())
     }
-    fn wait_until_input_active(&self) -> crate::waiters::input_active::InputActiveFluentBuilder {
-        crate::waiters::input_active::InputActiveFluentBuilder::new(self.handle.clone())
-    }
-    fn wait_until_output_unrouted(&self) -> crate::waiters::output_unrouted::OutputUnroutedFluentBuilder {
-        crate::waiters::output_unrouted::OutputUnroutedFluentBuilder::new(self.handle.clone())
+    fn wait_until_output_active(&self) -> crate::waiters::output_active::OutputActiveFluentBuilder {
+        crate::waiters::output_active::OutputActiveFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_output_deleted(&self) -> crate::waiters::output_deleted::OutputDeletedFluentBuilder {
         crate::waiters::output_deleted::OutputDeletedFluentBuilder::new(self.handle.clone())
     }
-    fn wait_until_output_active(&self) -> crate::waiters::output_active::OutputActiveFluentBuilder {
-        crate::waiters::output_active::OutputActiveFluentBuilder::new(self.handle.clone())
+    fn wait_until_output_routed(&self) -> crate::waiters::output_routed::OutputRoutedFluentBuilder {
+        crate::waiters::output_routed::OutputRoutedFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_output_standby(&self) -> crate::waiters::output_standby::OutputStandbyFluentBuilder {
         crate::waiters::output_standby::OutputStandbyFluentBuilder::new(self.handle.clone())
     }
-    fn wait_until_output_routed(&self) -> crate::waiters::output_routed::OutputRoutedFluentBuilder {
-        crate::waiters::output_routed::OutputRoutedFluentBuilder::new(self.handle.clone())
+    fn wait_until_output_unrouted(&self) -> crate::waiters::output_unrouted::OutputUnroutedFluentBuilder {
+        crate::waiters::output_unrouted::OutputUnroutedFluentBuilder::new(self.handle.clone())
     }
 }
 

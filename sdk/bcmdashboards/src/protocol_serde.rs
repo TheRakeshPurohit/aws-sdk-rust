@@ -25,13 +25,23 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_dashboard;
 
+pub(crate) mod shape_create_scheduled_report;
+
 pub(crate) mod shape_delete_dashboard;
+
+pub(crate) mod shape_delete_scheduled_report;
+
+pub(crate) mod shape_execute_scheduled_report;
 
 pub(crate) mod shape_get_dashboard;
 
 pub(crate) mod shape_get_resource_policy;
 
+pub(crate) mod shape_get_scheduled_report;
+
 pub(crate) mod shape_list_dashboards;
+
+pub(crate) mod shape_list_scheduled_reports;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -40,6 +50,8 @@ pub(crate) mod shape_tag_resource;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_dashboard;
+
+pub(crate) mod shape_update_scheduled_report;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -51,17 +63,29 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_create_dashboard_input;
 
+pub(crate) mod shape_create_scheduled_report_input;
+
 pub(crate) mod shape_delete_dashboard_input;
+
+pub(crate) mod shape_delete_scheduled_report_input;
+
+pub(crate) mod shape_execute_scheduled_report_input;
 
 pub(crate) mod shape_get_dashboard_input;
 
 pub(crate) mod shape_get_resource_policy_input;
 
+pub(crate) mod shape_get_scheduled_report_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_dashboards_input;
+
+pub(crate) mod shape_list_scheduled_reports_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
@@ -77,13 +101,27 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_dashboard_input;
 
+pub(crate) mod shape_update_scheduled_report_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_dashboard_reference_list;
 
+pub(crate) mod shape_date_time_range;
+
+pub(crate) mod shape_health_status;
+
 pub(crate) mod shape_resource_tag;
 
 pub(crate) mod shape_resource_tag_list;
+
+pub(crate) mod shape_schedule_config;
+
+pub(crate) mod shape_scheduled_report;
+
+pub(crate) mod shape_scheduled_report_input;
+
+pub(crate) mod shape_scheduled_report_summary_list;
 
 pub(crate) mod shape_widget;
 
@@ -91,7 +129,17 @@ pub(crate) mod shape_widget_list;
 
 pub(crate) mod shape_dashboard_reference;
 
+pub(crate) mod shape_date_time_value;
+
+pub(crate) mod shape_schedule_period;
+
+pub(crate) mod shape_scheduled_report_summary;
+
+pub(crate) mod shape_status_reason_list;
+
 pub(crate) mod shape_widget_config;
+
+pub(crate) mod shape_widget_id_list;
 
 pub(crate) mod shape_display_config;
 
@@ -113,15 +161,11 @@ pub(crate) mod shape_savings_plans_utilization_query;
 
 pub(crate) mod shape_table_display_config_struct;
 
-pub(crate) mod shape_date_time_range;
-
 pub(crate) mod shape_expression;
 
 pub(crate) mod shape_group_definition;
 
 pub(crate) mod shape_cost_category_values;
-
-pub(crate) mod shape_date_time_value;
 
 pub(crate) mod shape_dimension_values;
 

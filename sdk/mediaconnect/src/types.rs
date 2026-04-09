@@ -237,11 +237,13 @@ pub use crate::types::_listed_router_input::ListedRouterInput;
 
 pub use crate::types::_standard_router_input_configuration::StandardRouterInputConfiguration;
 
+pub use crate::types::_media_live_channel_router_input_configuration::MediaLiveChannelRouterInputConfiguration;
+
 pub use crate::types::_failover_router_input_configuration::FailoverRouterInputConfiguration;
 
-pub use crate::types::_merge_router_input_configuration::MergeRouterInputConfiguration;
-
 pub use crate::types::_media_connect_flow_router_input_configuration::MediaConnectFlowRouterInputConfiguration;
+
+pub use crate::types::_merge_router_input_configuration::MergeRouterInputConfiguration;
 
 pub use crate::types::_router_input_transit_encryption_key_type::RouterInputTransitEncryptionKeyType;
 
@@ -337,6 +339,10 @@ pub use crate::types::_router_input_protocol_configuration::RouterInputProtocolC
 
 pub use crate::types::_router_input_protocol::RouterInputProtocol;
 
+pub use crate::types::_media_live_channel_pipeline_id::MediaLiveChannelPipelineId;
+
+pub use crate::types::_media_live_transit_encryption::MediaLiveTransitEncryption;
+
 pub use crate::types::_failover_input_source_priority_mode::FailoverInputSourcePriorityMode;
 
 pub use crate::types::_day::Day;
@@ -345,19 +351,19 @@ pub use crate::types::_router_input_message::RouterInputMessage;
 
 pub use crate::types::_standard_router_input_stream_details::StandardRouterInputStreamDetails;
 
+pub use crate::types::_media_live_channel_router_input_stream_details::MediaLiveChannelRouterInputStreamDetails;
+
 pub use crate::types::_failover_router_input_stream_details::FailoverRouterInputStreamDetails;
 
-pub use crate::types::_merge_router_input_stream_details::MergeRouterInputStreamDetails;
-
 pub use crate::types::_media_connect_flow_router_input_stream_details::MediaConnectFlowRouterInputStreamDetails;
+
+pub use crate::types::_merge_router_input_stream_details::MergeRouterInputStreamDetails;
 
 pub use crate::types::_router_output_protocol_configuration::RouterOutputProtocolConfiguration;
 
 pub use crate::types::_router_output_protocol::RouterOutputProtocol;
 
 pub use crate::types::_media_live_input_pipeline_id::MediaLiveInputPipelineId;
-
-pub use crate::types::_media_live_transit_encryption::MediaLiveTransitEncryption;
 
 pub use crate::types::_router_output_message::RouterOutputMessage;
 
@@ -383,13 +389,17 @@ pub use crate::types::_encoding_parameters::EncodingParameters;
 
 pub use crate::types::_input_configuration_request::InputConfigurationRequest;
 
-pub use crate::types::_rtp_router_input_configuration::RtpRouterInputConfiguration;
-
 pub use crate::types::_rist_router_input_configuration::RistRouterInputConfiguration;
 
 pub use crate::types::_srt_listener_router_input_configuration::SrtListenerRouterInputConfiguration;
 
 pub use crate::types::_srt_caller_router_input_configuration::SrtCallerRouterInputConfiguration;
+
+pub use crate::types::_rtp_router_input_configuration::RtpRouterInputConfiguration;
+
+pub use crate::types::_media_live_transit_encryption_key_type::MediaLiveTransitEncryptionKeyType;
+
+pub use crate::types::_media_live_transit_encryption_key_configuration::MediaLiveTransitEncryptionKeyConfiguration;
 
 pub use crate::types::_failover_router_input_protocol_configuration::FailoverRouterInputProtocolConfiguration;
 
@@ -401,17 +411,13 @@ pub use crate::types::_merge_router_input_indexed_stream_details::MergeRouterInp
 
 pub use crate::types::_public_router_network_interface_rule::PublicRouterNetworkInterfaceRule;
 
-pub use crate::types::_rtp_router_output_configuration::RtpRouterOutputConfiguration;
-
 pub use crate::types::_rist_router_output_configuration::RistRouterOutputConfiguration;
 
 pub use crate::types::_srt_listener_router_output_configuration::SrtListenerRouterOutputConfiguration;
 
 pub use crate::types::_srt_caller_router_output_configuration::SrtCallerRouterOutputConfiguration;
 
-pub use crate::types::_media_live_transit_encryption_key_type::MediaLiveTransitEncryptionKeyType;
-
-pub use crate::types::_media_live_transit_encryption_key_configuration::MediaLiveTransitEncryptionKeyConfiguration;
+pub use crate::types::_rtp_router_output_configuration::RtpRouterOutputConfiguration;
 
 pub use crate::types::_transport_stream::TransportStream;
 
@@ -423,9 +429,9 @@ pub use crate::types::_destination_configuration::DestinationConfiguration;
 
 pub use crate::types::_input_configuration::InputConfiguration;
 
-pub use crate::types::_forward_error_correction_state::ForwardErrorCorrectionState;
-
 pub use crate::types::_srt_decryption_configuration::SrtDecryptionConfiguration;
+
+pub use crate::types::_forward_error_correction_state::ForwardErrorCorrectionState;
 
 pub use crate::types::_srt_encryption_configuration::SrtEncryptionConfiguration;
 
@@ -616,6 +622,12 @@ mod _media_connect_flow_router_input_stream_details;
 mod _media_connect_flow_router_output_configuration;
 
 mod _media_connect_flow_router_output_stream_details;
+
+mod _media_live_channel_pipeline_id;
+
+mod _media_live_channel_router_input_configuration;
+
+mod _media_live_channel_router_input_stream_details;
 
 mod _media_live_input_pipeline_id;
 

@@ -30,23 +30,35 @@ pub fn ser_batch_execute_statement_input_input(
     if let Some(var_9) = &input.statement_name {
         object.key("StatementName").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.workgroup_name {
-        object.key("WorkgroupName").string(var_10.as_str());
+    if let Some(var_10) = &input.parameters {
+        let mut array_11 = object.key("Parameters").start_array();
+        for item_12 in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_sql_parameter::ser_sql_parameter(&mut object_13, item_12)?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
     }
-    if let Some(var_11) = &input.client_token {
-        object.key("ClientToken").string(var_11.as_str());
+    if let Some(var_14) = &input.workgroup_name {
+        object.key("WorkgroupName").string(var_14.as_str());
     }
-    if let Some(var_12) = &input.result_format {
-        object.key("ResultFormat").string(var_12.as_str());
+    if let Some(var_15) = &input.client_token {
+        object.key("ClientToken").string(var_15.as_str());
     }
-    if let Some(var_13) = &input.session_keep_alive_seconds {
+    if let Some(var_16) = &input.result_format {
+        object.key("ResultFormat").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.session_keep_alive_seconds {
         object.key("SessionKeepAliveSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_14) = &input.session_id {
-        object.key("SessionId").string(var_14.as_str());
+    if let Some(var_18) = &input.session_id {
+        object.key("SessionId").string(var_18.as_str());
     }
     Ok(())
 }

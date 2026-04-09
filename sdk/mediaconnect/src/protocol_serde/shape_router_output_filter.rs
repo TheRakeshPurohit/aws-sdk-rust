@@ -13,8 +13,8 @@ pub fn ser_router_output_filter(
             }
             array_1.finish();
         }
-        crate::types::RouterOutputFilter::OutputTypes(inner) => {
-            let mut array_3 = object_4.key("outputTypes").start_array();
+        crate::types::RouterOutputFilter::NetworkInterfaceArns(inner) => {
+            let mut array_3 = object_4.key("networkInterfaceArns").start_array();
             for item_4 in inner {
                 {
                     array_3.value().string(item_4.as_str());
@@ -22,8 +22,8 @@ pub fn ser_router_output_filter(
             }
             array_3.finish();
         }
-        crate::types::RouterOutputFilter::NameContains(inner) => {
-            let mut array_5 = object_4.key("nameContains").start_array();
+        crate::types::RouterOutputFilter::RoutingScopes(inner) => {
+            let mut array_5 = object_4.key("routingScopes").start_array();
             for item_6 in inner {
                 {
                     array_5.value().string(item_6.as_str());
@@ -31,8 +31,8 @@ pub fn ser_router_output_filter(
             }
             array_5.finish();
         }
-        crate::types::RouterOutputFilter::NetworkInterfaceArns(inner) => {
-            let mut array_7 = object_4.key("networkInterfaceArns").start_array();
+        crate::types::RouterOutputFilter::OutputTypes(inner) => {
+            let mut array_7 = object_4.key("outputTypes").start_array();
             for item_8 in inner {
                 {
                     array_7.value().string(item_8.as_str());
@@ -49,8 +49,8 @@ pub fn ser_router_output_filter(
             }
             array_9.finish();
         }
-        crate::types::RouterOutputFilter::RoutingScopes(inner) => {
-            let mut array_11 = object_4.key("routingScopes").start_array();
+        crate::types::RouterOutputFilter::NameContains(inner) => {
+            let mut array_11 = object_4.key("nameContains").start_array();
             for item_12 in inner {
                 {
                     array_11.value().string(item_12.as_str());

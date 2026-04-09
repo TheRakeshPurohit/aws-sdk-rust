@@ -147,6 +147,8 @@ pub use crate::types::_event_filter_condition::EventFilterCondition;
 
 pub use crate::types::_session_summary::SessionSummary;
 
+pub use crate::types::_registry_record_summary::RegistryRecordSummary;
+
 pub use crate::types::_input_content_block::InputContentBlock;
 
 pub use crate::types::_tool_result_structured_content::ToolResultStructuredContent;
@@ -191,6 +193,12 @@ pub use crate::types::_extraction_job_messages::ExtractionJobMessages;
 
 pub use crate::types::_memory_metadata_filter_expression::MemoryMetadataFilterExpression;
 
+pub use crate::types::_descriptor_type::DescriptorType;
+
+pub use crate::types::_descriptors::Descriptors;
+
+pub use crate::types::_registry_record_status::RegistryRecordStatus;
+
 pub use crate::types::_content_block::ContentBlock;
 
 pub use crate::types::_task_status::TaskStatus;
@@ -215,6 +223,14 @@ pub use crate::types::_operator_type::OperatorType;
 
 pub use crate::types::_right_expression::RightExpression;
 
+pub use crate::types::_mcp_descriptor::McpDescriptor;
+
+pub use crate::types::_a2a_descriptor::A2aDescriptor;
+
+pub use crate::types::_custom_descriptor::CustomDescriptor;
+
+pub use crate::types::_agent_skills_descriptor::AgentSkillsDescriptor;
+
 pub use crate::types::_content_block_type::ContentBlockType;
 
 pub use crate::types::_resource_content::ResourceContent;
@@ -223,11 +239,27 @@ pub use crate::types::_proxy_credentials::ProxyCredentials;
 
 pub use crate::types::_message_metadata::MessageMetadata;
 
+pub use crate::types::_server_definition::ServerDefinition;
+
+pub use crate::types::_tools_definition::ToolsDefinition;
+
+pub use crate::types::_agent_card_definition::AgentCardDefinition;
+
+pub use crate::types::_skill_md_definition::SkillMdDefinition;
+
+pub use crate::types::_skill_definition::SkillDefinition;
+
 pub use crate::types::_resource_content_type::ResourceContentType;
 
 pub use crate::types::_basic_auth::BasicAuth;
 
+mod _a2a_descriptor;
+
 mod _actor_summary;
+
+mod _agent_card_definition;
+
+mod _agent_skills_descriptor;
 
 mod _automation_stream;
 
@@ -291,6 +323,12 @@ mod _context;
 
 mod _conversational;
 
+mod _custom_descriptor;
+
+mod _descriptor_type;
+
+mod _descriptors;
+
 mod _evaluation_content;
 
 mod _evaluation_expected_trajectory;
@@ -346,6 +384,8 @@ mod _language_runtime;
 mod _left_expression;
 
 mod _live_view_stream;
+
+mod _mcp_descriptor;
 
 mod _memory_content;
 
@@ -403,6 +443,10 @@ mod _proxy_configuration;
 
 mod _proxy_credentials;
 
+mod _registry_record_status;
+
+mod _registry_record_summary;
+
 mod _resource_content;
 
 mod _resource_content_type;
@@ -427,11 +471,17 @@ mod _search_criteria;
 
 mod _secrets_manager_location;
 
+mod _server_definition;
+
 mod _session_filter;
 
 mod _session_status;
 
 mod _session_summary;
+
+mod _skill_definition;
+
+mod _skill_md_definition;
 
 mod _span_context;
 
@@ -446,6 +496,8 @@ mod _tool_arguments;
 mod _tool_name;
 
 mod _tool_result_structured_content;
+
+mod _tools_definition;
 
 mod _user_identifier;
 

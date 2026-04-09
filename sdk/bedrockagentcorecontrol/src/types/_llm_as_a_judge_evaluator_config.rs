@@ -30,7 +30,7 @@ impl ::std::fmt::Debug for LlmAsAJudgeEvaluatorConfig {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LlmAsAJudgeEvaluatorConfig");
         formatter.field("instructions", &"*** Sensitive Data Redacted ***");
-        formatter.field("rating_scale", &self.rating_scale);
+        formatter.field("rating_scale", &"*** Sensitive Data Redacted ***");
         formatter.field("model_config", &self.model_config);
         formatter.finish()
     }
@@ -116,7 +116,7 @@ impl ::std::fmt::Debug for LlmAsAJudgeEvaluatorConfigBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LlmAsAJudgeEvaluatorConfigBuilder");
         formatter.field("instructions", &"*** Sensitive Data Redacted ***");
-        formatter.field("rating_scale", &self.rating_scale);
+        formatter.field("rating_scale", &"*** Sensitive Data Redacted ***");
         formatter.field("model_config", &self.model_config);
         formatter.finish()
     }

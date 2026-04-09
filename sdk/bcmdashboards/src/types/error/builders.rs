@@ -9,4 +9,6 @@ pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 
 pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;

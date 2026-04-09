@@ -57,6 +57,22 @@ pub use crate::types::_output_config::OutputConfigBuilder;
 
 pub use crate::types::_updated_description::UpdatedDescriptionBuilder;
 
+pub use crate::types::_descriptors::DescriptorsBuilder;
+
+pub use crate::types::_synchronization_configuration::SynchronizationConfigurationBuilder;
+
+pub use crate::types::_updated_descriptors::UpdatedDescriptorsBuilder;
+
+pub use crate::types::_updated_synchronization_type::UpdatedSynchronizationTypeBuilder;
+
+pub use crate::types::_updated_synchronization_configuration::UpdatedSynchronizationConfigurationBuilder;
+
+pub use crate::types::_approval_configuration::ApprovalConfigurationBuilder;
+
+pub use crate::types::_updated_authorizer_configuration::UpdatedAuthorizerConfigurationBuilder;
+
+pub use crate::types::_updated_approval_configuration::UpdatedApprovalConfigurationBuilder;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
 pub use crate::types::_agent_runtime_endpoint::AgentRuntimeEndpointBuilder;
@@ -151,6 +167,22 @@ pub use crate::types::_cedar_policy::CedarPolicyBuilder;
 
 pub use crate::types::_policy_generation_details::PolicyGenerationDetailsBuilder;
 
+pub use crate::types::_registry_record_summary::RegistryRecordSummaryBuilder;
+
+pub use crate::types::_mcp_descriptor::McpDescriptorBuilder;
+
+pub use crate::types::_a2a_descriptor::A2aDescriptorBuilder;
+
+pub use crate::types::_custom_descriptor::CustomDescriptorBuilder;
+
+pub use crate::types::_agent_skills_descriptor::AgentSkillsDescriptorBuilder;
+
+pub use crate::types::_from_url_synchronization_configuration::FromUrlSynchronizationConfigurationBuilder;
+
+pub use crate::types::_updated_descriptors_union::UpdatedDescriptorsUnionBuilder;
+
+pub use crate::types::_registry_summary::RegistrySummaryBuilder;
+
 pub use crate::types::_workload_identity_type::WorkloadIdentityTypeBuilder;
 
 pub use crate::types::_oauth2_authorization_server_metadata::Oauth2AuthorizationServerMetadataBuilder;
@@ -185,6 +217,24 @@ pub use crate::types::_delete_memory_strategy_input::DeleteMemoryStrategyInputBu
 
 pub use crate::types::_filter::FilterBuilder;
 
+pub use crate::types::_server_definition::ServerDefinitionBuilder;
+
+pub use crate::types::_tools_definition::ToolsDefinitionBuilder;
+
+pub use crate::types::_agent_card_definition::AgentCardDefinitionBuilder;
+
+pub use crate::types::_skill_md_definition::SkillMdDefinitionBuilder;
+
+pub use crate::types::_skill_definition::SkillDefinitionBuilder;
+
+pub use crate::types::_updated_mcp_descriptor::UpdatedMcpDescriptorBuilder;
+
+pub use crate::types::_updated_a2a_descriptor::UpdatedA2aDescriptorBuilder;
+
+pub use crate::types::_updated_custom_descriptor::UpdatedCustomDescriptorBuilder;
+
+pub use crate::types::_updated_agent_skills_descriptor::UpdatedAgentSkillsDescriptorBuilder;
+
 pub use crate::types::_custom_claim_validation_type::CustomClaimValidationTypeBuilder;
 
 pub use crate::types::_secrets_manager_location::SecretsManagerLocationBuilder;
@@ -213,6 +263,12 @@ pub use crate::types::_modify_strategy_configuration::ModifyStrategyConfiguratio
 
 pub use crate::types::_finding::FindingBuilder;
 
+pub use crate::types::_registry_record_credential_provider_configuration::RegistryRecordCredentialProviderConfigurationBuilder;
+
+pub use crate::types::_updated_mcp_descriptor_fields::UpdatedMcpDescriptorFieldsBuilder;
+
+pub use crate::types::_updated_agent_skills_descriptor_fields::UpdatedAgentSkillsDescriptorFieldsBuilder;
+
 pub use crate::types::_authorizing_claim_match_value_type::AuthorizingClaimMatchValueTypeBuilder;
 
 pub use crate::types::_numerical_scale_definition::NumericalScaleDefinitionBuilder;
@@ -234,6 +290,14 @@ pub use crate::types::_self_managed_configuration_input::SelfManagedConfiguratio
 pub use crate::types::_self_managed_configuration::SelfManagedConfigurationBuilder;
 
 pub use crate::types::_modify_self_managed_configuration::ModifySelfManagedConfigurationBuilder;
+
+pub use crate::types::_updated_server_definition::UpdatedServerDefinitionBuilder;
+
+pub use crate::types::_updated_tools_definition::UpdatedToolsDefinitionBuilder;
+
+pub use crate::types::_updated_skill_md_definition::UpdatedSkillMdDefinitionBuilder;
+
+pub use crate::types::_updated_skill_definition::UpdatedSkillDefinitionBuilder;
 
 pub use crate::types::_tool_definition::ToolDefinitionBuilder;
 
@@ -266,6 +330,10 @@ pub use crate::types::_episodic_reflection_configuration::EpisodicReflectionConf
 pub use crate::types::_invocation_configuration::InvocationConfigurationBuilder;
 
 pub use crate::types::_modify_invocation_configuration_input::ModifyInvocationConfigurationInputBuilder;
+
+pub use crate::types::_registry_record_o_auth_credential_provider::RegistryRecordOAuthCredentialProviderBuilder;
+
+pub use crate::types::_registry_record_iam_credential_provider::RegistryRecordIamCredentialProviderBuilder;
 
 pub use crate::types::_schema_definition::SchemaDefinitionBuilder;
 

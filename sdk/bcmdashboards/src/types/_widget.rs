@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Widget {
-    /// The unique identifier for the widget.
+    /// <p>The unique identifier for the widget.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the widget.</p>
     pub title: ::std::string::String,
@@ -20,7 +20,7 @@ pub struct Widget {
     pub configs: ::std::vec::Vec<crate::types::WidgetConfig>,
 }
 impl Widget {
-    /// The unique identifier for the widget.
+    /// <p>The unique identifier for the widget.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -71,17 +71,17 @@ pub struct WidgetBuilder {
     pub(crate) configs: ::std::option::Option<::std::vec::Vec<crate::types::WidgetConfig>>,
 }
 impl WidgetBuilder {
-    /// The unique identifier for the widget.
+    /// <p>The unique identifier for the widget.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// The unique identifier for the widget.
+    /// <p>The unique identifier for the widget.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// The unique identifier for the widget.
+    /// <p>The unique identifier for the widget.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

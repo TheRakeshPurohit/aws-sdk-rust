@@ -8,6 +8,8 @@ pub enum RouterInputStreamDetails {
     Failover(crate::types::FailoverRouterInputStreamDetails),
     /// <p>Configuration details for a MediaConnect flow when used as a router input source.</p>
     MediaConnectFlow(crate::types::MediaConnectFlowRouterInputStreamDetails),
+    /// <p>Configuration details for a MediaLive channel when used as a router input source.</p>
+    MediaLiveChannel(crate::types::MediaLiveChannelRouterInputStreamDetails),
     /// <p>Configuration details for a merge router input that combines two input sources.</p>
     Merge(crate::types::MergeRouterInputStreamDetails),
     /// <p>Configuration details for a standard router input stream type.</p>
@@ -48,6 +50,19 @@ impl RouterInputStreamDetails {
     /// Returns true if this is a [`MediaConnectFlow`](crate::types::RouterInputStreamDetails::MediaConnectFlow).
     pub fn is_media_connect_flow(&self) -> bool {
         self.as_media_connect_flow().is_ok()
+    }
+    /// Tries to convert the enum instance into [`MediaLiveChannel`](crate::types::RouterInputStreamDetails::MediaLiveChannel), extracting the inner [`MediaLiveChannelRouterInputStreamDetails`](crate::types::MediaLiveChannelRouterInputStreamDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_media_live_channel(&self) -> ::std::result::Result<&crate::types::MediaLiveChannelRouterInputStreamDetails, &Self> {
+        if let RouterInputStreamDetails::MediaLiveChannel(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MediaLiveChannel`](crate::types::RouterInputStreamDetails::MediaLiveChannel).
+    pub fn is_media_live_channel(&self) -> bool {
+        self.as_media_live_channel().is_ok()
     }
     /// Tries to convert the enum instance into [`Merge`](crate::types::RouterInputStreamDetails::Merge), extracting the inner [`MergeRouterInputStreamDetails`](crate::types::MergeRouterInputStreamDetails).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -541,6 +541,8 @@ pub(crate) mod shape_media_connect_flow_router_input_configuration;
 
 pub(crate) mod shape_media_connect_flow_router_output_configuration;
 
+pub(crate) mod shape_media_live_channel_router_input_configuration;
+
 pub(crate) mod shape_media_live_input_router_output_configuration;
 
 pub(crate) mod shape_media_stream_attributes;
@@ -618,6 +620,8 @@ pub(crate) mod shape_list_of_video_monitoring_setting;
 pub(crate) mod shape_media_connect_flow_router_input_stream_details;
 
 pub(crate) mod shape_media_connect_flow_router_output_stream_details;
+
+pub(crate) mod shape_media_live_channel_router_input_stream_details;
 
 pub(crate) mod shape_media_live_input_router_output_stream_details;
 

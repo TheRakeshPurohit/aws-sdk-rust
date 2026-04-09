@@ -320,6 +320,27 @@ pub(crate) fn create_policy_engine_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_registry_output_output_correct_errors(
+    mut builder: crate::operation::create_registry::builders::CreateRegistryOutputBuilder,
+) -> crate::operation::create_registry::builders::CreateRegistryOutputBuilder {
+    if builder.registry_arn.is_none() {
+        builder.registry_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_registry_record_output_output_correct_errors(
+    mut builder: crate::operation::create_registry_record::builders::CreateRegistryRecordOutputBuilder,
+) -> crate::operation::create_registry_record::builders::CreateRegistryRecordOutputBuilder {
+    if builder.record_arn.is_none() {
+        builder.record_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RegistryRecordStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn create_workload_identity_output_output_correct_errors(
     mut builder: crate::operation::create_workload_identity::builders::CreateWorkloadIdentityOutputBuilder,
 ) -> crate::operation::create_workload_identity::builders::CreateWorkloadIdentityOutputBuilder {
@@ -520,6 +541,15 @@ pub(crate) fn delete_policy_engine_output_output_correct_errors(
     }
     if builder.status_reasons.is_none() {
         builder.status_reasons = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_registry_output_output_correct_errors(
+    mut builder: crate::operation::delete_registry::builders::DeleteRegistryOutputBuilder,
+) -> crate::operation::delete_registry::builders::DeleteRegistryOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RegistryStatus>().ok()
     }
     builder
 }
@@ -965,6 +995,66 @@ pub(crate) fn get_policy_generation_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_registry_output_output_correct_errors(
+    mut builder: crate::operation::get_registry::builders::GetRegistryOutputBuilder,
+) -> crate::operation::get_registry::builders::GetRegistryOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.registry_id.is_none() {
+        builder.registry_id = Some(Default::default())
+    }
+    if builder.registry_arn.is_none() {
+        builder.registry_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RegistryStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_registry_record_output_output_correct_errors(
+    mut builder: crate::operation::get_registry_record::builders::GetRegistryRecordOutputBuilder,
+) -> crate::operation::get_registry_record::builders::GetRegistryRecordOutputBuilder {
+    if builder.registry_arn.is_none() {
+        builder.registry_arn = Some(Default::default())
+    }
+    if builder.record_arn.is_none() {
+        builder.record_arn = Some(Default::default())
+    }
+    if builder.record_id.is_none() {
+        builder.record_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.descriptor_type.is_none() {
+        builder.descriptor_type = "no value was set".parse::<crate::types::DescriptorType>().ok()
+    }
+    if builder.descriptors.is_none() {
+        builder.descriptors = {
+            let builder = crate::types::builders::DescriptorsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RegistryRecordStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn get_token_vault_output_output_correct_errors(
     mut builder: crate::operation::get_token_vault::builders::GetTokenVaultOutputBuilder,
 ) -> crate::operation::get_token_vault::builders::GetTokenVaultOutputBuilder {
@@ -1145,6 +1235,24 @@ pub(crate) fn list_policy_generations_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_registries_output_output_correct_errors(
+    mut builder: crate::operation::list_registries::builders::ListRegistriesOutputBuilder,
+) -> crate::operation::list_registries::builders::ListRegistriesOutputBuilder {
+    if builder.registries.is_none() {
+        builder.registries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_registry_records_output_output_correct_errors(
+    mut builder: crate::operation::list_registry_records::builders::ListRegistryRecordsOutputBuilder,
+) -> crate::operation::list_registry_records::builders::ListRegistryRecordsOutputBuilder {
+    if builder.registry_records.is_none() {
+        builder.registry_records = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_workload_identities_output_output_correct_errors(
     mut builder: crate::operation::list_workload_identities::builders::ListWorkloadIdentitiesOutputBuilder,
 ) -> crate::operation::list_workload_identities::builders::ListWorkloadIdentitiesOutputBuilder {
@@ -1219,6 +1327,27 @@ pub(crate) fn start_policy_generation_output_output_correct_errors(
     }
     if builder.status_reasons.is_none() {
         builder.status_reasons = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn submit_registry_record_for_approval_output_output_correct_errors(
+    mut builder: crate::operation::submit_registry_record_for_approval::builders::SubmitRegistryRecordForApprovalOutputBuilder,
+) -> crate::operation::submit_registry_record_for_approval::builders::SubmitRegistryRecordForApprovalOutputBuilder {
+    if builder.registry_arn.is_none() {
+        builder.registry_arn = Some(Default::default())
+    }
+    if builder.record_arn.is_none() {
+        builder.record_arn = Some(Default::default())
+    }
+    if builder.record_id.is_none() {
+        builder.record_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RegistryRecordStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -1477,6 +1606,90 @@ pub(crate) fn update_policy_engine_output_output_correct_errors(
     }
     if builder.status_reasons.is_none() {
         builder.status_reasons = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_registry_output_output_correct_errors(
+    mut builder: crate::operation::update_registry::builders::UpdateRegistryOutputBuilder,
+) -> crate::operation::update_registry::builders::UpdateRegistryOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.registry_id.is_none() {
+        builder.registry_id = Some(Default::default())
+    }
+    if builder.registry_arn.is_none() {
+        builder.registry_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RegistryStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn update_registry_record_output_output_correct_errors(
+    mut builder: crate::operation::update_registry_record::builders::UpdateRegistryRecordOutputBuilder,
+) -> crate::operation::update_registry_record::builders::UpdateRegistryRecordOutputBuilder {
+    if builder.registry_arn.is_none() {
+        builder.registry_arn = Some(Default::default())
+    }
+    if builder.record_arn.is_none() {
+        builder.record_arn = Some(Default::default())
+    }
+    if builder.record_id.is_none() {
+        builder.record_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.descriptor_type.is_none() {
+        builder.descriptor_type = "no value was set".parse::<crate::types::DescriptorType>().ok()
+    }
+    if builder.descriptors.is_none() {
+        builder.descriptors = {
+            let builder = crate::types::builders::DescriptorsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RegistryRecordStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn update_registry_record_status_output_output_correct_errors(
+    mut builder: crate::operation::update_registry_record_status::builders::UpdateRegistryRecordStatusOutputBuilder,
+) -> crate::operation::update_registry_record_status::builders::UpdateRegistryRecordStatusOutputBuilder {
+    if builder.registry_arn.is_none() {
+        builder.registry_arn = Some(Default::default())
+    }
+    if builder.record_arn.is_none() {
+        builder.record_arn = Some(Default::default())
+    }
+    if builder.record_id.is_none() {
+        builder.record_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RegistryRecordStatus>().ok()
+    }
+    if builder.status_reason.is_none() {
+        builder.status_reason = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -1905,6 +2118,15 @@ pub(crate) fn evaluator_summary_correct_errors(
     builder
 }
 
+pub(crate) fn from_url_synchronization_configuration_correct_errors(
+    mut builder: crate::types::builders::FromUrlSynchronizationConfigurationBuilder,
+) -> crate::types::builders::FromUrlSynchronizationConfigurationBuilder {
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn gateway_interceptor_configuration_correct_errors(
     mut builder: crate::types::builders::GatewayInterceptorConfigurationBuilder,
 ) -> crate::types::builders::GatewayInterceptorConfigurationBuilder {
@@ -2234,6 +2456,63 @@ pub(crate) fn policy_generation_details_correct_errors(
     builder
 }
 
+pub(crate) fn registry_record_summary_correct_errors(
+    mut builder: crate::types::builders::RegistryRecordSummaryBuilder,
+) -> crate::types::builders::RegistryRecordSummaryBuilder {
+    if builder.registry_arn.is_none() {
+        builder.registry_arn = Some(Default::default())
+    }
+    if builder.record_arn.is_none() {
+        builder.record_arn = Some(Default::default())
+    }
+    if builder.record_id.is_none() {
+        builder.record_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.descriptor_type.is_none() {
+        builder.descriptor_type = "no value was set".parse::<crate::types::DescriptorType>().ok()
+    }
+    if builder.record_version.is_none() {
+        builder.record_version = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RegistryRecordStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn registry_summary_correct_errors(
+    mut builder: crate::types::builders::RegistrySummaryBuilder,
+) -> crate::types::builders::RegistrySummaryBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.registry_id.is_none() {
+        builder.registry_id = Some(Default::default())
+    }
+    if builder.registry_arn.is_none() {
+        builder.registry_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RegistryStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
     if builder.bucket.is_none() {
         builder.bucket = Some(Default::default())
@@ -2525,6 +2804,18 @@ pub(crate) fn oauth2_authorization_server_metadata_correct_errors(
     builder
 }
 
+pub(crate) fn registry_record_credential_provider_configuration_correct_errors(
+    mut builder: crate::types::builders::RegistryRecordCredentialProviderConfigurationBuilder,
+) -> crate::types::builders::RegistryRecordCredentialProviderConfigurationBuilder {
+    if builder.credential_provider_type.is_none() {
+        builder.credential_provider_type = "no value was set".parse::<crate::types::RegistryRecordCredentialProviderType>().ok()
+    }
+    if builder.credential_provider.is_none() {
+        builder.credential_provider = Some(crate::types::RegistryRecordCredentialProviderUnion::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn secrets_manager_location_correct_errors(
     mut builder: crate::types::builders::SecretsManagerLocationBuilder,
 ) -> crate::types::builders::SecretsManagerLocationBuilder {
@@ -2638,6 +2929,15 @@ pub(crate) fn invocation_configuration_correct_errors(
     }
     if builder.payload_delivery_bucket_name.is_none() {
         builder.payload_delivery_bucket_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn registry_record_o_auth_credential_provider_correct_errors(
+    mut builder: crate::types::builders::RegistryRecordOAuthCredentialProviderBuilder,
+) -> crate::types::builders::RegistryRecordOAuthCredentialProviderBuilder {
+    if builder.provider_arn.is_none() {
+        builder.provider_arn = Some(Default::default())
     }
     builder
 }

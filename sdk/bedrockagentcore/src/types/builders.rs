@@ -105,6 +105,8 @@ pub use crate::types::_memory_record_summary::MemoryRecordSummaryBuilder;
 
 pub use crate::types::_session_summary::SessionSummaryBuilder;
 
+pub use crate::types::_registry_record_summary::RegistryRecordSummaryBuilder;
+
 pub use crate::types::_input_content_block::InputContentBlockBuilder;
 
 pub use crate::types::_tool_result_structured_content::ToolResultStructuredContentBuilder;
@@ -125,6 +127,8 @@ pub use crate::types::_event_metadata_filter_expression::EventMetadataFilterExpr
 
 pub use crate::types::_memory_metadata_filter_expression::MemoryMetadataFilterExpressionBuilder;
 
+pub use crate::types::_descriptors::DescriptorsBuilder;
+
 pub use crate::types::_content_block::ContentBlockBuilder;
 
 pub use crate::types::_s3_location::S3LocationBuilder;
@@ -135,8 +139,26 @@ pub use crate::types::_secrets_manager_location::SecretsManagerLocationBuilder;
 
 pub use crate::types::_span_context::SpanContextBuilder;
 
+pub use crate::types::_mcp_descriptor::McpDescriptorBuilder;
+
+pub use crate::types::_a2a_descriptor::A2aDescriptorBuilder;
+
+pub use crate::types::_custom_descriptor::CustomDescriptorBuilder;
+
+pub use crate::types::_agent_skills_descriptor::AgentSkillsDescriptorBuilder;
+
 pub use crate::types::_resource_content::ResourceContentBuilder;
 
 pub use crate::types::_message_metadata::MessageMetadataBuilder;
+
+pub use crate::types::_server_definition::ServerDefinitionBuilder;
+
+pub use crate::types::_tools_definition::ToolsDefinitionBuilder;
+
+pub use crate::types::_agent_card_definition::AgentCardDefinitionBuilder;
+
+pub use crate::types::_skill_md_definition::SkillMdDefinitionBuilder;
+
+pub use crate::types::_skill_definition::SkillDefinitionBuilder;
 
 pub use crate::types::_basic_auth::BasicAuthBuilder;
