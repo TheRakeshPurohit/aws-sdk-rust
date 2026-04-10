@@ -13,7 +13,11 @@
 /// # let fileusecasetype = unimplemented!();
 /// match fileusecasetype {
 ///     FileUseCaseType::Attachment => { /* ... */ },
+///     FileUseCaseType::ContactAnalysis => { /* ... */ },
 ///     FileUseCaseType::EmailMessage => { /* ... */ },
+///     FileUseCaseType::EmailMessagePlainText => { /* ... */ },
+///     FileUseCaseType::EmailMessagePlainTextRedacted => { /* ... */ },
+///     FileUseCaseType::EmailMessageRedacted => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,7 +49,15 @@ pub enum FileUseCaseType {
     #[allow(missing_docs)] // documentation missing in model
     Attachment,
     #[allow(missing_docs)] // documentation missing in model
+    ContactAnalysis,
+    #[allow(missing_docs)] // documentation missing in model
     EmailMessage,
+    #[allow(missing_docs)] // documentation missing in model
+    EmailMessagePlainText,
+    #[allow(missing_docs)] // documentation missing in model
+    EmailMessagePlainTextRedacted,
+    #[allow(missing_docs)] // documentation missing in model
+    EmailMessageRedacted,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,7 +66,11 @@ impl ::std::convert::From<&str> for FileUseCaseType {
     fn from(s: &str) -> Self {
         match s {
             "ATTACHMENT" => FileUseCaseType::Attachment,
+            "CONTACT_ANALYSIS" => FileUseCaseType::ContactAnalysis,
             "EMAIL_MESSAGE" => FileUseCaseType::EmailMessage,
+            "EMAIL_MESSAGE_PLAIN_TEXT" => FileUseCaseType::EmailMessagePlainText,
+            "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED" => FileUseCaseType::EmailMessagePlainTextRedacted,
+            "EMAIL_MESSAGE_REDACTED" => FileUseCaseType::EmailMessageRedacted,
             other => FileUseCaseType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,13 +87,24 @@ impl FileUseCaseType {
     pub fn as_str(&self) -> &str {
         match self {
             FileUseCaseType::Attachment => "ATTACHMENT",
+            FileUseCaseType::ContactAnalysis => "CONTACT_ANALYSIS",
             FileUseCaseType::EmailMessage => "EMAIL_MESSAGE",
+            FileUseCaseType::EmailMessagePlainText => "EMAIL_MESSAGE_PLAIN_TEXT",
+            FileUseCaseType::EmailMessagePlainTextRedacted => "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED",
+            FileUseCaseType::EmailMessageRedacted => "EMAIL_MESSAGE_REDACTED",
             FileUseCaseType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ATTACHMENT", "EMAIL_MESSAGE"]
+        &[
+            "ATTACHMENT",
+            "CONTACT_ANALYSIS",
+            "EMAIL_MESSAGE",
+            "EMAIL_MESSAGE_PLAIN_TEXT",
+            "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED",
+            "EMAIL_MESSAGE_REDACTED",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for FileUseCaseType {
@@ -101,7 +128,11 @@ impl ::std::fmt::Display for FileUseCaseType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FileUseCaseType::Attachment => write!(f, "ATTACHMENT"),
+            FileUseCaseType::ContactAnalysis => write!(f, "CONTACT_ANALYSIS"),
             FileUseCaseType::EmailMessage => write!(f, "EMAIL_MESSAGE"),
+            FileUseCaseType::EmailMessagePlainText => write!(f, "EMAIL_MESSAGE_PLAIN_TEXT"),
+            FileUseCaseType::EmailMessagePlainTextRedacted => write!(f, "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED"),
+            FileUseCaseType::EmailMessageRedacted => write!(f, "EMAIL_MESSAGE_REDACTED"),
             FileUseCaseType::Unknown(value) => write!(f, "{value}"),
         }
     }

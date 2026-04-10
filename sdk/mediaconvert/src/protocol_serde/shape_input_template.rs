@@ -109,44 +109,56 @@ pub fn ser_input_template(
     if let Some(var_37) = &input.input_scan_type {
         object.key("inputScanType").string(var_37.as_str());
     }
-    if let Some(var_38) = &input.position {
-        #[allow(unused_mut)]
-        let mut object_39 = object.key("position").start_object();
-        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_39, var_38)?;
-        object_39.finish();
-    }
-    if let Some(var_40) = &input.program_number {
-        object.key("programNumber").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_40).into()),
-        );
-    }
-    if let Some(var_41) = &input.psi_control {
-        object.key("psiControl").string(var_41.as_str());
-    }
-    if let Some(var_42) = &input.timecode_source {
-        object.key("timecodeSource").string(var_42.as_str());
-    }
-    if let Some(var_43) = &input.timecode_start {
-        object.key("timecodeStart").string(var_43.as_str());
-    }
-    if let Some(var_44) = &input.video_overlays {
-        let mut array_45 = object.key("videoOverlays").start_array();
-        for item_46 in var_44 {
+    if let Some(var_38) = &input.multi_view_settings {
+        let mut array_39 = object.key("multiViewSettings").start_array();
+        for item_40 in var_38 {
             {
                 #[allow(unused_mut)]
-                let mut object_47 = array_45.value().start_object();
-                crate::protocol_serde::shape_video_overlay::ser_video_overlay(&mut object_47, item_46)?;
-                object_47.finish();
+                let mut object_41 = array_39.value().start_object();
+                crate::protocol_serde::shape_multi_view_settings::ser_multi_view_settings(&mut object_41, item_40)?;
+                object_41.finish();
             }
         }
-        array_45.finish();
+        array_39.finish();
     }
-    if let Some(var_48) = &input.video_selector {
+    if let Some(var_42) = &input.position {
         #[allow(unused_mut)]
-        let mut object_49 = object.key("videoSelector").start_object();
-        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_49, var_48)?;
-        object_49.finish();
+        let mut object_43 = object.key("position").start_object();
+        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_43, var_42)?;
+        object_43.finish();
+    }
+    if let Some(var_44) = &input.program_number {
+        object.key("programNumber").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_44).into()),
+        );
+    }
+    if let Some(var_45) = &input.psi_control {
+        object.key("psiControl").string(var_45.as_str());
+    }
+    if let Some(var_46) = &input.timecode_source {
+        object.key("timecodeSource").string(var_46.as_str());
+    }
+    if let Some(var_47) = &input.timecode_start {
+        object.key("timecodeStart").string(var_47.as_str());
+    }
+    if let Some(var_48) = &input.video_overlays {
+        let mut array_49 = object.key("videoOverlays").start_array();
+        for item_50 in var_48 {
+            {
+                #[allow(unused_mut)]
+                let mut object_51 = array_49.value().start_object();
+                crate::protocol_serde::shape_video_overlay::ser_video_overlay(&mut object_51, item_50)?;
+                object_51.finish();
+            }
+        }
+        array_49.finish();
+    }
+    if let Some(var_52) = &input.video_selector {
+        #[allow(unused_mut)]
+        let mut object_53 = object.key("videoSelector").start_object();
+        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_53, var_52)?;
+        object_53.finish();
     }
     Ok(())
 }
@@ -250,6 +262,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::InputScanType::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "multiViewSettings" => {
+                            builder = builder.set_multi_view_settings(
+                                crate::protocol_serde::shape_list_of_multi_view_settings::de_list_of_multi_view_settings(tokens, _value)?,
                             );
                         }
                         "position" => {

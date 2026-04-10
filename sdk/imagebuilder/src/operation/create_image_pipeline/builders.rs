@@ -267,6 +267,25 @@ impl CreateImagePipelineFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
+    /// Adds a key-value pair to `imageTags`.
+    ///
+    /// To override the contents of this collection use [`set_image_tags`](Self::set_image_tags).
+    ///
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn image_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.image_tags(k.into(), v.into());
+        self
+    }
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.inner = self.inner.set_image_tags(input);
+        self
+    }
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn get_image_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_image_tags()
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

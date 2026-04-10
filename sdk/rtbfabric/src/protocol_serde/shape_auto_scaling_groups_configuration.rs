@@ -15,6 +15,12 @@ pub fn ser_auto_scaling_groups_configuration(
     {
         object.key("roleArn").string(input.role_arn.as_str());
     }
+    if let Some(var_3) = &input.health_check_config {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("healthCheckConfig").start_object();
+        crate::protocol_serde::shape_health_check_config::ser_health_check_config(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -45,6 +51,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "healthCheckConfig" => {
+                            builder = builder
+                                .set_health_check_config(crate::protocol_serde::shape_health_check_config::de_health_check_config(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

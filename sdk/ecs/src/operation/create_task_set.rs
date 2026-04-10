@@ -266,6 +266,8 @@ pub enum CreateTaskSetError {
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     /// <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>The limit for the resource was exceeded.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The specified namespace wasn't found.</p>
     NamespaceNotFoundException(crate::types::error::NamespaceNotFoundException),
     /// <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
@@ -317,6 +319,7 @@ impl CreateTaskSetError {
             Self::ClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClusterNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NamespaceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PlatformTaskDefinitionIncompatibilityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PlatformUnknownException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -342,6 +345,10 @@ impl CreateTaskSetError {
     /// Returns `true` if the error kind is `CreateTaskSetError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
+    }
+    /// Returns `true` if the error kind is `CreateTaskSetError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateTaskSetError::NamespaceNotFoundException`.
     pub fn is_namespace_not_found_exception(&self) -> bool {
@@ -379,6 +386,7 @@ impl ::std::error::Error for CreateTaskSetError {
             Self::ClientException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::NamespaceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::PlatformTaskDefinitionIncompatibilityException(_inner) => ::std::option::Option::Some(_inner),
             Self::PlatformUnknownException(_inner) => ::std::option::Option::Some(_inner),
@@ -397,6 +405,7 @@ impl ::std::fmt::Display for CreateTaskSetError {
             Self::ClientException(_inner) => _inner.fmt(f),
             Self::ClusterNotFoundException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::NamespaceNotFoundException(_inner) => _inner.fmt(f),
             Self::PlatformTaskDefinitionIncompatibilityException(_inner) => _inner.fmt(f),
             Self::PlatformUnknownException(_inner) => _inner.fmt(f),
@@ -429,6 +438,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateTaskSet
             Self::ClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NamespaceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PlatformTaskDefinitionIncompatibilityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PlatformUnknownException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

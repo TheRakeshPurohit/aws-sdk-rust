@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelfManagedInput {
-    /// The ARN of the Resource Configuration.
+    /// The ID or ARN of the resource configuration.
     pub resource_configuration_id: ::std::string::String,
     /// Certificate for the Private Connection.
     pub certificate: ::std::option::Option<::std::string::String>,
 }
 impl SelfManagedInput {
-    /// The ARN of the Resource Configuration.
+    /// The ID or ARN of the resource configuration.
     pub fn resource_configuration_id(&self) -> &str {
         use std::ops::Deref;
         self.resource_configuration_id.deref()
@@ -35,18 +35,18 @@ pub struct SelfManagedInputBuilder {
     pub(crate) certificate: ::std::option::Option<::std::string::String>,
 }
 impl SelfManagedInputBuilder {
-    /// The ARN of the Resource Configuration.
+    /// The ID or ARN of the resource configuration.
     /// This field is required.
     pub fn resource_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_configuration_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the Resource Configuration.
+    /// The ID or ARN of the resource configuration.
     pub fn set_resource_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_configuration_id = input;
         self
     }
-    /// The ARN of the Resource Configuration.
+    /// The ID or ARN of the resource configuration.
     pub fn get_resource_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_configuration_id
     }

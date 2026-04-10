@@ -8,6 +8,8 @@ pub struct Container {
     pub duration: ::std::option::Option<f64>,
     /// The format of your media file. For example: MP4, QuickTime (MOV), Matroska (MKV), WebM, MXF, Wave, AVI, or MPEG-TS. Note that this will be blank if your media file has a format that the MediaConvert Probe operation does not recognize.
     pub format: ::std::option::Option<crate::types::Format>,
+    /// The start timecode of the media file, in HH:MM:SS:FF format (or HH:MM:SS;FF for drop frame timecode). Note that this field is null when the container does not include an embedded start timecode.
+    pub start_timecode: ::std::option::Option<::std::string::String>,
     /// Details about each track (video, audio, or data) in the media file.
     pub tracks: ::std::option::Option<::std::vec::Vec<crate::types::Track>>,
 }
@@ -19,6 +21,10 @@ impl Container {
     /// The format of your media file. For example: MP4, QuickTime (MOV), Matroska (MKV), WebM, MXF, Wave, AVI, or MPEG-TS. Note that this will be blank if your media file has a format that the MediaConvert Probe operation does not recognize.
     pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
         self.format.as_ref()
+    }
+    /// The start timecode of the media file, in HH:MM:SS:FF format (or HH:MM:SS;FF for drop frame timecode). Note that this field is null when the container does not include an embedded start timecode.
+    pub fn start_timecode(&self) -> ::std::option::Option<&str> {
+        self.start_timecode.as_deref()
     }
     /// Details about each track (video, audio, or data) in the media file.
     ///
@@ -40,6 +46,7 @@ impl Container {
 pub struct ContainerBuilder {
     pub(crate) duration: ::std::option::Option<f64>,
     pub(crate) format: ::std::option::Option<crate::types::Format>,
+    pub(crate) start_timecode: ::std::option::Option<::std::string::String>,
     pub(crate) tracks: ::std::option::Option<::std::vec::Vec<crate::types::Track>>,
 }
 impl ContainerBuilder {
@@ -71,6 +78,20 @@ impl ContainerBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::Format> {
         &self.format
     }
+    /// The start timecode of the media file, in HH:MM:SS:FF format (or HH:MM:SS;FF for drop frame timecode). Note that this field is null when the container does not include an embedded start timecode.
+    pub fn start_timecode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start_timecode = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// The start timecode of the media file, in HH:MM:SS:FF format (or HH:MM:SS;FF for drop frame timecode). Note that this field is null when the container does not include an embedded start timecode.
+    pub fn set_start_timecode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.start_timecode = input;
+        self
+    }
+    /// The start timecode of the media file, in HH:MM:SS:FF format (or HH:MM:SS;FF for drop frame timecode). Note that this field is null when the container does not include an embedded start timecode.
+    pub fn get_start_timecode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.start_timecode
+    }
     /// Appends an item to `tracks`.
     ///
     /// To override the contents of this collection use [`set_tracks`](Self::set_tracks).
@@ -96,6 +117,7 @@ impl ContainerBuilder {
         crate::types::Container {
             duration: self.duration,
             format: self.format,
+            start_timecode: self.start_timecode,
             tracks: self.tracks,
         }
     }

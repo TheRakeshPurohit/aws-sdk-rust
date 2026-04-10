@@ -12,6 +12,8 @@ pub struct ClusterInstanceGroupSpecification {
     pub instance_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the instance type of the instance group.</p>
     pub instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
+    /// <p>The instance requirements for the instance group, including the instance types to use. Use this to create a flexible instance group that supports multiple instance types. The <code>InstanceType</code> and <code>InstanceRequirements</code> properties are mutually exclusive.</p>
+    pub instance_requirements: ::std::option::Option<crate::types::ClusterInstanceRequirements>,
     /// <p>Specifies the LifeCycle configuration for the instance group.</p>
     pub life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
     /// <p>Specifies an IAM execution role to be assumed by the instance group.</p>
@@ -89,6 +91,10 @@ impl ClusterInstanceGroupSpecification {
     /// <p>Specifies the instance type of the instance group.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ClusterInstanceType> {
         self.instance_type.as_ref()
+    }
+    /// <p>The instance requirements for the instance group, including the instance types to use. Use this to create a flexible instance group that supports multiple instance types. The <code>InstanceType</code> and <code>InstanceRequirements</code> properties are mutually exclusive.</p>
+    pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::ClusterInstanceRequirements> {
+        self.instance_requirements.as_ref()
     }
     /// <p>Specifies the LifeCycle configuration for the instance group.</p>
     pub fn life_cycle_config(&self) -> ::std::option::Option<&crate::types::ClusterLifeCycleConfig> {
@@ -194,6 +200,7 @@ pub struct ClusterInstanceGroupSpecificationBuilder {
     pub(crate) min_instance_count: ::std::option::Option<i32>,
     pub(crate) instance_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
+    pub(crate) instance_requirements: ::std::option::Option<crate::types::ClusterInstanceRequirements>,
     pub(crate) life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
@@ -266,8 +273,21 @@ impl ClusterInstanceGroupSpecificationBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ClusterInstanceType> {
         &self.instance_type
     }
+    /// <p>The instance requirements for the instance group, including the instance types to use. Use this to create a flexible instance group that supports multiple instance types. The <code>InstanceType</code> and <code>InstanceRequirements</code> properties are mutually exclusive.</p>
+    pub fn instance_requirements(mut self, input: crate::types::ClusterInstanceRequirements) -> Self {
+        self.instance_requirements = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance requirements for the instance group, including the instance types to use. Use this to create a flexible instance group that supports multiple instance types. The <code>InstanceType</code> and <code>InstanceRequirements</code> properties are mutually exclusive.</p>
+    pub fn set_instance_requirements(mut self, input: ::std::option::Option<crate::types::ClusterInstanceRequirements>) -> Self {
+        self.instance_requirements = input;
+        self
+    }
+    /// <p>The instance requirements for the instance group, including the instance types to use. Use this to create a flexible instance group that supports multiple instance types. The <code>InstanceType</code> and <code>InstanceRequirements</code> properties are mutually exclusive.</p>
+    pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::ClusterInstanceRequirements> {
+        &self.instance_requirements
+    }
     /// <p>Specifies the LifeCycle configuration for the instance group.</p>
-    /// This field is required.
     pub fn life_cycle_config(mut self, input: crate::types::ClusterLifeCycleConfig) -> Self {
         self.life_cycle_config = ::std::option::Option::Some(input);
         self
@@ -563,6 +583,7 @@ impl ClusterInstanceGroupSpecificationBuilder {
             min_instance_count: self.min_instance_count,
             instance_group_name: self.instance_group_name,
             instance_type: self.instance_type,
+            instance_requirements: self.instance_requirements,
             life_cycle_config: self.life_cycle_config,
             execution_role: self.execution_role,
             threads_per_core: self.threads_per_core,

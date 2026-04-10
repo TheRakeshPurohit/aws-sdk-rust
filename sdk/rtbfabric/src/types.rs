@@ -33,6 +33,8 @@ pub use crate::types::_link_application_log_configuration::LinkApplicationLogCon
 
 pub use crate::types::_module_configuration::ModuleConfiguration;
 
+pub use crate::types::_health_check_config::HealthCheckConfig;
+
 pub use crate::types::_responder_error_masking_for_http_code::ResponderErrorMaskingForHttpCode;
 
 pub use crate::types::_link_application_log_sampling::LinkApplicationLogSampling;
@@ -78,6 +80,8 @@ mod _filter_type;
 mod _gateway_type;
 
 mod _header_tag_action;
+
+mod _health_check_config;
 
 mod _link_application_log_configuration;
 

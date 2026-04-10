@@ -266,6 +266,8 @@ pub enum UpdateTaskSetError {
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     /// <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>The limit for the resource was exceeded.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::types::error::ServerException),
     /// <p>The specified service isn't active. You can't update a service that's inactive. If you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.</p>
@@ -313,6 +315,7 @@ impl UpdateTaskSetError {
             Self::ClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClusterNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceNotActiveException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -336,6 +339,10 @@ impl UpdateTaskSetError {
     /// Returns `true` if the error kind is `UpdateTaskSetError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateTaskSetError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateTaskSetError::ServerException`.
     pub fn is_server_exception(&self) -> bool {
@@ -365,6 +372,7 @@ impl ::std::error::Error for UpdateTaskSetError {
             Self::ClientException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceNotActiveException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -381,6 +389,7 @@ impl ::std::fmt::Display for UpdateTaskSetError {
             Self::ClientException(_inner) => _inner.fmt(f),
             Self::ClusterNotFoundException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ServerException(_inner) => _inner.fmt(f),
             Self::ServiceNotActiveException(_inner) => _inner.fmt(f),
             Self::ServiceNotFoundException(_inner) => _inner.fmt(f),
@@ -411,6 +420,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateTaskSet
             Self::ClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceNotActiveException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

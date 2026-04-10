@@ -319,6 +319,8 @@ pub(crate) mod shape_mp4_settings;
 
 pub(crate) mod shape_mpd_settings;
 
+pub(crate) mod shape_multi_view_settings;
+
 pub(crate) mod shape_mxf_settings;
 
 pub(crate) mod shape_output;
@@ -431,6 +433,8 @@ pub(crate) mod shape_mpeg2_settings;
 
 pub(crate) mod shape_ms_smooth_group_settings;
 
+pub(crate) mod shape_multi_view_input;
+
 pub(crate) mod shape_mxf_xavc_profile_settings;
 
 pub(crate) mod shape_noise_reducer;
@@ -534,6 +538,8 @@ pub(crate) mod shape_list_of_input_clipping;
 pub(crate) mod shape_list_of_integer;
 
 pub(crate) mod shape_list_of_integer_min32_max8182;
+
+pub(crate) mod shape_list_of_multi_view_settings;
 
 pub(crate) mod shape_list_of_output;
 

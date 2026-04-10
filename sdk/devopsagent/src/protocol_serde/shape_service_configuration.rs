@@ -46,41 +46,59 @@ pub fn ser_service_configuration(
             crate::protocol_serde::shape_mcp_server_new_relic_configuration::ser_mcp_server_new_relic_configuration(&mut object_7, inner)?;
             object_7.finish();
         }
+        crate::types::ServiceConfiguration::Mcpserverdatadog(inner) => {
+            #[allow(unused_mut)]
+            let mut object_8 = object_2.key("mcpserverdatadog").start_object();
+            crate::protocol_serde::shape_mcp_server_datadog_configuration::ser_mcp_server_datadog_configuration(&mut object_8, inner)?;
+            object_8.finish();
+        }
+        crate::types::ServiceConfiguration::Mcpserver(inner) => {
+            #[allow(unused_mut)]
+            let mut object_9 = object_2.key("mcpserver").start_object();
+            crate::protocol_serde::shape_mcp_server_configuration::ser_mcp_server_configuration(&mut object_9, inner)?;
+            object_9.finish();
+        }
         crate::types::ServiceConfiguration::Gitlab(inner) => {
             #[allow(unused_mut)]
-            let mut object_8 = object_2.key("gitlab").start_object();
-            crate::protocol_serde::shape_git_lab_configuration::ser_git_lab_configuration(&mut object_8, inner)?;
-            object_8.finish();
+            let mut object_10 = object_2.key("gitlab").start_object();
+            crate::protocol_serde::shape_git_lab_configuration::ser_git_lab_configuration(&mut object_10, inner)?;
+            object_10.finish();
+        }
+        crate::types::ServiceConfiguration::Mcpserversplunk(inner) => {
+            #[allow(unused_mut)]
+            let mut object_11 = object_2.key("mcpserversplunk").start_object();
+            crate::protocol_serde::shape_mcp_server_splunk_configuration::ser_mcp_server_splunk_configuration(&mut object_11, inner)?;
+            object_11.finish();
         }
         crate::types::ServiceConfiguration::EventChannel(inner) => {
             #[allow(unused_mut)]
-            let mut object_9 = object_2.key("eventChannel").start_object();
-            crate::protocol_serde::shape_event_channel_configuration::ser_event_channel_configuration(&mut object_9, inner)?;
-            object_9.finish();
+            let mut object_12 = object_2.key("eventChannel").start_object();
+            crate::protocol_serde::shape_event_channel_configuration::ser_event_channel_configuration(&mut object_12, inner)?;
+            object_12.finish();
         }
         crate::types::ServiceConfiguration::Azure(inner) => {
             #[allow(unused_mut)]
-            let mut object_10 = object_2.key("azure").start_object();
-            crate::protocol_serde::shape_azure_configuration::ser_azure_configuration(&mut object_10, inner)?;
-            object_10.finish();
+            let mut object_13 = object_2.key("azure").start_object();
+            crate::protocol_serde::shape_azure_configuration::ser_azure_configuration(&mut object_13, inner)?;
+            object_13.finish();
         }
         crate::types::ServiceConfiguration::Azuredevops(inner) => {
             #[allow(unused_mut)]
-            let mut object_11 = object_2.key("azuredevops").start_object();
-            crate::protocol_serde::shape_azure_dev_ops_configuration::ser_azure_dev_ops_configuration(&mut object_11, inner)?;
-            object_11.finish();
+            let mut object_14 = object_2.key("azuredevops").start_object();
+            crate::protocol_serde::shape_azure_dev_ops_configuration::ser_azure_dev_ops_configuration(&mut object_14, inner)?;
+            object_14.finish();
         }
         crate::types::ServiceConfiguration::Mcpservergrafana(inner) => {
             #[allow(unused_mut)]
-            let mut object_12 = object_2.key("mcpservergrafana").start_object();
-            crate::protocol_serde::shape_mcp_server_grafana_configuration::ser_mcp_server_grafana_configuration(&mut object_12, inner)?;
-            object_12.finish();
+            let mut object_15 = object_2.key("mcpservergrafana").start_object();
+            crate::protocol_serde::shape_mcp_server_grafana_configuration::ser_mcp_server_grafana_configuration(&mut object_15, inner)?;
+            object_15.finish();
         }
         crate::types::ServiceConfiguration::Pagerduty(inner) => {
             #[allow(unused_mut)]
-            let mut object_13 = object_2.key("pagerduty").start_object();
-            crate::protocol_serde::shape_pager_duty_configuration::ser_pager_duty_configuration(&mut object_13, inner)?;
-            object_13.finish();
+            let mut object_16 = object_2.key("pagerduty").start_object();
+            crate::protocol_serde::shape_pager_duty_configuration::ser_pager_duty_configuration(&mut object_16, inner)?;
+            object_16.finish();
         }
         crate::types::ServiceConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
@@ -156,10 +174,27 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpservernewrelic' cannot be null")
                             })?,
                         )),
+                        "mcpserverdatadog" => Some(crate::types::ServiceConfiguration::Mcpserverdatadog(
+                            crate::protocol_serde::shape_mcp_server_datadog_configuration::de_mcp_server_datadog_configuration(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpserverdatadog' cannot be null")
+                                })?,
+                        )),
+                        "mcpserver" => Some(crate::types::ServiceConfiguration::Mcpserver(
+                            crate::protocol_serde::shape_mcp_server_configuration::de_mcp_server_configuration(tokens, _value)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpserver' cannot be null")
+                            })?,
+                        )),
                         "gitlab" => Some(crate::types::ServiceConfiguration::Gitlab(
                             crate::protocol_serde::shape_git_lab_configuration::de_git_lab_configuration(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'gitlab' cannot be null")
                             })?,
+                        )),
+                        "mcpserversplunk" => Some(crate::types::ServiceConfiguration::Mcpserversplunk(
+                            crate::protocol_serde::shape_mcp_server_splunk_configuration::de_mcp_server_splunk_configuration(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mcpserversplunk' cannot be null")
+                                })?,
                         )),
                         "eventChannel" => Some(crate::types::ServiceConfiguration::EventChannel(
                             crate::protocol_serde::shape_event_channel_configuration::de_event_channel_configuration(tokens, _value)?.ok_or_else(

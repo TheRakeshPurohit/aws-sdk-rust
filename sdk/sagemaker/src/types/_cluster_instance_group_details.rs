@@ -14,6 +14,10 @@ pub struct ClusterInstanceGroupDetails {
     pub instance_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance type of the instance group of a SageMaker HyperPod cluster.</p>
     pub instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
+    /// <p>The instance requirements for the instance group, including the current and desired instance types. This field is present for flexible instance groups that support multiple instance types.</p>
+    pub instance_requirements: ::std::option::Option<crate::types::ClusterInstanceRequirementDetails>,
+    /// <p>Details about the instance types in the instance group, including the count and configuration of each instance type. This field is present for flexible instance groups that support multiple instance types.</p>
+    pub instance_type_details: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceTypeDetail>>,
     /// <p>Details of LifeCycle configuration for the instance group.</p>
     pub life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
     /// <p>The execution role for the instance group to assume.</p>
@@ -103,6 +107,16 @@ impl ClusterInstanceGroupDetails {
     /// <p>The instance type of the instance group of a SageMaker HyperPod cluster.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&crate::types::ClusterInstanceType> {
         self.instance_type.as_ref()
+    }
+    /// <p>The instance requirements for the instance group, including the current and desired instance types. This field is present for flexible instance groups that support multiple instance types.</p>
+    pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::ClusterInstanceRequirementDetails> {
+        self.instance_requirements.as_ref()
+    }
+    /// <p>Details about the instance types in the instance group, including the count and configuration of each instance type. This field is present for flexible instance groups that support multiple instance types.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_type_details.is_none()`.
+    pub fn instance_type_details(&self) -> &[crate::types::ClusterInstanceTypeDetail] {
+        self.instance_type_details.as_deref().unwrap_or_default()
     }
     /// <p>Details of LifeCycle configuration for the instance group.</p>
     pub fn life_cycle_config(&self) -> ::std::option::Option<&crate::types::ClusterLifeCycleConfig> {
@@ -231,6 +245,8 @@ pub struct ClusterInstanceGroupDetailsBuilder {
     pub(crate) min_count: ::std::option::Option<i32>,
     pub(crate) instance_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<crate::types::ClusterInstanceType>,
+    pub(crate) instance_requirements: ::std::option::Option<crate::types::ClusterInstanceRequirementDetails>,
+    pub(crate) instance_type_details: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceTypeDetail>>,
     pub(crate) life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
@@ -321,6 +337,40 @@ impl ClusterInstanceGroupDetailsBuilder {
     /// <p>The instance type of the instance group of a SageMaker HyperPod cluster.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<crate::types::ClusterInstanceType> {
         &self.instance_type
+    }
+    /// <p>The instance requirements for the instance group, including the current and desired instance types. This field is present for flexible instance groups that support multiple instance types.</p>
+    pub fn instance_requirements(mut self, input: crate::types::ClusterInstanceRequirementDetails) -> Self {
+        self.instance_requirements = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance requirements for the instance group, including the current and desired instance types. This field is present for flexible instance groups that support multiple instance types.</p>
+    pub fn set_instance_requirements(mut self, input: ::std::option::Option<crate::types::ClusterInstanceRequirementDetails>) -> Self {
+        self.instance_requirements = input;
+        self
+    }
+    /// <p>The instance requirements for the instance group, including the current and desired instance types. This field is present for flexible instance groups that support multiple instance types.</p>
+    pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::ClusterInstanceRequirementDetails> {
+        &self.instance_requirements
+    }
+    /// Appends an item to `instance_type_details`.
+    ///
+    /// To override the contents of this collection use [`set_instance_type_details`](Self::set_instance_type_details).
+    ///
+    /// <p>Details about the instance types in the instance group, including the count and configuration of each instance type. This field is present for flexible instance groups that support multiple instance types.</p>
+    pub fn instance_type_details(mut self, input: crate::types::ClusterInstanceTypeDetail) -> Self {
+        let mut v = self.instance_type_details.unwrap_or_default();
+        v.push(input);
+        self.instance_type_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Details about the instance types in the instance group, including the count and configuration of each instance type. This field is present for flexible instance groups that support multiple instance types.</p>
+    pub fn set_instance_type_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceTypeDetail>>) -> Self {
+        self.instance_type_details = input;
+        self
+    }
+    /// <p>Details about the instance types in the instance group, including the count and configuration of each instance type. This field is present for flexible instance groups that support multiple instance types.</p>
+    pub fn get_instance_type_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceTypeDetail>> {
+        &self.instance_type_details
     }
     /// <p>Details of LifeCycle configuration for the instance group.</p>
     pub fn life_cycle_config(mut self, input: crate::types::ClusterLifeCycleConfig) -> Self {
@@ -707,6 +757,8 @@ impl ClusterInstanceGroupDetailsBuilder {
             min_count: self.min_count,
             instance_group_name: self.instance_group_name,
             instance_type: self.instance_type,
+            instance_requirements: self.instance_requirements,
+            instance_type_details: self.instance_type_details,
             life_cycle_config: self.life_cycle_config,
             execution_role: self.execution_role,
             threads_per_core: self.threads_per_core,

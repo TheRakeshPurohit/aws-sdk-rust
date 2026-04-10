@@ -33,41 +33,51 @@ pub fn ser_update_image_pipeline_input_input(
         crate::protocol_serde::shape_image_scanning_configuration::ser_image_scanning_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.image_tests_configuration {
+    if let Some(var_11) = &input.image_tags {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("imageTestsConfiguration").start_object();
-        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(&mut object_12, var_11)?;
-        object_12.finish();
-    }
-    if let Some(var_13) = &input.infrastructure_configuration_arn {
-        object.key("infrastructureConfigurationArn").string(var_13.as_str());
-    }
-    if let Some(var_14) = &input.logging_configuration {
-        #[allow(unused_mut)]
-        let mut object_15 = object.key("loggingConfiguration").start_object();
-        crate::protocol_serde::shape_pipeline_logging_configuration::ser_pipeline_logging_configuration(&mut object_15, var_14)?;
-        object_15.finish();
-    }
-    if let Some(var_16) = &input.schedule {
-        #[allow(unused_mut)]
-        let mut object_17 = object.key("schedule").start_object();
-        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_17, var_16)?;
-        object_17.finish();
-    }
-    if let Some(var_18) = &input.status {
-        object.key("status").string(var_18.as_str());
-    }
-    if let Some(var_19) = &input.workflows {
-        let mut array_20 = object.key("workflows").start_array();
-        for item_21 in var_19 {
+        let mut object_12 = object.key("imageTags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                #[allow(unused_mut)]
-                let mut object_22 = array_20.value().start_object();
-                crate::protocol_serde::shape_workflow_configuration::ser_workflow_configuration(&mut object_22, item_21)?;
-                object_22.finish();
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        array_20.finish();
+        object_12.finish();
+    }
+    if let Some(var_15) = &input.image_tests_configuration {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("imageTestsConfiguration").start_object();
+        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.infrastructure_configuration_arn {
+        object.key("infrastructureConfigurationArn").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.logging_configuration {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("loggingConfiguration").start_object();
+        crate::protocol_serde::shape_pipeline_logging_configuration::ser_pipeline_logging_configuration(&mut object_19, var_18)?;
+        object_19.finish();
+    }
+    if let Some(var_20) = &input.schedule {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("schedule").start_object();
+        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.status {
+        object.key("status").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.workflows {
+        let mut array_24 = object.key("workflows").start_array();
+        for item_25 in var_23 {
+            {
+                #[allow(unused_mut)]
+                let mut object_26 = array_24.value().start_object();
+                crate::protocol_serde::shape_workflow_configuration::ser_workflow_configuration(&mut object_26, item_25)?;
+                object_26.finish();
+            }
+        }
+        array_24.finish();
     }
     Ok(())
 }

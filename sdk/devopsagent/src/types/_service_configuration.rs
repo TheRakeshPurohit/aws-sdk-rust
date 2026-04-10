@@ -18,10 +18,16 @@ pub enum ServiceConfiguration {
     Github(crate::types::GitHubConfiguration),
     /// GitLab project integration configuration.
     Gitlab(crate::types::GitLabConfiguration),
+    /// MCP (Model Context Protocol) server integration configuration.
+    Mcpserver(crate::types::McpServerConfiguration),
+    /// Datadog MCP server integration configuration.
+    Mcpserverdatadog(crate::types::McpServerDatadogConfiguration),
     /// Grafana MCP server integration configuration.
     Mcpservergrafana(crate::types::McpServerGrafanaConfiguration),
     /// NewRelic instance integration configuration.
     Mcpservernewrelic(crate::types::McpServerNewRelicConfiguration),
+    /// Splunk MCP server integration configuration.
+    Mcpserversplunk(crate::types::McpServerSplunkConfiguration),
     /// PagerDuty integration configuration
     Pagerduty(crate::types::PagerDutyConfiguration),
     /// ServiceNow instance integration configuration.
@@ -132,6 +138,32 @@ impl ServiceConfiguration {
     pub fn is_gitlab(&self) -> bool {
         self.as_gitlab().is_ok()
     }
+    /// Tries to convert the enum instance into [`Mcpserver`](crate::types::ServiceConfiguration::Mcpserver), extracting the inner [`McpServerConfiguration`](crate::types::McpServerConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_mcpserver(&self) -> ::std::result::Result<&crate::types::McpServerConfiguration, &Self> {
+        if let ServiceConfiguration::Mcpserver(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Mcpserver`](crate::types::ServiceConfiguration::Mcpserver).
+    pub fn is_mcpserver(&self) -> bool {
+        self.as_mcpserver().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Mcpserverdatadog`](crate::types::ServiceConfiguration::Mcpserverdatadog), extracting the inner [`McpServerDatadogConfiguration`](crate::types::McpServerDatadogConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_mcpserverdatadog(&self) -> ::std::result::Result<&crate::types::McpServerDatadogConfiguration, &Self> {
+        if let ServiceConfiguration::Mcpserverdatadog(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Mcpserverdatadog`](crate::types::ServiceConfiguration::Mcpserverdatadog).
+    pub fn is_mcpserverdatadog(&self) -> bool {
+        self.as_mcpserverdatadog().is_ok()
+    }
     /// Tries to convert the enum instance into [`Mcpservergrafana`](crate::types::ServiceConfiguration::Mcpservergrafana), extracting the inner [`McpServerGrafanaConfiguration`](crate::types::McpServerGrafanaConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_mcpservergrafana(&self) -> ::std::result::Result<&crate::types::McpServerGrafanaConfiguration, &Self> {
@@ -157,6 +189,19 @@ impl ServiceConfiguration {
     /// Returns true if this is a [`Mcpservernewrelic`](crate::types::ServiceConfiguration::Mcpservernewrelic).
     pub fn is_mcpservernewrelic(&self) -> bool {
         self.as_mcpservernewrelic().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Mcpserversplunk`](crate::types::ServiceConfiguration::Mcpserversplunk), extracting the inner [`McpServerSplunkConfiguration`](crate::types::McpServerSplunkConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_mcpserversplunk(&self) -> ::std::result::Result<&crate::types::McpServerSplunkConfiguration, &Self> {
+        if let ServiceConfiguration::Mcpserversplunk(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Mcpserversplunk`](crate::types::ServiceConfiguration::Mcpserversplunk).
+    pub fn is_mcpserversplunk(&self) -> bool {
+        self.as_mcpserversplunk().is_ok()
     }
     /// Tries to convert the enum instance into [`Pagerduty`](crate::types::ServiceConfiguration::Pagerduty), extracting the inner [`PagerDutyConfiguration`](crate::types::PagerDutyConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

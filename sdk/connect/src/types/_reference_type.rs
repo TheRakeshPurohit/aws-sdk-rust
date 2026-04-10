@@ -18,6 +18,8 @@
 ///     ReferenceType::Email => { /* ... */ },
 ///     ReferenceType::EmailMessage => { /* ... */ },
 ///     ReferenceType::EmailMessagePlainText => { /* ... */ },
+///     ReferenceType::EmailMessagePlainTextRedacted => { /* ... */ },
+///     ReferenceType::EmailMessageRedacted => { /* ... */ },
 ///     ReferenceType::Number => { /* ... */ },
 ///     ReferenceType::String => { /* ... */ },
 ///     ReferenceType::Url => { /* ... */ },
@@ -62,6 +64,10 @@ pub enum ReferenceType {
     #[allow(missing_docs)] // documentation missing in model
     EmailMessagePlainText,
     #[allow(missing_docs)] // documentation missing in model
+    EmailMessagePlainTextRedacted,
+    #[allow(missing_docs)] // documentation missing in model
+    EmailMessageRedacted,
+    #[allow(missing_docs)] // documentation missing in model
     Number,
     #[allow(missing_docs)] // documentation missing in model
     String,
@@ -80,6 +86,8 @@ impl ::std::convert::From<&str> for ReferenceType {
             "EMAIL" => ReferenceType::Email,
             "EMAIL_MESSAGE" => ReferenceType::EmailMessage,
             "EMAIL_MESSAGE_PLAIN_TEXT" => ReferenceType::EmailMessagePlainText,
+            "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED" => ReferenceType::EmailMessagePlainTextRedacted,
+            "EMAIL_MESSAGE_REDACTED" => ReferenceType::EmailMessageRedacted,
             "NUMBER" => ReferenceType::Number,
             "STRING" => ReferenceType::String,
             "URL" => ReferenceType::Url,
@@ -104,6 +112,8 @@ impl ReferenceType {
             ReferenceType::Email => "EMAIL",
             ReferenceType::EmailMessage => "EMAIL_MESSAGE",
             ReferenceType::EmailMessagePlainText => "EMAIL_MESSAGE_PLAIN_TEXT",
+            ReferenceType::EmailMessagePlainTextRedacted => "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED",
+            ReferenceType::EmailMessageRedacted => "EMAIL_MESSAGE_REDACTED",
             ReferenceType::Number => "NUMBER",
             ReferenceType::String => "STRING",
             ReferenceType::Url => "URL",
@@ -119,6 +129,8 @@ impl ReferenceType {
             "EMAIL",
             "EMAIL_MESSAGE",
             "EMAIL_MESSAGE_PLAIN_TEXT",
+            "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED",
+            "EMAIL_MESSAGE_REDACTED",
             "NUMBER",
             "STRING",
             "URL",
@@ -151,6 +163,8 @@ impl ::std::fmt::Display for ReferenceType {
             ReferenceType::Email => write!(f, "EMAIL"),
             ReferenceType::EmailMessage => write!(f, "EMAIL_MESSAGE"),
             ReferenceType::EmailMessagePlainText => write!(f, "EMAIL_MESSAGE_PLAIN_TEXT"),
+            ReferenceType::EmailMessagePlainTextRedacted => write!(f, "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED"),
+            ReferenceType::EmailMessageRedacted => write!(f, "EMAIL_MESSAGE_REDACTED"),
             ReferenceType::Number => write!(f, "NUMBER"),
             ReferenceType::String => write!(f, "STRING"),
             ReferenceType::Url => write!(f, "URL"),

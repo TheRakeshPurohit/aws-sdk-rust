@@ -215,7 +215,7 @@ impl ::std::fmt::Debug for DaemonContainerDefinition {
         formatter.field("command", &self.command);
         formatter.field("working_directory", &self.working_directory);
         formatter.field("environment_files", &self.environment_files);
-        formatter.field("environment", &self.environment);
+        formatter.field("environment", &"*** Sensitive Data Redacted ***");
         formatter.field("secrets", &self.secrets);
         formatter.field("readonly_root_filesystem", &self.readonly_root_filesystem);
         formatter.field("mount_points", &self.mount_points);
@@ -795,7 +795,7 @@ impl ::std::fmt::Debug for DaemonContainerDefinitionBuilder {
         formatter.field("command", &self.command);
         formatter.field("working_directory", &self.working_directory);
         formatter.field("environment_files", &self.environment_files);
-        formatter.field("environment", &self.environment);
+        formatter.field("environment", &"*** Sensitive Data Redacted ***");
         formatter.field("secrets", &self.secrets);
         formatter.field("readonly_root_filesystem", &self.readonly_root_filesystem);
         formatter.field("mount_points", &self.mount_points);

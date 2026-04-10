@@ -102,6 +102,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartTa
                 .expect("required fields set"),
         ));
 
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new("StartTask", "ECS"));
         let mut signing_options = ::aws_runtime::auth::SigningOptions::default();
         signing_options.double_uri_encode = true;
@@ -255,6 +256,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartTaskEndp
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartTaskError {
+    /// <p>You don't have authorization to perform the requested action.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::types::error::ClientException),
     /// <p>The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>. Amazon ECS clusters are Region specific.</p>
@@ -262,6 +265,8 @@ pub enum StartTaskError {
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     /// <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>The specified namespace wasn't found.</p>
+    NamespaceNotFoundException(crate::types::error::NamespaceNotFoundException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::types::error::ServerException),
     /// <p>The specified task isn't supported in this Region.</p>
@@ -299,13 +304,19 @@ impl StartTaskError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClusterNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NamespaceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnsupportedFeatureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `StartTaskError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `StartTaskError::ClientException`.
     pub fn is_client_exception(&self) -> bool {
@@ -319,6 +330,10 @@ impl StartTaskError {
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
     }
+    /// Returns `true` if the error kind is `StartTaskError::NamespaceNotFoundException`.
+    pub fn is_namespace_not_found_exception(&self) -> bool {
+        matches!(self, Self::NamespaceNotFoundException(_))
+    }
     /// Returns `true` if the error kind is `StartTaskError::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(self, Self::ServerException(_))
@@ -331,9 +346,11 @@ impl StartTaskError {
 impl ::std::error::Error for StartTaskError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClientException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::NamespaceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnsupportedFeatureException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -343,9 +360,11 @@ impl ::std::error::Error for StartTaskError {
 impl ::std::fmt::Display for StartTaskError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ClientException(_inner) => _inner.fmt(f),
             Self::ClusterNotFoundException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::NamespaceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServerException(_inner) => _inner.fmt(f),
             Self::UnsupportedFeatureException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -369,9 +388,11 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for StartTaskError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartTaskError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NamespaceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnsupportedFeatureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

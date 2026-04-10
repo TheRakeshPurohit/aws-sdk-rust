@@ -20,12 +20,42 @@ pub fn de_discover_poll_endpoint_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ClientException" => crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::ClientException({
             #[allow(unused_mut)]
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ClientExceptionBuilder::default();
                 output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidParameterException" => crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

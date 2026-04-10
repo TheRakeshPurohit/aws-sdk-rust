@@ -16,6 +16,10 @@ pub struct TelemetryRule {
     pub scope: ::std::option::Option<::std::string::String>,
     /// <p>Criteria for selecting which resources the rule applies to, such as resource tags.</p>
     pub selection_criteria: ::std::option::Option<::std::string::String>,
+    /// <p>An optional list of Amazon Web Services Regions where this telemetry rule should be replicated. When specified, the rule is created in the home region and automatically replicated to all listed regions. Mutually exclusive with <code>AllRegions</code>.</p>
+    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>If set to <code>true</code>, the telemetry rule is replicated to all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. When new regions become available, the rule automatically replicates to them. Mutually exclusive with <code>Regions</code>.</p>
+    pub all_regions: ::std::option::Option<bool>,
 }
 impl TelemetryRule {
     /// <p>The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC", "AWS::EKS::Cluster", "AWS::WAFv2::WebACL").</p>
@@ -44,6 +48,16 @@ impl TelemetryRule {
     pub fn selection_criteria(&self) -> ::std::option::Option<&str> {
         self.selection_criteria.as_deref()
     }
+    /// <p>An optional list of Amazon Web Services Regions where this telemetry rule should be replicated. When specified, the rule is created in the home region and automatically replicated to all listed regions. Mutually exclusive with <code>AllRegions</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[::std::string::String] {
+        self.regions.as_deref().unwrap_or_default()
+    }
+    /// <p>If set to <code>true</code>, the telemetry rule is replicated to all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. When new regions become available, the rule automatically replicates to them. Mutually exclusive with <code>Regions</code>.</p>
+    pub fn all_regions(&self) -> ::std::option::Option<bool> {
+        self.all_regions
+    }
 }
 impl TelemetryRule {
     /// Creates a new builder-style object to manufacture [`TelemetryRule`](crate::types::TelemetryRule).
@@ -62,6 +76,8 @@ pub struct TelemetryRuleBuilder {
     pub(crate) destination_configuration: ::std::option::Option<crate::types::TelemetryDestinationConfiguration>,
     pub(crate) scope: ::std::option::Option<::std::string::String>,
     pub(crate) selection_criteria: ::std::option::Option<::std::string::String>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) all_regions: ::std::option::Option<bool>,
 }
 impl TelemetryRuleBuilder {
     /// <p>The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC", "AWS::EKS::Cluster", "AWS::WAFv2::WebACL").</p>
@@ -155,6 +171,40 @@ impl TelemetryRuleBuilder {
     pub fn get_selection_criteria(&self) -> &::std::option::Option<::std::string::String> {
         &self.selection_criteria
     }
+    /// Appends an item to `regions`.
+    ///
+    /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+    ///
+    /// <p>An optional list of Amazon Web Services Regions where this telemetry rule should be replicated. When specified, the rule is created in the home region and automatically replicated to all listed regions. Mutually exclusive with <code>AllRegions</code>.</p>
+    pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.regions.unwrap_or_default();
+        v.push(input.into());
+        self.regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An optional list of Amazon Web Services Regions where this telemetry rule should be replicated. When specified, the rule is created in the home region and automatically replicated to all listed regions. Mutually exclusive with <code>AllRegions</code>.</p>
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.regions = input;
+        self
+    }
+    /// <p>An optional list of Amazon Web Services Regions where this telemetry rule should be replicated. When specified, the rule is created in the home region and automatically replicated to all listed regions. Mutually exclusive with <code>AllRegions</code>.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
+    }
+    /// <p>If set to <code>true</code>, the telemetry rule is replicated to all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. When new regions become available, the rule automatically replicates to them. Mutually exclusive with <code>Regions</code>.</p>
+    pub fn all_regions(mut self, input: bool) -> Self {
+        self.all_regions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to <code>true</code>, the telemetry rule is replicated to all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. When new regions become available, the rule automatically replicates to them. Mutually exclusive with <code>Regions</code>.</p>
+    pub fn set_all_regions(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.all_regions = input;
+        self
+    }
+    /// <p>If set to <code>true</code>, the telemetry rule is replicated to all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. When new regions become available, the rule automatically replicates to them. Mutually exclusive with <code>Regions</code>.</p>
+    pub fn get_all_regions(&self) -> &::std::option::Option<bool> {
+        &self.all_regions
+    }
     /// Consumes the builder and constructs a [`TelemetryRule`](crate::types::TelemetryRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`telemetry_type`](crate::types::builders::TelemetryRuleBuilder::telemetry_type)
@@ -171,6 +221,8 @@ impl TelemetryRuleBuilder {
             destination_configuration: self.destination_configuration,
             scope: self.scope,
             selection_criteria: self.selection_criteria,
+            regions: self.regions,
+            all_regions: self.all_regions,
         })
     }
 }

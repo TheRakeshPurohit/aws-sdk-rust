@@ -263,11 +263,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RegisterTaskD
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum RegisterTaskDefinitionError {
+    /// <p>You don't have authorization to perform the requested action.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::types::error::ClientException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     /// <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
+    /// <p>The limit for the resource was exceeded.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>These errors are usually caused by a server issue.</p>
     ServerException(crate::types::error::ServerException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -303,11 +307,17 @@ impl RegisterTaskDefinitionError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `RegisterTaskDefinitionError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `RegisterTaskDefinitionError::ClientException`.
     pub fn is_client_exception(&self) -> bool {
@@ -317,6 +327,10 @@ impl RegisterTaskDefinitionError {
     pub fn is_invalid_parameter_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterException(_))
     }
+    /// Returns `true` if the error kind is `RegisterTaskDefinitionError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
+    }
     /// Returns `true` if the error kind is `RegisterTaskDefinitionError::ServerException`.
     pub fn is_server_exception(&self) -> bool {
         matches!(self, Self::ServerException(_))
@@ -325,8 +339,10 @@ impl RegisterTaskDefinitionError {
 impl ::std::error::Error for RegisterTaskDefinitionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClientException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -335,8 +351,10 @@ impl ::std::error::Error for RegisterTaskDefinitionError {
 impl ::std::fmt::Display for RegisterTaskDefinitionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ClientException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ServerException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -359,8 +377,10 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for RegisterTaskDefinitionError
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RegisterTaskDefinitionError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

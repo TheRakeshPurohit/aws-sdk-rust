@@ -2,7 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartTelemetryEvaluationInput {}
+pub struct StartTelemetryEvaluationInput {
+    /// <p>An optional list of Amazon Web Services Regions to include in multi-region telemetry evaluation. The current region is always implicitly included and must not be specified in this list. When provided, telemetry evaluation starts in the current region and propagates to all specified regions. Mutually exclusive with <code>AllRegions</code>. If neither <code>Regions</code> nor <code>AllRegions</code> is provided, the operation applies only to the current region.</p>
+    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>If set to <code>true</code>, telemetry evaluation starts in all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. The current region becomes the home region for managing multi-region evaluation. When new regions become available, evaluation automatically expands to include them. Mutually exclusive with <code>Regions</code>.</p>
+    pub all_regions: ::std::option::Option<bool>,
+}
+impl StartTelemetryEvaluationInput {
+    /// <p>An optional list of Amazon Web Services Regions to include in multi-region telemetry evaluation. The current region is always implicitly included and must not be specified in this list. When provided, telemetry evaluation starts in the current region and propagates to all specified regions. Mutually exclusive with <code>AllRegions</code>. If neither <code>Regions</code> nor <code>AllRegions</code> is provided, the operation applies only to the current region.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[::std::string::String] {
+        self.regions.as_deref().unwrap_or_default()
+    }
+    /// <p>If set to <code>true</code>, telemetry evaluation starts in all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. The current region becomes the home region for managing multi-region evaluation. When new regions become available, evaluation automatically expands to include them. Mutually exclusive with <code>Regions</code>.</p>
+    pub fn all_regions(&self) -> ::std::option::Option<bool> {
+        self.all_regions
+    }
+}
 impl StartTelemetryEvaluationInput {
     /// Creates a new builder-style object to manufacture [`StartTelemetryEvaluationInput`](crate::operation::start_telemetry_evaluation::StartTelemetryEvaluationInput).
     pub fn builder() -> crate::operation::start_telemetry_evaluation::builders::StartTelemetryEvaluationInputBuilder {
@@ -13,8 +30,45 @@ impl StartTelemetryEvaluationInput {
 /// A builder for [`StartTelemetryEvaluationInput`](crate::operation::start_telemetry_evaluation::StartTelemetryEvaluationInput).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct StartTelemetryEvaluationInputBuilder {}
+pub struct StartTelemetryEvaluationInputBuilder {
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) all_regions: ::std::option::Option<bool>,
+}
 impl StartTelemetryEvaluationInputBuilder {
+    /// Appends an item to `regions`.
+    ///
+    /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+    ///
+    /// <p>An optional list of Amazon Web Services Regions to include in multi-region telemetry evaluation. The current region is always implicitly included and must not be specified in this list. When provided, telemetry evaluation starts in the current region and propagates to all specified regions. Mutually exclusive with <code>AllRegions</code>. If neither <code>Regions</code> nor <code>AllRegions</code> is provided, the operation applies only to the current region.</p>
+    pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.regions.unwrap_or_default();
+        v.push(input.into());
+        self.regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An optional list of Amazon Web Services Regions to include in multi-region telemetry evaluation. The current region is always implicitly included and must not be specified in this list. When provided, telemetry evaluation starts in the current region and propagates to all specified regions. Mutually exclusive with <code>AllRegions</code>. If neither <code>Regions</code> nor <code>AllRegions</code> is provided, the operation applies only to the current region.</p>
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.regions = input;
+        self
+    }
+    /// <p>An optional list of Amazon Web Services Regions to include in multi-region telemetry evaluation. The current region is always implicitly included and must not be specified in this list. When provided, telemetry evaluation starts in the current region and propagates to all specified regions. Mutually exclusive with <code>AllRegions</code>. If neither <code>Regions</code> nor <code>AllRegions</code> is provided, the operation applies only to the current region.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.regions
+    }
+    /// <p>If set to <code>true</code>, telemetry evaluation starts in all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. The current region becomes the home region for managing multi-region evaluation. When new regions become available, evaluation automatically expands to include them. Mutually exclusive with <code>Regions</code>.</p>
+    pub fn all_regions(mut self, input: bool) -> Self {
+        self.all_regions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If set to <code>true</code>, telemetry evaluation starts in all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. The current region becomes the home region for managing multi-region evaluation. When new regions become available, evaluation automatically expands to include them. Mutually exclusive with <code>Regions</code>.</p>
+    pub fn set_all_regions(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.all_regions = input;
+        self
+    }
+    /// <p>If set to <code>true</code>, telemetry evaluation starts in all Amazon Web Services Regions where Amazon CloudWatch Observability Admin is available in the current partition. The current region becomes the home region for managing multi-region evaluation. When new regions become available, evaluation automatically expands to include them. Mutually exclusive with <code>Regions</code>.</p>
+    pub fn get_all_regions(&self) -> &::std::option::Option<bool> {
+        &self.all_regions
+    }
     /// Consumes the builder and constructs a [`StartTelemetryEvaluationInput`](crate::operation::start_telemetry_evaluation::StartTelemetryEvaluationInput).
     pub fn build(
         self,
@@ -22,6 +76,9 @@ impl StartTelemetryEvaluationInputBuilder {
         crate::operation::start_telemetry_evaluation::StartTelemetryEvaluationInput,
         ::aws_smithy_types::error::operation::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::start_telemetry_evaluation::StartTelemetryEvaluationInput {})
+        ::std::result::Result::Ok(crate::operation::start_telemetry_evaluation::StartTelemetryEvaluationInput {
+            regions: self.regions,
+            all_regions: self.all_regions,
+        })
     }
 }

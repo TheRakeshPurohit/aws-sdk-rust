@@ -17,6 +17,8 @@ pub use crate::types::_validation_error::ValidationErrorBuilder;
 
 pub use crate::types::_telemetry_destination_configuration::TelemetryDestinationConfigurationBuilder;
 
+pub use crate::types::_region_status::RegionStatusBuilder;
+
 pub use crate::types::_centralization_rule_summary::CentralizationRuleSummaryBuilder;
 
 pub use crate::types::_telemetry_configuration::TelemetryConfigurationBuilder;

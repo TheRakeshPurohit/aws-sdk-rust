@@ -167,6 +167,8 @@ pub(crate) mod shape_auto_scaling_group_name_list;
 
 pub(crate) mod shape_flow_module_name_list;
 
+pub(crate) mod shape_health_check_config;
+
 pub(crate) mod shape_link_application_log_sampling;
 
 pub(crate) mod shape_no_bid_module_parameters;

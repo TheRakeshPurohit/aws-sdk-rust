@@ -118,65 +118,77 @@ pub fn ser_input(
     if let Some(var_40) = &input.input_scan_type {
         object.key("inputScanType").string(var_40.as_str());
     }
-    if let Some(var_41) = &input.position {
-        #[allow(unused_mut)]
-        let mut object_42 = object.key("position").start_object();
-        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_42, var_41)?;
-        object_42.finish();
-    }
-    if let Some(var_43) = &input.program_number {
-        object.key("programNumber").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_43).into()),
-        );
-    }
-    if let Some(var_44) = &input.psi_control {
-        object.key("psiControl").string(var_44.as_str());
-    }
-    if let Some(var_45) = &input.supplemental_imps {
-        let mut array_46 = object.key("supplementalImps").start_array();
-        for item_47 in var_45 {
-            {
-                array_46.value().string(item_47.as_str());
-            }
-        }
-        array_46.finish();
-    }
-    if let Some(var_48) = &input.tams_settings {
-        #[allow(unused_mut)]
-        let mut object_49 = object.key("tamsSettings").start_object();
-        crate::protocol_serde::shape_input_tams_settings::ser_input_tams_settings(&mut object_49, var_48)?;
-        object_49.finish();
-    }
-    if let Some(var_50) = &input.timecode_source {
-        object.key("timecodeSource").string(var_50.as_str());
-    }
-    if let Some(var_51) = &input.timecode_start {
-        object.key("timecodeStart").string(var_51.as_str());
-    }
-    if let Some(var_52) = &input.video_generator {
-        #[allow(unused_mut)]
-        let mut object_53 = object.key("videoGenerator").start_object();
-        crate::protocol_serde::shape_input_video_generator::ser_input_video_generator(&mut object_53, var_52)?;
-        object_53.finish();
-    }
-    if let Some(var_54) = &input.video_overlays {
-        let mut array_55 = object.key("videoOverlays").start_array();
-        for item_56 in var_54 {
+    if let Some(var_41) = &input.multi_view_settings {
+        let mut array_42 = object.key("multiViewSettings").start_array();
+        for item_43 in var_41 {
             {
                 #[allow(unused_mut)]
-                let mut object_57 = array_55.value().start_object();
-                crate::protocol_serde::shape_video_overlay::ser_video_overlay(&mut object_57, item_56)?;
-                object_57.finish();
+                let mut object_44 = array_42.value().start_object();
+                crate::protocol_serde::shape_multi_view_settings::ser_multi_view_settings(&mut object_44, item_43)?;
+                object_44.finish();
             }
         }
-        array_55.finish();
+        array_42.finish();
     }
-    if let Some(var_58) = &input.video_selector {
+    if let Some(var_45) = &input.position {
         #[allow(unused_mut)]
-        let mut object_59 = object.key("videoSelector").start_object();
-        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_59, var_58)?;
-        object_59.finish();
+        let mut object_46 = object.key("position").start_object();
+        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_46, var_45)?;
+        object_46.finish();
+    }
+    if let Some(var_47) = &input.program_number {
+        object.key("programNumber").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_47).into()),
+        );
+    }
+    if let Some(var_48) = &input.psi_control {
+        object.key("psiControl").string(var_48.as_str());
+    }
+    if let Some(var_49) = &input.supplemental_imps {
+        let mut array_50 = object.key("supplementalImps").start_array();
+        for item_51 in var_49 {
+            {
+                array_50.value().string(item_51.as_str());
+            }
+        }
+        array_50.finish();
+    }
+    if let Some(var_52) = &input.tams_settings {
+        #[allow(unused_mut)]
+        let mut object_53 = object.key("tamsSettings").start_object();
+        crate::protocol_serde::shape_input_tams_settings::ser_input_tams_settings(&mut object_53, var_52)?;
+        object_53.finish();
+    }
+    if let Some(var_54) = &input.timecode_source {
+        object.key("timecodeSource").string(var_54.as_str());
+    }
+    if let Some(var_55) = &input.timecode_start {
+        object.key("timecodeStart").string(var_55.as_str());
+    }
+    if let Some(var_56) = &input.video_generator {
+        #[allow(unused_mut)]
+        let mut object_57 = object.key("videoGenerator").start_object();
+        crate::protocol_serde::shape_input_video_generator::ser_input_video_generator(&mut object_57, var_56)?;
+        object_57.finish();
+    }
+    if let Some(var_58) = &input.video_overlays {
+        let mut array_59 = object.key("videoOverlays").start_array();
+        for item_60 in var_58 {
+            {
+                #[allow(unused_mut)]
+                let mut object_61 = array_59.value().start_object();
+                crate::protocol_serde::shape_video_overlay::ser_video_overlay(&mut object_61, item_60)?;
+                object_61.finish();
+            }
+        }
+        array_59.finish();
+    }
+    if let Some(var_62) = &input.video_selector {
+        #[allow(unused_mut)]
+        let mut object_63 = object.key("videoSelector").start_object();
+        crate::protocol_serde::shape_video_selector::ser_video_selector(&mut object_63, var_62)?;
+        object_63.finish();
     }
     Ok(())
 }
@@ -292,6 +304,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::InputScanType::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "multiViewSettings" => {
+                            builder = builder.set_multi_view_settings(
+                                crate::protocol_serde::shape_list_of_multi_view_settings::de_list_of_multi_view_settings(tokens, _value)?,
                             );
                         }
                         "position" => {

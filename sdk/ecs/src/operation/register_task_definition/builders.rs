@@ -547,16 +547,19 @@ impl RegisterTaskDefinitionFluentBuilder {
     /// To override the contents of this collection use [`set_inference_accelerators`](Self::set_inference_accelerators).
     ///
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+    #[deprecated(note = "This feature is no longer available.", since = "2023-04-15")]
     pub fn inference_accelerators(mut self, input: crate::types::InferenceAccelerator) -> Self {
         self.inner = self.inner.inference_accelerators(input);
         self
     }
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+    #[deprecated(note = "This feature is no longer available.", since = "2023-04-15")]
     pub fn set_inference_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>) -> Self {
         self.inner = self.inner.set_inference_accelerators(input);
         self
     }
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+    #[deprecated(note = "This feature is no longer available.", since = "2023-04-15")]
     pub fn get_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>> {
         self.inner.get_inference_accelerators()
     }

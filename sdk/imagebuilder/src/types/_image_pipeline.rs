@@ -42,6 +42,8 @@ pub struct ImagePipeline {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Contains settings for vulnerability scans.</p>
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub image_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>Contains the workflows that run for the image pipeline.</p>
@@ -142,6 +144,10 @@ impl ImagePipeline {
     pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn image_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.image_tags.as_ref()
+    }
     /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
@@ -205,6 +211,7 @@ pub struct ImagePipelineBuilder {
     pub(crate) date_next_run: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub(crate) image_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
     pub(crate) logging_configuration: ::std::option::Option<crate::types::PipelineLoggingConfiguration>,
@@ -483,6 +490,26 @@ impl ImagePipelineBuilder {
     pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         &self.image_scanning_configuration
     }
+    /// Adds a key-value pair to `image_tags`.
+    ///
+    /// To override the contents of this collection use [`set_image_tags`](Self::set_image_tags).
+    ///
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn image_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.image_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.image_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.image_tags = input;
+        self
+    }
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn get_image_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.image_tags
+    }
     /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
@@ -609,6 +636,7 @@ impl ImagePipelineBuilder {
             date_next_run: self.date_next_run,
             tags: self.tags,
             image_scanning_configuration: self.image_scanning_configuration,
+            image_tags: self.image_tags,
             execution_role: self.execution_role,
             workflows: self.workflows,
             logging_configuration: self.logging_configuration,

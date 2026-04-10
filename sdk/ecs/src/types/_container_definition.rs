@@ -616,7 +616,7 @@ impl ::std::fmt::Debug for ContainerDefinition {
         formatter.field("restart_policy", &self.restart_policy);
         formatter.field("entry_point", &self.entry_point);
         formatter.field("command", &self.command);
-        formatter.field("environment", &self.environment);
+        formatter.field("environment", &"*** Sensitive Data Redacted ***");
         formatter.field("environment_files", &self.environment_files);
         formatter.field("mount_points", &self.mount_points);
         formatter.field("volumes_from", &self.volumes_from);
@@ -1931,7 +1931,7 @@ impl ::std::fmt::Debug for ContainerDefinitionBuilder {
         formatter.field("restart_policy", &self.restart_policy);
         formatter.field("entry_point", &self.entry_point);
         formatter.field("command", &self.command);
-        formatter.field("environment", &self.environment);
+        formatter.field("environment", &"*** Sensitive Data Redacted ***");
         formatter.field("environment_files", &self.environment_files);
         formatter.field("mount_points", &self.mount_points);
         formatter.field("volumes_from", &self.volumes_from);

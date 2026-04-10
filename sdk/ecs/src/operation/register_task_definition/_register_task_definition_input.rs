@@ -101,6 +101,7 @@ pub struct RegisterTaskDefinitionInput {
     /// <p>For tasks hosted on Amazon EC2 instances, the container instances require at least version <code>1.26.0</code> of the container agent and at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package to use a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub proxy_configuration: ::std::option::Option<crate::types::ProxyConfiguration>,
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+    #[deprecated(note = "This feature is no longer available.", since = "2023-04-15")]
     pub inference_accelerators: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in tasks</a> in the <i>Amazon ECS Developer Guide</i>.</p><note>
     /// <p>For tasks using the Fargate launch type, the task requires the following platforms:</p>
@@ -256,6 +257,7 @@ impl RegisterTaskDefinitionInput {
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.inference_accelerators.is_none()`.
+    #[deprecated(note = "This feature is no longer available.", since = "2023-04-15")]
     pub fn inference_accelerators(&self) -> &[crate::types::InferenceAccelerator] {
         self.inference_accelerators.as_deref().unwrap_or_default()
     }
@@ -753,6 +755,7 @@ impl RegisterTaskDefinitionInputBuilder {
     /// To override the contents of this collection use [`set_inference_accelerators`](Self::set_inference_accelerators).
     ///
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+    #[deprecated(note = "This feature is no longer available.", since = "2023-04-15")]
     pub fn inference_accelerators(mut self, input: crate::types::InferenceAccelerator) -> Self {
         let mut v = self.inference_accelerators.unwrap_or_default();
         v.push(input);
@@ -760,11 +763,13 @@ impl RegisterTaskDefinitionInputBuilder {
         self
     }
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+    #[deprecated(note = "This feature is no longer available.", since = "2023-04-15")]
     pub fn set_inference_accelerators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>) -> Self {
         self.inference_accelerators = input;
         self
     }
     /// <p>The Elastic Inference accelerators to use for the containers in the task.</p>
+    #[deprecated(note = "This feature is no longer available.", since = "2023-04-15")]
     pub fn get_inference_accelerators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>> {
         &self.inference_accelerators
     }

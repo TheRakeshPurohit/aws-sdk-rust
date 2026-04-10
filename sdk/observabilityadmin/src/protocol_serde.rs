@@ -169,6 +169,10 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_telemetry_evaluation_for_organization_input;
+
+pub(crate) mod shape_start_telemetry_evaluation_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_test_telemetry_pipeline_input;
@@ -201,6 +205,8 @@ pub(crate) mod shape_pipeline_outputs;
 
 pub(crate) mod shape_record;
 
+pub(crate) mod shape_region_statuses;
+
 pub(crate) mod shape_tag_map_output;
 
 pub(crate) mod shape_telemetry_configurations;
@@ -226,6 +232,10 @@ pub(crate) mod shape_centralization_rule_summary;
 pub(crate) mod shape_integration_summary;
 
 pub(crate) mod shape_pipeline_output;
+
+pub(crate) mod shape_region_status;
+
+pub(crate) mod shape_regions;
 
 pub(crate) mod shape_telemetry_configuration;
 
@@ -254,8 +264,6 @@ pub(crate) mod shape_field_map;
 pub(crate) mod shape_log_delivery_parameters;
 
 pub(crate) mod shape_pipeline_output_error;
-
-pub(crate) mod shape_regions;
 
 pub(crate) mod shape_source_logs_configuration;
 

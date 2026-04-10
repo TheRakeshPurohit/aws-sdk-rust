@@ -34,6 +34,8 @@ pub struct InputTemplate {
     pub input_clippings: ::std::option::Option<::std::vec::Vec<crate::types::InputClipping>>,
     /// When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto. Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
     pub input_scan_type: ::std::option::Option<crate::types::InputScanType>,
+    /// Specify the enhancement layer input video file path for Multi View outputs. The base layer input is treated as the left eye and this Multi View input is treated as the right eye. Only one Multi View input is currently supported. MediaConvert encodes both views into a single MV-HEVC output codec. When you add MultiViewSettings to your job, you can only produce Multi View outputs. Adding any other codec output to the same job is not supported.
+    pub multi_view_settings: ::std::option::Option<::std::vec::Vec<crate::types::MultiViewSettings>>,
     /// Use Selection placement to define the video area in your output frame. The area outside of the rectangle that you specify here is black. If you specify a value here, it will override any value that you specify in the output setting Selection placement. If you specify a value here, this will override any AFD values in your input, even if you set Respond to AFD to Respond. If you specify a value here, this will ignore anything that you specify for the setting Scaling Behavior.
     pub position: ::std::option::Option<crate::types::Rectangle>,
     /// Use Program to select a specific program from within a multi-program transport stream. Note that Quad 4K is not currently supported. Default is the first program within the transport stream. If the program you specify doesn't exist, the transcoding service will use this default.
@@ -116,6 +118,12 @@ impl InputTemplate {
     pub fn input_scan_type(&self) -> ::std::option::Option<&crate::types::InputScanType> {
         self.input_scan_type.as_ref()
     }
+    /// Specify the enhancement layer input video file path for Multi View outputs. The base layer input is treated as the left eye and this Multi View input is treated as the right eye. Only one Multi View input is currently supported. MediaConvert encodes both views into a single MV-HEVC output codec. When you add MultiViewSettings to your job, you can only produce Multi View outputs. Adding any other codec output to the same job is not supported.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.multi_view_settings.is_none()`.
+    pub fn multi_view_settings(&self) -> &[crate::types::MultiViewSettings] {
+        self.multi_view_settings.as_deref().unwrap_or_default()
+    }
     /// Use Selection placement to define the video area in your output frame. The area outside of the rectangle that you specify here is black. If you specify a value here, it will override any value that you specify in the output setting Selection placement. If you specify a value here, this will override any AFD values in your input, even if you set Respond to AFD to Respond. If you specify a value here, this will ignore anything that you specify for the setting Scaling Behavior.
     pub fn position(&self) -> ::std::option::Option<&crate::types::Rectangle> {
         self.position.as_ref()
@@ -173,6 +181,7 @@ pub struct InputTemplateBuilder {
     pub(crate) image_inserter: ::std::option::Option<crate::types::ImageInserter>,
     pub(crate) input_clippings: ::std::option::Option<::std::vec::Vec<crate::types::InputClipping>>,
     pub(crate) input_scan_type: ::std::option::Option<crate::types::InputScanType>,
+    pub(crate) multi_view_settings: ::std::option::Option<::std::vec::Vec<crate::types::MultiViewSettings>>,
     pub(crate) position: ::std::option::Option<crate::types::Rectangle>,
     pub(crate) program_number: ::std::option::Option<i32>,
     pub(crate) psi_control: ::std::option::Option<crate::types::InputPsiControl>,
@@ -438,6 +447,26 @@ impl InputTemplateBuilder {
     pub fn get_input_scan_type(&self) -> &::std::option::Option<crate::types::InputScanType> {
         &self.input_scan_type
     }
+    /// Appends an item to `multi_view_settings`.
+    ///
+    /// To override the contents of this collection use [`set_multi_view_settings`](Self::set_multi_view_settings).
+    ///
+    /// Specify the enhancement layer input video file path for Multi View outputs. The base layer input is treated as the left eye and this Multi View input is treated as the right eye. Only one Multi View input is currently supported. MediaConvert encodes both views into a single MV-HEVC output codec. When you add MultiViewSettings to your job, you can only produce Multi View outputs. Adding any other codec output to the same job is not supported.
+    pub fn multi_view_settings(mut self, input: crate::types::MultiViewSettings) -> Self {
+        let mut v = self.multi_view_settings.unwrap_or_default();
+        v.push(input);
+        self.multi_view_settings = ::std::option::Option::Some(v);
+        self
+    }
+    /// Specify the enhancement layer input video file path for Multi View outputs. The base layer input is treated as the left eye and this Multi View input is treated as the right eye. Only one Multi View input is currently supported. MediaConvert encodes both views into a single MV-HEVC output codec. When you add MultiViewSettings to your job, you can only produce Multi View outputs. Adding any other codec output to the same job is not supported.
+    pub fn set_multi_view_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MultiViewSettings>>) -> Self {
+        self.multi_view_settings = input;
+        self
+    }
+    /// Specify the enhancement layer input video file path for Multi View outputs. The base layer input is treated as the left eye and this Multi View input is treated as the right eye. Only one Multi View input is currently supported. MediaConvert encodes both views into a single MV-HEVC output codec. When you add MultiViewSettings to your job, you can only produce Multi View outputs. Adding any other codec output to the same job is not supported.
+    pub fn get_multi_view_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MultiViewSettings>> {
+        &self.multi_view_settings
+    }
     /// Use Selection placement to define the video area in your output frame. The area outside of the rectangle that you specify here is black. If you specify a value here, it will override any value that you specify in the output setting Selection placement. If you specify a value here, this will override any AFD values in your input, even if you set Respond to AFD to Respond. If you specify a value here, this will ignore anything that you specify for the setting Scaling Behavior.
     pub fn position(mut self, input: crate::types::Rectangle) -> Self {
         self.position = ::std::option::Option::Some(input);
@@ -560,6 +589,7 @@ impl InputTemplateBuilder {
             image_inserter: self.image_inserter,
             input_clippings: self.input_clippings,
             input_scan_type: self.input_scan_type,
+            multi_view_settings: self.multi_view_settings,
             position: self.position,
             program_number: self.program_number,
             psi_control: self.psi_control,

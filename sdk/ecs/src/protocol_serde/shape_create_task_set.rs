@@ -77,6 +77,21 @@ pub fn de_create_task_set_http_error(
             }
             tmp
         }),
+        "LimitExceededException" => crate::operation::create_task_set::CreateTaskSetError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_task_set::CreateTaskSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "NamespaceNotFoundException" => crate::operation::create_task_set::CreateTaskSetError::NamespaceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

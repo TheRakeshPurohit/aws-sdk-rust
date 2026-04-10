@@ -325,4 +325,23 @@ impl UpdateImagePipelineFluentBuilder {
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role()
     }
+    ///
+    /// Adds a key-value pair to `imageTags`.
+    ///
+    /// To override the contents of this collection use [`set_image_tags`](Self::set_image_tags).
+    ///
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn image_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.image_tags(k.into(), v.into());
+        self
+    }
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.inner = self.inner.set_image_tags(input);
+        self
+    }
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn get_image_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_image_tags()
+    }
 }

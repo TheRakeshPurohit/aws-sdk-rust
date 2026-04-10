@@ -133,6 +133,16 @@ pub(crate) fn de_get_telemetry_evaluation_status(
                             .transpose()?,
                     );
                 }
+                "HomeRegion" => {
+                    builder = builder.set_home_region(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "RegionStatuses" => {
+                    builder = builder.set_region_statuses(crate::protocol_serde::shape_region_statuses::de_region_statuses(tokens, _value)?);
+                }
                 "Status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

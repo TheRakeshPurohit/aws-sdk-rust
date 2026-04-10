@@ -33,6 +33,8 @@ pub struct UpdateImagePipelineInput {
     pub logging_configuration: ::std::option::Option<crate::types::PipelineLoggingConfiguration>,
     /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub image_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateImagePipelineInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
@@ -97,6 +99,10 @@ impl UpdateImagePipelineInput {
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn image_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.image_tags.as_ref()
+    }
 }
 impl UpdateImagePipelineInput {
     /// Creates a new builder-style object to manufacture [`UpdateImagePipelineInput`](crate::operation::update_image_pipeline::UpdateImagePipelineInput).
@@ -124,6 +130,7 @@ pub struct UpdateImagePipelineInputBuilder {
     pub(crate) workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
     pub(crate) logging_configuration: ::std::option::Option<crate::types::PipelineLoggingConfiguration>,
     pub(crate) execution_role: ::std::option::Option<::std::string::String>,
+    pub(crate) image_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateImagePipelineInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that you want to update.</p>
@@ -345,6 +352,26 @@ impl UpdateImagePipelineInputBuilder {
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }
+    /// Adds a key-value pair to `image_tags`.
+    ///
+    /// To override the contents of this collection use [`set_image_tags`](Self::set_image_tags).
+    ///
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn image_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.image_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.image_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.image_tags = input;
+        self
+    }
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn get_image_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.image_tags
+    }
     /// Consumes the builder and constructs a [`UpdateImagePipelineInput`](crate::operation::update_image_pipeline::UpdateImagePipelineInput).
     pub fn build(
         self,
@@ -366,6 +393,7 @@ impl UpdateImagePipelineInputBuilder {
             workflows: self.workflows,
             logging_configuration: self.logging_configuration,
             execution_role: self.execution_role,
+            image_tags: self.image_tags,
         })
     }
 }

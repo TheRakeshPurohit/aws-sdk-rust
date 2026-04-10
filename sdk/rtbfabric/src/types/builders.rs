@@ -17,6 +17,8 @@ pub use crate::types::_link_application_log_configuration::LinkApplicationLogCon
 
 pub use crate::types::_module_configuration::ModuleConfigurationBuilder;
 
+pub use crate::types::_health_check_config::HealthCheckConfigBuilder;
+
 pub use crate::types::_responder_error_masking_for_http_code::ResponderErrorMaskingForHttpCodeBuilder;
 
 pub use crate::types::_link_application_log_sampling::LinkApplicationLogSamplingBuilder;

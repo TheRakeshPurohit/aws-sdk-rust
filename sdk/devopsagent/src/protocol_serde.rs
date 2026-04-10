@@ -297,11 +297,17 @@ pub(crate) mod shape_grafana_service_details;
 
 pub(crate) mod shape_journal_record;
 
+pub(crate) mod shape_mcp_server_configuration;
+
+pub(crate) mod shape_mcp_server_datadog_configuration;
+
 pub(crate) mod shape_mcp_server_details;
 
 pub(crate) mod shape_mcp_server_grafana_configuration;
 
 pub(crate) mod shape_mcp_server_new_relic_configuration;
+
+pub(crate) mod shape_mcp_server_splunk_configuration;
 
 pub(crate) mod shape_new_relic_service_details;
 

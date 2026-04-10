@@ -8,6 +8,8 @@ pub struct AutoScalingGroupsConfiguration {
     pub auto_scaling_group_names: ::std::vec::Vec<::std::string::String>,
     /// <p>The role ARN of the auto scaling group.</p>
     pub role_arn: ::std::string::String,
+    /// <p>The health check configuration for the Auto Scaling group managed endpoint.</p>
+    pub health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
 }
 impl AutoScalingGroupsConfiguration {
     /// <p>The names of the auto scaling group.</p>
@@ -19,6 +21,10 @@ impl AutoScalingGroupsConfiguration {
     pub fn role_arn(&self) -> &str {
         use std::ops::Deref;
         self.role_arn.deref()
+    }
+    /// <p>The health check configuration for the Auto Scaling group managed endpoint.</p>
+    pub fn health_check_config(&self) -> ::std::option::Option<&crate::types::HealthCheckConfig> {
+        self.health_check_config.as_ref()
     }
 }
 impl AutoScalingGroupsConfiguration {
@@ -34,6 +40,7 @@ impl AutoScalingGroupsConfiguration {
 pub struct AutoScalingGroupsConfigurationBuilder {
     pub(crate) auto_scaling_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) health_check_config: ::std::option::Option<crate::types::HealthCheckConfig>,
 }
 impl AutoScalingGroupsConfigurationBuilder {
     /// Appends an item to `auto_scaling_group_names`.
@@ -71,6 +78,20 @@ impl AutoScalingGroupsConfigurationBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p>The health check configuration for the Auto Scaling group managed endpoint.</p>
+    pub fn health_check_config(mut self, input: crate::types::HealthCheckConfig) -> Self {
+        self.health_check_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The health check configuration for the Auto Scaling group managed endpoint.</p>
+    pub fn set_health_check_config(mut self, input: ::std::option::Option<crate::types::HealthCheckConfig>) -> Self {
+        self.health_check_config = input;
+        self
+    }
+    /// <p>The health check configuration for the Auto Scaling group managed endpoint.</p>
+    pub fn get_health_check_config(&self) -> &::std::option::Option<crate::types::HealthCheckConfig> {
+        &self.health_check_config
+    }
     /// Consumes the builder and constructs a [`AutoScalingGroupsConfiguration`](crate::types::AutoScalingGroupsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`auto_scaling_group_names`](crate::types::builders::AutoScalingGroupsConfigurationBuilder::auto_scaling_group_names)
@@ -89,6 +110,7 @@ impl AutoScalingGroupsConfigurationBuilder {
                     "role_arn was not specified but it is required when building AutoScalingGroupsConfiguration",
                 )
             })?,
+            health_check_config: self.health_check_config,
         })
     }
 }

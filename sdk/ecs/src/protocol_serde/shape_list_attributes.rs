@@ -17,6 +17,36 @@ pub fn de_list_attributes_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::operation::list_attributes::ListAttributesError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_attributes::ListAttributesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ClientException" => crate::operation::list_attributes::ListAttributesError::ClientException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ClientExceptionBuilder::default();
+                output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_attributes::ListAttributesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ClusterNotFoundException" => crate::operation::list_attributes::ListAttributesError::ClusterNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -38,6 +68,21 @@ pub fn de_list_attributes_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_attributes::ListAttributesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServerException" => crate::operation::list_attributes::ListAttributesError::ServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_server_exception::de_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_attributes::ListAttributesError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

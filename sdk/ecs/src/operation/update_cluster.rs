@@ -257,6 +257,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateCluster
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateClusterError {
+    /// <p>You don't have authorization to perform the requested action.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::types::error::ClientException),
     /// <p>The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>. Amazon ECS clusters are Region specific.</p>
@@ -301,6 +303,7 @@ impl UpdateClusterError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClusterNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -308,6 +311,10 @@ impl UpdateClusterError {
             Self::ServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `UpdateClusterError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateClusterError::ClientException`.
     pub fn is_client_exception(&self) -> bool {
@@ -333,6 +340,7 @@ impl UpdateClusterError {
 impl ::std::error::Error for UpdateClusterError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClientException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
@@ -345,6 +353,7 @@ impl ::std::error::Error for UpdateClusterError {
 impl ::std::fmt::Display for UpdateClusterError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ClientException(_inner) => _inner.fmt(f),
             Self::ClusterNotFoundException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -371,6 +380,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for UpdateClusterError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateClusterError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

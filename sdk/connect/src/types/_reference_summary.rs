@@ -14,6 +14,10 @@ pub enum ReferenceSummary {
     EmailMessage(crate::types::EmailMessageReference),
     /// <p>Information about the reference when the referenceType is <code>EMAIL_MESSAGE</code>. Otherwise, null.</p>
     EmailMessagePlainText(crate::types::EmailMessageReference),
+    /// <p>Information about the reference when the referenceType is <code>EMAIL_MESSAGE</code>. Otherwise, null.</p>
+    EmailMessagePlainTextRedacted(crate::types::EmailMessageReference),
+    /// <p>Information about the reference when the referenceType is <code>EMAIL_MESSAGE</code>. Otherwise, null.</p>
+    EmailMessageRedacted(crate::types::EmailMessageReference),
     /// <p>Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>. Otherwise, null.</p>
     Number(crate::types::NumberReference),
     /// <p>Information about a reference when the <code>referenceType</code> is <code>STRING</code>. Otherwise, null.</p>
@@ -95,6 +99,32 @@ impl ReferenceSummary {
     /// Returns true if this is a [`EmailMessagePlainText`](crate::types::ReferenceSummary::EmailMessagePlainText).
     pub fn is_email_message_plain_text(&self) -> bool {
         self.as_email_message_plain_text().is_ok()
+    }
+    /// Tries to convert the enum instance into [`EmailMessagePlainTextRedacted`](crate::types::ReferenceSummary::EmailMessagePlainTextRedacted), extracting the inner [`EmailMessageReference`](crate::types::EmailMessageReference).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_email_message_plain_text_redacted(&self) -> ::std::result::Result<&crate::types::EmailMessageReference, &Self> {
+        if let ReferenceSummary::EmailMessagePlainTextRedacted(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EmailMessagePlainTextRedacted`](crate::types::ReferenceSummary::EmailMessagePlainTextRedacted).
+    pub fn is_email_message_plain_text_redacted(&self) -> bool {
+        self.as_email_message_plain_text_redacted().is_ok()
+    }
+    /// Tries to convert the enum instance into [`EmailMessageRedacted`](crate::types::ReferenceSummary::EmailMessageRedacted), extracting the inner [`EmailMessageReference`](crate::types::EmailMessageReference).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_email_message_redacted(&self) -> ::std::result::Result<&crate::types::EmailMessageReference, &Self> {
+        if let ReferenceSummary::EmailMessageRedacted(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`EmailMessageRedacted`](crate::types::ReferenceSummary::EmailMessageRedacted).
+    pub fn is_email_message_redacted(&self) -> bool {
+        self.as_email_message_redacted().is_ok()
     }
     /// Tries to convert the enum instance into [`Number`](crate::types::ReferenceSummary::Number), extracting the inner [`NumberReference`](crate::types::NumberReference).
     /// Returns `Err(&Self)` if it can't be converted.

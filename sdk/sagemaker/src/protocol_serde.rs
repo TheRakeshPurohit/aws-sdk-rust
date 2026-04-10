@@ -649,6 +649,8 @@ pub(crate) mod shape_send_pipeline_execution_step_failure;
 
 pub(crate) mod shape_send_pipeline_execution_step_success;
 
+pub(crate) mod shape_start_cluster_health_check;
+
 pub(crate) mod shape_start_edge_deployment_stage;
 
 pub(crate) mod shape_start_inference_experiment;
@@ -1421,6 +1423,8 @@ pub(crate) mod shape_send_pipeline_execution_step_failure_input;
 
 pub(crate) mod shape_send_pipeline_execution_step_success_input;
 
+pub(crate) mod shape_start_cluster_health_check_input;
+
 pub(crate) mod shape_start_edge_deployment_stage_input;
 
 pub(crate) mod shape_start_inference_experiment_input;
@@ -1906,6 +1910,8 @@ pub(crate) mod shape_infra_check_config;
 pub(crate) mod shape_input_config;
 
 pub(crate) mod shape_input_data_config;
+
+pub(crate) mod shape_instance_group_health_check_configuration;
 
 pub(crate) mod shape_instance_metadata_service_configuration;
 
@@ -2470,6 +2476,8 @@ pub(crate) mod shape_cluster_event_summary;
 pub(crate) mod shape_cluster_instance_group_details;
 
 pub(crate) mod shape_cluster_instance_placement;
+
+pub(crate) mod shape_cluster_instance_requirements;
 
 pub(crate) mod shape_cluster_instance_status_details;
 
@@ -3121,11 +3129,19 @@ pub(crate) mod shape_clarify_inference_config;
 
 pub(crate) mod shape_clarify_shap_config;
 
+pub(crate) mod shape_cluster_availability_zones;
+
 pub(crate) mod shape_cluster_ebs_volume_config;
 
 pub(crate) mod shape_cluster_fsx_lustre_config;
 
 pub(crate) mod shape_cluster_fsx_open_zfs_config;
+
+pub(crate) mod shape_cluster_instance_requirement_details;
+
+pub(crate) mod shape_cluster_instance_type_details;
+
+pub(crate) mod shape_cluster_instance_types;
 
 pub(crate) mod shape_cluster_kubernetes_config_details;
 
@@ -3474,6 +3490,8 @@ pub(crate) mod shape_clarify_label_headers;
 pub(crate) mod shape_clarify_shap_baseline_config;
 
 pub(crate) mod shape_clarify_text_config;
+
+pub(crate) mod shape_cluster_instance_type_detail;
 
 pub(crate) mod shape_cluster_metadata;
 

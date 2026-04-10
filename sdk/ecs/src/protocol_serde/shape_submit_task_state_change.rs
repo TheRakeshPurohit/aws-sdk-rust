@@ -50,6 +50,21 @@ pub fn de_submit_task_state_change_http_error(
             }
             tmp
         }),
+        "ClusterNotFoundException" => crate::operation::submit_task_state_change::SubmitTaskStateChangeError::ClusterNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ClusterNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_cluster_not_found_exception::de_cluster_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::submit_task_state_change::SubmitTaskStateChangeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidParameterException" => crate::operation::submit_task_state_change::SubmitTaskStateChangeError::InvalidParameterException({
             #[allow(unused_mut)]
             let mut tmp = {

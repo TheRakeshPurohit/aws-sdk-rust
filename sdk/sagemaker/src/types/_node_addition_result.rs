@@ -10,6 +10,10 @@ pub struct NodeAdditionResult {
     pub instance_group_name: ::std::string::String,
     /// <p>The current status of the node. Possible values include <code>Pending</code>, <code>Running</code>, <code>Failed</code>, <code>ShuttingDown</code>, <code>SystemUpdating</code>, <code>DeepHealthCheckInProgress</code>, and <code>NotFound</code>.</p>
     pub status: crate::types::ClusterInstanceStatus,
+    /// <p>The availability zones associated with the successfully added node.</p>
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The instance types associated with the successfully added node.</p>
+    pub instance_types: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceType>>,
 }
 impl NodeAdditionResult {
     /// <p>A unique identifier assigned to the node that can be used to track its provisioning status through the <code>DescribeClusterNode</code> operation.</p>
@@ -26,6 +30,18 @@ impl NodeAdditionResult {
     pub fn status(&self) -> &crate::types::ClusterInstanceStatus {
         &self.status
     }
+    /// <p>The availability zones associated with the successfully added node.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
+    }
+    /// <p>The instance types associated with the successfully added node.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
+    pub fn instance_types(&self) -> &[crate::types::ClusterInstanceType] {
+        self.instance_types.as_deref().unwrap_or_default()
+    }
 }
 impl NodeAdditionResult {
     /// Creates a new builder-style object to manufacture [`NodeAdditionResult`](crate::types::NodeAdditionResult).
@@ -41,6 +57,8 @@ pub struct NodeAdditionResultBuilder {
     pub(crate) node_logical_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ClusterInstanceStatus>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceType>>,
 }
 impl NodeAdditionResultBuilder {
     /// <p>A unique identifier assigned to the node that can be used to track its provisioning status through the <code>DescribeClusterNode</code> operation.</p>
@@ -88,6 +106,46 @@ impl NodeAdditionResultBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ClusterInstanceStatus> {
         &self.status
     }
+    /// Appends an item to `availability_zones`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+    ///
+    /// <p>The availability zones associated with the successfully added node.</p>
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.availability_zones.unwrap_or_default();
+        v.push(input.into());
+        self.availability_zones = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The availability zones associated with the successfully added node.</p>
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.availability_zones = input;
+        self
+    }
+    /// <p>The availability zones associated with the successfully added node.</p>
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
+    /// Appends an item to `instance_types`.
+    ///
+    /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
+    ///
+    /// <p>The instance types associated with the successfully added node.</p>
+    pub fn instance_types(mut self, input: crate::types::ClusterInstanceType) -> Self {
+        let mut v = self.instance_types.unwrap_or_default();
+        v.push(input);
+        self.instance_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The instance types associated with the successfully added node.</p>
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceType>>) -> Self {
+        self.instance_types = input;
+        self
+    }
+    /// <p>The instance types associated with the successfully added node.</p>
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceType>> {
+        &self.instance_types
+    }
     /// Consumes the builder and constructs a [`NodeAdditionResult`](crate::types::NodeAdditionResult).
     /// This method will fail if any of the following fields are not set:
     /// - [`node_logical_id`](crate::types::builders::NodeAdditionResultBuilder::node_logical_id)
@@ -113,6 +171,8 @@ impl NodeAdditionResultBuilder {
                     "status was not specified but it is required when building NodeAdditionResult",
                 )
             })?,
+            availability_zones: self.availability_zones,
+            instance_types: self.instance_types,
         })
     }
 }

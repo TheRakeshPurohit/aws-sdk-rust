@@ -2207,6 +2207,15 @@ pub(crate) fn search_training_plan_offerings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_cluster_health_check_output_output_correct_errors(
+    mut builder: crate::operation::start_cluster_health_check::builders::StartClusterHealthCheckOutputBuilder,
+) -> crate::operation::start_cluster_health_check::builders::StartClusterHealthCheckOutputBuilder {
+    if builder.cluster_arn.is_none() {
+        builder.cluster_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn start_inference_experiment_output_output_correct_errors(
     mut builder: crate::operation::start_inference_experiment::builders::StartInferenceExperimentOutputBuilder,
 ) -> crate::operation::start_inference_experiment::builders::StartInferenceExperimentOutputBuilder {
@@ -3912,18 +3921,6 @@ pub(crate) fn cluster_instance_status_details_correct_errors(
 ) -> crate::types::builders::ClusterInstanceStatusDetailsBuilder {
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::ClusterInstanceStatus>().ok()
-    }
-    builder
-}
-
-pub(crate) fn cluster_life_cycle_config_correct_errors(
-    mut builder: crate::types::builders::ClusterLifeCycleConfigBuilder,
-) -> crate::types::builders::ClusterLifeCycleConfigBuilder {
-    if builder.source_s3_uri.is_none() {
-        builder.source_s3_uri = Some(Default::default())
-    }
-    if builder.on_create.is_none() {
-        builder.on_create = Some(Default::default())
     }
     builder
 }

@@ -24,6 +24,21 @@ pub fn de_delete_capacity_provider_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::operation::delete_capacity_provider::DeleteCapacityProviderError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_capacity_provider::DeleteCapacityProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ClientException" => crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ClientException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -92,6 +107,21 @@ pub fn de_delete_capacity_provider_http_error(
                 output =
                     crate::protocol_serde::shape_unsupported_feature_exception::de_unsupported_feature_exception_json_err(_response_body, output)
                         .map_err(crate::operation::delete_capacity_provider::DeleteCapacityProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UpdateInProgressException" => crate::operation::delete_capacity_provider::DeleteCapacityProviderError::UpdateInProgressException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UpdateInProgressExceptionBuilder::default();
+                output = crate::protocol_serde::shape_update_in_progress_exception::de_update_in_progress_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_capacity_provider::DeleteCapacityProviderError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

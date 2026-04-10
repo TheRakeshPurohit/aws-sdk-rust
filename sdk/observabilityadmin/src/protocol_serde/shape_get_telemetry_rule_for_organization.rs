@@ -180,12 +180,25 @@ pub(crate) fn de_get_telemetry_rule_for_organization(
                             .transpose()?,
                     );
                 }
+                "HomeRegion" => {
+                    builder = builder.set_home_region(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "IsReplicated" => {
+                    builder = builder.set_is_replicated(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "LastUpdateTimeStamp" => {
                     builder = builder.set_last_update_time_stamp(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i64::try_from)
                             .transpose()?,
                     );
+                }
+                "RegionStatuses" => {
+                    builder = builder.set_region_statuses(crate::protocol_serde::shape_region_statuses::de_region_statuses(tokens, _value)?);
                 }
                 "RuleArn" => {
                     builder = builder.set_rule_arn(

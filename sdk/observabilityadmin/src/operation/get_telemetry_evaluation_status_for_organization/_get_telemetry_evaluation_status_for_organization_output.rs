@@ -7,6 +7,10 @@ pub struct GetTelemetryEvaluationStatusForOrganizationOutput {
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>This field describes the reason for the failure status. The field will only be populated if <code>Status</code> is <code>FAILED_START</code> or <code>FAILED_STOP</code>.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services Region that is designated as the home region for multi-region telemetry evaluation for the organization. The home region is the single management point for all multi-region operations on this organization. This field is only present when multi-region telemetry evaluation is active.</p>
+    pub home_region: ::std::option::Option<::std::string::String>,
+    /// <p>A list of per-region telemetry evaluation statuses for the organization. Each entry indicates the evaluation status for a specific spoke region included in the multi-region configuration. This field is only present when multi-region telemetry evaluation is active.</p>
+    pub region_statuses: ::std::option::Option<::std::vec::Vec<crate::types::RegionStatus>>,
     _request_id: Option<String>,
 }
 impl GetTelemetryEvaluationStatusForOrganizationOutput {
@@ -17,6 +21,16 @@ impl GetTelemetryEvaluationStatusForOrganizationOutput {
     /// <p>This field describes the reason for the failure status. The field will only be populated if <code>Status</code> is <code>FAILED_START</code> or <code>FAILED_STOP</code>.</p>
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
+    }
+    /// <p>The Amazon Web Services Region that is designated as the home region for multi-region telemetry evaluation for the organization. The home region is the single management point for all multi-region operations on this organization. This field is only present when multi-region telemetry evaluation is active.</p>
+    pub fn home_region(&self) -> ::std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>A list of per-region telemetry evaluation statuses for the organization. Each entry indicates the evaluation status for a specific spoke region included in the multi-region configuration. This field is only present when multi-region telemetry evaluation is active.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.region_statuses.is_none()`.
+    pub fn region_statuses(&self) -> &[crate::types::RegionStatus] {
+        self.region_statuses.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetTelemetryEvaluationStatusForOrganizationOutput {
@@ -38,6 +52,8 @@ impl GetTelemetryEvaluationStatusForOrganizationOutput {
 pub struct GetTelemetryEvaluationStatusForOrganizationOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) home_region: ::std::option::Option<::std::string::String>,
+    pub(crate) region_statuses: ::std::option::Option<::std::vec::Vec<crate::types::RegionStatus>>,
     _request_id: Option<String>,
 }
 impl GetTelemetryEvaluationStatusForOrganizationOutputBuilder {
@@ -69,6 +85,40 @@ impl GetTelemetryEvaluationStatusForOrganizationOutputBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.failure_reason
     }
+    /// <p>The Amazon Web Services Region that is designated as the home region for multi-region telemetry evaluation for the organization. The home region is the single management point for all multi-region operations on this organization. This field is only present when multi-region telemetry evaluation is active.</p>
+    pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.home_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region that is designated as the home region for multi-region telemetry evaluation for the organization. The home region is the single management point for all multi-region operations on this organization. This field is only present when multi-region telemetry evaluation is active.</p>
+    pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.home_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region that is designated as the home region for multi-region telemetry evaluation for the organization. The home region is the single management point for all multi-region operations on this organization. This field is only present when multi-region telemetry evaluation is active.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
+    }
+    /// Appends an item to `region_statuses`.
+    ///
+    /// To override the contents of this collection use [`set_region_statuses`](Self::set_region_statuses).
+    ///
+    /// <p>A list of per-region telemetry evaluation statuses for the organization. Each entry indicates the evaluation status for a specific spoke region included in the multi-region configuration. This field is only present when multi-region telemetry evaluation is active.</p>
+    pub fn region_statuses(mut self, input: crate::types::RegionStatus) -> Self {
+        let mut v = self.region_statuses.unwrap_or_default();
+        v.push(input);
+        self.region_statuses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of per-region telemetry evaluation statuses for the organization. Each entry indicates the evaluation status for a specific spoke region included in the multi-region configuration. This field is only present when multi-region telemetry evaluation is active.</p>
+    pub fn set_region_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionStatus>>) -> Self {
+        self.region_statuses = input;
+        self
+    }
+    /// <p>A list of per-region telemetry evaluation statuses for the organization. Each entry indicates the evaluation status for a specific spoke region included in the multi-region configuration. This field is only present when multi-region telemetry evaluation is active.</p>
+    pub fn get_region_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionStatus>> {
+        &self.region_statuses
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -83,6 +133,8 @@ impl GetTelemetryEvaluationStatusForOrganizationOutputBuilder {
         crate::operation::get_telemetry_evaluation_status_for_organization::GetTelemetryEvaluationStatusForOrganizationOutput {
             status: self.status,
             failure_reason: self.failure_reason,
+            home_region: self.home_region,
+            region_statuses: self.region_statuses,
             _request_id: self._request_id,
         }
     }

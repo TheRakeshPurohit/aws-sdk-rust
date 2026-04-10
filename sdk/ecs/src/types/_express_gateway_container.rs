@@ -3,7 +3,7 @@
 /// <p>Defines the configuration for the primary container in an Express service. This container receives traffic from the Application Load Balancer and runs your application code.</p>
 /// <p>The container configuration includes the container image, port mapping, logging settings, environment variables, and secrets. The container image is the only required parameter, with sensible defaults provided for other settings.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExpressGatewayContainer {
     /// <p>The image used to start a container. This string is passed directly to the Docker daemon. Images in the Docker Hub registry are available by default. Other repositories are specified with either <code>repository-url/image:tag</code> or <code>repository-url/image@digest</code>.</p>
     /// <p>For Express services, the image typically contains a web application that listens on the specified container port. The image can be stored in Amazon ECR, Docker Hub, or any other container registry accessible to your execution role.</p>
@@ -59,6 +59,19 @@ impl ExpressGatewayContainer {
         self.secrets.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for ExpressGatewayContainer {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ExpressGatewayContainer");
+        formatter.field("image", &self.image);
+        formatter.field("container_port", &self.container_port);
+        formatter.field("aws_logs_configuration", &self.aws_logs_configuration);
+        formatter.field("repository_credentials", &self.repository_credentials);
+        formatter.field("command", &self.command);
+        formatter.field("environment", &"*** Sensitive Data Redacted ***");
+        formatter.field("secrets", &self.secrets);
+        formatter.finish()
+    }
+}
 impl ExpressGatewayContainer {
     /// Creates a new builder-style object to manufacture [`ExpressGatewayContainer`](crate::types::ExpressGatewayContainer).
     pub fn builder() -> crate::types::builders::ExpressGatewayContainerBuilder {
@@ -67,7 +80,7 @@ impl ExpressGatewayContainer {
 }
 
 /// A builder for [`ExpressGatewayContainer`](crate::types::ExpressGatewayContainer).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ExpressGatewayContainerBuilder {
     pub(crate) image: ::std::option::Option<::std::string::String>,
@@ -217,5 +230,18 @@ impl ExpressGatewayContainerBuilder {
             environment: self.environment,
             secrets: self.secrets,
         })
+    }
+}
+impl ::std::fmt::Debug for ExpressGatewayContainerBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ExpressGatewayContainerBuilder");
+        formatter.field("image", &self.image);
+        formatter.field("container_port", &self.container_port);
+        formatter.field("aws_logs_configuration", &self.aws_logs_configuration);
+        formatter.field("repository_credentials", &self.repository_credentials);
+        formatter.field("command", &self.command);
+        formatter.field("environment", &"*** Sensitive Data Redacted ***");
+        formatter.field("secrets", &self.secrets);
+        formatter.finish()
     }
 }

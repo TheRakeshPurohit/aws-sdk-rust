@@ -7875,6 +7875,31 @@ impl From<crate::operation::send_pipeline_execution_step_success::SendPipelineEx
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_cluster_health_check::StartClusterHealthCheckError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_cluster_health_check::StartClusterHealthCheckError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_cluster_health_check::StartClusterHealthCheckError> for Error {
+    fn from(err: crate::operation::start_cluster_health_check::StartClusterHealthCheckError) -> Self {
+        match err {
+            crate::operation::start_cluster_health_check::StartClusterHealthCheckError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::start_cluster_health_check::StartClusterHealthCheckError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageError, R>>
     for Error
 where

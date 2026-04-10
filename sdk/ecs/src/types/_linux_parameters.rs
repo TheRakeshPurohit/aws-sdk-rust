@@ -18,9 +18,7 @@ pub struct LinuxParameters {
     /// <p>If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is not supported.</p>
     /// </note>
     pub shared_memory_size: ::std::option::Option<i32>,
-    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p><note>
-    /// <p>If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.</p>
-    /// </note>
+    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p>
     pub tmpfs: ::std::option::Option<::std::vec::Vec<crate::types::Tmpfs>>,
     /// <p>The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the <code>--memory-swap</code> option to docker run where the value would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
     /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container will use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p><note>
@@ -59,9 +57,7 @@ impl LinuxParameters {
     pub fn shared_memory_size(&self) -> ::std::option::Option<i32> {
         self.shared_memory_size
     }
-    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p><note>
-    /// <p>If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.</p>
-    /// </note>
+    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tmpfs.is_none()`.
     pub fn tmpfs(&self) -> &[crate::types::Tmpfs] {
@@ -187,25 +183,19 @@ impl LinuxParametersBuilder {
     ///
     /// To override the contents of this collection use [`set_tmpfs`](Self::set_tmpfs).
     ///
-    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p><note>
-    /// <p>If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.</p>
-    /// </note>
+    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p>
     pub fn tmpfs(mut self, input: crate::types::Tmpfs) -> Self {
         let mut v = self.tmpfs.unwrap_or_default();
         v.push(input);
         self.tmpfs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p><note>
-    /// <p>If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.</p>
-    /// </note>
+    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p>
     pub fn set_tmpfs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tmpfs>>) -> Self {
         self.tmpfs = input;
         self
     }
-    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p><note>
-    /// <p>If you're using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter isn't supported.</p>
-    /// </note>
+    /// <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the <code>--tmpfs</code> option to docker run.</p>
     pub fn get_tmpfs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tmpfs>> {
         &self.tmpfs
     }

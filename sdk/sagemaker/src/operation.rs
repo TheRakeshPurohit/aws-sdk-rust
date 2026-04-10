@@ -940,6 +940,9 @@ pub mod send_pipeline_execution_step_failure;
 /// Types for the `SendPipelineExecutionStepSuccess` operation.
 pub mod send_pipeline_execution_step_success;
 
+/// Types for the `StartClusterHealthCheck` operation.
+pub mod start_cluster_health_check;
+
 /// Types for the `StartEdgeDeploymentStage` operation.
 pub mod start_edge_deployment_stage;
 

@@ -189,6 +189,9 @@ where
 impl From<crate::operation::create_capacity_provider::CreateCapacityProviderError> for Error {
     fn from(err: crate::operation::create_capacity_provider::CreateCapacityProviderError) -> Self {
         match err {
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::create_capacity_provider::CreateCapacityProviderError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::create_capacity_provider::CreateCapacityProviderError::ClusterNotFoundException(inner) => {
                 Error::ClusterNotFoundException(inner)
@@ -227,6 +230,7 @@ where
 impl From<crate::operation::create_cluster::CreateClusterError> for Error {
     fn from(err: crate::operation::create_cluster::CreateClusterError) -> Self {
         match err {
+            crate::operation::create_cluster::CreateClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_cluster::CreateClusterError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::create_cluster::CreateClusterError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::create_cluster::CreateClusterError::NamespaceNotFoundException(inner) => Error::NamespaceNotFoundException(inner),
@@ -368,6 +372,7 @@ impl From<crate::operation::create_task_set::CreateTaskSetError> for Error {
             crate::operation::create_task_set::CreateTaskSetError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::create_task_set::CreateTaskSetError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::create_task_set::CreateTaskSetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_task_set::CreateTaskSetError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_task_set::CreateTaskSetError::NamespaceNotFoundException(inner) => Error::NamespaceNotFoundException(inner),
             crate::operation::create_task_set::CreateTaskSetError::PlatformTaskDefinitionIncompatibilityException(inner) => {
                 Error::PlatformTaskDefinitionIncompatibilityException(inner)
@@ -398,6 +403,7 @@ where
 impl From<crate::operation::delete_account_setting::DeleteAccountSettingError> for Error {
     fn from(err: crate::operation::delete_account_setting::DeleteAccountSettingError) -> Self {
         match err {
+            crate::operation::delete_account_setting::DeleteAccountSettingError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_account_setting::DeleteAccountSettingError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::delete_account_setting::DeleteAccountSettingError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
@@ -424,8 +430,11 @@ where
 impl From<crate::operation::delete_attributes::DeleteAttributesError> for Error {
     fn from(err: crate::operation::delete_attributes::DeleteAttributesError) -> Self {
         match err {
+            crate::operation::delete_attributes::DeleteAttributesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_attributes::DeleteAttributesError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::delete_attributes::DeleteAttributesError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::delete_attributes::DeleteAttributesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_attributes::DeleteAttributesError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::delete_attributes::DeleteAttributesError::TargetNotFoundException(inner) => Error::TargetNotFoundException(inner),
             crate::operation::delete_attributes::DeleteAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -450,6 +459,9 @@ where
 impl From<crate::operation::delete_capacity_provider::DeleteCapacityProviderError> for Error {
     fn from(err: crate::operation::delete_capacity_provider::DeleteCapacityProviderError) -> Self {
         match err {
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ClusterNotFoundException(inner) => {
                 Error::ClusterNotFoundException(inner)
@@ -460,6 +472,9 @@ impl From<crate::operation::delete_capacity_provider::DeleteCapacityProviderErro
             crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::delete_capacity_provider::DeleteCapacityProviderError::UnsupportedFeatureException(inner) => {
                 Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::UpdateInProgressException(inner) => {
+                Error::UpdateInProgressException(inner)
             }
             crate::operation::delete_capacity_provider::DeleteCapacityProviderError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -482,6 +497,7 @@ where
 impl From<crate::operation::delete_cluster::DeleteClusterError> for Error {
     fn from(err: crate::operation::delete_cluster::DeleteClusterError) -> Self {
         match err {
+            crate::operation::delete_cluster::DeleteClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_cluster::DeleteClusterError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::delete_cluster::DeleteClusterError::ClusterContainsCapacityProviderException(inner) => {
                 Error::ClusterContainsCapacityProviderException(inner)
@@ -631,6 +647,7 @@ where
 impl From<crate::operation::delete_service::DeleteServiceError> for Error {
     fn from(err: crate::operation::delete_service::DeleteServiceError) -> Self {
         match err {
+            crate::operation::delete_service::DeleteServiceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_service::DeleteServiceError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::delete_service::DeleteServiceError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::delete_service::DeleteServiceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -692,6 +709,7 @@ impl From<crate::operation::delete_task_set::DeleteTaskSetError> for Error {
             crate::operation::delete_task_set::DeleteTaskSetError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::delete_task_set::DeleteTaskSetError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::delete_task_set::DeleteTaskSetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_task_set::DeleteTaskSetError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::delete_task_set::DeleteTaskSetError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::delete_task_set::DeleteTaskSetError::ServiceNotActiveException(inner) => Error::ServiceNotActiveException(inner),
             crate::operation::delete_task_set::DeleteTaskSetError::ServiceNotFoundException(inner) => Error::ServiceNotFoundException(inner),
@@ -721,6 +739,9 @@ where
 impl From<crate::operation::deregister_container_instance::DeregisterContainerInstanceError> for Error {
     fn from(err: crate::operation::deregister_container_instance::DeregisterContainerInstanceError) -> Self {
         match err {
+            crate::operation::deregister_container_instance::DeregisterContainerInstanceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::deregister_container_instance::DeregisterContainerInstanceError::ClientException(inner) => {
                 Error::ClientException(inner)
             }
@@ -757,6 +778,9 @@ where
 impl From<crate::operation::deregister_task_definition::DeregisterTaskDefinitionError> for Error {
     fn from(err: crate::operation::deregister_task_definition::DeregisterTaskDefinitionError) -> Self {
         match err {
+            crate::operation::deregister_task_definition::DeregisterTaskDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::deregister_task_definition::DeregisterTaskDefinitionError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::deregister_task_definition::DeregisterTaskDefinitionError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
@@ -786,6 +810,9 @@ where
 impl From<crate::operation::describe_capacity_providers::DescribeCapacityProvidersError> for Error {
     fn from(err: crate::operation::describe_capacity_providers::DescribeCapacityProvidersError) -> Self {
         match err {
+            crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::describe_capacity_providers::DescribeCapacityProvidersError::ClusterNotFoundException(inner) => {
                 Error::ClusterNotFoundException(inner)
@@ -818,6 +845,7 @@ where
 impl From<crate::operation::describe_clusters::DescribeClustersError> for Error {
     fn from(err: crate::operation::describe_clusters::DescribeClustersError) -> Self {
         match err {
+            crate::operation::describe_clusters::DescribeClustersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::describe_clusters::DescribeClustersError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::describe_clusters::DescribeClustersError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::describe_clusters::DescribeClustersError::ServerException(inner) => Error::ServerException(inner),
@@ -845,6 +873,9 @@ where
 impl From<crate::operation::describe_container_instances::DescribeContainerInstancesError> for Error {
     fn from(err: crate::operation::describe_container_instances::DescribeContainerInstancesError) -> Self {
         match err {
+            crate::operation::describe_container_instances::DescribeContainerInstancesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::describe_container_instances::DescribeContainerInstancesError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::describe_container_instances::DescribeContainerInstancesError::ClusterNotFoundException(inner) => {
                 Error::ClusterNotFoundException(inner)
@@ -1150,6 +1181,7 @@ where
 impl From<crate::operation::describe_services::DescribeServicesError> for Error {
     fn from(err: crate::operation::describe_services::DescribeServicesError) -> Self {
         match err {
+            crate::operation::describe_services::DescribeServicesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::describe_services::DescribeServicesError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::describe_services::DescribeServicesError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::describe_services::DescribeServicesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -1177,6 +1209,9 @@ where
 impl From<crate::operation::describe_task_definition::DescribeTaskDefinitionError> for Error {
     fn from(err: crate::operation::describe_task_definition::DescribeTaskDefinitionError) -> Self {
         match err {
+            crate::operation::describe_task_definition::DescribeTaskDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::describe_task_definition::DescribeTaskDefinitionError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::describe_task_definition::DescribeTaskDefinitionError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
@@ -1203,6 +1238,7 @@ where
 impl From<crate::operation::describe_tasks::DescribeTasksError> for Error {
     fn from(err: crate::operation::describe_tasks::DescribeTasksError) -> Self {
         match err {
+            crate::operation::describe_tasks::DescribeTasksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::describe_tasks::DescribeTasksError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::describe_tasks::DescribeTasksError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::describe_tasks::DescribeTasksError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -1259,7 +1295,11 @@ where
 impl From<crate::operation::discover_poll_endpoint::DiscoverPollEndpointError> for Error {
     fn from(err: crate::operation::discover_poll_endpoint::DiscoverPollEndpointError) -> Self {
         match err {
+            crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::discover_poll_endpoint::DiscoverPollEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1343,6 +1383,7 @@ where
 impl From<crate::operation::list_account_settings::ListAccountSettingsError> for Error {
     fn from(err: crate::operation::list_account_settings::ListAccountSettingsError) -> Self {
         match err {
+            crate::operation::list_account_settings::ListAccountSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_account_settings::ListAccountSettingsError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_account_settings::ListAccountSettingsError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
@@ -1369,8 +1410,11 @@ where
 impl From<crate::operation::list_attributes::ListAttributesError> for Error {
     fn from(err: crate::operation::list_attributes::ListAttributesError) -> Self {
         match err {
+            crate::operation::list_attributes::ListAttributesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_attributes::ListAttributesError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_attributes::ListAttributesError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::list_attributes::ListAttributesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_attributes::ListAttributesError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::list_attributes::ListAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1392,6 +1436,7 @@ where
 impl From<crate::operation::list_clusters::ListClustersError> for Error {
     fn from(err: crate::operation::list_clusters::ListClustersError) -> Self {
         match err {
+            crate::operation::list_clusters::ListClustersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_clusters::ListClustersError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_clusters::ListClustersError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::list_clusters::ListClustersError::ServerException(inner) => Error::ServerException(inner),
@@ -1418,6 +1463,9 @@ where
 impl From<crate::operation::list_container_instances::ListContainerInstancesError> for Error {
     fn from(err: crate::operation::list_container_instances::ListContainerInstancesError) -> Self {
         match err {
+            crate::operation::list_container_instances::ListContainerInstancesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::list_container_instances::ListContainerInstancesError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_container_instances::ListContainerInstancesError::ClusterNotFoundException(inner) => {
                 Error::ClusterNotFoundException(inner)
@@ -1549,6 +1597,9 @@ impl From<crate::operation::list_service_deployments::ListServiceDeploymentsErro
                 Error::AccessDeniedException(inner)
             }
             crate::operation::list_service_deployments::ListServiceDeploymentsError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_service_deployments::ListServiceDeploymentsError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
             crate::operation::list_service_deployments::ListServiceDeploymentsError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
@@ -1580,6 +1631,7 @@ where
 impl From<crate::operation::list_services::ListServicesError> for Error {
     fn from(err: crate::operation::list_services::ListServicesError) -> Self {
         match err {
+            crate::operation::list_services::ListServicesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_services::ListServicesError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_services::ListServicesError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::list_services::ListServicesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -1608,6 +1660,9 @@ where
 impl From<crate::operation::list_services_by_namespace::ListServicesByNamespaceError> for Error {
     fn from(err: crate::operation::list_services_by_namespace::ListServicesByNamespaceError) -> Self {
         match err {
+            crate::operation::list_services_by_namespace::ListServicesByNamespaceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::list_services_by_namespace::ListServicesByNamespaceError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_services_by_namespace::ListServicesByNamespaceError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
@@ -1637,6 +1692,7 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ClusterNotFoundException(inner) => {
                 Error::ClusterNotFoundException(inner)
@@ -1669,6 +1725,9 @@ where
 impl From<crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError> for Error {
     fn from(err: crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError) -> Self {
         match err {
+            crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
@@ -1695,6 +1754,7 @@ where
 impl From<crate::operation::list_task_definitions::ListTaskDefinitionsError> for Error {
     fn from(err: crate::operation::list_task_definitions::ListTaskDefinitionsError) -> Self {
         match err {
+            crate::operation::list_task_definitions::ListTaskDefinitionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_task_definitions::ListTaskDefinitionsError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_task_definitions::ListTaskDefinitionsError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
@@ -1721,6 +1781,7 @@ where
 impl From<crate::operation::list_tasks::ListTasksError> for Error {
     fn from(err: crate::operation::list_tasks::ListTasksError) -> Self {
         match err {
+            crate::operation::list_tasks::ListTasksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_tasks::ListTasksError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_tasks::ListTasksError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::list_tasks::ListTasksError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -1747,6 +1808,7 @@ where
 impl From<crate::operation::put_account_setting::PutAccountSettingError> for Error {
     fn from(err: crate::operation::put_account_setting::PutAccountSettingError) -> Self {
         match err {
+            crate::operation::put_account_setting::PutAccountSettingError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::put_account_setting::PutAccountSettingError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::put_account_setting::PutAccountSettingError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
@@ -1776,6 +1838,9 @@ where
 impl From<crate::operation::put_account_setting_default::PutAccountSettingDefaultError> for Error {
     fn from(err: crate::operation::put_account_setting_default::PutAccountSettingDefaultError) -> Self {
         match err {
+            crate::operation::put_account_setting_default::PutAccountSettingDefaultError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::put_account_setting_default::PutAccountSettingDefaultError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::put_account_setting_default::PutAccountSettingDefaultError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
@@ -1802,11 +1867,14 @@ where
 impl From<crate::operation::put_attributes::PutAttributesError> for Error {
     fn from(err: crate::operation::put_attributes::PutAttributesError) -> Self {
         match err {
+            crate::operation::put_attributes::PutAttributesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::put_attributes::PutAttributesError::AttributeLimitExceededException(inner) => {
                 Error::AttributeLimitExceededException(inner)
             }
+            crate::operation::put_attributes::PutAttributesError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::put_attributes::PutAttributesError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::put_attributes::PutAttributesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::put_attributes::PutAttributesError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::put_attributes::PutAttributesError::TargetNotFoundException(inner) => Error::TargetNotFoundException(inner),
             crate::operation::put_attributes::PutAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1836,6 +1904,9 @@ where
 impl From<crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError> for Error {
     fn from(err: crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError) -> Self {
         match err {
+            crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersError::ClientException(inner) => {
                 Error::ClientException(inner)
             }
@@ -1878,7 +1949,13 @@ where
 impl From<crate::operation::register_container_instance::RegisterContainerInstanceError> for Error {
     fn from(err: crate::operation::register_container_instance::RegisterContainerInstanceError) -> Self {
         match err {
+            crate::operation::register_container_instance::RegisterContainerInstanceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::register_container_instance::RegisterContainerInstanceError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::register_container_instance::RegisterContainerInstanceError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
             crate::operation::register_container_instance::RegisterContainerInstanceError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
@@ -1949,9 +2026,15 @@ where
 impl From<crate::operation::register_task_definition::RegisterTaskDefinitionError> for Error {
     fn from(err: crate::operation::register_task_definition::RegisterTaskDefinitionError) -> Self {
         match err {
+            crate::operation::register_task_definition::RegisterTaskDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::register_task_definition::RegisterTaskDefinitionError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::register_task_definition::RegisterTaskDefinitionError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
+            }
+            crate::operation::register_task_definition::RegisterTaskDefinitionError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
             }
             crate::operation::register_task_definition::RegisterTaskDefinitionError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::register_task_definition::RegisterTaskDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2008,9 +2091,11 @@ where
 impl From<crate::operation::start_task::StartTaskError> for Error {
     fn from(err: crate::operation::start_task::StartTaskError) -> Self {
         match err {
+            crate::operation::start_task::StartTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::start_task::StartTaskError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::start_task::StartTaskError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::start_task::StartTaskError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_task::StartTaskError::NamespaceNotFoundException(inner) => Error::NamespaceNotFoundException(inner),
             crate::operation::start_task::StartTaskError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::start_task::StartTaskError::UnsupportedFeatureException(inner) => Error::UnsupportedFeatureException(inner),
             crate::operation::start_task::StartTaskError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2072,6 +2157,7 @@ where
 impl From<crate::operation::stop_task::StopTaskError> for Error {
     fn from(err: crate::operation::stop_task::StopTaskError) -> Self {
         match err {
+            crate::operation::stop_task::StopTaskError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::stop_task::StopTaskError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::stop_task::StopTaskError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::stop_task::StopTaskError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -2110,6 +2196,9 @@ impl From<crate::operation::submit_attachment_state_changes::SubmitAttachmentSta
             crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesError::ClientException(inner) => {
                 Error::ClientException(inner)
             }
+            crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
             crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
@@ -2144,6 +2233,12 @@ impl From<crate::operation::submit_container_state_change::SubmitContainerStateC
                 Error::AccessDeniedException(inner)
             }
             crate::operation::submit_container_state_change::SubmitContainerStateChangeError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::submit_container_state_change::SubmitContainerStateChangeError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
+            crate::operation::submit_container_state_change::SubmitContainerStateChangeError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::submit_container_state_change::SubmitContainerStateChangeError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::submit_container_state_change::SubmitContainerStateChangeError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2172,6 +2267,9 @@ impl From<crate::operation::submit_task_state_change::SubmitTaskStateChangeError
                 Error::AccessDeniedException(inner)
             }
             crate::operation::submit_task_state_change::SubmitTaskStateChangeError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::submit_task_state_change::SubmitTaskStateChangeError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
             crate::operation::submit_task_state_change::SubmitTaskStateChangeError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
@@ -2197,9 +2295,11 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::tag_resource::TagResourceError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::tag_resource::TagResourceError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::tag_resource::TagResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::tag_resource::TagResourceError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2223,6 +2323,7 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::untag_resource::UntagResourceError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::untag_resource::UntagResourceError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -2251,6 +2352,9 @@ where
 impl From<crate::operation::update_capacity_provider::UpdateCapacityProviderError> for Error {
     fn from(err: crate::operation::update_capacity_provider::UpdateCapacityProviderError) -> Self {
         match err {
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::update_capacity_provider::UpdateCapacityProviderError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::update_capacity_provider::UpdateCapacityProviderError::ClusterNotFoundException(inner) => {
                 Error::ClusterNotFoundException(inner)
@@ -2283,6 +2387,7 @@ where
 impl From<crate::operation::update_cluster::UpdateClusterError> for Error {
     fn from(err: crate::operation::update_cluster::UpdateClusterError) -> Self {
         match err {
+            crate::operation::update_cluster::UpdateClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_cluster::UpdateClusterError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::update_cluster::UpdateClusterError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::update_cluster::UpdateClusterError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -2311,6 +2416,9 @@ where
 impl From<crate::operation::update_cluster_settings::UpdateClusterSettingsError> for Error {
     fn from(err: crate::operation::update_cluster_settings::UpdateClusterSettingsError) -> Self {
         match err {
+            crate::operation::update_cluster_settings::UpdateClusterSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::update_cluster_settings::UpdateClusterSettingsError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::update_cluster_settings::UpdateClusterSettingsError::ClusterNotFoundException(inner) => {
                 Error::ClusterNotFoundException(inner)
@@ -2319,6 +2427,9 @@ impl From<crate::operation::update_cluster_settings::UpdateClusterSettingsError>
                 Error::InvalidParameterException(inner)
             }
             crate::operation::update_cluster_settings::UpdateClusterSettingsError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::update_cluster_settings::UpdateClusterSettingsError::UpdateInProgressException(inner) => {
+                Error::UpdateInProgressException(inner)
+            }
             crate::operation::update_cluster_settings::UpdateClusterSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2340,6 +2451,7 @@ where
 impl From<crate::operation::update_container_agent::UpdateContainerAgentError> for Error {
     fn from(err: crate::operation::update_container_agent::UpdateContainerAgentError) -> Self {
         match err {
+            crate::operation::update_container_agent::UpdateContainerAgentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_container_agent::UpdateContainerAgentError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::update_container_agent::UpdateContainerAgentError::ClusterNotFoundException(inner) => {
                 Error::ClusterNotFoundException(inner)
@@ -2386,6 +2498,9 @@ where
 impl From<crate::operation::update_container_instances_state::UpdateContainerInstancesStateError> for Error {
     fn from(err: crate::operation::update_container_instances_state::UpdateContainerInstancesStateError) -> Self {
         match err {
+            crate::operation::update_container_instances_state::UpdateContainerInstancesStateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::update_container_instances_state::UpdateContainerInstancesStateError::ClientException(inner) => {
                 Error::ClientException(inner)
             }
@@ -2630,6 +2745,7 @@ impl From<crate::operation::update_task_set::UpdateTaskSetError> for Error {
             crate::operation::update_task_set::UpdateTaskSetError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::update_task_set::UpdateTaskSetError::ClusterNotFoundException(inner) => Error::ClusterNotFoundException(inner),
             crate::operation::update_task_set::UpdateTaskSetError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_task_set::UpdateTaskSetError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_task_set::UpdateTaskSetError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::update_task_set::UpdateTaskSetError::ServiceNotActiveException(inner) => Error::ServiceNotActiveException(inner),
             crate::operation::update_task_set::UpdateTaskSetError::ServiceNotFoundException(inner) => Error::ServiceNotFoundException(inner),

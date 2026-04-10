@@ -1393,6 +1393,8 @@ pub use crate::types::_training_plan_extension_offering::TrainingPlanExtensionOf
 
 pub use crate::types::_output_parameter::OutputParameter;
 
+pub use crate::types::_instance_group_health_check_configuration::InstanceGroupHealthCheckConfiguration;
+
 pub use crate::types::_model_variant_action::ModelVariantAction;
 
 pub use crate::types::_update_cluster_software_instance_group_specification::UpdateClusterSoftwareInstanceGroupSpecification;
@@ -1446,6 +1448,8 @@ pub use crate::types::_time_series_config::TimeSeriesConfig;
 pub use crate::types::_candidate_generation_config::CandidateGenerationConfig;
 
 pub use crate::types::_model_access_config::ModelAccessConfig;
+
+pub use crate::types::_cluster_instance_requirements::ClusterInstanceRequirements;
 
 pub use crate::types::_scheduled_update_config::ScheduledUpdateConfig;
 
@@ -1672,6 +1676,8 @@ pub use crate::types::_auto_ml_processing_unit::AutoMlProcessingUnit;
 pub use crate::types::_tabular_resolved_attributes::TabularResolvedAttributes;
 
 pub use crate::types::_text_generation_resolved_attributes::TextGenerationResolvedAttributes;
+
+pub use crate::types::_cluster_instance_requirement_details::ClusterInstanceRequirementDetails;
 
 pub use crate::types::_instance_group_status::InstanceGroupStatus;
 
@@ -1956,6 +1962,8 @@ pub use crate::types::_detailed_algorithm_status::DetailedAlgorithmStatus;
 pub use crate::types::_candidate_step_type::CandidateStepType;
 
 pub use crate::types::_metric_datum::MetricDatum;
+
+pub use crate::types::_cluster_instance_type_detail::ClusterInstanceTypeDetail;
 
 pub use crate::types::_active_cluster_operation_name::ActiveClusterOperationName;
 
@@ -2521,6 +2529,10 @@ mod _cluster_instance_group_specification;
 
 mod _cluster_instance_placement;
 
+mod _cluster_instance_requirement_details;
+
+mod _cluster_instance_requirements;
+
 mod _cluster_instance_status;
 
 mod _cluster_instance_status_details;
@@ -2528,6 +2540,8 @@ mod _cluster_instance_status_details;
 mod _cluster_instance_storage_config;
 
 mod _cluster_instance_type;
+
+mod _cluster_instance_type_detail;
 
 mod _cluster_kubernetes_config;
 
@@ -3126,6 +3140,8 @@ mod _input_config;
 mod _input_mode;
 
 mod _instance_group;
+
+mod _instance_group_health_check_configuration;
 
 mod _instance_group_metadata;
 

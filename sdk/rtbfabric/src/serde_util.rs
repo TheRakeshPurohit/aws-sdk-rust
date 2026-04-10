@@ -527,6 +527,18 @@ pub(crate) fn module_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn health_check_config_correct_errors(
+    mut builder: crate::types::builders::HealthCheckConfigBuilder,
+) -> crate::types::builders::HealthCheckConfigBuilder {
+    if builder.port.is_none() {
+        builder.port = Some(Default::default())
+    }
+    if builder.path.is_none() {
+        builder.path = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn link_application_log_sampling_correct_errors(
     mut builder: crate::types::builders::LinkApplicationLogSamplingBuilder,
 ) -> crate::types::builders::LinkApplicationLogSamplingBuilder {

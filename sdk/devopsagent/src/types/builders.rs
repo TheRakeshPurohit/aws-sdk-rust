@@ -111,7 +111,13 @@ pub use crate::types::_service_now_configuration::ServiceNowConfigurationBuilder
 
 pub use crate::types::_mcp_server_new_relic_configuration::McpServerNewRelicConfigurationBuilder;
 
+pub use crate::types::_mcp_server_datadog_configuration::McpServerDatadogConfigurationBuilder;
+
+pub use crate::types::_mcp_server_configuration::McpServerConfigurationBuilder;
+
 pub use crate::types::_git_lab_configuration::GitLabConfigurationBuilder;
+
+pub use crate::types::_mcp_server_splunk_configuration::McpServerSplunkConfigurationBuilder;
 
 pub use crate::types::_event_channel_configuration::EventChannelConfigurationBuilder;
 

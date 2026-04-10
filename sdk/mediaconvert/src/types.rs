@@ -435,6 +435,8 @@ pub use crate::types::_dynamic_audio_selector::DynamicAudioSelector;
 
 pub use crate::types::_input_clipping::InputClipping;
 
+pub use crate::types::_multi_view_settings::MultiViewSettings;
+
 pub use crate::types::_tams_gap_handling::TamsGapHandling;
 
 pub use crate::types::_video_overlay::VideoOverlay;
@@ -880,6 +882,8 @@ pub use crate::types::_caption_source_settings::CaptionSourceSettings;
 pub use crate::types::_dynamic_audio_selector_type::DynamicAudioSelectorType;
 
 pub use crate::types::_insertable_image::InsertableImage;
+
+pub use crate::types::_multi_view_input::MultiViewInput;
 
 pub use crate::types::_video_overlay_crop::VideoOverlayCrop;
 
@@ -2306,6 +2310,10 @@ mod _ms_smooth_fragment_length_control;
 mod _ms_smooth_group_settings;
 
 mod _ms_smooth_manifest_encoding;
+
+mod _multi_view_input;
+
+mod _multi_view_settings;
 
 mod _mxf_afd_signaling;
 

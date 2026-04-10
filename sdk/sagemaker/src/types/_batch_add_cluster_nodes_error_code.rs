@@ -12,6 +12,8 @@
 /// ```text
 /// # let batchaddclusternodeserrorcode = unimplemented!();
 /// match batchaddclusternodeserrorcode {
+///     BatchAddClusterNodesErrorCode::IncompatibleAvailabilityZones => { /* ... */ },
+///     BatchAddClusterNodesErrorCode::IncompatibleInstanceTypes => { /* ... */ },
 ///     BatchAddClusterNodesErrorCode::InstanceGroupNotFound => { /* ... */ },
 ///     BatchAddClusterNodesErrorCode::InvalidInstanceGroupStatus => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +45,10 @@
 )]
 pub enum BatchAddClusterNodesErrorCode {
     #[allow(missing_docs)] // documentation missing in model
+    IncompatibleAvailabilityZones,
+    #[allow(missing_docs)] // documentation missing in model
+    IncompatibleInstanceTypes,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceGroupNotFound,
     #[allow(missing_docs)] // documentation missing in model
     InvalidInstanceGroupStatus,
@@ -53,6 +59,8 @@ pub enum BatchAddClusterNodesErrorCode {
 impl ::std::convert::From<&str> for BatchAddClusterNodesErrorCode {
     fn from(s: &str) -> Self {
         match s {
+            "IncompatibleAvailabilityZones" => BatchAddClusterNodesErrorCode::IncompatibleAvailabilityZones,
+            "IncompatibleInstanceTypes" => BatchAddClusterNodesErrorCode::IncompatibleInstanceTypes,
             "InstanceGroupNotFound" => BatchAddClusterNodesErrorCode::InstanceGroupNotFound,
             "InvalidInstanceGroupStatus" => BatchAddClusterNodesErrorCode::InvalidInstanceGroupStatus,
             other => BatchAddClusterNodesErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +78,8 @@ impl BatchAddClusterNodesErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            BatchAddClusterNodesErrorCode::IncompatibleAvailabilityZones => "IncompatibleAvailabilityZones",
+            BatchAddClusterNodesErrorCode::IncompatibleInstanceTypes => "IncompatibleInstanceTypes",
             BatchAddClusterNodesErrorCode::InstanceGroupNotFound => "InstanceGroupNotFound",
             BatchAddClusterNodesErrorCode::InvalidInstanceGroupStatus => "InvalidInstanceGroupStatus",
             BatchAddClusterNodesErrorCode::Unknown(value) => value.as_str(),
@@ -77,7 +87,12 @@ impl BatchAddClusterNodesErrorCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["InstanceGroupNotFound", "InvalidInstanceGroupStatus"]
+        &[
+            "IncompatibleAvailabilityZones",
+            "IncompatibleInstanceTypes",
+            "InstanceGroupNotFound",
+            "InvalidInstanceGroupStatus",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for BatchAddClusterNodesErrorCode {
@@ -100,6 +115,8 @@ impl BatchAddClusterNodesErrorCode {
 impl ::std::fmt::Display for BatchAddClusterNodesErrorCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            BatchAddClusterNodesErrorCode::IncompatibleAvailabilityZones => write!(f, "IncompatibleAvailabilityZones"),
+            BatchAddClusterNodesErrorCode::IncompatibleInstanceTypes => write!(f, "IncompatibleInstanceTypes"),
             BatchAddClusterNodesErrorCode::InstanceGroupNotFound => write!(f, "InstanceGroupNotFound"),
             BatchAddClusterNodesErrorCode::InvalidInstanceGroupStatus => write!(f, "InvalidInstanceGroupStatus"),
             BatchAddClusterNodesErrorCode::Unknown(value) => write!(f, "{value}"),

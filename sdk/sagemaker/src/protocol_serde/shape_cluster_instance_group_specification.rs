@@ -21,77 +21,83 @@ pub fn ser_cluster_instance_group_specification(
     if let Some(var_4) = &input.instance_type {
         object.key("InstanceType").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.life_cycle_config {
+    if let Some(var_5) = &input.instance_requirements {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("LifeCycleConfig").start_object();
-        crate::protocol_serde::shape_cluster_life_cycle_config::ser_cluster_life_cycle_config(&mut object_6, var_5)?;
+        let mut object_6 = object.key("InstanceRequirements").start_object();
+        crate::protocol_serde::shape_cluster_instance_requirements::ser_cluster_instance_requirements(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.execution_role {
-        object.key("ExecutionRole").string(var_7.as_str());
+    if let Some(var_7) = &input.life_cycle_config {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("LifeCycleConfig").start_object();
+        crate::protocol_serde::shape_cluster_life_cycle_config::ser_cluster_life_cycle_config(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.threads_per_core {
+    if let Some(var_9) = &input.execution_role {
+        object.key("ExecutionRole").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.threads_per_core {
         object.key("ThreadsPerCore").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_9) = &input.instance_storage_configs {
-        let mut array_10 = object.key("InstanceStorageConfigs").start_array();
-        for item_11 in var_9 {
+    if let Some(var_11) = &input.instance_storage_configs {
+        let mut array_12 = object.key("InstanceStorageConfigs").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_cluster_instance_storage_config::ser_cluster_instance_storage_config(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_cluster_instance_storage_config::ser_cluster_instance_storage_config(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_10.finish();
+        array_12.finish();
     }
-    if let Some(var_13) = &input.on_start_deep_health_checks {
-        let mut array_14 = object.key("OnStartDeepHealthChecks").start_array();
-        for item_15 in var_13 {
+    if let Some(var_15) = &input.on_start_deep_health_checks {
+        let mut array_16 = object.key("OnStartDeepHealthChecks").start_array();
+        for item_17 in var_15 {
             {
-                array_14.value().string(item_15.as_str());
+                array_16.value().string(item_17.as_str());
             }
         }
-        array_14.finish();
+        array_16.finish();
     }
-    if let Some(var_16) = &input.training_plan_arn {
-        object.key("TrainingPlanArn").string(var_16.as_str());
+    if let Some(var_18) = &input.training_plan_arn {
+        object.key("TrainingPlanArn").string(var_18.as_str());
     }
-    if let Some(var_17) = &input.override_vpc_config {
+    if let Some(var_19) = &input.override_vpc_config {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("OverrideVpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_18, var_17)?;
-        object_18.finish();
-    }
-    if let Some(var_19) = &input.scheduled_update_config {
-        #[allow(unused_mut)]
-        let mut object_20 = object.key("ScheduledUpdateConfig").start_object();
-        crate::protocol_serde::shape_scheduled_update_config::ser_scheduled_update_config(&mut object_20, var_19)?;
+        let mut object_20 = object.key("OverrideVpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_20, var_19)?;
         object_20.finish();
     }
-    if let Some(var_21) = &input.image_id {
-        object.key("ImageId").string(var_21.as_str());
-    }
-    if let Some(var_22) = &input.kubernetes_config {
+    if let Some(var_21) = &input.scheduled_update_config {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("KubernetesConfig").start_object();
-        crate::protocol_serde::shape_cluster_kubernetes_config::ser_cluster_kubernetes_config(&mut object_23, var_22)?;
-        object_23.finish();
+        let mut object_22 = object.key("ScheduledUpdateConfig").start_object();
+        crate::protocol_serde::shape_scheduled_update_config::ser_scheduled_update_config(&mut object_22, var_21)?;
+        object_22.finish();
     }
-    if let Some(var_24) = &input.slurm_config {
+    if let Some(var_23) = &input.image_id {
+        object.key("ImageId").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.kubernetes_config {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("SlurmConfig").start_object();
-        crate::protocol_serde::shape_cluster_slurm_config::ser_cluster_slurm_config(&mut object_25, var_24)?;
+        let mut object_25 = object.key("KubernetesConfig").start_object();
+        crate::protocol_serde::shape_cluster_kubernetes_config::ser_cluster_kubernetes_config(&mut object_25, var_24)?;
         object_25.finish();
     }
-    if let Some(var_26) = &input.capacity_requirements {
+    if let Some(var_26) = &input.slurm_config {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("CapacityRequirements").start_object();
-        crate::protocol_serde::shape_cluster_capacity_requirements::ser_cluster_capacity_requirements(&mut object_27, var_26)?;
+        let mut object_27 = object.key("SlurmConfig").start_object();
+        crate::protocol_serde::shape_cluster_slurm_config::ser_cluster_slurm_config(&mut object_27, var_26)?;
         object_27.finish();
+    }
+    if let Some(var_28) = &input.capacity_requirements {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("CapacityRequirements").start_object();
+        crate::protocol_serde::shape_cluster_capacity_requirements::ser_cluster_capacity_requirements(&mut object_29, var_28)?;
+        object_29.finish();
     }
     Ok(())
 }

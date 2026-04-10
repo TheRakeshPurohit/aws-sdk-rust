@@ -133,6 +133,9 @@ where
                                 crate::protocol_serde::shape_image_scanning_configuration::de_image_scanning_configuration(tokens, _value)?,
                             );
                         }
+                        "imageTags" => {
+                            builder = builder.set_image_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
+                        }
                         "executionRole" => {
                             builder = builder.set_execution_role(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

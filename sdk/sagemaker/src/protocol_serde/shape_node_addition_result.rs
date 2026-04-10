@@ -36,6 +36,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AvailabilityZones" => {
+                            builder = builder.set_availability_zones(
+                                crate::protocol_serde::shape_cluster_availability_zones::de_cluster_availability_zones(tokens, _value)?,
+                            );
+                        }
+                        "InstanceTypes" => {
+                            builder = builder.set_instance_types(crate::protocol_serde::shape_cluster_instance_types::de_cluster_instance_types(
+                                tokens, _value,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

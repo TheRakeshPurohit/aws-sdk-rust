@@ -3,7 +3,7 @@
 /// <p>The overrides that are sent to a container. An empty container override can be passed in. An example of an empty container override is <code>{"containerOverrides": \[ \] }</code>. If a non-empty container override is specified, the <code>name</code> parameter must be included.</p>
 /// <p>You can use Secrets Manager or Amazon Web Services Systems Manager Parameter Store to store the sensitive data. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/secrets-envvar.html">Retrieve secrets through environment variables</a> in the Amazon ECS Developer Guide.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ContainerOverride {
     /// <p>The name of the container that receives the override. This parameter is required if any override is specified.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -64,6 +64,20 @@ impl ContainerOverride {
         self.resource_requirements.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for ContainerOverride {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ContainerOverride");
+        formatter.field("name", &self.name);
+        formatter.field("command", &self.command);
+        formatter.field("environment", &"*** Sensitive Data Redacted ***");
+        formatter.field("environment_files", &self.environment_files);
+        formatter.field("cpu", &self.cpu);
+        formatter.field("memory", &self.memory);
+        formatter.field("memory_reservation", &self.memory_reservation);
+        formatter.field("resource_requirements", &self.resource_requirements);
+        formatter.finish()
+    }
+}
 impl ContainerOverride {
     /// Creates a new builder-style object to manufacture [`ContainerOverride`](crate::types::ContainerOverride).
     pub fn builder() -> crate::types::builders::ContainerOverrideBuilder {
@@ -72,7 +86,7 @@ impl ContainerOverride {
 }
 
 /// A builder for [`ContainerOverride`](crate::types::ContainerOverride).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ContainerOverrideBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -233,5 +247,19 @@ impl ContainerOverrideBuilder {
             memory_reservation: self.memory_reservation,
             resource_requirements: self.resource_requirements,
         }
+    }
+}
+impl ::std::fmt::Debug for ContainerOverrideBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ContainerOverrideBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("command", &self.command);
+        formatter.field("environment", &"*** Sensitive Data Redacted ***");
+        formatter.field("environment_files", &self.environment_files);
+        formatter.field("cpu", &self.cpu);
+        formatter.field("memory", &self.memory);
+        formatter.field("memory_reservation", &self.memory_reservation);
+        formatter.field("resource_requirements", &self.resource_requirements);
+        formatter.finish()
     }
 }

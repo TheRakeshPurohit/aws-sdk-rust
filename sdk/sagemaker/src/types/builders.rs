@@ -917,6 +917,8 @@ pub use crate::types::_training_plan_extension_offering::TrainingPlanExtensionOf
 
 pub use crate::types::_output_parameter::OutputParameterBuilder;
 
+pub use crate::types::_instance_group_health_check_configuration::InstanceGroupHealthCheckConfigurationBuilder;
+
 pub use crate::types::_update_cluster_software_instance_group_specification::UpdateClusterSoftwareInstanceGroupSpecificationBuilder;
 
 pub use crate::types::_rolling_deployment_policy::RollingDeploymentPolicyBuilder;
@@ -952,6 +954,8 @@ pub use crate::types::_time_series_config::TimeSeriesConfigBuilder;
 pub use crate::types::_candidate_generation_config::CandidateGenerationConfigBuilder;
 
 pub use crate::types::_model_access_config::ModelAccessConfigBuilder;
+
+pub use crate::types::_cluster_instance_requirements::ClusterInstanceRequirementsBuilder;
 
 pub use crate::types::_scheduled_update_config::ScheduledUpdateConfigBuilder;
 
@@ -1120,6 +1124,8 @@ pub use crate::types::_candidate_artifact_locations::CandidateArtifactLocationsB
 pub use crate::types::_tabular_resolved_attributes::TabularResolvedAttributesBuilder;
 
 pub use crate::types::_text_generation_resolved_attributes::TextGenerationResolvedAttributesBuilder;
+
+pub use crate::types::_cluster_instance_requirement_details::ClusterInstanceRequirementDetailsBuilder;
 
 pub use crate::types::_cluster_kubernetes_config_details::ClusterKubernetesConfigDetailsBuilder;
 
@@ -1322,6 +1328,8 @@ pub use crate::types::_dataset_source::DatasetSourceBuilder;
 pub use crate::types::_placement_specification::PlacementSpecificationBuilder;
 
 pub use crate::types::_metric_datum::MetricDatumBuilder;
+
+pub use crate::types::_cluster_instance_type_detail::ClusterInstanceTypeDetailBuilder;
 
 pub use crate::types::_cluster_metadata::ClusterMetadataBuilder;
 

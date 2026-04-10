@@ -163,7 +163,13 @@ pub use crate::types::_service_now_configuration::ServiceNowConfiguration;
 
 pub use crate::types::_mcp_server_new_relic_configuration::McpServerNewRelicConfiguration;
 
+pub use crate::types::_mcp_server_datadog_configuration::McpServerDatadogConfiguration;
+
+pub use crate::types::_mcp_server_configuration::McpServerConfiguration;
+
 pub use crate::types::_git_lab_configuration::GitLabConfiguration;
+
+pub use crate::types::_mcp_server_splunk_configuration::McpServerSplunkConfiguration;
 
 pub use crate::types::_event_channel_configuration::EventChannelConfiguration;
 
@@ -345,6 +351,10 @@ mod _mcp_server_authorization_method;
 
 mod _mcp_server_bearer_token_config;
 
+mod _mcp_server_configuration;
+
+mod _mcp_server_datadog_configuration;
+
 mod _mcp_server_details;
 
 mod _mcp_server_grafana_configuration;
@@ -354,6 +364,8 @@ mod _mcp_server_new_relic_configuration;
 mod _mcp_server_o_auth3_lo_config;
 
 mod _mcp_server_o_auth_client_credentials_config;
+
+mod _mcp_server_splunk_configuration;
 
 mod _message;
 

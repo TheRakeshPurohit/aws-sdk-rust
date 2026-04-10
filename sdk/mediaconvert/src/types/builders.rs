@@ -209,6 +209,8 @@ pub use crate::types::_dynamic_audio_selector::DynamicAudioSelectorBuilder;
 
 pub use crate::types::_input_clipping::InputClippingBuilder;
 
+pub use crate::types::_multi_view_settings::MultiViewSettingsBuilder;
+
 pub use crate::types::_video_overlay::VideoOverlayBuilder;
 
 pub use crate::types::_hdr10_metadata::Hdr10MetadataBuilder;
@@ -312,6 +314,8 @@ pub use crate::types::_hls_rendition_group_settings::HlsRenditionGroupSettingsBu
 pub use crate::types::_caption_source_settings::CaptionSourceSettingsBuilder;
 
 pub use crate::types::_insertable_image::InsertableImageBuilder;
+
+pub use crate::types::_multi_view_input::MultiViewInputBuilder;
 
 pub use crate::types::_video_overlay_crop::VideoOverlayCropBuilder;
 

@@ -926,6 +926,15 @@ pub(crate) fn git_lab_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn mcp_server_configuration_correct_errors(
+    mut builder: crate::types::builders::McpServerConfigurationBuilder,
+) -> crate::types::builders::McpServerConfigurationBuilder {
+    if builder.tools.is_none() {
+        builder.tools = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn mcp_server_grafana_configuration_correct_errors(
     mut builder: crate::types::builders::McpServerGrafanaConfigurationBuilder,
 ) -> crate::types::builders::McpServerGrafanaConfigurationBuilder {

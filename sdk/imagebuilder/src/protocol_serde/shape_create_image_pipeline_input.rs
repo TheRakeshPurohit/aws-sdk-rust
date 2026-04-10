@@ -30,54 +30,64 @@ pub fn ser_create_image_pipeline_input_input(
         crate::protocol_serde::shape_image_scanning_configuration::ser_image_scanning_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.image_tests_configuration {
+    if let Some(var_10) = &input.image_tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("imageTestsConfiguration").start_object();
-        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(&mut object_11, var_10)?;
+        let mut object_11 = object.key("imageTags").start_object();
+        for (key_12, value_13) in var_10 {
+            {
+                object_11.key(key_12.as_str()).string(value_13.as_str());
+            }
+        }
         object_11.finish();
     }
-    if let Some(var_12) = &input.infrastructure_configuration_arn {
-        object.key("infrastructureConfigurationArn").string(var_12.as_str());
-    }
-    if let Some(var_13) = &input.logging_configuration {
+    if let Some(var_14) = &input.image_tests_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("loggingConfiguration").start_object();
-        crate::protocol_serde::shape_pipeline_logging_configuration::ser_pipeline_logging_configuration(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_15 = object.key("imageTestsConfiguration").start_object();
+        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_15) = &input.name {
-        object.key("name").string(var_15.as_str());
+    if let Some(var_16) = &input.infrastructure_configuration_arn {
+        object.key("infrastructureConfigurationArn").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.schedule {
+    if let Some(var_17) = &input.logging_configuration {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("schedule").start_object();
-        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_18 = object.key("loggingConfiguration").start_object();
+        crate::protocol_serde::shape_pipeline_logging_configuration::ser_pipeline_logging_configuration(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_18) = &input.status {
-        object.key("status").string(var_18.as_str());
+    if let Some(var_19) = &input.name {
+        object.key("name").string(var_19.as_str());
     }
-    if let Some(var_19) = &input.tags {
+    if let Some(var_20) = &input.schedule {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("tags").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_21 = object.key("schedule").start_object();
+        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.status {
+        object.key("status").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("tags").start_object();
+        for (key_25, value_26) in var_23 {
             {
-                object_20.key(key_21.as_str()).string(value_22.as_str());
+                object_24.key(key_25.as_str()).string(value_26.as_str());
             }
         }
-        object_20.finish();
+        object_24.finish();
     }
-    if let Some(var_23) = &input.workflows {
-        let mut array_24 = object.key("workflows").start_array();
-        for item_25 in var_23 {
+    if let Some(var_27) = &input.workflows {
+        let mut array_28 = object.key("workflows").start_array();
+        for item_29 in var_27 {
             {
                 #[allow(unused_mut)]
-                let mut object_26 = array_24.value().start_object();
-                crate::protocol_serde::shape_workflow_configuration::ser_workflow_configuration(&mut object_26, item_25)?;
-                object_26.finish();
+                let mut object_30 = array_28.value().start_object();
+                crate::protocol_serde::shape_workflow_configuration::ser_workflow_configuration(&mut object_30, item_29)?;
+                object_30.finish();
             }
         }
-        array_24.finish();
+        array_28.finish();
     }
     Ok(())
 }

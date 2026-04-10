@@ -890,6 +890,8 @@ mod send_pipeline_execution_step_failure;
 
 mod send_pipeline_execution_step_success;
 
+mod start_cluster_health_check;
+
 mod start_edge_deployment_stage;
 
 mod start_inference_experiment;

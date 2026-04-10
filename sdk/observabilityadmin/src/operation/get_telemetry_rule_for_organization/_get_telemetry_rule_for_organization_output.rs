@@ -13,6 +13,12 @@ pub struct GetTelemetryRuleForOrganizationOutput {
     pub last_update_time_stamp: ::std::option::Option<i64>,
     /// <p>The configuration details of the organization telemetry rule.</p>
     pub telemetry_rule: ::std::option::Option<crate::types::TelemetryRule>,
+    /// <p>The Amazon Web Services Region where the organization telemetry rule was originally created. For replicated rules in spoke regions, this indicates the region that manages the rule. For rules created without multi-region scope, this field is not present.</p>
+    pub home_region: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether this organization telemetry rule is a replica that was created in this region through multi-region fan-out from the home region. Replicated rules cannot be directly updated or deleted in the spoke region. To modify a replicated rule, make changes in the home region.</p>
+    pub is_replicated: ::std::option::Option<bool>,
+    /// <p>A list of per-region replication statuses for the organization telemetry rule. Each entry indicates the replication status of the rule in a specific spoke region. This field is only present for rules created with multi-region scope.</p>
+    pub region_statuses: ::std::option::Option<::std::vec::Vec<crate::types::RegionStatus>>,
     _request_id: Option<String>,
 }
 impl GetTelemetryRuleForOrganizationOutput {
@@ -36,6 +42,20 @@ impl GetTelemetryRuleForOrganizationOutput {
     pub fn telemetry_rule(&self) -> ::std::option::Option<&crate::types::TelemetryRule> {
         self.telemetry_rule.as_ref()
     }
+    /// <p>The Amazon Web Services Region where the organization telemetry rule was originally created. For replicated rules in spoke regions, this indicates the region that manages the rule. For rules created without multi-region scope, this field is not present.</p>
+    pub fn home_region(&self) -> ::std::option::Option<&str> {
+        self.home_region.as_deref()
+    }
+    /// <p>Indicates whether this organization telemetry rule is a replica that was created in this region through multi-region fan-out from the home region. Replicated rules cannot be directly updated or deleted in the spoke region. To modify a replicated rule, make changes in the home region.</p>
+    pub fn is_replicated(&self) -> ::std::option::Option<bool> {
+        self.is_replicated
+    }
+    /// <p>A list of per-region replication statuses for the organization telemetry rule. Each entry indicates the replication status of the rule in a specific spoke region. This field is only present for rules created with multi-region scope.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.region_statuses.is_none()`.
+    pub fn region_statuses(&self) -> &[crate::types::RegionStatus] {
+        self.region_statuses.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetTelemetryRuleForOrganizationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -58,6 +78,9 @@ pub struct GetTelemetryRuleForOrganizationOutputBuilder {
     pub(crate) created_time_stamp: ::std::option::Option<i64>,
     pub(crate) last_update_time_stamp: ::std::option::Option<i64>,
     pub(crate) telemetry_rule: ::std::option::Option<crate::types::TelemetryRule>,
+    pub(crate) home_region: ::std::option::Option<::std::string::String>,
+    pub(crate) is_replicated: ::std::option::Option<bool>,
+    pub(crate) region_statuses: ::std::option::Option<::std::vec::Vec<crate::types::RegionStatus>>,
     _request_id: Option<String>,
 }
 impl GetTelemetryRuleForOrganizationOutputBuilder {
@@ -131,6 +154,54 @@ impl GetTelemetryRuleForOrganizationOutputBuilder {
     pub fn get_telemetry_rule(&self) -> &::std::option::Option<crate::types::TelemetryRule> {
         &self.telemetry_rule
     }
+    /// <p>The Amazon Web Services Region where the organization telemetry rule was originally created. For replicated rules in spoke regions, this indicates the region that manages the rule. For rules created without multi-region scope, this field is not present.</p>
+    pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.home_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the organization telemetry rule was originally created. For replicated rules in spoke regions, this indicates the region that manages the rule. For rules created without multi-region scope, this field is not present.</p>
+    pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.home_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the organization telemetry rule was originally created. For replicated rules in spoke regions, this indicates the region that manages the rule. For rules created without multi-region scope, this field is not present.</p>
+    pub fn get_home_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.home_region
+    }
+    /// <p>Indicates whether this organization telemetry rule is a replica that was created in this region through multi-region fan-out from the home region. Replicated rules cannot be directly updated or deleted in the spoke region. To modify a replicated rule, make changes in the home region.</p>
+    pub fn is_replicated(mut self, input: bool) -> Self {
+        self.is_replicated = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this organization telemetry rule is a replica that was created in this region through multi-region fan-out from the home region. Replicated rules cannot be directly updated or deleted in the spoke region. To modify a replicated rule, make changes in the home region.</p>
+    pub fn set_is_replicated(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_replicated = input;
+        self
+    }
+    /// <p>Indicates whether this organization telemetry rule is a replica that was created in this region through multi-region fan-out from the home region. Replicated rules cannot be directly updated or deleted in the spoke region. To modify a replicated rule, make changes in the home region.</p>
+    pub fn get_is_replicated(&self) -> &::std::option::Option<bool> {
+        &self.is_replicated
+    }
+    /// Appends an item to `region_statuses`.
+    ///
+    /// To override the contents of this collection use [`set_region_statuses`](Self::set_region_statuses).
+    ///
+    /// <p>A list of per-region replication statuses for the organization telemetry rule. Each entry indicates the replication status of the rule in a specific spoke region. This field is only present for rules created with multi-region scope.</p>
+    pub fn region_statuses(mut self, input: crate::types::RegionStatus) -> Self {
+        let mut v = self.region_statuses.unwrap_or_default();
+        v.push(input);
+        self.region_statuses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of per-region replication statuses for the organization telemetry rule. Each entry indicates the replication status of the rule in a specific spoke region. This field is only present for rules created with multi-region scope.</p>
+    pub fn set_region_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionStatus>>) -> Self {
+        self.region_statuses = input;
+        self
+    }
+    /// <p>A list of per-region replication statuses for the organization telemetry rule. Each entry indicates the replication status of the rule in a specific spoke region. This field is only present for rules created with multi-region scope.</p>
+    pub fn get_region_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionStatus>> {
+        &self.region_statuses
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -148,6 +219,9 @@ impl GetTelemetryRuleForOrganizationOutputBuilder {
             created_time_stamp: self.created_time_stamp,
             last_update_time_stamp: self.last_update_time_stamp,
             telemetry_rule: self.telemetry_rule,
+            home_region: self.home_region,
+            is_replicated: self.is_replicated,
+            region_statuses: self.region_statuses,
             _request_id: self._request_id,
         }
     }

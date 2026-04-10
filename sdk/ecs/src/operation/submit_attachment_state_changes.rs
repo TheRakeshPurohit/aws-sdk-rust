@@ -266,6 +266,8 @@ pub enum SubmitAttachmentStateChangesError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::types::error::ClientException),
+    /// <p>The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>. Amazon ECS clusters are Region specific.</p>
+    ClusterNotFoundException(crate::types::error::ClusterNotFoundException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     /// <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
@@ -306,6 +308,7 @@ impl SubmitAttachmentStateChangesError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ClusterNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -318,6 +321,10 @@ impl SubmitAttachmentStateChangesError {
     /// Returns `true` if the error kind is `SubmitAttachmentStateChangesError::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(self, Self::ClientException(_))
+    }
+    /// Returns `true` if the error kind is `SubmitAttachmentStateChangesError::ClusterNotFoundException`.
+    pub fn is_cluster_not_found_exception(&self) -> bool {
+        matches!(self, Self::ClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `SubmitAttachmentStateChangesError::InvalidParameterException`.
     pub fn is_invalid_parameter_exception(&self) -> bool {
@@ -333,6 +340,7 @@ impl ::std::error::Error for SubmitAttachmentStateChangesError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClientException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ClusterNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -344,6 +352,7 @@ impl ::std::fmt::Display for SubmitAttachmentStateChangesError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ClientException(_inner) => _inner.fmt(f),
+            Self::ClusterNotFoundException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::ServerException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -369,6 +378,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SubmitAttachm
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ClusterNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

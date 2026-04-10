@@ -25,6 +25,8 @@ pub struct CreateImagePipelineInput {
     pub status: ::std::option::Option<crate::types::PipelineStatus>,
     /// <p>The tags of the image pipeline.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub image_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Contains settings for vulnerability scans.</p>
@@ -81,6 +83,10 @@ impl CreateImagePipelineInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn image_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.image_tags.as_ref()
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -126,6 +132,7 @@ pub struct CreateImagePipelineInputBuilder {
     pub(crate) schedule: ::std::option::Option<crate::types::Schedule>,
     pub(crate) status: ::std::option::Option<crate::types::PipelineStatus>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) image_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
     pub(crate) workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
@@ -295,6 +302,26 @@ impl CreateImagePipelineInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Adds a key-value pair to `image_tags`.
+    ///
+    /// To override the contents of this collection use [`set_image_tags`](Self::set_image_tags).
+    ///
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn image_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.image_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.image_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn set_image_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.image_tags = input;
+        self
+    }
+    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    pub fn get_image_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.image_tags
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -389,6 +416,7 @@ impl CreateImagePipelineInputBuilder {
             schedule: self.schedule,
             status: self.status,
             tags: self.tags,
+            image_tags: self.image_tags,
             client_token: self.client_token,
             image_scanning_configuration: self.image_scanning_configuration,
             workflows: self.workflows,

@@ -50,6 +50,18 @@ where
                                     .transpose()?,
                             );
                         }
+                        "InstanceRequirements" => {
+                            builder = builder.set_instance_requirements(
+                                crate::protocol_serde::shape_cluster_instance_requirement_details::de_cluster_instance_requirement_details(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
+                        "InstanceTypeDetails" => {
+                            builder = builder.set_instance_type_details(
+                                crate::protocol_serde::shape_cluster_instance_type_details::de_cluster_instance_type_details(tokens, _value)?,
+                            );
+                        }
                         "LifeCycleConfig" => {
                             builder = builder.set_life_cycle_config(
                                 crate::protocol_serde::shape_cluster_life_cycle_config::de_cluster_life_cycle_config(tokens, _value)?,

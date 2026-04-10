@@ -263,6 +263,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeregisterTas
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeregisterTaskDefinitionError {
+    /// <p>You don't have authorization to perform the requested action.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::types::error::ClientException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
@@ -303,11 +305,16 @@ impl DeregisterTaskDefinitionError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `DeregisterTaskDefinitionError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeregisterTaskDefinitionError::ClientException`.
     pub fn is_client_exception(&self) -> bool {
@@ -325,6 +332,7 @@ impl DeregisterTaskDefinitionError {
 impl ::std::error::Error for DeregisterTaskDefinitionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClientException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServerException(_inner) => ::std::option::Option::Some(_inner),
@@ -335,6 +343,7 @@ impl ::std::error::Error for DeregisterTaskDefinitionError {
 impl ::std::fmt::Display for DeregisterTaskDefinitionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ClientException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::ServerException(_inner) => _inner.fmt(f),
@@ -359,6 +368,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeregisterTaskDefinitionErr
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeregisterTaskDefinitionError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

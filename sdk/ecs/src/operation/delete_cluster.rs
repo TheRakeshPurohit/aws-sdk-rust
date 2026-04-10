@@ -257,6 +257,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteCluster
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteClusterError {
+    /// <p>You don't have authorization to perform the requested action.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
     ClientException(crate::types::error::ClientException),
     /// <p>The cluster contains one or more capacity providers that prevent the requested operation. This exception occurs when you try to delete a cluster that still has active capacity providers, including Amazon ECS Managed Instances capacity providers. You must first delete all capacity providers from the cluster before you can delete the cluster itself.</p>
@@ -309,6 +311,7 @@ impl DeleteClusterError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClusterContainsCapacityProviderException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClusterContainsContainerInstancesException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -320,6 +323,10 @@ impl DeleteClusterError {
             Self::UpdateInProgressException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `DeleteClusterError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteClusterError::ClientException`.
     pub fn is_client_exception(&self) -> bool {
@@ -361,6 +368,7 @@ impl DeleteClusterError {
 impl ::std::error::Error for DeleteClusterError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClientException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterContainsCapacityProviderException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClusterContainsContainerInstancesException(_inner) => ::std::option::Option::Some(_inner),
@@ -377,6 +385,7 @@ impl ::std::error::Error for DeleteClusterError {
 impl ::std::fmt::Display for DeleteClusterError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ClientException(_inner) => _inner.fmt(f),
             Self::ClusterContainsCapacityProviderException(_inner) => _inner.fmt(f),
             Self::ClusterContainsContainerInstancesException(_inner) => _inner.fmt(f),
@@ -407,6 +416,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeleteClusterError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeleteClusterError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterContainsCapacityProviderException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClusterContainsContainerInstancesException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

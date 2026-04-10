@@ -268,142 +268,112 @@ impl GetMetricDataV2FluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters to apply to returned metrics. You can filter on the following resources:</p>
+    /// <p>Filtering is an operation that selects records that match a set of specified criteria. By narrowing the dataset before aggregation, filters ensure that only relevant records are included in the computation.</p>
+    /// <p><b>Filter keys</b></p>
+    /// <p>The following are valid filter keys for a <code>GetMetricDataV2</code> request:</p>
+    /// <p><code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ALIAS</code> | <code>BOT_ID</code> | <code>BOT_INTENT_NAME</code> | <code>BOT_LOCALE</code> | <code>BOT_VERSION</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>CAMPAIGN_EXCLUDED_EVENT_TYPE</code> | <code>CASE_STATUS</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>contact/segmentAttributes/connect:ValidationTestType</code> | <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> | <code>EVALUATION_QUESTION</code> | <code>EVALUATION_SECTION</code> | <code>EVALUATION_SOURCE</code> | <code>EVALUATOR_ID</code> | <code>FEATURE</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FORM_VERSION</code> | <code>INITIATING_FLOW</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>TEST_CASE</code> | <code>TEST_CASE_EXECUTION_FAILURE_REASON</code> | <code>TEST_CASE_EXECUTION_RESULT</code> | <code>TEST_CASE_EXECUTION_STATE</code></p><note>
+    /// <p>The following filter keys correspond to Amazon Connect resources and are used for authorizing requests. A <code>GetMetricDataV2</code> request requires at least one of these filters:</p>
+    /// <p><code>QUEUE</code>, <code>ROUTING_PROFILE</code>, <code>AGENT</code>, <code>AGENT_HIERARCHY_LEVEL_ONE</code>, <code>AGENT_HIERARCHY_LEVEL_TWO</code>, <code>AGENT_HIERARCHY_LEVEL_THREE</code>, <code>AGENT_HIERARCHY_LEVEL_FOUR</code>, <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>CAMPAIGN</code>, <code>EVALUATION_FORM</code>, <code>EVALUATOR_ID</code></p>
+    /// <p>You can use up to 5 filter keys in a single request, and up to 100 filter values across all filter keys.</p>
+    /// </note>
+    /// <p><b>Filter values</b></p>
     /// <ul>
     /// <li>
-    /// <p>Agents</p></li>
+    /// <p>VOICE, CHAT, TASK, and EMAIL are valid filter values for the <code>CHANNEL</code> filter key. They do not count towards the limit of 100 filter values. For example, a <code>GetMetricDataV2</code> request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 4 channel filters.</p></li>
     /// <li>
-    /// <p>Campaigns</p></li>
+    /// <p><code>contact_lens_conversational_analytics</code> is a valid filter value for the <code>FEATURE</code> filter key. It is available only for contacts analyzed by Contact Lens conversational analytics.</p></li>
     /// <li>
-    /// <p>Channels</p></li>
+    /// <p><code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid filter value examples (not exhaustive) for the <code>contact/segmentAttributes/connect:Subtype</code> filter key.</p></li>
     /// <li>
-    /// <p>Feature</p></li>
+    /// <p><code>ROUTING_STEP_EXPRESSION</code> accepts a filter value up to 3,000 characters in length. This filter is case-sensitive and order-sensitive. JSON string fields must be sorted in ascending order, and JSON array order must be preserved.</p></li>
     /// <li>
-    /// <p>Queues</p></li>
-    /// <li>
-    /// <p>Routing profiles</p></li>
-    /// <li>
-    /// <p>Routing step expression</p></li>
-    /// <li>
-    /// <p>User hierarchy groups</p></li>
-    /// </ul>
-    /// <p>At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.</p>
-    /// <p>For metrics for outbound campaigns analytics, you can also use campaigns to satisfy at least one filter requirement.</p>
-    /// <p>To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create a historical metrics report</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    /// <p>Note the following limits:</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_ HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code> ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ALIAS</code> | <code>BOT_ID</code> | <code>BOT_INTENT_NAME</code> | <code>BOT_LOCALE</code> | <code>BOT_VERSION</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code> CAMPAIGN_EXCLUDED_EVENT_TYPE</code> | <code>CASE_STATUS</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CHANNEL</code> | <code> contact/segmentAttributes/connect:Subtype</code> | <code>contact/segmentAttributes/connect:ValidationTestType</code> | <code> DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> | <code>EVALUATION_QUESTION</code> | <code>EVALUATION_SECTION</code> | <code>EVALUATION_SOURCE</code> | <code>EVALUATOR_ID</code> | <code>FEATURE</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FORM_VERSION</code> | <code>INITIATING_FLOW</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_ TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>TEST_CASE</code> | <code>TEST_ CASE_EXECUTION_FAILURE_REASON</code> | <code>TEST_CASE_EXECUTION_RESULT</code> | <code>TEST_CASE_EXECUTION_STATE</code></p></li>
-    /// <li>
-    /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
-    /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
-    /// <p><code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p>
-    /// <p><code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value up to 3000 length. This filter is case and order sensitive. JSON string fields must be sorted in ascending order and JSON array order should be kept as is.</p>
-    /// <p><code>Q_CONNECT_ENABLED</code>. TRUE and FALSE are the only valid filterValues for the <code>Q_CONNECT_ENABLED</code> filter key.</p>
+    /// <p>TRUE and FALSE are the only valid filter values for the <code>Q_CONNECT_ENABLED</code> filter key.</p>
     /// <ul>
     /// <li>
     /// <p>TRUE includes all contacts that had Connect AI Agents enabled as part of the flow.</p></li>
     /// <li>
-    /// <p>FALSE includes all contacts that did not have Connect AI Agents enabled as part of the flow</p></li>
+    /// <p>FALSE includes all contacts that did not have Connect AI Agents enabled as part of the flow.</p></li>
+    /// </ul></li>
     /// <li>
-    /// <p>EXPERIENCE_VALIDATION and FLOW_VALIDATION are the only valid filterValues for the contact/segmentAttributes/connect:ValidationTestType filter key</p></li>
-    /// </ul>
-    /// <p>This filter is available only for contact record-driven metrics.</p>
-    /// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html">Campaign</a> ARNs are valid <code>filterValues</code> for the <code>CAMPAIGN</code> filter key.</p></li>
+    /// <p><code>EXPERIENCE_VALIDATION</code> and <code>FLOW_VALIDATION</code> are the only valid filter values for the <code>contact/segmentAttributes/connect:ValidationTestType</code> filter key. This filter is available only for contact record-driven metrics.</p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html">Campaign</a> ARNs are valid filter values for the <code>CAMPAIGN</code> filter key.</p></li>
+    /// <li>
+    /// <p>To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create a historical metrics report</a> in the <i>Amazon Connect Administrator Guide</i>.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::FilterV2) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filters to apply to returned metrics. You can filter on the following resources:</p>
+    /// <p>Filtering is an operation that selects records that match a set of specified criteria. By narrowing the dataset before aggregation, filters ensure that only relevant records are included in the computation.</p>
+    /// <p><b>Filter keys</b></p>
+    /// <p>The following are valid filter keys for a <code>GetMetricDataV2</code> request:</p>
+    /// <p><code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ALIAS</code> | <code>BOT_ID</code> | <code>BOT_INTENT_NAME</code> | <code>BOT_LOCALE</code> | <code>BOT_VERSION</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>CAMPAIGN_EXCLUDED_EVENT_TYPE</code> | <code>CASE_STATUS</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>contact/segmentAttributes/connect:ValidationTestType</code> | <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> | <code>EVALUATION_QUESTION</code> | <code>EVALUATION_SECTION</code> | <code>EVALUATION_SOURCE</code> | <code>EVALUATOR_ID</code> | <code>FEATURE</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FORM_VERSION</code> | <code>INITIATING_FLOW</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>TEST_CASE</code> | <code>TEST_CASE_EXECUTION_FAILURE_REASON</code> | <code>TEST_CASE_EXECUTION_RESULT</code> | <code>TEST_CASE_EXECUTION_STATE</code></p><note>
+    /// <p>The following filter keys correspond to Amazon Connect resources and are used for authorizing requests. A <code>GetMetricDataV2</code> request requires at least one of these filters:</p>
+    /// <p><code>QUEUE</code>, <code>ROUTING_PROFILE</code>, <code>AGENT</code>, <code>AGENT_HIERARCHY_LEVEL_ONE</code>, <code>AGENT_HIERARCHY_LEVEL_TWO</code>, <code>AGENT_HIERARCHY_LEVEL_THREE</code>, <code>AGENT_HIERARCHY_LEVEL_FOUR</code>, <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>CAMPAIGN</code>, <code>EVALUATION_FORM</code>, <code>EVALUATOR_ID</code></p>
+    /// <p>You can use up to 5 filter keys in a single request, and up to 100 filter values across all filter keys.</p>
+    /// </note>
+    /// <p><b>Filter values</b></p>
     /// <ul>
     /// <li>
-    /// <p>Agents</p></li>
+    /// <p>VOICE, CHAT, TASK, and EMAIL are valid filter values for the <code>CHANNEL</code> filter key. They do not count towards the limit of 100 filter values. For example, a <code>GetMetricDataV2</code> request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 4 channel filters.</p></li>
     /// <li>
-    /// <p>Campaigns</p></li>
+    /// <p><code>contact_lens_conversational_analytics</code> is a valid filter value for the <code>FEATURE</code> filter key. It is available only for contacts analyzed by Contact Lens conversational analytics.</p></li>
     /// <li>
-    /// <p>Channels</p></li>
+    /// <p><code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid filter value examples (not exhaustive) for the <code>contact/segmentAttributes/connect:Subtype</code> filter key.</p></li>
     /// <li>
-    /// <p>Feature</p></li>
+    /// <p><code>ROUTING_STEP_EXPRESSION</code> accepts a filter value up to 3,000 characters in length. This filter is case-sensitive and order-sensitive. JSON string fields must be sorted in ascending order, and JSON array order must be preserved.</p></li>
     /// <li>
-    /// <p>Queues</p></li>
-    /// <li>
-    /// <p>Routing profiles</p></li>
-    /// <li>
-    /// <p>Routing step expression</p></li>
-    /// <li>
-    /// <p>User hierarchy groups</p></li>
-    /// </ul>
-    /// <p>At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.</p>
-    /// <p>For metrics for outbound campaigns analytics, you can also use campaigns to satisfy at least one filter requirement.</p>
-    /// <p>To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create a historical metrics report</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    /// <p>Note the following limits:</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_ HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code> ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ALIAS</code> | <code>BOT_ID</code> | <code>BOT_INTENT_NAME</code> | <code>BOT_LOCALE</code> | <code>BOT_VERSION</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code> CAMPAIGN_EXCLUDED_EVENT_TYPE</code> | <code>CASE_STATUS</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CHANNEL</code> | <code> contact/segmentAttributes/connect:Subtype</code> | <code>contact/segmentAttributes/connect:ValidationTestType</code> | <code> DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> | <code>EVALUATION_QUESTION</code> | <code>EVALUATION_SECTION</code> | <code>EVALUATION_SOURCE</code> | <code>EVALUATOR_ID</code> | <code>FEATURE</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FORM_VERSION</code> | <code>INITIATING_FLOW</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_ TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>TEST_CASE</code> | <code>TEST_ CASE_EXECUTION_FAILURE_REASON</code> | <code>TEST_CASE_EXECUTION_RESULT</code> | <code>TEST_CASE_EXECUTION_STATE</code></p></li>
-    /// <li>
-    /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
-    /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
-    /// <p><code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p>
-    /// <p><code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value up to 3000 length. This filter is case and order sensitive. JSON string fields must be sorted in ascending order and JSON array order should be kept as is.</p>
-    /// <p><code>Q_CONNECT_ENABLED</code>. TRUE and FALSE are the only valid filterValues for the <code>Q_CONNECT_ENABLED</code> filter key.</p>
+    /// <p>TRUE and FALSE are the only valid filter values for the <code>Q_CONNECT_ENABLED</code> filter key.</p>
     /// <ul>
     /// <li>
     /// <p>TRUE includes all contacts that had Connect AI Agents enabled as part of the flow.</p></li>
     /// <li>
-    /// <p>FALSE includes all contacts that did not have Connect AI Agents enabled as part of the flow</p></li>
+    /// <p>FALSE includes all contacts that did not have Connect AI Agents enabled as part of the flow.</p></li>
+    /// </ul></li>
     /// <li>
-    /// <p>EXPERIENCE_VALIDATION and FLOW_VALIDATION are the only valid filterValues for the contact/segmentAttributes/connect:ValidationTestType filter key</p></li>
-    /// </ul>
-    /// <p>This filter is available only for contact record-driven metrics.</p>
-    /// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html">Campaign</a> ARNs are valid <code>filterValues</code> for the <code>CAMPAIGN</code> filter key.</p></li>
+    /// <p><code>EXPERIENCE_VALIDATION</code> and <code>FLOW_VALIDATION</code> are the only valid filter values for the <code>contact/segmentAttributes/connect:ValidationTestType</code> filter key. This filter is available only for contact record-driven metrics.</p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html">Campaign</a> ARNs are valid filter values for the <code>CAMPAIGN</code> filter key.</p></li>
+    /// <li>
+    /// <p>To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create a historical metrics report</a> in the <i>Amazon Connect Administrator Guide</i>.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FilterV2>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The filters to apply to returned metrics. You can filter on the following resources:</p>
+    /// <p>Filtering is an operation that selects records that match a set of specified criteria. By narrowing the dataset before aggregation, filters ensure that only relevant records are included in the computation.</p>
+    /// <p><b>Filter keys</b></p>
+    /// <p>The following are valid filter keys for a <code>GetMetricDataV2</code> request:</p>
+    /// <p><code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ALIAS</code> | <code>BOT_ID</code> | <code>BOT_INTENT_NAME</code> | <code>BOT_LOCALE</code> | <code>BOT_VERSION</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>CAMPAIGN_EXCLUDED_EVENT_TYPE</code> | <code>CASE_STATUS</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>contact/segmentAttributes/connect:ValidationTestType</code> | <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> | <code>EVALUATION_QUESTION</code> | <code>EVALUATION_SECTION</code> | <code>EVALUATION_SOURCE</code> | <code>EVALUATOR_ID</code> | <code>FEATURE</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FORM_VERSION</code> | <code>INITIATING_FLOW</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>TEST_CASE</code> | <code>TEST_CASE_EXECUTION_FAILURE_REASON</code> | <code>TEST_CASE_EXECUTION_RESULT</code> | <code>TEST_CASE_EXECUTION_STATE</code></p><note>
+    /// <p>The following filter keys correspond to Amazon Connect resources and are used for authorizing requests. A <code>GetMetricDataV2</code> request requires at least one of these filters:</p>
+    /// <p><code>QUEUE</code>, <code>ROUTING_PROFILE</code>, <code>AGENT</code>, <code>AGENT_HIERARCHY_LEVEL_ONE</code>, <code>AGENT_HIERARCHY_LEVEL_TWO</code>, <code>AGENT_HIERARCHY_LEVEL_THREE</code>, <code>AGENT_HIERARCHY_LEVEL_FOUR</code>, <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>CAMPAIGN</code>, <code>EVALUATION_FORM</code>, <code>EVALUATOR_ID</code></p>
+    /// <p>You can use up to 5 filter keys in a single request, and up to 100 filter values across all filter keys.</p>
+    /// </note>
+    /// <p><b>Filter values</b></p>
     /// <ul>
     /// <li>
-    /// <p>Agents</p></li>
+    /// <p>VOICE, CHAT, TASK, and EMAIL are valid filter values for the <code>CHANNEL</code> filter key. They do not count towards the limit of 100 filter values. For example, a <code>GetMetricDataV2</code> request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 4 channel filters.</p></li>
     /// <li>
-    /// <p>Campaigns</p></li>
+    /// <p><code>contact_lens_conversational_analytics</code> is a valid filter value for the <code>FEATURE</code> filter key. It is available only for contacts analyzed by Contact Lens conversational analytics.</p></li>
     /// <li>
-    /// <p>Channels</p></li>
+    /// <p><code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid filter value examples (not exhaustive) for the <code>contact/segmentAttributes/connect:Subtype</code> filter key.</p></li>
     /// <li>
-    /// <p>Feature</p></li>
+    /// <p><code>ROUTING_STEP_EXPRESSION</code> accepts a filter value up to 3,000 characters in length. This filter is case-sensitive and order-sensitive. JSON string fields must be sorted in ascending order, and JSON array order must be preserved.</p></li>
     /// <li>
-    /// <p>Queues</p></li>
-    /// <li>
-    /// <p>Routing profiles</p></li>
-    /// <li>
-    /// <p>Routing step expression</p></li>
-    /// <li>
-    /// <p>User hierarchy groups</p></li>
-    /// </ul>
-    /// <p>At least one filter must be passed from queues, routing profiles, agents, or user hierarchy groups.</p>
-    /// <p>For metrics for outbound campaigns analytics, you can also use campaigns to satisfy at least one filter requirement.</p>
-    /// <p>To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create a historical metrics report</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    /// <p>Note the following limits:</p>
-    /// <ul>
-    /// <li>
-    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_ HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code> ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ALIAS</code> | <code>BOT_ID</code> | <code>BOT_INTENT_NAME</code> | <code>BOT_LOCALE</code> | <code>BOT_VERSION</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code> CAMPAIGN_EXCLUDED_EVENT_TYPE</code> | <code>CASE_STATUS</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CHANNEL</code> | <code> contact/segmentAttributes/connect:Subtype</code> | <code>contact/segmentAttributes/connect:ValidationTestType</code> | <code> DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> | <code>EVALUATION_QUESTION</code> | <code>EVALUATION_SECTION</code> | <code>EVALUATION_SOURCE</code> | <code>EVALUATOR_ID</code> | <code>FEATURE</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FORM_VERSION</code> | <code>INITIATING_FLOW</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_ TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>TEST_CASE</code> | <code>TEST_ CASE_EXECUTION_FAILURE_REASON</code> | <code>TEST_CASE_EXECUTION_RESULT</code> | <code>TEST_CASE_EXECUTION_STATE</code></p></li>
-    /// <li>
-    /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
-    /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
-    /// <p><code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>, and <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive) for the <code>contact/segmentAttributes/connect:Subtype filter</code> key.</p>
-    /// <p><code>ROUTING_STEP_EXPRESSION</code> is a valid filter key with a filter value up to 3000 length. This filter is case and order sensitive. JSON string fields must be sorted in ascending order and JSON array order should be kept as is.</p>
-    /// <p><code>Q_CONNECT_ENABLED</code>. TRUE and FALSE are the only valid filterValues for the <code>Q_CONNECT_ENABLED</code> filter key.</p>
+    /// <p>TRUE and FALSE are the only valid filter values for the <code>Q_CONNECT_ENABLED</code> filter key.</p>
     /// <ul>
     /// <li>
     /// <p>TRUE includes all contacts that had Connect AI Agents enabled as part of the flow.</p></li>
     /// <li>
-    /// <p>FALSE includes all contacts that did not have Connect AI Agents enabled as part of the flow</p></li>
+    /// <p>FALSE includes all contacts that did not have Connect AI Agents enabled as part of the flow.</p></li>
+    /// </ul></li>
     /// <li>
-    /// <p>EXPERIENCE_VALIDATION and FLOW_VALIDATION are the only valid filterValues for the contact/segmentAttributes/connect:ValidationTestType filter key</p></li>
-    /// </ul>
-    /// <p>This filter is available only for contact record-driven metrics.</p>
-    /// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html">Campaign</a> ARNs are valid <code>filterValues</code> for the <code>CAMPAIGN</code> filter key.</p></li>
+    /// <p><code>EXPERIENCE_VALIDATION</code> and <code>FLOW_VALIDATION</code> are the only valid filter values for the <code>contact/segmentAttributes/connect:ValidationTestType</code> filter key. This filter is available only for contact record-driven metrics.</p></li>
+    /// <li>
+    /// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html">Campaign</a> ARNs are valid filter values for the <code>CAMPAIGN</code> filter key.</p></li>
+    /// <li>
+    /// <p>To filter by phone number, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create a historical metrics report</a> in the <i>Amazon Connect Administrator Guide</i>.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilterV2>> {
         self.inner.get_filters()
@@ -714,7 +684,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Active AI Agents</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#active-ai-agents">Active AI Agents</a></p>
     /// </dd>
     /// <dt>
     /// AI_HANDOFF_RATE
@@ -722,7 +692,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Handoff Rate</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoff-rate">AI Handoff Rate</a></p>
     /// </dd>
     /// <dt>
     /// AI_HANDOFFS
@@ -730,7 +700,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Handoff Count</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoffs">AI Handoffs</a></p>
     /// </dd>
     /// <dt>
     /// AI_AGENT_INVOCATION_SUCCESS
@@ -738,7 +708,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Agent Invocation Success Count</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocation-success">AI Agent Invocation Success</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -748,7 +718,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Agent Invocation Success Rate</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocation-success-rate">AI Agent Invocation Success Rate</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -758,7 +728,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Agent Name Version, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Agent Invocation Count</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocations">AI Agent Invocations</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -768,7 +738,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Response Completion Rate</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-response-completion-rate">AI Response Completion Rate</a></p>
     /// </dd>
     /// <dt>
     /// AI_INVOLVED_CONTACTS
@@ -776,7 +746,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Contacts</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-involved-contacts">AI Involved Contacts</a></p>
     /// </dd>
     /// <dt>
     /// AI_PROMPT_INVOCATION_SUCCESS
@@ -784,7 +754,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Prompt Invocation Success Count</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocation-success">AI Prompt Invocation Success</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -794,7 +764,37 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Prompt Invocation Success Rate</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocation-success-rate">AI Prompt Invocation Success Rate</a></p><note>
+    /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// AI_PROMPT_INVOCATIONS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocations">AI Prompt Invocations</a></p><note>
+    /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// AI_TOOL_INVOCATION_SUCCESS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocation-success">AI Tool Invocation Success</a></p><note>
+    /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// AI_TOOL_INVOCATION_SUCCESS_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocation-success-rate">AI Tool Invocation Success Rate</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -804,7 +804,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Tool Invocation Count</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocations">AI Tool Invocations</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -814,7 +814,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Average AI Agent Conversation Turns</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-agent-conversation-turns">Average AI Agent Conversation Turns</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -824,7 +824,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Conversation Turns</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-conversation-turns">Average AI Conversation Turns</a></p>
     /// </dd>
     /// <dt>
     /// AVG_AI_PROMPT_INVOCATION_LATENCY
@@ -832,7 +832,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Milliseconds</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Average AI Prompt Invocation Latency</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-prompt-invocation-latency">Average AI Prompt Invocation Latency</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -842,7 +842,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Milliseconds</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Average AI Tool Invocation Latency</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-tool-invocation-latency">Average AI Tool Invocation Latency</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -852,7 +852,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Use Case, Channel, Knowledge Base Name, Queue, Routing Profile</p>
-    /// <p>UI name: KnowledgeBase Reference Count</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#knowledge-content-references">Knowledge Content References</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENT_ENGAGEMENT_RATE
@@ -860,7 +860,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Proactive Intent Engagement Rate</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-engagement-rate">Proactive Intent Engagement Rate</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENT_RESPONSE_RATE
@@ -868,7 +868,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Proactive Intent Response Rate</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-response-rate">Proactive Intent Response Rate</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENTS_ANSWERED
@@ -876,7 +876,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Proactive Intents Answered</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-answered">Proactive Intents Answered</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENTS_DETECTED
@@ -884,21 +884,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Proactive Intents Detected</p>
-    /// </dd>
-    /// <dt>
-    /// </dt>
-    /// <dd>
-    /// <p>Unit:</p>
-    /// <p>Valid groupings and filters:</p>
-    /// <p>UI name:</p>
-    /// </dd>
-    /// <dt>
-    /// </dt>
-    /// <dd>
-    /// <p>Unit:</p>
-    /// <p>Valid groupings and filters:</p>
-    /// <p>UI name:</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-detected">Proactive Intents Detected</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENTS_ENGAGED
@@ -906,7 +892,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: UI name:</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-engaged">Proactive Intents Engaged</a></p>
     /// </dd>
     /// <dt>
     /// AVG_HOLD_TIME
@@ -2018,7 +2004,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Active AI Agents</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#active-ai-agents">Active AI Agents</a></p>
     /// </dd>
     /// <dt>
     /// AI_HANDOFF_RATE
@@ -2026,7 +2012,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Handoff Rate</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoff-rate">AI Handoff Rate</a></p>
     /// </dd>
     /// <dt>
     /// AI_HANDOFFS
@@ -2034,7 +2020,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Handoff Count</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoffs">AI Handoffs</a></p>
     /// </dd>
     /// <dt>
     /// AI_AGENT_INVOCATION_SUCCESS
@@ -2042,7 +2028,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Agent Invocation Success Count</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocation-success">AI Agent Invocation Success</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -2052,7 +2038,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Agent Invocation Success Rate</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocation-success-rate">AI Agent Invocation Success Rate</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -2062,7 +2048,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Agent Name Version, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Agent Invocation Count</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocations">AI Agent Invocations</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -2072,7 +2058,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Response Completion Rate</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-response-completion-rate">AI Response Completion Rate</a></p>
     /// </dd>
     /// <dt>
     /// AI_INVOLVED_CONTACTS
@@ -2080,7 +2066,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Contacts</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-involved-contacts">AI Involved Contacts</a></p>
     /// </dd>
     /// <dt>
     /// AI_PROMPT_INVOCATION_SUCCESS
@@ -2088,7 +2074,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Prompt Invocation Success Count</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocation-success">AI Prompt Invocation Success</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -2098,7 +2084,37 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Prompt Invocation Success Rate</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocation-success-rate">AI Prompt Invocation Success Rate</a></p><note>
+    /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// AI_PROMPT_INVOCATIONS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocations">AI Prompt Invocations</a></p><note>
+    /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// AI_TOOL_INVOCATION_SUCCESS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocation-success">AI Tool Invocation Success</a></p><note>
+    /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// AI_TOOL_INVOCATION_SUCCESS_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocation-success-rate">AI Tool Invocation Success Rate</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -2108,7 +2124,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Tool Invocation Count</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocations">AI Tool Invocations</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -2118,7 +2134,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Average AI Agent Conversation Turns</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-agent-conversation-turns">Average AI Agent Conversation Turns</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -2128,7 +2144,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Conversation Turns</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-conversation-turns">Average AI Conversation Turns</a></p>
     /// </dd>
     /// <dt>
     /// AVG_AI_PROMPT_INVOCATION_LATENCY
@@ -2136,7 +2152,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Milliseconds</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Average AI Prompt Invocation Latency</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-prompt-invocation-latency">Average AI Prompt Invocation Latency</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -2146,7 +2162,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Milliseconds</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Average AI Tool Invocation Latency</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-tool-invocation-latency">Average AI Tool Invocation Latency</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -2156,7 +2172,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Use Case, Channel, Knowledge Base Name, Queue, Routing Profile</p>
-    /// <p>UI name: KnowledgeBase Reference Count</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#knowledge-content-references">Knowledge Content References</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENT_ENGAGEMENT_RATE
@@ -2164,7 +2180,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Proactive Intent Engagement Rate</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-engagement-rate">Proactive Intent Engagement Rate</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENT_RESPONSE_RATE
@@ -2172,7 +2188,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Proactive Intent Response Rate</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-response-rate">Proactive Intent Response Rate</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENTS_ANSWERED
@@ -2180,7 +2196,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Proactive Intents Answered</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-answered">Proactive Intents Answered</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENTS_DETECTED
@@ -2188,21 +2204,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Proactive Intents Detected</p>
-    /// </dd>
-    /// <dt>
-    /// </dt>
-    /// <dd>
-    /// <p>Unit:</p>
-    /// <p>Valid groupings and filters:</p>
-    /// <p>UI name:</p>
-    /// </dd>
-    /// <dt>
-    /// </dt>
-    /// <dd>
-    /// <p>Unit:</p>
-    /// <p>Valid groupings and filters:</p>
-    /// <p>UI name:</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-detected">Proactive Intents Detected</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENTS_ENGAGED
@@ -2210,7 +2212,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: UI name:</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-engaged">Proactive Intents Engaged</a></p>
     /// </dd>
     /// <dt>
     /// AVG_HOLD_TIME
@@ -3322,7 +3324,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Active AI Agents</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#active-ai-agents">Active AI Agents</a></p>
     /// </dd>
     /// <dt>
     /// AI_HANDOFF_RATE
@@ -3330,7 +3332,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Handoff Rate</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoff-rate">AI Handoff Rate</a></p>
     /// </dd>
     /// <dt>
     /// AI_HANDOFFS
@@ -3338,7 +3340,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Handoff Count</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoffs">AI Handoffs</a></p>
     /// </dd>
     /// <dt>
     /// AI_AGENT_INVOCATION_SUCCESS
@@ -3346,7 +3348,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Agent Invocation Success Count</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocation-success">AI Agent Invocation Success</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -3356,7 +3358,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Agent Invocation Success Rate</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocation-success-rate">AI Agent Invocation Success Rate</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -3366,7 +3368,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Agent Name Version, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Agent Invocation Count</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocations">AI Agent Invocations</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -3376,7 +3378,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Response Completion Rate</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-response-completion-rate">AI Response Completion Rate</a></p>
     /// </dd>
     /// <dt>
     /// AI_INVOLVED_CONTACTS
@@ -3384,7 +3386,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Contacts</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-involved-contacts">AI Involved Contacts</a></p>
     /// </dd>
     /// <dt>
     /// AI_PROMPT_INVOCATION_SUCCESS
@@ -3392,7 +3394,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Prompt Invocation Success Count</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocation-success">AI Prompt Invocation Success</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -3402,7 +3404,37 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Prompt Invocation Success Rate</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocation-success-rate">AI Prompt Invocation Success Rate</a></p><note>
+    /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// AI_PROMPT_INVOCATIONS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocations">AI Prompt Invocations</a></p><note>
+    /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// AI_TOOL_INVOCATION_SUCCESS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocation-success">AI Tool Invocation Success</a></p><note>
+    /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
+    /// </note>
+    /// </dd>
+    /// <dt>
+    /// AI_TOOL_INVOCATION_SUCCESS_RATE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocation-success-rate">AI Tool Invocation Success Rate</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -3412,7 +3444,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Tool Invocation Count</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocations">AI Tool Invocations</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -3422,7 +3454,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Average AI Agent Conversation Turns</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-agent-conversation-turns">Average AI Agent Conversation Turns</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -3432,7 +3464,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: AI Conversation Turns</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-conversation-turns">Average AI Conversation Turns</a></p>
     /// </dd>
     /// <dt>
     /// AVG_AI_PROMPT_INVOCATION_LATENCY
@@ -3440,7 +3472,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Milliseconds</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Average AI Prompt Invocation Latency</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-prompt-invocation-latency">Average AI Prompt Invocation Latency</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -3450,7 +3482,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Milliseconds</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Average AI Tool Invocation Latency</p><note>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-tool-invocation-latency">Average AI Tool Invocation Latency</a></p><note>
     /// <p>AI Agent Name Version is not a valid filter but a valid grouping.</p>
     /// </note>
     /// </dd>
@@ -3460,7 +3492,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Use Case, Channel, Knowledge Base Name, Queue, Routing Profile</p>
-    /// <p>UI name: KnowledgeBase Reference Count</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#knowledge-content-references">Knowledge Content References</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENT_ENGAGEMENT_RATE
@@ -3468,7 +3500,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Proactive Intent Engagement Rate</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-engagement-rate">Proactive Intent Engagement Rate</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENT_RESPONSE_RATE
@@ -3476,7 +3508,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Percent</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Proactive Intent Response Rate</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-response-rate">Proactive Intent Response Rate</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENTS_ANSWERED
@@ -3484,7 +3516,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Proactive Intents Answered</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-answered">Proactive Intents Answered</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENTS_DETECTED
@@ -3492,21 +3524,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: Proactive Intents Detected</p>
-    /// </dd>
-    /// <dt>
-    /// </dt>
-    /// <dd>
-    /// <p>Unit:</p>
-    /// <p>Valid groupings and filters:</p>
-    /// <p>UI name:</p>
-    /// </dd>
-    /// <dt>
-    /// </dt>
-    /// <dd>
-    /// <p>Unit:</p>
-    /// <p>Valid groupings and filters:</p>
-    /// <p>UI name:</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-detected">Proactive Intents Detected</a></p>
     /// </dd>
     /// <dt>
     /// PROACTIVE_INTENTS_ENGAGED
@@ -3514,7 +3532,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <dd>
     /// <p>Unit: Count</p>
     /// <p>Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile</p>
-    /// <p>UI name: UI name:</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-engaged">Proactive Intents Engaged</a></p>
     /// </dd>
     /// <dt>
     /// AVG_HOLD_TIME

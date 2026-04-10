@@ -26,6 +26,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "startTimecode" => {
+                            builder = builder.set_start_timecode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "tracks" => {
                             builder = builder.set_tracks(crate::protocol_serde::shape_list_of_track::de_list_of_track(tokens, _value)?);
                         }

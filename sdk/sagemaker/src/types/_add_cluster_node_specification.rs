@@ -8,6 +8,10 @@ pub struct AddClusterNodeSpecification {
     pub instance_group_name: ::std::string::String,
     /// <p>The number of nodes to add to the specified instance group. The total number of nodes across all instance groups in a single request cannot exceed 50.</p>
     pub increment_target_count_by: i32,
+    /// <p>The availability zones in which to add nodes. Use this to target node placement in specific availability zones within a flexible instance group.</p>
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The instance types to use when adding nodes. Use this to target specific instance types within a flexible instance group.</p>
+    pub instance_types: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceType>>,
 }
 impl AddClusterNodeSpecification {
     /// <p>The name of the instance group to which you want to add nodes.</p>
@@ -18,6 +22,18 @@ impl AddClusterNodeSpecification {
     /// <p>The number of nodes to add to the specified instance group. The total number of nodes across all instance groups in a single request cannot exceed 50.</p>
     pub fn increment_target_count_by(&self) -> i32 {
         self.increment_target_count_by
+    }
+    /// <p>The availability zones in which to add nodes. Use this to target node placement in specific availability zones within a flexible instance group.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
+    pub fn availability_zones(&self) -> &[::std::string::String] {
+        self.availability_zones.as_deref().unwrap_or_default()
+    }
+    /// <p>The instance types to use when adding nodes. Use this to target specific instance types within a flexible instance group.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_types.is_none()`.
+    pub fn instance_types(&self) -> &[crate::types::ClusterInstanceType] {
+        self.instance_types.as_deref().unwrap_or_default()
     }
 }
 impl AddClusterNodeSpecification {
@@ -33,6 +49,8 @@ impl AddClusterNodeSpecification {
 pub struct AddClusterNodeSpecificationBuilder {
     pub(crate) instance_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) increment_target_count_by: ::std::option::Option<i32>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceType>>,
 }
 impl AddClusterNodeSpecificationBuilder {
     /// <p>The name of the instance group to which you want to add nodes.</p>
@@ -65,6 +83,46 @@ impl AddClusterNodeSpecificationBuilder {
     pub fn get_increment_target_count_by(&self) -> &::std::option::Option<i32> {
         &self.increment_target_count_by
     }
+    /// Appends an item to `availability_zones`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+    ///
+    /// <p>The availability zones in which to add nodes. Use this to target node placement in specific availability zones within a flexible instance group.</p>
+    pub fn availability_zones(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.availability_zones.unwrap_or_default();
+        v.push(input.into());
+        self.availability_zones = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The availability zones in which to add nodes. Use this to target node placement in specific availability zones within a flexible instance group.</p>
+    pub fn set_availability_zones(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.availability_zones = input;
+        self
+    }
+    /// <p>The availability zones in which to add nodes. Use this to target node placement in specific availability zones within a flexible instance group.</p>
+    pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zones
+    }
+    /// Appends an item to `instance_types`.
+    ///
+    /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
+    ///
+    /// <p>The instance types to use when adding nodes. Use this to target specific instance types within a flexible instance group.</p>
+    pub fn instance_types(mut self, input: crate::types::ClusterInstanceType) -> Self {
+        let mut v = self.instance_types.unwrap_or_default();
+        v.push(input);
+        self.instance_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The instance types to use when adding nodes. Use this to target specific instance types within a flexible instance group.</p>
+    pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceType>>) -> Self {
+        self.instance_types = input;
+        self
+    }
+    /// <p>The instance types to use when adding nodes. Use this to target specific instance types within a flexible instance group.</p>
+    pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceType>> {
+        &self.instance_types
+    }
     /// Consumes the builder and constructs a [`AddClusterNodeSpecification`](crate::types::AddClusterNodeSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_group_name`](crate::types::builders::AddClusterNodeSpecificationBuilder::instance_group_name)
@@ -83,6 +141,8 @@ impl AddClusterNodeSpecificationBuilder {
                     "increment_target_count_by was not specified but it is required when building AddClusterNodeSpecification",
                 )
             })?,
+            availability_zones: self.availability_zones,
+            instance_types: self.instance_types,
         })
     }
 }

@@ -33,6 +33,8 @@ pub use crate::types::_telemetry_type::TelemetryType;
 
 pub use crate::types::_telemetry_destination_configuration::TelemetryDestinationConfiguration;
 
+pub use crate::types::_region_status::RegionStatus;
+
 pub use crate::types::_centralization_rule_summary::CentralizationRuleSummary;
 
 pub use crate::types::_telemetry_state::TelemetryState;
@@ -198,6 +200,8 @@ mod _pipeline_output_error;
 mod _record;
 
 mod _record_format;
+
+mod _region_status;
 
 mod _resource_type;
 

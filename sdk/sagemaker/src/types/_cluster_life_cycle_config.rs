@@ -41,7 +41,6 @@ impl ClusterLifeCycleConfigBuilder {
     /// <p>An Amazon S3 bucket path where your lifecycle scripts are stored.</p><important>
     /// <p>Make sure that the S3 bucket path starts with <code>s3://sagemaker-</code>. The <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-prerequisites.html#sagemaker-hyperpod-prerequisites-iam-role-for-hyperpod">IAM role for SageMaker HyperPod</a> has the managed <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-cluster.html"> <code>AmazonSageMakerClusterInstanceRolePolicy</code> </a> attached, which allows access to S3 buckets with the specific prefix <code>sagemaker-</code>.</p>
     /// </important>
-    /// This field is required.
     pub fn source_s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_s3_uri = ::std::option::Option::Some(input.into());
         self
@@ -60,7 +59,6 @@ impl ClusterLifeCycleConfigBuilder {
         &self.source_s3_uri
     }
     /// <p>The file name of the entrypoint script of lifecycle scripts under <code>SourceS3Uri</code>. This entrypoint script runs during cluster creation.</p>
-    /// This field is required.
     pub fn on_create(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.on_create = ::std::option::Option::Some(input.into());
         self
