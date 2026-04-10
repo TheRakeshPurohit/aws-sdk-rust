@@ -2710,6 +2710,10 @@ source_hash = 'f3ac9c811bb96166d445472d93438ea6fab84ad6998bd4c11346cff9cabc148e'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd507c9eecb3d559fd9efaa58d1f6f1a441526cac0cef82c8edfa21eb62cb7d67'
+
+[release]
+tag = 'release-2026-04-10'
+
 [release.crates]
 aws-sdk-connect = '1.168.0'
 aws-sdk-devopsagent = '1.2.0'
