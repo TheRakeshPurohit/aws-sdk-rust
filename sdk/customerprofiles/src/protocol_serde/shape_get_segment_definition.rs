@@ -171,6 +171,9 @@ pub(crate) fn de_get_segment_definition(
                 "SegmentGroups" => {
                     builder = builder.set_segment_groups(crate::protocol_serde::shape_segment_group::de_segment_group(tokens, _value)?);
                 }
+                "SegmentSort" => {
+                    builder = builder.set_segment_sort(crate::protocol_serde::shape_segment_sort::de_segment_sort(tokens, _value)?);
+                }
                 "SegmentSqlQuery" => {
                     builder = builder.set_segment_sql_query(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

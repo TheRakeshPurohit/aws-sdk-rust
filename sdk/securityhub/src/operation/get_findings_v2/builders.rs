@@ -22,7 +22,10 @@ impl crate::operation::get_findings_v2::builders::GetFindingsV2InputBuilder {
 }
 /// Fluent builder constructing a request to `GetFindingsV2`.
 ///
-/// <p>Return a list of findings that match the specified criteria. <code>GetFindings</code> and <code>GetFindingsV2</code> both use <code>securityhub:GetFindings</code> in the <code>Action</code> element of an IAM policy statement. You must have permission to perform the <code>securityhub:GetFindings</code> action.</p>
+/// <p>Returns a list of findings that match the specified criteria.</p>
+/// <p>You can use the <code>Scopes</code> parameter to define the data boundary for the query. Currently, <code>Scopes</code> supports <code>AwsOrganizations</code>, which lets you retrieve findings from your entire organization or from specific organizational units. Only the delegated administrator account can use <code>Scopes</code>.</p>
+/// <p>You can use the <code>Filters</code> parameter to refine results based on finding attributes. You can use <code>Scopes</code> and <code>Filters</code> independently or together. When both are provided, <code>Scopes</code> narrows the data set first, and then <code>Filters</code> refines results within that scoped data set.</p>
+/// <p><code>GetFindings</code> and <code>GetFindingsV2</code> both use <code>securityhub:GetFindings</code> in the <code>Action</code> element of an IAM policy statement. You must have permission to perform the <code>securityhub:GetFindings</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFindingsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,6 +130,26 @@ impl GetFindingsV2FluentBuilder {
     /// <p>The finding attributes used to define a condition to filter the returned OCSF findings. You can filter up to 10 composite filters. For each filter type inside of a composite filter, you can provide up to 20 filters.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::OcsfFindingFilters> {
         self.inner.get_filters()
+    }
+    /// <p>Limits the results to findings from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees findings from all accounts across the entire organization. Other accounts see only their own findings.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn scopes(mut self, input: crate::types::FindingScopes) -> Self {
+        self.inner = self.inner.scopes(input);
+        self
+    }
+    /// <p>Limits the results to findings from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees findings from all accounts across the entire organization. Other accounts see only their own findings.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn set_scopes(mut self, input: ::std::option::Option<crate::types::FindingScopes>) -> Self {
+        self.inner = self.inner.set_scopes(input);
+        self
+    }
+    /// <p>Limits the results to findings from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees findings from all accounts across the entire organization. Other accounts see only their own findings.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn get_scopes(&self) -> &::std::option::Option<crate::types::FindingScopes> {
+        self.inner.get_scopes()
     }
     ///
     /// Appends an item to `SortCriteria`.

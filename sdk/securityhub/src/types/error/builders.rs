@@ -23,4 +23,8 @@ pub use crate::types::error::_resource_conflict_exception::ResourceConflictExcep
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
 
+pub use crate::types::error::_organizational_unit_not_found_exception::OrganizationalUnitNotFoundExceptionBuilder;
+
+pub use crate::types::error::_organization_not_found_exception::OrganizationNotFoundExceptionBuilder;
+
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionBuilder;

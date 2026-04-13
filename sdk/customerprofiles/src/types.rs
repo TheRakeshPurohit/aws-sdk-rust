@@ -49,6 +49,8 @@ pub use crate::types::_recommender_config::RecommenderConfig;
 
 pub use crate::types::_segment_group::SegmentGroup;
 
+pub use crate::types::_segment_sort::SegmentSort;
+
 pub use crate::types::_segment_group_structure::SegmentGroupStructure;
 
 pub use crate::types::_data_format::DataFormat;
@@ -261,6 +263,8 @@ pub use crate::types::_contact_preference::ContactPreference;
 
 pub use crate::types::_group::Group;
 
+pub use crate::types::_sort_attribute::SortAttribute;
+
 pub use crate::types::_field_content_type::FieldContentType;
 
 pub use crate::types::_content_type::ContentType;
@@ -302,6 +306,12 @@ pub use crate::types::_batch::Batch;
 pub use crate::types::_contact_type::ContactType;
 
 pub use crate::types::_event_parameters::EventParameters;
+
+pub use crate::types::_segment_sort_data_type::SegmentSortDataType;
+
+pub use crate::types::_segment_sort_order::SegmentSortOrder;
+
+pub use crate::types::_sort_attribute_type::SortAttributeType;
 
 pub use crate::types::_training_metric_name::TrainingMetricName;
 
@@ -687,11 +697,21 @@ mod _segment_group_structure;
 
 mod _segment_snapshot_status;
 
+mod _segment_sort;
+
+mod _segment_sort_data_type;
+
+mod _segment_sort_order;
+
 mod _segment_type;
 
 mod _service_now_connector_operator;
 
 mod _service_now_source_properties;
+
+mod _sort_attribute;
+
+mod _sort_attribute_type;
 
 mod _source_connector_properties;
 

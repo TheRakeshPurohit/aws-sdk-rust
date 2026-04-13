@@ -1,10 +1,10 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "tests/no-default-features",
     "tests/webassembly-no-os",
-    "tests/telemetry",
-    "tests/webassembly-wstd"
+    "tests/no-default-features",
+    "tests/webassembly-wstd",
+    "tests/telemetry"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -221,6 +221,7 @@ members = [
     "sdk/inspector",
     "sdk/inspector2",
     "sdk/inspectorscan",
+    "sdk/interconnect",
     "sdk/internetmonitor",
     "sdk/invoicing",
     "sdk/iot",

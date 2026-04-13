@@ -1850,6 +1850,36 @@ impl From<crate::operation::get_monitor::GetMonitorError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_monitor_settings::GetMonitorSettingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_monitor_settings::GetMonitorSettingsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_monitor_settings::GetMonitorSettingsError> for Error {
+    fn from(err: crate::operation::get_monitor_settings::GetMonitorSettingsError) -> Self {
+        match err {
+            crate::operation::get_monitor_settings::GetMonitorSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_monitor_settings::GetMonitorSettingsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_monitor_settings::GetMonitorSettingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_monitor_settings::GetMonitorSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_monitor_settings::GetMonitorSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_monitor_settings::GetMonitorSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_queue::GetQueueError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3490,6 +3520,40 @@ impl From<crate::operation::update_monitor::UpdateMonitorError> for Error {
             crate::operation::update_monitor::UpdateMonitorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_monitor::UpdateMonitorError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_monitor::UpdateMonitorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_monitor_settings::UpdateMonitorSettingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_monitor_settings::UpdateMonitorSettingsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_monitor_settings::UpdateMonitorSettingsError> for Error {
+    fn from(err: crate::operation::update_monitor_settings::UpdateMonitorSettingsError) -> Self {
+        match err {
+            crate::operation::update_monitor_settings::UpdateMonitorSettingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_monitor_settings::UpdateMonitorSettingsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_monitor_settings::UpdateMonitorSettingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_monitor_settings::UpdateMonitorSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_monitor_settings::UpdateMonitorSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_monitor_settings::UpdateMonitorSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

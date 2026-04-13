@@ -49,6 +49,8 @@ pub use crate::types::_provider_detail::ProviderDetail;
 
 pub use crate::types::_aws_security_finding_identifier::AwsSecurityFindingIdentifier;
 
+pub use crate::types::_finding_scopes::FindingScopes;
+
 pub use crate::types::_sort_order::SortOrder;
 
 pub use crate::types::_findings_trends_filters::FindingsTrendsFilters;
@@ -58,6 +60,8 @@ pub use crate::types::_granularity_field::GranularityField;
 pub use crate::types::_ocsf_finding_filters::OcsfFindingFilters;
 
 pub use crate::types::_insight_results::InsightResults;
+
+pub use crate::types::_resource_scopes::ResourceScopes;
 
 pub use crate::types::_resources_trends_filters::ResourcesTrendsFilters;
 
@@ -276,6 +280,8 @@ pub use crate::types::_connector_auth_status::ConnectorAuthStatus;
 pub use crate::types::_finding_history_update_source::FindingHistoryUpdateSource;
 
 pub use crate::types::_group_by_field::GroupByField;
+
+pub use crate::types::_aws_organization_scope::AwsOrganizationScope;
 
 pub use crate::types::_findings_trends_composite_filter::FindingsTrendsCompositeFilter;
 
@@ -2423,6 +2429,8 @@ mod _aws_open_search_service_domain_service_software_options_details;
 
 mod _aws_open_search_service_domain_vpc_options_details;
 
+mod _aws_organization_scope;
+
 mod _aws_rds_db_cluster_associated_role;
 
 mod _aws_rds_db_cluster_details;
@@ -2797,6 +2805,8 @@ mod _finding_provider_fields;
 
 mod _finding_provider_severity;
 
+mod _finding_scopes;
+
 mod _findings_trends_composite_filter;
 
 mod _findings_trends_filters;
@@ -3008,6 +3018,8 @@ mod _resource_group_by_field;
 mod _resource_group_by_rule;
 
 mod _resource_result;
+
+mod _resource_scopes;
 
 mod _resource_severity_breakdown;
 

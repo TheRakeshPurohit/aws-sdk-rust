@@ -9,9 +9,9 @@ pub struct BatchUpdateFindingsV2Input {
     pub finding_identifiers: ::std::option::Option<::std::vec::Vec<crate::types::OcsfFindingIdentifier>>,
     /// <p>The updated value for a user provided comment about the finding. Minimum character length 1. Maximum character length 512.</p>
     pub comment: ::std::option::Option<::std::string::String>,
-    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
     pub severity_id: ::std::option::Option<i32>,
-    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
     pub status_id: ::std::option::Option<i32>,
 }
 impl BatchUpdateFindingsV2Input {
@@ -31,11 +31,11 @@ impl BatchUpdateFindingsV2Input {
     pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
-    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
     pub fn severity_id(&self) -> ::std::option::Option<i32> {
         self.severity_id
     }
-    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
     pub fn status_id(&self) -> ::std::option::Option<i32> {
         self.status_id
     }
@@ -112,31 +112,31 @@ impl BatchUpdateFindingsV2InputBuilder {
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }
-    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
     pub fn severity_id(mut self, input: i32) -> Self {
         self.severity_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
     pub fn set_severity_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.severity_id = input;
         self
     }
-    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
     pub fn get_severity_id(&self) -> &::std::option::Option<i32> {
         &self.severity_id
     }
-    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
     pub fn status_id(mut self, input: i32) -> Self {
         self.status_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
     pub fn set_status_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status_id = input;
         self
     }
-    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
     pub fn get_status_id(&self) -> &::std::option::Option<i32> {
         &self.status_id
     }

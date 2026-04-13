@@ -485,6 +485,8 @@ pub(crate) mod shape_segment_group;
 
 pub(crate) mod shape_segment_group_structure;
 
+pub(crate) mod shape_segment_sort;
+
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_training_metrics_list;
@@ -610,6 +612,10 @@ pub(crate) mod shape_s3_exporting_location;
 pub(crate) mod shape_segment_definition_item;
 
 pub(crate) mod shape_segment_group_list;
+
+pub(crate) mod shape_sort_attribute;
+
+pub(crate) mod shape_sort_attribute_list;
 
 pub(crate) mod shape_source_flow_config;
 

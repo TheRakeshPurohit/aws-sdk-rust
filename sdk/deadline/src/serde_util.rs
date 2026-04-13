@@ -557,6 +557,15 @@ pub(crate) fn get_monitor_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_monitor_settings_output_output_correct_errors(
+    mut builder: crate::operation::get_monitor_settings::builders::GetMonitorSettingsOutputBuilder,
+) -> crate::operation::get_monitor_settings::builders::GetMonitorSettingsOutputBuilder {
+    if builder.settings.is_none() {
+        builder.settings = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_queue_output_output_correct_errors(
     mut builder: crate::operation::get_queue::builders::GetQueueOutputBuilder,
 ) -> crate::operation::get_queue::builders::GetQueueOutputBuilder {

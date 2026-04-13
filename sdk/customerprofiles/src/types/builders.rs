@@ -33,6 +33,8 @@ pub use crate::types::_recommender_config::RecommenderConfigBuilder;
 
 pub use crate::types::_segment_group::SegmentGroupBuilder;
 
+pub use crate::types::_segment_sort::SegmentSortBuilder;
+
 pub use crate::types::_segment_group_structure::SegmentGroupStructureBuilder;
 
 pub use crate::types::_consolidation::ConsolidationBuilder;
@@ -192,6 +194,8 @@ pub use crate::types::_period::PeriodBuilder;
 pub use crate::types::_contact_preference::ContactPreferenceBuilder;
 
 pub use crate::types::_group::GroupBuilder;
+
+pub use crate::types::_sort_attribute::SortAttributeBuilder;
 
 pub use crate::types::_object_type_key::ObjectTypeKeyBuilder;
 

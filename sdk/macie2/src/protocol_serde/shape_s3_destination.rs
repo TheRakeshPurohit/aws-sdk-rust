@@ -22,6 +22,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "expectedBucketOwner" => {
+                            builder = builder.set_expected_bucket_owner(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "keyPrefix" => {
                             builder = builder.set_key_prefix(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -60,11 +67,14 @@ pub fn ser_s3_destination(
     if let Some(var_1) = &input.bucket_name {
         object.key("bucketName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.key_prefix {
-        object.key("keyPrefix").string(var_2.as_str());
+    if let Some(var_2) = &input.expected_bucket_owner {
+        object.key("expectedBucketOwner").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_3.as_str());
+    if let Some(var_3) = &input.key_prefix {
+        object.key("keyPrefix").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_4.as_str());
     }
     Ok(())
 }

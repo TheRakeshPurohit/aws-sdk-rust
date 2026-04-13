@@ -17,6 +17,10 @@ pub enum Error {
     InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account or throttling limits. The error code describes the limit exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>The request failed because one or more organizations specified in the request don't exist or don't belong to the caller's organization.</p>
+    OrganizationNotFoundException(crate::types::error::OrganizationNotFoundException),
+    /// <p>The request failed because one or more organizational units specified in the request don't exist within the caller's organization.</p>
+    OrganizationalUnitNotFoundException(crate::types::error::OrganizationalUnitNotFoundException),
     /// <p>The resource specified in the request conflicts with an existing resource.</p>
     ResourceConflictException(crate::types::error::ResourceConflictException),
     /// <p>The request was rejected because it conflicts with the resource's availability. For example, you tried to update a security control that's currently in the <code>UPDATING</code> state.</p>
@@ -48,6 +52,8 @@ impl ::std::fmt::Display for Error {
             Error::InvalidAccessException(inner) => inner.fmt(f),
             Error::InvalidInputException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::OrganizationNotFoundException(inner) => inner.fmt(f),
+            Error::OrganizationalUnitNotFoundException(inner) => inner.fmt(f),
             Error::ResourceConflictException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
@@ -82,6 +88,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidAccessException(inner) => inner.meta(),
             Self::InvalidInputException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
+            Self::OrganizationNotFoundException(inner) => inner.meta(),
+            Self::OrganizationalUnitNotFoundException(inner) => inner.meta(),
             Self::ResourceConflictException(inner) => inner.meta(),
             Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
@@ -2239,6 +2247,12 @@ impl From<crate::operation::get_finding_statistics_v2::GetFindingStatisticsV2Err
             crate::operation::get_finding_statistics_v2::GetFindingStatisticsV2Error::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::get_finding_statistics_v2::GetFindingStatisticsV2Error::OrganizationalUnitNotFoundException(inner) => {
+                Error::OrganizationalUnitNotFoundException(inner)
+            }
+            crate::operation::get_finding_statistics_v2::GetFindingStatisticsV2Error::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
             crate::operation::get_finding_statistics_v2::GetFindingStatisticsV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_finding_statistics_v2::GetFindingStatisticsV2Error::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_finding_statistics_v2::GetFindingStatisticsV2Error::Unhandled(inner) => Error::Unhandled(inner),
@@ -2292,6 +2306,12 @@ impl From<crate::operation::get_findings_v2::GetFindingsV2Error> for Error {
             crate::operation::get_findings_v2::GetFindingsV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_findings_v2::GetFindingsV2Error::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::get_findings_v2::GetFindingsV2Error::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_findings_v2::GetFindingsV2Error::OrganizationalUnitNotFoundException(inner) => {
+                Error::OrganizationalUnitNotFoundException(inner)
+            }
+            crate::operation::get_findings_v2::GetFindingsV2Error::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
             crate::operation::get_findings_v2::GetFindingsV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_findings_v2::GetFindingsV2Error::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_findings_v2::GetFindingsV2Error::Unhandled(inner) => Error::Unhandled(inner),
@@ -2456,6 +2476,12 @@ impl From<crate::operation::get_resources_statistics_v2::GetResourcesStatisticsV
             crate::operation::get_resources_statistics_v2::GetResourcesStatisticsV2Error::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::get_resources_statistics_v2::GetResourcesStatisticsV2Error::OrganizationalUnitNotFoundException(inner) => {
+                Error::OrganizationalUnitNotFoundException(inner)
+            }
+            crate::operation::get_resources_statistics_v2::GetResourcesStatisticsV2Error::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
             crate::operation::get_resources_statistics_v2::GetResourcesStatisticsV2Error::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -2518,6 +2544,12 @@ impl From<crate::operation::get_resources_v2::GetResourcesV2Error> for Error {
             crate::operation::get_resources_v2::GetResourcesV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_resources_v2::GetResourcesV2Error::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::get_resources_v2::GetResourcesV2Error::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_resources_v2::GetResourcesV2Error::OrganizationalUnitNotFoundException(inner) => {
+                Error::OrganizationalUnitNotFoundException(inner)
+            }
+            crate::operation::get_resources_v2::GetResourcesV2Error::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
             crate::operation::get_resources_v2::GetResourcesV2Error::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_resources_v2::GetResourcesV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_resources_v2::GetResourcesV2Error::ValidationException(inner) => Error::ValidationException(inner),
@@ -3706,6 +3738,8 @@ impl ::std::error::Error for Error {
             Error::InvalidAccessException(inner) => inner.source(),
             Error::InvalidInputException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
+            Error::OrganizationNotFoundException(inner) => inner.source(),
+            Error::OrganizationalUnitNotFoundException(inner) => inner.source(),
             Error::ResourceConflictException(inner) => inner.source(),
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
@@ -3726,6 +3760,8 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidAccessException(e) => e.request_id(),
             Self::InvalidInputException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
+            Self::OrganizationNotFoundException(e) => e.request_id(),
+            Self::OrganizationalUnitNotFoundException(e) => e.request_id(),
             Self::ResourceConflictException(e) => e.request_id(),
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),

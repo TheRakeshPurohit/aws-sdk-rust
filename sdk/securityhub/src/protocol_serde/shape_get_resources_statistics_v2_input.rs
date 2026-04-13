@@ -21,8 +21,14 @@ pub fn ser_get_resources_statistics_v2_input_input(
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_6) = &input.sort_order {
-        object.key("SortOrder").string(var_6.as_str());
+    if let Some(var_6) = &input.scopes {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("Scopes").start_object();
+        crate::protocol_serde::shape_resource_scopes::ser_resource_scopes(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.sort_order {
+        object.key("SortOrder").string(var_8.as_str());
     }
     Ok(())
 }

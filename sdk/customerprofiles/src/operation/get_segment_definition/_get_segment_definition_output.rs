@@ -11,6 +11,8 @@ pub struct GetSegmentDefinitionOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The segment criteria associated with this definition.</p>
     pub segment_groups: ::std::option::Option<crate::types::SegmentGroup>,
+    /// <p>The segment sort.</p>
+    pub segment_sort: ::std::option::Option<crate::types::SegmentSort>,
     /// <p>The arn of the segment definition.</p>
     pub segment_definition_arn: ::std::string::String,
     /// <p>The timestamp of when the segment definition was created.</p>
@@ -41,6 +43,10 @@ impl GetSegmentDefinitionOutput {
     /// <p>The segment criteria associated with this definition.</p>
     pub fn segment_groups(&self) -> ::std::option::Option<&crate::types::SegmentGroup> {
         self.segment_groups.as_ref()
+    }
+    /// <p>The segment sort.</p>
+    pub fn segment_sort(&self) -> ::std::option::Option<&crate::types::SegmentSort> {
+        self.segment_sort.as_ref()
     }
     /// <p>The arn of the segment definition.</p>
     pub fn segment_definition_arn(&self) -> &str {
@@ -73,6 +79,7 @@ impl ::std::fmt::Debug for GetSegmentDefinitionOutput {
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("segment_groups", &"*** Sensitive Data Redacted ***");
+        formatter.field("segment_sort", &"*** Sensitive Data Redacted ***");
         formatter.field("segment_definition_arn", &self.segment_definition_arn);
         formatter.field("created_at", &self.created_at);
         formatter.field("tags", &self.tags);
@@ -102,6 +109,7 @@ pub struct GetSegmentDefinitionOutputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) segment_groups: ::std::option::Option<crate::types::SegmentGroup>,
+    pub(crate) segment_sort: ::std::option::Option<crate::types::SegmentSort>,
     pub(crate) segment_definition_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -165,6 +173,20 @@ impl GetSegmentDefinitionOutputBuilder {
     /// <p>The segment criteria associated with this definition.</p>
     pub fn get_segment_groups(&self) -> &::std::option::Option<crate::types::SegmentGroup> {
         &self.segment_groups
+    }
+    /// <p>The segment sort.</p>
+    pub fn segment_sort(mut self, input: crate::types::SegmentSort) -> Self {
+        self.segment_sort = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The segment sort.</p>
+    pub fn set_segment_sort(mut self, input: ::std::option::Option<crate::types::SegmentSort>) -> Self {
+        self.segment_sort = input;
+        self
+    }
+    /// <p>The segment sort.</p>
+    pub fn get_segment_sort(&self) -> &::std::option::Option<crate::types::SegmentSort> {
+        &self.segment_sort
     }
     /// <p>The arn of the segment definition.</p>
     /// This field is required.
@@ -270,6 +292,7 @@ impl GetSegmentDefinitionOutputBuilder {
             display_name: self.display_name,
             description: self.description,
             segment_groups: self.segment_groups,
+            segment_sort: self.segment_sort,
             segment_definition_arn: self.segment_definition_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "segment_definition_arn",
@@ -291,6 +314,7 @@ impl ::std::fmt::Debug for GetSegmentDefinitionOutputBuilder {
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("segment_groups", &"*** Sensitive Data Redacted ***");
+        formatter.field("segment_sort", &"*** Sensitive Data Redacted ***");
         formatter.field("segment_definition_arn", &self.segment_definition_arn);
         formatter.field("created_at", &self.created_at);
         formatter.field("tags", &self.tags);

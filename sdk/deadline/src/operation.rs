@@ -169,6 +169,9 @@ pub mod get_limit;
 /// Types for the `GetMonitor` operation.
 pub mod get_monitor;
 
+/// Types for the `GetMonitorSettings` operation.
+pub mod get_monitor_settings;
+
 /// Types for the `GetQueue` operation.
 pub mod get_queue;
 
@@ -333,6 +336,9 @@ pub mod update_limit;
 
 /// Types for the `UpdateMonitor` operation.
 pub mod update_monitor;
+
+/// Types for the `UpdateMonitorSettings` operation.
+pub mod update_monitor_settings;
 
 /// Types for the `UpdateQueue` operation.
 pub mod update_queue;

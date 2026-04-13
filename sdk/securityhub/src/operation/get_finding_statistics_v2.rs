@@ -269,6 +269,10 @@ pub enum GetFindingStatisticsV2Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request has failed due to an internal failure of the service.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The request failed because one or more organizational units specified in the request don't exist within the caller's organization.</p>
+    OrganizationalUnitNotFoundException(crate::types::error::OrganizationalUnitNotFoundException),
+    /// <p>The request failed because one or more organizations specified in the request don't exist or don't belong to the caller's organization.</p>
+    OrganizationNotFoundException(crate::types::error::OrganizationNotFoundException),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request has failed validation because it's missing required fields or has invalid inputs.</p>
@@ -309,6 +313,8 @@ impl GetFindingStatisticsV2Error {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OrganizationalUnitNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::OrganizationNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -326,6 +332,14 @@ impl GetFindingStatisticsV2Error {
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
     }
+    /// Returns `true` if the error kind is `GetFindingStatisticsV2Error::OrganizationalUnitNotFoundException`.
+    pub fn is_organizational_unit_not_found_exception(&self) -> bool {
+        matches!(self, Self::OrganizationalUnitNotFoundException(_))
+    }
+    /// Returns `true` if the error kind is `GetFindingStatisticsV2Error::OrganizationNotFoundException`.
+    pub fn is_organization_not_found_exception(&self) -> bool {
+        matches!(self, Self::OrganizationNotFoundException(_))
+    }
     /// Returns `true` if the error kind is `GetFindingStatisticsV2Error::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
@@ -341,6 +355,8 @@ impl ::std::error::Error for GetFindingStatisticsV2Error {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::OrganizationalUnitNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::OrganizationNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -353,6 +369,8 @@ impl ::std::fmt::Display for GetFindingStatisticsV2Error {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::OrganizationalUnitNotFoundException(_inner) => _inner.fmt(f),
+            Self::OrganizationNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -379,6 +397,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetFindingSta
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OrganizationalUnitNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::OrganizationNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

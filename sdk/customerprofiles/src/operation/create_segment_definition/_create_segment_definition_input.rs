@@ -15,6 +15,8 @@ pub struct CreateSegmentDefinitionInput {
     pub segment_groups: ::std::option::Option<crate::types::SegmentGroup>,
     /// <p>The segment SQL query.</p>
     pub segment_sql_query: ::std::option::Option<::std::string::String>,
+    /// <p>The segment sort.</p>
+    pub segment_sort: ::std::option::Option<crate::types::SegmentSort>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -43,6 +45,10 @@ impl CreateSegmentDefinitionInput {
     pub fn segment_sql_query(&self) -> ::std::option::Option<&str> {
         self.segment_sql_query.as_deref()
     }
+    /// <p>The segment sort.</p>
+    pub fn segment_sort(&self) -> ::std::option::Option<&crate::types::SegmentSort> {
+        self.segment_sort.as_ref()
+    }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -57,6 +63,7 @@ impl ::std::fmt::Debug for CreateSegmentDefinitionInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("segment_groups", &"*** Sensitive Data Redacted ***");
         formatter.field("segment_sql_query", &"*** Sensitive Data Redacted ***");
+        formatter.field("segment_sort", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -78,6 +85,7 @@ pub struct CreateSegmentDefinitionInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) segment_groups: ::std::option::Option<crate::types::SegmentGroup>,
     pub(crate) segment_sql_query: ::std::option::Option<::std::string::String>,
+    pub(crate) segment_sort: ::std::option::Option<crate::types::SegmentSort>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateSegmentDefinitionInputBuilder {
@@ -168,6 +176,20 @@ impl CreateSegmentDefinitionInputBuilder {
     pub fn get_segment_sql_query(&self) -> &::std::option::Option<::std::string::String> {
         &self.segment_sql_query
     }
+    /// <p>The segment sort.</p>
+    pub fn segment_sort(mut self, input: crate::types::SegmentSort) -> Self {
+        self.segment_sort = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The segment sort.</p>
+    pub fn set_segment_sort(mut self, input: ::std::option::Option<crate::types::SegmentSort>) -> Self {
+        self.segment_sort = input;
+        self
+    }
+    /// <p>The segment sort.</p>
+    pub fn get_segment_sort(&self) -> &::std::option::Option<crate::types::SegmentSort> {
+        &self.segment_sort
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -202,6 +224,7 @@ impl CreateSegmentDefinitionInputBuilder {
             description: self.description,
             segment_groups: self.segment_groups,
             segment_sql_query: self.segment_sql_query,
+            segment_sort: self.segment_sort,
             tags: self.tags,
         })
     }
@@ -215,6 +238,7 @@ impl ::std::fmt::Debug for CreateSegmentDefinitionInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("segment_groups", &"*** Sensitive Data Redacted ***");
         formatter.field("segment_sql_query", &"*** Sensitive Data Redacted ***");
+        formatter.field("segment_sort", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

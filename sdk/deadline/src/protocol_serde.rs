@@ -135,6 +135,8 @@ pub(crate) mod shape_get_limit;
 
 pub(crate) mod shape_get_monitor;
 
+pub(crate) mod shape_get_monitor_settings;
+
 pub(crate) mod shape_get_queue;
 
 pub(crate) mod shape_get_queue_environment;
@@ -244,6 +246,8 @@ pub(crate) mod shape_update_job;
 pub(crate) mod shape_update_limit;
 
 pub(crate) mod shape_update_monitor;
+
+pub(crate) mod shape_update_monitor_settings;
 
 pub(crate) mod shape_update_queue;
 
@@ -362,6 +366,8 @@ pub(crate) mod shape_update_job_input;
 pub(crate) mod shape_update_limit_input;
 
 pub(crate) mod shape_update_monitor_input;
+
+pub(crate) mod shape_update_monitor_settings_input;
 
 pub(crate) mod shape_update_queue_environment_input;
 
@@ -544,6 +550,8 @@ pub(crate) mod shape_session_action_summaries;
 pub(crate) mod shape_session_summaries;
 
 pub(crate) mod shape_sessions_statistics_resources;
+
+pub(crate) mod shape_settings_map;
 
 pub(crate) mod shape_statistics_list;
 

@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`display_name(Option<String>)`](crate::operation::get_segment_definition::GetSegmentDefinitionOutput::display_name): <p>The display name of the segment definition.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_segment_definition::GetSegmentDefinitionOutput::description): <p>The description of the segment definition.</p>
     ///   - [`segment_groups(Option<SegmentGroup>)`](crate::operation::get_segment_definition::GetSegmentDefinitionOutput::segment_groups): <p>The segment criteria associated with this definition.</p>
+    ///   - [`segment_sort(Option<SegmentSort>)`](crate::operation::get_segment_definition::GetSegmentDefinitionOutput::segment_sort): <p>The segment sort.</p>
     ///   - [`segment_definition_arn(String)`](crate::operation::get_segment_definition::GetSegmentDefinitionOutput::segment_definition_arn): <p>The arn of the segment definition.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_segment_definition::GetSegmentDefinitionOutput::created_at): <p>The timestamp of when the segment definition was created.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_segment_definition::GetSegmentDefinitionOutput::tags): <p>The tags used to organize, track, or control access for this resource.</p>

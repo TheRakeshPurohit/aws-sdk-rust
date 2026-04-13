@@ -18,17 +18,23 @@ pub fn ser_get_findings_v2_input_input(
     if let Some(var_4) = &input.next_token {
         object.key("NextToken").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.sort_criteria {
-        let mut array_6 = object.key("SortCriteria").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.scopes {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("Scopes").start_object();
+        crate::protocol_serde::shape_finding_scopes::ser_finding_scopes(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.sort_criteria {
+        let mut array_8 = object.key("SortCriteria").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_sort_criterion::ser_sort_criterion(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_sort_criterion::ser_sort_criterion(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_6.finish();
+        array_8.finish();
     }
     Ok(())
 }

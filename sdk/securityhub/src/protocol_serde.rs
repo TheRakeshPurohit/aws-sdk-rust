@@ -355,6 +355,10 @@ pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_list_configuration_policy_associations_input;
 
+pub(crate) mod shape_organization_not_found_exception;
+
+pub(crate) mod shape_organizational_unit_not_found_exception;
+
 pub(crate) mod shape_register_connector_v2_input;
 
 pub(crate) mod shape_resource_conflict_exception;
@@ -457,6 +461,8 @@ pub(crate) mod shape_finding_aggregator_list;
 
 pub(crate) mod shape_finding_history_record_list;
 
+pub(crate) mod shape_finding_scopes;
+
 pub(crate) mod shape_findings_trends_filters;
 
 pub(crate) mod shape_group_by_results;
@@ -506,6 +512,8 @@ pub(crate) mod shape_provider_update_configuration;
 pub(crate) mod shape_related_finding;
 
 pub(crate) mod shape_resource_group_by_rule;
+
+pub(crate) mod shape_resource_scopes;
 
 pub(crate) mod shape_resources;
 
@@ -582,6 +590,8 @@ pub(crate) mod shape_automation_rules_finding_fields_update_v2;
 pub(crate) mod shape_automation_rules_metadata;
 
 pub(crate) mod shape_automation_rules_metadata_v2;
+
+pub(crate) mod shape_aws_organization_scope;
 
 pub(crate) mod shape_batch_update_findings_unprocessed_finding;
 

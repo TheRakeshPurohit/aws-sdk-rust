@@ -357,6 +357,8 @@ mod get_limit;
 
 mod get_monitor;
 
+mod get_monitor_settings;
+
 mod get_queue;
 
 mod get_queue_environment;
@@ -466,6 +468,8 @@ mod update_job;
 mod update_limit;
 
 mod update_monitor;
+
+mod update_monitor_settings;
 
 mod update_queue;
 

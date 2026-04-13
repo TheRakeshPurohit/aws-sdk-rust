@@ -62,6 +62,42 @@ pub fn de_get_findings_v2_http_error(
             }
             tmp
         }),
+        "OrganizationalUnitNotFoundException" => crate::operation::get_findings_v2::GetFindingsV2Error::OrganizationalUnitNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OrganizationalUnitNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_organizational_unit_not_found_exception::de_organizational_unit_not_found_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_findings_v2::GetFindingsV2Error::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "OrganizationNotFoundException" => crate::operation::get_findings_v2::GetFindingsV2Error::OrganizationNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::OrganizationNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_organization_not_found_exception::de_organization_not_found_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::get_findings_v2::GetFindingsV2Error::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ThrottlingException" => crate::operation::get_findings_v2::GetFindingsV2Error::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {

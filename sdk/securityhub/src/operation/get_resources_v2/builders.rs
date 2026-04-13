@@ -23,6 +23,8 @@ impl crate::operation::get_resources_v2::builders::GetResourcesV2InputBuilder {
 /// Fluent builder constructing a request to `GetResourcesV2`.
 ///
 /// <p>Returns a list of resources.</p>
+/// <p>You can use the <code>Scopes</code> parameter to define the data boundary for the query. Currently, <code>Scopes</code> supports <code>AwsOrganizations</code>, which lets you retrieve resources from your entire organization or from specific organizational units. Only the delegated administrator account can use <code>Scopes</code>.</p>
+/// <p>You can use the <code>Filters</code> parameter to refine results based on resource attributes. You can use <code>Scopes</code> and <code>Filters</code> independently or together. When both are provided, <code>Scopes</code> narrows the data set first, and then <code>Filters</code> refines results within that scoped data set.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourcesV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,22 +130,42 @@ impl GetResourcesV2FluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::ResourcesFilters> {
         self.inner.get_filters()
     }
+    /// <p>Limits the results to resources from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees resources from all accounts across the entire organization. Other accounts see only their own resources.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn scopes(mut self, input: crate::types::ResourceScopes) -> Self {
+        self.inner = self.inner.scopes(input);
+        self
+    }
+    /// <p>Limits the results to resources from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees resources from all accounts across the entire organization. Other accounts see only their own resources.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn set_scopes(mut self, input: ::std::option::Option<crate::types::ResourceScopes>) -> Self {
+        self.inner = self.inner.set_scopes(input);
+        self
+    }
+    /// <p>Limits the results to resources from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees resources from all accounts across the entire organization. Other accounts see only their own resources.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn get_scopes(&self) -> &::std::option::Option<crate::types::ResourceScopes> {
+        self.inner.get_scopes()
+    }
     ///
     /// Appends an item to `SortCriteria`.
     ///
     /// To override the contents of this collection use [`set_sort_criteria`](Self::set_sort_criteria).
     ///
-    /// <p>The finding attributes used to sort the list of returned findings.</p>
+    /// <p>The resource attributes used to sort the list of returned resources.</p>
     pub fn sort_criteria(mut self, input: crate::types::SortCriterion) -> Self {
         self.inner = self.inner.sort_criteria(input);
         self
     }
-    /// <p>The finding attributes used to sort the list of returned findings.</p>
+    /// <p>The resource attributes used to sort the list of returned resources.</p>
     pub fn set_sort_criteria(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }
-    /// <p>The finding attributes used to sort the list of returned findings.</p>
+    /// <p>The resource attributes used to sort the list of returned resources.</p>
     pub fn get_sort_criteria(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>> {
         self.inner.get_sort_criteria()
     }

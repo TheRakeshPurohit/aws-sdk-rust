@@ -521,6 +521,13 @@ pub(crate) fn filter_correct_errors(mut builder: crate::types::builders::FilterB
     builder
 }
 
+pub(crate) fn segment_sort_correct_errors(mut builder: crate::types::builders::SegmentSortBuilder) -> crate::types::builders::SegmentSortBuilder {
+    if builder.attributes.is_none() {
+        builder.attributes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_object_type_attribute_statistics_percentiles_correct_errors(
     mut builder: crate::types::builders::GetObjectTypeAttributeStatisticsPercentilesBuilder,
 ) -> crate::types::builders::GetObjectTypeAttributeStatisticsPercentilesBuilder {
@@ -956,6 +963,18 @@ pub(crate) fn s3_exporting_config_correct_errors(
 ) -> crate::types::builders::S3ExportingConfigBuilder {
     if builder.s3_bucket_name.is_none() {
         builder.s3_bucket_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn sort_attribute_correct_errors(
+    mut builder: crate::types::builders::SortAttributeBuilder,
+) -> crate::types::builders::SortAttributeBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.order.is_none() {
+        builder.order = "no value was set".parse::<crate::types::SegmentSortOrder>().ok()
     }
     builder
 }

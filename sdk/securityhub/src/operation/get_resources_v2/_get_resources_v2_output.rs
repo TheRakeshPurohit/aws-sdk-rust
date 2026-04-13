@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourcesV2Output {
-    /// <p>Filters resources based on a set of criteria.</p>
+    /// <p>An array of resources returned by the operation.</p>
     pub resources: ::std::option::Option<::std::vec::Vec<crate::types::ResourceResult>>,
     /// <p>The pagination token to use to request the next page of results. Otherwise, this parameter is null.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetResourcesV2Output {
-    /// <p>Filters resources based on a set of criteria.</p>
+    /// <p>An array of resources returned by the operation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
     pub fn resources(&self) -> &[crate::types::ResourceResult] {
@@ -46,19 +46,19 @@ impl GetResourcesV2OutputBuilder {
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
     ///
-    /// <p>Filters resources based on a set of criteria.</p>
+    /// <p>An array of resources returned by the operation.</p>
     pub fn resources(mut self, input: crate::types::ResourceResult) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input);
         self.resources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters resources based on a set of criteria.</p>
+    /// <p>An array of resources returned by the operation.</p>
     pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceResult>>) -> Self {
         self.resources = input;
         self
     }
-    /// <p>Filters resources based on a set of criteria.</p>
+    /// <p>An array of resources returned by the operation.</p>
     pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceResult>> {
         &self.resources
     }

@@ -17,11 +17,15 @@ pub use crate::types::_health_check::HealthCheckBuilder;
 
 pub use crate::types::_aws_security_finding_identifier::AwsSecurityFindingIdentifierBuilder;
 
+pub use crate::types::_finding_scopes::FindingScopesBuilder;
+
 pub use crate::types::_findings_trends_filters::FindingsTrendsFiltersBuilder;
 
 pub use crate::types::_ocsf_finding_filters::OcsfFindingFiltersBuilder;
 
 pub use crate::types::_insight_results::InsightResultsBuilder;
+
+pub use crate::types::_resource_scopes::ResourceScopesBuilder;
 
 pub use crate::types::_resources_trends_filters::ResourcesTrendsFiltersBuilder;
 
@@ -196,6 +200,8 @@ pub use crate::types::_boolean_filter::BooleanFilterBuilder;
 pub use crate::types::_standards_managed_by::StandardsManagedByBuilder;
 
 pub use crate::types::_finding_history_update_source::FindingHistoryUpdateSourceBuilder;
+
+pub use crate::types::_aws_organization_scope::AwsOrganizationScopeBuilder;
 
 pub use crate::types::_findings_trends_composite_filter::FindingsTrendsCompositeFilterBuilder;
 

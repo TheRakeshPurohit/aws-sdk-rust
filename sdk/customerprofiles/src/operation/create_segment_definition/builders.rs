@@ -192,6 +192,20 @@ impl CreateSegmentDefinitionFluentBuilder {
     pub fn get_segment_sql_query(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_segment_sql_query()
     }
+    /// <p>The segment sort.</p>
+    pub fn segment_sort(mut self, input: crate::types::SegmentSort) -> Self {
+        self.inner = self.inner.segment_sort(input);
+        self
+    }
+    /// <p>The segment sort.</p>
+    pub fn set_segment_sort(mut self, input: ::std::option::Option<crate::types::SegmentSort>) -> Self {
+        self.inner = self.inner.set_segment_sort(input);
+        self
+    }
+    /// <p>The segment sort.</p>
+    pub fn get_segment_sort(&self) -> &::std::option::Option<crate::types::SegmentSort> {
+        self.inner.get_segment_sort()
+    }
     ///
     /// Adds a key-value pair to `Tags`.
     ///

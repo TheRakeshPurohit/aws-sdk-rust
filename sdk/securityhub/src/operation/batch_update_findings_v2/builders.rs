@@ -22,7 +22,10 @@ impl crate::operation::batch_update_findings_v2::builders::BatchUpdateFindingsV2
 }
 /// Fluent builder constructing a request to `BatchUpdateFindingsV2`.
 ///
-/// <p>Used by customers to update information about their investigation into a finding. Requested by delegated administrator accounts or member accounts. Delegated administrator accounts can update findings for their account and their member accounts. Member accounts can update findings for their account. <code>BatchUpdateFindings</code> and <code>BatchUpdateFindingV2</code> both use <code>securityhub:BatchUpdateFindings</code> in the <code>Action</code> element of an IAM policy statement. You must have permission to perform the <code>securityhub:BatchUpdateFindings</code> action. Updates from <code>BatchUpdateFindingsV2</code> don't affect the value of f<code>inding_info.modified_time</code>, <code>finding_info.modified_time_dt</code>, <code>time</code>, <code>time_dt for a finding</code>.</p>
+/// <p>Updates information about a customer's investigation into a finding. Delegated administrator accounts can update findings for their account and their member accounts. Member accounts can update findings for their own account.</p>
+/// <p><code>BatchUpdateFindings</code> and <code>BatchUpdateFindingsV2</code> both use <code>securityhub:BatchUpdateFindings</code> in the <code>Action</code> element of an IAM policy statement. You must have permission to perform the <code>securityhub:BatchUpdateFindings</code> action. You can configure IAM policies to restrict access to specific finding fields or field values by using the <code>securityhub:OCSFSyntaxPath/<fieldname></fieldname></code> condition key, where <code><fieldname></fieldname></code> is one of the following supported fields: <code>SeverityId</code>, <code>StatusId</code>, or <code>Comment</code>.</p>
+/// <p>To prevent a user from updating a specific field, use a <code>Null</code> condition with <code>securityhub:OCSFSyntaxPath/<fieldname></fieldname></code> set to <code>"false"</code>. To prevent a user from setting a field to a specific value, use a <code>StringEquals</code> condition with <code>securityhub:OCSFSyntaxPath/<fieldname></fieldname></code> set to the disallowed value or list of values.</p>
+/// <p>Updates from <code>BatchUpdateFindingsV2</code> don't affect the value of <code>finding_info.modified_time</code>, <code>finding_info.modified_time_dt</code>, <code>time</code>, or <code>time_dt</code> for a finding.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdateFindingsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -160,31 +163,31 @@ impl BatchUpdateFindingsV2FluentBuilder {
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_comment()
     }
-    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
     pub fn severity_id(mut self, input: i32) -> Self {
         self.inner = self.inner.severity_id(input);
         self
     }
-    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
     pub fn set_severity_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_severity_id(input);
         self
     }
-    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized severity identifier. The severity ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated severity ID, the string sibling severity will automatically be updated in the finding.</p>
     pub fn get_severity_id(&self) -> &::std::option::Option<i32> {
         self.inner.get_severity_id()
     }
-    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
     pub fn status_id(mut self, input: i32) -> Self {
         self.inner = self.inner.status_id(input);
         self
     }
-    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
     pub fn set_status_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_status_id(input);
         self
     }
-    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 6, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
+    /// <p>The updated value for the normalized status identifier. The status ID is an integer with the allowed enum values \[0, 1, 2, 3, 4, 5, 99\]. When customer provides the updated status ID, the string sibling status will automatically be updated in the finding.</p>
     pub fn get_status_id(&self) -> &::std::option::Option<i32> {
         self.inner.get_status_id()
     }

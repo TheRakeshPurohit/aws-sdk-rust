@@ -18,7 +18,7 @@ pub struct ProductV2 {
     pub marketplace_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the serviceV@ or productV2 documentation about the integration, which includes how to activate the integration.</p>
     pub activation_url: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier for the AWS Marketplace product associated with this integration.</p>
+    /// <p>The identifier for the Amazon Web Services Marketplace product associated with this integration.</p>
     pub marketplace_product_id: ::std::option::Option<::std::string::String>,
 }
 impl ProductV2 {
@@ -54,7 +54,7 @@ impl ProductV2 {
     pub fn activation_url(&self) -> ::std::option::Option<&str> {
         self.activation_url.as_deref()
     }
-    /// <p>The identifier for the AWS Marketplace product associated with this integration.</p>
+    /// <p>The identifier for the Amazon Web Services Marketplace product associated with this integration.</p>
     pub fn marketplace_product_id(&self) -> ::std::option::Option<&str> {
         self.marketplace_product_id.as_deref()
     }
@@ -190,17 +190,17 @@ impl ProductV2Builder {
     pub fn get_activation_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.activation_url
     }
-    /// <p>The identifier for the AWS Marketplace product associated with this integration.</p>
+    /// <p>The identifier for the Amazon Web Services Marketplace product associated with this integration.</p>
     pub fn marketplace_product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.marketplace_product_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the AWS Marketplace product associated with this integration.</p>
+    /// <p>The identifier for the Amazon Web Services Marketplace product associated with this integration.</p>
     pub fn set_marketplace_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marketplace_product_id = input;
         self
     }
-    /// <p>The identifier for the AWS Marketplace product associated with this integration.</p>
+    /// <p>The identifier for the Amazon Web Services Marketplace product associated with this integration.</p>
     pub fn get_marketplace_product_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.marketplace_product_id
     }

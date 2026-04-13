@@ -6,7 +6,7 @@
 pub struct AutomatedDiscoveryAccountUpdateError {
     /// <p>The Amazon Web Services account ID for the account that the request applied to.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The error code for the error that caused the request to fail for the account (accountId). Possible values are: ACCOUNT_NOT_FOUND, the account doesn’t exist or you're not the Amazon Macie administrator for the account; and, ACCOUNT_PAUSED, Macie isn’t enabled for the account in the current Amazon Web Services Region.</p>
+    /// <p>The error code for the error that caused the request to fail for the account (accountId). Possible values are: ACCOUNT_NOT_FOUND, the account doesn't exist or you're not the Amazon Macie administrator for the account; and, ACCOUNT_PAUSED, Macie isn't enabled for the account in the current Amazon Web Services Region.</p>
     pub error_code: ::std::option::Option<crate::types::AutomatedDiscoveryAccountUpdateErrorCode>,
 }
 impl AutomatedDiscoveryAccountUpdateError {
@@ -14,7 +14,7 @@ impl AutomatedDiscoveryAccountUpdateError {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The error code for the error that caused the request to fail for the account (accountId). Possible values are: ACCOUNT_NOT_FOUND, the account doesn’t exist or you're not the Amazon Macie administrator for the account; and, ACCOUNT_PAUSED, Macie isn’t enabled for the account in the current Amazon Web Services Region.</p>
+    /// <p>The error code for the error that caused the request to fail for the account (accountId). Possible values are: ACCOUNT_NOT_FOUND, the account doesn't exist or you're not the Amazon Macie administrator for the account; and, ACCOUNT_PAUSED, Macie isn't enabled for the account in the current Amazon Web Services Region.</p>
     pub fn error_code(&self) -> ::std::option::Option<&crate::types::AutomatedDiscoveryAccountUpdateErrorCode> {
         self.error_code.as_ref()
     }
@@ -48,17 +48,17 @@ impl AutomatedDiscoveryAccountUpdateErrorBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>The error code for the error that caused the request to fail for the account (accountId). Possible values are: ACCOUNT_NOT_FOUND, the account doesn’t exist or you're not the Amazon Macie administrator for the account; and, ACCOUNT_PAUSED, Macie isn’t enabled for the account in the current Amazon Web Services Region.</p>
+    /// <p>The error code for the error that caused the request to fail for the account (accountId). Possible values are: ACCOUNT_NOT_FOUND, the account doesn't exist or you're not the Amazon Macie administrator for the account; and, ACCOUNT_PAUSED, Macie isn't enabled for the account in the current Amazon Web Services Region.</p>
     pub fn error_code(mut self, input: crate::types::AutomatedDiscoveryAccountUpdateErrorCode) -> Self {
         self.error_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The error code for the error that caused the request to fail for the account (accountId). Possible values are: ACCOUNT_NOT_FOUND, the account doesn’t exist or you're not the Amazon Macie administrator for the account; and, ACCOUNT_PAUSED, Macie isn’t enabled for the account in the current Amazon Web Services Region.</p>
+    /// <p>The error code for the error that caused the request to fail for the account (accountId). Possible values are: ACCOUNT_NOT_FOUND, the account doesn't exist or you're not the Amazon Macie administrator for the account; and, ACCOUNT_PAUSED, Macie isn't enabled for the account in the current Amazon Web Services Region.</p>
     pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::AutomatedDiscoveryAccountUpdateErrorCode>) -> Self {
         self.error_code = input;
         self
     }
-    /// <p>The error code for the error that caused the request to fail for the account (accountId). Possible values are: ACCOUNT_NOT_FOUND, the account doesn’t exist or you're not the Amazon Macie administrator for the account; and, ACCOUNT_PAUSED, Macie isn’t enabled for the account in the current Amazon Web Services Region.</p>
+    /// <p>The error code for the error that caused the request to fail for the account (accountId). Possible values are: ACCOUNT_NOT_FOUND, the account doesn't exist or you're not the Amazon Macie administrator for the account; and, ACCOUNT_PAUSED, Macie isn't enabled for the account in the current Amazon Web Services Region.</p>
     pub fn get_error_code(&self) -> &::std::option::Option<crate::types::AutomatedDiscoveryAccountUpdateErrorCode> {
         &self.error_code
     }

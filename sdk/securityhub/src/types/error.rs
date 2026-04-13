@@ -23,6 +23,10 @@ pub use crate::types::error::_resource_conflict_exception::ResourceConflictExcep
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
+pub use crate::types::error::_organizational_unit_not_found_exception::OrganizationalUnitNotFoundException;
+
+pub use crate::types::error::_organization_not_found_exception::OrganizationNotFoundException;
+
 pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 
 mod _access_denied_exception;
@@ -38,6 +42,10 @@ mod _invalid_access_exception;
 mod _invalid_input_exception;
 
 mod _limit_exceeded_exception;
+
+mod _organization_not_found_exception;
+
+mod _organizational_unit_not_found_exception;
 
 mod _resource_conflict_exception;
 

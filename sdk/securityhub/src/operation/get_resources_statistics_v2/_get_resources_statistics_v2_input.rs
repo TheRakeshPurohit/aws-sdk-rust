@@ -5,6 +5,10 @@
 pub struct GetResourcesStatisticsV2Input {
     /// <p>How resource statistics should be aggregated and organized in the response.</p>
     pub group_by_rules: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupByRule>>,
+    /// <p>Limits the results to resources from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees statistics from all accounts across the entire organization. Other accounts see only statistics for their own resources.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub scopes: ::std::option::Option<crate::types::ResourceScopes>,
     /// <p>Sorts aggregated statistics.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The maximum number of results to be returned.</p>
@@ -16,6 +20,12 @@ impl GetResourcesStatisticsV2Input {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_by_rules.is_none()`.
     pub fn group_by_rules(&self) -> &[crate::types::ResourceGroupByRule] {
         self.group_by_rules.as_deref().unwrap_or_default()
+    }
+    /// <p>Limits the results to resources from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees statistics from all accounts across the entire organization. Other accounts see only statistics for their own resources.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn scopes(&self) -> ::std::option::Option<&crate::types::ResourceScopes> {
+        self.scopes.as_ref()
     }
     /// <p>Sorts aggregated statistics.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
@@ -38,6 +48,7 @@ impl GetResourcesStatisticsV2Input {
 #[non_exhaustive]
 pub struct GetResourcesStatisticsV2InputBuilder {
     pub(crate) group_by_rules: ::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupByRule>>,
+    pub(crate) scopes: ::std::option::Option<crate::types::ResourceScopes>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) max_statistic_results: ::std::option::Option<i32>,
 }
@@ -61,6 +72,26 @@ impl GetResourcesStatisticsV2InputBuilder {
     /// <p>How resource statistics should be aggregated and organized in the response.</p>
     pub fn get_group_by_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupByRule>> {
         &self.group_by_rules
+    }
+    /// <p>Limits the results to resources from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees statistics from all accounts across the entire organization. Other accounts see only statistics for their own resources.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn scopes(mut self, input: crate::types::ResourceScopes) -> Self {
+        self.scopes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Limits the results to resources from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees statistics from all accounts across the entire organization. Other accounts see only statistics for their own resources.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn set_scopes(mut self, input: ::std::option::Option<crate::types::ResourceScopes>) -> Self {
+        self.scopes = input;
+        self
+    }
+    /// <p>Limits the results to resources from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees statistics from all accounts across the entire organization. Other accounts see only statistics for their own resources.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn get_scopes(&self) -> &::std::option::Option<crate::types::ResourceScopes> {
+        &self.scopes
     }
     /// <p>Sorts aggregated statistics.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -99,6 +130,7 @@ impl GetResourcesStatisticsV2InputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::get_resources_statistics_v2::GetResourcesStatisticsV2Input {
             group_by_rules: self.group_by_rules,
+            scopes: self.scopes,
             sort_order: self.sort_order,
             max_statistic_results: self.max_statistic_results,
         })

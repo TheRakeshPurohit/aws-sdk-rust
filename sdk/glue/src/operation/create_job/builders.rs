@@ -479,7 +479,7 @@ impl CreateJobFluentBuilder {
     /// <p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark.</p>
     /// <p>Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the Job command.</p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-    /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
+    /// <p>Jobs that are created without specifying a Glue version default to Glue 5.1.</p>
     pub fn glue_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.glue_version(input.into());
         self
@@ -487,7 +487,7 @@ impl CreateJobFluentBuilder {
     /// <p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark.</p>
     /// <p>Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the Job command.</p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-    /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
+    /// <p>Jobs that are created without specifying a Glue version default to Glue 5.1.</p>
     pub fn set_glue_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_glue_version(input);
         self
@@ -495,7 +495,7 @@ impl CreateJobFluentBuilder {
     /// <p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark.</p>
     /// <p>Ray jobs should set <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions of Ray, Python and additional libraries available in your Ray job are determined by the <code>Runtime</code> parameter of the Job command.</p>
     /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
-    /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
+    /// <p>Jobs that are created without specifying a Glue version default to Glue 5.1.</p>
     pub fn get_glue_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_glue_version()
     }

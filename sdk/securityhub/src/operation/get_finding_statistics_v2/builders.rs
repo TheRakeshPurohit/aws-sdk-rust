@@ -22,7 +22,9 @@ impl crate::operation::get_finding_statistics_v2::builders::GetFindingStatistics
 }
 /// Fluent builder constructing a request to `GetFindingStatisticsV2`.
 ///
-/// <p>Returns aggregated statistical data about findings. <code>GetFindingStatisticsV2</code> use <code>securityhub:GetAdhocInsightResults</code> in the <code>Action</code> element of an IAM policy statement. You must have permission to perform the <code>s</code> action.</p>
+/// <p>Returns aggregated statistical data about findings.</p>
+/// <p>You can use the <code>Scopes</code> parameter to define the data boundary for the query. Currently, <code>Scopes</code> supports <code>AwsOrganizations</code>, which lets you aggregate findings from your entire organization or from specific organizational units. Only the delegated administrator account can use <code>Scopes</code>.</p>
+/// <p><code>GetFindingStatisticsV2</code> uses <code>securityhub:GetAdhocInsightResults</code> in the <code>Action</code> element of an IAM policy statement. You must have permission to perform the <code>securityhub:GetAdhocInsightResults</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFindingStatisticsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,6 +128,26 @@ impl GetFindingStatisticsV2FluentBuilder {
     /// <p>Specifies how security findings should be aggregated and organized in the statistical analysis. It can accept up to 5 <code>groupBy</code> fields in a single call.</p>
     pub fn get_group_by_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupByRule>> {
         self.inner.get_group_by_rules()
+    }
+    /// <p>Limits the results to findings from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees statistics from all accounts across the entire organization. Other accounts see only statistics for their own findings.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn scopes(mut self, input: crate::types::FindingScopes) -> Self {
+        self.inner = self.inner.scopes(input);
+        self
+    }
+    /// <p>Limits the results to findings from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees statistics from all accounts across the entire organization. Other accounts see only statistics for their own findings.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn set_scopes(mut self, input: ::std::option::Option<crate::types::FindingScopes>) -> Self {
+        self.inner = self.inner.set_scopes(input);
+        self
+    }
+    /// <p>Limits the results to findings from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees statistics from all accounts across the entire organization. Other accounts see only statistics for their own findings.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn get_scopes(&self) -> &::std::option::Option<crate::types::FindingScopes> {
+        self.inner.get_scopes()
     }
     /// <p>Orders the aggregation count in descending or ascending order. Descending order is the default.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {

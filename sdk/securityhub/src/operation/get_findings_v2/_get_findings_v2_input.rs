@@ -5,6 +5,10 @@
 pub struct GetFindingsV2Input {
     /// <p>The finding attributes used to define a condition to filter the returned OCSF findings. You can filter up to 10 composite filters. For each filter type inside of a composite filter, you can provide up to 20 filters.</p>
     pub filters: ::std::option::Option<crate::types::OcsfFindingFilters>,
+    /// <p>Limits the results to findings from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees findings from all accounts across the entire organization. Other accounts see only their own findings.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub scopes: ::std::option::Option<crate::types::FindingScopes>,
     /// <p>The finding attributes used to sort the list of returned findings.</p>
     pub sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>,
     /// <p>The token required for pagination. On your first call, set the value of this parameter to <code>NULL</code>. For subsequent calls, to continue listing data, set the value of this parameter to the value returned in the previous response.</p>
@@ -16,6 +20,12 @@ impl GetFindingsV2Input {
     /// <p>The finding attributes used to define a condition to filter the returned OCSF findings. You can filter up to 10 composite filters. For each filter type inside of a composite filter, you can provide up to 20 filters.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::OcsfFindingFilters> {
         self.filters.as_ref()
+    }
+    /// <p>Limits the results to findings from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees findings from all accounts across the entire organization. Other accounts see only their own findings.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn scopes(&self) -> ::std::option::Option<&crate::types::FindingScopes> {
+        self.scopes.as_ref()
     }
     /// <p>The finding attributes used to sort the list of returned findings.</p>
     ///
@@ -44,6 +54,7 @@ impl GetFindingsV2Input {
 #[non_exhaustive]
 pub struct GetFindingsV2InputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::OcsfFindingFilters>,
+    pub(crate) scopes: ::std::option::Option<crate::types::FindingScopes>,
     pub(crate) sort_criteria: ::std::option::Option<::std::vec::Vec<crate::types::SortCriterion>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -62,6 +73,26 @@ impl GetFindingsV2InputBuilder {
     /// <p>The finding attributes used to define a condition to filter the returned OCSF findings. You can filter up to 10 composite filters. For each filter type inside of a composite filter, you can provide up to 20 filters.</p>
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::OcsfFindingFilters> {
         &self.filters
+    }
+    /// <p>Limits the results to findings from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees findings from all accounts across the entire organization. Other accounts see only their own findings.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn scopes(mut self, input: crate::types::FindingScopes) -> Self {
+        self.scopes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Limits the results to findings from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees findings from all accounts across the entire organization. Other accounts see only their own findings.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn set_scopes(mut self, input: ::std::option::Option<crate::types::FindingScopes>) -> Self {
+        self.scopes = input;
+        self
+    }
+    /// <p>Limits the results to findings from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees findings from all accounts across the entire organization. Other accounts see only their own findings.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn get_scopes(&self) -> &::std::option::Option<crate::types::FindingScopes> {
+        &self.scopes
     }
     /// Appends an item to `sort_criteria`.
     ///
@@ -117,6 +148,7 @@ impl GetFindingsV2InputBuilder {
     ) -> ::std::result::Result<crate::operation::get_findings_v2::GetFindingsV2Input, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_findings_v2::GetFindingsV2Input {
             filters: self.filters,
+            scopes: self.scopes,
             sort_criteria: self.sort_criteria,
             next_token: self.next_token,
             max_results: self.max_results,

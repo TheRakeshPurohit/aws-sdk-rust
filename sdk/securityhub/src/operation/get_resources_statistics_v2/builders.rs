@@ -23,6 +23,7 @@ impl crate::operation::get_resources_statistics_v2::builders::GetResourcesStatis
 /// Fluent builder constructing a request to `GetResourcesStatisticsV2`.
 ///
 /// <p>Retrieves statistical information about Amazon Web Services resources and their associated security findings.</p>
+/// <p>You can use the <code>Scopes</code> parameter to define the data boundary for the query. Currently, <code>Scopes</code> supports <code>AwsOrganizations</code>, which lets you aggregate resources from your entire organization or from specific organizational units. Only the delegated administrator account can use <code>Scopes</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourcesStatisticsV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,6 +127,26 @@ impl GetResourcesStatisticsV2FluentBuilder {
     /// <p>How resource statistics should be aggregated and organized in the response.</p>
     pub fn get_group_by_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceGroupByRule>> {
         self.inner.get_group_by_rules()
+    }
+    /// <p>Limits the results to resources from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees statistics from all accounts across the entire organization. Other accounts see only statistics for their own resources.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn scopes(mut self, input: crate::types::ResourceScopes) -> Self {
+        self.inner = self.inner.scopes(input);
+        self
+    }
+    /// <p>Limits the results to resources from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees statistics from all accounts across the entire organization. Other accounts see only statistics for their own resources.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn set_scopes(mut self, input: ::std::option::Option<crate::types::ResourceScopes>) -> Self {
+        self.inner = self.inner.set_scopes(input);
+        self
+    }
+    /// <p>Limits the results to resources from specific organizational units or from the delegated administrator's organization. Only the delegated administrator account can use this parameter. Other accounts receive an <code>AccessDeniedException</code>.</p>
+    /// <p>This parameter is optional. If you omit it, the delegated administrator sees statistics from all accounts across the entire organization. Other accounts see only statistics for their own resources.</p>
+    /// <p>You can specify up to 10 entries in <code>Scopes.AwsOrganizations</code>. If multiple entries are specified, the entries are combined using OR logic.</p>
+    pub fn get_scopes(&self) -> &::std::option::Option<crate::types::ResourceScopes> {
+        self.inner.get_scopes()
     }
     /// <p>Sorts aggregated statistics.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
