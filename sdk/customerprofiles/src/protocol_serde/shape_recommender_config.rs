@@ -21,6 +21,22 @@ pub fn ser_recommender_config(
         crate::protocol_serde::shape_inference_config::ser_inference_config(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.included_columns {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("IncludedColumns").start_object();
+        for (key_8, value_9) in var_6 {
+            {
+                let mut array_10 = object_7.key(key_8.as_str()).start_array();
+                for item_11 in value_9 {
+                    {
+                        array_10.value().string(item_11.as_str());
+                    }
+                }
+                array_10.finish();
+            }
+        }
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -53,6 +69,10 @@ where
                         "InferenceConfig" => {
                             builder =
                                 builder.set_inference_config(crate::protocol_serde::shape_inference_config::de_inference_config(tokens, _value)?);
+                        }
+                        "IncludedColumns" => {
+                            builder =
+                                builder.set_included_columns(crate::protocol_serde::shape_included_columns::de_included_columns(tokens, _value)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -17,6 +17,8 @@ pub struct PendingMaintenanceAction {
     /// <li>
     /// <p><code>os-upgrade</code></p></li>
     /// <li>
+    /// <p><code>serverless-platform-version-update</code></p></li>
+    /// <li>
     /// <p><code>system-update</code></p></li>
     /// </ul>
     /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-aurora">Maintenance actions for Amazon Aurora</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-rds">Maintenance actions for Amazon RDS</a>.</p>
@@ -46,6 +48,8 @@ impl PendingMaintenanceAction {
     /// <p><code>hardware-maintenance</code></p></li>
     /// <li>
     /// <p><code>os-upgrade</code></p></li>
+    /// <li>
+    /// <p><code>serverless-platform-version-update</code></p></li>
     /// <li>
     /// <p><code>system-update</code></p></li>
     /// </ul>
@@ -107,6 +111,8 @@ impl PendingMaintenanceActionBuilder {
     /// <li>
     /// <p><code>os-upgrade</code></p></li>
     /// <li>
+    /// <p><code>serverless-platform-version-update</code></p></li>
+    /// <li>
     /// <p><code>system-update</code></p></li>
     /// </ul>
     /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-aurora">Maintenance actions for Amazon Aurora</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-rds">Maintenance actions for Amazon RDS</a>.</p>
@@ -127,6 +133,8 @@ impl PendingMaintenanceActionBuilder {
     /// <li>
     /// <p><code>os-upgrade</code></p></li>
     /// <li>
+    /// <p><code>serverless-platform-version-update</code></p></li>
+    /// <li>
     /// <p><code>system-update</code></p></li>
     /// </ul>
     /// <p>For more information about these actions, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-aurora">Maintenance actions for Amazon Aurora</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#maintenance-actions-rds">Maintenance actions for Amazon RDS</a>.</p>
@@ -146,6 +154,8 @@ impl PendingMaintenanceActionBuilder {
     /// <p><code>hardware-maintenance</code></p></li>
     /// <li>
     /// <p><code>os-upgrade</code></p></li>
+    /// <li>
+    /// <p><code>serverless-platform-version-update</code></p></li>
     /// <li>
     /// <p><code>system-update</code></p></li>
     /// </ul>

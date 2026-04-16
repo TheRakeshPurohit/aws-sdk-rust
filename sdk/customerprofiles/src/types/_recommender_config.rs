@@ -10,6 +10,8 @@ pub struct RecommenderConfig {
     pub training_frequency: ::std::option::Option<i32>,
     /// <p>Configuration settings for how the recommender handles inference requests.</p>
     pub inference_config: ::std::option::Option<crate::types::InferenceConfig>,
+    /// <p>A map of dataset type to a list of column names to train on. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included and do not need to be specified: <code>Item.Id</code>, <code>ItemList\[\].Id</code>, <code>EventTimestamp</code>, <code>EventType</code>, and <code>EventValue</code>.</p>
+    pub included_columns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl RecommenderConfig {
     /// <p>Configuration settings for how the recommender processes and uses events.</p>
@@ -23,6 +25,12 @@ impl RecommenderConfig {
     /// <p>Configuration settings for how the recommender handles inference requests.</p>
     pub fn inference_config(&self) -> ::std::option::Option<&crate::types::InferenceConfig> {
         self.inference_config.as_ref()
+    }
+    /// <p>A map of dataset type to a list of column names to train on. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included and do not need to be specified: <code>Item.Id</code>, <code>ItemList\[\].Id</code>, <code>EventTimestamp</code>, <code>EventType</code>, and <code>EventValue</code>.</p>
+    pub fn included_columns(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        self.included_columns.as_ref()
     }
 }
 impl RecommenderConfig {
@@ -39,6 +47,7 @@ pub struct RecommenderConfigBuilder {
     pub(crate) events_config: ::std::option::Option<crate::types::EventsConfig>,
     pub(crate) training_frequency: ::std::option::Option<i32>,
     pub(crate) inference_config: ::std::option::Option<crate::types::InferenceConfig>,
+    pub(crate) included_columns: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl RecommenderConfigBuilder {
     /// <p>Configuration settings for how the recommender processes and uses events.</p>
@@ -83,12 +92,38 @@ impl RecommenderConfigBuilder {
     pub fn get_inference_config(&self) -> &::std::option::Option<crate::types::InferenceConfig> {
         &self.inference_config
     }
+    /// Adds a key-value pair to `included_columns`.
+    ///
+    /// To override the contents of this collection use [`set_included_columns`](Self::set_included_columns).
+    ///
+    /// <p>A map of dataset type to a list of column names to train on. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included and do not need to be specified: <code>Item.Id</code>, <code>ItemList\[\].Id</code>, <code>EventTimestamp</code>, <code>EventType</code>, and <code>EventValue</code>.</p>
+    pub fn included_columns(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+        let mut hash_map = self.included_columns.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.included_columns = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of dataset type to a list of column names to train on. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included and do not need to be specified: <code>Item.Id</code>, <code>ItemList\[\].Id</code>, <code>EventTimestamp</code>, <code>EventType</code>, and <code>EventValue</code>.</p>
+    pub fn set_included_columns(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    ) -> Self {
+        self.included_columns = input;
+        self
+    }
+    /// <p>A map of dataset type to a list of column names to train on. The column names must be a subset of the columns defined in the recommender schema. If not specified, all columns in the schema are used for training. The following columns are always included and do not need to be specified: <code>Item.Id</code>, <code>ItemList\[\].Id</code>, <code>EventTimestamp</code>, <code>EventType</code>, and <code>EventValue</code>.</p>
+    pub fn get_included_columns(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        &self.included_columns
+    }
     /// Consumes the builder and constructs a [`RecommenderConfig`](crate::types::RecommenderConfig).
     pub fn build(self) -> crate::types::RecommenderConfig {
         crate::types::RecommenderConfig {
             events_config: self.events_config,
             training_frequency: self.training_frequency,
             inference_config: self.inference_config,
+            included_columns: self.included_columns,
         }
     }
 }

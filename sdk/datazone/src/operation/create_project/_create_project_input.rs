@@ -19,6 +19,12 @@ pub struct CreateProjectInput {
     pub project_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The user parameters of the project.</p>
     pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>,
+    /// <p>The category of the project. Set to 'ADMIN' designates this as an administrative project for the Amazon DataZone domain.</p>
+    pub project_category: ::std::option::Option<::std::string::String>,
+    /// <p>The default project IAM role that is used to access project resources and run computes such as Glue and Sagemaker.</p>
+    pub project_execution_role: ::std::option::Option<::std::string::String>,
+    /// <p>The members to be assigned to the project.</p>
+    pub membership_assignments: ::std::option::Option<::std::vec::Vec<crate::types::ProjectMembershipAssignment>>,
 }
 impl CreateProjectInput {
     /// <p>The ID of the Amazon DataZone domain in which this project is created.</p>
@@ -57,6 +63,20 @@ impl CreateProjectInput {
     pub fn user_parameters(&self) -> &[crate::types::EnvironmentConfigurationUserParameter] {
         self.user_parameters.as_deref().unwrap_or_default()
     }
+    /// <p>The category of the project. Set to 'ADMIN' designates this as an administrative project for the Amazon DataZone domain.</p>
+    pub fn project_category(&self) -> ::std::option::Option<&str> {
+        self.project_category.as_deref()
+    }
+    /// <p>The default project IAM role that is used to access project resources and run computes such as Glue and Sagemaker.</p>
+    pub fn project_execution_role(&self) -> ::std::option::Option<&str> {
+        self.project_execution_role.as_deref()
+    }
+    /// <p>The members to be assigned to the project.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.membership_assignments.is_none()`.
+    pub fn membership_assignments(&self) -> &[crate::types::ProjectMembershipAssignment] {
+        self.membership_assignments.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for CreateProjectInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -69,6 +89,9 @@ impl ::std::fmt::Debug for CreateProjectInput {
         formatter.field("domain_unit_id", &self.domain_unit_id);
         formatter.field("project_profile_id", &self.project_profile_id);
         formatter.field("user_parameters", &self.user_parameters);
+        formatter.field("project_category", &self.project_category);
+        formatter.field("project_execution_role", &self.project_execution_role);
+        formatter.field("membership_assignments", &self.membership_assignments);
         formatter.finish()
     }
 }
@@ -91,6 +114,9 @@ pub struct CreateProjectInputBuilder {
     pub(crate) domain_unit_id: ::std::option::Option<::std::string::String>,
     pub(crate) project_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>,
+    pub(crate) project_category: ::std::option::Option<::std::string::String>,
+    pub(crate) project_execution_role: ::std::option::Option<::std::string::String>,
+    pub(crate) membership_assignments: ::std::option::Option<::std::vec::Vec<crate::types::ProjectMembershipAssignment>>,
 }
 impl CreateProjectInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which this project is created.</p>
@@ -228,6 +254,54 @@ impl CreateProjectInputBuilder {
     pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>> {
         &self.user_parameters
     }
+    /// <p>The category of the project. Set to 'ADMIN' designates this as an administrative project for the Amazon DataZone domain.</p>
+    pub fn project_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_category = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The category of the project. Set to 'ADMIN' designates this as an administrative project for the Amazon DataZone domain.</p>
+    pub fn set_project_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_category = input;
+        self
+    }
+    /// <p>The category of the project. Set to 'ADMIN' designates this as an administrative project for the Amazon DataZone domain.</p>
+    pub fn get_project_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_category
+    }
+    /// <p>The default project IAM role that is used to access project resources and run computes such as Glue and Sagemaker.</p>
+    pub fn project_execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_execution_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The default project IAM role that is used to access project resources and run computes such as Glue and Sagemaker.</p>
+    pub fn set_project_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_execution_role = input;
+        self
+    }
+    /// <p>The default project IAM role that is used to access project resources and run computes such as Glue and Sagemaker.</p>
+    pub fn get_project_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_execution_role
+    }
+    /// Appends an item to `membership_assignments`.
+    ///
+    /// To override the contents of this collection use [`set_membership_assignments`](Self::set_membership_assignments).
+    ///
+    /// <p>The members to be assigned to the project.</p>
+    pub fn membership_assignments(mut self, input: crate::types::ProjectMembershipAssignment) -> Self {
+        let mut v = self.membership_assignments.unwrap_or_default();
+        v.push(input);
+        self.membership_assignments = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The members to be assigned to the project.</p>
+    pub fn set_membership_assignments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectMembershipAssignment>>) -> Self {
+        self.membership_assignments = input;
+        self
+    }
+    /// <p>The members to be assigned to the project.</p>
+    pub fn get_membership_assignments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectMembershipAssignment>> {
+        &self.membership_assignments
+    }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
     pub fn build(
         self,
@@ -241,6 +315,9 @@ impl CreateProjectInputBuilder {
             domain_unit_id: self.domain_unit_id,
             project_profile_id: self.project_profile_id,
             user_parameters: self.user_parameters,
+            project_category: self.project_category,
+            project_execution_role: self.project_execution_role,
+            membership_assignments: self.membership_assignments,
         })
     }
 }
@@ -255,6 +332,9 @@ impl ::std::fmt::Debug for CreateProjectInputBuilder {
         formatter.field("domain_unit_id", &self.domain_unit_id);
         formatter.field("project_profile_id", &self.project_profile_id);
         formatter.field("user_parameters", &self.user_parameters);
+        formatter.field("project_category", &self.project_category);
+        formatter.field("project_execution_role", &self.project_execution_role);
+        formatter.field("membership_assignments", &self.membership_assignments);
         formatter.finish()
     }
 }

@@ -136,6 +136,20 @@ impl CreateGroupProfileFluentBuilder {
     pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_identifier()
     }
+    /// <p>The ARN of the IAM role that will be associated with the group profile. This role defines the permissions that group members will assume when accessing Amazon DataZone resources.</p>
+    pub fn role_principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.role_principal_arn(input.into());
+        self
+    }
+    /// <p>The ARN of the IAM role that will be associated with the group profile. This role defines the permissions that group members will assume when accessing Amazon DataZone resources.</p>
+    pub fn set_role_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_role_principal_arn(input);
+        self
+    }
+    /// <p>The ARN of the IAM role that will be associated with the group profile. This role defines the permissions that group members will assume when accessing Amazon DataZone resources.</p>
+    pub fn get_role_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_role_principal_arn()
+    }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

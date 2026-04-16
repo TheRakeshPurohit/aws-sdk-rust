@@ -29,6 +29,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "RecommenderSchemaName" => {
+                            builder = builder.set_recommender_schema_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "RecommenderConfig" => {
                             builder = builder
                                 .set_recommender_config(crate::protocol_serde::shape_recommender_config::de_recommender_config(tokens, _value)?);

@@ -61,6 +61,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "elementalInferenceConfiguration" => {
+                            builder = builder.set_elemental_inference_configuration(
+                                crate::protocol_serde::shape_elemental_inference_configuration::de_elemental_inference_configuration(tokens, _value)?,
+                            );
+                        }
                         "errorCode" => {
                             builder = builder.set_error_code(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

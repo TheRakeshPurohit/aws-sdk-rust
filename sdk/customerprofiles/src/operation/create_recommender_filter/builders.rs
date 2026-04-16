@@ -150,6 +150,20 @@ impl CreateRecommenderFilterFluentBuilder {
     pub fn get_recommender_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_recommender_filter_expression()
     }
+    /// <p>The name of the recommender schema to use for this recommender filter. If not specified, the default schema is used.</p>
+    pub fn recommender_schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.recommender_schema_name(input.into());
+        self
+    }
+    /// <p>The name of the recommender schema to use for this recommender filter. If not specified, the default schema is used.</p>
+    pub fn set_recommender_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_recommender_schema_name(input);
+        self
+    }
+    /// <p>The name of the recommender schema to use for this recommender filter. If not specified, the default schema is used.</p>
+    pub fn get_recommender_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recommender_schema_name()
+    }
     /// <p>A description of the recommender filter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());

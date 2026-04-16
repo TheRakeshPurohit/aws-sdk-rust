@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetRecommenderFilterOutput`](crate::operation::get_recommender_filter::GetRecommenderFilterOutput) with field(s):
     ///   - [`recommender_filter_name(String)`](crate::operation::get_recommender_filter::GetRecommenderFilterOutput::recommender_filter_name): <p>The name of the recommender filter.</p>
     ///   - [`recommender_filter_expression(String)`](crate::operation::get_recommender_filter::GetRecommenderFilterOutput::recommender_filter_expression): <p>The filter expression that defines which items to include or exclude from recommendations.</p>
+    ///   - [`recommender_schema_name(Option<String>)`](crate::operation::get_recommender_filter::GetRecommenderFilterOutput::recommender_schema_name): <p>The name of the recommender schema associated with this recommender filter.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_recommender_filter::GetRecommenderFilterOutput::created_at): <p>The timestamp of when the recommender filter was created.</p>
     ///   - [`status(RecommenderFilterStatus)`](crate::operation::get_recommender_filter::GetRecommenderFilterOutput::status): <p>The status of the recommender filter.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_recommender_filter::GetRecommenderFilterOutput::description): <p>The description of the recommender filter.</p>

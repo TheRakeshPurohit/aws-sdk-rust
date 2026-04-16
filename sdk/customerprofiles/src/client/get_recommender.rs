@@ -9,6 +9,7 @@ impl super::Client {
     /// - On success, responds with [`GetRecommenderOutput`](crate::operation::get_recommender::GetRecommenderOutput) with field(s):
     ///   - [`recommender_name(String)`](crate::operation::get_recommender::GetRecommenderOutput::recommender_name): <p>The name of the recommender.</p>
     ///   - [`recommender_recipe_name(RecommenderRecipeName)`](crate::operation::get_recommender::GetRecommenderOutput::recommender_recipe_name): <p>The name of the recipe used by the recommender to generate recommendations.</p>
+    ///   - [`recommender_schema_name(Option<String>)`](crate::operation::get_recommender::GetRecommenderOutput::recommender_schema_name): <p>The name of the recommender schema associated with this recommender.</p>
     ///   - [`recommender_config(Option<RecommenderConfig>)`](crate::operation::get_recommender::GetRecommenderOutput::recommender_config): <p>The configuration settings for the recommender, including parameters and settings that define its behavior.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_recommender::GetRecommenderOutput::description): <p>A detailed description of the recommender providing information about its purpose and functionality.</p>
     ///   - [`status(Option<RecommenderStatus>)`](crate::operation::get_recommender::GetRecommenderOutput::status): <p>The current status of the recommender, indicating whether it is active, creating, updating, or in another state.</p>

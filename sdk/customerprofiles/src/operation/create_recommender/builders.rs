@@ -178,6 +178,20 @@ impl CreateRecommenderFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// <p>The name of the recommender schema to use for this recommender. If not specified, the default schema is used.</p>
+    pub fn recommender_schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.recommender_schema_name(input.into());
+        self
+    }
+    /// <p>The name of the recommender schema to use for this recommender. If not specified, the default schema is used.</p>
+    pub fn set_recommender_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_recommender_schema_name(input);
+        self
+    }
+    /// <p>The name of the recommender schema to use for this recommender. If not specified, the default schema is used.</p>
+    pub fn get_recommender_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recommender_schema_name()
+    }
     ///
     /// Adds a key-value pair to `Tags`.
     ///

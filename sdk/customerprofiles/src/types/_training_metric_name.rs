@@ -15,7 +15,14 @@
 ///     TrainingMetricName::Coverage => { /* ... */ },
 ///     TrainingMetricName::Freshness => { /* ... */ },
 ///     TrainingMetricName::Hit => { /* ... */ },
+///     TrainingMetricName::MeanReciprocalRankAt25 => { /* ... */ },
+///     TrainingMetricName::NormalizedDiscountedCumulativeGainAt10 => { /* ... */ },
+///     TrainingMetricName::NormalizedDiscountedCumulativeGainAt25 => { /* ... */ },
+///     TrainingMetricName::NormalizedDiscountedCumulativeGainAt5 => { /* ... */ },
 ///     TrainingMetricName::Popularity => { /* ... */ },
+///     TrainingMetricName::PrecisionAt10 => { /* ... */ },
+///     TrainingMetricName::PrecisionAt25 => { /* ... */ },
+///     TrainingMetricName::PrecisionAt5 => { /* ... */ },
 ///     TrainingMetricName::Recall => { /* ... */ },
 ///     TrainingMetricName::Similarity => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -53,7 +60,21 @@ pub enum TrainingMetricName {
     #[allow(missing_docs)] // documentation missing in model
     Hit,
     #[allow(missing_docs)] // documentation missing in model
+    MeanReciprocalRankAt25,
+    #[allow(missing_docs)] // documentation missing in model
+    NormalizedDiscountedCumulativeGainAt10,
+    #[allow(missing_docs)] // documentation missing in model
+    NormalizedDiscountedCumulativeGainAt25,
+    #[allow(missing_docs)] // documentation missing in model
+    NormalizedDiscountedCumulativeGainAt5,
+    #[allow(missing_docs)] // documentation missing in model
     Popularity,
+    #[allow(missing_docs)] // documentation missing in model
+    PrecisionAt10,
+    #[allow(missing_docs)] // documentation missing in model
+    PrecisionAt25,
+    #[allow(missing_docs)] // documentation missing in model
+    PrecisionAt5,
     #[allow(missing_docs)] // documentation missing in model
     Recall,
     #[allow(missing_docs)] // documentation missing in model
@@ -68,7 +89,14 @@ impl ::std::convert::From<&str> for TrainingMetricName {
             "coverage" => TrainingMetricName::Coverage,
             "freshness" => TrainingMetricName::Freshness,
             "hit" => TrainingMetricName::Hit,
+            "mean_reciprocal_rank_at_25" => TrainingMetricName::MeanReciprocalRankAt25,
+            "normalized_discounted_cumulative_gain_at_10" => TrainingMetricName::NormalizedDiscountedCumulativeGainAt10,
+            "normalized_discounted_cumulative_gain_at_25" => TrainingMetricName::NormalizedDiscountedCumulativeGainAt25,
+            "normalized_discounted_cumulative_gain_at_5" => TrainingMetricName::NormalizedDiscountedCumulativeGainAt5,
             "popularity" => TrainingMetricName::Popularity,
+            "precision_at_10" => TrainingMetricName::PrecisionAt10,
+            "precision_at_25" => TrainingMetricName::PrecisionAt25,
+            "precision_at_5" => TrainingMetricName::PrecisionAt5,
             "recall" => TrainingMetricName::Recall,
             "similarity" => TrainingMetricName::Similarity,
             other => TrainingMetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -89,7 +117,14 @@ impl TrainingMetricName {
             TrainingMetricName::Coverage => "coverage",
             TrainingMetricName::Freshness => "freshness",
             TrainingMetricName::Hit => "hit",
+            TrainingMetricName::MeanReciprocalRankAt25 => "mean_reciprocal_rank_at_25",
+            TrainingMetricName::NormalizedDiscountedCumulativeGainAt10 => "normalized_discounted_cumulative_gain_at_10",
+            TrainingMetricName::NormalizedDiscountedCumulativeGainAt25 => "normalized_discounted_cumulative_gain_at_25",
+            TrainingMetricName::NormalizedDiscountedCumulativeGainAt5 => "normalized_discounted_cumulative_gain_at_5",
             TrainingMetricName::Popularity => "popularity",
+            TrainingMetricName::PrecisionAt10 => "precision_at_10",
+            TrainingMetricName::PrecisionAt25 => "precision_at_25",
+            TrainingMetricName::PrecisionAt5 => "precision_at_5",
             TrainingMetricName::Recall => "recall",
             TrainingMetricName::Similarity => "similarity",
             TrainingMetricName::Unknown(value) => value.as_str(),
@@ -97,7 +132,21 @@ impl TrainingMetricName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["coverage", "freshness", "hit", "popularity", "recall", "similarity"]
+        &[
+            "coverage",
+            "freshness",
+            "hit",
+            "mean_reciprocal_rank_at_25",
+            "normalized_discounted_cumulative_gain_at_10",
+            "normalized_discounted_cumulative_gain_at_25",
+            "normalized_discounted_cumulative_gain_at_5",
+            "popularity",
+            "precision_at_10",
+            "precision_at_25",
+            "precision_at_5",
+            "recall",
+            "similarity",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for TrainingMetricName {
@@ -123,7 +172,14 @@ impl ::std::fmt::Display for TrainingMetricName {
             TrainingMetricName::Coverage => write!(f, "coverage"),
             TrainingMetricName::Freshness => write!(f, "freshness"),
             TrainingMetricName::Hit => write!(f, "hit"),
+            TrainingMetricName::MeanReciprocalRankAt25 => write!(f, "mean_reciprocal_rank_at_25"),
+            TrainingMetricName::NormalizedDiscountedCumulativeGainAt10 => write!(f, "normalized_discounted_cumulative_gain_at_10"),
+            TrainingMetricName::NormalizedDiscountedCumulativeGainAt25 => write!(f, "normalized_discounted_cumulative_gain_at_25"),
+            TrainingMetricName::NormalizedDiscountedCumulativeGainAt5 => write!(f, "normalized_discounted_cumulative_gain_at_5"),
             TrainingMetricName::Popularity => write!(f, "popularity"),
+            TrainingMetricName::PrecisionAt10 => write!(f, "precision_at_10"),
+            TrainingMetricName::PrecisionAt25 => write!(f, "precision_at_25"),
+            TrainingMetricName::PrecisionAt5 => write!(f, "precision_at_5"),
             TrainingMetricName::Recall => write!(f, "recall"),
             TrainingMetricName::Similarity => write!(f, "similarity"),
             TrainingMetricName::Unknown(value) => write!(f, "{value}"),

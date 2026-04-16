@@ -9,5 +9,8 @@ pub fn ser_create_group_profile_input_input(
     if let Some(var_2) = &input.group_identifier {
         object.key("groupIdentifier").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.role_principal_arn {
+        object.key("rolePrincipalArn").string(var_3.as_str());
+    }
     Ok(())
 }

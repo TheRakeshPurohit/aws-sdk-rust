@@ -18,36 +18,54 @@ pub fn ser_create_project_input_input(
         }
         array_4.finish();
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.project_profile_id {
-        object.key("projectProfileId").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.resource_tags {
-        #[allow(unused_mut)]
-        let mut object_9 = object.key("resourceTags").start_object();
-        for (key_10, value_11) in var_8 {
-            {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
-            }
-        }
-        object_9.finish();
-    }
-    if let Some(var_12) = &input.user_parameters {
-        let mut array_13 = object.key("userParameters").start_array();
-        for item_14 in var_12 {
+    if let Some(var_6) = &input.membership_assignments {
+        let mut array_7 = object.key("membershipAssignments").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_environment_configuration_user_parameter::ser_environment_configuration_user_parameter(
-                    &mut object_15,
-                    item_14,
-                )?;
-                object_15.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_project_membership_assignment::ser_project_membership_assignment(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_13.finish();
+        array_7.finish();
+    }
+    if let Some(var_10) = &input.name {
+        object.key("name").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.project_category {
+        object.key("projectCategory").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.project_execution_role {
+        object.key("projectExecutionRole").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.project_profile_id {
+        object.key("projectProfileId").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.resource_tags {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("resourceTags").start_object();
+        for (key_16, value_17) in var_14 {
+            {
+                object_15.key(key_16.as_str()).string(value_17.as_str());
+            }
+        }
+        object_15.finish();
+    }
+    if let Some(var_18) = &input.user_parameters {
+        let mut array_19 = object.key("userParameters").start_array();
+        for item_20 in var_18 {
+            {
+                #[allow(unused_mut)]
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_environment_configuration_user_parameter::ser_environment_configuration_user_parameter(
+                    &mut object_21,
+                    item_20,
+                )?;
+                object_21.finish();
+            }
+        }
+        array_19.finish();
     }
     Ok(())
 }

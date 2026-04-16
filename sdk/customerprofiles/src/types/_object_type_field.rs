@@ -6,7 +6,7 @@
 pub struct ObjectTypeField {
     /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
     pub source: ::std::option::Option<::std::string::String>,
-    /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
+    /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode. Do not include sensitive or personally identifiable information (PII) in the target field name.</p>
     pub target: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the field. Used for determining equality when searching.</p>
     pub content_type: ::std::option::Option<crate::types::FieldContentType>,
@@ -16,7 +16,7 @@ impl ObjectTypeField {
     pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
-    /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
+    /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode. Do not include sensitive or personally identifiable information (PII) in the target field name.</p>
     pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
     }
@@ -55,17 +55,17 @@ impl ObjectTypeFieldBuilder {
     pub fn get_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.source
     }
-    /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
+    /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode. Do not include sensitive or personally identifiable information (PII) in the target field name.</p>
     pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
+    /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode. Do not include sensitive or personally identifiable information (PII) in the target field name.</p>
     pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
     }
-    /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
+    /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode. Do not include sensitive or personally identifiable information (PII) in the target field name.</p>
     pub fn get_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.target
     }

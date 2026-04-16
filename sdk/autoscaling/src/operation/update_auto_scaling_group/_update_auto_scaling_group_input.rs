@@ -24,6 +24,8 @@ pub struct UpdateAutoScalingGroupInput {
     pub default_cooldown: ::std::option::Option<i32>,
     /// <p>One or more Availability Zones for the group.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A list of Availability Zone IDs for the Auto Scaling group. You cannot specify both AvailabilityZones and AvailabilityZoneIds in the same request.</p>
+    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A comma-separated value string of one or more health check types.</p>
     /// <p>The valid values are <code>EC2</code>, <code>EBS</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html">Health checks for instances in an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Only specify <code>EC2</code> if you must clear a value that was previously set.</p>
@@ -120,6 +122,12 @@ impl UpdateAutoScalingGroupInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
     pub fn availability_zones(&self) -> &[::std::string::String] {
         self.availability_zones.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of Availability Zone IDs for the Auto Scaling group. You cannot specify both AvailabilityZones and AvailabilityZoneIds in the same request.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_ids.is_none()`.
+    pub fn availability_zone_ids(&self) -> &[::std::string::String] {
+        self.availability_zone_ids.as_deref().unwrap_or_default()
     }
     /// <p>A comma-separated value string of one or more health check types.</p>
     /// <p>The valid values are <code>EC2</code>, <code>EBS</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html">Health checks for instances in an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -236,6 +244,7 @@ pub struct UpdateAutoScalingGroupInputBuilder {
     pub(crate) desired_capacity: ::std::option::Option<i32>,
     pub(crate) default_cooldown: ::std::option::Option<i32>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) health_check_type: ::std::option::Option<::std::string::String>,
     pub(crate) health_check_grace_period: ::std::option::Option<i32>,
     pub(crate) placement_group: ::std::option::Option<::std::string::String>,
@@ -398,6 +407,26 @@ impl UpdateAutoScalingGroupInputBuilder {
     /// <p>One or more Availability Zones for the group.</p>
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
+    }
+    /// Appends an item to `availability_zone_ids`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zone_ids`](Self::set_availability_zone_ids).
+    ///
+    /// <p>A list of Availability Zone IDs for the Auto Scaling group. You cannot specify both AvailabilityZones and AvailabilityZoneIds in the same request.</p>
+    pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.availability_zone_ids.unwrap_or_default();
+        v.push(input.into());
+        self.availability_zone_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Availability Zone IDs for the Auto Scaling group. You cannot specify both AvailabilityZones and AvailabilityZoneIds in the same request.</p>
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.availability_zone_ids = input;
+        self
+    }
+    /// <p>A list of Availability Zone IDs for the Auto Scaling group. You cannot specify both AvailabilityZones and AvailabilityZoneIds in the same request.</p>
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zone_ids
     }
     /// <p>A comma-separated value string of one or more health check types.</p>
     /// <p>The valid values are <code>EC2</code>, <code>EBS</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-health-checks.html">Health checks for instances in an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -736,6 +765,7 @@ impl UpdateAutoScalingGroupInputBuilder {
             desired_capacity: self.desired_capacity,
             default_cooldown: self.default_cooldown,
             availability_zones: self.availability_zones,
+            availability_zone_ids: self.availability_zone_ids,
             health_check_type: self.health_check_type,
             health_check_grace_period: self.health_check_grace_period,
             placement_group: self.placement_group,

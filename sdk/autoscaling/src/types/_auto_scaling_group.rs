@@ -26,6 +26,8 @@ pub struct AutoScalingGroup {
     pub default_cooldown: ::std::option::Option<i32>,
     /// <p>One or more Availability Zones for the Auto Scaling group.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Availability Zone IDs where the Auto Scaling group can launch instances.</p>
+    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>One or more load balancers associated with the group.</p>
     pub load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARN) of the target groups for your load balancer.</p>
@@ -132,6 +134,12 @@ impl AutoScalingGroup {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
     pub fn availability_zones(&self) -> &[::std::string::String] {
         self.availability_zones.as_deref().unwrap_or_default()
+    }
+    /// <p>The Availability Zone IDs where the Auto Scaling group can launch instances.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_ids.is_none()`.
+    pub fn availability_zone_ids(&self) -> &[::std::string::String] {
+        self.availability_zone_ids.as_deref().unwrap_or_default()
     }
     /// <p>One or more load balancers associated with the group.</p>
     ///
@@ -289,6 +297,7 @@ pub struct AutoScalingGroupBuilder {
     pub(crate) predicted_capacity: ::std::option::Option<i32>,
     pub(crate) default_cooldown: ::std::option::Option<i32>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) target_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) health_check_type: ::std::option::Option<::std::string::String>,
@@ -484,6 +493,26 @@ impl AutoScalingGroupBuilder {
     /// <p>One or more Availability Zones for the Auto Scaling group.</p>
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
+    }
+    /// Appends an item to `availability_zone_ids`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zone_ids`](Self::set_availability_zone_ids).
+    ///
+    /// <p>The Availability Zone IDs where the Auto Scaling group can launch instances.</p>
+    pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.availability_zone_ids.unwrap_or_default();
+        v.push(input.into());
+        self.availability_zone_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Availability Zone IDs where the Auto Scaling group can launch instances.</p>
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.availability_zone_ids = input;
+        self
+    }
+    /// <p>The Availability Zone IDs where the Auto Scaling group can launch instances.</p>
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zone_ids
     }
     /// Appends an item to `load_balancer_names`.
     ///
@@ -958,6 +987,7 @@ impl AutoScalingGroupBuilder {
             predicted_capacity: self.predicted_capacity,
             default_cooldown: self.default_cooldown,
             availability_zones: self.availability_zones,
+            availability_zone_ids: self.availability_zone_ids,
             load_balancer_names: self.load_balancer_names,
             target_group_arns: self.target_group_arns,
             health_check_type: self.health_check_type,

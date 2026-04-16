@@ -18,6 +18,8 @@ pub struct Job {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// A job's phase can be PROBING, TRANSCODING OR UPLOADING
     pub current_phase: ::std::option::Option<crate::types::JobPhase>,
+    /// The Elemental Inference configuration used in this job.
+    pub elemental_inference_configuration: ::std::option::Option<crate::types::ElementalInferenceConfiguration>,
     /// Error code for the job
     pub error_code: ::std::option::Option<i32>,
     /// Error message of Job
@@ -95,6 +97,10 @@ impl Job {
     /// A job's phase can be PROBING, TRANSCODING OR UPLOADING
     pub fn current_phase(&self) -> ::std::option::Option<&crate::types::JobPhase> {
         self.current_phase.as_ref()
+    }
+    /// The Elemental Inference configuration used in this job.
+    pub fn elemental_inference_configuration(&self) -> ::std::option::Option<&crate::types::ElementalInferenceConfiguration> {
+        self.elemental_inference_configuration.as_ref()
     }
     /// Error code for the job
     pub fn error_code(&self) -> ::std::option::Option<i32> {
@@ -219,6 +225,7 @@ pub struct JobBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) current_phase: ::std::option::Option<crate::types::JobPhase>,
+    pub(crate) elemental_inference_configuration: ::std::option::Option<crate::types::ElementalInferenceConfiguration>,
     pub(crate) error_code: ::std::option::Option<i32>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
     pub(crate) hop_destinations: ::std::option::Option<::std::vec::Vec<crate::types::HopDestination>>,
@@ -342,6 +349,20 @@ impl JobBuilder {
     /// A job's phase can be PROBING, TRANSCODING OR UPLOADING
     pub fn get_current_phase(&self) -> &::std::option::Option<crate::types::JobPhase> {
         &self.current_phase
+    }
+    /// The Elemental Inference configuration used in this job.
+    pub fn elemental_inference_configuration(mut self, input: crate::types::ElementalInferenceConfiguration) -> Self {
+        self.elemental_inference_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// The Elemental Inference configuration used in this job.
+    pub fn set_elemental_inference_configuration(mut self, input: ::std::option::Option<crate::types::ElementalInferenceConfiguration>) -> Self {
+        self.elemental_inference_configuration = input;
+        self
+    }
+    /// The Elemental Inference configuration used in this job.
+    pub fn get_elemental_inference_configuration(&self) -> &::std::option::Option<crate::types::ElementalInferenceConfiguration> {
+        &self.elemental_inference_configuration
     }
     /// Error code for the job
     pub fn error_code(mut self, input: i32) -> Self {
@@ -724,6 +745,7 @@ impl JobBuilder {
             client_request_token: self.client_request_token,
             created_at: self.created_at,
             current_phase: self.current_phase,
+            elemental_inference_configuration: self.elemental_inference_configuration,
             error_code: self.error_code,
             error_message: self.error_message,
             hop_destinations: self.hop_destinations,

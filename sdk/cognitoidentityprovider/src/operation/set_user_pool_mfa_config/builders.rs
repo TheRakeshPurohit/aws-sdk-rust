@@ -184,17 +184,17 @@ impl SetUserPoolMfaConfigFluentBuilder {
     pub fn get_mfa_configuration(&self) -> &::std::option::Option<crate::types::UserPoolMfaType> {
         self.inner.get_mfa_configuration()
     }
-    /// <p>The configuration of your user pool for passkey, or WebAuthn, authentication and registration. You can set this configuration independent of the MFA configuration options in this operation.</p>
+    /// <p>The configuration of your user pool for passkey, or WebAuthn, authentication and registration. Includes relying-party configuration, user-verification requirements, and whether passkeys can satisfy MFA requirements.</p>
     pub fn web_authn_configuration(mut self, input: crate::types::WebAuthnConfigurationType) -> Self {
         self.inner = self.inner.web_authn_configuration(input);
         self
     }
-    /// <p>The configuration of your user pool for passkey, or WebAuthn, authentication and registration. You can set this configuration independent of the MFA configuration options in this operation.</p>
+    /// <p>The configuration of your user pool for passkey, or WebAuthn, authentication and registration. Includes relying-party configuration, user-verification requirements, and whether passkeys can satisfy MFA requirements.</p>
     pub fn set_web_authn_configuration(mut self, input: ::std::option::Option<crate::types::WebAuthnConfigurationType>) -> Self {
         self.inner = self.inner.set_web_authn_configuration(input);
         self
     }
-    /// <p>The configuration of your user pool for passkey, or WebAuthn, authentication and registration. You can set this configuration independent of the MFA configuration options in this operation.</p>
+    /// <p>The configuration of your user pool for passkey, or WebAuthn, authentication and registration. Includes relying-party configuration, user-verification requirements, and whether passkeys can satisfy MFA requirements.</p>
     pub fn get_web_authn_configuration(&self) -> &::std::option::Option<crate::types::WebAuthnConfigurationType> {
         self.inner.get_web_authn_configuration()
     }

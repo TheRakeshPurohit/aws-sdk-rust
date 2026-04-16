@@ -12,7 +12,7 @@ pub struct SetUserPoolMfaConfigOutput {
     /// <p>Displays multi-factor authentication (MFA) as on, off, or optional. When <code>ON</code>, all users must set up MFA before they can sign in. When <code>OPTIONAL</code>, your application must make a client-side determination of whether a user wants to register an MFA device. For user pools with adaptive authentication with threat protection, choose <code>OPTIONAL</code>.</p>
     /// <p>When <code>MfaConfiguration</code> is <code>OPTIONAL</code>, managed login doesn't automatically prompt users to set up MFA. Amazon Cognito generates MFA prompts in API responses and in managed login for users who have chosen and configured a preferred MFA factor.</p>
     pub mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
-    /// <p>The configuration of your user pool for passkey, or WebAuthn, sign-in with authenticators like biometric and security-key devices. Includes relying-party configuration and settings for user-verification requirements.</p>
+    /// <p>The configuration of your user pool for passkey, or WebAuthn, sign-in with authenticators such as biometric and security-key devices. Includes relying-party configuration and settings for user-verification requirements.</p>
     pub web_authn_configuration: ::std::option::Option<crate::types::WebAuthnConfigurationType>,
     _request_id: Option<String>,
 }
@@ -34,7 +34,7 @@ impl SetUserPoolMfaConfigOutput {
     pub fn mfa_configuration(&self) -> ::std::option::Option<&crate::types::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
     }
-    /// <p>The configuration of your user pool for passkey, or WebAuthn, sign-in with authenticators like biometric and security-key devices. Includes relying-party configuration and settings for user-verification requirements.</p>
+    /// <p>The configuration of your user pool for passkey, or WebAuthn, sign-in with authenticators such as biometric and security-key devices. Includes relying-party configuration and settings for user-verification requirements.</p>
     pub fn web_authn_configuration(&self) -> ::std::option::Option<&crate::types::WebAuthnConfigurationType> {
         self.web_authn_configuration.as_ref()
     }
@@ -122,17 +122,17 @@ impl SetUserPoolMfaConfigOutputBuilder {
     pub fn get_mfa_configuration(&self) -> &::std::option::Option<crate::types::UserPoolMfaType> {
         &self.mfa_configuration
     }
-    /// <p>The configuration of your user pool for passkey, or WebAuthn, sign-in with authenticators like biometric and security-key devices. Includes relying-party configuration and settings for user-verification requirements.</p>
+    /// <p>The configuration of your user pool for passkey, or WebAuthn, sign-in with authenticators such as biometric and security-key devices. Includes relying-party configuration and settings for user-verification requirements.</p>
     pub fn web_authn_configuration(mut self, input: crate::types::WebAuthnConfigurationType) -> Self {
         self.web_authn_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration of your user pool for passkey, or WebAuthn, sign-in with authenticators like biometric and security-key devices. Includes relying-party configuration and settings for user-verification requirements.</p>
+    /// <p>The configuration of your user pool for passkey, or WebAuthn, sign-in with authenticators such as biometric and security-key devices. Includes relying-party configuration and settings for user-verification requirements.</p>
     pub fn set_web_authn_configuration(mut self, input: ::std::option::Option<crate::types::WebAuthnConfigurationType>) -> Self {
         self.web_authn_configuration = input;
         self
     }
-    /// <p>The configuration of your user pool for passkey, or WebAuthn, sign-in with authenticators like biometric and security-key devices. Includes relying-party configuration and settings for user-verification requirements.</p>
+    /// <p>The configuration of your user pool for passkey, or WebAuthn, sign-in with authenticators such as biometric and security-key devices. Includes relying-party configuration and settings for user-verification requirements.</p>
     pub fn get_web_authn_configuration(&self) -> &::std::option::Option<crate::types::WebAuthnConfigurationType> {
         &self.web_authn_configuration
     }

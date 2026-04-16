@@ -7,6 +7,8 @@ pub struct CreateGroupProfileInput {
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the group for which the group profile is created.</p>
     pub group_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the IAM role that will be associated with the group profile. This role defines the permissions that group members will assume when accessing Amazon DataZone resources.</p>
+    pub role_principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -18,6 +20,10 @@ impl CreateGroupProfileInput {
     /// <p>The identifier of the group for which the group profile is created.</p>
     pub fn group_identifier(&self) -> ::std::option::Option<&str> {
         self.group_identifier.as_deref()
+    }
+    /// <p>The ARN of the IAM role that will be associated with the group profile. This role defines the permissions that group members will assume when accessing Amazon DataZone resources.</p>
+    pub fn role_principal_arn(&self) -> ::std::option::Option<&str> {
+        self.role_principal_arn.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -37,6 +43,7 @@ impl CreateGroupProfileInput {
 pub struct CreateGroupProfileInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) group_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) role_principal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateGroupProfileInputBuilder {
@@ -56,7 +63,6 @@ impl CreateGroupProfileInputBuilder {
         &self.domain_identifier
     }
     /// <p>The identifier of the group for which the group profile is created.</p>
-    /// This field is required.
     pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_identifier = ::std::option::Option::Some(input.into());
         self
@@ -69,6 +75,20 @@ impl CreateGroupProfileInputBuilder {
     /// <p>The identifier of the group for which the group profile is created.</p>
     pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_identifier
+    }
+    /// <p>The ARN of the IAM role that will be associated with the group profile. This role defines the permissions that group members will assume when accessing Amazon DataZone resources.</p>
+    pub fn role_principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_principal_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the IAM role that will be associated with the group profile. This role defines the permissions that group members will assume when accessing Amazon DataZone resources.</p>
+    pub fn set_role_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_principal_arn = input;
+        self
+    }
+    /// <p>The ARN of the IAM role that will be associated with the group profile. This role defines the permissions that group members will assume when accessing Amazon DataZone resources.</p>
+    pub fn get_role_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_principal_arn
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -92,6 +112,7 @@ impl CreateGroupProfileInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_group_profile::CreateGroupProfileInput {
             domain_identifier: self.domain_identifier,
             group_identifier: self.group_identifier,
+            role_principal_arn: self.role_principal_arn,
             client_token: self.client_token,
         })
     }

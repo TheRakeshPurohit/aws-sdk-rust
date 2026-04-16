@@ -15,6 +15,7 @@
 ///     EventSourceName::OnCaseCreate => { /* ... */ },
 ///     EventSourceName::OnCaseUpdate => { /* ... */ },
 ///     EventSourceName::OnContactEvaluationSubmit => { /* ... */ },
+///     EventSourceName::OnEmailAnalysisAvailable => { /* ... */ },
 ///     EventSourceName::OnMetricDataUpdate => { /* ... */ },
 ///     EventSourceName::OnPostCallAnalysisAvailable => { /* ... */ },
 ///     EventSourceName::OnPostChatAnalysisAvailable => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum EventSourceName {
     #[allow(missing_docs)] // documentation missing in model
     OnContactEvaluationSubmit,
     #[allow(missing_docs)] // documentation missing in model
+    OnEmailAnalysisAvailable,
+    #[allow(missing_docs)] // documentation missing in model
     OnMetricDataUpdate,
     #[allow(missing_docs)] // documentation missing in model
     OnPostCallAnalysisAvailable,
@@ -86,6 +89,7 @@ impl ::std::convert::From<&str> for EventSourceName {
             "OnCaseCreate" => EventSourceName::OnCaseCreate,
             "OnCaseUpdate" => EventSourceName::OnCaseUpdate,
             "OnContactEvaluationSubmit" => EventSourceName::OnContactEvaluationSubmit,
+            "OnEmailAnalysisAvailable" => EventSourceName::OnEmailAnalysisAvailable,
             "OnMetricDataUpdate" => EventSourceName::OnMetricDataUpdate,
             "OnPostCallAnalysisAvailable" => EventSourceName::OnPostCallAnalysisAvailable,
             "OnPostChatAnalysisAvailable" => EventSourceName::OnPostChatAnalysisAvailable,
@@ -113,6 +117,7 @@ impl EventSourceName {
             EventSourceName::OnCaseCreate => "OnCaseCreate",
             EventSourceName::OnCaseUpdate => "OnCaseUpdate",
             EventSourceName::OnContactEvaluationSubmit => "OnContactEvaluationSubmit",
+            EventSourceName::OnEmailAnalysisAvailable => "OnEmailAnalysisAvailable",
             EventSourceName::OnMetricDataUpdate => "OnMetricDataUpdate",
             EventSourceName::OnPostCallAnalysisAvailable => "OnPostCallAnalysisAvailable",
             EventSourceName::OnPostChatAnalysisAvailable => "OnPostChatAnalysisAvailable",
@@ -131,6 +136,7 @@ impl EventSourceName {
             "OnCaseCreate",
             "OnCaseUpdate",
             "OnContactEvaluationSubmit",
+            "OnEmailAnalysisAvailable",
             "OnMetricDataUpdate",
             "OnPostCallAnalysisAvailable",
             "OnPostChatAnalysisAvailable",
@@ -166,6 +172,7 @@ impl ::std::fmt::Display for EventSourceName {
             EventSourceName::OnCaseCreate => write!(f, "OnCaseCreate"),
             EventSourceName::OnCaseUpdate => write!(f, "OnCaseUpdate"),
             EventSourceName::OnContactEvaluationSubmit => write!(f, "OnContactEvaluationSubmit"),
+            EventSourceName::OnEmailAnalysisAvailable => write!(f, "OnEmailAnalysisAvailable"),
             EventSourceName::OnMetricDataUpdate => write!(f, "OnMetricDataUpdate"),
             EventSourceName::OnPostCallAnalysisAvailable => write!(f, "OnPostCallAnalysisAvailable"),
             EventSourceName::OnPostChatAnalysisAvailable => write!(f, "OnPostChatAnalysisAvailable"),

@@ -3,11 +3,14 @@ pub fn ser_update_user_profile_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_user_profile::UpdateUserProfileInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.status {
-        object.key("status").string(var_1.as_str());
+    if let Some(var_1) = &input.session_name {
+        object.key("sessionName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.r#type {
-        object.key("type").string(var_2.as_str());
+    if let Some(var_2) = &input.status {
+        object.key("status").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.r#type {
+        object.key("type").string(var_3.as_str());
     }
     Ok(())
 }

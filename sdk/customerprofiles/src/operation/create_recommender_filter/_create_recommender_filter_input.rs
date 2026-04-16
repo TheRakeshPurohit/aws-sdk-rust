@@ -9,6 +9,8 @@ pub struct CreateRecommenderFilterInput {
     pub recommender_filter_name: ::std::option::Option<::std::string::String>,
     /// <p>The filter expression that defines which items to include or exclude from recommendations.</p>
     pub recommender_filter_expression: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the recommender schema to use for this recommender filter. If not specified, the default schema is used.</p>
+    pub recommender_schema_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the recommender filter.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -27,6 +29,10 @@ impl CreateRecommenderFilterInput {
     pub fn recommender_filter_expression(&self) -> ::std::option::Option<&str> {
         self.recommender_filter_expression.as_deref()
     }
+    /// <p>The name of the recommender schema to use for this recommender filter. If not specified, the default schema is used.</p>
+    pub fn recommender_schema_name(&self) -> ::std::option::Option<&str> {
+        self.recommender_schema_name.as_deref()
+    }
     /// <p>A description of the recommender filter.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
@@ -42,6 +48,7 @@ impl ::std::fmt::Debug for CreateRecommenderFilterInput {
         formatter.field("domain_name", &self.domain_name);
         formatter.field("recommender_filter_name", &self.recommender_filter_name);
         formatter.field("recommender_filter_expression", &"*** Sensitive Data Redacted ***");
+        formatter.field("recommender_schema_name", &self.recommender_schema_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -61,6 +68,7 @@ pub struct CreateRecommenderFilterInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) recommender_filter_name: ::std::option::Option<::std::string::String>,
     pub(crate) recommender_filter_expression: ::std::option::Option<::std::string::String>,
+    pub(crate) recommender_schema_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -110,6 +118,20 @@ impl CreateRecommenderFilterInputBuilder {
     pub fn get_recommender_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommender_filter_expression
     }
+    /// <p>The name of the recommender schema to use for this recommender filter. If not specified, the default schema is used.</p>
+    pub fn recommender_schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recommender_schema_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the recommender schema to use for this recommender filter. If not specified, the default schema is used.</p>
+    pub fn set_recommender_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommender_schema_name = input;
+        self
+    }
+    /// <p>The name of the recommender schema to use for this recommender filter. If not specified, the default schema is used.</p>
+    pub fn get_recommender_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_schema_name
+    }
     /// <p>A description of the recommender filter.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -155,6 +177,7 @@ impl CreateRecommenderFilterInputBuilder {
             domain_name: self.domain_name,
             recommender_filter_name: self.recommender_filter_name,
             recommender_filter_expression: self.recommender_filter_expression,
+            recommender_schema_name: self.recommender_schema_name,
             description: self.description,
             tags: self.tags,
         })
@@ -166,6 +189,7 @@ impl ::std::fmt::Debug for CreateRecommenderFilterInputBuilder {
         formatter.field("domain_name", &self.domain_name);
         formatter.field("recommender_filter_name", &self.recommender_filter_name);
         formatter.field("recommender_filter_expression", &"*** Sensitive Data Redacted ***");
+        formatter.field("recommender_schema_name", &self.recommender_schema_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.finish()

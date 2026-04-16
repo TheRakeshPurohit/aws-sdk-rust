@@ -318,4 +318,18 @@ impl UpdateStackFluentBuilder {
     pub fn get_streaming_experience_settings(&self) -> &::std::option::Option<crate::types::StreamingExperienceSettings> {
         self.inner.get_streaming_experience_settings()
     }
+    /// <p>Configuration for bidirectional URL redirection between the streaming session and the local client. Use HostToClient to redirect URLs from the remote desktop to the local browser.</p>
+    pub fn content_redirection(mut self, input: crate::types::ContentRedirection) -> Self {
+        self.inner = self.inner.content_redirection(input);
+        self
+    }
+    /// <p>Configuration for bidirectional URL redirection between the streaming session and the local client. Use HostToClient to redirect URLs from the remote desktop to the local browser.</p>
+    pub fn set_content_redirection(mut self, input: ::std::option::Option<crate::types::ContentRedirection>) -> Self {
+        self.inner = self.inner.set_content_redirection(input);
+        self
+    }
+    /// <p>Configuration for bidirectional URL redirection between the streaming session and the local client. Use HostToClient to redirect URLs from the remote desktop to the local browser.</p>
+    pub fn get_content_redirection(&self) -> &::std::option::Option<crate::types::ContentRedirection> {
+        self.inner.get_content_redirection()
+    }
 }

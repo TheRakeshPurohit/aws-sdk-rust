@@ -143,6 +143,20 @@ impl ListMemoryRecordsFluentBuilder {
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    pub fn namespace_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.namespace_path(input.into());
+        self
+    }
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    pub fn set_namespace_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_namespace_path(input);
+        self
+    }
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    pub fn get_namespace_path(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace_path()
+    }
     /// <p>The memory strategy identifier to filter memory records by. If specified, only memory records with this strategy ID are returned.</p>
     pub fn memory_strategy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.memory_strategy_id(input.into());

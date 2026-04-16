@@ -116,17 +116,20 @@ impl ListChatsFluentBuilder {
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }
-    /// The user identifier to list chats for
+    /// The user identifier to list chats for. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// The user identifier to list chats for
+    /// The user identifier to list chats for. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// The user identifier to list chats for
+    /// The user identifier to list chats for. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }

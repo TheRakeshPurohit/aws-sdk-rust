@@ -8,6 +8,8 @@ pub struct RecommenderSummary {
     pub recommender_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the recipe used by this recommender.</p>
     pub recipe_name: ::std::option::Option<crate::types::RecommenderRecipeName>,
+    /// <p>The name of the recommender schema associated with this recommender.</p>
+    pub recommender_schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings applied to this recommender.</p>
     pub recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
     /// <p>The timestamp when the recommender was created.</p>
@@ -33,6 +35,10 @@ impl RecommenderSummary {
     /// <p>The name of the recipe used by this recommender.</p>
     pub fn recipe_name(&self) -> ::std::option::Option<&crate::types::RecommenderRecipeName> {
         self.recipe_name.as_ref()
+    }
+    /// <p>The name of the recommender schema associated with this recommender.</p>
+    pub fn recommender_schema_name(&self) -> ::std::option::Option<&str> {
+        self.recommender_schema_name.as_deref()
     }
     /// <p>The configuration settings applied to this recommender.</p>
     pub fn recommender_config(&self) -> ::std::option::Option<&crate::types::RecommenderConfig> {
@@ -72,6 +78,7 @@ impl ::std::fmt::Debug for RecommenderSummary {
         let mut formatter = f.debug_struct("RecommenderSummary");
         formatter.field("recommender_name", &self.recommender_name);
         formatter.field("recipe_name", &self.recipe_name);
+        formatter.field("recommender_schema_name", &self.recommender_schema_name);
         formatter.field("recommender_config", &self.recommender_config);
         formatter.field("created_at", &self.created_at);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
@@ -96,6 +103,7 @@ impl RecommenderSummary {
 pub struct RecommenderSummaryBuilder {
     pub(crate) recommender_name: ::std::option::Option<::std::string::String>,
     pub(crate) recipe_name: ::std::option::Option<crate::types::RecommenderRecipeName>,
+    pub(crate) recommender_schema_name: ::std::option::Option<::std::string::String>,
     pub(crate) recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -133,6 +141,20 @@ impl RecommenderSummaryBuilder {
     /// <p>The name of the recipe used by this recommender.</p>
     pub fn get_recipe_name(&self) -> &::std::option::Option<crate::types::RecommenderRecipeName> {
         &self.recipe_name
+    }
+    /// <p>The name of the recommender schema associated with this recommender.</p>
+    pub fn recommender_schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recommender_schema_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the recommender schema associated with this recommender.</p>
+    pub fn set_recommender_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommender_schema_name = input;
+        self
+    }
+    /// <p>The name of the recommender schema associated with this recommender.</p>
+    pub fn get_recommender_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_schema_name
     }
     /// <p>The configuration settings applied to this recommender.</p>
     pub fn recommender_config(mut self, input: crate::types::RecommenderConfig) -> Self {
@@ -257,6 +279,7 @@ impl RecommenderSummaryBuilder {
         crate::types::RecommenderSummary {
             recommender_name: self.recommender_name,
             recipe_name: self.recipe_name,
+            recommender_schema_name: self.recommender_schema_name,
             recommender_config: self.recommender_config,
             created_at: self.created_at,
             description: self.description,
@@ -273,6 +296,7 @@ impl ::std::fmt::Debug for RecommenderSummaryBuilder {
         let mut formatter = f.debug_struct("RecommenderSummaryBuilder");
         formatter.field("recommender_name", &self.recommender_name);
         formatter.field("recipe_name", &self.recipe_name);
+        formatter.field("recommender_schema_name", &self.recommender_schema_name);
         formatter.field("recommender_config", &self.recommender_config);
         formatter.field("created_at", &self.created_at);
         formatter.field("description", &"*** Sensitive Data Redacted ***");

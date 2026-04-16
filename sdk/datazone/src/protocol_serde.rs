@@ -753,6 +753,8 @@ pub(crate) mod shape_prediction_configuration;
 
 pub(crate) mod shape_project_members;
 
+pub(crate) mod shape_project_membership_assignment;
+
 pub(crate) mod shape_project_profile_summaries;
 
 pub(crate) mod shape_project_resource_tag_parameters;

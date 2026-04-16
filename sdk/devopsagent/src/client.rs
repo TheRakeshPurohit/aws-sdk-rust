@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AllowVendedLogDeliveryForResource`](crate::operation::allow_vended_log_delivery_for_resource) operation has
-/// a [`Client::allow_vended_log_delivery_for_resource`], function which returns a builder for that operation.
+/// For example, the [`AssociateService`](crate::operation::associate_service) operation has
+/// a [`Client::associate_service`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.allow_vended_log_delivery_for_resource()
-///     .resource_arn_being_authorized("example")
+/// let result = client.associate_service()
+///     .agent_space_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,8 +136,6 @@ impl Client {
     }
 }
 
-mod allow_vended_log_delivery_for_resource;
-
 mod associate_service;
 
 mod create_agent_space;
@@ -159,7 +157,7 @@ mod create_private_connection;
 /// # let client: aws_sdk_devopsagent::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.allow_vended_log_delivery_for_resource()
+/// let result = client.associate_service()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

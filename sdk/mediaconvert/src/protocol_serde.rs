@@ -195,6 +195,8 @@ pub(crate) mod shape_color_conversion3_dlut_setting;
 
 pub(crate) mod shape_container_settings;
 
+pub(crate) mod shape_elemental_inference_configuration;
+
 pub(crate) mod shape_endpoint;
 
 pub(crate) mod shape_esam_settings;
@@ -293,6 +295,10 @@ pub(crate) mod shape_list_of_caption_description_preset;
 
 pub(crate) mod shape_list_of_color_conversion3_dlut_setting;
 
+pub(crate) mod shape_list_of_elemental_inference_feature;
+
+pub(crate) mod shape_list_of_elemental_inference_feed;
+
 pub(crate) mod shape_list_of_input;
 
 pub(crate) mod shape_list_of_input_template;
@@ -390,6 +396,8 @@ pub(crate) mod shape_dvb_tdt_settings;
 pub(crate) mod shape_eac3_atmos_settings;
 
 pub(crate) mod shape_eac3_settings;
+
+pub(crate) mod shape_elemental_inference_feed;
 
 pub(crate) mod shape_embedded_destination_settings;
 

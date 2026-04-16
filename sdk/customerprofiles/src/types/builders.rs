@@ -167,6 +167,8 @@ pub use crate::types::_recommender_recipe::RecommenderRecipeBuilder;
 
 pub use crate::types::_recommender_summary::RecommenderSummaryBuilder;
 
+pub use crate::types::_recommender_schema_summary::RecommenderSchemaSummaryBuilder;
+
 pub use crate::types::_segment_definition_item::SegmentDefinitionItemBuilder;
 
 pub use crate::types::_upload_job_item::UploadJobItemBuilder;
@@ -192,6 +194,8 @@ pub use crate::types::_matching_rule::MatchingRuleBuilder;
 pub use crate::types::_period::PeriodBuilder;
 
 pub use crate::types::_contact_preference::ContactPreferenceBuilder;
+
+pub use crate::types::_recommender_schema_field::RecommenderSchemaFieldBuilder;
 
 pub use crate::types::_group::GroupBuilder;
 

@@ -59,7 +59,7 @@ pub fn de_auto_scaling_instance_details(
                 builder = builder.set_availability_zone(var_4);
             }
             ,
-            s if s.matches("LifecycleState") /* LifecycleState com.amazonaws.autoscaling#AutoScalingInstanceDetails$LifecycleState */ =>  {
+            s if s.matches("AvailabilityZoneId") /* AvailabilityZoneId com.amazonaws.autoscaling#AutoScalingInstanceDetails$AvailabilityZoneId */ =>  {
                 let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -69,10 +69,10 @@ pub fn de_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_lifecycle_state(var_5);
+                builder = builder.set_availability_zone_id(var_5);
             }
             ,
-            s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.autoscaling#AutoScalingInstanceDetails$HealthStatus */ =>  {
+            s if s.matches("LifecycleState") /* LifecycleState com.amazonaws.autoscaling#AutoScalingInstanceDetails$LifecycleState */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -82,10 +82,10 @@ pub fn de_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_health_status(var_6);
+                builder = builder.set_lifecycle_state(var_6);
             }
             ,
-            s if s.matches("LaunchConfigurationName") /* LaunchConfigurationName com.amazonaws.autoscaling#AutoScalingInstanceDetails$LaunchConfigurationName */ =>  {
+            s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.autoscaling#AutoScalingInstanceDetails$HealthStatus */ =>  {
                 let var_7 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -95,21 +95,11 @@ pub fn de_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_launch_configuration_name(var_7);
+                builder = builder.set_health_status(var_7);
             }
             ,
-            s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#AutoScalingInstanceDetails$LaunchTemplate */ =>  {
+            s if s.matches("LaunchConfigurationName") /* LaunchConfigurationName com.amazonaws.autoscaling#AutoScalingInstanceDetails$LaunchConfigurationName */ =>  {
                 let var_8 =
-                    Some(
-                        crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_launch_template(var_8);
-            }
-            ,
-            s if s.matches("ImageId") /* ImageId com.amazonaws.autoscaling#AutoScalingInstanceDetails$ImageId */ =>  {
-                let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -118,11 +108,34 @@ pub fn de_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_image_id(var_9);
+                builder = builder.set_launch_configuration_name(var_8);
+            }
+            ,
+            s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#AutoScalingInstanceDetails$LaunchTemplate */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_launch_template(var_9);
+            }
+            ,
+            s if s.matches("ImageId") /* ImageId com.amazonaws.autoscaling#AutoScalingInstanceDetails$ImageId */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_image_id(var_10);
             }
             ,
             s if s.matches("ProtectedFromScaleIn") /* ProtectedFromScaleIn com.amazonaws.autoscaling#AutoScalingInstanceDetails$ProtectedFromScaleIn */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -133,11 +146,11 @@ pub fn de_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_protected_from_scale_in(var_10);
+                builder = builder.set_protected_from_scale_in(var_11);
             }
             ,
             s if s.matches("WeightedCapacity") /* WeightedCapacity com.amazonaws.autoscaling#AutoScalingInstanceDetails$WeightedCapacity */ =>  {
-                let var_11 =
+                let var_12 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -146,7 +159,7 @@ pub fn de_auto_scaling_instance_details(
                         ?
                     )
                 ;
-                builder = builder.set_weighted_capacity(var_11);
+                builder = builder.set_weighted_capacity(var_12);
             }
             ,
             _ => {}

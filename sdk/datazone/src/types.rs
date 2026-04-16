@@ -397,6 +397,8 @@ pub use crate::types::_aws_console_link_parameters::AwsConsoleLinkParameters;
 
 pub use crate::types::_environment_configuration_user_parameter::EnvironmentConfigurationUserParameter;
 
+pub use crate::types::_project_membership_assignment::ProjectMembershipAssignment;
+
 pub use crate::types::_project_deletion_error::ProjectDeletionError;
 
 pub use crate::types::_resource_tag::ResourceTag;
@@ -1368,6 +1370,8 @@ mod _project_designation;
 mod _project_grant_filter;
 
 mod _project_member;
+
+mod _project_membership_assignment;
 
 mod _project_policy_grant_principal;
 

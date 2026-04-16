@@ -10,6 +10,8 @@ pub struct Instance {
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone in which the instance is running.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The Availability Zone ID where the instance was launched.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the current lifecycle state. The <code>Quarantined</code> state is not used. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html">Amazon EC2 Auto Scaling instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub lifecycle_state: ::std::option::Option<crate::types::LifecycleState>,
     /// <p>The last reported health status of the instance. <code>Healthy</code> means that the instance is healthy and should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and replace it.</p>
@@ -52,6 +54,10 @@ impl Instance {
     /// <p>The Availability Zone in which the instance is running.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
+    }
+    /// <p>The Availability Zone ID where the instance was launched.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
     /// <p>A description of the current lifecycle state. The <code>Quarantined</code> state is not used. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html">Amazon EC2 Auto Scaling instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn lifecycle_state(&self) -> ::std::option::Option<&crate::types::LifecycleState> {
@@ -111,6 +117,7 @@ pub struct InstanceBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle_state: ::std::option::Option<crate::types::LifecycleState>,
     pub(crate) health_status: ::std::option::Option<::std::string::String>,
     pub(crate) launch_configuration_name: ::std::option::Option<::std::string::String>,
@@ -163,6 +170,20 @@ impl InstanceBuilder {
     /// <p>The Availability Zone in which the instance is running.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
+    }
+    /// <p>The Availability Zone ID where the instance was launched.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone ID where the instance was launched.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The Availability Zone ID where the instance was launched.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// <p>A description of the current lifecycle state. The <code>Quarantined</code> state is not used. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html">Amazon EC2 Auto Scaling instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// This field is required.
@@ -316,6 +337,7 @@ impl InstanceBuilder {
             instance_id: self.instance_id,
             instance_type: self.instance_type,
             availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
             lifecycle_state: self.lifecycle_state,
             health_status: self.health_status,
             launch_configuration_name: self.launch_configuration_name,

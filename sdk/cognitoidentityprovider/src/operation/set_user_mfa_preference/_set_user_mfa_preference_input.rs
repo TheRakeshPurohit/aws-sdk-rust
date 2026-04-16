@@ -9,6 +9,8 @@ pub struct SetUserMfaPreferenceInput {
     pub software_token_mfa_settings: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,
     /// <p>User preferences for email message MFA. Activates or deactivates email MFA and sets it as the preferred MFA method when multiple methods are available. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
     pub email_mfa_settings: ::std::option::Option<crate::types::EmailMfaSettingsType>,
+    /// <p>User preferences for passkey MFA. Activates or deactivates passkey MFA for the user. When activated, passkey authentication requires user verification, and passkey sign-in is available when MFA is required. To activate this setting, the <code>FactorConfiguration</code> of your user pool <code>WebAuthnConfiguration</code> must be <code>MULTI_FACTOR_WITH_USER_VERIFICATION</code>. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub web_authn_mfa_settings: ::std::option::Option<crate::types::WebAuthnMfaSettingsType>,
     /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
 }
@@ -25,6 +27,10 @@ impl SetUserMfaPreferenceInput {
     pub fn email_mfa_settings(&self) -> ::std::option::Option<&crate::types::EmailMfaSettingsType> {
         self.email_mfa_settings.as_ref()
     }
+    /// <p>User preferences for passkey MFA. Activates or deactivates passkey MFA for the user. When activated, passkey authentication requires user verification, and passkey sign-in is available when MFA is required. To activate this setting, the <code>FactorConfiguration</code> of your user pool <code>WebAuthnConfiguration</code> must be <code>MULTI_FACTOR_WITH_USER_VERIFICATION</code>. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn web_authn_mfa_settings(&self) -> ::std::option::Option<&crate::types::WebAuthnMfaSettingsType> {
+        self.web_authn_mfa_settings.as_ref()
+    }
     /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
@@ -36,6 +42,7 @@ impl ::std::fmt::Debug for SetUserMfaPreferenceInput {
         formatter.field("sms_mfa_settings", &self.sms_mfa_settings);
         formatter.field("software_token_mfa_settings", &self.software_token_mfa_settings);
         formatter.field("email_mfa_settings", &self.email_mfa_settings);
+        formatter.field("web_authn_mfa_settings", &self.web_authn_mfa_settings);
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -54,6 +61,7 @@ pub struct SetUserMfaPreferenceInputBuilder {
     pub(crate) sms_mfa_settings: ::std::option::Option<crate::types::SmsMfaSettingsType>,
     pub(crate) software_token_mfa_settings: ::std::option::Option<crate::types::SoftwareTokenMfaSettingsType>,
     pub(crate) email_mfa_settings: ::std::option::Option<crate::types::EmailMfaSettingsType>,
+    pub(crate) web_authn_mfa_settings: ::std::option::Option<crate::types::WebAuthnMfaSettingsType>,
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
 }
 impl SetUserMfaPreferenceInputBuilder {
@@ -99,6 +107,20 @@ impl SetUserMfaPreferenceInputBuilder {
     pub fn get_email_mfa_settings(&self) -> &::std::option::Option<crate::types::EmailMfaSettingsType> {
         &self.email_mfa_settings
     }
+    /// <p>User preferences for passkey MFA. Activates or deactivates passkey MFA for the user. When activated, passkey authentication requires user verification, and passkey sign-in is available when MFA is required. To activate this setting, the <code>FactorConfiguration</code> of your user pool <code>WebAuthnConfiguration</code> must be <code>MULTI_FACTOR_WITH_USER_VERIFICATION</code>. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn web_authn_mfa_settings(mut self, input: crate::types::WebAuthnMfaSettingsType) -> Self {
+        self.web_authn_mfa_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>User preferences for passkey MFA. Activates or deactivates passkey MFA for the user. When activated, passkey authentication requires user verification, and passkey sign-in is available when MFA is required. To activate this setting, the <code>FactorConfiguration</code> of your user pool <code>WebAuthnConfiguration</code> must be <code>MULTI_FACTOR_WITH_USER_VERIFICATION</code>. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn set_web_authn_mfa_settings(mut self, input: ::std::option::Option<crate::types::WebAuthnMfaSettingsType>) -> Self {
+        self.web_authn_mfa_settings = input;
+        self
+    }
+    /// <p>User preferences for passkey MFA. Activates or deactivates passkey MFA for the user. When activated, passkey authentication requires user verification, and passkey sign-in is available when MFA is required. To activate this setting, the <code>FactorConfiguration</code> of your user pool <code>WebAuthnConfiguration</code> must be <code>MULTI_FACTOR_WITH_USER_VERIFICATION</code>. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn get_web_authn_mfa_settings(&self) -> &::std::option::Option<crate::types::WebAuthnMfaSettingsType> {
+        &self.web_authn_mfa_settings
+    }
     /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,6 +145,7 @@ impl SetUserMfaPreferenceInputBuilder {
             sms_mfa_settings: self.sms_mfa_settings,
             software_token_mfa_settings: self.software_token_mfa_settings,
             email_mfa_settings: self.email_mfa_settings,
+            web_authn_mfa_settings: self.web_authn_mfa_settings,
             access_token: self.access_token,
         })
     }
@@ -133,6 +156,7 @@ impl ::std::fmt::Debug for SetUserMfaPreferenceInputBuilder {
         formatter.field("sms_mfa_settings", &self.sms_mfa_settings);
         formatter.field("software_token_mfa_settings", &self.software_token_mfa_settings);
         formatter.field("email_mfa_settings", &self.email_mfa_settings);
+        formatter.field("web_authn_mfa_settings", &self.web_authn_mfa_settings);
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

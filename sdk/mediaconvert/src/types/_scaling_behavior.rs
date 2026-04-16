@@ -16,6 +16,7 @@
 ///     ScalingBehavior::Fill => { /* ... */ },
 ///     ScalingBehavior::Fit => { /* ... */ },
 ///     ScalingBehavior::FitNoUpscale => { /* ... */ },
+///     ScalingBehavior::SmartCrop => { /* ... */ },
 ///     ScalingBehavior::StretchToOutput => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -39,7 +40,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Specify the video Scaling behavior when your output has a different resolution than your input. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
+/// Specify the video Scaling behavior when your output has a different resolution than your input. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html Select Smart Cropping using Elemental Inference as your scaling behavior to have Elemental Inference automatically crop your video. Smart Crop requires a vertical output aspect ratio (1:1 is the widest aspect ratio supported).
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -54,6 +55,8 @@ pub enum ScalingBehavior {
     #[allow(missing_docs)] // documentation missing in model
     FitNoUpscale,
     #[allow(missing_docs)] // documentation missing in model
+    SmartCrop,
+    #[allow(missing_docs)] // documentation missing in model
     StretchToOutput,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for ScalingBehavior {
             "FILL" => ScalingBehavior::Fill,
             "FIT" => ScalingBehavior::Fit,
             "FIT_NO_UPSCALE" => ScalingBehavior::FitNoUpscale,
+            "SMART_CROP" => ScalingBehavior::SmartCrop,
             "STRETCH_TO_OUTPUT" => ScalingBehavior::StretchToOutput,
             other => ScalingBehavior::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -86,13 +90,14 @@ impl ScalingBehavior {
             ScalingBehavior::Fill => "FILL",
             ScalingBehavior::Fit => "FIT",
             ScalingBehavior::FitNoUpscale => "FIT_NO_UPSCALE",
+            ScalingBehavior::SmartCrop => "SMART_CROP",
             ScalingBehavior::StretchToOutput => "STRETCH_TO_OUTPUT",
             ScalingBehavior::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEFAULT", "FILL", "FIT", "FIT_NO_UPSCALE", "STRETCH_TO_OUTPUT"]
+        &["DEFAULT", "FILL", "FIT", "FIT_NO_UPSCALE", "SMART_CROP", "STRETCH_TO_OUTPUT"]
     }
 }
 impl ::std::convert::AsRef<str> for ScalingBehavior {
@@ -119,6 +124,7 @@ impl ::std::fmt::Display for ScalingBehavior {
             ScalingBehavior::Fill => write!(f, "FILL"),
             ScalingBehavior::Fit => write!(f, "FIT"),
             ScalingBehavior::FitNoUpscale => write!(f, "FIT_NO_UPSCALE"),
+            ScalingBehavior::SmartCrop => write!(f, "SMART_CROP"),
             ScalingBehavior::StretchToOutput => write!(f, "STRETCH_TO_OUTPUT"),
             ScalingBehavior::Unknown(value) => write!(f, "{value}"),
         }

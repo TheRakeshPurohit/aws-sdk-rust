@@ -79,6 +79,16 @@ pub(crate) fn reflens_list_recommender_recipes_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_recommender_schemas_output_output_next_token(
+    input: &crate::operation::list_recommender_schemas::ListRecommenderSchemasOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_recommenders_output_output_next_token(
     input: &crate::operation::list_recommenders::ListRecommendersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -172,6 +182,13 @@ pub(crate) fn lens_list_recommender_recipes_output_output_recommender_recipes(
     input: crate::operation::list_recommender_recipes::ListRecommenderRecipesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RecommenderRecipe>> {
     let input = input.recommender_recipes?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_recommender_schemas_output_output_recommender_schemas(
+    input: crate::operation::list_recommender_schemas::ListRecommenderSchemasOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RecommenderSchemaSummary>> {
+    let input = input.recommender_schemas?;
     ::std::option::Option::Some(input)
 }
 

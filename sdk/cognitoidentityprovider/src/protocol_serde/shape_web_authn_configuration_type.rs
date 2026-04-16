@@ -29,6 +29,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "FactorConfiguration" => {
+                            builder = builder.set_factor_configuration(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::WebAuthnFactorConfigurationType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -55,6 +62,9 @@ pub fn ser_web_authn_configuration_type(
     }
     if let Some(var_2) = &input.user_verification {
         object.key("UserVerification").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.factor_configuration {
+        object.key("FactorConfiguration").string(var_3.as_str());
     }
     Ok(())
 }

@@ -6,7 +6,8 @@
 pub struct ListChatsInput {
     /// Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)
     pub agent_space_id: ::std::option::Option<::std::string::String>,
-    /// The user identifier to list chats for
+    /// The user identifier to list chats for. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub user_id: ::std::option::Option<::std::string::String>,
     /// Maximum number of results to return
     pub max_results: ::std::option::Option<i32>,
@@ -18,7 +19,8 @@ impl ListChatsInput {
     pub fn agent_space_id(&self) -> ::std::option::Option<&str> {
         self.agent_space_id.as_deref()
     }
-    /// The user identifier to list chats for
+    /// The user identifier to list chats for. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -63,18 +65,20 @@ impl ListChatsInputBuilder {
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_space_id
     }
-    /// The user identifier to list chats for
-    /// This field is required.
+    /// The user identifier to list chats for. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// The user identifier to list chats for
+    /// The user identifier to list chats for. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
-    /// The user identifier to list chats for
+    /// The user identifier to list chats for. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }

@@ -172,6 +172,20 @@ pub(crate) fn de_create_group_profile(
                             .transpose()?,
                     );
                 }
+                "rolePrincipalArn" => {
+                    builder = builder.set_role_principal_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "rolePrincipalId" => {
+                    builder = builder.set_role_principal_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

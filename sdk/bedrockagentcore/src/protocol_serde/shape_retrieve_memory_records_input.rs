@@ -12,14 +12,17 @@ pub fn ser_retrieve_memory_records_input_input(
     if let Some(var_2) = &input.namespace {
         object.key("namespace").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.next_token {
-        object.key("nextToken").string(var_3.as_str());
+    if let Some(var_3) = &input.namespace_path {
+        object.key("namespacePath").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.search_criteria {
+    if let Some(var_4) = &input.next_token {
+        object.key("nextToken").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.search_criteria {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("searchCriteria").start_object();
-        crate::protocol_serde::shape_search_criteria::ser_search_criteria(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("searchCriteria").start_object();
+        crate::protocol_serde::shape_search_criteria::ser_search_criteria(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

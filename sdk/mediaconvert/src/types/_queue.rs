@@ -14,6 +14,8 @@ pub struct Queue {
     pub description: ::std::option::Option<::std::string::String>,
     /// The timestamp in epoch seconds for when you most recently updated the queue.
     pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub maximum_concurrent_feeds: ::std::option::Option<i32>,
     /// A name that you create for each queue. Each name must be unique within your account.
     pub name: ::std::option::Option<::std::string::String>,
     /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment.
@@ -51,6 +53,10 @@ impl Queue {
     /// The timestamp in epoch seconds for when you most recently updated the queue.
     pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
+    }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn maximum_concurrent_feeds(&self) -> ::std::option::Option<i32> {
+        self.maximum_concurrent_feeds
     }
     /// A name that you create for each queue. Each name must be unique within your account.
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -103,6 +109,7 @@ pub struct QueueBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) maximum_concurrent_feeds: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     pub(crate) progressing_jobs_count: ::std::option::Option<i32>,
@@ -182,6 +189,20 @@ impl QueueBuilder {
     /// The timestamp in epoch seconds for when you most recently updated the queue.
     pub fn get_last_updated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated
+    }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn maximum_concurrent_feeds(mut self, input: i32) -> Self {
+        self.maximum_concurrent_feeds = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn set_maximum_concurrent_feeds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.maximum_concurrent_feeds = input;
+        self
+    }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn get_maximum_concurrent_feeds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_concurrent_feeds
     }
     /// A name that you create for each queue. Each name must be unique within your account.
     /// This field is required.
@@ -310,6 +331,7 @@ impl QueueBuilder {
             created_at: self.created_at,
             description: self.description,
             last_updated: self.last_updated,
+            maximum_concurrent_feeds: self.maximum_concurrent_feeds,
             name: self.name,
             pricing_plan: self.pricing_plan,
             progressing_jobs_count: self.progressing_jobs_count,

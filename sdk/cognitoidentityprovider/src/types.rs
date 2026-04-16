@@ -27,6 +27,8 @@ pub use crate::types::_software_token_mfa_settings_type::SoftwareTokenMfaSetting
 
 pub use crate::types::_email_mfa_settings_type::EmailMfaSettingsType;
 
+pub use crate::types::_web_authn_mfa_settings_type::WebAuthnMfaSettingsType;
+
 pub use crate::types::_feedback_value_type::FeedbackValueType;
 
 pub use crate::types::_device_remembered_status_type::DeviceRememberedStatusType;
@@ -182,6 +184,8 @@ pub use crate::types::_domain_status_type::DomainStatusType;
 pub use crate::types::_auth_factor_type::AuthFactorType;
 
 pub use crate::types::_user_verification_type::UserVerificationType;
+
+pub use crate::types::_web_authn_factor_configuration_type::WebAuthnFactorConfigurationType;
 
 pub use crate::types::_provider_description::ProviderDescription;
 
@@ -538,6 +542,10 @@ mod _verify_software_token_response_type;
 mod _web_authn_configuration_type;
 
 mod _web_authn_credential_description;
+
+mod _web_authn_factor_configuration_type;
+
+mod _web_authn_mfa_settings_type;
 
 /// Builders
 pub mod builders;

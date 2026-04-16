@@ -6,6 +6,8 @@
 pub struct RecommenderFilterSummary {
     /// <p>The name of the recommender filter.</p>
     pub recommender_filter_name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the recommender schema associated with this recommender filter.</p>
+    pub recommender_schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The filter expression that defines which items to include or exclude from recommendations.</p>
     pub recommender_filter_expression: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the recommender filter was created.</p>
@@ -23,6 +25,10 @@ impl RecommenderFilterSummary {
     /// <p>The name of the recommender filter.</p>
     pub fn recommender_filter_name(&self) -> ::std::option::Option<&str> {
         self.recommender_filter_name.as_deref()
+    }
+    /// <p>The name of the recommender schema associated with this recommender filter.</p>
+    pub fn recommender_schema_name(&self) -> ::std::option::Option<&str> {
+        self.recommender_schema_name.as_deref()
     }
     /// <p>The filter expression that defines which items to include or exclude from recommendations.</p>
     pub fn recommender_filter_expression(&self) -> ::std::option::Option<&str> {
@@ -53,6 +59,7 @@ impl ::std::fmt::Debug for RecommenderFilterSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RecommenderFilterSummary");
         formatter.field("recommender_filter_name", &self.recommender_filter_name);
+        formatter.field("recommender_schema_name", &self.recommender_schema_name);
         formatter.field("recommender_filter_expression", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
@@ -74,6 +81,7 @@ impl RecommenderFilterSummary {
 #[non_exhaustive]
 pub struct RecommenderFilterSummaryBuilder {
     pub(crate) recommender_filter_name: ::std::option::Option<::std::string::String>,
+    pub(crate) recommender_schema_name: ::std::option::Option<::std::string::String>,
     pub(crate) recommender_filter_expression: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -95,6 +103,20 @@ impl RecommenderFilterSummaryBuilder {
     /// <p>The name of the recommender filter.</p>
     pub fn get_recommender_filter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommender_filter_name
+    }
+    /// <p>The name of the recommender schema associated with this recommender filter.</p>
+    pub fn recommender_schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recommender_schema_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the recommender schema associated with this recommender filter.</p>
+    pub fn set_recommender_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommender_schema_name = input;
+        self
+    }
+    /// <p>The name of the recommender schema associated with this recommender filter.</p>
+    pub fn get_recommender_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_schema_name
     }
     /// <p>The filter expression that defines which items to include or exclude from recommendations.</p>
     pub fn recommender_filter_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -190,6 +212,7 @@ impl RecommenderFilterSummaryBuilder {
     pub fn build(self) -> crate::types::RecommenderFilterSummary {
         crate::types::RecommenderFilterSummary {
             recommender_filter_name: self.recommender_filter_name,
+            recommender_schema_name: self.recommender_schema_name,
             recommender_filter_expression: self.recommender_filter_expression,
             created_at: self.created_at,
             description: self.description,
@@ -203,6 +226,7 @@ impl ::std::fmt::Debug for RecommenderFilterSummaryBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RecommenderFilterSummaryBuilder");
         formatter.field("recommender_filter_name", &self.recommender_filter_name);
+        formatter.field("recommender_schema_name", &self.recommender_schema_name);
         formatter.field("recommender_filter_expression", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("description", &"*** Sensitive Data Redacted ***");

@@ -34,6 +34,8 @@ pub struct CreateAutoScalingGroupInput {
     pub default_cooldown: ::std::option::Option<i32>,
     /// <p>A list of Availability Zones where instances in the Auto Scaling group can be created. Used for launching into the default VPC subnet in each Availability Zone when not using the <code>VPCZoneIdentifier</code> property, or for attaching a network interface when an existing network interface ID is specified in a launch template.</p>
     pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A list of Availability Zone IDs where the Auto Scaling group can launch instances. You cannot specify both AvailabilityZones and AvailabilityZoneIds in the same request.</p>
+    pub availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property instead.</p>
     pub load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate with the Auto Scaling group. Instances are registered as targets with the target groups. The target groups receive incoming traffic and route requests to one or more registered targets. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
@@ -154,6 +156,12 @@ impl CreateAutoScalingGroupInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zones.is_none()`.
     pub fn availability_zones(&self) -> &[::std::string::String] {
         self.availability_zones.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of Availability Zone IDs where the Auto Scaling group can launch instances. You cannot specify both AvailabilityZones and AvailabilityZoneIds in the same request.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.availability_zone_ids.is_none()`.
+    pub fn availability_zone_ids(&self) -> &[::std::string::String] {
+        self.availability_zone_ids.as_deref().unwrap_or_default()
     }
     /// <p>A list of Classic Load Balancers associated with this Auto Scaling group. For Application Load Balancers, Network Load Balancers, and Gateway Load Balancers, specify the <code>TargetGroupARNs</code> property instead.</p>
     ///
@@ -303,6 +311,7 @@ pub struct CreateAutoScalingGroupInputBuilder {
     pub(crate) desired_capacity: ::std::option::Option<i32>,
     pub(crate) default_cooldown: ::std::option::Option<i32>,
     pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) availability_zone_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) load_balancer_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) target_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) health_check_type: ::std::option::Option<::std::string::String>,
@@ -510,6 +519,26 @@ impl CreateAutoScalingGroupInputBuilder {
     /// <p>A list of Availability Zones where instances in the Auto Scaling group can be created. Used for launching into the default VPC subnet in each Availability Zone when not using the <code>VPCZoneIdentifier</code> property, or for attaching a network interface when an existing network interface ID is specified in a launch template.</p>
     pub fn get_availability_zones(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.availability_zones
+    }
+    /// Appends an item to `availability_zone_ids`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zone_ids`](Self::set_availability_zone_ids).
+    ///
+    /// <p>A list of Availability Zone IDs where the Auto Scaling group can launch instances. You cannot specify both AvailabilityZones and AvailabilityZoneIds in the same request.</p>
+    pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.availability_zone_ids.unwrap_or_default();
+        v.push(input.into());
+        self.availability_zone_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Availability Zone IDs where the Auto Scaling group can launch instances. You cannot specify both AvailabilityZones and AvailabilityZoneIds in the same request.</p>
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.availability_zone_ids = input;
+        self
+    }
+    /// <p>A list of Availability Zone IDs where the Auto Scaling group can launch instances. You cannot specify both AvailabilityZones and AvailabilityZoneIds in the same request.</p>
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.availability_zone_ids
     }
     /// Appends an item to `load_balancer_names`.
     ///
@@ -958,6 +987,7 @@ impl CreateAutoScalingGroupInputBuilder {
             desired_capacity: self.desired_capacity,
             default_cooldown: self.default_cooldown,
             availability_zones: self.availability_zones,
+            availability_zone_ids: self.availability_zone_ids,
             load_balancer_names: self.load_balancer_names,
             target_group_arns: self.target_group_arns,
             health_check_type: self.health_check_type,

@@ -150,4 +150,18 @@ impl GetUserProfileFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::UserProfileType> {
         self.inner.get_type()
     }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn session_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.session_name(input.into());
+        self
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn set_session_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_session_name(input);
+        self
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn get_session_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_name()
+    }
 }

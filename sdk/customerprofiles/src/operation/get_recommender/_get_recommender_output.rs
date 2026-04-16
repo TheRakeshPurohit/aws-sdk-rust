@@ -7,6 +7,8 @@ pub struct GetRecommenderOutput {
     pub recommender_name: ::std::string::String,
     /// <p>The name of the recipe used by the recommender to generate recommendations.</p>
     pub recommender_recipe_name: crate::types::RecommenderRecipeName,
+    /// <p>The name of the recommender schema associated with this recommender.</p>
+    pub recommender_schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings for the recommender, including parameters and settings that define its behavior.</p>
     pub recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
     /// <p>A detailed description of the recommender providing information about its purpose and functionality.</p>
@@ -36,6 +38,10 @@ impl GetRecommenderOutput {
     /// <p>The name of the recipe used by the recommender to generate recommendations.</p>
     pub fn recommender_recipe_name(&self) -> &crate::types::RecommenderRecipeName {
         &self.recommender_recipe_name
+    }
+    /// <p>The name of the recommender schema associated with this recommender.</p>
+    pub fn recommender_schema_name(&self) -> ::std::option::Option<&str> {
+        self.recommender_schema_name.as_deref()
     }
     /// <p>The configuration settings for the recommender, including parameters and settings that define its behavior.</p>
     pub fn recommender_config(&self) -> ::std::option::Option<&crate::types::RecommenderConfig> {
@@ -81,6 +87,7 @@ impl ::std::fmt::Debug for GetRecommenderOutput {
         let mut formatter = f.debug_struct("GetRecommenderOutput");
         formatter.field("recommender_name", &self.recommender_name);
         formatter.field("recommender_recipe_name", &self.recommender_recipe_name);
+        formatter.field("recommender_schema_name", &self.recommender_schema_name);
         formatter.field("recommender_config", &self.recommender_config);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
@@ -112,6 +119,7 @@ impl GetRecommenderOutput {
 pub struct GetRecommenderOutputBuilder {
     pub(crate) recommender_name: ::std::option::Option<::std::string::String>,
     pub(crate) recommender_recipe_name: ::std::option::Option<crate::types::RecommenderRecipeName>,
+    pub(crate) recommender_schema_name: ::std::option::Option<::std::string::String>,
     pub(crate) recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RecommenderStatus>,
@@ -153,6 +161,20 @@ impl GetRecommenderOutputBuilder {
     /// <p>The name of the recipe used by the recommender to generate recommendations.</p>
     pub fn get_recommender_recipe_name(&self) -> &::std::option::Option<crate::types::RecommenderRecipeName> {
         &self.recommender_recipe_name
+    }
+    /// <p>The name of the recommender schema associated with this recommender.</p>
+    pub fn recommender_schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recommender_schema_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the recommender schema associated with this recommender.</p>
+    pub fn set_recommender_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommender_schema_name = input;
+        self
+    }
+    /// <p>The name of the recommender schema associated with this recommender.</p>
+    pub fn get_recommender_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_schema_name
     }
     /// <p>The configuration settings for the recommender, including parameters and settings that define its behavior.</p>
     pub fn recommender_config(mut self, input: crate::types::RecommenderConfig) -> Self {
@@ -321,6 +343,7 @@ impl GetRecommenderOutputBuilder {
                     "recommender_recipe_name was not specified but it is required when building GetRecommenderOutput",
                 )
             })?,
+            recommender_schema_name: self.recommender_schema_name,
             recommender_config: self.recommender_config,
             description: self.description,
             status: self.status,
@@ -339,6 +362,7 @@ impl ::std::fmt::Debug for GetRecommenderOutputBuilder {
         let mut formatter = f.debug_struct("GetRecommenderOutputBuilder");
         formatter.field("recommender_name", &self.recommender_name);
         formatter.field("recommender_recipe_name", &self.recommender_recipe_name);
+        formatter.field("recommender_schema_name", &self.recommender_schema_name);
         formatter.field("recommender_config", &self.recommender_config);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);

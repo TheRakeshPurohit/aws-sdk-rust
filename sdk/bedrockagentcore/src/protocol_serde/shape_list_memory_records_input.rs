@@ -15,8 +15,11 @@ pub fn ser_list_memory_records_input_input(
     if let Some(var_3) = &input.namespace {
         object.key("namespace").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("nextToken").string(var_4.as_str());
+    if let Some(var_4) = &input.namespace_path {
+        object.key("namespacePath").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.next_token {
+        object.key("nextToken").string(var_5.as_str());
     }
     Ok(())
 }

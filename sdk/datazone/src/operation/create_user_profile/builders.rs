@@ -150,6 +150,20 @@ impl CreateUserProfileFluentBuilder {
     pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
         self.inner.get_user_type()
     }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn session_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.session_name(input.into());
+        self
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn set_session_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_session_name(input);
+        self
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn get_session_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_name()
+    }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

@@ -9,6 +9,8 @@ pub struct CreateUserProfileInput {
     pub user_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The user type of the user for which the user profile is created.</p>
     pub user_type: ::std::option::Option<crate::types::UserType>,
+    /// <p>The session name for IAM role sessions.</p>
+    pub session_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -24,6 +26,10 @@ impl CreateUserProfileInput {
     /// <p>The user type of the user for which the user profile is created.</p>
     pub fn user_type(&self) -> ::std::option::Option<&crate::types::UserType> {
         self.user_type.as_ref()
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn session_name(&self) -> ::std::option::Option<&str> {
+        self.session_name.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -44,6 +50,7 @@ pub struct CreateUserProfileInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) user_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) user_type: ::std::option::Option<crate::types::UserType>,
+    pub(crate) session_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateUserProfileInputBuilder {
@@ -91,6 +98,20 @@ impl CreateUserProfileInputBuilder {
     pub fn get_user_type(&self) -> &::std::option::Option<crate::types::UserType> {
         &self.user_type
     }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn session_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn set_session_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_name = input;
+        self
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn get_session_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_name
+    }
     /// <p>A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -113,6 +134,7 @@ impl CreateUserProfileInputBuilder {
             domain_identifier: self.domain_identifier,
             user_identifier: self.user_identifier,
             user_type: self.user_type,
+            session_name: self.session_name,
             client_token: self.client_token,
         })
     }

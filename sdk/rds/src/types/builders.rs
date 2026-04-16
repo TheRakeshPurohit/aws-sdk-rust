@@ -141,6 +141,8 @@ pub use crate::types::_orderable_db_instance_option::OrderableDbInstanceOptionBu
 
 pub use crate::types::_reserved_db_instances_offering::ReservedDbInstancesOfferingBuilder;
 
+pub use crate::types::_serverless_v2_platform_version_info::ServerlessV2PlatformVersionInfoBuilder;
+
 pub use crate::types::_source_region::SourceRegionBuilder;
 
 pub use crate::types::_valid_additional_storage_options::ValidAdditionalStorageOptionsBuilder;

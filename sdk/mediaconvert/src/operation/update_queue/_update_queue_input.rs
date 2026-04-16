@@ -7,6 +7,8 @@ pub struct UpdateQueueInput {
     pub concurrent_jobs: ::std::option::Option<i32>,
     /// The new description for the queue, if you are changing it.
     pub description: ::std::option::Option<::std::string::String>,
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub maximum_concurrent_feeds: ::std::option::Option<i32>,
     /// The name of the queue that you are modifying.
     pub name: ::std::option::Option<::std::string::String>,
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
@@ -22,6 +24,10 @@ impl UpdateQueueInput {
     /// The new description for the queue, if you are changing it.
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn maximum_concurrent_feeds(&self) -> ::std::option::Option<i32> {
+        self.maximum_concurrent_feeds
     }
     /// The name of the queue that you are modifying.
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -49,6 +55,7 @@ impl UpdateQueueInput {
 pub struct UpdateQueueInputBuilder {
     pub(crate) concurrent_jobs: ::std::option::Option<i32>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) maximum_concurrent_feeds: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) reservation_plan_settings: ::std::option::Option<crate::types::ReservationPlanSettings>,
     pub(crate) status: ::std::option::Option<crate::types::QueueStatus>,
@@ -81,6 +88,20 @@ impl UpdateQueueInputBuilder {
     /// The new description for the queue, if you are changing it.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn maximum_concurrent_feeds(mut self, input: i32) -> Self {
+        self.maximum_concurrent_feeds = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn set_maximum_concurrent_feeds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.maximum_concurrent_feeds = input;
+        self
+    }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn get_maximum_concurrent_feeds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_concurrent_feeds
     }
     /// The name of the queue that you are modifying.
     /// This field is required.
@@ -130,6 +151,7 @@ impl UpdateQueueInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_queue::UpdateQueueInput {
             concurrent_jobs: self.concurrent_jobs,
             description: self.description,
+            maximum_concurrent_feeds: self.maximum_concurrent_feeds,
             name: self.name,
             reservation_plan_settings: self.reservation_plan_settings,
             status: self.status,

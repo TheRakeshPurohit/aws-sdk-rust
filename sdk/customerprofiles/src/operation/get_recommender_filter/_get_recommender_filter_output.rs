@@ -7,6 +7,8 @@ pub struct GetRecommenderFilterOutput {
     pub recommender_filter_name: ::std::string::String,
     /// <p>The filter expression that defines which items to include or exclude from recommendations.</p>
     pub recommender_filter_expression: ::std::string::String,
+    /// <p>The name of the recommender schema associated with this recommender filter.</p>
+    pub recommender_schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the recommender filter was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The status of the recommender filter.</p>
@@ -29,6 +31,10 @@ impl GetRecommenderFilterOutput {
     pub fn recommender_filter_expression(&self) -> &str {
         use std::ops::Deref;
         self.recommender_filter_expression.deref()
+    }
+    /// <p>The name of the recommender schema associated with this recommender filter.</p>
+    pub fn recommender_schema_name(&self) -> ::std::option::Option<&str> {
+        self.recommender_schema_name.as_deref()
     }
     /// <p>The timestamp of when the recommender filter was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
@@ -56,6 +62,7 @@ impl ::std::fmt::Debug for GetRecommenderFilterOutput {
         let mut formatter = f.debug_struct("GetRecommenderFilterOutput");
         formatter.field("recommender_filter_name", &self.recommender_filter_name);
         formatter.field("recommender_filter_expression", &"*** Sensitive Data Redacted ***");
+        formatter.field("recommender_schema_name", &self.recommender_schema_name);
         formatter.field("created_at", &self.created_at);
         formatter.field("status", &self.status);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
@@ -83,6 +90,7 @@ impl GetRecommenderFilterOutput {
 pub struct GetRecommenderFilterOutputBuilder {
     pub(crate) recommender_filter_name: ::std::option::Option<::std::string::String>,
     pub(crate) recommender_filter_expression: ::std::option::Option<::std::string::String>,
+    pub(crate) recommender_schema_name: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::RecommenderFilterStatus>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -120,6 +128,20 @@ impl GetRecommenderFilterOutputBuilder {
     /// <p>The filter expression that defines which items to include or exclude from recommendations.</p>
     pub fn get_recommender_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommender_filter_expression
+    }
+    /// <p>The name of the recommender schema associated with this recommender filter.</p>
+    pub fn recommender_schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recommender_schema_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the recommender schema associated with this recommender filter.</p>
+    pub fn set_recommender_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommender_schema_name = input;
+        self
+    }
+    /// <p>The name of the recommender schema associated with this recommender filter.</p>
+    pub fn get_recommender_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_schema_name
     }
     /// <p>The timestamp of when the recommender filter was created.</p>
     /// This field is required.
@@ -232,6 +254,7 @@ impl GetRecommenderFilterOutputBuilder {
                     "recommender_filter_expression was not specified but it is required when building GetRecommenderFilterOutput",
                 )
             })?,
+            recommender_schema_name: self.recommender_schema_name,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -261,6 +284,7 @@ impl ::std::fmt::Debug for GetRecommenderFilterOutputBuilder {
         let mut formatter = f.debug_struct("GetRecommenderFilterOutputBuilder");
         formatter.field("recommender_filter_name", &self.recommender_filter_name);
         formatter.field("recommender_filter_expression", &"*** Sensitive Data Redacted ***");
+        formatter.field("recommender_schema_name", &self.recommender_schema_name);
         formatter.field("created_at", &self.created_at);
         formatter.field("status", &self.status);
         formatter.field("description", &"*** Sensitive Data Redacted ***");

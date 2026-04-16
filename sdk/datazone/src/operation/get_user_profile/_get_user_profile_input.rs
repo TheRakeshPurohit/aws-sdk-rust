@@ -9,6 +9,8 @@ pub struct GetUserProfileInput {
     pub user_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of the user profile.</p>
     pub r#type: ::std::option::Option<crate::types::UserProfileType>,
+    /// <p>The session name for IAM role sessions.</p>
+    pub session_name: ::std::option::Option<::std::string::String>,
 }
 impl GetUserProfileInput {
     /// <p>the ID of the Amazon DataZone domain the data portal of which you want to get.</p>
@@ -22,6 +24,10 @@ impl GetUserProfileInput {
     /// <p>The type of the user profile.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::UserProfileType> {
         self.r#type.as_ref()
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn session_name(&self) -> ::std::option::Option<&str> {
+        self.session_name.as_deref()
     }
 }
 impl GetUserProfileInput {
@@ -38,6 +44,7 @@ pub struct GetUserProfileInputBuilder {
     pub(crate) domain_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) user_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::UserProfileType>,
+    pub(crate) session_name: ::std::option::Option<::std::string::String>,
 }
 impl GetUserProfileInputBuilder {
     /// <p>the ID of the Amazon DataZone domain the data portal of which you want to get.</p>
@@ -84,6 +91,20 @@ impl GetUserProfileInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::UserProfileType> {
         &self.r#type
     }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn session_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn set_session_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_name = input;
+        self
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn get_session_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_name
+    }
     /// Consumes the builder and constructs a [`GetUserProfileInput`](crate::operation::get_user_profile::GetUserProfileInput).
     pub fn build(
         self,
@@ -92,6 +113,7 @@ impl GetUserProfileInputBuilder {
             domain_identifier: self.domain_identifier,
             user_identifier: self.user_identifier,
             r#type: self.r#type,
+            session_name: self.session_name,
         })
     }
 }

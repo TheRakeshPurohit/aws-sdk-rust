@@ -13,6 +13,7 @@
 /// # let usertype = unimplemented!();
 /// match usertype {
 ///     UserType::IamRole => { /* ... */ },
+///     UserType::IamRoleSession => { /* ... */ },
 ///     UserType::IamUser => { /* ... */ },
 ///     UserType::SsoUser => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum UserType {
     #[allow(missing_docs)] // documentation missing in model
     IamRole,
     #[allow(missing_docs)] // documentation missing in model
+    IamRoleSession,
+    #[allow(missing_docs)] // documentation missing in model
     IamUser,
     #[allow(missing_docs)] // documentation missing in model
     SsoUser,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for UserType {
     fn from(s: &str) -> Self {
         match s {
             "IAM_ROLE" => UserType::IamRole,
+            "IAM_ROLE_SESSION" => UserType::IamRoleSession,
             "IAM_USER" => UserType::IamUser,
             "SSO_USER" => UserType::SsoUser,
             other => UserType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl UserType {
     pub fn as_str(&self) -> &str {
         match self {
             UserType::IamRole => "IAM_ROLE",
+            UserType::IamRoleSession => "IAM_ROLE_SESSION",
             UserType::IamUser => "IAM_USER",
             UserType::SsoUser => "SSO_USER",
             UserType::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl UserType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IAM_ROLE", "IAM_USER", "SSO_USER"]
+        &["IAM_ROLE", "IAM_ROLE_SESSION", "IAM_USER", "SSO_USER"]
     }
 }
 impl ::std::convert::AsRef<str> for UserType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for UserType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             UserType::IamRole => write!(f, "IAM_ROLE"),
+            UserType::IamRoleSession => write!(f, "IAM_ROLE_SESSION"),
             UserType::IamUser => write!(f, "IAM_USER"),
             UserType::SsoUser => write!(f, "SSO_USER"),
             UserType::Unknown(value) => write!(f, "{value}"),

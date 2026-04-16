@@ -203,6 +203,8 @@ pub use crate::types::_aws_console_link_parameters::AwsConsoleLinkParametersBuil
 
 pub use crate::types::_environment_configuration_user_parameter::EnvironmentConfigurationUserParameterBuilder;
 
+pub use crate::types::_project_membership_assignment::ProjectMembershipAssignmentBuilder;
+
 pub use crate::types::_project_deletion_error::ProjectDeletionErrorBuilder;
 
 pub use crate::types::_resource_tag::ResourceTagBuilder;

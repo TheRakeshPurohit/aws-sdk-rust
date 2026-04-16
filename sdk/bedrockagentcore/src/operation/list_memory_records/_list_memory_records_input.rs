@@ -7,6 +7,8 @@ pub struct ListMemoryRecordsInput {
     pub memory_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    pub namespace_path: ::std::option::Option<::std::string::String>,
     /// <p>The memory strategy identifier to filter memory records by. If specified, only memory records with this strategy ID are returned.</p>
     pub memory_strategy_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in a single call. The default value is 20.</p>
@@ -22,6 +24,10 @@ impl ListMemoryRecordsInput {
     /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
+    }
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    pub fn namespace_path(&self) -> ::std::option::Option<&str> {
+        self.namespace_path.as_deref()
     }
     /// <p>The memory strategy identifier to filter memory records by. If specified, only memory records with this strategy ID are returned.</p>
     pub fn memory_strategy_id(&self) -> ::std::option::Option<&str> {
@@ -49,6 +55,7 @@ impl ListMemoryRecordsInput {
 pub struct ListMemoryRecordsInputBuilder {
     pub(crate) memory_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace_path: ::std::option::Option<::std::string::String>,
     pub(crate) memory_strategy_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -70,7 +77,6 @@ impl ListMemoryRecordsInputBuilder {
         &self.memory_id
     }
     /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix.</p>
-    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +89,20 @@ impl ListMemoryRecordsInputBuilder {
     /// <p>The namespace prefix to filter memory records by. Returns all memory records in namespaces that start with the provided prefix.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
+    }
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    pub fn namespace_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    pub fn set_namespace_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.namespace_path = input;
+        self
+    }
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    pub fn get_namespace_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_path
     }
     /// <p>The memory strategy identifier to filter memory records by. If specified, only memory records with this strategy ID are returned.</p>
     pub fn memory_strategy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -133,6 +153,7 @@ impl ListMemoryRecordsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_memory_records::ListMemoryRecordsInput {
             memory_id: self.memory_id,
             namespace: self.namespace,
+            namespace_path: self.namespace_path,
             memory_strategy_id: self.memory_strategy_id,
             max_results: self.max_results,
             next_token: self.next_token,

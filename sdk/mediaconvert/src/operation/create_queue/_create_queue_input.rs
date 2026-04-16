@@ -7,6 +7,8 @@ pub struct CreateQueueInput {
     pub concurrent_jobs: ::std::option::Option<i32>,
     /// Optional. A description of the queue that you are creating.
     pub description: ::std::option::Option<::std::string::String>,
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub maximum_concurrent_feeds: ::std::option::Option<i32>,
     /// The name of the queue that you are creating.
     pub name: ::std::option::Option<::std::string::String>,
     /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the API to create a queue, the default is on-demand.
@@ -26,6 +28,10 @@ impl CreateQueueInput {
     /// Optional. A description of the queue that you are creating.
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn maximum_concurrent_feeds(&self) -> ::std::option::Option<i32> {
+        self.maximum_concurrent_feeds
     }
     /// The name of the queue that you are creating.
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -61,6 +67,7 @@ impl CreateQueueInput {
 pub struct CreateQueueInputBuilder {
     pub(crate) concurrent_jobs: ::std::option::Option<i32>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) maximum_concurrent_feeds: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
     pub(crate) reservation_plan_settings: ::std::option::Option<crate::types::ReservationPlanSettings>,
@@ -95,6 +102,20 @@ impl CreateQueueInputBuilder {
     /// Optional. A description of the queue that you are creating.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn maximum_concurrent_feeds(mut self, input: i32) -> Self {
+        self.maximum_concurrent_feeds = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn set_maximum_concurrent_feeds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.maximum_concurrent_feeds = input;
+        self
+    }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn get_maximum_concurrent_feeds(&self) -> &::std::option::Option<i32> {
+        &self.maximum_concurrent_feeds
     }
     /// The name of the queue that you are creating.
     /// This field is required.
@@ -178,6 +199,7 @@ impl CreateQueueInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_queue::CreateQueueInput {
             concurrent_jobs: self.concurrent_jobs,
             description: self.description,
+            maximum_concurrent_feeds: self.maximum_concurrent_feeds,
             name: self.name,
             pricing_plan: self.pricing_plan,
             reservation_plan_settings: self.reservation_plan_settings,

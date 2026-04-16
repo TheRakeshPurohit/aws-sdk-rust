@@ -19,6 +19,8 @@ pub use crate::types::_software_token_mfa_settings_type::SoftwareTokenMfaSetting
 
 pub use crate::types::_email_mfa_settings_type::EmailMfaSettingsTypeBuilder;
 
+pub use crate::types::_web_authn_mfa_settings_type::WebAuthnMfaSettingsTypeBuilder;
+
 pub use crate::types::_device_secret_verifier_config_type::DeviceSecretVerifierConfigTypeBuilder;
 
 pub use crate::types::_user_context_data_type::UserContextDataTypeBuilder;

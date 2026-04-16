@@ -189,6 +189,8 @@ pub use crate::types::_orderable_db_instance_option::OrderableDbInstanceOption;
 
 pub use crate::types::_reserved_db_instances_offering::ReservedDbInstancesOffering;
 
+pub use crate::types::_serverless_v2_platform_version_info::ServerlessV2PlatformVersionInfo;
+
 pub use crate::types::_source_region::SourceRegion;
 
 pub use crate::types::_valid_additional_storage_options::ValidAdditionalStorageOptions;
@@ -604,6 +606,8 @@ mod _scaling_configuration;
 mod _scaling_configuration_info;
 
 mod _serverless_v2_features_support;
+
+mod _serverless_v2_platform_version_info;
 
 mod _serverless_v2_scaling_configuration;
 

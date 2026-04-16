@@ -13,6 +13,7 @@
 /// # let groupsearchtype = unimplemented!();
 /// match groupsearchtype {
 ///     GroupSearchType::DatazoneSsoGroup => { /* ... */ },
+///     GroupSearchType::IamRoleSessionGroup => { /* ... */ },
 ///     GroupSearchType::SsoGroup => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum GroupSearchType {
     #[allow(missing_docs)] // documentation missing in model
     DatazoneSsoGroup,
     #[allow(missing_docs)] // documentation missing in model
+    IamRoleSessionGroup,
+    #[allow(missing_docs)] // documentation missing in model
     SsoGroup,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for GroupSearchType {
     fn from(s: &str) -> Self {
         match s {
             "DATAZONE_SSO_GROUP" => GroupSearchType::DatazoneSsoGroup,
+            "IAM_ROLE_SESSION_GROUP" => GroupSearchType::IamRoleSessionGroup,
             "SSO_GROUP" => GroupSearchType::SsoGroup,
             other => GroupSearchType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl GroupSearchType {
     pub fn as_str(&self) -> &str {
         match self {
             GroupSearchType::DatazoneSsoGroup => "DATAZONE_SSO_GROUP",
+            GroupSearchType::IamRoleSessionGroup => "IAM_ROLE_SESSION_GROUP",
             GroupSearchType::SsoGroup => "SSO_GROUP",
             GroupSearchType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DATAZONE_SSO_GROUP", "SSO_GROUP"]
+        &["DATAZONE_SSO_GROUP", "IAM_ROLE_SESSION_GROUP", "SSO_GROUP"]
     }
 }
 impl ::std::convert::AsRef<str> for GroupSearchType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for GroupSearchType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GroupSearchType::DatazoneSsoGroup => write!(f, "DATAZONE_SSO_GROUP"),
+            GroupSearchType::IamRoleSessionGroup => write!(f, "IAM_ROLE_SESSION_GROUP"),
             GroupSearchType::SsoGroup => write!(f, "SSO_GROUP"),
             GroupSearchType::Unknown(value) => write!(f, "{value}"),
         }

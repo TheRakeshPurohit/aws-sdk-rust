@@ -781,6 +781,8 @@ pub(crate) mod shape_web_authn_configuration_type;
 
 pub(crate) mod shape_web_authn_credential_description_list_type;
 
+pub(crate) mod shape_web_authn_mfa_settings_type;
+
 pub(crate) mod shape_account_takeover_actions_type;
 
 pub(crate) mod shape_advanced_security_additional_flows_type;

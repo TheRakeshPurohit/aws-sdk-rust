@@ -74,8 +74,8 @@ pub fn ser_create_auto_scaling_group_input_input_input(
         list_22.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("LoadBalancerNames");
-    if let Some(var_25) = &input.load_balancer_names {
+    let mut scope_24 = writer.prefix("AvailabilityZoneIds");
+    if let Some(var_25) = &input.availability_zone_ids {
         let mut list_27 = scope_24.start_list(false, None);
         for item_26 in var_25 {
             #[allow(unused_mut)]
@@ -85,8 +85,8 @@ pub fn ser_create_auto_scaling_group_input_input_input(
         list_27.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_29 = writer.prefix("TargetGroupARNs");
-    if let Some(var_30) = &input.target_group_arns {
+    let mut scope_29 = writer.prefix("LoadBalancerNames");
+    if let Some(var_30) = &input.load_balancer_names {
         let mut list_32 = scope_29.start_list(false, None);
         for item_31 in var_30 {
             #[allow(unused_mut)]
@@ -96,147 +96,158 @@ pub fn ser_create_auto_scaling_group_input_input_input(
         list_32.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_34 = writer.prefix("HealthCheckType");
-    if let Some(var_35) = &input.health_check_type {
-        scope_34.string(var_35);
+    let mut scope_34 = writer.prefix("TargetGroupARNs");
+    if let Some(var_35) = &input.target_group_arns {
+        let mut list_37 = scope_34.start_list(false, None);
+        for item_36 in var_35 {
+            #[allow(unused_mut)]
+            let mut entry_38 = list_37.entry();
+            entry_38.string(item_36);
+        }
+        list_37.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_36 = writer.prefix("HealthCheckGracePeriod");
-    if let Some(var_37) = &input.health_check_grace_period {
-        scope_36.number(
+    let mut scope_39 = writer.prefix("HealthCheckType");
+    if let Some(var_40) = &input.health_check_type {
+        scope_39.string(var_40);
+    }
+    #[allow(unused_mut)]
+    let mut scope_41 = writer.prefix("HealthCheckGracePeriod");
+    if let Some(var_42) = &input.health_check_grace_period {
+        scope_41.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_37).into()),
+            ::aws_smithy_types::Number::NegInt((*var_42).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_38 = writer.prefix("PlacementGroup");
-    if let Some(var_39) = &input.placement_group {
-        scope_38.string(var_39);
+    let mut scope_43 = writer.prefix("PlacementGroup");
+    if let Some(var_44) = &input.placement_group {
+        scope_43.string(var_44);
     }
     #[allow(unused_mut)]
-    let mut scope_40 = writer.prefix("VPCZoneIdentifier");
-    if let Some(var_41) = &input.vpc_zone_identifier {
-        scope_40.string(var_41);
+    let mut scope_45 = writer.prefix("VPCZoneIdentifier");
+    if let Some(var_46) = &input.vpc_zone_identifier {
+        scope_45.string(var_46);
     }
     #[allow(unused_mut)]
-    let mut scope_42 = writer.prefix("TerminationPolicies");
-    if let Some(var_43) = &input.termination_policies {
-        let mut list_45 = scope_42.start_list(false, None);
-        for item_44 in var_43 {
+    let mut scope_47 = writer.prefix("TerminationPolicies");
+    if let Some(var_48) = &input.termination_policies {
+        let mut list_50 = scope_47.start_list(false, None);
+        for item_49 in var_48 {
             #[allow(unused_mut)]
-            let mut entry_46 = list_45.entry();
-            entry_46.string(item_44);
+            let mut entry_51 = list_50.entry();
+            entry_51.string(item_49);
         }
-        list_45.finish();
+        list_50.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_47 = writer.prefix("NewInstancesProtectedFromScaleIn");
-    if let Some(var_48) = &input.new_instances_protected_from_scale_in {
-        scope_47.boolean(*var_48);
+    let mut scope_52 = writer.prefix("NewInstancesProtectedFromScaleIn");
+    if let Some(var_53) = &input.new_instances_protected_from_scale_in {
+        scope_52.boolean(*var_53);
     }
     #[allow(unused_mut)]
-    let mut scope_49 = writer.prefix("CapacityRebalance");
-    if let Some(var_50) = &input.capacity_rebalance {
-        scope_49.boolean(*var_50);
+    let mut scope_54 = writer.prefix("CapacityRebalance");
+    if let Some(var_55) = &input.capacity_rebalance {
+        scope_54.boolean(*var_55);
     }
     #[allow(unused_mut)]
-    let mut scope_51 = writer.prefix("LifecycleHookSpecificationList");
-    if let Some(var_52) = &input.lifecycle_hook_specification_list {
-        let mut list_54 = scope_51.start_list(false, None);
-        for item_53 in var_52 {
+    let mut scope_56 = writer.prefix("LifecycleHookSpecificationList");
+    if let Some(var_57) = &input.lifecycle_hook_specification_list {
+        let mut list_59 = scope_56.start_list(false, None);
+        for item_58 in var_57 {
             #[allow(unused_mut)]
-            let mut entry_55 = list_54.entry();
-            crate::protocol_serde::shape_lifecycle_hook_specification::ser_lifecycle_hook_specification(entry_55, item_53)?;
+            let mut entry_60 = list_59.entry();
+            crate::protocol_serde::shape_lifecycle_hook_specification::ser_lifecycle_hook_specification(entry_60, item_58)?;
         }
-        list_54.finish();
+        list_59.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_56 = writer.prefix("DeletionProtection");
-    if let Some(var_57) = &input.deletion_protection {
-        scope_56.string(var_57.as_str());
+    let mut scope_61 = writer.prefix("DeletionProtection");
+    if let Some(var_62) = &input.deletion_protection {
+        scope_61.string(var_62.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_58 = writer.prefix("Tags");
-    if let Some(var_59) = &input.tags {
-        let mut list_61 = scope_58.start_list(false, None);
-        for item_60 in var_59 {
+    let mut scope_63 = writer.prefix("Tags");
+    if let Some(var_64) = &input.tags {
+        let mut list_66 = scope_63.start_list(false, None);
+        for item_65 in var_64 {
             #[allow(unused_mut)]
-            let mut entry_62 = list_61.entry();
-            crate::protocol_serde::shape_tag::ser_tag(entry_62, item_60)?;
+            let mut entry_67 = list_66.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_67, item_65)?;
         }
-        list_61.finish();
+        list_66.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_63 = writer.prefix("ServiceLinkedRoleARN");
-    if let Some(var_64) = &input.service_linked_role_arn {
-        scope_63.string(var_64);
+    let mut scope_68 = writer.prefix("ServiceLinkedRoleARN");
+    if let Some(var_69) = &input.service_linked_role_arn {
+        scope_68.string(var_69);
     }
     #[allow(unused_mut)]
-    let mut scope_65 = writer.prefix("MaxInstanceLifetime");
-    if let Some(var_66) = &input.max_instance_lifetime {
-        scope_65.number(
+    let mut scope_70 = writer.prefix("MaxInstanceLifetime");
+    if let Some(var_71) = &input.max_instance_lifetime {
+        scope_70.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_66).into()),
+            ::aws_smithy_types::Number::NegInt((*var_71).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_67 = writer.prefix("Context");
-    if let Some(var_68) = &input.context {
-        scope_67.string(var_68);
+    let mut scope_72 = writer.prefix("Context");
+    if let Some(var_73) = &input.context {
+        scope_72.string(var_73);
     }
     #[allow(unused_mut)]
-    let mut scope_69 = writer.prefix("DesiredCapacityType");
-    if let Some(var_70) = &input.desired_capacity_type {
-        scope_69.string(var_70);
+    let mut scope_74 = writer.prefix("DesiredCapacityType");
+    if let Some(var_75) = &input.desired_capacity_type {
+        scope_74.string(var_75);
     }
     #[allow(unused_mut)]
-    let mut scope_71 = writer.prefix("DefaultInstanceWarmup");
-    if let Some(var_72) = &input.default_instance_warmup {
-        scope_71.number(
+    let mut scope_76 = writer.prefix("DefaultInstanceWarmup");
+    if let Some(var_77) = &input.default_instance_warmup {
+        scope_76.number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_72).into()),
+            ::aws_smithy_types::Number::NegInt((*var_77).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_73 = writer.prefix("TrafficSources");
-    if let Some(var_74) = &input.traffic_sources {
-        let mut list_76 = scope_73.start_list(false, None);
-        for item_75 in var_74 {
+    let mut scope_78 = writer.prefix("TrafficSources");
+    if let Some(var_79) = &input.traffic_sources {
+        let mut list_81 = scope_78.start_list(false, None);
+        for item_80 in var_79 {
             #[allow(unused_mut)]
-            let mut entry_77 = list_76.entry();
-            crate::protocol_serde::shape_traffic_source_identifier::ser_traffic_source_identifier(entry_77, item_75)?;
+            let mut entry_82 = list_81.entry();
+            crate::protocol_serde::shape_traffic_source_identifier::ser_traffic_source_identifier(entry_82, item_80)?;
         }
-        list_76.finish();
+        list_81.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_78 = writer.prefix("InstanceMaintenancePolicy");
-    if let Some(var_79) = &input.instance_maintenance_policy {
-        crate::protocol_serde::shape_instance_maintenance_policy::ser_instance_maintenance_policy(scope_78, var_79)?;
+    let mut scope_83 = writer.prefix("InstanceMaintenancePolicy");
+    if let Some(var_84) = &input.instance_maintenance_policy {
+        crate::protocol_serde::shape_instance_maintenance_policy::ser_instance_maintenance_policy(scope_83, var_84)?;
     }
     #[allow(unused_mut)]
-    let mut scope_80 = writer.prefix("AvailabilityZoneDistribution");
-    if let Some(var_81) = &input.availability_zone_distribution {
-        crate::protocol_serde::shape_availability_zone_distribution::ser_availability_zone_distribution(scope_80, var_81)?;
+    let mut scope_85 = writer.prefix("AvailabilityZoneDistribution");
+    if let Some(var_86) = &input.availability_zone_distribution {
+        crate::protocol_serde::shape_availability_zone_distribution::ser_availability_zone_distribution(scope_85, var_86)?;
     }
     #[allow(unused_mut)]
-    let mut scope_82 = writer.prefix("AvailabilityZoneImpairmentPolicy");
-    if let Some(var_83) = &input.availability_zone_impairment_policy {
-        crate::protocol_serde::shape_availability_zone_impairment_policy::ser_availability_zone_impairment_policy(scope_82, var_83)?;
+    let mut scope_87 = writer.prefix("AvailabilityZoneImpairmentPolicy");
+    if let Some(var_88) = &input.availability_zone_impairment_policy {
+        crate::protocol_serde::shape_availability_zone_impairment_policy::ser_availability_zone_impairment_policy(scope_87, var_88)?;
     }
     #[allow(unused_mut)]
-    let mut scope_84 = writer.prefix("SkipZonalShiftValidation");
-    if let Some(var_85) = &input.skip_zonal_shift_validation {
-        scope_84.boolean(*var_85);
+    let mut scope_89 = writer.prefix("SkipZonalShiftValidation");
+    if let Some(var_90) = &input.skip_zonal_shift_validation {
+        scope_89.boolean(*var_90);
     }
     #[allow(unused_mut)]
-    let mut scope_86 = writer.prefix("CapacityReservationSpecification");
-    if let Some(var_87) = &input.capacity_reservation_specification {
-        crate::protocol_serde::shape_capacity_reservation_specification::ser_capacity_reservation_specification(scope_86, var_87)?;
+    let mut scope_91 = writer.prefix("CapacityReservationSpecification");
+    if let Some(var_92) = &input.capacity_reservation_specification {
+        crate::protocol_serde::shape_capacity_reservation_specification::ser_capacity_reservation_specification(scope_91, var_92)?;
     }
     #[allow(unused_mut)]
-    let mut scope_88 = writer.prefix("InstanceLifecyclePolicy");
-    if let Some(var_89) = &input.instance_lifecycle_policy {
-        crate::protocol_serde::shape_instance_lifecycle_policy::ser_instance_lifecycle_policy(scope_88, var_89)?;
+    let mut scope_93 = writer.prefix("InstanceLifecyclePolicy");
+    if let Some(var_94) = &input.instance_lifecycle_policy {
+        crate::protocol_serde::shape_instance_lifecycle_policy::ser_instance_lifecycle_policy(scope_93, var_94)?;
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

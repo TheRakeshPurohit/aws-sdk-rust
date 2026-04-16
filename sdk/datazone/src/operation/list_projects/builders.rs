@@ -170,6 +170,20 @@ impl ListProjectsFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    /// <p>A parameter to filter projects by their category.</p>
+    pub fn project_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.project_category(input.into());
+        self
+    }
+    /// <p>A parameter to filter projects by their category.</p>
+    pub fn set_project_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_project_category(input);
+        self
+    }
+    /// <p>A parameter to filter projects by their category.</p>
+    pub fn get_project_category(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_category()
+    }
     /// <p>When the number of projects is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of projects, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListProjects</code> to list the next set of projects.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

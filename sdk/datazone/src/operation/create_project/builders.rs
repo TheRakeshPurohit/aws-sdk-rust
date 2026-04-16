@@ -238,4 +238,51 @@ impl CreateProjectFluentBuilder {
     pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>> {
         self.inner.get_user_parameters()
     }
+    /// <p>The category of the project. Set to 'ADMIN' designates this as an administrative project for the Amazon DataZone domain.</p>
+    pub fn project_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.project_category(input.into());
+        self
+    }
+    /// <p>The category of the project. Set to 'ADMIN' designates this as an administrative project for the Amazon DataZone domain.</p>
+    pub fn set_project_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_project_category(input);
+        self
+    }
+    /// <p>The category of the project. Set to 'ADMIN' designates this as an administrative project for the Amazon DataZone domain.</p>
+    pub fn get_project_category(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_category()
+    }
+    /// <p>The default project IAM role that is used to access project resources and run computes such as Glue and Sagemaker.</p>
+    pub fn project_execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.project_execution_role(input.into());
+        self
+    }
+    /// <p>The default project IAM role that is used to access project resources and run computes such as Glue and Sagemaker.</p>
+    pub fn set_project_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_project_execution_role(input);
+        self
+    }
+    /// <p>The default project IAM role that is used to access project resources and run computes such as Glue and Sagemaker.</p>
+    pub fn get_project_execution_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_execution_role()
+    }
+    ///
+    /// Appends an item to `membershipAssignments`.
+    ///
+    /// To override the contents of this collection use [`set_membership_assignments`](Self::set_membership_assignments).
+    ///
+    /// <p>The members to be assigned to the project.</p>
+    pub fn membership_assignments(mut self, input: crate::types::ProjectMembershipAssignment) -> Self {
+        self.inner = self.inner.membership_assignments(input);
+        self
+    }
+    /// <p>The members to be assigned to the project.</p>
+    pub fn set_membership_assignments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectMembershipAssignment>>) -> Self {
+        self.inner = self.inner.set_membership_assignments(input);
+        self
+    }
+    /// <p>The members to be assigned to the project.</p>
+    pub fn get_membership_assignments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProjectMembershipAssignment>> {
+        self.inner.get_membership_assignments()
+    }
 }

@@ -6,11 +6,14 @@ pub fn ser_create_user_profile_input_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.user_identifier {
-        object.key("userIdentifier").string(var_2.as_str());
+    if let Some(var_2) = &input.session_name {
+        object.key("sessionName").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.user_type {
-        object.key("userType").string(var_3.as_str());
+    if let Some(var_3) = &input.user_identifier {
+        object.key("userIdentifier").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.user_type {
+        object.key("userType").string(var_4.as_str());
     }
     Ok(())
 }

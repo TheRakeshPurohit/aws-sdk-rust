@@ -80,64 +80,6 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
-impl<R>
-    From<
-        ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::allow_vended_log_delivery_for_resource::AllowVendedLogDeliveryForResourceError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: ::aws_smithy_runtime_api::client::result::SdkError<
-            crate::operation::allow_vended_log_delivery_for_resource::AllowVendedLogDeliveryForResourceError,
-            R,
-        >,
-    ) -> Self {
-        match err {
-            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
-            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
-                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                source: err.into(),
-            }),
-        }
-    }
-}
-impl From<crate::operation::allow_vended_log_delivery_for_resource::AllowVendedLogDeliveryForResourceError> for Error {
-    fn from(err: crate::operation::allow_vended_log_delivery_for_resource::AllowVendedLogDeliveryForResourceError) -> Self {
-        match err {
-            crate::operation::allow_vended_log_delivery_for_resource::AllowVendedLogDeliveryForResourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::allow_vended_log_delivery_for_resource::AllowVendedLogDeliveryForResourceError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::allow_vended_log_delivery_for_resource::AllowVendedLogDeliveryForResourceError::ContentSizeExceededException(inner) => {
-                Error::ContentSizeExceededException(inner)
-            }
-            crate::operation::allow_vended_log_delivery_for_resource::AllowVendedLogDeliveryForResourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::allow_vended_log_delivery_for_resource::AllowVendedLogDeliveryForResourceError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
-            }
-            crate::operation::allow_vended_log_delivery_for_resource::AllowVendedLogDeliveryForResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::allow_vended_log_delivery_for_resource::AllowVendedLogDeliveryForResourceError::ServiceQuotaExceededException(
-                inner,
-            ) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::allow_vended_log_delivery_for_resource::AllowVendedLogDeliveryForResourceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::allow_vended_log_delivery_for_resource::AllowVendedLogDeliveryForResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
-        }
-    }
-}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_service::AssociateServiceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

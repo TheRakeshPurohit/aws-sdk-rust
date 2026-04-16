@@ -11,6 +11,8 @@ pub struct UpdateUserProfileInput {
     pub r#type: ::std::option::Option<crate::types::UserProfileType>,
     /// <p>The status of the user profile that are to be updated.</p>
     pub status: ::std::option::Option<crate::types::UserProfileStatus>,
+    /// <p>The session name for IAM role sessions.</p>
+    pub session_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateUserProfileInput {
     /// <p>The identifier of the Amazon DataZone domain in which a user profile is updated.</p>
@@ -29,6 +31,10 @@ impl UpdateUserProfileInput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::UserProfileStatus> {
         self.status.as_ref()
     }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn session_name(&self) -> ::std::option::Option<&str> {
+        self.session_name.as_deref()
+    }
 }
 impl UpdateUserProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
@@ -45,6 +51,7 @@ pub struct UpdateUserProfileInputBuilder {
     pub(crate) user_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::UserProfileType>,
     pub(crate) status: ::std::option::Option<crate::types::UserProfileStatus>,
+    pub(crate) session_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateUserProfileInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which a user profile is updated.</p>
@@ -106,6 +113,20 @@ impl UpdateUserProfileInputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::UserProfileStatus> {
         &self.status
     }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn session_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn set_session_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_name = input;
+        self
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn get_session_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_name
+    }
     /// Consumes the builder and constructs a [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
     pub fn build(
         self,
@@ -115,6 +136,7 @@ impl UpdateUserProfileInputBuilder {
             user_identifier: self.user_identifier,
             r#type: self.r#type,
             status: self.status,
+            session_name: self.session_name,
         })
     }
 }

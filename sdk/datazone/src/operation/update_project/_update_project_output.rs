@@ -33,6 +33,8 @@ pub struct UpdateProjectOutput {
     pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>,
     /// <p>The environment deployment details of the project.</p>
     pub environment_deployment_details: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>,
+    /// <p>The category of the project.</p>
+    pub project_category: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateProjectOutput {
@@ -108,6 +110,10 @@ impl UpdateProjectOutput {
     pub fn environment_deployment_details(&self) -> ::std::option::Option<&crate::types::EnvironmentDeploymentDetails> {
         self.environment_deployment_details.as_ref()
     }
+    /// <p>The category of the project.</p>
+    pub fn project_category(&self) -> ::std::option::Option<&str> {
+        self.project_category.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdateProjectOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -127,6 +133,7 @@ impl ::std::fmt::Debug for UpdateProjectOutput {
         formatter.field("project_profile_id", &self.project_profile_id);
         formatter.field("user_parameters", &self.user_parameters);
         formatter.field("environment_deployment_details", &self.environment_deployment_details);
+        formatter.field("project_category", &self.project_category);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -162,6 +169,7 @@ pub struct UpdateProjectOutputBuilder {
     pub(crate) project_profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>,
     pub(crate) environment_deployment_details: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>,
+    pub(crate) project_category: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateProjectOutputBuilder {
@@ -403,6 +411,20 @@ impl UpdateProjectOutputBuilder {
     pub fn get_environment_deployment_details(&self) -> &::std::option::Option<crate::types::EnvironmentDeploymentDetails> {
         &self.environment_deployment_details
     }
+    /// <p>The category of the project.</p>
+    pub fn project_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_category = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The category of the project.</p>
+    pub fn set_project_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_category = input;
+        self
+    }
+    /// <p>The category of the project.</p>
+    pub fn get_project_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_category
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -457,6 +479,7 @@ impl UpdateProjectOutputBuilder {
             project_profile_id: self.project_profile_id,
             user_parameters: self.user_parameters,
             environment_deployment_details: self.environment_deployment_details,
+            project_category: self.project_category,
             _request_id: self._request_id,
         })
     }
@@ -479,6 +502,7 @@ impl ::std::fmt::Debug for UpdateProjectOutputBuilder {
         formatter.field("project_profile_id", &self.project_profile_id);
         formatter.field("user_parameters", &self.user_parameters);
         formatter.field("environment_deployment_details", &self.environment_deployment_details);
+        formatter.field("project_category", &self.project_category);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

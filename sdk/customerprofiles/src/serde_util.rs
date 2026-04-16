@@ -92,6 +92,27 @@ pub(crate) fn create_recommender_filter_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_recommender_schema_output_output_correct_errors(
+    mut builder: crate::operation::create_recommender_schema::builders::CreateRecommenderSchemaOutputBuilder,
+) -> crate::operation::create_recommender_schema::builders::CreateRecommenderSchemaOutputBuilder {
+    if builder.recommender_schema_arn.is_none() {
+        builder.recommender_schema_arn = Some(Default::default())
+    }
+    if builder.recommender_schema_name.is_none() {
+        builder.recommender_schema_name = Some(Default::default())
+    }
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RecommenderSchemaStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn create_segment_definition_output_output_correct_errors(
     mut builder: crate::operation::create_segment_definition::builders::CreateSegmentDefinitionOutputBuilder,
 ) -> crate::operation::create_segment_definition::builders::CreateSegmentDefinitionOutputBuilder {
@@ -354,6 +375,24 @@ pub(crate) fn get_recommender_filter_output_output_correct_errors(
     }
     if builder.tags.is_none() {
         builder.tags = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_recommender_schema_output_output_correct_errors(
+    mut builder: crate::operation::get_recommender_schema::builders::GetRecommenderSchemaOutputBuilder,
+) -> crate::operation::get_recommender_schema::builders::GetRecommenderSchemaOutputBuilder {
+    if builder.recommender_schema_name.is_none() {
+        builder.recommender_schema_name = Some(Default::default())
+    }
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RecommenderSchemaStatus>().ok()
     }
     builder
 }
@@ -870,6 +909,24 @@ pub(crate) fn range_override_correct_errors(
     builder
 }
 
+pub(crate) fn recommender_schema_summary_correct_errors(
+    mut builder: crate::types::builders::RecommenderSchemaSummaryBuilder,
+) -> crate::types::builders::RecommenderSchemaSummaryBuilder {
+    if builder.recommender_schema_name.is_none() {
+        builder.recommender_schema_name = Some(Default::default())
+    }
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RecommenderSchemaStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn threshold_correct_errors(mut builder: crate::types::builders::ThresholdBuilder) -> crate::types::builders::ThresholdBuilder {
     if builder.value.is_none() {
         builder.value = Some(Default::default())
@@ -954,6 +1011,15 @@ pub(crate) fn period_correct_errors(mut builder: crate::types::builders::PeriodB
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn recommender_schema_field_correct_errors(
+    mut builder: crate::types::builders::RecommenderSchemaFieldBuilder,
+) -> crate::types::builders::RecommenderSchemaFieldBuilder {
+    if builder.target_field_name.is_none() {
+        builder.target_field_name = Some(Default::default())
     }
     builder
 }

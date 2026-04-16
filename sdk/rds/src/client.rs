@@ -433,6 +433,8 @@ mod describe_reserved_db_instances;
 
 mod describe_reserved_db_instances_offerings;
 
+mod describe_serverless_v2_platform_versions;
+
 mod describe_source_regions;
 
 mod describe_tenant_databases;

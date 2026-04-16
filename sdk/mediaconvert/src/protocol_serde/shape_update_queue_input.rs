@@ -12,14 +12,20 @@ pub fn ser_update_queue_input_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.reservation_plan_settings {
-        #[allow(unused_mut)]
-        let mut object_4 = object.key("reservationPlanSettings").start_object();
-        crate::protocol_serde::shape_reservation_plan_settings::ser_reservation_plan_settings(&mut object_4, var_3)?;
-        object_4.finish();
+    if let Some(var_3) = &input.maximum_concurrent_feeds {
+        object.key("maximumConcurrentFeeds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
     }
-    if let Some(var_5) = &input.status {
-        object.key("status").string(var_5.as_str());
+    if let Some(var_4) = &input.reservation_plan_settings {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("reservationPlanSettings").start_object();
+        crate::protocol_serde::shape_reservation_plan_settings::ser_reservation_plan_settings(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.status {
+        object.key("status").string(var_6.as_str());
     }
     Ok(())
 }

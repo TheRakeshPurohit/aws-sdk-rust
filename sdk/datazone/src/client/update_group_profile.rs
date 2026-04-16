@@ -11,6 +11,8 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::update_group_profile::UpdateGroupProfileOutput::id): <p>The identifier of the group profile that is updated.</p>
     ///   - [`status(Option<GroupProfileStatus>)`](crate::operation::update_group_profile::UpdateGroupProfileOutput::status): <p>The status of the group profile that is updated.</p>
     ///   - [`group_name(Option<String>)`](crate::operation::update_group_profile::UpdateGroupProfileOutput::group_name): <p>The name of the group profile that is updated.</p>
+    ///   - [`role_principal_arn(Option<String>)`](crate::operation::update_group_profile::UpdateGroupProfileOutput::role_principal_arn): <p>The ARN of the IAM role principal. This role is associated with the updated group profile.</p>
+    ///   - [`role_principal_id(Option<String>)`](crate::operation::update_group_profile::UpdateGroupProfileOutput::role_principal_id): <p>The unique identifier of the IAM role principal. This principal is associated with the updated group profile.</p>
     /// - On failure, responds with [`SdkError<UpdateGroupProfileError>`](crate::operation::update_group_profile::UpdateGroupProfileError)
     pub fn update_group_profile(&self) -> crate::operation::update_group_profile::builders::UpdateGroupProfileFluentBuilder {
         crate::operation::update_group_profile::builders::UpdateGroupProfileFluentBuilder::new(self.handle.clone())

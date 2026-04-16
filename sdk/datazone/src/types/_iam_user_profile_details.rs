@@ -8,6 +8,10 @@ pub struct IamUserProfileDetails {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The principal ID as part of the IAM user profile details.</p>
     pub principal_id: ::std::option::Option<::std::string::String>,
+    /// <p>The session name for IAM role sessions.</p>
+    pub session_name: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the group profile associated with the IAM user profile. This links the user to a specific group profile within the Amazon DataZone domain.</p>
+    pub group_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl IamUserProfileDetails {
     /// <p>The ARN of the IAM user.</p>
@@ -17,6 +21,14 @@ impl IamUserProfileDetails {
     /// <p>The principal ID as part of the IAM user profile details.</p>
     pub fn principal_id(&self) -> ::std::option::Option<&str> {
         self.principal_id.as_deref()
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn session_name(&self) -> ::std::option::Option<&str> {
+        self.session_name.as_deref()
+    }
+    /// <p>The identifier of the group profile associated with the IAM user profile. This links the user to a specific group profile within the Amazon DataZone domain.</p>
+    pub fn group_profile_id(&self) -> ::std::option::Option<&str> {
+        self.group_profile_id.as_deref()
     }
 }
 impl IamUserProfileDetails {
@@ -32,6 +44,8 @@ impl IamUserProfileDetails {
 pub struct IamUserProfileDetailsBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) principal_id: ::std::option::Option<::std::string::String>,
+    pub(crate) session_name: ::std::option::Option<::std::string::String>,
+    pub(crate) group_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl IamUserProfileDetailsBuilder {
     /// <p>The ARN of the IAM user.</p>
@@ -62,11 +76,41 @@ impl IamUserProfileDetailsBuilder {
     pub fn get_principal_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.principal_id
     }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn session_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn set_session_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_name = input;
+        self
+    }
+    /// <p>The session name for IAM role sessions.</p>
+    pub fn get_session_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_name
+    }
+    /// <p>The identifier of the group profile associated with the IAM user profile. This links the user to a specific group profile within the Amazon DataZone domain.</p>
+    pub fn group_profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_profile_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the group profile associated with the IAM user profile. This links the user to a specific group profile within the Amazon DataZone domain.</p>
+    pub fn set_group_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_profile_id = input;
+        self
+    }
+    /// <p>The identifier of the group profile associated with the IAM user profile. This links the user to a specific group profile within the Amazon DataZone domain.</p>
+    pub fn get_group_profile_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_profile_id
+    }
     /// Consumes the builder and constructs a [`IamUserProfileDetails`](crate::types::IamUserProfileDetails).
     pub fn build(self) -> crate::types::IamUserProfileDetails {
         crate::types::IamUserProfileDetails {
             arn: self.arn,
             principal_id: self.principal_id,
+            session_name: self.session_name,
+            group_profile_id: self.group_profile_id,
         }
     }
 }

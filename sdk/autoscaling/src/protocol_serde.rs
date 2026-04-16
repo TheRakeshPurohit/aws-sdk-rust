@@ -491,6 +491,8 @@ pub(crate) mod shape_target_tracking_metric_data_query;
 
 pub(crate) mod shape_traffic_source_state;
 
+pub(crate) mod shape_availability_zone_ids;
+
 pub(crate) mod shape_availability_zones;
 
 pub(crate) mod shape_block_device_mappings;

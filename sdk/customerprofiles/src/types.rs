@@ -47,6 +47,8 @@ pub use crate::types::_recommender_recipe_name::RecommenderRecipeName;
 
 pub use crate::types::_recommender_config::RecommenderConfig;
 
+pub use crate::types::_recommender_schema_status::RecommenderSchemaStatus;
+
 pub use crate::types::_segment_group::SegmentGroup;
 
 pub use crate::types::_segment_sort::SegmentSort;
@@ -223,6 +225,8 @@ pub use crate::types::_recommender_recipe::RecommenderRecipe;
 
 pub use crate::types::_recommender_summary::RecommenderSummary;
 
+pub use crate::types::_recommender_schema_summary::RecommenderSchemaSummary;
+
 pub use crate::types::_segment_definition_item::SegmentDefinitionItem;
 
 pub use crate::types::_upload_job_item::UploadJobItem;
@@ -260,6 +264,8 @@ pub use crate::types::_event_trigger_logical_operator::EventTriggerLogicalOperat
 pub use crate::types::_period::Period;
 
 pub use crate::types::_contact_preference::ContactPreference;
+
+pub use crate::types::_recommender_schema_field::RecommenderSchemaField;
 
 pub use crate::types::_group::Group;
 
@@ -658,6 +664,12 @@ mod _recommender_promotional_filter;
 mod _recommender_recipe;
 
 mod _recommender_recipe_name;
+
+mod _recommender_schema_field;
+
+mod _recommender_schema_status;
+
+mod _recommender_schema_summary;
 
 mod _recommender_status;
 

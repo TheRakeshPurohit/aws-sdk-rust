@@ -87,5 +87,11 @@ pub fn ser_update_stack_input_input(
         crate::protocol_serde::shape_streaming_experience_settings::ser_streaming_experience_settings(&mut object_28, var_27)?;
         object_28.finish();
     }
+    if let Some(var_29) = &input.content_redirection {
+        #[allow(unused_mut)]
+        let mut object_30 = object.key("ContentRedirection").start_object();
+        crate::protocol_serde::shape_content_redirection::ser_content_redirection(&mut object_30, var_29)?;
+        object_30.finish();
+    }
     Ok(())
 }

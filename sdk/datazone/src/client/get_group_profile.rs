@@ -10,6 +10,8 @@ impl super::Client {
     ///   - [`id(Option<String>)`](crate::operation::get_group_profile::GetGroupProfileOutput::id): <p>The identifier of the group profile.</p>
     ///   - [`status(Option<GroupProfileStatus>)`](crate::operation::get_group_profile::GetGroupProfileOutput::status): <p>The identifier of the group profile.</p>
     ///   - [`group_name(Option<String>)`](crate::operation::get_group_profile::GetGroupProfileOutput::group_name): <p>The name of the group for which the specified group profile exists.</p>
+    ///   - [`role_principal_arn(Option<String>)`](crate::operation::get_group_profile::GetGroupProfileOutput::role_principal_arn): <p>The ARN of the IAM role principal. This role is associated with the group profile.</p>
+    ///   - [`role_principal_id(Option<String>)`](crate::operation::get_group_profile::GetGroupProfileOutput::role_principal_id): <p>The unique identifier of the IAM role principal. This principal is associated with the group profile.</p>
     /// - On failure, responds with [`SdkError<GetGroupProfileError>`](crate::operation::get_group_profile::GetGroupProfileError)
     pub fn get_group_profile(&self) -> crate::operation::get_group_profile::builders::GetGroupProfileFluentBuilder {
         crate::operation::get_group_profile::builders::GetGroupProfileFluentBuilder::new(self.handle.clone())

@@ -46,8 +46,21 @@ pub fn de_instance(
                 builder = builder.set_availability_zone(var_3);
             }
             ,
-            s if s.matches("LifecycleState") /* LifecycleState com.amazonaws.autoscaling#Instance$LifecycleState */ =>  {
+            s if s.matches("AvailabilityZoneId") /* AvailabilityZoneId com.amazonaws.autoscaling#Instance$AvailabilityZoneId */ =>  {
                 let var_4 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_id(var_4);
+            }
+            ,
+            s if s.matches("LifecycleState") /* LifecycleState com.amazonaws.autoscaling#Instance$LifecycleState */ =>  {
+                let var_5 =
                     Some(
                         Result::<crate::types::LifecycleState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::LifecycleState::from(
@@ -57,23 +70,10 @@ pub fn de_instance(
                         ?
                     )
                 ;
-                builder = builder.set_lifecycle_state(var_4);
+                builder = builder.set_lifecycle_state(var_5);
             }
             ,
             s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.autoscaling#Instance$HealthStatus */ =>  {
-                let var_5 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_health_status(var_5);
-            }
-            ,
-            s if s.matches("LaunchConfigurationName") /* LaunchConfigurationName com.amazonaws.autoscaling#Instance$LaunchConfigurationName */ =>  {
                 let var_6 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -83,21 +83,11 @@ pub fn de_instance(
                         ?
                     )
                 ;
-                builder = builder.set_launch_configuration_name(var_6);
+                builder = builder.set_health_status(var_6);
             }
             ,
-            s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#Instance$LaunchTemplate */ =>  {
+            s if s.matches("LaunchConfigurationName") /* LaunchConfigurationName com.amazonaws.autoscaling#Instance$LaunchConfigurationName */ =>  {
                 let var_7 =
-                    Some(
-                        crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_launch_template(var_7);
-            }
-            ,
-            s if s.matches("ImageId") /* ImageId com.amazonaws.autoscaling#Instance$ImageId */ =>  {
-                let var_8 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -106,11 +96,34 @@ pub fn de_instance(
                         ?
                     )
                 ;
-                builder = builder.set_image_id(var_8);
+                builder = builder.set_launch_configuration_name(var_7);
+            }
+            ,
+            s if s.matches("LaunchTemplate") /* LaunchTemplate com.amazonaws.autoscaling#Instance$LaunchTemplate */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_launch_template_specification::de_launch_template_specification(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_launch_template(var_8);
+            }
+            ,
+            s if s.matches("ImageId") /* ImageId com.amazonaws.autoscaling#Instance$ImageId */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_image_id(var_9);
             }
             ,
             s if s.matches("ProtectedFromScaleIn") /* ProtectedFromScaleIn com.amazonaws.autoscaling#Instance$ProtectedFromScaleIn */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -121,11 +134,11 @@ pub fn de_instance(
                         ?
                     )
                 ;
-                builder = builder.set_protected_from_scale_in(var_9);
+                builder = builder.set_protected_from_scale_in(var_10);
             }
             ,
             s if s.matches("WeightedCapacity") /* WeightedCapacity com.amazonaws.autoscaling#Instance$WeightedCapacity */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -134,7 +147,7 @@ pub fn de_instance(
                         ?
                     )
                 ;
-                builder = builder.set_weighted_capacity(var_10);
+                builder = builder.set_weighted_capacity(var_11);
             }
             ,
             _ => {}

@@ -12,6 +12,10 @@ pub struct GroupProfileSummary {
     pub status: ::std::option::Option<crate::types::GroupProfileStatus>,
     /// <p>The group name of a group profile.</p>
     pub group_name: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the IAM role principal. This role is associated with the group profile.</p>
+    pub role_principal_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the IAM role principal. This principal is associated with the group profile.</p>
+    pub role_principal_id: ::std::option::Option<::std::string::String>,
 }
 impl GroupProfileSummary {
     /// <p>The ID of the Amazon DataZone domain of a group profile.</p>
@@ -30,6 +34,14 @@ impl GroupProfileSummary {
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
+    /// <p>The ARN of the IAM role principal. This role is associated with the group profile.</p>
+    pub fn role_principal_arn(&self) -> ::std::option::Option<&str> {
+        self.role_principal_arn.as_deref()
+    }
+    /// <p>The unique identifier of the IAM role principal. This principal is associated with the group profile.</p>
+    pub fn role_principal_id(&self) -> ::std::option::Option<&str> {
+        self.role_principal_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for GroupProfileSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -38,6 +50,8 @@ impl ::std::fmt::Debug for GroupProfileSummary {
         formatter.field("id", &self.id);
         formatter.field("status", &self.status);
         formatter.field("group_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("role_principal_arn", &self.role_principal_arn);
+        formatter.field("role_principal_id", &self.role_principal_id);
         formatter.finish()
     }
 }
@@ -56,6 +70,8 @@ pub struct GroupProfileSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::GroupProfileStatus>,
     pub(crate) group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) role_principal_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) role_principal_id: ::std::option::Option<::std::string::String>,
 }
 impl GroupProfileSummaryBuilder {
     /// <p>The ID of the Amazon DataZone domain of a group profile.</p>
@@ -114,6 +130,34 @@ impl GroupProfileSummaryBuilder {
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }
+    /// <p>The ARN of the IAM role principal. This role is associated with the group profile.</p>
+    pub fn role_principal_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_principal_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the IAM role principal. This role is associated with the group profile.</p>
+    pub fn set_role_principal_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_principal_arn = input;
+        self
+    }
+    /// <p>The ARN of the IAM role principal. This role is associated with the group profile.</p>
+    pub fn get_role_principal_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_principal_arn
+    }
+    /// <p>The unique identifier of the IAM role principal. This principal is associated with the group profile.</p>
+    pub fn role_principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_principal_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the IAM role principal. This principal is associated with the group profile.</p>
+    pub fn set_role_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_principal_id = input;
+        self
+    }
+    /// <p>The unique identifier of the IAM role principal. This principal is associated with the group profile.</p>
+    pub fn get_role_principal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_principal_id
+    }
     /// Consumes the builder and constructs a [`GroupProfileSummary`](crate::types::GroupProfileSummary).
     pub fn build(self) -> crate::types::GroupProfileSummary {
         crate::types::GroupProfileSummary {
@@ -121,6 +165,8 @@ impl GroupProfileSummaryBuilder {
             id: self.id,
             status: self.status,
             group_name: self.group_name,
+            role_principal_arn: self.role_principal_arn,
+            role_principal_id: self.role_principal_id,
         }
     }
 }
@@ -131,6 +177,8 @@ impl ::std::fmt::Debug for GroupProfileSummaryBuilder {
         formatter.field("id", &self.id);
         formatter.field("status", &self.status);
         formatter.field("group_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("role_principal_arn", &self.role_principal_arn);
+        formatter.field("role_principal_id", &self.role_principal_id);
         formatter.finish()
     }
 }

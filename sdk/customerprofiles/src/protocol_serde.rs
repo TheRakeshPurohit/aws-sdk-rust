@@ -47,6 +47,8 @@ pub(crate) mod shape_create_recommender;
 
 pub(crate) mod shape_create_recommender_filter;
 
+pub(crate) mod shape_create_recommender_schema;
+
 pub(crate) mod shape_create_segment_definition;
 
 pub(crate) mod shape_create_segment_estimate;
@@ -80,6 +82,8 @@ pub(crate) mod shape_delete_profile_object_type;
 pub(crate) mod shape_delete_recommender;
 
 pub(crate) mod shape_delete_recommender_filter;
+
+pub(crate) mod shape_delete_recommender_schema;
 
 pub(crate) mod shape_delete_segment_definition;
 
@@ -122,6 +126,8 @@ pub(crate) mod shape_get_profile_recommendations;
 pub(crate) mod shape_get_recommender;
 
 pub(crate) mod shape_get_recommender_filter;
+
+pub(crate) mod shape_get_recommender_schema;
 
 pub(crate) mod shape_get_segment_definition;
 
@@ -178,6 +184,8 @@ pub(crate) mod shape_list_profile_objects;
 pub(crate) mod shape_list_recommender_filters;
 
 pub(crate) mod shape_list_recommender_recipes;
+
+pub(crate) mod shape_list_recommender_schemas;
 
 pub(crate) mod shape_list_recommenders;
 
@@ -262,6 +270,8 @@ pub(crate) mod shape_create_profile_input;
 pub(crate) mod shape_create_recommender_filter_input;
 
 pub(crate) mod shape_create_recommender_input;
+
+pub(crate) mod shape_create_recommender_schema_input;
 
 pub(crate) mod shape_create_segment_definition_input;
 
@@ -467,6 +477,12 @@ pub(crate) mod shape_recommender_promotional_filter;
 
 pub(crate) mod shape_recommender_recipes_list;
 
+pub(crate) mod shape_recommender_schema_field;
+
+pub(crate) mod shape_recommender_schema_fields;
+
+pub(crate) mod shape_recommender_schema_summary_list;
+
 pub(crate) mod shape_recommender_summary_list;
 
 pub(crate) mod shape_recommender_update;
@@ -549,6 +565,8 @@ pub(crate) mod shape_group_list;
 
 pub(crate) mod shape_identity_resolution_job;
 
+pub(crate) mod shape_included_columns;
+
 pub(crate) mod shape_inference_config;
 
 pub(crate) mod shape_job_schedule;
@@ -605,6 +623,10 @@ pub(crate) mod shape_recommender_filter_summary;
 
 pub(crate) mod shape_recommender_recipe;
 
+pub(crate) mod shape_recommender_schema_field_list;
+
+pub(crate) mod shape_recommender_schema_summary;
+
 pub(crate) mod shape_recommender_summary;
 
 pub(crate) mod shape_s3_exporting_location;
@@ -640,6 +662,8 @@ pub(crate) mod shape_attributes;
 pub(crate) mod shape_batch;
 
 pub(crate) mod shape_catalog_item;
+
+pub(crate) mod shape_column_names_list;
 
 pub(crate) mod shape_connector_operator;
 

@@ -71,6 +71,8 @@ pub use crate::types::_acceleration_status::AccelerationStatus;
 
 pub use crate::types::_job_phase::JobPhase;
 
+pub use crate::types::_elemental_inference_configuration::ElementalInferenceConfiguration;
+
 pub use crate::types::_job_messages::JobMessages;
 
 pub use crate::types::_share_status::ShareStatus;
@@ -228,6 +230,10 @@ pub use crate::types::_automated_encoding_settings::AutomatedEncodingSettings;
 pub use crate::types::_output_group_settings::OutputGroupSettings;
 
 pub use crate::types::_id3_insertion::Id3Insertion;
+
+pub use crate::types::_elemental_inference_feature::ElementalInferenceFeature;
+
+pub use crate::types::_elemental_inference_feed::ElementalInferenceFeed;
 
 pub use crate::types::_audio_channel_tagging_settings::AudioChannelTaggingSettings;
 
@@ -472,6 +478,8 @@ pub use crate::types::_ms_smooth_group_settings::MsSmoothGroupSettings;
 pub use crate::types::_output_group_type::OutputGroupType;
 
 pub use crate::types::_output::Output;
+
+pub use crate::types::_elemental_inference_feed_management_state::ElementalInferenceFeedManagementState;
 
 pub use crate::types::_output_detail::OutputDetail;
 
@@ -1812,6 +1820,14 @@ mod _eac3_stereo_downmix;
 mod _eac3_surround_ex_mode;
 
 mod _eac3_surround_mode;
+
+mod _elemental_inference_configuration;
+
+mod _elemental_inference_feature;
+
+mod _elemental_inference_feed;
+
+mod _elemental_inference_feed_management_state;
 
 mod _embedded_convert608_to708;
 

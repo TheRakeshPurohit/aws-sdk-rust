@@ -13,6 +13,8 @@ pub struct CreateRecommenderInput {
     pub recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
     /// <p>The description of the domain object type.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the recommender schema to use for this recommender. If not specified, the default schema is used.</p>
+    pub recommender_schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -37,6 +39,10 @@ impl CreateRecommenderInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The name of the recommender schema to use for this recommender. If not specified, the default schema is used.</p>
+    pub fn recommender_schema_name(&self) -> ::std::option::Option<&str> {
+        self.recommender_schema_name.as_deref()
+    }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -50,6 +56,7 @@ impl ::std::fmt::Debug for CreateRecommenderInput {
         formatter.field("recommender_recipe_name", &self.recommender_recipe_name);
         formatter.field("recommender_config", &self.recommender_config);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("recommender_schema_name", &self.recommender_schema_name);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -70,6 +77,7 @@ pub struct CreateRecommenderInputBuilder {
     pub(crate) recommender_recipe_name: ::std::option::Option<crate::types::RecommenderRecipeName>,
     pub(crate) recommender_config: ::std::option::Option<crate::types::RecommenderConfig>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) recommender_schema_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRecommenderInputBuilder {
@@ -146,6 +154,20 @@ impl CreateRecommenderInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The name of the recommender schema to use for this recommender. If not specified, the default schema is used.</p>
+    pub fn recommender_schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recommender_schema_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the recommender schema to use for this recommender. If not specified, the default schema is used.</p>
+    pub fn set_recommender_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommender_schema_name = input;
+        self
+    }
+    /// <p>The name of the recommender schema to use for this recommender. If not specified, the default schema is used.</p>
+    pub fn get_recommender_schema_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommender_schema_name
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -176,6 +198,7 @@ impl CreateRecommenderInputBuilder {
             recommender_recipe_name: self.recommender_recipe_name,
             recommender_config: self.recommender_config,
             description: self.description,
+            recommender_schema_name: self.recommender_schema_name,
             tags: self.tags,
         })
     }
@@ -188,6 +211,7 @@ impl ::std::fmt::Debug for CreateRecommenderInputBuilder {
         formatter.field("recommender_recipe_name", &self.recommender_recipe_name);
         formatter.field("recommender_config", &self.recommender_config);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("recommender_schema_name", &self.recommender_schema_name);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

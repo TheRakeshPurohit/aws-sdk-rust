@@ -415,6 +415,10 @@ pub(crate) mod shape_describe_reserved_db_instances_offerings;
 
 pub(crate) mod shape_describe_reserved_db_instances_offerings_input;
 
+pub(crate) mod shape_describe_serverless_v2_platform_versions;
+
+pub(crate) mod shape_describe_serverless_v2_platform_versions_input;
+
 pub(crate) mod shape_describe_source_regions;
 
 pub(crate) mod shape_describe_source_regions_input;
@@ -1137,6 +1141,8 @@ pub(crate) mod shape_resource_pending_maintenance_actions;
 
 pub(crate) mod shape_serverless_v2_features_support;
 
+pub(crate) mod shape_serverless_v2_platform_version_list;
+
 pub(crate) mod shape_source_region_list;
 
 pub(crate) mod shape_string_list;
@@ -1276,6 +1282,8 @@ pub(crate) mod shape_reserved_db_instances_offering;
 pub(crate) mod shape_restore_window;
 
 pub(crate) mod shape_scaling_configuration_info;
+
+pub(crate) mod shape_serverless_v2_platform_version_info;
 
 pub(crate) mod shape_serverless_v2_scaling_configuration_info;
 

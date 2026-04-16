@@ -219,14 +219,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListProjects
                         query.push_kv("name", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
-                if let ::std::option::Option::Some(inner_5) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_5) = &_input.project_category {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("projectCategory", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
-                if let ::std::option::Option::Some(inner_6) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_6) = &_input.next_token {
                     {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_6).encode());
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_6));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_7) = &_input.max_results {
+                    {
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_7).encode());
                     }
                 }
                 ::std::result::Result::Ok(())

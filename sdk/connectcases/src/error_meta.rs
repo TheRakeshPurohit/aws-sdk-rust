@@ -1246,6 +1246,9 @@ impl From<crate::operation::update_related_item::UpdateRelatedItemError> for Err
             crate::operation::update_related_item::UpdateRelatedItemError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::update_related_item::UpdateRelatedItemError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::update_related_item::UpdateRelatedItemError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_related_item::UpdateRelatedItemError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_related_item::UpdateRelatedItemError::Unhandled(inner) => Error::Unhandled(inner),

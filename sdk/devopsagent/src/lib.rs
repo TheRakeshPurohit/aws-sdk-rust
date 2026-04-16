@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-devopsagent = "1.2.0"
+//! aws-sdk-devopsagent = "1.3.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -152,14 +152,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AllowVendedLogDeliveryForResource`](crate::operation::allow_vended_log_delivery_for_resource) operation has
-/// a [`Client::allow_vended_log_delivery_for_resource`], function which returns a builder for that operation.
+/// For example, the [`AssociateService`](crate::operation::associate_service) operation has
+/// a [`Client::associate_service`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.allow_vended_log_delivery_for_resource()
-///     .resource_arn_being_authorized("example")
+/// let result = client.associate_service()
+///     .agent_space_id("example")
 ///     .send()
 ///     .await;
 /// ```

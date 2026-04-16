@@ -295,6 +295,9 @@ pub mod describe_reserved_db_instances;
 /// Types for the `DescribeReservedDBInstancesOfferings` operation.
 pub mod describe_reserved_db_instances_offerings;
 
+/// Types for the `DescribeServerlessV2PlatformVersions` operation.
+pub mod describe_serverless_v2_platform_versions;
+
 /// Types for the `DescribeSourceRegions` operation.
 pub mod describe_source_regions;
 

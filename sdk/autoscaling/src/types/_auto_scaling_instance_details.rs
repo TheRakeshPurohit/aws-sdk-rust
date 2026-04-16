@@ -12,6 +12,8 @@ pub struct AutoScalingInstanceDetails {
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone for the instance.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The Availability Zone ID where the instance is located.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html">Amazon EC2 Auto Scaling instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminating:Retained</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>ReplacingRootVolume</code> | <code>ReplacingRootVolume:Wait</code> | <code>ReplacingRootVolume:Proceed</code> | <code>RootVolumeReplaced</code> | <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Pending:Retained</code> | <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminating:Retained</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> | <code>Warmed:Running</code> | <code>Warmed:Hibernated</code></p>
     pub lifecycle_state: ::std::option::Option<::std::string::String>,
@@ -59,6 +61,10 @@ impl AutoScalingInstanceDetails {
     /// <p>The Availability Zone for the instance.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
+    }
+    /// <p>The Availability Zone ID where the instance is located.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
     /// <p>The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html">Amazon EC2 Auto Scaling instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminating:Retained</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>ReplacingRootVolume</code> | <code>ReplacingRootVolume:Wait</code> | <code>ReplacingRootVolume:Proceed</code> | <code>RootVolumeReplaced</code> | <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Pending:Retained</code> | <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminating:Retained</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> | <code>Warmed:Running</code> | <code>Warmed:Hibernated</code></p>
@@ -120,6 +126,7 @@ pub struct AutoScalingInstanceDetailsBuilder {
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) lifecycle_state: ::std::option::Option<::std::string::String>,
     pub(crate) health_status: ::std::option::Option<::std::string::String>,
     pub(crate) launch_configuration_name: ::std::option::Option<::std::string::String>,
@@ -187,6 +194,20 @@ impl AutoScalingInstanceDetailsBuilder {
     /// <p>The Availability Zone for the instance.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
+    }
+    /// <p>The Availability Zone ID where the instance is located.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone ID where the instance is located.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The Availability Zone ID where the instance is located.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// <p>The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-lifecycle.html">Amazon EC2 Auto Scaling instance lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminating:Retained</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>ReplacingRootVolume</code> | <code>ReplacingRootVolume:Wait</code> | <code>ReplacingRootVolume:Proceed</code> | <code>RootVolumeReplaced</code> | <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Pending:Retained</code> | <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminating:Retained</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> | <code>Warmed:Running</code> | <code>Warmed:Hibernated</code></p>
@@ -344,6 +365,7 @@ impl AutoScalingInstanceDetailsBuilder {
             instance_type: self.instance_type,
             auto_scaling_group_name: self.auto_scaling_group_name,
             availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
             lifecycle_state: self.lifecycle_state,
             health_status: self.health_status,
             launch_configuration_name: self.launch_configuration_name,

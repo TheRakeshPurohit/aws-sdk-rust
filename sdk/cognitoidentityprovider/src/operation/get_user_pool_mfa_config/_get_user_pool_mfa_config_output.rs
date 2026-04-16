@@ -12,7 +12,7 @@ pub struct GetUserPoolMfaConfigOutput {
     /// <p>Displays the state of multi-factor authentication (MFA) as on, off, or optional. When <code>ON</code>, all users must set up MFA before they can sign in. When <code>OPTIONAL</code>, your application must make a client-side determination of whether a user wants to register an MFA device. For user pools with adaptive authentication with threat protection, choose <code>OPTIONAL</code>.</p>
     /// <p>When <code>MfaConfiguration</code> is <code>OPTIONAL</code>, managed login doesn't automatically prompt users to set up MFA. Amazon Cognito generates MFA prompts in API responses and in managed login for users who have chosen and configured a preferred MFA factor.</p>
     pub mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
-    /// <p>Shows user pool configuration for sign-in with passkey authenticators like biometric devices and security keys. Passkeys are not eligible MFA factors. They are instead an eligible primary sign-in factor for <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>, or the <code>USER_AUTH</code> flow.</p>
+    /// <p>Shows user pool configuration for sign-in with passkey authenticators such as biometric devices and security keys. Includes relying-party configuration, user-verification requirements, and whether passkeys can satisfy MFA requirements.</p>
     pub web_authn_configuration: ::std::option::Option<crate::types::WebAuthnConfigurationType>,
     _request_id: Option<String>,
 }
@@ -34,7 +34,7 @@ impl GetUserPoolMfaConfigOutput {
     pub fn mfa_configuration(&self) -> ::std::option::Option<&crate::types::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
     }
-    /// <p>Shows user pool configuration for sign-in with passkey authenticators like biometric devices and security keys. Passkeys are not eligible MFA factors. They are instead an eligible primary sign-in factor for <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>, or the <code>USER_AUTH</code> flow.</p>
+    /// <p>Shows user pool configuration for sign-in with passkey authenticators such as biometric devices and security keys. Includes relying-party configuration, user-verification requirements, and whether passkeys can satisfy MFA requirements.</p>
     pub fn web_authn_configuration(&self) -> ::std::option::Option<&crate::types::WebAuthnConfigurationType> {
         self.web_authn_configuration.as_ref()
     }
@@ -122,17 +122,17 @@ impl GetUserPoolMfaConfigOutputBuilder {
     pub fn get_mfa_configuration(&self) -> &::std::option::Option<crate::types::UserPoolMfaType> {
         &self.mfa_configuration
     }
-    /// <p>Shows user pool configuration for sign-in with passkey authenticators like biometric devices and security keys. Passkeys are not eligible MFA factors. They are instead an eligible primary sign-in factor for <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>, or the <code>USER_AUTH</code> flow.</p>
+    /// <p>Shows user pool configuration for sign-in with passkey authenticators such as biometric devices and security keys. Includes relying-party configuration, user-verification requirements, and whether passkeys can satisfy MFA requirements.</p>
     pub fn web_authn_configuration(mut self, input: crate::types::WebAuthnConfigurationType) -> Self {
         self.web_authn_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Shows user pool configuration for sign-in with passkey authenticators like biometric devices and security keys. Passkeys are not eligible MFA factors. They are instead an eligible primary sign-in factor for <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>, or the <code>USER_AUTH</code> flow.</p>
+    /// <p>Shows user pool configuration for sign-in with passkey authenticators such as biometric devices and security keys. Includes relying-party configuration, user-verification requirements, and whether passkeys can satisfy MFA requirements.</p>
     pub fn set_web_authn_configuration(mut self, input: ::std::option::Option<crate::types::WebAuthnConfigurationType>) -> Self {
         self.web_authn_configuration = input;
         self
     }
-    /// <p>Shows user pool configuration for sign-in with passkey authenticators like biometric devices and security keys. Passkeys are not eligible MFA factors. They are instead an eligible primary sign-in factor for <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>, or the <code>USER_AUTH</code> flow.</p>
+    /// <p>Shows user pool configuration for sign-in with passkey authenticators such as biometric devices and security keys. Includes relying-party configuration, user-verification requirements, and whether passkeys can satisfy MFA requirements.</p>
     pub fn get_web_authn_configuration(&self) -> &::std::option::Option<crate::types::WebAuthnConfigurationType> {
         &self.web_authn_configuration
     }

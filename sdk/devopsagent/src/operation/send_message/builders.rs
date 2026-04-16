@@ -194,17 +194,20 @@ impl SendMessageFluentBuilder {
     pub fn get_context(&self) -> &::std::option::Option<crate::types::SendMessageContext> {
         self.inner.get_context()
     }
-    /// Required user identifier
+    /// User identifier. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// Required user identifier
+    /// User identifier. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
-    /// Required user identifier
+    /// User identifier. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.
+    #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }

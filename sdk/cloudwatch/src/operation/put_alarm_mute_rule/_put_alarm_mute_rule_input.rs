@@ -13,9 +13,9 @@ pub struct PutAlarmMuteRuleInput {
     pub mute_targets: ::std::option::Option<crate::types::MuteTargets>,
     /// <p>A list of key-value pairs to associate with the alarm mute rule. You can use tags to categorize and manage your mute rules.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The date and time after which the mute rule takes effect. If not specified, the mute rule takes effect immediately upon creation and the mutes are applied as per the schedule expression. This date and time is interpreted according to the schedule timezone, or UTC if no timezone is specified.</p>
+    /// <p>The date and time after which the mute rule takes effect, specified as a timestamp in ISO 8601 format (for example, <code>2026-04-15T08:00:00Z</code>). If not specified, the mute rule takes effect immediately upon creation and the mutes are applied as per the schedule expression.</p>
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time when the mute rule expires and is no longer evaluated. After this time, the rule status becomes EXPIRED and will no longer mute the targeted alarms. This date and time is interpreted according to the schedule timezone, or UTC if no timezone is specified.</p>
+    /// <p>The date and time when the mute rule expires and is no longer evaluated, specified as a timestamp in ISO 8601 format (for example, <code>2026-12-31T23:59:59Z</code>). After this time, the rule status becomes EXPIRED and will no longer mute the targeted alarms.</p>
     pub expire_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PutAlarmMuteRuleInput {
@@ -41,11 +41,11 @@ impl PutAlarmMuteRuleInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The date and time after which the mute rule takes effect. If not specified, the mute rule takes effect immediately upon creation and the mutes are applied as per the schedule expression. This date and time is interpreted according to the schedule timezone, or UTC if no timezone is specified.</p>
+    /// <p>The date and time after which the mute rule takes effect, specified as a timestamp in ISO 8601 format (for example, <code>2026-04-15T08:00:00Z</code>). If not specified, the mute rule takes effect immediately upon creation and the mutes are applied as per the schedule expression.</p>
     pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
-    /// <p>The date and time when the mute rule expires and is no longer evaluated. After this time, the rule status becomes EXPIRED and will no longer mute the targeted alarms. This date and time is interpreted according to the schedule timezone, or UTC if no timezone is specified.</p>
+    /// <p>The date and time when the mute rule expires and is no longer evaluated, specified as a timestamp in ISO 8601 format (for example, <code>2026-12-31T23:59:59Z</code>). After this time, the rule status becomes EXPIRED and will no longer mute the targeted alarms.</p>
     pub fn expire_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expire_date.as_ref()
     }
@@ -148,31 +148,31 @@ impl PutAlarmMuteRuleInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The date and time after which the mute rule takes effect. If not specified, the mute rule takes effect immediately upon creation and the mutes are applied as per the schedule expression. This date and time is interpreted according to the schedule timezone, or UTC if no timezone is specified.</p>
+    /// <p>The date and time after which the mute rule takes effect, specified as a timestamp in ISO 8601 format (for example, <code>2026-04-15T08:00:00Z</code>). If not specified, the mute rule takes effect immediately upon creation and the mutes are applied as per the schedule expression.</p>
     pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time after which the mute rule takes effect. If not specified, the mute rule takes effect immediately upon creation and the mutes are applied as per the schedule expression. This date and time is interpreted according to the schedule timezone, or UTC if no timezone is specified.</p>
+    /// <p>The date and time after which the mute rule takes effect, specified as a timestamp in ISO 8601 format (for example, <code>2026-04-15T08:00:00Z</code>). If not specified, the mute rule takes effect immediately upon creation and the mutes are applied as per the schedule expression.</p>
     pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_date = input;
         self
     }
-    /// <p>The date and time after which the mute rule takes effect. If not specified, the mute rule takes effect immediately upon creation and the mutes are applied as per the schedule expression. This date and time is interpreted according to the schedule timezone, or UTC if no timezone is specified.</p>
+    /// <p>The date and time after which the mute rule takes effect, specified as a timestamp in ISO 8601 format (for example, <code>2026-04-15T08:00:00Z</code>). If not specified, the mute rule takes effect immediately upon creation and the mutes are applied as per the schedule expression.</p>
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_date
     }
-    /// <p>The date and time when the mute rule expires and is no longer evaluated. After this time, the rule status becomes EXPIRED and will no longer mute the targeted alarms. This date and time is interpreted according to the schedule timezone, or UTC if no timezone is specified.</p>
+    /// <p>The date and time when the mute rule expires and is no longer evaluated, specified as a timestamp in ISO 8601 format (for example, <code>2026-12-31T23:59:59Z</code>). After this time, the rule status becomes EXPIRED and will no longer mute the targeted alarms.</p>
     pub fn expire_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expire_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the mute rule expires and is no longer evaluated. After this time, the rule status becomes EXPIRED and will no longer mute the targeted alarms. This date and time is interpreted according to the schedule timezone, or UTC if no timezone is specified.</p>
+    /// <p>The date and time when the mute rule expires and is no longer evaluated, specified as a timestamp in ISO 8601 format (for example, <code>2026-12-31T23:59:59Z</code>). After this time, the rule status becomes EXPIRED and will no longer mute the targeted alarms.</p>
     pub fn set_expire_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expire_date = input;
         self
     }
-    /// <p>The date and time when the mute rule expires and is no longer evaluated. After this time, the rule status becomes EXPIRED and will no longer mute the targeted alarms. This date and time is interpreted according to the schedule timezone, or UTC if no timezone is specified.</p>
+    /// <p>The date and time when the mute rule expires and is no longer evaluated, specified as a timestamp in ISO 8601 format (for example, <code>2026-12-31T23:59:59Z</code>). After this time, the rule status becomes EXPIRED and will no longer mute the targeted alarms.</p>
     pub fn get_expire_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expire_date
     }

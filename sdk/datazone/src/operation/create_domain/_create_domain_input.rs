@@ -126,7 +126,6 @@ impl CreateDomainInputBuilder {
         &self.single_sign_on
     }
     /// <p>The domain execution role that is created when an Amazon DataZone domain is created. The domain execution role is created in the Amazon Web Services account that houses the Amazon DataZone domain.</p>
-    /// This field is required.
     pub fn domain_execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.domain_execution_role = ::std::option::Option::Some(input.into());
         self

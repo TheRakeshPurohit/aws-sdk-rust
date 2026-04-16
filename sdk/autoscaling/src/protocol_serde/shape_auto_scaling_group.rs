@@ -151,28 +151,38 @@ pub fn de_auto_scaling_group(
                 builder = builder.set_availability_zones(var_11);
             }
             ,
-            s if s.matches("LoadBalancerNames") /* LoadBalancerNames com.amazonaws.autoscaling#AutoScalingGroup$LoadBalancerNames */ =>  {
+            s if s.matches("AvailabilityZoneIds") /* AvailabilityZoneIds com.amazonaws.autoscaling#AutoScalingGroup$AvailabilityZoneIds */ =>  {
                 let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_availability_zone_ids::de_availability_zone_ids(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_availability_zone_ids(var_12);
+            }
+            ,
+            s if s.matches("LoadBalancerNames") /* LoadBalancerNames com.amazonaws.autoscaling#AutoScalingGroup$LoadBalancerNames */ =>  {
+                let var_13 =
                     Some(
                         crate::protocol_serde::shape_load_balancer_names::de_load_balancer_names(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_load_balancer_names(var_12);
+                builder = builder.set_load_balancer_names(var_13);
             }
             ,
             s if s.matches("TargetGroupARNs") /* TargetGroupARNs com.amazonaws.autoscaling#AutoScalingGroup$TargetGroupARNs */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         crate::protocol_serde::shape_target_group_arns::de_target_group_arns(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_target_group_arns(var_13);
+                builder = builder.set_target_group_arns(var_14);
             }
             ,
             s if s.matches("HealthCheckType") /* HealthCheckType com.amazonaws.autoscaling#AutoScalingGroup$HealthCheckType */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -181,11 +191,11 @@ pub fn de_auto_scaling_group(
                         ?
                     )
                 ;
-                builder = builder.set_health_check_type(var_14);
+                builder = builder.set_health_check_type(var_15);
             }
             ,
             s if s.matches("HealthCheckGracePeriod") /* HealthCheckGracePeriod com.amazonaws.autoscaling#AutoScalingGroup$HealthCheckGracePeriod */ =>  {
-                let var_15 =
+                let var_16 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -196,21 +206,21 @@ pub fn de_auto_scaling_group(
                         ?
                     )
                 ;
-                builder = builder.set_health_check_grace_period(var_15);
+                builder = builder.set_health_check_grace_period(var_16);
             }
             ,
             s if s.matches("Instances") /* Instances com.amazonaws.autoscaling#AutoScalingGroup$Instances */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
                         crate::protocol_serde::shape_instances::de_instances(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instances(var_16);
+                builder = builder.set_instances(var_17);
             }
             ,
             s if s.matches("CreatedTime") /* CreatedTime com.amazonaws.autoscaling#AutoScalingGroup$CreatedTime */ =>  {
-                let var_17 =
+                let var_18 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -220,33 +230,20 @@ pub fn de_auto_scaling_group(
                         ?
                     )
                 ;
-                builder = builder.set_created_time(var_17);
+                builder = builder.set_created_time(var_18);
             }
             ,
             s if s.matches("SuspendedProcesses") /* SuspendedProcesses com.amazonaws.autoscaling#AutoScalingGroup$SuspendedProcesses */ =>  {
-                let var_18 =
+                let var_19 =
                     Some(
                         crate::protocol_serde::shape_suspended_processes::de_suspended_processes(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_suspended_processes(var_18);
+                builder = builder.set_suspended_processes(var_19);
             }
             ,
             s if s.matches("PlacementGroup") /* PlacementGroup com.amazonaws.autoscaling#AutoScalingGroup$PlacementGroup */ =>  {
-                let var_19 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_placement_group(var_19);
-            }
-            ,
-            s if s.matches("VPCZoneIdentifier") /* VPCZoneIdentifier com.amazonaws.autoscaling#AutoScalingGroup$VPCZoneIdentifier */ =>  {
                 let var_20 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -256,21 +253,11 @@ pub fn de_auto_scaling_group(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_zone_identifier(var_20);
+                builder = builder.set_placement_group(var_20);
             }
             ,
-            s if s.matches("EnabledMetrics") /* EnabledMetrics com.amazonaws.autoscaling#AutoScalingGroup$EnabledMetrics */ =>  {
+            s if s.matches("VPCZoneIdentifier") /* VPCZoneIdentifier com.amazonaws.autoscaling#AutoScalingGroup$VPCZoneIdentifier */ =>  {
                 let var_21 =
-                    Some(
-                        crate::protocol_serde::shape_enabled_metrics::de_enabled_metrics(&mut tag)
-                        ?
-                    )
-                ;
-                builder = builder.set_enabled_metrics(var_21);
-            }
-            ,
-            s if s.matches("Status") /* Status com.amazonaws.autoscaling#AutoScalingGroup$Status */ =>  {
-                let var_22 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -279,31 +266,54 @@ pub fn de_auto_scaling_group(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_22);
+                builder = builder.set_vpc_zone_identifier(var_21);
+            }
+            ,
+            s if s.matches("EnabledMetrics") /* EnabledMetrics com.amazonaws.autoscaling#AutoScalingGroup$EnabledMetrics */ =>  {
+                let var_22 =
+                    Some(
+                        crate::protocol_serde::shape_enabled_metrics::de_enabled_metrics(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_enabled_metrics(var_22);
+            }
+            ,
+            s if s.matches("Status") /* Status com.amazonaws.autoscaling#AutoScalingGroup$Status */ =>  {
+                let var_23 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_status(var_23);
             }
             ,
             s if s.matches("Tags") /* Tags com.amazonaws.autoscaling#AutoScalingGroup$Tags */ =>  {
-                let var_23 =
+                let var_24 =
                     Some(
                         crate::protocol_serde::shape_tag_description_list::de_tag_description_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_23);
+                builder = builder.set_tags(var_24);
             }
             ,
             s if s.matches("TerminationPolicies") /* TerminationPolicies com.amazonaws.autoscaling#AutoScalingGroup$TerminationPolicies */ =>  {
-                let var_24 =
+                let var_25 =
                     Some(
                         crate::protocol_serde::shape_termination_policies::de_termination_policies(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_termination_policies(var_24);
+                builder = builder.set_termination_policies(var_25);
             }
             ,
             s if s.matches("NewInstancesProtectedFromScaleIn") /* NewInstancesProtectedFromScaleIn com.amazonaws.autoscaling#AutoScalingGroup$NewInstancesProtectedFromScaleIn */ =>  {
-                let var_25 =
+                let var_26 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -314,11 +324,11 @@ pub fn de_auto_scaling_group(
                         ?
                     )
                 ;
-                builder = builder.set_new_instances_protected_from_scale_in(var_25);
+                builder = builder.set_new_instances_protected_from_scale_in(var_26);
             }
             ,
             s if s.matches("ServiceLinkedRoleARN") /* ServiceLinkedRoleARN com.amazonaws.autoscaling#AutoScalingGroup$ServiceLinkedRoleARN */ =>  {
-                let var_26 =
+                let var_27 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -327,11 +337,11 @@ pub fn de_auto_scaling_group(
                         ?
                     )
                 ;
-                builder = builder.set_service_linked_role_arn(var_26);
+                builder = builder.set_service_linked_role_arn(var_27);
             }
             ,
             s if s.matches("MaxInstanceLifetime") /* MaxInstanceLifetime com.amazonaws.autoscaling#AutoScalingGroup$MaxInstanceLifetime */ =>  {
-                let var_27 =
+                let var_28 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -342,11 +352,11 @@ pub fn de_auto_scaling_group(
                         ?
                     )
                 ;
-                builder = builder.set_max_instance_lifetime(var_27);
+                builder = builder.set_max_instance_lifetime(var_28);
             }
             ,
             s if s.matches("CapacityRebalance") /* CapacityRebalance com.amazonaws.autoscaling#AutoScalingGroup$CapacityRebalance */ =>  {
-                let var_28 =
+                let var_29 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -357,21 +367,21 @@ pub fn de_auto_scaling_group(
                         ?
                     )
                 ;
-                builder = builder.set_capacity_rebalance(var_28);
+                builder = builder.set_capacity_rebalance(var_29);
             }
             ,
             s if s.matches("WarmPoolConfiguration") /* WarmPoolConfiguration com.amazonaws.autoscaling#AutoScalingGroup$WarmPoolConfiguration */ =>  {
-                let var_29 =
+                let var_30 =
                     Some(
                         crate::protocol_serde::shape_warm_pool_configuration::de_warm_pool_configuration(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_warm_pool_configuration(var_29);
+                builder = builder.set_warm_pool_configuration(var_30);
             }
             ,
             s if s.matches("WarmPoolSize") /* WarmPoolSize com.amazonaws.autoscaling#AutoScalingGroup$WarmPoolSize */ =>  {
-                let var_30 =
+                let var_31 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -382,23 +392,10 @@ pub fn de_auto_scaling_group(
                         ?
                     )
                 ;
-                builder = builder.set_warm_pool_size(var_30);
+                builder = builder.set_warm_pool_size(var_31);
             }
             ,
             s if s.matches("Context") /* Context com.amazonaws.autoscaling#AutoScalingGroup$Context */ =>  {
-                let var_31 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_context(var_31);
-            }
-            ,
-            s if s.matches("DesiredCapacityType") /* DesiredCapacityType com.amazonaws.autoscaling#AutoScalingGroup$DesiredCapacityType */ =>  {
                 let var_32 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -408,11 +405,24 @@ pub fn de_auto_scaling_group(
                         ?
                     )
                 ;
-                builder = builder.set_desired_capacity_type(var_32);
+                builder = builder.set_context(var_32);
+            }
+            ,
+            s if s.matches("DesiredCapacityType") /* DesiredCapacityType com.amazonaws.autoscaling#AutoScalingGroup$DesiredCapacityType */ =>  {
+                let var_33 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_desired_capacity_type(var_33);
             }
             ,
             s if s.matches("DefaultInstanceWarmup") /* DefaultInstanceWarmup com.amazonaws.autoscaling#AutoScalingGroup$DefaultInstanceWarmup */ =>  {
-                let var_33 =
+                let var_34 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -423,31 +433,31 @@ pub fn de_auto_scaling_group(
                         ?
                     )
                 ;
-                builder = builder.set_default_instance_warmup(var_33);
+                builder = builder.set_default_instance_warmup(var_34);
             }
             ,
             s if s.matches("TrafficSources") /* TrafficSources com.amazonaws.autoscaling#AutoScalingGroup$TrafficSources */ =>  {
-                let var_34 =
+                let var_35 =
                     Some(
                         crate::protocol_serde::shape_traffic_sources::de_traffic_sources(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_traffic_sources(var_34);
+                builder = builder.set_traffic_sources(var_35);
             }
             ,
             s if s.matches("InstanceMaintenancePolicy") /* InstanceMaintenancePolicy com.amazonaws.autoscaling#AutoScalingGroup$InstanceMaintenancePolicy */ =>  {
-                let var_35 =
+                let var_36 =
                     Some(
                         crate::protocol_serde::shape_instance_maintenance_policy::de_instance_maintenance_policy(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instance_maintenance_policy(var_35);
+                builder = builder.set_instance_maintenance_policy(var_36);
             }
             ,
             s if s.matches("DeletionProtection") /* DeletionProtection com.amazonaws.autoscaling#AutoScalingGroup$DeletionProtection */ =>  {
-                let var_36 =
+                let var_37 =
                     Some(
                         Result::<crate::types::DeletionProtection, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::DeletionProtection::from(
@@ -457,47 +467,47 @@ pub fn de_auto_scaling_group(
                         ?
                     )
                 ;
-                builder = builder.set_deletion_protection(var_36);
+                builder = builder.set_deletion_protection(var_37);
             }
             ,
             s if s.matches("AvailabilityZoneDistribution") /* AvailabilityZoneDistribution com.amazonaws.autoscaling#AutoScalingGroup$AvailabilityZoneDistribution */ =>  {
-                let var_37 =
+                let var_38 =
                     Some(
                         crate::protocol_serde::shape_availability_zone_distribution::de_availability_zone_distribution(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone_distribution(var_37);
+                builder = builder.set_availability_zone_distribution(var_38);
             }
             ,
             s if s.matches("AvailabilityZoneImpairmentPolicy") /* AvailabilityZoneImpairmentPolicy com.amazonaws.autoscaling#AutoScalingGroup$AvailabilityZoneImpairmentPolicy */ =>  {
-                let var_38 =
+                let var_39 =
                     Some(
                         crate::protocol_serde::shape_availability_zone_impairment_policy::de_availability_zone_impairment_policy(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_availability_zone_impairment_policy(var_38);
+                builder = builder.set_availability_zone_impairment_policy(var_39);
             }
             ,
             s if s.matches("CapacityReservationSpecification") /* CapacityReservationSpecification com.amazonaws.autoscaling#AutoScalingGroup$CapacityReservationSpecification */ =>  {
-                let var_39 =
+                let var_40 =
                     Some(
                         crate::protocol_serde::shape_capacity_reservation_specification::de_capacity_reservation_specification(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_capacity_reservation_specification(var_39);
+                builder = builder.set_capacity_reservation_specification(var_40);
             }
             ,
             s if s.matches("InstanceLifecyclePolicy") /* InstanceLifecyclePolicy com.amazonaws.autoscaling#AutoScalingGroup$InstanceLifecyclePolicy */ =>  {
-                let var_40 =
+                let var_41 =
                     Some(
                         crate::protocol_serde::shape_instance_lifecycle_policy::de_instance_lifecycle_policy(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_instance_lifecycle_policy(var_40);
+                builder = builder.set_instance_lifecycle_policy(var_41);
             }
             ,
             _ => {}

@@ -291,6 +291,25 @@ impl CreateAutoScalingGroupFluentBuilder {
         self.inner.get_availability_zones()
     }
     ///
+    /// Appends an item to `AvailabilityZoneIds`.
+    ///
+    /// To override the contents of this collection use [`set_availability_zone_ids`](Self::set_availability_zone_ids).
+    ///
+    /// <p>A list of Availability Zone IDs where the Auto Scaling group can launch instances. You cannot specify both AvailabilityZones and AvailabilityZoneIds in the same request.</p>
+    pub fn availability_zone_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.availability_zone_ids(input.into());
+        self
+    }
+    /// <p>A list of Availability Zone IDs where the Auto Scaling group can launch instances. You cannot specify both AvailabilityZones and AvailabilityZoneIds in the same request.</p>
+    pub fn set_availability_zone_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_availability_zone_ids(input);
+        self
+    }
+    /// <p>A list of Availability Zone IDs where the Auto Scaling group can launch instances. You cannot specify both AvailabilityZones and AvailabilityZoneIds in the same request.</p>
+    pub fn get_availability_zone_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_availability_zone_ids()
+    }
+    ///
     /// Appends an item to `LoadBalancerNames`.
     ///
     /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).

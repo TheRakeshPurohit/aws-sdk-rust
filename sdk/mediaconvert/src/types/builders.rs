@@ -41,6 +41,8 @@ pub use crate::types::_timecode_config::TimecodeConfigBuilder;
 
 pub use crate::types::_timed_metadata_insertion::TimedMetadataInsertionBuilder;
 
+pub use crate::types::_elemental_inference_configuration::ElementalInferenceConfigurationBuilder;
+
 pub use crate::types::_job_messages::JobMessagesBuilder;
 
 pub use crate::types::_timing::TimingBuilder;
@@ -132,6 +134,8 @@ pub use crate::types::_automated_encoding_settings::AutomatedEncodingSettingsBui
 pub use crate::types::_output_group_settings::OutputGroupSettingsBuilder;
 
 pub use crate::types::_id3_insertion::Id3InsertionBuilder;
+
+pub use crate::types::_elemental_inference_feed::ElementalInferenceFeedBuilder;
 
 pub use crate::types::_audio_channel_tagging_settings::AudioChannelTaggingSettingsBuilder;
 

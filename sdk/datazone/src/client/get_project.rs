@@ -21,6 +21,7 @@ impl super::Client {
     ///   - [`project_profile_id(Option<String>)`](crate::operation::get_project::GetProjectOutput::project_profile_id): <p>The ID of the project profile of a project.</p>
     ///   - [`user_parameters(Option<Vec::<EnvironmentConfigurationUserParameter>>)`](crate::operation::get_project::GetProjectOutput::user_parameters): <p>The user parameters of a project.</p>
     ///   - [`environment_deployment_details(Option<EnvironmentDeploymentDetails>)`](crate::operation::get_project::GetProjectOutput::environment_deployment_details): <p>The environment deployment status of a project.</p>
+    ///   - [`project_category(Option<String>)`](crate::operation::get_project::GetProjectOutput::project_category): <p>The category of the project.</p>
     /// - On failure, responds with [`SdkError<GetProjectError>`](crate::operation::get_project::GetProjectError)
     pub fn get_project(&self) -> crate::operation::get_project::builders::GetProjectFluentBuilder {
         crate::operation::get_project::builders::GetProjectFluentBuilder::new(self.handle.clone())

@@ -136,6 +136,20 @@ impl CreateQueueFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn maximum_concurrent_feeds(mut self, input: i32) -> Self {
+        self.inner = self.inner.maximum_concurrent_feeds(input);
+        self
+    }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn set_maximum_concurrent_feeds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_maximum_concurrent_feeds(input);
+        self
+    }
+    /// Specify the maximum number of Elemental Inference feeds MediaConvert can process concurrently.
+    pub fn get_maximum_concurrent_feeds(&self) -> &::std::option::Option<i32> {
+        self.inner.get_maximum_concurrent_feeds()
+    }
     /// The name of the queue that you are creating.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

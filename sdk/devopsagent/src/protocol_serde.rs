@@ -23,8 +23,6 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
-pub(crate) mod shape_allow_vended_log_delivery_for_resource;
-
 pub(crate) mod shape_associate_service;
 
 pub(crate) mod shape_create_agent_space;
@@ -122,8 +120,6 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_access_denied_exception;
-
-pub(crate) mod shape_allow_vended_log_delivery_for_resource_input;
 
 pub(crate) mod shape_associate_service_input;
 

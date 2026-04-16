@@ -7,6 +7,8 @@ pub struct RetrieveMemoryRecordsInput {
     pub memory_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace prefix to filter memory records by. Searches for memory records in namespaces that start with the provided prefix.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    pub namespace_path: ::std::option::Option<::std::string::String>,
     /// <p>The search criteria to use for finding relevant memory records. This includes the search query, memory strategy ID, and other search parameters.</p>
     pub search_criteria: ::std::option::Option<crate::types::SearchCriteria>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -22,6 +24,10 @@ impl RetrieveMemoryRecordsInput {
     /// <p>The namespace prefix to filter memory records by. Searches for memory records in namespaces that start with the provided prefix.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
+    }
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    pub fn namespace_path(&self) -> ::std::option::Option<&str> {
+        self.namespace_path.as_deref()
     }
     /// <p>The search criteria to use for finding relevant memory records. This includes the search query, memory strategy ID, and other search parameters.</p>
     pub fn search_criteria(&self) -> ::std::option::Option<&crate::types::SearchCriteria> {
@@ -49,6 +55,7 @@ impl RetrieveMemoryRecordsInput {
 pub struct RetrieveMemoryRecordsInputBuilder {
     pub(crate) memory_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace_path: ::std::option::Option<::std::string::String>,
     pub(crate) search_criteria: ::std::option::Option<crate::types::SearchCriteria>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -70,7 +77,6 @@ impl RetrieveMemoryRecordsInputBuilder {
         &self.memory_id
     }
     /// <p>The namespace prefix to filter memory records by. Searches for memory records in namespaces that start with the provided prefix.</p>
-    /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
@@ -83,6 +89,20 @@ impl RetrieveMemoryRecordsInputBuilder {
     /// <p>The namespace prefix to filter memory records by. Searches for memory records in namespaces that start with the provided prefix.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
+    }
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    pub fn namespace_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    pub fn set_namespace_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.namespace_path = input;
+        self
+    }
+    /// <p>Use namespacePath for hierarchical retrievals. Return all memory records where namespace falls under the same parent hierarchy.</p>
+    pub fn get_namespace_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace_path
     }
     /// <p>The search criteria to use for finding relevant memory records. This includes the search query, memory strategy ID, and other search parameters.</p>
     /// This field is required.
@@ -135,6 +155,7 @@ impl RetrieveMemoryRecordsInputBuilder {
         ::std::result::Result::Ok(crate::operation::retrieve_memory_records::RetrieveMemoryRecordsInput {
             memory_id: self.memory_id,
             namespace: self.namespace,
+            namespace_path: self.namespace_path,
             search_criteria: self.search_criteria,
             next_token: self.next_token,
             max_results: self.max_results,

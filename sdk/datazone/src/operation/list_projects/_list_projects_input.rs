@@ -11,6 +11,8 @@ pub struct ListProjectsInput {
     pub group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>A parameter to filter projects by their category.</p>
+    pub project_category: ::std::option::Option<::std::string::String>,
     /// <p>When the number of projects is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of projects, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListProjects</code> to list the next set of projects.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of projects to return in a single call to <code>ListProjects</code>. When the number of projects to be listed is greater than the value of <code>MaxResults</code>, the response contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListProjects</code> to list the next set of projects.</p>
@@ -33,6 +35,10 @@ impl ListProjectsInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>A parameter to filter projects by their category.</p>
+    pub fn project_category(&self) -> ::std::option::Option<&str> {
+        self.project_category.as_deref()
+    }
     /// <p>When the number of projects is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of projects, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListProjects</code> to list the next set of projects.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
@@ -49,6 +55,7 @@ impl ::std::fmt::Debug for ListProjectsInput {
         formatter.field("user_identifier", &self.user_identifier);
         formatter.field("group_identifier", &self.group_identifier);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("project_category", &self.project_category);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
         formatter.finish()
@@ -69,6 +76,7 @@ pub struct ListProjectsInputBuilder {
     pub(crate) user_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) project_category: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -130,6 +138,20 @@ impl ListProjectsInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>A parameter to filter projects by their category.</p>
+    pub fn project_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_category = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A parameter to filter projects by their category.</p>
+    pub fn set_project_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_category = input;
+        self
+    }
+    /// <p>A parameter to filter projects by their category.</p>
+    pub fn get_project_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_category
+    }
     /// <p>When the number of projects is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of projects, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListProjects</code> to list the next set of projects.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -167,6 +189,7 @@ impl ListProjectsInputBuilder {
             user_identifier: self.user_identifier,
             group_identifier: self.group_identifier,
             name: self.name,
+            project_category: self.project_category,
             next_token: self.next_token,
             max_results: self.max_results,
         })
@@ -179,6 +202,7 @@ impl ::std::fmt::Debug for ListProjectsInputBuilder {
         formatter.field("user_identifier", &self.user_identifier);
         formatter.field("group_identifier", &self.group_identifier);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
+        formatter.field("project_category", &self.project_category);
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
         formatter.finish()

@@ -9,15 +9,18 @@ pub fn ser_create_recommender_filter_input_input(
     if let Some(var_2) = &input.recommender_filter_expression {
         object.key("RecommenderFilterExpression").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.tags {
+    if let Some(var_3) = &input.recommender_schema_name {
+        object.key("RecommenderSchemaName").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Tags").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_5 = object.key("Tags").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_4.finish();
+        object_5.finish();
     }
     Ok(())
 }
